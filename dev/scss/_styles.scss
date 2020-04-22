@@ -40,7 +40,7 @@ body {
   color: $black;
   font-size: 26px;
   font-family: $font-family;
-  line-height: 1.4;
+  line-height: 1.5;
 
   @media screen and (min-width: $bp-tablet) {
     font-size: 44px;
@@ -71,7 +71,8 @@ body {
   }
 }
 .newsletter-form {
-  margin-bottom: 40px;
+  display: inline-block;
+  margin-bottom: 120px;
 }
 
 .mail-label {
@@ -81,6 +82,7 @@ body {
 }
 
 .email-formfield {
+  padding-left: 10px;
   margin-bottom: 20px;
 }
 
@@ -91,9 +93,12 @@ body {
 
 .button {
   margin-bottom: 20px;
+  border: 1px solid #fff;
+  color: $blue;
 
   &:hover {
     cursor: pointer;
+    border: 1px solid $blue;
   }
 }
 
@@ -131,4 +136,39 @@ body {
 
 .longer-text-container {
   font-size: 28px;
+}
+
+.contact {
+  margin-bottom: 80px;
+}
+
+.founders {
+  margin-bottom: 80px;
+}
+
+.founders__header {
+  margin-bottom: 20px;
+}
+
+.founders__logos {
+  display: flex;
+  align-items: center;
+}
+
+.founder-link {
+  display: inline-block;
+  width: 120px;
+  margin-right: 40px;
+
+  &--kk {
+    width: 90px;
+  }
+
+  &--rheinenergie {
+    width: 140px;
+  }
+}
+
+.founder-img {
+  width: 100%;
 }

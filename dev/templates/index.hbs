@@ -1,7 +1,9 @@
 {{! render content in _layout partial; pass title to _layout partial}}
 {{#> _layout title='Kulturgenerator' }}
 <div class="intro">
-    Der <span class="title">kulturgenerator</span> ist virtueller Laden und Kunstprojekt, Notfallplan und generöse Maschine. Er ist ein Generator von und für Kultur, wenn die Häuser, die Bühnen, die Säle, die Galerien geschlossen haben. Deshalb gründen wir eine solidarische Plattform für Alle. Für weitere Informationen tragen Sie sich bitte ein.
+    Der <span class="title">kulturgenerator</span> ist virtueller Laden und Kunstprojekt, Notfallplan und generöse Maschine. Er ist ein Generator von und für Kultur, wenn die Häuser, die Bühnen, die Säle, die Galerien geschlossen haben.
+    Deshalb gründen wir eine solidarische Plattform für Alle. Für weitere Informationen tragen Sie sich bitte ein:
+    {{> _form }}
 </div>
-{{> _form }}
+
 {{/_layout}}
