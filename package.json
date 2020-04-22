@@ -1,0 +1,63 @@
+{
+  "name": "kulturgenerator-landingpage",
+  "version": "1.0.0",
+  "description": "A landing page for Kulturgenerator project",
+  "author": "Milan Bargiel",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/milanbargiel/kulturgenerator-landingpage"
+  },
+  "scripts": {
+    "clean": "rimraf 'dist'",
+    "stylelint": "stylelint 'dev/scss/**/*.scss'",
+    "scss": "node-sass 'dev/scss' --output 'dist'",
+    "postcss": "postcss --use autoprefixer --replace 'dist/*.css' --no-map",
+    "copyfiles": "copyfiles --up 2 'dev/assets/*' 'dist/assets'",
+    "copyjs": "copyfiles --up 2 'dev/js/**/*.js' 'dist/js'",
+    "eslint": "eslint 'dev/js'",
+    "build:css": "npm-run-all --serial stylelint scss postcss",
+    "build:html": "hbs 'dev/templates/[!_]*.hbs' --partial 'dev/templates/_*.hbs' --output 'dist/'",
+    "build:images": "imagemin 'dev/assets/images/**/*.{png,jpg,gif,svg,ico}' --out-dir=dist/assets/images",
+    "build:javascript": "npm-run-all --serial eslint copyjs",
+    "prebuild": "npm run clean",
+    "build": "npm-run-all --serial copyfiles build:*",
+    "watch:templates": "onchange 'dev/templates' -- npm run build:html",
+    "watch:images": "onchange 'dev/assets/images' -- npm run build:images",
+    "watch:scss": "onchange 'dev/scss' -- npm run build:css",
+    "watch:javascript": "onchange 'dev/js' -- npm run build:javascript",
+    "watch:files": "onchange 'dev/assets/*' -- npm run copyfiles",
+    "watch": "npm-run-all --parallel --silent watch:*",
+    "serve": "browser-sync start --server 'dist' --files 'dist'",
+    "prestart": "npm run --silent build",
+    "start": "npm-run-all --parallel serve watch"
+  },
+  "scriptsComments": {
+    "stylelint": "lint scss-files with rules specified in .stylelintrc.json",
+    "scss": "compile scss to css",
+    "postcss": "use postcss to autoprefix css-files in dist-folder without sourcemap in output",
+    "copyfiles": "copy top level files from assets folder to /dist (ignore images folder)",
+    "eslint": "lint scss-files with rules specified in .eslintrc.json",
+    "build:html": "render templates with partials (filename starts with underscore) to dist folder",
+    "build:images": "optimize images and output in dist folder",
+    "build:javascript": "lint javascript and then copy all files to dist folder",
+    "serve": "start a local dev server and reload browser on filechange in dist folder",
+    "start": "run build and watch tasks in parallel"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.7.5",
+    "browser-sync": "^2.26.7",
+    "copyfiles": "^2.2.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "hbs-cli": "^1.3.0",
+    "imagemin-cli": "^5.1.0",
+    "node-sass": "^4.13.1",
+    "npm-run-all": "^4.1.5",
+    "onchange": "^6.1.0",
+    "postcss-cli": "^7.1.0",
+    "rimraf": "^3.0.2",
+    "stylelint": "^13.2.1",
+    "stylelint-config-recommended": "^3.0.0"
+  }
+}

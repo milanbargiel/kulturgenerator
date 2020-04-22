@@ -1,0 +1,31 @@
+// global styles
+@font-face {
+  font-family: 'Overpass Mono';
+  src: url('../assets/OverpassMono-Regular.ttf');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Overpass Mono';
+  src: url('../assets/OverpassMono-Bold.ttf');
+  font-weight: bold;
+}
+
+html {
+  box-sizing: border-box;
+  -ms-overflow-style: scrollbar;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+$base-font-size: 18px;
+$font-family: 'Overpass Mono', monospace;
+
+body {
+  font-size: $base-font-size;
+  font-family: $font-family;
+}
