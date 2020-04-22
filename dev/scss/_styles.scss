@@ -22,10 +22,6 @@ html {
   box-sizing: inherit;
 }
 
-p {
-  margin: 0;
-}
-
 a {
   text-decoration: none;
 }
@@ -42,7 +38,7 @@ body {
   line-height: 1.4;
 
   @media screen and (min-width: $bp-tablet) {
-    font-size: 44px;
+    font-size: 42px;
   }
 }
 
@@ -120,4 +116,8 @@ body {
       opacity: 1;
     }
   }
+}
+
+.back-arrow {
+  display: block;
 }
