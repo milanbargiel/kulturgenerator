@@ -10,3 +10,7 @@ Thumbs.db
 # Other files
 node_modules/
 dist/
+
+# Ignore Galapagos Font files
+GalapagosA-Regular.woff
+GalapagosA-Regular.woff2

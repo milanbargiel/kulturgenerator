@@ -11,6 +11,11 @@
   font-weight: bold;
 }
 
+@font-face {
+  font-family: 'GalapagosA-Regular';
+  src: url('../assets/GalapagosA-Regular.woff2') format('woff2'), url('../assets/GalapagosA-Regular.woff') format('woff');
+}
+
 html {
   box-sizing: border-box;
   -ms-overflow-style: scrollbar;
@@ -54,6 +59,7 @@ body {
 }
 
 .title {
+  font-family: 'GalapagosA-Regular', 'Inconsolata', monospace;
   font-weight: bold;
 }
 
