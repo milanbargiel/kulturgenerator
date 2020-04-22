@@ -29,7 +29,8 @@
     "watch": "npm-run-all --parallel --silent watch:*",
     "serve": "browser-sync start --server 'dist' --files 'dist'",
     "prestart": "npm run --silent build",
-    "start": "npm-run-all --parallel serve watch"
+    "start": "npm-run-all --parallel serve watch",
+    "deploy": "scp -r dist/* ownserver:/var/www/kulturgenerator.de"
   },
   "scriptsComments": {
     "stylelint": "lint scss-files with rules specified in .stylelintrc.json",
