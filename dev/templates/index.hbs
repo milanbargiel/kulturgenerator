@@ -3,13 +3,5 @@
 <div class="intro">
     Der <span class="title">kulturgenerator</span> ist virtueller Laden und Kunstprojekt, Notfallplan und generöse Maschine. Er ist ein Generator von und für Kultur, wenn die Häuser, die Bühnen, die Säle, die Galerien geschlossen haben. Deshalb gründen wir eine solidarische Plattform für Alle. Für weitere Informationen tragen Sie sich bitte ein.
 </div>
-<form class="newsletter-form" method="post" accept-charset="utf8" action="https://docs.google.com/forms/d/e/1FAIpQLSenJIBeWD-V2ueORFBCl0y8IMmPslFIG-LS5c2KvNmJ2yrihA/formResponse" method="post" target="hidden_iframe">
-    <span class="mail-label">@:</span>
-    <input class="email-formfield" type="email" name="entry.131811268" placeholder="E-Mail-Adresse" required>
-    <button type="submit" class="button js-submit">Senden</button>
-    <div class="success-text">Vielen Dank für die Anmeldung!<br> Wir informieren Sie, sobald es Neuigkeiten gibt.
-</div>
-</form>
-{{! hidden iframe / no redirect to google when form is submitted }}
-<iframe name="hidden_iframe" style="display:none;"></iframe>
+{{> _form }}
 {{/_layout}}

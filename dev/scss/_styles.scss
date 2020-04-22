@@ -70,6 +70,9 @@ body {
     margin-bottom: 40px;
   }
 }
+.newsletter-form {
+  margin-bottom: 40px;
+}
 
 .mail-label {
   color: $blue;
@@ -86,11 +89,9 @@ body {
   display: none; 
 }
 
-.newsletter-form {
-  margin-bottom: 40px;
-}
-
 .button {
+  margin-bottom: 20px;
+
   &:hover {
     cursor: pointer;
   }
