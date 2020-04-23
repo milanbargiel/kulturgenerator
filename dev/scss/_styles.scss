@@ -146,8 +146,16 @@ body {
   font-size: 28px;
 }
 
-.contact {
+.navigation {
   margin-bottom: 80px;
+
+  &__element {
+    white-space: pre;
+
+    @media screen and (min-width: $bp-tablet) {
+      white-space: normal;
+    }
+  }
 }
 
 .founders__header {
