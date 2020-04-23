@@ -39,6 +39,8 @@ $font-size-smartphone: 26px;
 $font-size-desktop: 44px;
 $black: #000;
 $blue: #0000ee;
+$green: #00ee00;
+$red: #ee0000;
 $grey: #f0f0f0;
 
 body {
@@ -85,16 +87,12 @@ body {
 }
 
 .intro {
-  margin-bottom: 20px;
-
-  @media screen and (min-width: $bp-tablet) {
-    margin-bottom: 40px;
-  }
+  margin-bottom: 120px;
 }
+
 .newsletter-form {
   position: relative;
   display: inline-block;
-  margin-bottom: 120px;
 }
 
 .mail-label {
@@ -112,9 +110,20 @@ body {
   }
 }
 
+@media screen and (min-width: $bp-tablet) {
+  .form-responses {
+    margin-right: 250px;
+  }
+}
+
 .success-text {
   color: $blue;
   display: none; 
+}
+
+.error-text {
+  color: $red;
+  display: none;
 }
 
 .button {
@@ -166,15 +175,7 @@ body {
   margin-bottom: 80px;
 
   &__element {
-    // white-space: pre;
-    // white-space: nowrap;
-    // word-wrap: break-word;
-
-    // @media screen and (min-width: $bp-tablet) {
-    //   white-space: normal;
-    // }
     display: inline-block;
-    // margin-bottom: 20px;
   }
 }
 
@@ -203,4 +204,8 @@ body {
 
 .founder-img {
   width: 100%;
+}
+
+.flyer {
+  max-width: 400px;
 }
