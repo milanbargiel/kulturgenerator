@@ -33,18 +33,26 @@ a {
 
 $font-family: 'Inconsolata', monospace;
 $bp-tablet: 680px;
+$bp-smartphone: 370px;
+$font-size-smartphone-xs: 24px;
+$font-size-smartphone: 26px;
+$font-size-desktop: 44px;
 $black: #000;
 $blue: #0000ee;
 $grey: #f0f0f0;
 
 body {
   color: $black;
-  font-size: 26px;
+  font-size: $font-size-smartphone-xs;
   font-family: $font-family;
   line-height: 1.5;
 
   @media screen and (min-width: $bp-tablet) {
-    font-size: 44px;
+    font-size: $font-size-smartphone;
+  }
+
+  @media screen and (min-width: $bp-tablet) {
+    font-size: $font-size-desktop;
   }
 }
 
@@ -60,17 +68,20 @@ body {
   }
 }
 
-.longer-text-container {
-  font-size: 26px;
-
-  @media screen and (min-width: $bp-tablet) {
+@media screen and (min-width: $bp-tablet) {
+  .longer-text-container {
     font-size: 28px;
   }
 }
 
 .title {
+  font-size: 20px; // prevent linebreak on smaller devices
   font-family: 'GalapagosA-Regular', 'Inconsolata', monospace;
   font-weight: bold;
+
+  @media screen and (min-width: $bp-smartphone) {
+    font-size: inherit;
+  }
 }
 
 .intro {
@@ -155,13 +166,15 @@ body {
   margin-bottom: 80px;
 
   &__element {
-    white-space: pre;
-    white-space: nowrap;
-    word-wrap: break-word;
+    // white-space: pre;
+    // white-space: nowrap;
+    // word-wrap: break-word;
 
-    @media screen and (min-width: $bp-tablet) {
-      white-space: normal;
-    }
+    // @media screen and (min-width: $bp-tablet) {
+    //   white-space: normal;
+    // }
+    display: inline-block;
+    // margin-bottom: 20px;
   }
 }
 
@@ -184,30 +197,6 @@ body {
 
     @media screen and (min-width: $bp-tablet) {
       width: 90px;
-    }
-  }
-
-  &--ob {
-    width: 150px;
-
-    @media screen and (min-width: $bp-tablet) {
-      width: 120px;
-    }
-  }
-
-  &--rheinenergie {
-    width: 180px;
-
-    @media screen and (min-width: $bp-tablet) {
-      width: 140px;
-    }
-  }
-
-  &--ksk {
-    width: 240px;
-
-    @media screen and (min-width: $bp-tablet) {
-      width: 140px;
     }
   }
 }
