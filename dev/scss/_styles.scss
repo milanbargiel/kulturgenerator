@@ -49,6 +49,7 @@ body {
 }
 
 .content {
+  overflow-wrap: break-word;
   padding: 10px;
   min-height: 100vh;
   display: flex;
@@ -56,6 +57,14 @@ body {
 
   @media screen and (min-width: $bp-tablet) {
     padding: 36px;
+  }
+}
+
+.longer-text-container {
+  font-size: 26px;
+
+  @media screen and (min-width: $bp-tablet) {
+    font-size: 28px;
   }
 }
 
@@ -140,10 +149,6 @@ body {
 
 .back-arrow {
   display: block;
-}
-
-.longer-text-container {
-  font-size: 28px;
 }
 
 .navigation {
