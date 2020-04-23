@@ -165,11 +165,35 @@ body {
   margin-right: 40px;
 
   &--kk {
-    width: 90px;
+    width: 130px;
+
+    @media screen and (min-width: $bp-tablet) {
+      width: 90px;
+    }
+  }
+
+  &--ob {
+    width: 150px;
+
+    @media screen and (min-width: $bp-tablet) {
+      width: 120px;
+    }
   }
 
   &--rheinenergie {
-    width: 140px;
+    width: 180px;
+
+    @media screen and (min-width: $bp-tablet) {
+      width: 140px;
+    }
+  }
+
+  &--ksk {
+    width: 240px;
+
+    @media screen and (min-width: $bp-tablet) {
+      width: 140px;
+    }
   }
 }
 
