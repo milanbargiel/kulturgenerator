@@ -191,7 +191,6 @@ body {
 
 .founder-link {
   display: inline-block;
-  width: 120px;
   margin-right: 40px;
 
   &--kk {
@@ -200,6 +199,10 @@ body {
     @media screen and (min-width: $bp-tablet) {
       width: 90px;
     }
+  }
+
+  &--nf {
+    width: 250px;
   }
 }
 
