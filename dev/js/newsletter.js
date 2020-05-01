@@ -1,7 +1,7 @@
-const newsletterForm = document.querySelector('.js-form');
-const emailInput = newsletterForm.querySelector('.js-e-mail');
-const successText = document.querySelector('.js-success-text');
-const errorText = document.querySelector('.js-error-text');
+const newsletterForm = document.querySelector('.js-newsletter-form');
+const emailInput = newsletterForm.querySelector('.js-newsletter-e-mail');
+const successText = document.querySelector('.js-newsletter-success-text');
+const errorText = document.querySelector('.js-newsletter-error-text');
 
 function serialize(inputField) {
   const serialized = `&${encodeURIComponent(inputField.name)}=${encodeURIComponent(inputField.value)}`;
