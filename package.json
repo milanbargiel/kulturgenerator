@@ -1,11 +1,11 @@
 {
-  "name": "kulturgenerator-landingpage",
+  "name": "kulturgenerator",
   "version": "1.0.0",
   "description": "A landing page for Kulturgenerator project",
   "author": "Milan Bargiel",
   "repository": {
     "type": "git",
-    "url": "https://github.com/milanbargiel/kulturgenerator-landingpage"
+    "url": "https://github.com/milanbargiel/kulturgenerator"
   },
   "scripts": {
     "clean": "rimraf 'dist'",
