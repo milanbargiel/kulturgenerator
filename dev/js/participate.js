@@ -1,43 +1,19 @@
-// PARTICIPATE FORM
-const participateForm = document.querySelector('.js-participate-form');
-const url = 'https://script.google.com/macros/s/AKfycbz9H2pxk7l490N_KAS47aQeyhPHjPS61EhOrVW-Nq8Csf9X81w/exec';
+const fileInput = document.querySelector('.js-file-input');
+const hiddenImageData = document.querySelector('.js-hidden-image-data');
 
-function serialize(form) {
+// listen to change on input type file
+fileInput.addEventListener('change', (inputEvent) => {
+  const file = inputEvent.target.files[0];
+  const reader = new FileReader();
 
-  // Setup our serialized data
-  let serialized = '';
+  // create hidden text image data to upload via form
+  reader.addEventListener('load', (readerEvent) => {
+    let html = `<input type="hidden" name="data" value="${readerEvent.target.result.replace(/^.*,/, '')}" >`;
+    html += `<input type="hidden" name="mimetype" value="${readerEvent.target.result.match(/^.*(?=;)/)[0]}" >`;
+    hiddenImageData.innerHTML = html;
+  });
 
-  // Loop through each field in the form
-  for (let i = 0; i < form.elements.length; i += 1) {
-    const field = form.elements[i];
-
-    // Don't serialize fields without a
-    // name, submits, buttons, file and reset inputs, and disabled fields
-    if (!field.name || field.disabled || field.type === 'file' || field.type === 'reset' || field.type === 'submit' || field.type === 'button') {
-      return undefined;
-    }
-
-    // Convert field data to a query string
-    if ((field.type !== 'checkbox' && field.type !== 'radio') || field.checked) {
-      serialized += `&${encodeURIComponent(field.name)}=${encodeURIComponent(field.value)}`;
-    }
-
-    return serialized;
+  if (file) {
+    reader.readAsDataURL(file);
   }
-}
-
-function submitParticipateForm() {
-  const request = new XMLHttpRequest();
-  request.onreadystatechange = () => {
-    if (this.readyState === 4 && this.status === 200) {
-      console.log(this.responseText);
-    }
-  };
-  request.open('GET', url);
-  request.send(`&${encodeURIComponent('form_field_1=John Rambo')}`);
-}
-
-participateForm.addEventListener('submit', (event) => {
-  event.preventDefault();
-  submitParticipateForm();
 });
