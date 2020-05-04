@@ -42,11 +42,19 @@ $bp-smartphone: 370px;
 $font-size-smartphone-xs: 24px;
 $font-size-smartphone: 26px;
 $font-size-desktop: 44px;
+$line-height: 1.5;
 $black: #000;
 $blue: #0000ee;
 $green: #00ee00;
 $red: #ee0000;
 $grey: #f0f0f0;
+
+// form variables
+$form-font-size: 44px;
+$form-font-size-small: $form-font-size / 3;
+$x1: $form-font-size / 3;
+$x2: 2 * $x1;
+$x3: 3 * $x1;
 
 body {
   color: $black;
@@ -82,7 +90,7 @@ body {
   }
 }
 
-.title {
+.heading {
   font-size: 20px; // prevent linebreak on smaller devices
   font-family: 'GalapagosA-Regular', 'Inconsolata', monospace;
   font-weight: bold;
@@ -142,6 +150,11 @@ body {
   &:hover {
     cursor: pointer;
     border: 1px solid $blue;
+  }
+
+  &--saf {
+    margin-top: 80px;
+    display: block;
   }
 }
 
@@ -215,18 +228,26 @@ body {
   width: 100%;
 }
 
+.title {
+  line-height: 1;
+  font-family: 'GalapagosA-Regular', 'Inconsolata', monospace;
+
+  &--grid {
+    font-family: 'GalapagosA-RegularGrid', 'Inconsolata', monospace;
+  }
+}
+
 // submit art funnel
 .submit-art-container {
+  font-size: $form-font-size;
   margin-bottom: 120px;
 
-  &__title {
-    font-family: 'GalapagosA-RegularGrid', 'Inconsolata', monospace;
+  &__heading {
     margin-bottom: 80px;
   }
 }
 
 .categories {
-  font-family: 'GalapagosA-RegularGrid', 'Inconsolata', monospace;
   display: flex;
   margin-bottom: 80px;
 }
@@ -234,4 +255,62 @@ body {
 // submit art form
 .saf {
   display: none;
+}
+
+.iu {
+  font-size: $form-font-size-small;
+  line-height: 1;
+  margin-bottom: 80px;
+  width: 40%;
+
+  &__input-container {
+    border: 1px solid $black;
+    padding: $x1;
+  }
+
+  &__file-input-button {
+    border: 1px solid $black;
+
+    &:hover {
+      cursor: pointer;
+      color: $blue;
+      border: 1px solid $blue;
+    }
+  }
+
+  &__file {
+    position: relative;
+    margin: $x1;
+
+    // &:before {
+    //   border: 1px solid $black;
+    //   content: ' ';
+    //   display: inline-block;
+    //   width: $x1;
+    //   height: $x1;
+    // }
+  }
+
+  &__file-remove {
+    line-height: 1;
+    position: absolute;
+    right: 0;
+    top: - $x1;
+    font-family: 'GalapagosA-Regular', 'Inconsolata', monospace;
+    font-size: $form-font-size;
+
+    &:hover {
+      cursor: pointer;
+      color: $blue;
+    }
+  }
+}
+
+.hidden-file-input {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
 }

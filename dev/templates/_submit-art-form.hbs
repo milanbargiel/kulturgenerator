@@ -1,8 +1,9 @@
 <div class="submit-art-container">
-    <div class="submit-art-container__title">kölner<br> kultur einreichen</div>
-    <div class="categories">
+    <div class="submit-art-container__heading title title--grid">kölner<br><span class="title">kultur</span> einreichen</div>
+    
+    <div class="categories title title--grid">
         kultur&nbsp;
-        <div class="category-selection">
+        <div>
             <div>
                 <input type="radio" name="category" value="gut" id="radio-gut" class="js-category-selection">
                 <label for="radio-gut">gut</label>
@@ -20,11 +21,21 @@
 
     <form class="saf js-form js-form-gut js-form-erlebnis" action="https://script.google.com/macros/s/AKfycby4Ti9QvWXWkpzRx4ia9Ea91sP1bdCSU_4N9U1sxMoICNqPWbs/exec" method="post">
         {{!-- input names must be the same as header row in google sheet --}}
-        <input type="text" name="title" placeholder="Titel der Arbeit">
-        <input type="text" name="description" placeholder="Kurze Beschreibung des Werks">
-        <div class="js-hidden-image-data"></div>
-        <input type="file" class="js-file-input">
-        <input type="submit">
+        <div class="title title--grid">bilder hochladen</div>
+        <div class="iu">
+            <div class="iu__input-container">
+                <input type="file" class="hidden-file-input js-file-input" id="file-input">
+                <label for="file-input" class="iu__file-input-button">Wählen Sie eine Datei</label>
+                <div class="js-hidden-image-data"></div>
+            </div>
+            <div class="js-file-container">
+                {{!-- JavaScript pastes files here --}}
+                {{!-- <div class="iu__file">www.archplus.net.jpeg<span class="iu__file-remove js-file-remove">x</span></div> --}}
+            </div>
+        </div>
+        <input type="text" name="title" placeholder="Titel der Arbeit" required>
+        {{!-- <input type="text" name="description" placeholder="Kurze Beschreibung des Werks"> --}}
+        <input type="submit" class="button button--saf" value="Einreichen &#x23ce;">
     </form>
 
     <form class="saf js-form js-form-motiv">
