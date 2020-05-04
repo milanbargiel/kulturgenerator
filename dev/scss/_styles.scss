@@ -16,6 +16,11 @@
   src: url('../assets/GalapagosA-Regular.woff2') format('woff2'), url('../assets/GalapagosA-Regular.woff') format('woff');
 }
 
+@font-face {
+  font-family: 'GalapagosA-RegularGrid';
+  src: url('../assets/GalapagosA-RegularGrid.woff2') format('woff2'), url('../assets/GalapagosA-RegularGrid.woff') format('woff');
+}
+
 html {
   box-sizing: border-box;
   -ms-overflow-style: scrollbar;
@@ -213,4 +218,14 @@ body {
 // submit art funnel
 .submit-art-container {
   margin-bottom: 120px;
+
+  &__title {
+    font-family: 'GalapagosA-RegularGrid', 'Inconsolata', monospace;
+    margin-bottom: 80px;
+  }
+}
+
+.categories {
+  font-family: 'GalapagosA-RegularGrid', 'Inconsolata', monospace;
+  display: flex;
 }
