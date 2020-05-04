@@ -91,41 +91,41 @@ body {
   margin-bottom: 120px;
 }
 
-.newsletter-form {
-  position: relative;
+// newsletter form
+.nf {
   display: inline-block;
-}
 
-.mail-label {
-  color: $blue;
-  display: inline-block;
-  // transform: rotate(270deg);
-}
+  &__at-sign {
+    color: $blue;
+    display: inline-block;
+  }
 
-.email-formfield {
-  margin-bottom: 8px;
+  &__email-input {
+    margin-bottom: 8px;
 
 
-  @media screen and (min-width: $bp-tablet) {
-    margin-bottom: 20px;
+    @media screen and (min-width: $bp-tablet) {
+      margin-bottom: 20px;
+    }
   }
 }
 
-@media screen and (min-width: $bp-tablet) {
-  .form-responses {
+.nf-responses {
+  @media screen and (min-width: $bp-tablet) {
     margin-right: 250px;
   }
+
+  &__success {
+    color: $blue;
+    display: none; 
+  }
+
+  &__error {
+    color: $red;
+    display: none;
+  }
 }
 
-.success-text {
-  color: $blue;
-  display: none; 
-}
-
-.error-text {
-  color: $red;
-  display: none;
-}
 
 .button {
   margin-bottom: 20px;
@@ -210,16 +210,7 @@ body {
   width: 100%;
 }
 
-.flyer {
-  max-width: 260px;
-  margin-left: -7px;
-
-  @media screen and (min-width: $bp-tablet) {
-    max-width: 350px;
-    margin-left: -10px;
-  }
-
-  img {
-    width: 100%;
-  }
+// submit art funnel
+.submit-art-container {
+  margin-bottom: 120px;
 }

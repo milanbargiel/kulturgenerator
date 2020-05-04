@@ -1,8 +1,31 @@
-<form class="js-participate-form" action="https://script.google.com/macros/s/AKfycby4Ti9QvWXWkpzRx4ia9Ea91sP1bdCSU_4N9U1sxMoICNqPWbs/exec" method="post">
-    {{!-- input names must be the same as header row in google sheet --}}
-    <input type="text" name="title" placeholder="Titel der Arbeit">
-    <input type="text" name="description" placeholder="Kurze Beschreibung des Werks">
-    <div class="js-hidden-image-data"></div>
-    <input type="file" class="js-file-input">
-    <input type="submit">
-</form>
+<div class="submit-art-container">
+    <div class="title">kölner<br> kultur einreichen</div>
+    <form class="js-participate-form" action="https://script.google.com/macros/s/AKfycby4Ti9QvWXWkpzRx4ia9Ea91sP1bdCSU_4N9U1sxMoICNqPWbs/exec" method="post">
+        <div class="category-selection">
+            <div>
+                kultur
+            </div>
+            <div>
+                <div>
+                    <input type="radio" name="category" value="gut" id="gut-selection">
+                    <label for="gut-selection">gut</label>
+                </div>
+                <div>
+                    <input type="radio" name="category" value="erlebnis" id="erlebnis-selection">
+                    <label for="erlebnis-selection">erlebnis</label>
+                </div>
+                <div>
+                    <input type="radio" name="category" value="motiv" id="motiv-selection">
+                    <label for="motiv-selection">motiv</label>
+                </div>
+            </div>
+        </div>
+        
+        {{!-- input names must be the same as header row in google sheet --}}
+        <input type="text" name="title" placeholder="Titel der Arbeit">
+        <input type="text" name="description" placeholder="Kurze Beschreibung des Werks">
+        <div class="js-hidden-image-data"></div>
+        <input type="file" class="js-file-input">
+        <input type="submit">
+    </form>
+</div>
