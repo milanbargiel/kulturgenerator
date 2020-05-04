@@ -228,4 +228,10 @@ body {
 .categories {
   font-family: 'GalapagosA-RegularGrid', 'Inconsolata', monospace;
   display: flex;
+  margin-bottom: 80px;
+}
+
+// submit art form
+.saf {
+  display: none;
 }
