@@ -33,9 +33,52 @@
                 {{!-- <div class="iu__file">www.archplus.net.jpeg<span class="iu__file-remove js-file-remove">x</span></div> --}}
             </div>
         </div>
-        <input type="text" name="title" placeholder="Titel der Arbeit" required>
-        {{!-- <input type="text" name="description" placeholder="Kurze Beschreibung des Werks"> --}}
-        <input type="submit" class="button button--saf" value="Einreichen &#x23ce;">
+        <input type="text" class="saf__input" name="title" placeholder="Titel" required>
+        <textarea class="saf__input saf__input--description" name="description" placeholder="Kurzbeschreibung" required></textarea>
+        <input type="text" class="saf__input saf__input--price" name="description" placeholder="Preis" required>
+        <div class="contribution">
+            <div>
+                <input type="checkbox" name="">
+                <label>Ich spende 100% der Einnahmen an den Kulturgenerator und unterstütze damit andere Kulturschaffende</label>
+            </div>
+            <div>
+                <input type="checkbox" name="">
+                <label>Ich möchte 50 % der Einnahmen aus dem Verkauf des Angebots erhalten</label>
+            </div>
+            <div>
+                <input type="checkbox" name="">
+                <label>Ich möchte bei der Gesamtausschüttung des Kulturgenerators berücksichtigt werden</label>
+            </div>
+        </div>
+        <div class="title title--grid">zur person</div>
+        <input type="text" name="" class="saf__input saf__input--full" placeholder="name; vorname">
+        <input type="text" name="" class="saf__input saf__input--full" placeholder="berufsbezeichnung">
+        <input type="text" name="" class="saf__input saf__input--full" placeholder="anschrift">
+        <input type="text" name="" class="saf__input saf__input--full" placeholder="e-mail adresse">
+        <input type="text" name="" class="saf__input saf__input--full" placeholder="institution">
+        <div class="person">
+            <div>
+                <input type="checkbox" name="">
+                <label>Ich bin eingetragenes Mitglied bei der GEMA</label>
+            </div>
+            <div>
+                <input type="checkbox" name="">
+                <label>Ich bin eingetragenes Mitglied bei der KSK</label>
+            </div>
+            <div>
+                <input type="checkbox" name="">
+                <label>Ich bin eingetragenes Mitglied in einem Berufsverband</label>
+            </div>
+            <div>
+                <input type="checkbox" name="">
+                <label>Ich habe keine dieser Mitgliedschaften</label>
+            </div>
+            <div>
+                <input type="checkbox" name="">
+                <label>Hiermit versichere ich, dass ich das Kunstwerk innerhalb von x Tagem nach Verkauf an die Käufer*in verschicke. **</label>
+            </div>
+        </div>
+        <input type="submit" class="button button--saf" value="Senden &#x23ce;">
     </form>
 
     <form class="saf js-form js-form-motiv">

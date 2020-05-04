@@ -51,7 +51,7 @@ $grey: #f0f0f0;
 
 // form variables
 $form-font-size: 44px;
-$form-font-size-small: $form-font-size / 3;
+$form-font-size-small: 18px;
 $x1: $form-font-size / 3;
 $x2: 2 * $x1;
 $x3: 3 * $x1;
@@ -155,6 +155,7 @@ body {
   &--saf {
     margin-top: 80px;
     display: block;
+    font-size: $form-font-size;
   }
 }
 
@@ -231,6 +232,7 @@ body {
 .title {
   line-height: 1;
   font-family: 'GalapagosA-Regular', 'Inconsolata', monospace;
+  font-size: $form-font-size;
 
   &--grid {
     font-family: 'GalapagosA-RegularGrid', 'Inconsolata', monospace;
@@ -254,11 +256,30 @@ body {
 
 // submit art form
 .saf {
+  font-size: $form-font-size-small;
   display: none;
+
+  &__input {
+    font-size: $form-font-size;
+    display: block;
+    margin-bottom: 80px;
+    width: 40%;
+
+    &--description {
+      width: 100%;
+    }
+
+    &--price {
+      width: 30%;
+    }
+
+    &--full {
+      width: 100%;
+    }
+  }
 }
 
 .iu {
-  font-size: $form-font-size-small;
   line-height: 1;
   margin-bottom: 80px;
   width: 40%;
@@ -304,6 +325,10 @@ body {
       color: $blue;
     }
   }
+}
+
+.contribution {
+  margin-bottom: 80px;
 }
 
 .hidden-file-input {
