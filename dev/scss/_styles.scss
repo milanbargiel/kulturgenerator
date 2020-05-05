@@ -38,9 +38,7 @@ a {
 
 $font-family: 'Inconsolata', monospace;
 $bp-tablet: 680px;
-$bp-smartphone: 370px;
-$font-size-smartphone: 26px;
-$font-size-desktop: 44px;
+$bp-smartphone: 370px; // only used for iphone 5 linebreak
 $line-height: 1.5;
 $black: #000;
 $blue: #0000ee;
@@ -50,23 +48,21 @@ $grey: #eeeeee;
 $white: #fff;
 
 // form variables
-$form-font-size: 50px;
-$form-font-size-small: 24px;
-$form-font-size-extra-small: 20px;
-$x1: $form-font-size / 3;
+$font-size-desktop: 44px;
+$font-size-desktop-small: 24px;
+$font-size-mobile: 24px;
+$font-size-mobile-small: 20px;
+$x1: $font-size-desktop / 3;
 $x2: 2 * $x1;
 $x3: 3 * $x1;
 
+
 body {
   color: $black;
-  font-size: $form-font-size-small;
+  font-size: $font-size-mobile;
   font-family: $font-family;
   font-weight: 500;
   line-height: 1.5;
-
-  @media screen and (min-width: $bp-tablet) {
-    font-size: $font-size-smartphone;
-  }
 
   @media screen and (min-width: $bp-tablet) {
     font-size: $font-size-desktop;
@@ -87,12 +83,12 @@ body {
 .nf-container {
   padding-top: 10px;
   padding-bottom: 10px;
-  font-size: $form-font-size-extra-small;
+  font-size: $font-size-mobile-small;
   border: 1px solid $black;
   display: flex;
 
   @media screen and (min-width: $bp-tablet) {
-    font-size: $form-font-size-small;
+    font-size: $font-size-desktop-small;
   }
 }
 
@@ -139,16 +135,11 @@ body {
   }
 }
 
-@media screen and (min-width: $bp-tablet) {
-  .longer-text-container {
-    font-size: 28px;
-  }
-}
-
+// home page
 .heading {
-  font-size: 20px; // prevent linebreak on smaller devices
+  font-size: 20px; // prevent linebreak on smaller devices (iphone 5)
   font-family: 'GalapagosA-Regular', 'Inconsolata', monospace;
-  font-weight: bold;
+  font-weight: bold; // only used when Galapagos is not loaded
 
   @media screen and (min-width: $bp-smartphone) {
     font-size: inherit;
@@ -160,7 +151,8 @@ body {
 }
 
 .blue-arrows {
-  width: 100%;
+  width: 22%;
+  margin-bottom: 80px;
 }
 
 .button {
@@ -171,12 +163,6 @@ body {
   &:hover {
     cursor: pointer;
     border: 2px solid $blue;
-  }
-
-  &--saf {
-    margin-top: 80px;
-    display: block;
-    font-size: $form-font-size;
   }
 }
 
@@ -265,7 +251,6 @@ body {
 .title {
   line-height: 1;
   font-family: 'GalapagosA-Regular', 'Inconsolata', monospace;
-  font-size: $form-font-size;
 
   &--grid {
     font-family: 'GalapagosA-RegularGrid', 'Inconsolata', monospace;
@@ -274,7 +259,6 @@ body {
 
 // submit art funnel
 .submit-art-container {
-  font-size: $form-font-size;
   margin-bottom: 120px;
 
   &__heading {
@@ -289,11 +273,9 @@ body {
 
 // submit art form
 .saf {
-  font-size: $form-font-size-small;
   display: none;
 
   &__input {
-    font-size: $form-font-size-small;
     display: block;
     margin-bottom: 40px;
     width: 40%;
@@ -357,4 +339,11 @@ body {
   overflow: hidden;
   position: absolute;
   z-index: -1;
+}
+
+// for impressum only
+@media screen and (min-width: $bp-tablet) {
+  .longer-text-container {
+    font-size: 28px;
+  }
 }
