@@ -52,10 +52,10 @@ $white: #fff;
 $font-size-desktop: 44px;
 $font-size-desktop-galapagos: 60px;
 $font-size-desktop-small: 28px;
-$font-size-desktop-extra-small: 28px;
-$font-size-mobile: 24px;
-$font-size-mobile-galapagos: 30px;
-$font-size-mobile-small: 20px;
+$font-size-desktop-extra-small: 28px; // only used for newsletter banner
+$font-size-mobile: 26px;
+$font-size-mobile-galapagos: 34px;
+$font-size-mobile-small: 22px;
 $x1: $font-size-desktop / 3;
 $x2: 2 * $x1;
 $x3: 3 * $x1;
@@ -77,11 +77,11 @@ body {
 .button {
   border: 2px solid $grey;
   background-color: $white;
-  color: $blue;
+  color: $black;
 
   &:hover {
     cursor: pointer;
-    border: 2px solid $blue;
+    border: 2px solid $black;
   }
 }
 
