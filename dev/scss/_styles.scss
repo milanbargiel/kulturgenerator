@@ -47,11 +47,12 @@ $black: #000;
 $blue: #0000ee;
 $green: #00ee00;
 $red: #ee0000;
-$grey: #f0f0f0;
+$grey: #eeeeee;
+$white: #fff;
 
 // form variables
-$form-font-size: 44px;
-$form-font-size-small: 18px;
+$form-font-size: 50px;
+$form-font-size-small: 22px;
 $x1: $form-font-size / 3;
 $x2: 2 * $x1;
 $x3: 3 * $x1;
@@ -74,13 +75,13 @@ body {
 
 .content {
   overflow-wrap: break-word;
-  padding: 10px;
+  padding: 0 10px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 
   @media screen and (min-width: $bp-tablet) {
-    padding: 36px;
+    padding: 18px 36px;
   }
 }
 
@@ -101,25 +102,24 @@ body {
 }
 
 .intro {
-  margin-bottom: 120px;
+  margin-bottom: 10px;
 }
 
 // newsletter form
+.nf-container {
+  position: relative;
+  padding: 12px 36px;
+  font-size: $form-font-size-small;
+  border: 1px solid $black;
+  display: flex;
+}
+
 .nf {
   display: inline-block;
 
   &__at-sign {
     color: $blue;
     display: inline-block;
-  }
-
-  &__email-input {
-    margin-bottom: 8px;
-
-
-    @media screen and (min-width: $bp-tablet) {
-      margin-bottom: 20px;
-    }
   }
 }
 
@@ -141,21 +141,31 @@ body {
 
 
 .button {
-  margin-bottom: 20px;
-  border: 1px solid $grey;
-  background-color: $grey;
-
+  border: 2px solid $grey;
+  background-color: $white;
   color: $blue;
 
   &:hover {
     cursor: pointer;
-    border: 1px solid $blue;
+    border: 2px solid $blue;
   }
 
   &--saf {
     margin-top: 80px;
     display: block;
     font-size: $form-font-size;
+  }
+}
+
+.remove-button {
+  line-height: 1;
+  font-family: 'GalapagosA-Regular', 'Inconsolata', monospace;
+  font-size: 36px;
+  margin-left: auto;
+
+  &:hover {
+    cursor: pointer;
+    color: $blue;
   }
 }
 
@@ -260,9 +270,9 @@ body {
   display: none;
 
   &__input {
-    font-size: $form-font-size;
+    font-size: $form-font-size-small;
     display: block;
-    margin-bottom: 80px;
+    margin-bottom: 40px;
     width: 40%;
 
     &--description {
@@ -310,20 +320,6 @@ body {
     //   width: $x1;
     //   height: $x1;
     // }
-  }
-
-  &__file-remove {
-    line-height: 1;
-    position: absolute;
-    right: 0;
-    top: - $x1;
-    font-family: 'GalapagosA-Regular', 'Inconsolata', monospace;
-    font-size: $form-font-size;
-
-    &:hover {
-      cursor: pointer;
-      color: $blue;
-    }
   }
 }
 
