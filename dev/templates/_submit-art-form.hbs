@@ -1,24 +1,25 @@
-<div class="submit-art-container">
-    <div class="submit-art-container__heading title title--grid">kölner<br><span class="title">kultur</span> einreichen</div>
+<div class="sa-container">
+    <div class="sa-container__heading title title--grid">kölner<br><span class="title">kultur</span> einreichen</div>
+
     <div class="categories title title--grid">
         kultur&nbsp;
         <div>
-            <div>
-                <input type="radio" name="category" value="gut" id="radio-gut" class="js-category-selection hidden-input">
-                <label for="radio-gut">objekt</label>
+            <div class="category">
+                <input type="radio" name="category" value="gut" id="radio-gut" class="js-category-selection hidden-input category__input">
+                <label for="radio-gut" class="category__label">&nbsp;&nbsp;objekt</label>
             </div>
-            <div>
-                <input type="radio" name="category" value="erlebnis" id="radio-erlebnis" class="js-category-selection hidden-input">
-                <label for="radio-erlebnis">erlebnis</label>
+            <div class="category">
+                <input type="radio" name="category" value="erlebnis" id="radio-erlebnis" class="js-category-selection hidden-input category__input">
+                <label for="radio-erlebnis" class="category__label">&nbsp;&nbsp;erlebnis</label>
             </div>
-            <div>
-                <input type="radio" name="category" value="motiv" id="radio-motiv" class="js-category-selection hidden-input">
-                <label for="radio-motiv">motiv</label>
+            <div class="category">
+                <input type="radio" name="category" value="motiv" id="radio-motiv" class="js-category-selection hidden-input category__input">
+                <label for="radio-motiv" class="category__label">&nbsp;&nbsp;motiv</label>
             </div>
         </div>
     </div>
 
-    <form class="saf js-form js-form-gut js-form-erlebnis" action="https://script.google.com/macros/s/AKfycby4Ti9QvWXWkpzRx4ia9Ea91sP1bdCSU_4N9U1sxMoICNqPWbs/exec" method="post">
+    <form class="sa-form js-form js-form-gut js-form-erlebnis" action="https://script.google.com/macros/s/AKfycby4Ti9QvWXWkpzRx4ia9Ea91sP1bdCSU_4N9U1sxMoICNqPWbs/exec" method="post">
         {{!-- input names must be the same as header row in google sheet --}}
         <div class="title title--grid">bilder hochladen</div>
         <div class="iu">
@@ -32,9 +33,9 @@
                 {{!-- <div class="iu__file">www.archplus.net.jpeg<span class="iu__file-remove js-file-remove">x</span></div> --}}
             </div>
         </div>
-        <input type="text" class="saf__input" name="title" placeholder="Titel" required>
-        <textarea class="saf__input saf__input--description" name="description" placeholder="Kurzbeschreibung" required></textarea>
-        <input type="text" class="saf__input saf__input--price" name="description" placeholder="Preis" required>
+        <input type="text" class="sa-form__input" name="title" placeholder="Titel" required>
+        <textarea class="sa-form__input sa-form__input--description" name="description" placeholder="Kurzbeschreibung" required></textarea>
+        <input type="text" class="sa-form__input sa-form__input--price" name="description" placeholder="Preis" required>
         <div class="contribution">
             <div>
                 <input type="checkbox" name="">
@@ -50,11 +51,11 @@
             </div>
         </div>
         <div class="title title--grid categories">zur person</div>
-        <input type="text" name="" class="saf__input saf__input--full" placeholder="name; vorname">
-        <input type="text" name="" class="saf__input saf__input--full" placeholder="berufsbezeichnung">
-        <input type="text" name="" class="saf__input saf__input--full" placeholder="anschrift">
-        <input type="text" name="" class="saf__input saf__input--full" placeholder="e-mail adresse">
-        <input type="text" name="" class="saf__input saf__input--full" placeholder="institution">
+        <input type="text" name="" class="sa-form__input sa-form__input--full" placeholder="name; vorname">
+        <input type="text" name="" class="sa-form__input sa-form__input--full" placeholder="berufsbezeichnung">
+        <input type="text" name="" class="sa-form__input sa-form__input--full" placeholder="anschrift">
+        <input type="text" name="" class="sa-form__input sa-form__input--full" placeholder="e-mail adresse">
+        <input type="text" name="" class="sa-form__input sa-form__input--full" placeholder="institution">
         <div class="person">
             <div>
                 <input type="checkbox" name="">
@@ -77,10 +78,10 @@
                 <label>Hiermit versichere ich, dass ich das Kunstwerk innerhalb von x Tagem nach Verkauf an die Käufer*in verschicke. **</label>
             </div>
         </div>
-        <input type="submit" class="button button--saf" value="Senden &#x23ce;">
+        <input type="submit" class="button button--sa-form" value="Senden &#x23ce;">
     </form>
 
-    <form class="saf js-form js-form-motiv">
+    <form class="sa-form js-form js-form-motiv">
         Hier kommt das Motiv Formular hin.
     </form>
 </div>

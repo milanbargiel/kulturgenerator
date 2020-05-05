@@ -42,7 +42,7 @@ $bp-smartphone: 370px; // only used for iphone 5 linebreak
 $line-height: 1.5;
 $black: #000;
 $blue: #0000ee;
-$green: #00ee00;
+$orange: #ffa500;
 $red: #ee0000;
 $grey: #eeeeee;
 $white: #fff;
@@ -187,7 +187,7 @@ body {
 }
 
 // submit art funnel
-.submit-art-container {
+.sa-container {
   margin-bottom: 5 * $font-size-mobile-galapagos;
 
   @media screen and (min-width: $bp-tablet) {
@@ -221,8 +221,70 @@ body {
   display: flex;
 }
 
+.category__label {
+  position: relative;
+
+  // empty circle as radiobutton
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: $font-size-mobile-galapagos;
+    height: $font-size-mobile-galapagos;
+    border: 1px solid $black;
+    border-radius: 100%;
+    background: #fff;
+
+    @media screen and (min-width: $bp-tablet) {
+      width: $font-size-desktop-galapagos;
+      height: $font-size-desktop-galapagos;
+    }
+  }
+
+  // filled circle as radiobutton
+  &:after {
+    content: '';
+    width: $font-size-mobile-galapagos - 2px;
+    height: $font-size-mobile-galapagos - 2px;
+    background: $orange;
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    border-radius: 100%;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+
+    @media screen and (min-width: $bp-tablet) {
+      width: $font-size-desktop-galapagos - 2px;
+      height: $font-size-desktop-galapagos - 2px;
+    }
+  }
+
+  // hover styles
+  &:hover {
+    cursor: pointer;
+    // color: $blue;
+
+    &:before {
+      border: 3px solid $black;
+    }
+  }
+}
+
+// transform on selection
+.category__input:not(:checked) + .category__label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.category__input:checked + .category__label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+
 // submit art form
-.saf {
+.sa-form {
   display: none;
 
   &__input {
