@@ -1,7 +1,14 @@
+const newsletterContainer = document.querySelector('.js-newsletter-container');
 const newsletterForm = document.querySelector('.js-newsletter-form');
 const emailInput = newsletterForm.querySelector('.js-newsletter-e-mail');
 const successText = document.querySelector('.js-newsletter-success-text');
 const errorText = document.querySelector('.js-newsletter-error-text');
+const closeNewsletterButton = document.querySelector('.js-close-newsletter-button');
+
+// hide newsletter banner on click on button
+closeNewsletterButton.addEventListener('click', () => {
+  newsletterContainer.style.display = 'none';
+});
 
 function serialize(inputField) {
   const serialized = `&${encodeURIComponent(inputField.name)}=${encodeURIComponent(inputField.value)}`;
@@ -38,8 +45,6 @@ newsletterForm.addEventListener('submit', (event) => {
 
 /* eslint-disable no-unused-vars */
 function displayMailChimpStatus(data) {
-  // for debugging only
-  // console.log(data);
   if (data.result === 'error') {
     errorText.style.display = 'block';
     return;
