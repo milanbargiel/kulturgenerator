@@ -1,25 +1,36 @@
 <div class="sa-container">
     <div class="sa-container__heading title title--grid">kölner<br><span class="title">kultur</span> einreichen</div>
 
-    <div class="categories title title--grid">
-        kultur&nbsp;
+    <div class="categories">
+        <div class="title title--grid">kultur&nbsp;</div>
         <div>
-            <div class="category">
-                <input type="radio" name="category" value="gut" id="radio-gut" class="js-category-selection hidden-input category__input">
-                <label for="radio-gut" class="category__label">&nbsp;&nbsp;objekt</label>
+            <div class="category title title--grid js-category">
+                <input type="radio" name="category" value="objekt" id="radio-objekt" class="hidden-input category__input">
+                <label for="radio-objekt" class="category__label">&nbsp;&nbsp;objekt</label>
             </div>
-            <div class="category">
-                <input type="radio" name="category" value="erlebnis" id="radio-erlebnis" class="js-category-selection hidden-input category__input">
+            <div class="category title title--grid js-category">
+                <input type="radio" name="category" value="erlebnis" id="radio-erlebnis" class="hidden-input category__input">
                 <label for="radio-erlebnis" class="category__label">&nbsp;&nbsp;erlebnis</label>
             </div>
-            <div class="category">
-                <input type="radio" name="category" value="motiv" id="radio-motiv" class="js-category-selection hidden-input category__input">
+            <div class="category title title--grid js-category">
+                <input type="radio" name="category" value="motiv" id="radio-motiv" class="hidden-input category__input">
                 <label for="radio-motiv" class="category__label">&nbsp;&nbsp;motiv</label>
             </div>
         </div>
     </div>
 
-    <form class="sa-form js-form js-form-gut js-form-erlebnis" action="https://script.google.com/macros/s/AKfycby4Ti9QvWXWkpzRx4ia9Ea91sP1bdCSU_4N9U1sxMoICNqPWbs/exec" method="post">
+    <div class="explain js-explain js-explain-objekt">
+        Materielle künstlerische Erzeugnisse, z.B. Bilder oder Skulpturen.
+    </div>
+    <div class="explain js-explain js-explain-erlebnis">
+        Kulturelle Ereignisse, z.B. Gutscheine für
+        Konzerte, Lesungen, Kino, Museen; Workshops und Kurse; besondere Erlebnisse, z.B. Atelierbesuche.
+    </div>
+    <div class="explain js-explain js-explain-motiv">
+        Ich möchte, dass meine Grafiken oder Bilder auf Textilien gedruckt werden.
+    </div>
+
+    <form class="sa-form" action="https://script.google.com/macros/s/AKfycby4Ti9QvWXWkpzRx4ia9Ea91sP1bdCSU_4N9U1sxMoICNqPWbs/exec" method="post">
         {{!-- input names must be the same as header row in google sheet --}}
         <div class="title title--grid">bilder hochladen</div>
         <div class="iu">
@@ -79,6 +90,10 @@
             </div>
         </div>
         <input type="submit" class="button button--sa-form" value="Senden &#x23ce;">
+    </form>
+
+    <form class="sa-form js-form js-form-objekt js-form-erlebnis">
+        Hier kommt das Objekt Formular hin.
     </form>
 
     <form class="sa-form js-form js-form-motiv">

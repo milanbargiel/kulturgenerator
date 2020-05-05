@@ -188,7 +188,7 @@ body {
   }
 }
 
-// submit art funnel
+// submit art container
 .sa-container {
   margin-bottom: 5 * $font-size-mobile-galapagos;
 
@@ -220,7 +220,9 @@ body {
 }
 
 .categories {
-  display: flex;
+  @media screen and (min-width: $bp-tablet) {
+    display: flex;
+  }
 }
 
 .category__label {
@@ -249,8 +251,8 @@ body {
     content: '';
     width: $font-size-mobile-galapagos - 2px;
     height: $font-size-mobile-galapagos - 2px;
-    // background: $orange;
-    background: $black;
+    background: $orange;
+    // background: $black;
     position: absolute;
     top: 1px;
     left: 1px;
@@ -286,9 +288,27 @@ body {
   transform: scale(1);
 }
 
+.explain {
+  color: $blue;
+  display: none;
+  font-size: $font-size-mobile-small;
+  margin-top: $font-size-mobile-galapagos;
+  max-width: 600px;
+
+  @media screen and (min-width: $bp-tablet) {
+    font-size: $font-size-desktop-small;
+    margin-top: $font-size-desktop-galapagos;
+  }
+}
+
 // submit art form
 .sa-form {
+  margin-top: 4 * $font-size-mobile-galapagos;
   display: none;
+
+  @media screen and (min-width: $bp-tablet) {
+    margin-top: 4 * $font-size-desktop-galapagos;
+  }
 
   &__input {
     display: block;
