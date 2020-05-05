@@ -49,8 +49,10 @@ $white: #fff;
 
 // form variables
 $font-size-desktop: 44px;
+$font-size-desktop-galapagos: 60px;
 $font-size-desktop-small: 24px;
 $font-size-mobile: 24px;
+$font-size-mobile-galapagos: 30px;
 $font-size-mobile-small: 20px;
 $x1: $font-size-desktop / 3;
 $x2: 2 * $x1;
@@ -69,6 +71,31 @@ body {
   }
 }
 
+// buttons
+.button {
+  border: 2px solid $grey;
+  background-color: $white;
+  color: $blue;
+
+  &:hover {
+    cursor: pointer;
+    border: 2px solid $blue;
+  }
+}
+
+.remove-button {
+  line-height: 1;
+  font-family: 'GalapagosA-Regular', 'Inconsolata', monospace;
+  font-size: 36px;
+  margin-left: auto;
+
+  &:hover {
+    cursor: pointer;
+    color: $blue;
+  }
+}
+
+// content
 .content,
 .nf-container {
   padding-left: 10px;
@@ -152,29 +179,122 @@ body {
 
 .blue-arrows {
   width: 22%;
-  margin-bottom: 80px;
-}
+  margin-bottom: 3 * $font-size-mobile-galapagos;
 
-.button {
-  border: 2px solid $grey;
-  background-color: $white;
-  color: $blue;
-
-  &:hover {
-    cursor: pointer;
-    border: 2px solid $blue;
+  @media screen and (min-width: $bp-tablet) {
+    margin-bottom: 3 * $font-size-desktop-galapagos;
   }
 }
 
-.remove-button {
+// submit art funnel
+.submit-art-container {
+  margin-bottom: 3 * $font-size-mobile-galapagos;
+
+  @media screen and (min-width: $bp-tablet) {
+    margin-bottom: 3 * $font-size-desktop-galapagos;
+  }
+
+  &__heading {
+    margin-bottom: $font-size-mobile-galapagos;
+
+    @media screen and (min-width: $bp-tablet) {
+      margin-bottom: $font-size-desktop-galapagos;
+    }
+  }
+}
+
+.title {
   line-height: 1;
   font-family: 'GalapagosA-Regular', 'Inconsolata', monospace;
-  font-size: 36px;
-  margin-left: auto;
+  font-size: $font-size-mobile-galapagos;
 
-  &:hover {
-    cursor: pointer;
-    color: $blue;
+  &--grid {
+    font-family: 'GalapagosA-RegularGrid', 'Inconsolata', monospace;
+  }
+
+  @media screen and (min-width: $bp-tablet) {
+    font-size: $font-size-desktop-galapagos;
+  }
+}
+
+.categories {
+  display: flex;
+}
+
+// submit art form
+.saf {
+  display: none;
+
+  &__input {
+    display: block;
+    margin-bottom: 40px;
+    width: 40%;
+
+    &--description {
+      width: 100%;
+    }
+
+    &--price {
+      width: 30%;
+    }
+
+    &--full {
+      width: 100%;
+    }
+  }
+}
+
+.iu {
+  line-height: 1;
+  margin-bottom: 80px;
+  width: 40%;
+
+  &__input-container {
+    border: 1px solid $black;
+    padding: $x1;
+  }
+
+  &__file-input-button {
+    border: 1px solid $black;
+
+    &:hover {
+      cursor: pointer;
+      color: $blue;
+      border: 1px solid $blue;
+    }
+  }
+
+  &__file {
+    position: relative;
+    margin: $x1;
+
+    // &:before {
+    //   border: 1px solid $black;
+    //   content: ' ';
+    //   display: inline-block;
+    //   width: $x1;
+    //   height: $x1;
+    // }
+  }
+}
+
+.contribution {
+  margin-bottom: 80px;
+}
+
+.hidden-input {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+// for impressum only
+@media screen and (min-width: $bp-tablet) {
+  .longer-text-container {
+    font-size: 28px;
   }
 }
 
@@ -246,104 +366,4 @@ body {
 
 .founder-img {
   width: 100%;
-}
-
-.title {
-  line-height: 1;
-  font-family: 'GalapagosA-Regular', 'Inconsolata', monospace;
-
-  &--grid {
-    font-family: 'GalapagosA-RegularGrid', 'Inconsolata', monospace;
-  }
-}
-
-// submit art funnel
-.submit-art-container {
-  margin-bottom: 120px;
-
-  &__heading {
-    margin-bottom: 80px;
-  }
-}
-
-.categories {
-  display: flex;
-  margin-bottom: 80px;
-}
-
-// submit art form
-.saf {
-  display: none;
-
-  &__input {
-    display: block;
-    margin-bottom: 40px;
-    width: 40%;
-
-    &--description {
-      width: 100%;
-    }
-
-    &--price {
-      width: 30%;
-    }
-
-    &--full {
-      width: 100%;
-    }
-  }
-}
-
-.iu {
-  line-height: 1;
-  margin-bottom: 80px;
-  width: 40%;
-
-  &__input-container {
-    border: 1px solid $black;
-    padding: $x1;
-  }
-
-  &__file-input-button {
-    border: 1px solid $black;
-
-    &:hover {
-      cursor: pointer;
-      color: $blue;
-      border: 1px solid $blue;
-    }
-  }
-
-  &__file {
-    position: relative;
-    margin: $x1;
-
-    // &:before {
-    //   border: 1px solid $black;
-    //   content: ' ';
-    //   display: inline-block;
-    //   width: $x1;
-    //   height: $x1;
-    // }
-  }
-}
-
-.contribution {
-  margin-bottom: 80px;
-}
-
-.hidden-file-input {
-  width: 0.1px;
-  height: 0.1px;
-  opacity: 0;
-  overflow: hidden;
-  position: absolute;
-  z-index: -1;
-}
-
-// for impressum only
-@media screen and (min-width: $bp-tablet) {
-  .longer-text-container {
-    font-size: 28px;
-  }
 }
