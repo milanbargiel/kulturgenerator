@@ -51,7 +51,8 @@ $white: #fff;
 // form variables
 $font-size-desktop: 44px;
 $font-size-desktop-galapagos: 60px;
-$font-size-desktop-small: 24px;
+$font-size-desktop-small: 28px;
+$font-size-desktop-extra-small: 28px;
 $font-size-mobile: 24px;
 $font-size-mobile-galapagos: 30px;
 $font-size-mobile-small: 20px;
@@ -117,7 +118,7 @@ body {
   display: flex;
 
   @media screen and (min-width: $bp-tablet) {
-    font-size: $font-size-desktop-small;
+    font-size: $font-size-desktop-extra-small;
   }
 }
 
@@ -293,7 +294,7 @@ body {
   display: none;
   font-size: $font-size-mobile-small;
   margin-top: $font-size-mobile-galapagos;
-  max-width: 600px;
+  max-width: 1000px;
 
   @media screen and (min-width: $bp-tablet) {
     font-size: $font-size-desktop-small;
@@ -303,12 +304,13 @@ body {
 
 // submit art form
 .sa-form {
-  margin-top: 4 * $font-size-mobile-galapagos;
   display: none;
+  // margin-top: 4 * $font-size-mobile-galapagos;
+  // display: none;
 
-  @media screen and (min-width: $bp-tablet) {
-    margin-top: 4 * $font-size-desktop-galapagos;
-  }
+  // @media screen and (min-width: $bp-tablet) {
+  //   margin-top: 4 * $font-size-desktop-galapagos;
+  // }
 
   &__input {
     display: block;
