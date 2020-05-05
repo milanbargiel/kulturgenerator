@@ -45,6 +45,7 @@ $blue: #0000ee;
 $orange: #ffa500;
 $red: #ee0000;
 $grey: #eeeeee;
+$dark-grey: #484349;
 $white: #fff;
 
 // form variables
@@ -84,6 +85,7 @@ body {
 }
 
 .remove-button {
+  color: $dark-grey;
   line-height: 1;
   font-family: 'GalapagosA-Regular', 'Inconsolata', monospace;
   font-size: 36px;
@@ -91,7 +93,7 @@ body {
 
   &:hover {
     cursor: pointer;
-    color: $blue;
+    color: $black;
   }
 }
 
