@@ -188,10 +188,10 @@ body {
 
 // submit art funnel
 .submit-art-container {
-  margin-bottom: 3 * $font-size-mobile-galapagos;
+  margin-bottom: 5 * $font-size-mobile-galapagos;
 
   @media screen and (min-width: $bp-tablet) {
-    margin-bottom: 3 * $font-size-desktop-galapagos;
+    margin-bottom: 5 * $font-size-desktop-galapagos;
   }
 
   &__heading {
