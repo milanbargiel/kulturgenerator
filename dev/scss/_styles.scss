@@ -181,10 +181,11 @@ body {
 }
 
 .blue-arrows {
-  width: 22%;
+  width: 36%;
   margin-bottom: 3 * $font-size-mobile-galapagos;
 
   @media screen and (min-width: $bp-tablet) {
+    width: 22%;
     margin-bottom: 3 * $font-size-desktop-galapagos;
   }
 }
