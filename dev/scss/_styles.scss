@@ -454,3 +454,11 @@ body {
 .founder-img {
   width: 100%;
 }
+
+.nbsp {
+  content: "|\00a0\00a0";
+}
+
+.invisible {
+  display: none;
+}
