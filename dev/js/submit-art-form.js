@@ -21,9 +21,9 @@ function showSelectedForm(forms, selector) {
 
 // show selected form onclick
 categoryRadioButtons.forEach((radioButton) => {
-  if (radioButton.checked) { // for dev purpose
-    showSelectedForm(submitArtForms, radioButton.value);
-  }
+  // if (radioButton.checked) { // for dev purpose
+  //   showSelectedForm(submitArtForms, radioButton.value);
+  // }
   radioButton.addEventListener('change', () => {
     showSelectedForm(submitArtForms, radioButton.value);
   });

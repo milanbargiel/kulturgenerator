@@ -212,10 +212,10 @@ body {
 
 // submit art container
 .sa-container {
-  margin-bottom: 5 * $font-size-mobile-galapagos;
+  margin-bottom: 3 * $font-size-mobile-galapagos;
 
   @media screen and (min-width: $bp-tablet) {
-    margin-bottom: 5 * $font-size-desktop-galapagos;
+    margin-bottom: 3 * $font-size-desktop-galapagos;
   }
 
   &__heading {
@@ -311,16 +311,21 @@ body {
 }
 
 // submit art form
+
 // show explain texts depending on form selection
-.sa-form--objekt .explain--objekt {
+.invisible {
+  display: none;
+}
+
+.sa-form--objekt .visible-objekt {
   display: block;
 }
 
-.sa-form--erlebnis .explain--erlebnis {
+.sa-form--erlebnis .visible-erlebnis {
   display: block;
 }
 
-.sa-form--motiv .explain--motiv {
+.sa-form--motiv .visible-motiv {
   display: block;
 }
 
@@ -342,7 +347,6 @@ body {
 }
 
 .explain {
-  display: none;
   color: $blue;
   font-size: $font-size-mobile-small;
   margin-bottom: $font-size-mobile-galapagos;
@@ -447,8 +451,13 @@ body {
   }
 }
 
-.footer {
-  text-align: center;
+.footer, 
+.founders {
+  font-size: $font-size-mobile-small;
+
+  @media screen and (min-width: $bp-tablet) {
+    font-size: $font-size-desktop-small;
+  }
 }
 
 .underlined-link {
