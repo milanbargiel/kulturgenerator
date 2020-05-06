@@ -22,16 +22,19 @@
 
     <form class="sa-form js-form js-form-objekt js-form-erlebnis js-form-motiv">
         {{!-- show explain text when parent class sa-form--selector is triggered by js --}}
-        <div class="explain explain--objekt">
-            Materielle künstlerische Erzeugnisse, z.B. Bilder oder Skulpturen.
+        <div class="form-fields-container-large">
+            <div class="explain explain--objekt">
+                Materielle künstlerische Erzeugnisse, z.B. Bilder oder Skulpturen.
+            </div>
+            <div class="explain explain--erlebnis">
+                Kulturelle Ereignisse, z.B. Gutscheine für
+                Konzerte, Lesungen, Kino, Museen; Workshops und Kurse; besondere Erlebnisse, z.B. Atelierbesuche.
+            </div>
+            <div class="explain explain--motiv">
+                Ich möchte, dass meine Grafiken oder Bilder auf Textilien gedruckt werden.
+            </div>
         </div>
-        <div class="explain explain--erlebnis">
-            Kulturelle Ereignisse, z.B. Gutscheine für
-            Konzerte, Lesungen, Kino, Museen; Workshops und Kurse; besondere Erlebnisse, z.B. Atelierbesuche.
-        </div>
-        <div class="explain explain--motiv">
-            Ich möchte, dass meine Grafiken oder Bilder auf Textilien gedruckt werden.
-        </div>
+        
         {{!-- form fields --}}
         <div class="form-fields-container">
             <div class="form-field">
@@ -41,12 +44,27 @@
             <div class="form-field">
                 <label class="form-field__label">Kurzbeschreibung</label>
                 <textarea class="form-field__input" name="description" rows="4" required></textarea>
-                <div class="form-field__help">Dieser Text erscheint auf der Homepage. Bei materiellen Werken fügen Sie bitte Angaben zu Material, Größe, Stil etc. hinzu.<span class="title title--grid">&nbsp;?</span></div>
+                <div class="form-field-help">Dieser Text erscheint auf der Homepage. Bei materiellen Werken fügen Sie bitte Angaben zu Material, Größe, Stil etc. hinzu.<span class="form-field-help__question-mark title title--grid">&nbsp;?</span></div>
             </div>
             <div class="form-field">
                 <label class="form-field__label">Preis</label>
                 <input class="form-field__input" type="text" name="title" required>
             </div>
+        </div>
+        <div class="form-fields-container-large">
+            <div class="form-check">
+                <input class="form-check__checkbox" type="checkbox" name="title" required>
+                <label>Ich spende 100 % der Einnahmen an den Kulturgenerator und unterstütze damit andere Kulturschaffende</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check__checkbox" type="checkbox" name="title" required>
+                <label>Ich möchte 50 % der Einnahmen aus dem Verkauf des Angebots erhalten</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check__checkbox" type="checkbox" name="title" required>
+                <label>Ich möchte bei der Gesamtausschüttung des Kulturgenerators berücksichtigt werden</label>
+            </div>
+            <div class="form-field-help form-field-help--checkbox">Mehrfachnennung möglich. Sie können sowohl 50 % der Einnahmen erhalten, als auch bei der Gesamtausschüttung beteiligt werden. <span class="form-field-help__question-mark title title--grid">&nbsp;?</span></div>
         </div>
     </form>
 </div>

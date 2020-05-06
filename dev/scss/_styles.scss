@@ -338,7 +338,6 @@ body {
   color: $blue;
   font-size: $font-size-mobile-small;
   margin-bottom: $font-size-mobile-galapagos;
-  max-width: 1000px;
 
   @media screen and (min-width: $bp-tablet) {
     font-size: $font-size-desktop-extra-small;
@@ -347,6 +346,10 @@ body {
 }
 .form-fields-container {
   max-width: 680px;
+}
+
+.form-fields-container-large {
+  max-width: 1000px;
 }
 
 .form-field {
@@ -383,18 +386,50 @@ body {
   }
 }
 
-.form-field__help {
+.form-field-help {
   margin-top: 1px;
   display: flex;
-  font-size: $font-size-desktop-extra-small;
+  font-size: $font-size-mobile-small;
   color: $dark-grey;
 
-  .title {
+  @media screen and (min-width: $bp-tablet) {
+    font-size: $font-size-desktop-extra-small;
+  }
+
+  // show question mark only on desktop computers
+  &__question-mark {
+    display: none;
     margin-left: 10px;
+
+    @media screen and (min-width: $bp-tablet) {
+      display: block;
+    }
+  }
+
+  &--checkbox {
+    margin-top: 1.5rem;
   }
 }
 
+.form-check {
+  display: flex;
+  font-size: $font-size-mobile-small;
+  line-height: 1.2;
+  margin-bottom: 1rem;
 
+  @media screen and (min-width: $bp-tablet) {
+    font-size: $font-size-desktop-extra-small;
+  }
+
+  &__checkbox {
+    margin-right: .5rem;
+    margin-top: 5px;
+
+    @media screen and (min-width: $bp-tablet) {
+      margin-right: 1rem;
+    }
+  }
+}
 
 .footer {
   text-align: center;
