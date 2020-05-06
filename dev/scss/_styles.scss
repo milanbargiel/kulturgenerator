@@ -371,6 +371,11 @@ body {
 
   &__button {
     margin-top: $font-size-mobile-galapagos;
+    color: $blue;
+
+    &:hover {
+      border: 2px solid $blue;
+    }
 
     @media screen and (min-width: $bp-tablet) {
       margin-top: $font-size-desktop-galapagos;
