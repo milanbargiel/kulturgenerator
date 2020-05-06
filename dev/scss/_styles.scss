@@ -331,6 +331,14 @@ body {
   @media screen and (min-width: $bp-tablet) {
     margin-top: $font-size-desktop-galapagos;
   }
+
+  &__button {
+    margin-top: $font-size-mobile-galapagos;
+
+    @media screen and (min-width: $bp-tablet) {
+      margin-top: $font-size-desktop-galapagos;
+    }
+  }
 }
 
 .explain {
@@ -428,6 +436,14 @@ body {
     @media screen and (min-width: $bp-tablet) {
       margin-right: 1rem;
     }
+  }
+
+  &--important {
+    color: $blue;
+  }
+
+  &--warning {
+    color: $red;
   }
 }
 
