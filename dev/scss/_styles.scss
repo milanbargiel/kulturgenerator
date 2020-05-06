@@ -236,7 +236,7 @@ body {
   }
 }
 
-.category__label {
+.category-label {
   position: relative;
 
   // empty circle as radiobutton
@@ -289,27 +289,14 @@ body {
 }
 
 // transform on selection
-.category__input:not(:checked) + .category__label:after {
+.category-input:not(:checked) + .category-label:after {
   opacity: 0;
   transform: scale(0);
 }
 
-.category__input:checked + .category__label:after {
+.category-input:checked + .category-label:after {
   opacity: 1;
   transform: scale(1);
-}
-
-.explain {
-  color: $blue;
-  display: none;
-  font-size: $font-size-mobile-small;
-  margin-top: $font-size-mobile-galapagos;
-  max-width: 1000px;
-
-  @media screen and (min-width: $bp-tablet) {
-    font-size: $font-size-desktop-small;
-    margin-top: $font-size-desktop-galapagos;
-  }
 }
 
 // submit art form
@@ -323,10 +310,29 @@ body {
   // }
 }
 
-// for impressum only
-@media screen and (min-width: $bp-tablet) {
-  .longer-text-container {
-    font-size: 28px;
+// show explain texts depending on form selection
+.sa-form--objekt .explain--objekt {
+  display: block;
+}
+
+.sa-form--erlebnis .explain--erlebnis {
+  display: block;
+}
+
+.sa-form--motiv .explain--motiv {
+  display: block;
+}
+
+.explain {
+  display: none;
+  color: $blue;
+  font-size: $font-size-mobile-small;
+  margin-top: $font-size-mobile-galapagos;
+  max-width: 1000px;
+
+  @media screen and (min-width: $bp-tablet) {
+    font-size: $font-size-desktop-small;
+    margin-top: $font-size-desktop-galapagos;
   }
 }
 
@@ -400,10 +406,9 @@ body {
   width: 100%;
 }
 
-.nbsp {
-  content: "|\00a0\00a0";
-}
-
-.invisible {
-  display: none;
+// for impressum only
+@media screen and (min-width: $bp-tablet) {
+  .longer-text-container {
+    font-size: 28px;
+  }
 }

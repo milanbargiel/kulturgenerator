@@ -1,31 +1,26 @@
 // categories
-const categories = document.querySelectorAll('.js-category');
+const categoryRadioButtons = document.querySelectorAll('.js-category-input');
 const submitArtForms = document.querySelectorAll('.js-form');
-const explainTexts = document.querySelectorAll('.js-explain');
-
 
 // show selected form onclick
-categories.forEach((category) => {
-  const input = category.querySelector('input[type="radio"]');
-  // const label = category.querySelector('label');
+categoryRadioButtons.forEach((radioButton) => {
+  const radio = radioButton;
 
-  input.addEventListener('change', () => {
-    // hide all forms except chosen form
+  radio.addEventListener('change', () => {
     submitArtForms.forEach((element) => {
       const form = element;
-      if (form.className.includes(input.value)) {
+
+      // clear visibility classes for explain texts
+      form.classList.remove('sa-form--objekt');
+      form.classList.remove('sa-form--erlebnis');
+      form.classList.remove('sa-form--motiv');
+
+      // show form when selected
+      if (form.className.includes(radio.value)) {
         form.style.display = 'block';
+        form.classList.add(`sa-form--${radio.value}`);
       } else {
         form.style.display = 'none';
-      }
-    });
-    // hide all explain texts except chosen explaintext
-    explainTexts.forEach((element) => {
-      const explainText = element;
-      if (explainText.className.includes(input.value)) {
-        explainText.style.display = 'block';
-      } else {
-        explainText.style.display = 'none';
       }
     });
   });

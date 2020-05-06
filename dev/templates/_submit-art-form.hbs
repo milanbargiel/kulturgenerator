@@ -1,25 +1,27 @@
 <div class="sa-container">
     <div class="sa-container__heading title title--grid">kölner<br><span class="title">kultur</span> einreichen</div>
 
+    {{!-- show form based on category selection --}}
     <div class="categories">
         <div class="title title--grid">kultur&#160;</div>
         <div>
-            <div class="category title title--grid js-category">
-                <input type="radio" name="category" value="objekt" id="radio-objekt" class="hidden-input category__input">
-                <label for="radio-objekt" class="category__label">ooobjekt</label>
+            <div class="title title--grid">
+                <input type="radio" name="category" value="objekt" id="radio-objekt" class="hidden-input category-input js-category-input">
+                <label for="radio-objekt" class="category-label">ooobjekt</label>
             </div>
-            <div class="category title title--grid js-category">
-                <input type="radio" name="category" value="erlebnis" id="radio-erlebnis" class="hidden-input category__input">
-                <label for="radio-erlebnis" class="category__label">ooerlebnis</label>
+            <div class="title title--grid">
+                <input type="radio" name="category" value="erlebnis" id="radio-erlebnis" class="hidden-input category-input js-category-input">
+                <label for="radio-erlebnis" class="category-label">ooerlebnis</label>
             </div>
-            <div class="category title title--grid js-category">
-                <input type="radio" name="category" value="motiv" id="radio-motiv" class="hidden-input category__input">
-                <label for="radio-motiv" class="category__label">oomotiv</label>
+            <div class="title title--grid">
+                <input type="radio" name="category" value="motiv" id="radio-motiv" class="hidden-input category-input js-category-input">
+                <label for="radio-motiv" class="category-label">oomotiv</label>
             </div>
         </div>
     </div>
 
-    <form class="sa-form sa-form--objekt js-form js-form-objekt js-form-erlebnis">
+    <form class="sa-form js-form js-form-objekt js-form-erlebnis">
+        {{!-- show explain text when parent class sa-form--selector is triggered by js --}}
         <div class="explain explain--objekt">
             Materielle künstlerische Erzeugnisse, z.B. Bilder oder Skulpturen.
         </div>
@@ -30,8 +32,8 @@
     </form>
 
     <form class="sa-form js-form js-form-motiv">
-     <div class="explain js-explain js-explain-motiv">
-        Ich möchte, dass meine Grafiken oder Bilder auf Textilien gedruckt werden.
-    </div>
-</form>
+        <div class="explain explain--motiv">
+            Ich möchte, dass meine Grafiken oder Bilder auf Textilien gedruckt werden.
+        </div>
+    </form>
 </div>
