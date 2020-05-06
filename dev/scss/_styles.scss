@@ -44,15 +44,16 @@ $black: #000;
 $blue: #0000ee;
 $orange: #ffa500;
 $red: #ee0000;
-$grey: #eeeeee;
-$dark-grey: #484349;
+$light-grey: #eeeeee;
+$grey: #ced4da;
+$dark-grey: #495057;
 $white: #fff;
 
 // form variables
 $font-size-desktop: 44px;
 $font-size-desktop-galapagos: 60px;
 $font-size-desktop-small: 28px;
-$font-size-desktop-extra-small: 24px; // only used for newsletter banner
+$font-size-desktop-extra-small: 24px; // used for newsletter banner and help explain texts
 $font-size-mobile: 26px;
 $font-size-mobile-galapagos: 34px;
 $font-size-mobile-small: 22px;
@@ -75,7 +76,7 @@ body {
 
 // buttons + common styles
 .button {
-  border: 2px solid $grey;
+  border: 2px solid $light-grey;
   background-color: $white;
   color: $black;
 
@@ -150,7 +151,17 @@ body {
   }
 
   &__email-input {
+    background-color: $white;
+    color: $dark-grey;
     margin-bottom: 6px;
+    border: 1px solid $grey;
+
+    &:focus {
+      background-color: $white;
+      border-color: $blue;
+      outline: 0;
+      box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+    }
   }
 
   &__button {
@@ -300,16 +311,6 @@ body {
 }
 
 // submit art form
-.sa-form {
-  display: none;
-  // margin-top: 4 * $font-size-mobile-galapagos;
-  // display: none;
-
-  // @media screen and (min-width: $bp-tablet) {
-  //   margin-top: 4 * $font-size-desktop-galapagos;
-  // }
-}
-
 // show explain texts depending on form selection
 .sa-form--objekt .explain--objekt {
   display: block;
@@ -323,18 +324,77 @@ body {
   display: block;
 }
 
+.sa-form {
+  display: none;
+  margin-top: $font-size-mobile-galapagos;
+
+  @media screen and (min-width: $bp-tablet) {
+    margin-top: $font-size-desktop-galapagos;
+  }
+}
+
 .explain {
   display: none;
   color: $blue;
   font-size: $font-size-mobile-small;
-  margin-top: $font-size-mobile-galapagos;
+  margin-bottom: $font-size-mobile-galapagos;
   max-width: 1000px;
+
+  @media screen and (min-width: $bp-tablet) {
+    font-size: $font-size-desktop-extra-small;
+    margin-bottom: $font-size-desktop-galapagos;
+  }
+}
+.form-fields-container {
+  max-width: 680px;
+}
+
+.form-field {
+  font-size: $font-size-mobile-small;
+  margin-top: $font-size-mobile-galapagos;
+  margin-bottom: $font-size-mobile-galapagos;
 
   @media screen and (min-width: $bp-tablet) {
     font-size: $font-size-desktop-small;
     margin-top: $font-size-desktop-galapagos;
+    margin-bottom: $font-size-desktop-galapagos;
   }
 }
+
+.form-field__label {
+  display: inline-block;
+  margin-bottom: .5rem;
+}
+
+.form-field__input {
+  display: block;
+  background-color: $white;
+  width: 100%;
+  padding: .375rem .75rem;
+  color: $dark-grey;
+  border: 1px solid $grey;
+  line-height: 1.5;
+
+  &:focus {
+    background-color: $white;
+    border-color: $blue;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+  }
+}
+
+.form-field__help {
+  margin-top: 1px;
+  display: flex;
+  font-size: $font-size-desktop-extra-small;
+  color: $dark-grey;
+
+  .title {
+    margin-left: 10px;
+  }
+}
+
+
 
 .footer {
   text-align: center;

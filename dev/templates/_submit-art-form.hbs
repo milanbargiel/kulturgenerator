@@ -32,9 +32,21 @@
         <div class="explain explain--motiv">
             Ich möchte, dass meine Grafiken oder Bilder auf Textilien gedruckt werden.
         </div>
-        
-        <div>
-            <input type="text" name="title">
+        {{!-- form fields --}}
+        <div class="form-fields-container">
+            <div class="form-field">
+                <label class="form-field__label">Titel</label>
+                <input class="form-field__input" type="text" name="title" required>
+            </div>
+            <div class="form-field">
+                <label class="form-field__label">Kurzbeschreibung</label>
+                <textarea class="form-field__input" name="description" rows="4" required></textarea>
+                <div class="form-field__help">Dieser Text erscheint auf der Homepage. Bei materiellen Werken fügen Sie bitte Angaben zu Material, Größe, Stil etc. hinzu.<span class="title title--grid">&nbsp;?</span></div>
+            </div>
+            <div class="form-field">
+                <label class="form-field__label">Preis</label>
+                <input class="form-field__input" type="text" name="title" required>
+            </div>
         </div>
     </form>
 </div>
