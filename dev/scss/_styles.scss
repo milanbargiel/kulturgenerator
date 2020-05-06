@@ -57,7 +57,7 @@ $font-size-desktop-extra-small: 24px; // used for newsletter banner and help exp
 $font-size-mobile: 26px;
 $font-size-mobile-galapagos: 34px;
 $font-size-mobile-small: 22px;
-$x1: $font-size-desktop / 3;
+$x1: $font-size-desktop-galapagos / 3;
 $x2: 2 * $x1;
 $x3: 3 * $x1;
 
@@ -247,6 +247,38 @@ body {
   }
 }
 
+.iu {
+  line-height: 1;
+
+  &__input-container {
+    border: 1px solid $grey;
+    padding: $x1;
+  }
+
+  &__file-input-button {
+    font-size: $font-size-mobile-small;
+    border: 1px solid $grey;
+
+    &:hover {
+      cursor: pointer;
+      border: 1px solid $black;
+    }
+
+    @media screen and (min-width: $bp-tablet) {
+      font-size: $font-size-desktop-extra-small;
+    }
+  }
+
+  &__file {
+    font-size: $font-size-mobile-small;
+    position: relative;
+    margin: $x1;
+    @media screen and (min-width: $bp-tablet) {
+      font-size: $font-size-desktop-extra-small;
+    }
+  }
+}
+
 .category-label {
   position: relative;
 
@@ -366,12 +398,12 @@ body {
 
 .form-field {
   font-size: $font-size-mobile-small;
-  margin-top: $font-size-mobile-galapagos;
+  // margin-top: $font-size-mobile-galapagos;
   margin-bottom: $font-size-mobile-galapagos;
 
   @media screen and (min-width: $bp-tablet) {
     font-size: $font-size-desktop-small;
-    margin-top: $font-size-desktop-galapagos;
+    // margin-top: $font-size-desktop-galapagos;
     margin-bottom: $font-size-desktop-galapagos;
   }
 }
