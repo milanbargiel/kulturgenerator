@@ -443,6 +443,7 @@ body {
   // show question mark only on desktop computers
   &__question-mark {
     display: none;
+    color: $blue;
     margin-left: 10px;
 
     @media screen and (min-width: $bp-tablet) {
