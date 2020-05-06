@@ -6,7 +6,7 @@
         <div class="title title--grid">kultur&#160;</div>
         <div>
             <div class="title title--grid">
-                <input type="radio" name="category" value="objekt" id="radio-objekt" class="hidden-input category-input js-category-input">
+                <input type="radio" name="category" value="objekt" id="radio-objekt" class="hidden-input category-input js-category-input" checked>
                 <label for="radio-objekt" class="category-label">ooobjekt</label>
             </div>
             <div class="title title--grid">
@@ -20,7 +20,7 @@
         </div>
     </div>
 
-    <form class="sa-form js-form js-form-objekt js-form-erlebnis">
+    <form class="sa-form js-form js-form-objekt js-form-erlebnis js-form-motiv">
         {{!-- show explain text when parent class sa-form--selector is triggered by js --}}
         <div class="explain explain--objekt">
             Materielle künstlerische Erzeugnisse, z.B. Bilder oder Skulpturen.
@@ -29,11 +29,12 @@
             Kulturelle Ereignisse, z.B. Gutscheine für
             Konzerte, Lesungen, Kino, Museen; Workshops und Kurse; besondere Erlebnisse, z.B. Atelierbesuche.
         </div>
-    </form>
-
-    <form class="sa-form js-form js-form-motiv">
         <div class="explain explain--motiv">
             Ich möchte, dass meine Grafiken oder Bilder auf Textilien gedruckt werden.
+        </div>
+        
+        <div>
+            <input type="text" name="title">
         </div>
     </form>
 </div>
