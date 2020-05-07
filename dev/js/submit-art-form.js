@@ -12,6 +12,8 @@ function makeVisibleInputsRequired() {
   allRequiredInputs.forEach((input) => {
     if (isVisible(input)) {
       input.setAttribute('required', '');
+    } else {
+      input.removeAttribute('required');
     }
   });
 }
@@ -49,4 +51,24 @@ categoryRadioButtons.forEach((radioButton) => {
   radioButton.addEventListener('change', () => {
     showSelectedForm(radioButton.value);
   });
+});
+
+const hundertPercent = document.querySelector('.js-100-percent-input');
+const hundertPercentThankYou = document.querySelector('.js-thank-you-100-percent');
+const hundertPercentToggles = document.querySelectorAll('.js-100-percent-toggle-visibility');
+
+hundertPercent.addEventListener('change', (event) => {
+  if (event.target.checked) {
+    hundertPercentThankYou.style.display = 'block';
+    hundertPercentToggles.forEach((el) => {
+      el.setAttribute('style', 'display: none;');
+    });
+    makeVisibleInputsRequired();
+  } else {
+    hundertPercentThankYou.style.display = 'none';
+    hundertPercentToggles.forEach((el) => {
+      el.setAttribute('style', 'display: block;');
+    });
+    makeVisibleInputsRequired();
+  }
 });

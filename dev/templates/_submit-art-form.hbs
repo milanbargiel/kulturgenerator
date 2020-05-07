@@ -76,19 +76,21 @@
         <div class="form-group form-group--wide">
 
             {{!-- 100-percent --}}
+            <div class="hundert-percent-thank-you js-thank-you-100-percent"> (•‿•)
+             Vielen Dank!</div>
             <div class="form-check invisible visible-objekt visible-erlebnis">
-                <input class="form-check__checkbox" type="checkbox" name="100-percent" value="true" id="100-percent-input">
+                <input class="form-check__checkbox js-100-percent-input" type="checkbox" name="100-percent" value="true" id="100-percent-input">
                 <label for="100-percent-input">Ich spende 100 % der Einnahmen an den Kulturgenerator und unterstütze damit andere Kulturschaffende</label>
             </div>
 
             {{!-- 50-percent --}}
-            <div class="form-check invisible visible-objekt visible-erlebnis">
+            <div class="form-check invisible visible-objekt visible-erlebnis js-100-percent-toggle-visibility">
                 <input class="form-check__checkbox" type="checkbox" name="50-percent" value="true" id="50-percent-input">
                 <label for="50-percent-input">Ich möchte 50 % der Einnahmen aus dem Verkauf des Angebots erhalten</label>
             </div>
 
             {{!-- payout --}}
-            <div class="form-check">
+            <div class="form-check js-100-percent-toggle-visibility">
                 <input class="form-check__checkbox" type="checkbox" name="payout" value="true" id="payout-input">
                 <label for="payout-input">Ich möchte bei der Gesamtausschüttung des Kulturgenerators berücksichtigt werden</label>
             </div>
@@ -143,19 +145,19 @@
             </div>
 
             {{!-- member --}}
-            <div class="form-check invisible visible-objekt visible-erlebnis">
+            <div class="form-check invisible visible-objekt visible-erlebnis js-100-percent-toggle-visibility">
                 <input class="form-check__checkbox" type="checkbox" name="member" value="true" id="member-input">
                 <label for="member-input">Ich bin eingetragenes Mitglied bei GEMA, KSK oder einem Berufsverband</label>
             </div>
 
             {{!-- nomember --}}
-            <div class="form-check invisible visible-objekt visible-erlebnis">
+            <div class="form-check invisible visible-objekt visible-erlebnis js-100-percent-toggle-visibility">
                 <input class="form-check__checkbox" type="checkbox" name="nomember" value="true" id="nomember-input">
                 <label for="nomember-input">Ich habe keine dieser Mitgliedschaften</label>
             </div>
 
             {{!-- entitlement --}}
-            <div class="form-group form-group--small invisible visible-objekt visible-erlebnis">
+            <div class="form-group form-group--small invisible visible-objekt visible-erlebnis js-100-percent-toggle-visibility">
                 <textarea class="form-group__input" name="entitlement" rows="4"></textarea>
                 <div class="form-help">Bitte erläutern Sie Ihren Anspruch.In diesem Fall behalten wir uns vor, Sie zu kontaktieren.<span class="form-help__question-mark title title--grid">&nbsp;?</span>
                 </div>
@@ -169,7 +171,7 @@
             </div>
 
             {{!-- fulltimeartist --}}
-            <div class="form-check invisible visible-objekt visible-erlebnis">
+            <div class="form-check invisible visible-objekt visible-erlebnis js-100-percent-toggle-visibility">
                 <input class="form-check__checkbox js-required-input" type="checkbox" name="fulltimeartist" value="true" id="fulltimeartist-input">
                 <label for="fulltimeartist-input">Ich versichere, dass meine Angaben der Wahrheit entsprechen und dass ich hauptberuflich als Künstler*in tätig bin.</label>
                 <span class="form-field-required">*</span>

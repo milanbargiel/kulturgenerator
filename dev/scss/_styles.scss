@@ -394,6 +394,16 @@ body {
   }
 }
 
+.hundert-percent-thank-you {
+  display: none;
+  color: $blue;
+  font-size: $font-size-mobile-small;
+
+  @media screen and (min-width: $bp-tablet) {
+    font-size: $font-size-desktop-extra-small;
+  }
+}
+
 .form-check {
   position: relative;
   font-size: $font-size-mobile-small;
