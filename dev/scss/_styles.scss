@@ -36,32 +36,6 @@ a {
   text-decoration: none;
 }
 
-$font-family: 'Inconsolata', monospace;
-$bp-tablet: 680px;
-$bp-smartphone: 370px; // only used for iphone 5 linebreak
-$line-height: 1.5;
-$black: #000;
-$blue: #0000ee;
-$orange: #ffa500;
-$red: #ee0000;
-$light-grey: #eeeeee;
-$grey: #ced4da;
-$dark-grey: #495057;
-$white: #fff;
-
-// form variables
-$font-size-desktop: 44px;
-$font-size-desktop-galapagos: 60px;
-$font-size-desktop-small: 28px;
-$font-size-desktop-extra-small: 24px; // used for newsletter banner and help explain texts
-$font-size-mobile: 26px;
-$font-size-mobile-galapagos: 34px;
-$font-size-mobile-small: 22px;
-$x1: $font-size-desktop-galapagos / 3;
-$x2: 2 * $x1;
-$x3: 3 * $x1;
-
-
 body {
   color: $black;
   font-size: $font-size-mobile;
@@ -247,36 +221,6 @@ body {
   }
 }
 
-.iu {
-  &__input-container {
-    border: 1px solid $grey;
-    padding: $x1;
-  }
-
-  &__file-input-button {
-    font-size: $font-size-mobile-small;
-    border: 1px solid $grey;
-
-    &:hover {
-      cursor: pointer;
-      border: 1px solid $black;
-    }
-
-    @media screen and (min-width: $bp-tablet) {
-      font-size: $font-size-desktop-extra-small;
-    }
-  }
-
-  &__file {
-    font-size: $font-size-mobile-small;
-    position: relative;
-    margin: $x1;
-    @media screen and (min-width: $bp-tablet) {
-      font-size: $font-size-desktop-extra-small;
-    }
-  }
-}
-
 .category-label {
   position: relative;
 
@@ -435,28 +379,32 @@ body {
 }
 
 .form-help {
-  margin-top: 1px;
-  display: flex;
   font-size: $font-size-mobile-small;
   color: $dark-grey;
 
   @media screen and (min-width: $bp-tablet) {
     font-size: $font-size-desktop-extra-small;
+    position: relative;
+    padding-right: $font-size-desktop-galapagos + 16px; // 16px equals 1 rem
+  }
+
+  
+  &--checkbox {
+    display: inline-block;
+    margin-top: 1.5rem;
   }
 
   // show question mark only on desktop computers
   &__question-mark {
     display: none;
-    color: $blue;
-    margin-left: 10px;
 
     @media screen and (min-width: $bp-tablet) {
+      color: $blue;
       display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
     }
-  }
-
-  &--checkbox {
-    margin-top: 1.5rem;
   }
 }
 

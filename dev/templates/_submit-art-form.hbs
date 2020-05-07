@@ -34,59 +34,47 @@
             Format beträgt 30x40cm. Die Datei muss als entweder als Vektorgrafik angelegt sein (hier ist eine ca. 0,5mm Linie noch scharf darstellbar) oder als Bitmap in Graustufen mit 300 DPI und gerastert (eine fotorealistischer Druck funktioniert am besten mit: Halbtonraster Rasterweite 27 Linien pro Zoll, 22,5Grad gewinkelt, Form: Ellipse). Eine Kombination von Beidem ist möglich.
         </div>
         
-        {{!-- form fields --}}
+        {{!-- FORM INPUTS --}}
         {{!-- hidden input for category selection --}}
         <input type="hidden" class="js-selected-category" name="category" value="">
 
         {{!-- image upload --}}
-        <div class="form-group iu">
-            <label class="form-group__label">Bilder hochladen</label>
-            <div class="iu__input-container">
-                <input type="file" class="hidden-input js-file-input" id="file-input">
-                <label for="file-input" class="iu__file-input-button">Wählen Sie eine Datei</label>
-                <div class="js-hidden-image-data"></div>
-            </div>
-            <div class="js-file-container">
-                {{!-- JavaScript pastes files here --}}
-                {{!-- <div class="iu__file">www.archplus.net.jpeg<span class="iu__file-remove js-file-remove">x</span></div> --}}
-            </div>
+        <div class="form-group">
+            <label class="form-group__label">Bild hochladen</label>
+            <input class="form-group__input" type="file" name="image" required>
             <div class="invisible visible-objekt visible-erlebnis">
                 <div class="form-help">Der Kunstschaffende stellt das Bild für die Verwendung auf der Homepage von seinem Gebrauch des Urheberrechts auf unbefristete Zeit, spätestens bis zum Ende der Präsentation für die Aktion, frei.<span class="form-help__question-mark title title--grid">&nbsp;?</span></div>
             </div>
-        </div>
-        <div class="invisible visible-motiv">
-            <div class="form-help">Mit dem Upload versichere ich, dass ich Urheber*in des eingereichten Motivs bin. <span class="form-help__question-mark title title--grid">&nbsp;?</span></div>
+            <div class="invisible visible-motiv">
+                <div class="form-help">Mit dem Upload versichere ich, dass ich Urheber*in des eingereichten Motivs bin. <span class="form-help__question-mark title title--grid">&nbsp;?</span></div>
+            </div>
         </div>
         <div class="form-group">
             <label class="form-group__label">Titel</label>
-            <input class="form-group__input" type="text" name="title" required>
+            <input class="form-group__input" type="text" name="title">
         </div>
         <div class="form-group">
             <label class="form-group__label">Kurzbeschreibung</label>
-            <textarea class="form-group__input" name="description" rows="4" required></textarea>
+            <textarea class="form-group__input" name="description" rows="4"></textarea>
             <div class="form-help">Dieser Text beschreibt ihr Angebot und erscheint auf der Homepage. Bei materiellen Werken fügen Sie bitte Angaben zu Material, Größe, Stil etc. hinzu. Bei Veranstaltungen oder ähnlichem, bitte Angaben zu Menge und voraussichtlichem Datum<span class="form-help__question-mark title title--grid">&nbsp;?</span></div>
         </div>
         <div class="form-group">
             <label class="form-group__label">Preis</label>
-            <input class="form-group__input" type="text" name="title" required>
+            <input class="form-group__input" type="text" name="title">
         </div>
 
         {{!-- Max width length for checkbox form fields --}}
         <div class="form-group form-group--wide">
-            <div class="invisible visible-objekt visible-erlebnis">
-                <div class="form-check form-check--important">
-                    <input class="form-check__checkbox" type="checkbox" name="title" required>
-                    <label>Ich spende 100 % der Einnahmen an den Kulturgenerator und unterstütze damit andere Kulturschaffende</label>
-                </div>
+            <div class="form-check form-check--important invisible visible-objekt visible-erlebnis">
+                <input class="form-check__checkbox" type="checkbox" name="title">
+                <label>Ich spende 100 % der Einnahmen an den Kulturgenerator und unterstütze damit andere Kulturschaffende</label>
             </div>
-            <div class="invisible visible-objekt visible-erlebnis">
-                <div class="form-check form-check--important">
-                    <input class="form-check__checkbox" type="checkbox" name="title" required>
-                    <label>Ich möchte 50 % der Einnahmen aus dem Verkauf des Angebots erhalten</label>
-                </div>
+            <div class="form-check form-check--important invisible visible-objekt visible-erlebnis">
+                <input class="form-check__checkbox" type="checkbox" name="title">
+                <label>Ich möchte 50 % der Einnahmen aus dem Verkauf des Angebots erhalten</label>
             </div>
             <div class="form-check form-check--important">
-                <input class="form-check__checkbox" type="checkbox" name="title" required>
+                <input class="form-check__checkbox" type="checkbox" name="title">
                 <label>Ich möchte bei der Gesamtausschüttung des Kulturgenerators berücksichtigt werden</label>
             </div>
             <div class="invisible visible-objekt visible-erlebnis">
@@ -97,15 +85,15 @@
         {{!-- Data related to person --}}
         <div class="form-group">
             <label class="form-group__label">Name, Vorname</label>
-            <input class="form-group__input" type="text" name="title" required>
+            <input class="form-group__input" type="text" name="title">
         </div>
         <div class="form-group">
             <label class="form-group__label">Anschrift</label>
-            <input class="form-group__input" type="text" name="title" required>
+            <input class="form-group__input" type="text" name="title">
         </div>
         <div class="form-group">
             <label class="form-group__label">Künstlerische Tätigkeit</label>
-            <textarea class="form-group__input" name="title" required></textarea>
+            <textarea class="form-group__input" name="title"></textarea>
             <div class="invisible visible-erlebnis visible-objekt">
                 <div class="form-help">Bitte haben Sie Verständnis, dass nur
                     diejenigen bei der Gesamtausschüttung berücksichtigt werden, die hauptberuflich oder nachweislich in hohem Maße ehrenamtlich als Kunst- oder Kulturschaffende arbeiten.<span class="form-help__question-mark title title--grid">&nbsp;?</span>
@@ -114,42 +102,42 @@
         </div>
         <div class="form-group">
             <label class="form-group__label">E-Mail-Adresse</label>
-            <input class="form-group__input" type="text" name="title" required>
+            <input class="form-group__input" type="text" name="title">
             <div class="form-help">Diese E-Mail-Adresse werden wir für eventuelle Auszahlungen per Paypal benutzen. Falls Sie noch keinen Paypal Account haben, können Sie auch nach Zahlungseingang einen erstellen.<span class="form-help__question-mark title title--grid">&nbsp;?</span></div>
         </div>
         <div class="form-group">
             <label class="form-group__label">Webseite (wenn vorhanden)</label>
-            <input class="form-group__input" type="text" name="title" required>
+            <input class="form-group__input" type="text" name="title">
         </div>
         <div class="form-group">
             <label class="form-group__label">Institution (wenn vorhanden)</label>
-            <input class="form-group__input" type="text" name="title" required>
+            <input class="form-group__input" type="text" name="title">
         </div>
 
         {{!-- Checkboxes only visible for Objekt and Erlebnis Funnel --}}
         <div class="form-group form-group--wide invisible visible-objekt visible-erlebnis">
             <div class="form-check">
-                <input class="form-check__checkbox" type="checkbox" name="title" required>
+                <input class="form-check__checkbox" type="checkbox" name="title">
                 <label>Ich bin ein Veranstaltungsort</label>
             </div>
             <div class="form-check">
-                <input class="form-check__checkbox" type="checkbox" name="title" required>
+                <input class="form-check__checkbox" type="checkbox" name="title">
                 <label>Ich bin eingetragenes Mitglied bei GEMA, KSK oder einem Berufsverband</label>
             </div>
             <div class="form-check">
-                <input class="form-check__checkbox" type="checkbox" name="title" required>
+                <input class="form-check__checkbox" type="checkbox" name="title">
                 <label>Ich habe keine dieser Mitgliedschaften</label>
             </div>
             <div class="form-group form-group--small">
-                <textarea class="form-group__input" name="description" rows="4" required></textarea>
+                <textarea class="form-group__input" name="description" rows="4"></textarea>
                 <div class="form-help">Bitte erläutern Sie Ihren Anspruch.In diesem Fall behalten wir uns vor, Sie zu kontaktieren. <span class="form-help__question-mark title title--grid">&nbsp;?</span></div>
             </div>
             <div class="form-check">
-                <input class="form-check__checkbox" type="checkbox" name="title" required>
+                <input class="form-check__checkbox" type="checkbox" name="title">
                 <label>Hiermit versichere ich, dass ich das Kunstwerk nach Verkauf schnellstmöglich an die Käufer*in verschicke oder anderweitig übergebe.</label>
             </div>
             <div class="form-check">
-                <input class="form-check__checkbox" type="checkbox" name="title" required>
+                <input class="form-check__checkbox" type="checkbox" name="title">
                 <label>Ich versichere, dass meine Angaben der Wahrheit entsprechen und dass ich hauptberuflich als Künstler*in tätig bin. Ich bin damit einverstanden, dass meine Angaben im Rahmen der Abwicklung verwendet und verwahrt werden.</label>
             </div>
         </div>
@@ -157,7 +145,7 @@
         {{!-- Checkboxes only visible for Motiv funnel --}}
         <div class="form-group form-group--wide invisible visible-motiv">
             <div class="form-check">
-                <input class="form-check__checkbox" type="checkbox" name="title" required>
+                <input class="form-check__checkbox" type="checkbox" name="title">
                 <label>Ich bin damit einverstanden, dass meine Angaben im Rahmen der Abwicklung verwendet und verwahrt werden.</label>
             </div>
         </div>
