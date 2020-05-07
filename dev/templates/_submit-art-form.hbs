@@ -42,12 +42,10 @@
         <div class="form-group">
             <label class="form-group__label">Bild hochladen</label>
             <input class="form-group__input" type="file" name="image" required>
-            <div class="invisible visible-objekt visible-erlebnis">
-                <div class="form-help">Der Kunstschaffende stellt das Bild für die Verwendung auf der Homepage von seinem Gebrauch des Urheberrechts auf unbefristete Zeit, spätestens bis zum Ende der Präsentation für die Aktion, frei.<span class="form-help__question-mark title title--grid">&nbsp;?</span></div>
-            </div>
-            <div class="invisible visible-motiv">
-                <div class="form-help">Mit dem Upload versichere ich, dass ich Urheber*in des eingereichten Motivs bin. <span class="form-help__question-mark title title--grid">&nbsp;?</span></div>
-            </div>
+            {{!-- show for objekt and erlebnis --}}
+            <div class="form-help invisible visible-objekt visible-erlebnis">Der Kunstschaffende stellt das Bild für die Verwendung auf der Homepage von seinem Gebrauch des Urheberrechts auf unbefristete Zeit, spätestens bis zum Ende der Präsentation für die Aktion, frei.<span class="form-help__question-mark title title--grid">&nbsp;?</span></div>
+            {{!-- show for motiv --}}
+            <div class="form-help invisible visible-motiv">Mit dem Upload versichere ich, dass ich Urheber*in des eingereichten Motivs bin. <span class="form-help__question-mark title title--grid">&nbsp;?</span></div>
         </div>
         <div class="form-group">
             <label class="form-group__label">Titel</label>
@@ -77,9 +75,7 @@
                 <input class="form-check__checkbox" type="checkbox" name="title">
                 <label>Ich möchte bei der Gesamtausschüttung des Kulturgenerators berücksichtigt werden</label>
             </div>
-            <div class="invisible visible-objekt visible-erlebnis">
-                <div class="form-help form-help--checkbox">Mehrfachnennung möglich.<span class="form-help__question-mark title title--grid">&nbsp;?</span></div>
-            </div>
+            <div class="form-help form-help--checkbox invisible visible-objekt visible-erlebnis">Mehrfachnennung möglich.<span class="form-help__question-mark title title--grid">&nbsp;?</span></div>
         </div>
 
         {{!-- Data related to person --}}
@@ -94,10 +90,8 @@
         <div class="form-group">
             <label class="form-group__label">Künstlerische Tätigkeit</label>
             <textarea class="form-group__input" name="title"></textarea>
-            <div class="invisible visible-erlebnis visible-objekt">
-                <div class="form-help">Bitte haben Sie Verständnis, dass nur
-                    diejenigen bei der Gesamtausschüttung berücksichtigt werden, die hauptberuflich oder nachweislich in hohem Maße ehrenamtlich als Kunst- oder Kulturschaffende arbeiten.<span class="form-help__question-mark title title--grid">&nbsp;?</span>
-                </div>
+            <div class="form-help invisible visible-erlebnis visible-objekt">Bitte haben Sie Verständnis, dass nur
+                diejenigen bei der Gesamtausschüttung berücksichtigt werden, die hauptberuflich oder nachweislich in hohem Maße ehrenamtlich als Kunst- oder Kulturschaffende arbeiten.<span class="form-help__question-mark title title--grid">&nbsp;?</span>
             </div>
         </div>
         <div class="form-group">

@@ -381,6 +381,7 @@ body {
 .form-help {
   font-size: $font-size-mobile-small;
   color: $dark-grey;
+  padding-top: .25rem;
 
   @media screen and (min-width: $bp-tablet) {
     font-size: $font-size-desktop-extra-small;
@@ -388,7 +389,7 @@ body {
     padding-right: $font-size-desktop-galapagos + 16px; // 16px equals 1 rem
   }
 
-  
+
   &--checkbox {
     display: inline-block;
     margin-top: 1.5rem;
