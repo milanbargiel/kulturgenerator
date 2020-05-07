@@ -378,6 +378,10 @@ body {
   }
 }
 
+.form-group__required {
+  color: $blue;
+}
+
 .form-help {
   font-size: $font-size-mobile-small;
   color: $dark-grey;
