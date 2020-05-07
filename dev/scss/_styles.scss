@@ -392,28 +392,32 @@ body {
     margin-bottom: $font-size-desktop-galapagos;
   }
 }
-.form-fields-container {
-  max-width: 680px;
-}
 
-.form-field {
+.form-group {
+  max-width: 680px;
   font-size: $font-size-mobile-small;
-  // margin-top: $font-size-mobile-galapagos;
   margin-bottom: $font-size-mobile-galapagos;
 
   @media screen and (min-width: $bp-tablet) {
     font-size: $font-size-desktop-small;
-    // margin-top: $font-size-desktop-galapagos;
     margin-bottom: $font-size-desktop-galapagos;
+  }
+
+  &--wide {
+    max-width: 100%; // max form width is defined in class sa-form
+  }
+
+  &--small { // only used for inline textform within checkbox region
+    max-width: 680px;
   }
 }
 
-.form-field__label {
+.form-group__label {
   display: inline-block;
   margin-bottom: .5rem;
 }
 
-.form-field__input {
+.form-group__input {
   display: block;
   background-color: $white;
   width: 100%;
