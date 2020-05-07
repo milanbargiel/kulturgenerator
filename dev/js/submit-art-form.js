@@ -4,14 +4,18 @@ const submitArtForm = document.querySelector('.js-form');
 const selectedCategoryInput = document.querySelector('.js-selected-category');
 const allRequiredInputs = document.querySelectorAll('.js-required-input');
 
-// 100 percent feature
+// 100 percent toggle visibility
 const hundertPercent = document.querySelector('.js-100-percent-input');
 const hundertPercentThankYou = document.querySelector('.js-thank-you-100-percent');
 const hundertPercentToggles = document.querySelectorAll('.js-100-percent-toggle-visibility');
 
-// no member feature
+// no member toggle visibility
 const noMember = document.querySelector('.js-no-member-input');
 const entitlement = document.querySelector('.js-entitlement');
+
+// file upload
+const fileInput = document.querySelector('.js-file-input');
+const hiddenImageData = document.querySelector('.js-hidden-image-data');
 
 function isVisible(el) {
   return !(el.offsetParent === null);
@@ -35,6 +39,9 @@ function clearForm() {
   const event = document.createEvent('HTMLEvents');
   event.initEvent('change', false, true);
   hundertPercent.dispatchEvent(event);
+  // manually dispatch change event on image input
+  // to reset image selection
+  fileInput.dispatchEvent(event);
 }
 
 function showSelectedForm(selector) {
@@ -69,6 +76,7 @@ categoryRadioButtons.forEach((radioButton) => {
   });
 });
 
+// 100 percent toggle visibility
 hundertPercent.addEventListener('change', (event) => {
   if (event.target.checked) {
     // show thank you message for 100 percent donation
@@ -88,10 +96,31 @@ hundertPercent.addEventListener('change', (event) => {
   }
 });
 
+// no member toggle visibility
 noMember.addEventListener('change', (event) => {
   if (event.target.checked) {
     entitlement.style.display = 'block';
   } else {
     entitlement.removeAttribute('style');
+  }
+});
+
+// file upload
+// listen to change on input type file
+fileInput.addEventListener('change', (inputEvent) => {
+  const file = inputEvent.target.files[0];
+  const reader = new FileReader();
+
+  // create hidden text image data to upload via form
+  reader.addEventListener('load', (readerEvent) => {
+    let html = `<input type="hidden" name="data" value="${readerEvent.target.result.replace(/^.*,/, '')}" >`;
+    html += `<input type="hidden" name="mimetype" value="${readerEvent.target.result.match(/^.*(?=;)/)[0]}" >`;
+    hiddenImageData.innerHTML = html;
+  });
+
+  if (file) {
+    reader.readAsDataURL(file);
+  } else { // no file selected
+    hiddenImageData.innerHTML = '';
   }
 });
