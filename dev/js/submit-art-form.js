@@ -1,6 +1,7 @@
 // categories
 const categoryRadioButtons = document.querySelectorAll('.js-category-input');
 const submitArtForms = document.querySelectorAll('.js-form');
+const selectedCategoryInput = document.querySelector('.js-selected-category');
 
 function showSelectedForm(forms, selector) {
   forms.forEach((form) => {
@@ -21,10 +22,13 @@ function showSelectedForm(forms, selector) {
 
 // show selected form onclick
 categoryRadioButtons.forEach((radioButton) => {
+  // for dev purposes only
   if (radioButton.checked) {
     showSelectedForm(submitArtForms, radioButton.value);
+    selectedCategoryInput.value = radioButton.value;
   }
   radioButton.addEventListener('change', () => {
     showSelectedForm(submitArtForms, radioButton.value);
+    selectedCategoryInput.value = radioButton.value;
   });
 });
