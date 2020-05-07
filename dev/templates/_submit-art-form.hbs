@@ -62,20 +62,20 @@
         {{!-- title --}}
         <div class="form-group">
             <label class="form-group__label" for="title-input">Titel <span class="form-field-required">*</span></label>
-            <input class="form-group__input js-required-input" type="text" name="title" id="title-input">
+            <input class="form-group__input js-required-input" type="text" name="title" id="title-input" maxlength="60">
         </div>
 
         {{!-- description --}}
         <div class="form-group">
             <label class="form-group__label" for="description-input">Kurzbeschreibung <span class="form-field-required">*</span></label>
-            <textarea class="form-group__input js-required-input" name="description" rows="4" id="description-input"></textarea>
+            <textarea class="form-group__input js-required-input" name="description" rows="4" id="description-input" maxlength="2000"></textarea>
             <div class="form-help">Dieser Text beschreibt Ihr Angebot und erscheint auf der Homepage. Bei materiellen Werken fügen Sie bitte Angaben zu Material, Größe, Stil etc. hinzu. Bei Veranstaltungen oder ähnlichem, bitte Angaben zu Menge und voraussichtlichem Datum<span class="form-help__question-mark title title--grid">&nbsp;?</span></div>
         </div>
 
         {{!-- price --}}
         <div class="form-group invisible visible-objekt visible-erlebnis">
             <label class="form-group__label" for="price-input">Preis <span class="form-field-required">*</span></label>
-            <input class="form-group__input js-required-input" type="text" name="price" id="price-input">
+            <input class="form-group__input js-required-input" type="text" name="price" id="price-input" maxlength="60">
         </div>
 
         {{!-- checkboxes --}}
@@ -106,19 +106,19 @@
         {{!-- fullname --}}
         <div class="form-group">
             <label class="form-group__label" for="fullname-input">Name, Vorname <span class="form-field-required">*</span></label>
-            <input class="form-group__input js-required-input" type="text" name="fullname" id="fullname-input">
+            <input class="form-group__input js-required-input" type="text" name="fullname" id="fullname-input" maxlength="60">
         </div>
 
         {{!-- adress --}}
         <div class="form-group">
             <label class="form-group__label" for="adress-input">Anschrift <span class="form-field-required">*</span></label>
-            <input class="form-group__input js-required-input" type="text" name="adress" id="adress-input">
+            <input class="form-group__input js-required-input" type="text" name="adress" id="adress-input" maxlength="60">
         </div>
 
         {{!-- artisticwork --}}
         <div class="form-group">
             <label class="form-group__label" for="artisticwork-input">Künstlerische Tätigkeit <span class="form-field-required">*</span></label>
-            <textarea class="form-group__input js-required-input" name="artisticwork" id="artisticwork-input"></textarea>
+            <textarea class="form-group__input js-required-input" name="artisticwork" id="artisticwork-input" maxlength="2000" rows="3"></textarea>
             <div class="form-help invisible visible-erlebnis visible-objekt js-100-percent-toggle-visibility">Bitte haben Sie Verständnis, dass nur
                 diejenigen bei der Gesamtausschüttung berücksichtigt werden, die hauptberuflich oder nachweislich in hohem Maße ehrenamtlich als Kunst- oder Kulturschaffende arbeiten.<span class="form-help__question-mark title title--grid">&nbsp;?</span>
             </div>
@@ -127,20 +127,20 @@
         {{!-- email --}}
         <div class="form-group">
             <label class="form-group__label" for="email-input">E-Mail-Adresse <span class="form-field-required">*</span></label>
-            <input class="form-group__input js-required-input" type="text" name="email" id="email-input">
+            <input class="form-group__input js-required-input" type="email" name="email" id="email-input">
             <div class="form-help js-100-percent-toggle-visibility">Diese E-Mail-Adresse werden wir für eventuelle Auszahlungen per Paypal benutzen. Falls Sie noch keinen Paypal Account haben, können Sie auch nach Zahlungseingang einen erstellen.<span class="form-help__question-mark title title--grid">&nbsp;?</span></div>
         </div>
 
         {{!-- website --}}
         <div class="form-group">
             <label class="form-group__label" for="website-input">Webseite (wenn vorhanden)</label>
-            <input class="form-group__input" type="text" name="website" id="website-input">
+            <input class="form-group__input" type="text" name="website" id="website-input" maxlength="60">
         </div>
 
         {{!-- institution --}}
         <div class="form-group">
             <label class="form-group__label" for="institution-input">Institution (wenn vorhanden)</label>
-            <input class="form-group__input" type="text" name="institution" id="institution-input">
+            <input class="form-group__input" type="text" name="institution" id="institution-input" maxlength="60">
         </div>
 
         <div class="form-group form-group--wide">
@@ -165,7 +165,7 @@
 
             {{!-- entitlement --}}
             <div class="form-group form-group--small invisible js-entitlement">
-                <textarea class="form-group__input" name="entitlement" rows="4"></textarea>
+                <textarea class="form-group__input" name="entitlement" rows="4"></textarea maxlength="2000">
                 <div class="form-help">Bitte erläutern Sie Ihren Anspruch.In diesem Fall behalten wir uns vor, Sie zu kontaktieren.<span class="form-help__question-mark title title--grid">&nbsp;?</span>
                 </div>
             </div>
