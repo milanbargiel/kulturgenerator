@@ -248,8 +248,6 @@ body {
 }
 
 .iu {
-  line-height: 1;
-
   &__input-container {
     border: 1px solid $grey;
     padding: $x1;
@@ -364,6 +362,7 @@ body {
 .sa-form {
   display: none;
   margin-top: $font-size-mobile-galapagos;
+  max-width: 1000px;
 
   @media screen and (min-width: $bp-tablet) {
     margin-top: $font-size-desktop-galapagos;
@@ -395,10 +394,6 @@ body {
 }
 .form-fields-container {
   max-width: 680px;
-}
-
-.form-fields-container-large {
-  max-width: 1000px;
 }
 
 .form-field {
