@@ -9,6 +9,10 @@ const hundertPercent = document.querySelector('.js-100-percent-input');
 const hundertPercentThankYou = document.querySelector('.js-thank-you-100-percent');
 const hundertPercentToggles = document.querySelectorAll('.js-100-percent-toggle-visibility');
 
+// no member feature
+const noMember = document.querySelector('.js-no-member-input');
+const entitlement = document.querySelector('.js-entitlement');
+
 function isVisible(el) {
   return !(el.offsetParent === null);
 }
@@ -27,19 +31,13 @@ function clearForm() {
   // reset form
   submitArtForm.reset();
   // manually dispatch change event on hunderPercentDonation listener
-  // to reset visibility toggles
-  const event = document.createEvent('HTMLEvents');
-  event.initEvent('change', false, true);
-  hundertPercent.dispatchEvent(event);
+  // to reset visibility toggles to funnel defaults
+  // const event = document.createEvent('HTMLEvents');
+  // event.initEvent('change', false, true);
+  // hundertPercent.dispatchEvent(event);
 }
 
 function showSelectedForm(selector) {
-  // clear previous form inputs
-  clearForm();
-
-  // set hidden input to category name
-  selectedCategoryInput.value = selector;
-
   // clear visibility classes for explain texts
   submitArtForm.classList.remove('sa-form--objekt');
   submitArtForm.classList.remove('sa-form--erlebnis');
@@ -50,6 +48,12 @@ function showSelectedForm(selector) {
     submitArtForm.setAttribute('style', 'display:block;');
     submitArtForm.classList.add(`sa-form--${selector}`);
   }
+
+  // clear previous form inputs
+  clearForm();
+
+  // set hidden input to category name
+  selectedCategoryInput.value = selector;
 
   makeVisibleInputsRequired();
 }
@@ -67,16 +71,27 @@ categoryRadioButtons.forEach((radioButton) => {
 
 hundertPercent.addEventListener('change', (event) => {
   if (event.target.checked) {
+    // show thank you message for 100 percent donation
     hundertPercentThankYou.style.display = 'block';
+    // hide plausibility checks and further money options
     hundertPercentToggles.forEach((el) => {
       el.setAttribute('style', 'display: none;');
     });
     makeVisibleInputsRequired();
   } else {
     hundertPercentThankYou.style.display = 'none';
+    // reset to funnel defaults
     hundertPercentToggles.forEach((el) => {
       el.setAttribute('style', 'display: block;');
     });
     makeVisibleInputsRequired();
+  }
+});
+
+noMember.addEventListener('change', (event) => {
+  if (event.target.checked) {
+    entitlement.style.display = 'block';
+  } else {
+    entitlement.style.display = 'none';
   }
 });

@@ -127,13 +127,13 @@
 
         {{!-- website --}}
         <div class="form-group">
-            <label class="form-group__label" for="website-input">Webseite</label>
+            <label class="form-group__label" for="website-input">Webseite (wenn vorhanden)</label>
             <input class="form-group__input" type="text" name="website" id="website-input">
         </div>
 
         {{!-- institution --}}
         <div class="form-group">
-            <label class="form-group__label" for="institution-input">Institution</label>
+            <label class="form-group__label" for="institution-input">Institution (wenn vorhanden)</label>
             <input class="form-group__input" type="text" name="institution" id="institution-input">
         </div>
 
@@ -152,12 +152,13 @@
 
             {{!-- nomember --}}
             <div class="form-check invisible visible-objekt visible-erlebnis js-100-percent-toggle-visibility">
-                <input class="form-check__checkbox" type="checkbox" name="nomember" value="true" id="nomember-input">
+                {{!-- toggles visibility of entitlement textarea --}}
+                <input class="form-check__checkbox js-no-member-input" type="checkbox" name="nomember" value="true" id="nomember-input">
                 <label for="nomember-input">Ich habe keine dieser Mitgliedschaften</label>
             </div>
 
             {{!-- entitlement --}}
-            <div class="form-group form-group--small invisible visible-objekt visible-erlebnis js-100-percent-toggle-visibility">
+            <div class="form-group form-group--small invisible js-entitlement">
                 <textarea class="form-group__input" name="entitlement" rows="4"></textarea>
                 <div class="form-help">Bitte erläutern Sie Ihren Anspruch.In diesem Fall behalten wir uns vor, Sie zu kontaktieren.<span class="form-help__question-mark title title--grid">&nbsp;?</span>
                 </div>
