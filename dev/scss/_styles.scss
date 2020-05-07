@@ -461,21 +461,25 @@ body {
 }
 
 .form-check {
-  display: flex;
+  position: relative;
+  display: block;
   font-size: $font-size-mobile-small;
   line-height: 1.2;
   margin-bottom: 1rem;
+  padding-left: 1.5rem;
 
   @media screen and (min-width: $bp-tablet) {
     font-size: $font-size-desktop-extra-small;
+    padding-left: 2rem;
   }
 
   &__checkbox {
-    margin-right: .5rem;
-    margin-top: 5px;
+    position: absolute;
+    margin-top: .4rem;
+    margin-left: -1.5rem;
 
     @media screen and (min-width: $bp-tablet) {
-      margin-right: 1rem;
+      margin-left: -2rem;
     }
   }
 
