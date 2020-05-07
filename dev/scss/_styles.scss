@@ -362,6 +362,11 @@ body {
 
 .form-field-required {
   color: $blue;
+  font-size: $font-size-mobile-small;
+
+  @media screen and (min-width: $bp-tablet) {
+    font-size: $font-size-desktop-extra-small;
+  }
 }
 
 .form-help {

@@ -39,12 +39,12 @@
         <input type="hidden" class="js-selected-category" name="category" value="">
 
         <div class="form-group">
-            <label class="form-group__label" for="image-input">Bild hochladen <span class="form-field-required">*</span></label>
+            <label class="form-group__label" for="image-input">Bild hochladen <span class="form-field-required">* (max. 5 MB pro Datei)</span></label>
 
             {{!-- VISIBLE inputs with class js-required-input are set to required --}}
 
             {{!-- image --}}
-            <input class="form-group__input js-file-input js-required-input" type="file" name="image" id="image-input">
+            <input class="form-group__input js-file-input js-required-input" type="file" name="image" id="image-input" accept="image/*">
 
             {{!-- js file reader writes image raw data into hidden input --}}
             <div class="js-hidden-image-data"></div>
