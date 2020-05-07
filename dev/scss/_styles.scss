@@ -285,24 +285,6 @@ body {
 }
 
 // submit art form
-
-// show explain texts depending on form selection
-.invisible {
-  display: none;
-}
-
-.sa-form--objekt .visible-objekt {
-  display: block;
-}
-
-.sa-form--erlebnis .visible-erlebnis {
-  display: block;
-}
-
-.sa-form--motiv .visible-motiv {
-  display: block;
-}
-
 .sa-form {
   display: none;
   margin-top: $font-size-mobile-galapagos;
@@ -395,7 +377,6 @@ body {
 
 
   &--checkbox {
-    display: inline-block;
     margin-top: 1.5rem;
   }
 
@@ -415,7 +396,6 @@ body {
 
 .form-check {
   position: relative;
-  display: block;
   font-size: $font-size-mobile-small;
   line-height: 1.2;
   margin-bottom: 1rem;
@@ -525,4 +505,21 @@ body {
   .longer-text-container {
     font-size: 28px;
   }
+}
+
+// form visibility toggles at end of file, so they overwrite styles befores
+.invisible {
+  display: none;
+}
+
+.sa-form--objekt .visible-objekt {
+  display: block;
+}
+
+.sa-form--erlebnis .visible-erlebnis {
+  display: block;
+}
+
+.sa-form--motiv .visible-motiv {
+  display: block;
 }

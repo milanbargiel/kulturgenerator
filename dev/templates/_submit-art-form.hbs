@@ -6,7 +6,7 @@
         <div class="title title--grid">kultur&#160;</div>
         <div>
             <div class="title title--grid">
-                <input type="radio" name="category" value="objekt" id="radio-objekt" class="hidden-input category-input js-category-input" checked>
+                <input type="radio" name="category" value="objekt" id="radio-objekt" class="hidden-input category-input js-category-input">
                 <label for="radio-objekt" class="category-label">ooobjekt</label>
             </div>
             <div class="title title--grid">
@@ -14,7 +14,7 @@
                 <label for="radio-erlebnis" class="category-label">ooerlebnis</label>
             </div>
             <div class="title title--grid">
-                <input type="radio" name="category" value="motiv" id="radio-motiv" class="hidden-input category-input js-category-input">
+                <input type="radio" name="category" value="motiv" id="radio-motiv" class="hidden-input category-input js-category-input" checked>
                 <label for="radio-motiv" class="category-label">oomotiv</label>
             </div>
         </div>
@@ -41,7 +41,9 @@
         {{!-- image upload --}}
         <div class="form-group">
             <label class="form-group__label">Bild hochladen <span class="form-field-required">*</span></label>
-            <input class="form-group__input" type="file" name="image" required>
+
+            {{!-- all visible inputs with class js-required-input get required attribute --}}
+            <input class="form-group__input js-required-input" type="file" name="image">
             
             {{!-- help text for objekt and erlebnis --}}
             <div class="form-help invisible visible-objekt visible-erlebnis">Der Kunstschaffende stellt das Bild für die Verwendung auf der Homepage von seinem Gebrauch des Urheberrechts auf unbefristete Zeit, spätestens bis zum Ende der Präsentation für die Aktion, frei.<span class="form-help__question-mark title title--grid">&nbsp;?</span></div>
@@ -53,92 +55,123 @@
         {{!-- title --}}
         <div class="form-group">
             <label class="form-group__label">Titel <span class="form-field-required">*</span></label>
-            <input class="form-group__input" type="text" name="title" required>
+            <input class="form-group__input js-required-input" type="text" name="title">
         </div>
 
         {{!-- description --}}
         <div class="form-group">
             <label class="form-group__label">Kurzbeschreibung <span class="form-field-required">*</span></label>
-            <textarea class="form-group__input" name="description" rows="4" required></textarea>
+            <textarea class="form-group__input js-required-input" name="description" rows="4"></textarea>
             <div class="form-help">Dieser Text beschreibt ihr Angebot und erscheint auf der Homepage. Bei materiellen Werken fügen Sie bitte Angaben zu Material, Größe, Stil etc. hinzu. Bei Veranstaltungen oder ähnlichem, bitte Angaben zu Menge und voraussichtlichem Datum<span class="form-help__question-mark title title--grid">&nbsp;?</span></div>
         </div>
-        <div class="form-group">
+
+        {{!-- price --}}
+        <div class="form-group invisible visible-objekt visible-erlebnis">
             <label class="form-group__label">Preis <span class="form-field-required">*</span></label>
-            <input class="form-group__input" type="text" name="title">
+            <input class="form-group__input js-required-input" type="text" name="price">
         </div>
 
-        {{!-- Max width length for checkbox form fields --}}
+        {{!-- checkboxes --}}
         <div class="form-group form-group--wide">
+
+            {{!-- 100-percent --}}
             <div class="form-check invisible visible-objekt visible-erlebnis">
-                <input class="form-check__checkbox" type="checkbox" name="title">
+                <input class="form-check__checkbox" type="checkbox" name="100-percent" value="true">
                 <label>Ich spende 100 % der Einnahmen an den Kulturgenerator und unterstütze damit andere Kulturschaffende</label>
             </div>
+
+            {{!-- 50-percent --}}
             <div class="form-check invisible visible-objekt visible-erlebnis">
-                <input class="form-check__checkbox" type="checkbox" name="title">
+                <input class="form-check__checkbox" type="checkbox" name="50-percent" value="true">
                 <label>Ich möchte 50 % der Einnahmen aus dem Verkauf des Angebots erhalten</label>
             </div>
+
+            {{!-- payout --}}
             <div class="form-check">
-                <input class="form-check__checkbox" type="checkbox" name="title">
+                <input class="form-check__checkbox" type="checkbox" name="payout" value="true">
                 <label>Ich möchte bei der Gesamtausschüttung des Kulturgenerators berücksichtigt werden</label>
             </div>
-            <div class="form-help form-help--checkbox invisible visible-objekt visible-erlebnis">Mehrfachnennung möglich.<span class="form-help__question-mark title title--grid">&nbsp;?</span></div>
+            <div class="form-help form-help--checkbox invisible visible-objekt visible-erlebnis">Mehrfachnennung möglich<span class="form-help__question-mark title title--grid">&nbsp;?</span></div>
         </div>
 
         {{!-- Data related to person --}}
+        {{!-- fullname --}}
         <div class="form-group">
             <label class="form-group__label">Name, Vorname <span class="form-field-required">*</span></label>
-            <input class="form-group__input" type="text" name="title">
+            <input class="form-group__input js-required-input" type="text" name="fullname">
         </div>
+
+        {{!-- adress --}}
         <div class="form-group">
             <label class="form-group__label">Anschrift <span class="form-field-required">*</span></label>
-            <input class="form-group__input" type="text" name="title">
+            <input class="form-group__input js-required-input" type="text" name="adress">
         </div>
+
+        {{!-- artisticwork --}}
         <div class="form-group">
             <label class="form-group__label">Künstlerische Tätigkeit <span class="form-field-required">*</span></label>
-            <textarea class="form-group__input" name="title"></textarea>
+            <textarea class="form-group__input js-required-input" name="artisticwork"></textarea>
             <div class="form-help invisible visible-erlebnis visible-objekt">Bitte haben Sie Verständnis, dass nur
                 diejenigen bei der Gesamtausschüttung berücksichtigt werden, die hauptberuflich oder nachweislich in hohem Maße ehrenamtlich als Kunst- oder Kulturschaffende arbeiten.<span class="form-help__question-mark title title--grid">&nbsp;?</span>
             </div>
         </div>
+
+        {{!-- email --}}
         <div class="form-group">
             <label class="form-group__label">E-Mail-Adresse <span class="form-field-required">*</span></label>
-            <input class="form-group__input" type="text" name="title">
+            <input class="form-group__input js-required-input" type="text" name="email">
             <div class="form-help">Diese E-Mail-Adresse werden wir für eventuelle Auszahlungen per Paypal benutzen. Falls Sie noch keinen Paypal Account haben, können Sie auch nach Zahlungseingang einen erstellen.<span class="form-help__question-mark title title--grid">&nbsp;?</span></div>
         </div>
+
+        {{!-- website --}}
         <div class="form-group">
             <label class="form-group__label">Webseite</label>
-            <input class="form-group__input" type="text" name="title">
+            <input class="form-group__input" type="text" name="website">
         </div>
+
+        {{!-- institution --}}
         <div class="form-group">
             <label class="form-group__label">Institution</label>
-            <input class="form-group__input" type="text" name="title">
+            <input class="form-group__input" type="text" name="institution">
         </div>
 
         {{!-- Checkboxes only visible for Objekt and Erlebnis Funnel --}}
         <div class="form-group form-group--wide invisible visible-objekt visible-erlebnis">
+
+            {{!-- venue --}}
             <div class="form-check">
-                <input class="form-check__checkbox" type="checkbox" name="title">
+                <input class="form-check__checkbox" type="checkbox" name="venue" value="true">
                 <label>Ich bin ein Veranstaltungsort</label>
             </div>
+
+            {{!-- member --}}
             <div class="form-check">
-                <input class="form-check__checkbox" type="checkbox" name="title">
+                <input class="form-check__checkbox" type="checkbox" name="member" value="true">
                 <label>Ich bin eingetragenes Mitglied bei GEMA, KSK oder einem Berufsverband</label>
             </div>
+
+            {{!-- nomember --}}
             <div class="form-check">
-                <input class="form-check__checkbox" type="checkbox" name="title">
+                <input class="form-check__checkbox" type="checkbox" name="nomember" value="true">
                 <label>Ich habe keine dieser Mitgliedschaften</label>
             </div>
+
+            {{!-- entitlement --}}
             <div class="form-group form-group--small">
-                <textarea class="form-group__input" name="description" rows="4"></textarea>
+                <textarea class="form-group__input" name="entitlement" rows="4"></textarea>
                 <div class="form-help">Bitte erläutern Sie Ihren Anspruch.In diesem Fall behalten wir uns vor, Sie zu kontaktieren. <span class="form-help__question-mark title title--grid">&nbsp;?</span></div>
             </div>
+
+            {{!-- shipping --}}
             <div class="form-check">
-                <input class="form-check__checkbox" type="checkbox" name="title">
+                <input class="form-check__checkbox js-required-input" type="checkbox" value="true" name="shipping">
                 <label>Hiermit versichere ich, dass ich das Kunstwerk nach Verkauf schnellstmöglich an die Käufer*in verschicke oder anderweitig übergebe.</label>
                 <span class="form-field-required">*</span>
             </div>
+
+            {{!-- gdpr --}}
             <div class="form-check">
-                <input class="form-check__checkbox" type="checkbox" name="title">
+                <input class="form-check__checkbox js-required-input" type="checkbox" name="gdpr" value="true">
                 <label>Ich versichere, dass meine Angaben der Wahrheit entsprechen und dass ich hauptberuflich als Künstler*in tätig bin. Ich bin damit einverstanden, dass meine Angaben im Rahmen der Abwicklung verwendet und verwahrt werden.</label>
                 <span class="form-field-required">*</span>
             </div>
@@ -146,8 +179,10 @@
 
         {{!-- Checkboxes only visible for Motiv funnel --}}
         <div class="form-group form-group--wide invisible visible-motiv">
+
+            {{!-- gdpr --}}
             <div class="form-check">
-                <input class="form-check__checkbox" type="checkbox" name="title">
+                <input class="form-check__checkbox js-required-input" type="checkbox" name="gdpr" value="true">
                 <label>Ich bin damit einverstanden, dass meine Angaben im Rahmen der Abwicklung verwendet und verwahrt werden.</label>
                 <span class="form-field-required">*</span>
             </div>
