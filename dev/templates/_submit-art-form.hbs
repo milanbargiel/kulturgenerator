@@ -135,9 +135,7 @@
             <input class="form-group__input" type="text" name="institution">
         </div>
 
-        {{!-- Checkboxes only visible for Objekt and Erlebnis Funnel --}}
-        <div class="form-group form-group--wide invisible visible-objekt visible-erlebnis">
-
+        <div class="form-group form-group--wide">
             {{!-- venue --}}
             <div class="form-check">
                 <input class="form-check__checkbox" type="checkbox" name="venue" value="true">
@@ -145,40 +143,36 @@
             </div>
 
             {{!-- member --}}
-            <div class="form-check">
+            <div class="form-check invisible visible-objekt visible-erlebnis">
                 <input class="form-check__checkbox" type="checkbox" name="member" value="true">
                 <label>Ich bin eingetragenes Mitglied bei GEMA, KSK oder einem Berufsverband</label>
             </div>
 
             {{!-- nomember --}}
-            <div class="form-check">
+            <div class="form-check invisible visible-objekt visible-erlebnis">
                 <input class="form-check__checkbox" type="checkbox" name="nomember" value="true">
                 <label>Ich habe keine dieser Mitgliedschaften</label>
             </div>
 
             {{!-- entitlement --}}
-            <div class="form-group form-group--small">
+            <div class="form-group form-group--small invisible visible-objekt visible-erlebnis">
                 <textarea class="form-group__input" name="entitlement" rows="4"></textarea>
                 <div class="form-help">Bitte erläutern Sie Ihren Anspruch.In diesem Fall behalten wir uns vor, Sie zu kontaktieren. <span class="form-help__question-mark title title--grid">&nbsp;?</span></div>
             </div>
 
             {{!-- shipping --}}
-            <div class="form-check">
+            <div class="form-check invisible visible-objekt visible-erlebnis">
                 <input class="form-check__checkbox js-required-input" type="checkbox" value="true" name="shipping">
                 <label>Hiermit versichere ich, dass ich das Kunstwerk nach Verkauf schnellstmöglich an die Käufer*in verschicke oder anderweitig übergebe.</label>
                 <span class="form-field-required">*</span>
             </div>
 
-            {{!-- gdpr --}}
-            <div class="form-check">
-                <input class="form-check__checkbox js-required-input" type="checkbox" name="gdpr" value="true">
-                <label>Ich versichere, dass meine Angaben der Wahrheit entsprechen und dass ich hauptberuflich als Künstler*in tätig bin. Ich bin damit einverstanden, dass meine Angaben im Rahmen der Abwicklung verwendet und verwahrt werden.</label>
+            {{!-- fulltimeartist --}}
+            <div class="form-check invisible visible-objekt visible-erlebnis">
+                <input class="form-check__checkbox js-required-input" type="checkbox" name="fulltimeartist" value="true">
+                <label>Ich versichere, dass meine Angaben der Wahrheit entsprechen und dass ich hauptberuflich als Künstler*in tätig bin.</label>
                 <span class="form-field-required">*</span>
             </div>
-        </div>
-
-        {{!-- Checkboxes only visible for Motiv funnel --}}
-        <div class="form-group form-group--wide invisible visible-motiv">
 
             {{!-- gdpr --}}
             <div class="form-check">
@@ -187,7 +181,6 @@
                 <span class="form-field-required">*</span>
             </div>
         </div>
-
         {{!-- Submit Button --}}
         <input type="submit" class="sa-form__button button" value="Einreichen &#x23ce;">
     </form>
