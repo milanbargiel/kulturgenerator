@@ -32,9 +32,9 @@ function clearForm() {
   submitArtForm.reset();
   // manually dispatch change event on hunderPercentDonation listener
   // to reset visibility toggles to funnel defaults
-  // const event = document.createEvent('HTMLEvents');
-  // event.initEvent('change', false, true);
-  // hundertPercent.dispatchEvent(event);
+  const event = document.createEvent('HTMLEvents');
+  event.initEvent('change', false, true);
+  hundertPercent.dispatchEvent(event);
 }
 
 function showSelectedForm(selector) {
@@ -80,9 +80,9 @@ hundertPercent.addEventListener('change', (event) => {
     makeVisibleInputsRequired();
   } else {
     hundertPercentThankYou.style.display = 'none';
-    // reset to funnel defaults
+    // reset to funnel defaults and remove style attribute if already set before
     hundertPercentToggles.forEach((el) => {
-      el.setAttribute('style', 'display: block;');
+      el.removeAttribute('style');
     });
     makeVisibleInputsRequired();
   }
@@ -92,6 +92,6 @@ noMember.addEventListener('change', (event) => {
   if (event.target.checked) {
     entitlement.style.display = 'block';
   } else {
-    entitlement.style.display = 'none';
+    entitlement.removeAttribute('style');
   }
 });
