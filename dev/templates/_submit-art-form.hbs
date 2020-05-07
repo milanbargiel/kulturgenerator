@@ -6,7 +6,7 @@
         <div class="title title--grid">kultur&#160;</div>
         <div>
             <div class="title title--grid">
-                <input type="radio" name="category" value="objekt" id="radio-objekt" class="hidden-input category-input js-category-input">
+                <input type="radio" name="category" value="objekt" id="radio-objekt" class="hidden-input category-input js-category-input" checked>
                 <label for="radio-objekt" class="category-label">ooobjekt</label>
             </div>
             <div class="title title--grid">
@@ -49,6 +49,9 @@
             {{!-- js file reader writes image raw data into hidden input --}}
             <div class="js-hidden-image-data"></div>
             
+            {{!-- error when image is to big --}}
+            <div class="image-size-error js-image-size-error">Das Bild, das sie ausgewählt haben, ist größer als die maximal erlaubte Dateigröße von 5 MB. Bitte wählen Sie ein anderes aus.</div>
+
             {{!-- help text for objekt and erlebnis --}}
             <div class="form-help invisible visible-objekt visible-erlebnis">Der Kunstschaffende stellt das Bild für die Verwendung auf der Homepage von seinem Gebrauch des Urheberrechts auf unbefristete Zeit, spätestens bis zum Ende der Präsentation für die Aktion, frei.<span class="form-help__question-mark title title--grid">&nbsp;?</span></div>
             

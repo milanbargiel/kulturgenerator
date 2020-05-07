@@ -16,6 +16,7 @@ const entitlement = document.querySelector('.js-entitlement');
 // file upload
 const fileInput = document.querySelector('.js-file-input');
 const hiddenImageData = document.querySelector('.js-hidden-image-data');
+const imageSizeError = document.querySelector('.js-image-size-error');
 
 function isVisible(el) {
   return !(el.offsetParent === null);
@@ -111,6 +112,9 @@ fileInput.addEventListener('change', (inputEvent) => {
   const file = inputEvent.target.files[0];
   const reader = new FileReader();
 
+  // remove error messages
+  imageSizeError.removeAttribute('style');
+
   // create hidden text image data to upload via form
   reader.addEventListener('load', (readerEvent) => {
     let html = `<input type="hidden" name="data" value="${readerEvent.target.result.replace(/^.*,/, '')}" >`;
@@ -119,7 +123,12 @@ fileInput.addEventListener('change', (inputEvent) => {
   });
 
   if (file) {
-    reader.readAsDataURL(file);
+    const fileSize = ((file.size / 1024) / 1024).toFixed(4); // MB
+    if (fileSize < 5) {
+      reader.readAsDataURL(file);
+    } else {
+      imageSizeError.setAttribute('style', 'display: block;');
+    }
   } else { // no file selected
     hiddenImageData.innerHTML = '';
   }
