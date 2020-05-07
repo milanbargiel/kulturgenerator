@@ -6,7 +6,7 @@
         <div class="title title--grid">kultur&#160;</div>
         <div>
             <div class="title title--grid">
-                <input type="radio" name="category" value="objekt" id="radio-objekt" class="hidden-input category-input js-category-input" checked>
+                <input type="radio" name="category" value="objekt" id="radio-objekt" class="hidden-input category-input js-category-input">
                 <label for="radio-objekt" class="category-label">ooobjekt</label>
             </div>
             <div class="title title--grid">
@@ -192,6 +192,14 @@
             </div>
         </div>
         {{!-- Submit Button --}}
-        <input type="submit" class="sa-form__button button" value="Einreichen &#x23ce;">
+        <button type="submit" class="sa-form__button button">Einreichen &#x23ce;</button>
+
+        {{!-- Saving Animation --}}
+        <span class="saving js-saving"><span>.</span><span>.</span><span>.</span></span>
+
+        <div class="form-responses">
+            <div class="sa-form__response form-responses__success js-sa-form-success-text">Vielen Dank für die Einreichung! Wir melden uns bei Ihnen, wenn wir das Angebot im Kulturgenerator aufnehmen.</div>
+            <div class="sa-form__response form-responses__error js-sa-form-error-text">Ein Fehler ist aufgetreten. Versuchen Sie es später erneut oder wenden Sie sich an <a href="mailto:info@kulturgenerator.de" class="underlined-link underlined-link--red">info@kulturgenerator.de</a></div>
+        </div>
     </form>
 </div>

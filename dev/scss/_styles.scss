@@ -143,11 +143,7 @@ body {
   }
 }
 
-.nf-responses {
-  @media screen and (min-width: $bp-tablet) {
-    margin-right: 250px;
-  }
-
+.form-responses {
   &__success {
     color: $blue;
     display: none; 
@@ -306,6 +302,15 @@ body {
       margin-top: $font-size-desktop-galapagos;
     }
   }
+
+  &__response {
+    padding-top: $font-size-desktop-galapagos;
+    font-size: $font-size-mobile-small;
+
+    @media screen and (min-width: $bp-tablet) {
+      font-size: $font-size-desktop-small;
+    }
+  }
 }
 
 .explain {
@@ -452,6 +457,45 @@ body {
   }
 }
 
+// saving spinner
+@keyframes blink {
+  0% {
+    opacity: .2;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: .2;
+  }
+}
+.saving {
+  display: none;
+  font-family: 'GalapagosA-Regular', 'Inconsolata', monospace;
+  font-size: $font-size-mobile-galapagos;
+
+  @media screen and (min-width: $bp-tablet) {
+    font-size: $font-size-desktop-galapagos;
+  }
+}
+
+.saving span {
+  color: $blue;
+  animation-name: blink;
+  animation-duration: 1.4s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+}
+
+.saving span:nth-child(2) {
+  animation-delay: .2s;
+}
+
+.saving span:nth-child(3) {
+  animation-delay: .4s;
+}
+
+
 .footer, 
 .founders {
   font-size: $font-size-mobile-small;
@@ -462,7 +506,7 @@ body {
 }
 
 .underlined-link {
-  color: black;
+  color: $black;
   position: relative;
 
   &::after {
@@ -481,6 +525,14 @@ body {
   &:active {
     &::after {
       opacity: 1;
+    }
+  }
+
+  &--red {
+    color: $red;
+
+    &::after {
+      background-color: $red;
     }
   }
 }
