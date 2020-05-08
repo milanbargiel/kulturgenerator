@@ -179,7 +179,7 @@ $('.js-form').submit((event) => {
     url: 'https://script.google.com/macros/s/AKfycby4Ti9QvWXWkpzRx4ia9Ea91sP1bdCSU_4N9U1sxMoICNqPWbs/exec',
     type: 'post',
     data: serializedData,
-    timeout: 30000, // wait for a maximum of 30 seconds
+    timeout: 40000, // wait for a maximum of 40 seconds
   });
 
   // Callback handler that will be called on success
