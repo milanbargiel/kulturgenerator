@@ -22,7 +22,9 @@
     <link rel="icon" type="image/png" href="assets/images/favicon.ico">
 </head>
 <body>
-    {{> _newsletter-form }}
+    {{#unless danke}}
+        {{> _newsletter-form }}
+    {{/unless}}
     <div class="content">
         {{> @partial-block }}
     </div>
