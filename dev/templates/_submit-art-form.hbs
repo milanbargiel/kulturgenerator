@@ -82,11 +82,11 @@
         <div class="form-group form-group--wide">
 
             {{!-- 100-percent --}}
-            <div class="hundert-percent-thank-you js-thank-you-100-percent"> (•‿•)
+            <div class="hundert-percent-thank-you js-thank-you-100-percent">
              Vielen Dank!</div>
             <div class="form-check invisible visible-objekt visible-erlebnis">
                 <input class="form-check__checkbox js-100-percent-input" type="checkbox" name="100-percent" value="true" id="100-percent-input">
-                <label for="100-percent-input">Ich spende 100 % der Einnahmen an den Kulturgenerator und unterstütze damit andere Kulturschaffende</label>
+                <label for="100-percent-input">Ich spende mein Angebot zu 100% und verzichte auf Einnahmen</label>
             </div>
 
             {{!-- 50-percent --}}
@@ -100,7 +100,7 @@
                 <input class="form-check__checkbox" type="checkbox" name="payout" value="true" id="payout-input">
                 <label for="payout-input">Ich möchte bei der Gesamtausschüttung des Kulturgenerators berücksichtigt werden</label>
             </div>
-            <div class="form-help form-help--checkbox invisible visible-objekt visible-erlebnis">Mehrfachnennung möglich<span class="form-help__question-mark title title--grid">&nbsp;?</span></div>
+            <div class="form-help form-help--checkbox invisible visible-objekt visible-erlebnis js-100-percent-toggle-visibility">Mehrfachnennung möglich<span class="form-help__question-mark title title--grid">&nbsp;?</span></div>
         </div>
 
         {{!-- fullname --}}
@@ -128,7 +128,7 @@
         <div class="form-group">
             <label class="form-group__label" for="email-input">E-Mail-Adresse <span class="form-field-required">*</span></label>
             <input class="form-group__input js-required-input" type="email" name="email" id="email-input">
-            <div class="form-help js-100-percent-toggle-visibility">Diese E-Mail-Adresse werden wir für eventuelle Auszahlungen per Paypal benutzen. Falls Sie noch keinen Paypal Account haben, können Sie auch nach Zahlungseingang einen erstellen.<span class="form-help__question-mark title title--grid">&nbsp;?</span></div>
+            <div class="form-help js-100-percent-toggle-visibility">Ihre E-Mail-Adresse werden wir für eventuelle Auszahlungen per Paypal benutzen. Falls Sie noch keinen Paypal Account haben, können Sie sich auch nachträglich zum Zeitpunkt der Ausschüttung einen erstellen.<span class="form-help__question-mark title title--grid">&nbsp;?</span></div>
         </div>
 
         {{!-- website --}}
