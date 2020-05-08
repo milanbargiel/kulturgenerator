@@ -584,6 +584,7 @@ body {
 @media screen and (min-width: $bp-tablet) {
   .longer-text-container {
     font-size: 28px;
+    max-width: 1000px;
   }
 }
 
