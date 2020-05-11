@@ -610,3 +610,12 @@ body {
     height: $font-size-desktop-galapagos;
   }
 }
+
+.required-note {
+  color: $blue;
+  font-size: $font-size-mobile-small;
+
+  @media screen and (min-width: $bp-tablet) {
+    font-size: $font-size-desktop-extra-small;
+  }
+}
