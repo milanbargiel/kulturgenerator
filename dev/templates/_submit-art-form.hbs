@@ -1,6 +1,5 @@
 <div class="sa-container">
     <div class="sa-container__heading title title--grid">kölner<br><span class="title">kultur</span> einreichen
-        {{!-- <img src="assets/images/einreichen-generieren-einreichen.gif" class="animation"> --}}
     </div>
 
     {{!-- show form based on category selection --}}
@@ -8,7 +7,7 @@
         <div class="title title--grid">kultur&#160;</div>
         <div>
             <div class="title title--grid">
-                <input type="radio" name="category" value="objekt" id="radio-objekt" class="hidden-input category-input js-category-input">
+                <input type="radio" name="category" value="objekt" id="radio-objekt" class="hidden-input category-input js-category-input" checked>
                 <label for="radio-objekt" class="category-label">ooobjekt</label>
             </div>
             <div class="title title--grid">
@@ -25,7 +24,7 @@
     <form class="sa-form js-form js-form-objekt js-form-erlebnis js-form-motiv" action="https://script.google.com/macros/s/AKfycby4Ti9QvWXWkpzRx4ia9Ea91sP1bdCSU_4N9U1sxMoICNqPWbs/exec" method="post">
         {{!-- show explain text when parent class sa-form--selector is triggered by js --}}
         <div class="explain invisible visible-objekt">
-            Materielle künstlerische Erzeugnisse, z.B. Bilder, Skulpturen, Fotografien, Texte.
+            Materielle künstlerische Objekte, z.B. Gemälde, Fotografien, Plakate, Zeichnungen, Skulpturen, Skizzen, Druckmedien, Plastiken, Installationen, Bild- und Tonträger.
         </div>
         <div class="explain invisible visible-erlebnis">
             Kulturelle Ereignisse, Online-Angebote oder Kurse und Workshops, z.B. Gutscheine für Konzerte, Lesungen, Kino;  Sonderveranstaltungen; Streaming-Angebote für Filme; besondere Erlebnisse, z.B. Atelierbesuche.
@@ -55,10 +54,19 @@
             <div class="image-size-error js-image-size-error">Das Bild, das sie ausgewählt haben, ist größer als die maximal erlaubte Dateigröße von 5 MB. Bitte wählen Sie ein anderes aus.</div>
 
             {{!-- help text for objekt and erlebnis --}}
-            <div class="form-help invisible visible-objekt visible-erlebnis">Der / Die Kulturschaffende stellt das Bild für die Verwendung auf der Homepage von seinem Gebrauch des Urheberrechts auf unbefristete Zeit, spätestens bis zum Ende der Präsentation für die Aktion, frei.<a href="faq.html" target="_blank" class="form-help__question-mark title title--grid">&nbsp;?</a></div>
-            
-            {{!-- help text for for motiv --}}
-            <div class="form-help invisible visible-motiv">Mit dem Upload versichere ich, dass ich Urheber*in des eingereichten Motivs bin. Der / Die Kulturschaffende stellt das Bild für die Verwendung auf der Homepage von seinem Gebrauch des Urheberrechts auf unbefristete Zeit, spätestens bis zum Ende der Präsentation für die Aktion, frei.<a href="faq.html" target="_blank" class="form-help__question-mark title title--grid">&nbsp;?</a></div>
+            <div class="form-help">Ich erlaube hiermit die Weiternutzung des Bildes/der Bilder für die Verwendung im Projekt des Kulturgenerators und versichere dass ich der Urheber, bzw. dass ich der Inhaber des vollumfänglichen Nutzungsrechts bin<a href="faq.html" target="_blank" class="form-help__question-mark title title--grid">&nbsp;?</a></div>
+
+            {{!-- vgbild --}}
+            <div class="form-check">
+                <input class="form-check__checkbox" type="checkbox" name="vgbild" value="true" id="vgbild-input">
+                <label for="vgbild-input">Mein Bild ist von der VG Bild-Kunst geschützt.</label>
+            </div>
+
+            {{!-- title --}}
+            <div class="form-check">
+                <input class="form-check__checkbox" type="checkbox" name="image-for-promotion" value="true" id="image-for-promotion-input">
+                <label for="image-for-promotion-input">Ich möchte meine Arbeit für Werbezwecke auf sozialen Medien zur Verfügung stellen.</label>
+            </div>
         </div>
 
         {{!-- title --}}
@@ -88,19 +96,19 @@
             </div>
             <div class="form-check invisible visible-objekt visible-erlebnis">
                 <input class="form-check__checkbox js-required-input js-donation-input" type="radio" name="donation" value="Ja" id="donation-input-yes">
-                <label for="donation-input-yes">Ich spende das Angebot und verzichte auf Einnahmen durch den Verkauf</label>
+                <label for="donation-input-yes">Ich spende das Angebot und verzichte auf Einnahmen durch den Verkauf.</label>
             </div>
             
             {{!-- donation no --}}
             <div class="form-check invisible visible-objekt visible-erlebnis">
                 <input class="form-check__checkbox js-required-input js-donation-input" type="radio" name="donation" value="50%" id="donation-input-no">
-                <label for="donation-input-no">Ich möchte 50 % der Einnahmen aus dem Verkauf des Angebots erhalten</label>
+                <label for="donation-input-no">Ich möchte 50 % der Einnahmen aus dem Verkauf des Angebots erhalten.</label>
             </div>
 
             {{!-- payout --}}
             <div class="form-check">
                 <input class="form-check__checkbox js-donation-input js-payout-input" type="checkbox" name="payout" value="true" id="payout-input">
-                <label for="payout-input">Ich möchte bei der Gesamtausschüttung des Kulturgenerators berücksichtigt werden</label>
+                <label for="payout-input">Ich möchte bei der Gesamtausschüttung des Kulturgenerators berücksichtigt werden.</label>
             </div>
             <div class="form-help form-help--checkbox invisible visible-objekt visible-erlebnis">Mehrfachnennung möglich<a href="faq.html" target="_blank" class="form-help__question-mark title title--grid">&nbsp;?</a></div>
         </div>
@@ -122,8 +130,7 @@
             <label class="form-group__label" for="artisticwork-input">Künstlerische Tätigkeit <span class="form-field-required">*</span></label>
             <textarea class="form-group__input js-required-input" name="artisticwork" id="artisticwork-input" maxlength="2000" rows="3"></textarea>
             <div class="form-help invisible visible-erlebnis visible-objekt 
-            js-full-donation-toggle-visibility">Bitte haben Sie Verständnis, dass nur
-            diejenigen bei der Gesamtausschüttung berücksichtigt werden, die hauptberuflich oder nachweislich in hohem Maße ehrenamtlich als Kunst- oder Kulturschaffende arbeiten.<a href="faq.html" target="_blank" class="form-help__question-mark title title--grid">&nbsp;?</a>
+            js-full-donation-toggle-visibility">Bitte haben Sie Verständnis, dass nur diejenigen bei der Gesamtausschüttung berücksichtigt werden, die hauptberuflich oder nachweislich in hohem Maße ehrenamtlich als Kunst- oder Kulturschaffende arbeiten.<a href="faq.html" target="_blank" class="form-help__question-mark title title--grid">&nbsp;?</a>
         </div>
     </div>
 
@@ -151,14 +158,14 @@
         {{!-- venue --}}
         <div class="form-check">
             <input class="form-check__checkbox" type="checkbox" name="venue" value="true" id="venue-input">
-            <label for="venue-input">Ich bin ein Veranstaltungsort</label>
+            <label for="venue-input">Ich bin vertretungsberechtigte Person für einen Veranstaltungsort.</label>
         </div>
 
         {{!-- member --}}
         <div class="form-check invisible visible-objekt visible-erlebnis 
         js-full-donation-toggle-visibility">
         <input class="form-check__checkbox" type="checkbox" name="member" value="true" id="member-input">
-        <label for="member-input">Ich bin eingetragenes Mitglied bei GEMA, KSK oder einem Berufsverband</label>
+        <label for="member-input">Ich bin eingetragenes Mitglied bei GEMA, KSK oder einem Berufsverband.</label>
     </div>
 
     {{!-- nomember --}}
@@ -166,7 +173,7 @@
     js-full-donation-toggle-visibility">
     {{!-- toggles visibility of entitlement textarea --}}
     <input class="form-check__checkbox js-no-member-input" type="checkbox" name="nomember" value="true" id="nomember-input">
-    <label for="nomember-input">Ich habe keine dieser Mitgliedschaften</label>
+    <label for="nomember-input">Ich habe keine dieser Mitgliedschaften.</label>
 </div>
 
 {{!-- entitlement --}}
