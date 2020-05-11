@@ -13,13 +13,15 @@ $white: #fff;
 $stylish-red: #cb2c30;
 
 // form variables
-$font-size-desktop: 44px;
-$font-size-desktop-galapagos: 60px;
+// $font-size-desktop: 44px;
+// $font-size-desktop-galapagos: 60px;
+$font-size-desktop: 36px;
+$font-size-desktop-galapagos: 56px;
 $font-size-desktop-small: 28px;
 $font-size-desktop-extra-small: 24px; // used for newsletter banner and help explain texts
 $font-size-mobile: 26px;
-$font-size-mobile-galapagos: 34px;
 $font-size-mobile-small: 22px;
+$font-size-mobile-galapagos: 34px;
 $x1: $font-size-desktop-galapagos / 3;
 $x2: 2 * $x1;
 $x3: 3 * $x1;
