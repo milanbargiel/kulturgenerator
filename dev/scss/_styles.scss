@@ -219,6 +219,7 @@ body {
 
 .category-label {
   position: relative;
+  color: $blue;
 
   // empty circle as radiobutton
   &:before {
@@ -228,7 +229,7 @@ body {
     top: 0;
     width: $font-size-mobile-galapagos;
     height: $font-size-mobile-galapagos;
-    border: 1px solid $black;
+    border: 1px solid $blue;
     border-radius: 100%;
     background: #fff;
 
@@ -258,13 +259,31 @@ body {
     }
   }
 
+  &--red {
+    &:after {
+      background: $stylish-red;
+    }
+  }
+
+  &--blue {
+    &:after {
+      background: $blue;
+    }
+  }
+
+  &--green {
+    &:after {
+      background: green;
+    }
+  }
+
   // hover styles
   &:hover {
     cursor: pointer;
     // color: $blue;
 
     &:before {
-      border: 3px solid $black;
+      border: 3px solid $blue;
     }
   }
 }
@@ -416,7 +435,7 @@ body {
   }
 }
 
-.hundert-percent-thank-you {
+.donation-thank-you {
   display: none;
   color: $blue;
   font-size: $font-size-mobile-small;
@@ -603,4 +622,12 @@ body {
 
 .sa-form--motiv .visible-motiv {
   display: block;
+}
+
+.animation {
+  height: $font-size-mobile-galapagos;
+
+  @media screen and (min-width: $bp-tablet) {
+    height: $font-size-desktop-galapagos;
+  }
 }

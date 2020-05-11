@@ -4,10 +4,10 @@ const submitArtForm = document.querySelector('.js-form');
 const selectedCategoryInput = document.querySelector('.js-selected-category');
 const allRequiredInputs = document.querySelectorAll('.js-required-input');
 
-// 100 percent toggle visibility
-const hundertPercent = document.querySelector('.js-100-percent-input');
-const hundertPercentThankYou = document.querySelector('.js-thank-you-100-percent');
-const hundertPercentToggles = document.querySelectorAll('.js-100-percent-toggle-visibility');
+// donation toggle visibility
+const donationInputs = document.querySelectorAll('.js-donation-input');
+const donationThankYou = document.querySelector('.js-thank-you-donation');
+const fullDonationToggles = document.querySelectorAll('.js-full-donation-toggle-visibility');
 
 // no member toggle visibility
 const noMember = document.querySelector('.js-no-member-input');
@@ -41,11 +41,11 @@ function makeVisibleInputsRequired() {
 function clearForm() {
   // reset form
   submitArtForm.reset();
-  // manually dispatch change event on hunderPercentDonation listener
+  // manually dispatch change event on donation listener
   // to reset visibility toggles to funnel defaults
   const event = document.createEvent('HTMLEvents');
   event.initEvent('change', false, true);
-  hundertPercent.dispatchEvent(event);
+  donationInputs[0].dispatchEvent(event);
   // manually dispatch change event on image input
   // to reset image selection
   fileInput.dispatchEvent(event);
@@ -83,24 +83,35 @@ categoryRadioButtons.forEach((radioButton) => {
   });
 });
 
-// 100 percent toggle visibility
-hundertPercent.addEventListener('change', (event) => {
-  if (event.target.checked) {
-    // show thank you message for 100 percent donation
-    hundertPercentThankYou.style.display = 'block';
-    // hide plausibility checks and further money options
-    hundertPercentToggles.forEach((el) => {
-      el.setAttribute('style', 'display: none;');
+// donation toggle visibility
+donationInputs.forEach((donationInput) => {
+  donationInput.addEventListener('change', () => {
+    // create object that holds current selection of donation options
+    const selection = {};
+    donationInputs.forEach((input) => {
+      selection[input.id] = input.checked;
     });
+    // if 100% donation
+    // => thank you
+    if (selection['donation-input-yes']) {
+      donationThankYou.style.display = 'block';
+    } else {
+      donationThankYou.removeAttribute('style');
+    }
+
+    // if 100% donation and no payout
+    // hide all plausibility checks
+    if (selection['donation-input-yes'] && selection['payout-input'] === false) {
+      fullDonationToggles.forEach((el) => {
+        el.setAttribute('style', 'display: none;');
+      });
+    } else { // show plausibility checks
+      fullDonationToggles.forEach((el) => {
+        el.removeAttribute('style');
+      });
+    }
     makeVisibleInputsRequired();
-  } else {
-    hundertPercentThankYou.style.display = 'none';
-    // reset to funnel defaults and remove style attribute if already set before
-    hundertPercentToggles.forEach((el) => {
-      el.removeAttribute('style');
-    });
-    makeVisibleInputsRequired();
-  }
+  });
 });
 
 // no member toggle visibility
