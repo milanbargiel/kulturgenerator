@@ -183,6 +183,10 @@ body {
     width: 22%;
     margin-bottom: 3 * $font-size-desktop-galapagos;
   }
+
+  @media screen and (min-width: $bp-large) {
+    width: 16%;
+  }
 }
 
 // submit art container
