@@ -264,24 +264,6 @@ body {
     }
   }
 
-  &--red {
-    &:after {
-      background: $stylish-red;
-    }
-  }
-
-  &--blue {
-    &:after {
-      background: $blue;
-    }
-  }
-
-  &--green {
-    &:after {
-      background: green;
-    }
-  }
-
   // hover styles
   &:hover {
     cursor: pointer;
