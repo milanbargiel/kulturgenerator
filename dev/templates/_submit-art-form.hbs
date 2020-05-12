@@ -7,7 +7,7 @@
         <div class="title title--grid">kultur&#160;</div>
         <div>
             <div class="title title--grid">
-                <input type="radio" name="category" value="objekt" id="radio-objekt" class="hidden-input category-input js-category-input">
+                <input type="radio" name="category" value="objekt" id="radio-objekt" class="hidden-input category-input js-category-input" checked>
                 <label for="radio-objekt" class="category-label">ooobjekt</label>
             </div>
             <div class="title title--grid">
@@ -27,45 +27,54 @@
             Materielle künstlerische Objekte, z.B. Gemälde, Fotografien, Plakate, Zeichnungen, Skulpturen, Skizzen, Druckmedien, Plastiken, Installationen, Bild- und Tonträger.
         </div>
         <div class="explain invisible visible-erlebnis">
-            Kulturelle Ereignisse, Online-Angebote oder Kurse und Workshops, z.B. Gutscheine für Konzerte, Lesungen, Kino;  Sonderveranstaltungen; Streaming-Angebote für Filme; besondere Erlebnisse, z.B. Atelierbesuche.
+            Kulturelle Erlebnisse z.B. Online-Angebote, Kurse, Workshops, Konzerte, Lesungen, Filmvorführungen, Sonderveranstaltungen, Streamingangebote, Atelierbesuche.
         </div>
         <div class="explain invisible visible-motiv">
-            Die Niehler Freiheit druckt Grafiken und Fotografien auf Textilien. Hier können die Motive hochgeladen werden.
-            Benötigt werden dafür einfarbige Entwürfe. Das maximale druckbare
-            Format beträgt 30x40cm. Die Datei muss als entweder als Vektorgrafik angelegt sein (hier ist eine ca. 0,5mm Linie noch scharf darstellbar) oder als Bitmap in Graustufen mit 300 DPI und gerastert (eine fotorealistischer Druck funktioniert am besten mit: Halbtonraster Rasterweite 27 Linien pro Zoll, 22,5Grad gewinkelt, Form: Ellipse). Eine Kombination von Beidem ist möglich.
+            Motive für den Textildruck, z.B. Grafiken, Skizzen, Zeichnungen, Typografie.
         </div>
         
         {{!-- FORM INPUTS --}}
         {{!-- category --}}
         <input type="hidden" class="js-selected-category" name="category" value="">
 
-        <div class="form-group">
-            <label class="form-group__label" for="image-input">Bild hochladen <span class="form-field-required">* (max. 5 MB pro Datei)</span></label>
+        <div class="form-group form-group--wide">
+            <div class="form-group--small">
+                <label class="form-group__label" for="image-input">Bild hochladen <span class="form-field-required">* (max. 5 MB pro Datei)</span></label>
 
-            {{!-- VISIBLE inputs with class js-required-input are set to required --}}
+                {{!-- VISIBLE inputs with class js-required-input are set to required --}}
 
-            {{!-- image --}}
-            <input class="form-group__input js-file-input js-required-input" type="file" name="image" id="image-input" accept="image/*">
+                {{!-- image --}}
+                <input class="form-group__input js-file-input js-required-input" type="file" name="image" id="image-input" accept="image/*">
 
-            {{!-- js file reader writes image raw data into hidden input --}}
-            <div class="js-hidden-image-data"></div>
-            
-            {{!-- error when image is to big --}}
-            <div class="image-size-error js-image-size-error">Das Bild, das sie ausgewählt haben, ist größer als die maximal erlaubte Dateigröße von 5 MB. Bitte wählen Sie ein anderes aus.</div>
+                {{!-- js file reader writes image raw data into hidden input --}}
+                <div class="js-hidden-image-data"></div>
 
-            {{!-- help text for objekt and erlebnis --}}
-            <div class="form-help">Ich erlaube hiermit die Weiternutzung des Bildes/der Bilder für die Verwendung im Projekt des Kulturgenerators und versichere dass ich der Urheber, bzw. dass ich der Inhaber des vollumfänglichen Nutzungsrechts bin<a href="faq.html" target="_blank" class="form-help__question-mark title title--grid">&nbsp;?</a></div>
+                {{!-- error when image is to big --}}
+                <div class="image-size-error js-image-size-error">Das Bild, das sie ausgewählt haben, ist größer als die maximal erlaubte Dateigröße von 5 MB. Bitte wählen Sie ein anderes aus.</div>
+
+                {{!-- help text for erlebnis and objekt --}}
+                <div class="form-help invisible visible-erlebnis visible-objekt">Hier können Sie Bilder Ihres Angebotes zur Darstellung im Kulturgenerator hochladen.<a href="faq.html" target="_blank" class="form-help__question-mark title title--grid">&nbsp;?</a></div>
+
+                {{!-- help text for motiv --}}
+                <div class="form-help invisible visible-motiv">Hier können die Motive hochgeladen werden. Benötigt werden dafür einfarbige Entwürfe. Das maximale druckbare Format beträgt 30x40cm.<a href="faq.html" target="_blank" class="form-help__question-mark title title--grid">&nbsp;?</a></div>
+            </div>
+
+            {{!-- imagelicense --}}
+            <div class="form-check">
+                <input class="form-check__checkbox js-required-input" type="checkbox" name="imagelicense" value="true" id="imagelicense-input">
+                <label for="imagelicense-input">Ich erlaube hiermit die Weiternutzung des Bildes/der Bilder für die Verwendung im Projekt und versichere dass ich Urheber*in, bzw. Inhaber*in des vollumfänglichen Nutzungsrechts bin <span class="form-field-required">*</span></label>
+            </div>
 
             {{!-- vgbild --}}
             <div class="form-check">
                 <input class="form-check__checkbox" type="checkbox" name="vgbild" value="true" id="vgbild-input">
-                <label for="vgbild-input">Mein Bild ist von der VG Bild-Kunst geschützt.</label>
+                <label for="vgbild-input">Mein Bild ist von der VG Bild-Kunst geschützt und ich möchte, dass der Kulturgenerator die Verwertungsgesellschaft über meine Teilnahme am Projekt informiert.</label>
             </div>
 
-            {{!-- title --}}
+            {{!-- imageforpromotion --}}
             <div class="form-check">
-                <input class="form-check__checkbox" type="checkbox" name="image-for-promotion" value="true" id="image-for-promotion-input">
-                <label for="image-for-promotion-input">Ich möchte meine Arbeit für Werbezwecke auf sozialen Medien zur Verfügung stellen.</label>
+                <input class="form-check__checkbox" type="checkbox" name="imageforpromotion" value="true" id="imageforpromotion-input">
+                <label for="imageforpromotion-input">Ich möchte meine Arbeit zusätzlich für Werbezwecke auf sozialen Medien zur Verfügung stellen.</label>
             </div>
         </div>
 
@@ -95,11 +104,11 @@
                 Vielen Dank!
             </div>
             <div class="form-check invisible visible-objekt visible-erlebnis">
-                <input class="form-check__checkbox js-required-input js-donation-input" type="radio" name="donation" value="Ja" id="donation-input-yes">
+                <input class="form-check__checkbox js-required-input js-donation-input" type="radio" name="donation" value="true" id="donation-input-yes">
                 <label for="donation-input-yes">Ich spende das Angebot und verzichte auf Einnahmen durch den Verkauf.</label>
             </div>
             
-            {{!-- donation no --}}
+            {{!-- donation 50% --}}
             <div class="form-check invisible visible-objekt visible-erlebnis">
                 <input class="form-check__checkbox js-required-input js-donation-input" type="radio" name="donation" value="50%" id="donation-input-no">
                 <label for="donation-input-no">Ich möchte 50 % der Einnahmen aus dem Verkauf des Angebots erhalten.</label>
@@ -119,10 +128,23 @@
             <input class="form-group__input js-required-input" type="text" name="fullname" id="fullname-input" maxlength="60">
         </div>
 
-        {{!-- adress --}}
+        {{!-- street --}}
         <div class="form-group">
-            <label class="form-group__label" for="adress-input">Anschrift <span class="form-field-required">*</span></label>
-            <input class="form-group__input js-required-input" type="text" name="adress" id="adress-input" maxlength="60">
+            <label class="form-group__label" for="street-input">Straße und Hausnummer <span class="form-field-required">*</span></label>
+            <input class="form-group__input js-required-input" type="text" name="street" id="street-input" maxlength="60">
+        </div>
+
+        <div class="form-group form-group--adress">
+            <div class="form-group__postal">
+                {{!-- postalcode --}}
+                <label class="form-group__label" for="postalcode-input">PLZ <span class="form-field-required">*</span></label>
+                <input class="form-group__input js-required-input" type="text" name="postalcode" id="postalcode-input" maxlength="60">
+            </div>
+            <div class="form-group__place">
+                {{!-- place --}}
+                <label class="form-group__label" for="place-input">Ort <span class="form-field-required">*</span></label>
+                <input class="form-group__input js-required-input" type="text" name="place" id="place-input" maxlength="60">
+            </div>
         </div>
 
         {{!-- artisticwork --}}

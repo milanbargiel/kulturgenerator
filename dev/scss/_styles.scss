@@ -346,6 +346,20 @@ body {
   &--small { // only used for inline textform within checkbox region
     max-width: 680px;
   }
+
+  &--adress {
+    display: flex;
+    flex-shrink: 0;
+  }
+}
+
+.form-group__postal {
+  width: 20%;
+  margin-right: 1rem;
+}
+
+.form-group__place {
+  width: 100%;
 }
 
 .image-size-error {
@@ -438,6 +452,7 @@ body {
   margin-top: 1rem;
   margin-bottom: 1rem;
   padding-left: 1.5rem;
+  max-width: 1000px;
 
   @media screen and (min-width: $bp-tablet) {
     font-size: $font-size-desktop-extra-small;
