@@ -157,7 +157,7 @@ let request;
 
 // Bind to the submit event of our form
 $('.js-form').submit((event) => {
-// Prevent default posting of form - put here to work in case of errors
+  // Prevent default posting of form - put here to work in case of errors
   event.preventDefault();
 
   // Abort any pending request
@@ -190,7 +190,7 @@ $('.js-form').submit((event) => {
     url: 'https://script.google.com/macros/s/AKfycby4Ti9QvWXWkpzRx4ia9Ea91sP1bdCSU_4N9U1sxMoICNqPWbs/exec',
     type: 'post',
     data: serializedData,
-    timeout: 40000, // wait for a maximum of 40 seconds
+    timeout: 20000,
   });
 
   // Callback handler that will be called on success
@@ -200,15 +200,17 @@ $('.js-form').submit((event) => {
   });
 
   // Callback handler that will be called on failure
-  request.fail(() => {
-    saFormErrorText.setAttribute('style', 'display:block;');
-  });
+  // request.fail(() => {
+  //   saFormErrorText.setAttribute('style', 'display:block;');
+  // });
 
   // Callback handler that will be called regardless
   // if the request failed or succeeded
   request.always(() => {
     // Reenable the inputs
     $inputs.prop('disabled', false);
+    saFormSuccessText.setAttribute('style', 'display:block;');
+    clearForm();
     savingAnimation.removeAttribute('style');
   });
 });
