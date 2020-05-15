@@ -22,13 +22,12 @@
     <link rel="icon" type="image/png" href="assets/images/favicon.ico">
 </head>
 <body>
-    {{#unless danke}}
-        {{> _newsletter-form }}
-    {{/unless}}
     <div class="content">
         {{> @partial-block }}
     </div>
-
+    {{#unless danke}}
+        {{> _newsletter-form }}
+    {{/unless}}
     <!-- JS
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <script src="js/vendor/jquery.min.js"></script>

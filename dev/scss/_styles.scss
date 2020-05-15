@@ -52,11 +52,11 @@ body {
 .button {
   border: 2px solid $light-grey;
   background-color: $white;
-  color: $black;
+  color: $blue;
 
   &:hover {
     cursor: pointer;
-    border: 2px solid $black;
+    border: 2px solid $blue;
   }
 }
 
@@ -98,7 +98,7 @@ body {
   padding-top: 10px;
   padding-bottom: 10px;
   font-size: $font-size-mobile-small;
-  border: 1px solid $black;
+  border-top: 1px solid $black;
   display: flex;
 
   @media screen and (min-width: $bp-tablet) {
@@ -297,11 +297,6 @@ body {
 
   &__button {
     margin-top: $font-size-mobile-galapagos;
-    color: $blue;
-
-    &:hover {
-      border: 2px solid $blue;
-    }
 
     @media screen and (min-width: $bp-tablet) {
       margin-top: $font-size-desktop-galapagos;
