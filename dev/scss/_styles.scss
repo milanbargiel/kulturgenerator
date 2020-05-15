@@ -537,11 +537,11 @@ body {
     }
   }
 
-  &--red {
-    color: $red;
+  &--blue {
+    color: $blue;
 
     &::after {
-      background-color: $red;
+      background-color: $blue;
     }
   }
 }
