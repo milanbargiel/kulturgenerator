@@ -27,3 +27,20 @@ $font-size-mobile-galapagos: 34px;
 $x1: $font-size-desktop-galapagos / 3;
 $x2: 2 * $x1;
 $x3: 3 * $x1;
+
+// mixins
+@mixin galapagos-margin-bottom($factor) {
+  margin-bottom: $factor * $font-size-mobile-galapagos;
+
+  @media screen and (min-width: $bp-tablet) {
+    margin-bottom: $factor * $font-size-desktop-galapagos;
+  }
+}
+
+@mixin galapagos-margin-top($factor) {
+  margin-top: $factor * $font-size-mobile-galapagos;
+
+  @media screen and (min-width: $bp-tablet) {
+    margin-top: $factor * $font-size-desktop-galapagos;
+  }
+}

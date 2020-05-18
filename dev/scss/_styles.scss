@@ -186,17 +186,15 @@ body {
 
 // submit art container
 .sa-container {
-  margin-bottom: 3 * $font-size-mobile-galapagos;
-
-  @media screen and (min-width: $bp-tablet) {
-    margin-bottom: 3   * $font-size-desktop-galapagos;
-  }
+  @include galapagos-margin-bottom(3);
 
   &__heading {
-    margin-bottom: $font-size-mobile-galapagos;
+    @include galapagos-margin-bottom(1);
+  }
 
+  &__categories {
     @media screen and (min-width: $bp-tablet) {
-      margin-bottom: $font-size-desktop-galapagos;
+      display: flex;
     }
   }
 }
@@ -215,97 +213,24 @@ body {
   }
 }
 
-.categories {
-  @media screen and (min-width: $bp-tablet) {
-    display: flex;
-  }
-}
-
-.category-label {
-  position: relative;
-  color: $blue;
-
-  // empty circle as radiobutton
-  &:before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: $font-size-mobile-galapagos;
-    height: $font-size-mobile-galapagos;
-    border: 1px solid $blue;
-    border-radius: 100%;
-    background: #fff;
-
-    @media screen and (min-width: $bp-tablet) {
-      width: $font-size-desktop-galapagos;
-      height: $font-size-desktop-galapagos;
-    }
-  }
-
-  // filled circle as radiobutton
-  &:after {
-    content: '';
-    width: $font-size-mobile-galapagos - 2px;
-    height: $font-size-mobile-galapagos - 2px;
-    background: $orange;
-    // background: $black;
-    position: absolute;
-    top: 1px;
-    left: 1px;
-    border-radius: 100%;
-    -webkit-transition: all 0.2s ease;
-    transition: all 0.2s ease;
-
-    @media screen and (min-width: $bp-tablet) {
-      width: $font-size-desktop-galapagos - 2px;
-      height: $font-size-desktop-galapagos - 2px;
-    }
-  }
-
-  // hover styles
-  &:hover {
-    cursor: pointer;
-    // color: $blue;
-
-    &:before {
-      border: 3px solid $blue;
-    }
-  }
-}
-
-// transform on selection
-.category-input:not(:checked) + .category-label:after {
-  opacity: 0;
-  transform: scale(0);
-}
-
-.category-input:checked + .category-label:after {
-  opacity: 1;
-  transform: scale(1);
-}
-
 // submit art form
 .sa-form {
   display: none;
-  margin-top: 2 * $font-size-mobile-galapagos;
   max-width: 1000px;
+  font-size: $font-size-mobile-small;
 
   @media screen and (min-width: $bp-tablet) {
-    margin-top: 2 * $font-size-desktop-galapagos;
+    font-size: $font-size-desktop-extra-small;
   }
 
-  &__button {
-    margin-top: $font-size-mobile-galapagos;
+  @include galapagos-margin-top(2);
 
-    @media screen and (min-width: $bp-tablet) {
-      margin-top: $font-size-desktop-galapagos;
-    }
+  &__button {
+    @include galapagos-margin-top(1);
   }
 
   &__response {
     padding-top: $font-size-desktop-galapagos;
-    font-size: $font-size-mobile-small;
 
     @media screen and (min-width: $bp-tablet) {
       font-size: $font-size-desktop-small;
@@ -315,13 +240,7 @@ body {
 
 .explain {
   color: $orange;
-  font-size: $font-size-mobile-small;
-  margin-bottom: 2 * $font-size-mobile-galapagos;
-
-  @media screen and (min-width: $bp-tablet) {
-    font-size: $font-size-desktop-extra-small;
-    margin-bottom: 2 * $font-size-desktop-galapagos;
-  }
+  @include galapagos-margin-bottom(2);
 }
 
 .form-group {

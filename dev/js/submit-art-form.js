@@ -58,10 +58,8 @@ function showSelectedForm(selector) {
   submitArtForm.classList.remove('sa-form--motiv');
 
   // show selected funnel
-  if (submitArtForm.className.includes(selector)) {
-    submitArtForm.setAttribute('style', 'display:block;');
-    submitArtForm.classList.add(`sa-form--${selector}`);
-  }
+  submitArtForm.setAttribute('style', 'display:block;');
+  submitArtForm.classList.add(`sa-form--${selector}`);
 
   // clear previous form inputs
   clearForm();
