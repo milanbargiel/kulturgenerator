@@ -429,6 +429,14 @@ body {
       background-color: $blue;
     }
   }
+
+  &--red {
+    color: $red;
+
+    &::after {
+      background-color: $red;
+    }
+  }
 }
 
 .back-arrow {
