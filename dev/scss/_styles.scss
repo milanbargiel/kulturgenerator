@@ -285,6 +285,11 @@ body {
 .form-group__label {
   display: inline-block;
   margin-bottom: .5rem;
+  font-size: $font-size-mobile;
+
+  @media screen and (min-width: $bp-tablet) {
+    font-size: $font-size-desktop;
+  }
 }
 
 .form-group__input {
@@ -457,7 +462,7 @@ body {
 }
 
 .founders__header {
-  margin-bottom: 20px;
+  margin-bottom: 1rem;
 }
 
 .founders__logos {
@@ -467,14 +472,10 @@ body {
 
 .founder-link {
   display: inline-block;
-  margin-right: 40px;
+  margin-right: 2rem;
 
   &--kk {
-    width: 130px;
-
-    @media screen and (min-width: $bp-tablet) {
-      width: 90px;
-    }
+    width: 90px;
   }
 
   &--nf {
@@ -519,7 +520,8 @@ body {
   }
 }
 
-.footer {
+.footer,
+.founders {
   font-size: $font-size-mobile;
 
   @media screen and (min-width: $bp-tablet) {
