@@ -38,13 +38,13 @@ a {
 
 body {
   color: $black;
-  font-size: $font-size-mobile;
+  font-size: $font-size-mobile-small;
   font-family: $font-family;
   font-weight: 500;
   line-height: 1.5;
 
   @media screen and (min-width: $bp-tablet) {
-    font-size: $font-size-desktop;
+    font-size: $font-size-desktop-small;
   }
 }
 
@@ -97,13 +97,8 @@ body {
 .nf-container {
   padding-top: 10px;
   padding-bottom: 10px;
-  font-size: $font-size-mobile-small;
   border-top: 1px solid $black;
   display: flex;
-
-  @media screen and (min-width: $bp-tablet) {
-    font-size: $font-size-desktop-extra-small;
-  }
 }
 
 .content {
@@ -168,6 +163,11 @@ body {
 
 .intro {
   margin-bottom: 10px;
+  font-size: $font-size-mobile;
+
+  @media screen and (min-width: $bp-smartphone) {
+    font-size: $font-size-desktop;
+  }
 }
 
 .blue-arrows {
@@ -217,11 +217,6 @@ body {
 .sa-form {
   display: none;
   max-width: 1000px;
-  font-size: $font-size-mobile-small;
-
-  @media screen and (min-width: $bp-tablet) {
-    font-size: $font-size-desktop-extra-small;
-  }
 
   @include galapagos-margin-top(2);
 
@@ -231,25 +226,19 @@ body {
 
   &__response {
     padding-top: $font-size-desktop-galapagos;
-
-    @media screen and (min-width: $bp-tablet) {
-      font-size: $font-size-desktop-small;
-    }
   }
 }
 
 .explain {
   color: $orange;
-  @include galapagos-margin-bottom(2);
+  @include galapagos-margin-bottom(1);
 }
 
 .form-group {
   max-width: 680px;
-  font-size: $font-size-mobile-small;
   margin-bottom: $font-size-mobile-galapagos;
 
   @media screen and (min-width: $bp-tablet) {
-    font-size: $font-size-desktop-small;
     margin-bottom: $font-size-desktop-galapagos;
   }
 
@@ -278,13 +267,8 @@ body {
 
 .image-size-error {
   display: none;
-  font-size: $font-size-mobile-small;
   margin: 1rem 0;
   color: $red;
-
-  @media screen and (min-width: $bp-tablet) {
-    font-size: $font-size-desktop-extra-small;
-  }
 }
 
 .form-group__label {
@@ -311,20 +295,13 @@ body {
 
 .form-field-required {
   color: $blue;
-  font-size: $font-size-mobile-small;
-
-  @media screen and (min-width: $bp-tablet) {
-    font-size: $font-size-desktop-extra-small;
-  }
 }
 
 .form-help {
-  font-size: $font-size-mobile-small;
   color: $dark-grey;
   padding-top: .25rem;
 
   @media screen and (min-width: $bp-tablet) {
-    font-size: $font-size-desktop-extra-small;
     position: relative;
     padding-right: $font-size-desktop-galapagos + 16px; // 16px equals 1 rem
   }
@@ -352,16 +329,10 @@ body {
 .donation-thank-you {
   display: none;
   color: $blue;
-  font-size: $font-size-mobile-small;
-
-  @media screen and (min-width: $bp-tablet) {
-    font-size: $font-size-desktop-extra-small;
-  }
 }
 
 .form-check {
   position: relative;
-  font-size: $font-size-mobile-small;
   line-height: 1.2;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
@@ -369,7 +340,6 @@ body {
   max-width: 1000px;
 
   @media screen and (min-width: $bp-tablet) {
-    font-size: $font-size-desktop-extra-small;
     padding-left: 2rem;
   }
 
@@ -421,16 +391,6 @@ body {
 
 .saving span:nth-child(3) {
   animation-delay: .4s;
-}
-
-
-.footer, 
-.founders {
-  font-size: $font-size-mobile-small;
-
-  @media screen and (min-width: $bp-tablet) {
-    font-size: $font-size-desktop-small;
-  }
 }
 
 .underlined-link {
@@ -540,11 +500,10 @@ body {
   }
 }
 
-.required-note {
-  color: $blue;
-  font-size: $font-size-mobile-small;
+.footer {
+  font-size: $font-size-mobile;
 
   @media screen and (min-width: $bp-tablet) {
-    font-size: $font-size-desktop-extra-small;
+    font-size: $font-size-desktop;
   }
 }

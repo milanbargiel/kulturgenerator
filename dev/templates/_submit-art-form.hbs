@@ -30,7 +30,7 @@
             Kulturelle Erlebnisse z.B. Online-Angebote, Kurse, Workshops, Konzerte, Lesungen, Filmvorführungen, Sonderveranstaltungen, Streamingangebote, Atelierbesuche.
         </div>
         <div class="explain invisible visible-motiv">
-            Motive für den Textildruck, z.B. Grafiken, Skizzen, Zeichnungen, Typografie.
+            Die Niehler Freiheit druckt Motive auf Textil. Hier können Sie Grafiken, Skizzen, Zeichnungen, Typografie, etc. einreichen.
         </div>
         
         {{!-- FORM INPUTS --}}
@@ -48,7 +48,8 @@
             <div class="form-group">
                 <label class="form-group__label" for="description-input">Kurzbeschreibung <span class="form-field-required">*</span></label>
                 <textarea class="form-group__input js-required-input" name="description" rows="4" id="description-input" maxlength="2000"></textarea>
-                <div class="form-help invisible visible-objekt visible-erlebnis">Dieser Text beschreibt Ihr Angebot und erscheint auf der Homepage. Bei materiellen Werken fügen Sie bitte Angaben zu Material, Größe, Stil etc. hinzu. Bei Veranstaltungen oder ähnlichem, bitte Angaben zu Menge und voraussichtlichem Datum<div class="form-help__question-mark title title--grid">&nbsp;?</div></div>
+                <div class="form-help invisible visible-objekt">Dieser Text beschreibt Ihr Angebot und erscheint auf der Homepage. Bei Objekten fügen Sie bitte Angaben zu Material, Größe und Genre/Stil hinzu.<div class="form-help__question-mark title title--grid">&nbsp;?</div></div>
+                <div class="form-help invisible visible-erlebnis">Dieser Text beschreibt Ihr Angebot und erscheint auf der Homepage.<div class="form-help__question-mark title title--grid">&nbsp;?</div></div>
                 <div class="form-help invisible visible-motiv">Dieser Text beschreibt Ihr Motiv und erscheint auf der Homepage.<div class="form-help__question-mark title title--grid">&nbsp;?</div></div>
             </div>
 
@@ -87,11 +88,11 @@
             {{!-- imagelicense --}}
             <div class="form-check">
                 <input class="form-check__checkbox js-required-input" type="checkbox" name="imagelicense" value="true" id="imagelicense-input">
-                <label for="imagelicense-input">Ich erlaube hiermit die Weiternutzung des Bildes/der Bilder für die Verwendung im Projekt und versichere dass ich Urheber*in, bzw. Inhaber*in des vollumfänglichen Nutzungsrechts bin <span class="form-field-required">*</span></label>
+                <label for="imagelicense-input">Ich erlaube hiermit die Weiternutzung des Bildes/der Bilder für die Verwendung im Projekt und versichere, dass ich Urheber*in bzw. Inhaber*in des vollumfänglichen Nutzungsrechts bin. <span class="form-field-required">*</span></label>
             </div>
 
             {{!-- vgbild --}}
-            <div class="form-check">
+            <div class="form-check invisible visible-objekt visible-motiv">
                 <input class="form-check__checkbox" type="checkbox" name="vgbild" value="true" id="vgbild-input">
                 <label for="vgbild-input">Mein Bild ist von der VG Bild-Kunst geschützt und ich möchte, dass der Kulturgenerator die Verwertungsgesellschaft über meine Teilnahme am Projekt informiert.</label>
             </div>
@@ -117,7 +118,7 @@
             {{!-- donation 50% --}}
             <div class="form-check invisible visible-objekt visible-erlebnis">
                 <input class="form-check__checkbox js-required-input js-donation-input" type="radio" name="donation" value="50%" id="donation-input-no">
-                <label for="donation-input-no">Ich möchte 50 % der Einnahmen aus dem Verkauf des Angebots erhalten.</label>
+                <label for="donation-input-no">Ich möchte 50 % aus dem Verkauf des Angebots erhalten.</label>
             </div>
 
             {{!-- payout --}}
@@ -155,10 +156,10 @@
 
         {{!-- artisticwork --}}
         <div class="form-group">
-            <label class="form-group__label" for="artisticwork-input">Künstlerische Tätigkeit <span class="form-field-required">*</span></label>
+            <label class="form-group__label" for="artisticwork-input">Kulturschaffende Tätigkeit <span class="form-field-required">*</span></label>
             <textarea class="form-group__input js-required-input" name="artisticwork" id="artisticwork-input" maxlength="2000" rows="3"></textarea>
             <div class="form-help invisible visible-erlebnis visible-objekt 
-            js-full-donation-toggle-visibility">Bitte haben Sie Verständnis, dass nur diejenigen bei der Gesamtausschüttung berücksichtigt werden, die hauptberuflich oder nachweislich in hohem Maße ehrenamtlich als Kunst- oder Kulturschaffende arbeiten.<div class="form-help__question-mark title title--grid">&nbsp;?</div>
+            js-full-donation-toggle-visibility">Bitte haben Sie Verständnis, dass nur diejenigen bei der Gesamtausschüttung berücksichtigt werden, die professionell als Kunst- oder Kulturschaffende arbeiten.<div class="form-help__question-mark title title--grid">&nbsp;?</div>
         </div>
     </div>
 
@@ -167,7 +168,7 @@
         <label class="form-group__label" for="email-input">E-Mail-Adresse <span class="form-field-required">*</span></label>
         <input class="form-group__input js-required-input" type="email" name="email" id="email-input">
         <div class="form-help 
-        js-full-donation-toggle-visibility">Ihre E-Mail-Adresse werden wir für eventuelle Auszahlungen per Paypal benutzen. Falls Sie noch keinen Paypal Account haben, können Sie sich auch nachträglich zum Zeitpunkt der Ausschüttung einen erstellen.<div class="form-help__question-mark title title--grid">&nbsp;?</div></div>
+        js-full-donation-toggle-visibility">Ihre E-Mail-Adresse nutzen wir für eventuelle Auszahlungen per Paypal. Falls Sie noch kein Paypalkonto haben, können Sie sich zum Zeitpunkt der Ausschüttung eins erstellen.<div class="form-help__question-mark title title--grid">&nbsp;?</div></div>
     </div>
 
     {{!-- website --}}
@@ -183,16 +184,16 @@
     </div>
 
     <div class="form-group form-group--wide">
-        {{!-- payout --}}
-        <div class="form-check invisible visible-motiv">
-            <input class="form-check__checkbox js-donation-input js-payout-input" type="checkbox" name="payout" value="true" id="payout-input-motiv">
-            <label for="payout-input-motiv">Ich möchte bei der Gesamtausschüttung des Kulturgenerators berücksichtigt werden.</label>
-        </div>
-
         {{!-- venue --}}
         <div class="form-check">
             <input class="form-check__checkbox" type="checkbox" name="venue" value="true" id="venue-input">
-            <label for="venue-input">Ich bin vertretungsberechtigte Person für einen Veranstaltungsort.</label>
+            <label for="venue-input">Ich bin vertretungsberechtigte Person für eine Institution.</label>
+        </div>
+
+        {{!-- payout --}}
+        <div class="form-check invisible visible-motiv">
+            <input class="form-check__checkbox js-donation-input js-payout-input" type="checkbox" name="payout" value="true" id="payout-input-motiv">
+            <label for="payout-input-motiv">Wenn mein Motiv gedruckt wird, möchte ich bei der Gesamtausschüttung des Kulturgenerators berücksichtigt werden.</label>
         </div>
 
         {{!-- member --}}
@@ -224,21 +225,13 @@
     <span class="form-field-required">*</span>
 </div>
 
-{{!-- fulltimeartist --}}
-<div class="form-check invisible visible-objekt visible-erlebnis 
-js-full-donation-toggle-visibility">
-<input class="form-check__checkbox js-required-input" type="checkbox" name="fulltimeartist" value="true" id="fulltimeartist-input">
-<label for="fulltimeartist-input">Ich versichere, dass meine Angaben der Wahrheit entsprechen und dass ich professionell als Kulturschaffende*r tätig bin.</label>
-<span class="form-field-required">*</span>
-</div>
-
 {{!-- gdpr --}}
 <div class="form-check">
     <input class="form-check__checkbox js-required-input" type="checkbox" name="gdpr" value="true" id="gdpr-input">
     <label for="gdpr-input">Ich bin damit einverstanden, dass meine Angaben im Rahmen der Abwicklung verwendet und verwahrt werden.</label>
     <span class="form-field-required">*</span>
 </div>
-<div class="required-note">Die mit * gekennzeichneten Felder bitte unbedingt ausfüllen.</div>
+<div>Die mit <span class="form-field-required">*</span> gekennzeichneten Felder bitte unbedingt ausfüllen.</div>
 
 </div>
 {{!-- Submit Button --}}
