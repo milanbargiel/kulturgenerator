@@ -98,19 +98,19 @@
             </div>
         </div>
 
-        {{!-- price --}}
-        <div class="form-group invisible visible-objekt visible-erlebnis">
-            <label class="form-group__label" for="price-input">Preis <span class="form-field-required">*</span></label>
-            <input class="form-group__input js-required-input" type="text" name="price" id="price-input" maxlength="60">
-        </div>
+        <div class="form-group form-group--wide invisible visible-objekt visible-erlebnis">
+            <div class="form-group--small">
+                {{!-- price --}}
+                <label class="form-group__label" for="price-input">Preis <span class="form-field-required">*</span></label>
+                <input class="form-group__input js-required-input" type="text" name="price" id="price-input" maxlength="60">
+            </div>
 
-        {{!-- checkboxes --}}
-        <div class="form-group form-group--wide">
+            {{!-- checkboxes --}}
             {{!-- donation yes --}}
             <div class="donation-thank-you js-thank-you-donation">
                 Vielen Dank!
             </div>
-            <div class="form-check invisible visible-objekt visible-erlebnis">
+            <div class="form-check">
                 <input class="form-check__checkbox js-required-input js-donation-input" type="radio" name="donation" value="true" id="donation-input-yes">
                 <label for="donation-input-yes">Ich spende das Angebot und verzichte auf Einnahmen durch den Verkauf.</label>
             </div>
@@ -206,12 +206,12 @@
     {{!-- nomember --}}
     <div class="form-check invisible visible-objekt visible-erlebnis 
     js-full-donation-toggle-visibility">
-        {{!-- toggles visibility of entitlement textarea --}}
-        <input class="form-check__checkbox js-no-member-input" type="checkbox" name="nomember" value="true" id="nomember-input">
-        <label for="nomember-input">Ich habe keine dieser Mitgliedschaften.</label>
-    </div>
+    {{!-- toggles visibility of entitlement textarea --}}
+    <input class="form-check__checkbox js-no-member-input" type="checkbox" name="nomember" value="true" id="nomember-input">
+    <label for="nomember-input">Ich habe keine dieser Mitgliedschaften.</label>
+</div>
 
-    {{!-- entitlement --}}
+{{!-- entitlement --}}
 <div class="form-group form-group--small invisible js-entitlement">
     <textarea class="form-group__input" name="entitlement" rows="4"></textarea maxlength="2000">
         <div class="form-help">Bitte erläutern Sie Ihren Anspruch.In diesem Fall behalten wir uns vor, Sie zu kontaktieren.<div class="form-help__question-mark title title--grid">&nbsp;?</div>
