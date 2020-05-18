@@ -186,10 +186,10 @@ body {
 
 // submit art container
 .sa-container {
-  margin-bottom: 4 * $font-size-mobile-galapagos;
+  margin-bottom: 3 * $font-size-mobile-galapagos;
 
   @media screen and (min-width: $bp-tablet) {
-    margin-bottom: 4   * $font-size-desktop-galapagos;
+    margin-bottom: 3   * $font-size-desktop-galapagos;
   }
 
   &__heading {
@@ -288,11 +288,11 @@ body {
 // submit art form
 .sa-form {
   display: none;
-  margin-top: $font-size-mobile-galapagos;
+  margin-top: 2 * $font-size-mobile-galapagos;
   max-width: 1000px;
 
   @media screen and (min-width: $bp-tablet) {
-    margin-top: $font-size-desktop-galapagos;
+    margin-top: 2 * $font-size-desktop-galapagos;
   }
 
   &__button {
@@ -316,11 +316,11 @@ body {
 .explain {
   color: $orange;
   font-size: $font-size-mobile-small;
-  margin-bottom: $font-size-mobile-galapagos;
+  margin-bottom: 2 * $font-size-mobile-galapagos;
 
   @media screen and (min-width: $bp-tablet) {
     font-size: $font-size-desktop-extra-small;
-    margin-bottom: $font-size-desktop-galapagos;
+    margin-bottom: 2 * $font-size-desktop-galapagos;
   }
 }
 
