@@ -1,6 +1,7 @@
 // categories
 const categoryRadioButtons = document.querySelectorAll('.js-category-input');
 const submitArtForm = document.querySelector('.js-form');
+const selectionHint = document.querySelector('.js-selection-hint');
 const selectedCategoryInput = document.querySelector('.js-selected-category');
 const allRequiredInputs = document.querySelectorAll('.js-required-input');
 
@@ -60,6 +61,9 @@ function showSelectedForm(selector) {
   // show selected funnel
   submitArtForm.setAttribute('style', 'display:block;');
   submitArtForm.classList.add(`sa-form--${selector}`);
+
+  // hide selection hint
+  selectionHint.setAttribute('style', 'display:none;');
 
   // clear previous form inputs
   clearForm();

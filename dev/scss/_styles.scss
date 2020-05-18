@@ -213,6 +213,11 @@ body {
   }
 }
 
+.category-selection-hint {
+  margin-top: 1rem;
+  color: $orange;
+}
+
 // submit art form
 .sa-form {
   display: none;
@@ -237,7 +242,7 @@ body {
 
 .explain {
   color: $orange;
-  @include galapagos-margin-bottom(1);
+  @include galapagos-margin-bottom(2);
 }
 
 .form-group {
