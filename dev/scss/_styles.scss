@@ -165,7 +165,7 @@ body {
   margin-bottom: 10px;
   font-size: $font-size-mobile;
 
-  @media screen and (min-width: $bp-smartphone) {
+  @media screen and (min-width: $bp-tablet) {
     font-size: $font-size-desktop;
   }
 }
