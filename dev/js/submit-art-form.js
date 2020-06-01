@@ -159,11 +159,11 @@ fileInput.addEventListener('change', (inputEvent) => {
   });
 
   if (file) { // file selected
-    if (numOfFiles < 3) {
+    if (numOfFiles < 3) { // max 3 files
       const fileSize = ((file.size / 1024) / 1024).toFixed(4); // MB
       reader.fileName = file.name;
 
-      if (fileSize < 5) {
+      if (fileSize < 5) { // max 5MB
         reader.readAsDataURL(file);
       } else {
         imageSizeError.setAttribute('style', 'display: block;');
