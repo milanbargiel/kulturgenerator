@@ -1,7 +1,6 @@
 // categories
 const categoryRadioButtons = document.querySelectorAll('.js-category-input');
 const submitArtForm = document.querySelector('.js-form');
-const selectionHint = document.querySelector('.js-selection-hint');
 const selectedCategoryInput = document.querySelector('.js-selected-category');
 const allRequiredInputs = document.querySelectorAll('.js-required-input');
 
@@ -15,9 +14,11 @@ const noMember = document.querySelector('.js-no-member-input');
 const entitlement = document.querySelector('.js-entitlement');
 
 // file upload
+let numOfFiles = 0; // max 3
 const fileInput = document.querySelector('.js-file-input');
-const hiddenImageData = document.querySelector('.js-hidden-image-data');
+const imageDataContainer = document.querySelector('.js-image-data');
 const imageSizeError = document.querySelector('.js-image-size-error');
+const tooManyImagesError = document.querySelector('.js-too-many-images-error');
 
 // form submit
 const savingAnimation = document.querySelector('.js-saving');
@@ -50,6 +51,9 @@ function clearForm() {
   // manually dispatch change event on image input
   // to reset image selection
   fileInput.dispatchEvent(event);
+  // clear image uploads
+  imageDataContainer.innerHTML = '';
+  numOfFiles = 0;
 }
 
 function showSelectedForm(selector) {
@@ -61,9 +65,6 @@ function showSelectedForm(selector) {
   // show selected funnel
   submitArtForm.setAttribute('style', 'display:block;');
   submitArtForm.classList.add(`sa-form--${selector}`);
-
-  // hide selection hint
-  selectionHint.setAttribute('style', 'display:none;');
 
   // clear previous form inputs
   clearForm();
@@ -125,6 +126,15 @@ noMember.addEventListener('change', (event) => {
   }
 });
 
+
+function removeImageOnClick(node) {
+  node.addEventListener('click', () => {
+    const imageDiv = node.parentNode;
+    imageDiv.parentNode.removeChild(imageDiv);
+    numOfFiles -= 1;
+  });
+}
+
 // file upload
 // listen to change on input type file
 fileInput.addEventListener('change', (inputEvent) => {
@@ -133,23 +143,34 @@ fileInput.addEventListener('change', (inputEvent) => {
 
   // remove error messages
   imageSizeError.removeAttribute('style');
+  tooManyImagesError.removeAttribute('style');
 
   // create hidden text image data to upload via form
   reader.addEventListener('load', (readerEvent) => {
-    let html = `<input type="hidden" name="data" value="${readerEvent.target.result.replace(/^.*,/, '')}" >`;
-    html += `<input type="hidden" name="mimetype" value="${readerEvent.target.result.match(/^.*(?=;)/)[0]}" >`;
-    hiddenImageData.innerHTML = html;
+    numOfFiles += 1;
+    const newImage = document.createElement('div');
+    newImage.setAttribute('class', 'iu-image');
+    let html = `<input type="hidden" name="mimetype" value="${readerEvent.target.result.match(/^.*(?=;)/)[0]}" >`;
+    html += `<input type="hidden" name="data" value="${readerEvent.target.result.replace(/^.*,/, '')}" >`;
+    html += `<span class="file-name">${readerEvent.target.fileName}</span><span class="remove-button js-remove-image">x</span>`;
+    newImage.innerHTML = html;
+    removeImageOnClick(newImage.lastChild); // bind event listener to remove element
+    imageDataContainer.appendChild(newImage);
   });
 
-  if (file) {
-    const fileSize = ((file.size / 1024) / 1024).toFixed(4); // MB
-    if (fileSize < 5) {
-      reader.readAsDataURL(file);
-    } else {
-      imageSizeError.setAttribute('style', 'display: block;');
+  if (file) { // file selected
+    if (numOfFiles < 3) {
+      const fileSize = ((file.size / 1024) / 1024).toFixed(4); // MB
+      reader.fileName = file.name;
+
+      if (fileSize < 5) {
+        reader.readAsDataURL(file);
+      } else {
+        imageSizeError.setAttribute('style', 'display: block;');
+      }
+    } else { // more that 3 images are selected
+      tooManyImagesError.setAttribute('style', 'display: block;');
     }
-  } else { // no file selected
-    hiddenImageData.innerHTML = '';
   }
 });
 

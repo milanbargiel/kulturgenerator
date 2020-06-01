@@ -218,11 +218,6 @@ body {
   }
 }
 
-.category-selection-hint {
-  margin-top: 1rem;
-  color: $orange;
-}
-
 // submit art form
 .sa-form {
   display: none;
@@ -285,7 +280,26 @@ body {
   width: 100%;
 }
 
-.image-size-error {
+.iu-container {
+  border: 1px solid $grey;
+  padding: .5rem 1rem;
+}
+
+.iu-image {
+  display: flex;
+  margin-bottom: .25rem;
+
+  &:first-of-type {
+    margin-top: .5rem;
+  }
+
+  & .file-name {
+    display:list-item;
+    margin-left: 1.5rem;
+  }
+}
+
+.image-error {
   display: none;
   margin: 1rem 0;
   color: $red;
@@ -324,9 +338,7 @@ body {
   @media screen and (min-width: $bp-tablet) {
     position: relative;
     padding-right: $font-size-desktop-galapagos + 16px; // 16px equals 1 rem
-    font-size: $font-size-desktop-extra-small;
   }
-
 
   &--checkbox {
     max-width: 680px;

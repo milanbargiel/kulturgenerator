@@ -18,7 +18,6 @@
                 <input type="radio" name="category" value="motiv" id="radio-motiv" class="hidden-input orange-radio-input js-category-input">
                 <label for="radio-motiv" class="orange-radio-label">oomotiv</label>
             </div>
-            <div class="category-selection-hint js-selection-hint">Wählen Sie aus.</div>
         </div>
     </div>
 
@@ -59,35 +58,46 @@
 
                 {{!-- change image upload text for funnels --}}
                 <label class="form-group__label invisible visible-erlebnis visible-objekt" for="image-input">
-                    Bild hochladen 
+                    Bilder hochladen 
                     <span class="form-field-required">*</span>
                 </label>
 
                 <label class="form-group__label invisible visible-motiv" for="image-input">
-                    Motiv hochladen 
+                    Motive hochladen 
                     <span class="form-field-required">*</span>
                 </label>
 
-                {{!-- VISIBLE inputs with class js-required-input are set to required --}}
+                <div class="iu-container">
+                    {{!-- upload button --}}
+                    <label for="image-input" class="button">Wählen Sie eine Datei</label>
 
-                {{!-- image --}}
-                <input class="form-group__input js-file-input js-required-input" type="file" name="image" id="image-input" accept="image/*">
+                    {{!-- hidden image input --}}
+                    <input class="hidden-input js-file-input" type="file" name="image" id="image-input" accept="image/*" required>
 
-                {{!-- js file reader writes image raw data into hidden input --}}
-                <div class="js-hidden-image-data"></div>
+                    {{!-- js file reader writes image raw data into container --}}
+                    <div class="js-image-data">
+                        {{!-- <div class="iu-image">
+                            <span class="file-name">xy.jpg</span><span class="remove-button js-remove-image">x</span>
+                        </div> --}}
+                    </div>
+                </div>
+                
 
                 {{!-- error when image is to big --}}
-                <div class="image-size-error js-image-size-error">Das Bild, das sie ausgewählt haben, ist größer als die maximal erlaubte Dateigröße von 5 MB. Bitte wählen Sie ein anderes aus.</div>
+                <div class="image-error js-image-size-error">Das Bild, das sie ausgewählt haben, ist größer als die maximal erlaubte Dateigröße von 5 MB. Bitte wählen Sie ein anderes aus.</div>
 
-                {{!-- help text for erlebnis and objekt --}}
+                {{!-- error when more than 3 images are selected --}}
+                <div class="image-error js-too-many-images-error">Sie können maximal drei Bilder auswählen.</div>
+
+                {{!-- help texts --}}
                 <div class="form-help invisible visible-erlebnis visible-objekt">Hier können Sie Bilder Ihres Angebotes (max. 5 MB pro Datei) zur Darstellung im Kulturgenerator hochladen.<div class="form-help__question-mark title title--grid">&nbsp;?</div></div>
 
-                {{!-- help text for motiv --}}
                 <div class="form-help invisible visible-motiv">Hier können die Motive (max. 5 MB pro Datei) hochgeladen werden. Benötigt werden dafür einfarbige Entwürfe. Das maximale druckbare Format beträgt 30x40cm.<div class="form-help__question-mark title title--grid">&nbsp;?</div></div>
             </div>
 
             {{!-- imagelicense --}}
             <div class="form-check">
+                {{!-- VISIBLE inputs with class js-required-input are set to required --}}
                 <input class="form-check__checkbox js-required-input" type="checkbox" name="imagelicense" value="true" id="imagelicense-input">
                 <label for="imagelicense-input">Ich erlaube hiermit die Weiternutzung des Bildes/der Bilder für die Verwendung im Projekt und versichere, dass ich Urheber*in bzw. Inhaber*in des vollumfänglichen Nutzungsrechts bin. <span class="form-field-required">*</span></label>
             </div>
