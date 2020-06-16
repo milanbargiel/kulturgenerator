@@ -9,10 +9,6 @@ const donationInputs = document.querySelectorAll('.js-donation-input');
 const donationThankYou = document.querySelector('.js-thank-you-donation');
 const fullDonationToggles = document.querySelectorAll('.js-full-donation-toggle-visibility');
 
-// no member toggle visibility
-const noMember = document.querySelector('.js-no-member-input');
-const entitlement = document.querySelector('.js-entitlement');
-
 // file upload
 let numOfFiles = 0; // max 3
 const fileInput = document.querySelector('.js-file-input');
@@ -116,16 +112,6 @@ donationInputs.forEach((donationInput) => {
     makeVisibleInputsRequired();
   });
 });
-
-// no member toggle visibility
-noMember.addEventListener('change', (event) => {
-  if (event.target.checked) {
-    entitlement.style.display = 'block';
-  } else {
-    entitlement.removeAttribute('style');
-  }
-});
-
 
 function removeImageOnClick(node) {
   node.addEventListener('click', () => {

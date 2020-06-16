@@ -207,53 +207,30 @@
             <label for="payout-input-motiv">Wenn mein Motiv gedruckt wird, möchte ich bei der Gesamtausschüttung des Kulturgenerators berücksichtigt werden.</label>
         </div>
 
-        {{!-- member --}}
-        <div class="form-check invisible visible-objekt visible-erlebnis 
-        js-full-donation-toggle-visibility">
-        <input class="form-check__checkbox" type="checkbox" name="member" value="true" id="member-input">
-        <label for="member-input">Ich bin eingetragenes Mitglied bei GEMA, KSK oder einem Berufsverband.</label>
+        {{!-- shipping --}}
+        <div class="form-check invisible visible-objekt visible-erlebnis">
+            <input class="form-check__checkbox js-required-input" type="checkbox" value="true" name="shipping" id="shipping-input">
+            <label for="shipping-input">Hiermit versichere ich, dass ich das Kunstwerk nach Verkauf schnellstmöglich an die Käufer*in verschicke oder anderweitig übergebe.</label>
+            <span class="form-field-required">*</span>
+        </div>
+
+        {{!-- gdpr --}}
+        <div class="form-check">
+            <input class="form-check__checkbox js-required-input" type="checkbox" name="gdpr" value="true" id="gdpr-input">
+            <label for="gdpr-input">Ich bin damit einverstanden, dass meine Angaben im Rahmen der Abwicklung verwendet und verwahrt werden.</label>
+            <span class="form-field-required">*</span>
+        </div>
+        <div>Die mit <span class="form-field-required">*</span> gekennzeichneten Felder bitte unbedingt ausfüllen.</div>
     </div>
+    {{!-- Submit Button --}}
+    <button type="submit" class="sa-form__button button">Einreichen &#x23ce;</button>
 
-    {{!-- nomember --}}
-    <div class="form-check invisible visible-objekt visible-erlebnis 
-    js-full-donation-toggle-visibility">
-    {{!-- toggles visibility of entitlement textarea --}}
-    <input class="form-check__checkbox js-no-member-input" type="checkbox" name="nomember" value="true" id="nomember-input">
-    <label for="nomember-input">Ich habe keine dieser Mitgliedschaften.</label>
-</div>
+    {{!-- Saving Animation --}}
+    <span class="saving js-saving"><span>.</span><span>.</span><span>.</span></span>
 
-{{!-- entitlement --}}
-<div class="form-group form-group--small invisible js-entitlement">
-    <textarea class="form-group__input" name="entitlement" rows="4"></textarea maxlength="2000">
-        <div class="form-help">Bitte erläutern Sie Ihren Anspruch.In diesem Fall behalten wir uns vor, Sie zu kontaktieren.<div class="form-help__question-mark title title--grid">&nbsp;?</div>
+    <div class="form-responses">
+        <div class="form-responses__success js-sa-form-success-text">Vielen Dank für die Einreichung! Wir melden uns bei Ihnen, wenn wir das Angebot gesichtet haben.</div>
+        <div class="form-responses__error js-sa-form-error-text">Ein Fehler ist aufgetreten. Versuchen Sie es später erneut oder wenden Sie sich an <a href="mailto:info@kulturgenerator.de" class="underlined-link underlined-link--red">info@kulturgenerator.de</a></div>
     </div>
-</div>
-
-{{!-- shipping --}}
-<div class="form-check invisible visible-objekt visible-erlebnis">
-    <input class="form-check__checkbox js-required-input" type="checkbox" value="true" name="shipping" id="shipping-input">
-    <label for="shipping-input">Hiermit versichere ich, dass ich das Kunstwerk nach Verkauf schnellstmöglich an die Käufer*in verschicke oder anderweitig übergebe.</label>
-    <span class="form-field-required">*</span>
-</div>
-
-{{!-- gdpr --}}
-<div class="form-check">
-    <input class="form-check__checkbox js-required-input" type="checkbox" name="gdpr" value="true" id="gdpr-input">
-    <label for="gdpr-input">Ich bin damit einverstanden, dass meine Angaben im Rahmen der Abwicklung verwendet und verwahrt werden.</label>
-    <span class="form-field-required">*</span>
-</div>
-<div>Die mit <span class="form-field-required">*</span> gekennzeichneten Felder bitte unbedingt ausfüllen.</div>
-
-</div>
-{{!-- Submit Button --}}
-<button type="submit" class="sa-form__button button">Einreichen &#x23ce;</button>
-
-{{!-- Saving Animation --}}
-<span class="saving js-saving"><span>.</span><span>.</span><span>.</span></span>
-
-<div class="form-responses">
-    <div class="form-responses__success js-sa-form-success-text">Vielen Dank für die Einreichung! Wir melden uns bei Ihnen, wenn wir das Angebot gesichtet haben.</div>
-    <div class="form-responses__error js-sa-form-error-text">Ein Fehler ist aufgetreten. Versuchen Sie es später erneut oder wenden Sie sich an <a href="mailto:info@kulturgenerator.de" class="underlined-link underlined-link--red">info@kulturgenerator.de</a></div>
-</div>
 </form>
 </div>
