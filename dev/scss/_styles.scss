@@ -60,7 +60,8 @@ body {
   }
 
   &--primary {
-    font-family: 'GalapagosA-Regular', 'Inconsolata', monospace;
+    border: none;
+    font-family: 'GalapagosA-RegularGrid', 'Inconsolata', monospace;
     font-size: $font-size-mobile + 6px;
 
     @media screen and (min-width: $bp-tablet) {
@@ -68,8 +69,8 @@ body {
     }
 
     &:hover {
-      background-color: $blue;
-      border: 2px solid $blue;
+      border: none;
+      background-color: $black;
       color: $white;
       text-rendering: optimizeLegibility;
     }
