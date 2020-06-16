@@ -168,7 +168,7 @@ body {
 
 .intro {
   margin-bottom: 10px;
-  font-size: $font-size-mobile;
+  font-size: $font-size-mobile-small;
 
   @media screen and (min-width: $bp-tablet) {
     font-size: $font-size-desktop;
