@@ -61,10 +61,10 @@ body {
 
   &--primary {
     font-family: 'GalapagosA-Regular', 'Inconsolata', monospace;
-    font-size: $font-size-mobile;
+    font-size: $font-size-mobile + 6px;
 
     @media screen and (min-width: $bp-tablet) {
-      font-size: $font-size-desktop;
+      font-size: $font-size-desktop + 6px;
     }
 
     &:hover {
@@ -241,7 +241,6 @@ body {
   @include galapagos-margin-top(2);
 
   &__button {
-    @include galapagos-margin-top(1);
     @include galapagos-margin-bottom(1);
   }
 }
