@@ -560,6 +560,6 @@ body {
   font-size: $font-size-mobile-small;
 
   @media screen and (min-width: $bp-tablet) {
-    font-size: $font-size-desktop;
+    font-size: $font-size-desktop-small;
   }
 }
