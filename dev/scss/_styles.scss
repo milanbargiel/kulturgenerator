@@ -83,6 +83,15 @@ body {
 }
 
 // content
+.content {
+  padding-top: 18px;
+  padding-bottom: 18px;
+  overflow-wrap: break-word;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .content,
 .nf-container {
   padding-left: 10px;
@@ -99,20 +108,11 @@ body {
   padding-bottom: 10px;
   border-top: 1px solid $black;
   display: flex;
-  font-size: $font-size-mobile;
+  font-size: $font-size-mobile-small;
 
   @media screen and (min-width: $bp-tablet) {
     font-size: $font-size-desktop-small;
   }
-}
-
-.content {
-  padding-top: 18px;
-  padding-bottom: 18px;
-  overflow-wrap: break-word;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
 }
 
 // newsletter form
@@ -485,14 +485,36 @@ body {
 
 .founder-link {
   display: inline-block;
-  margin-right: 2rem;
+  margin-right: 1.5rem;
+
+  @media screen and (min-width: $bp-tablet) {
+    margin-right: 2rem;
+  }
 
   &--kk {
-    width: 90px;
+    width: 50px;
+
+    @media screen and (min-width: $bp-tablet) {
+      width: 70px;
+    }
+  }
+
+  &--wf {
+    width: 70px;
+    
+    @media screen and (min-width: $bp-tablet) {
+      width: 90px;
+    }
   }
 
   &--nf {
-    width: 250px;
+    margin-left: -1.5rem;
+    width: 150px;
+
+    @media screen and (min-width: $bp-tablet) {
+      margin-left: -2rem;
+      width: 200px;
+    }
   }
 }
 
@@ -535,7 +557,7 @@ body {
 
 .footer,
 .founders {
-  font-size: $font-size-mobile;
+  font-size: $font-size-mobile-small;
 
   @media screen and (min-width: $bp-tablet) {
     font-size: $font-size-desktop;
