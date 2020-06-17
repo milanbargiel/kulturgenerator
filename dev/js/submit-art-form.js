@@ -209,17 +209,15 @@ $('.js-form').submit((event) => {
   });
 
   // Callback handler that will be called on failure
-  // request.fail(() => {
-  //   saFormErrorText.setAttribute('style', 'display:block;');
-  // });
+  request.fail(() => {
+    saFormErrorText.setAttribute('style', 'display:block;');
+  });
 
   // Callback handler that will be called regardless
   // if the request failed or succeeded
   request.always(() => {
     // Reenable the inputs
     $inputs.prop('disabled', false);
-    saFormSuccessText.setAttribute('style', 'display:block;');
-    clearForm();
     savingAnimation.removeAttribute('style');
   });
 });
