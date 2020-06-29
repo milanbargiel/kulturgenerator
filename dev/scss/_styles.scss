@@ -470,6 +470,14 @@ body {
       background-color: $red;
     }
   }
+
+  &--grey {
+    color: $dark-grey;
+
+    &::after {
+      background-color: $dark-grey;
+    }
+  }
 }
 
 .back-arrow {

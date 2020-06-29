@@ -119,22 +119,36 @@
             {{!-- checkboxes --}}
             {{!-- donation yes --}}
             <div class="form-check">
-                <input class="form-check__checkbox js-required-input" type="radio" name="donation" value="true" id="donation-input-yes" checked>
-                <label for="donation-input-yes">Ich spende das Angebot.</label>
+                <input class="form-check__checkbox js-required-input" type="radio" name="donation" value="100%" id="donation-input-100" checked>
+                <label for="donation-input-100">Ich möchte 100% meiner Einnahmen durch Verkauf solidarisch verteilen.</label>
             </div>
             
             {{!-- donation 50% --}}
             <div class="form-check invisible visible-objekt visible-erlebnis">
-                <input class="form-check__checkbox js-required-input" type="radio" name="donation" value="50%" id="donation-input-no">
-                <label for="donation-input-no">Ich möchte 50 % aus dem Verkauf des Angebots erhalten.</label>
+                <input class="form-check__checkbox js-required-input" type="radio" name="donation" value="50%" id="donation-input-50">
+                <label for="donation-input-50">Ich möchte 50% meiner Einnahmen durch Verkauf solidarisch verteilen.</label>
             </div>
 
             {{!-- payout --}}
             <div class="form-check invisible visible-objekt visible-erlebnis">
-                <input class="form-check__checkbox" type="checkbox" name="payout" value="true" id="payout-input">
-                <label for="payout-input">Ich möchte bei der Gesamtausschüttung des Kulturgenerators berücksichtigt werden.</label>
+                <input class="form-check__checkbox" type="checkbox" name="payout" value="false" id="payout-input">
+                <label for="payout-input">Ich möchte nicht an der Ausschüttung des Generators beteiligt werden.</label>
             </div>
-            <div class="form-help form-help--checkbox invisible visible-objekt visible-erlebnis">Bitte legen Sie hier einen Preis für Ihr Produkt fest. Bei Verkauf kann dieser zu 100 oder zu 50 Prozent an den Generator gespendet werden. Bitte wählen Sie hier auch aus, ob Sie von der Gesamtausschüttung des Generators berücksichtigt werden wollen.<div class="form-help__question-mark title title--grid">&nbsp;?</div></div>
+            <div class="form-help form-help--checkbox invisible visible-objekt visible-erlebnis">Die Ausschüttung ist die Verteilung des gesammelten Geldes unter allen Beteiligten, unabhängig davon, ob Ihr Angebot verkauft wurde oder nicht.<div class="form-help__question-mark title title--grid">&nbsp;?</div></div>
+        </div>
+
+        {{!-- paypal --}}
+        <div class="form-group">
+            <label class="form-group__label" for="paypal-input">PayPal Konto <span class="form-field-required">*</span></label>
+            <input class="form-group__input js-required-input" type="email" name="paypal" id="paypal-input">
+            <div class="form-help invisible visible-objekt visible-erlebnis">Um sich am Generator zu beteiligen, müssen Sie ein PayPal-Konto haben. Tragen Sie hier bitte die dazugehörige E-Mail-Adresse ein. Falls sie keins haben, können Sie <a href="https://www.paypal.com/welcome/signup/#/email_password" target="_blank" class="underlined-link underlined-link--grey">hier</a> eins erstellen.<div class="form-help__question-mark title title--grid">&nbsp;?</div></div>
+            <div class="form-help invisible visible-motiv">Hinterlegen Sie hier die E-Mail-Adresse Ihres PayPal Kontos, um bei Motivdruck von der Ausschüttung des Generators zu profitieren. Falls sie keins haben, können Sie <a href="https://www.paypal.com/welcome/signup/#/email_password" target="_blank" class="underlined-link underlined-link--grey">hier</a> eins erstellen.<div class="form-help__question-mark title title--grid">&nbsp;?</div></div>
+        </div>
+
+        {{!-- email --}}
+        <div class="form-group">
+            <label class="form-group__label" for="email-input">E-Mail-Adresse <span class="form-field-required">*</span></label>
+            <input class="form-group__input js-required-input" type="email" name="email" id="email-input">
         </div>
 
         {{!-- fullname --}}
@@ -165,16 +179,9 @@
         {{!-- artisticwork --}}
         <div class="form-group">
             <label class="form-group__label" for="artisticwork-input">Kulturschaffende Tätigkeit <span class="form-field-required">*</span></label>
-            <textarea class="form-group__input js-required-input" name="artisticwork" id="artisticwork-input" maxlength="2000" rows="3"></textarea>
-            <div class="form-help invisible visible-erlebnis visible-objekt">Bitte haben Sie Verständnis, dass nur diejenigen bei der Gesamtausschüttung berücksichtigt werden, die professionell als Kunst- oder Kulturschaffende arbeiten.<div class="form-help__question-mark title title--grid">&nbsp;?</div>
+            <textarea class="form-group__input js-required-input" name="artisticwork" id="artisticwork-input" maxlength="2000" rows="8"></textarea>
+            <div class="form-help invisible visible-erlebnis visible-objekt">Bitte haben Sie Verständnis, dass nicht alle Einreichungen berücksichtigt werden können. Es sollen nur diejenigen vom Generator profitieren, die professionell als Kunst- und Kulturschaffende tätig sind. Bitte beschreiben Sie kurz Ihre Arbeit. Ggf. können Sie Links zu Webseiten, eine kurze Aufzählung Ihrer letzten Projekte und/oder Ausstellungen, als auch ein abgeschlossenes oder laufendes Studium in dem Bereich aufführen.<div class="form-help__question-mark title title--grid">&nbsp;?</div>
         </div>
-    </div>
-
-    {{!-- email --}}
-    <div class="form-group">
-        <label class="form-group__label" for="email-input">E-Mail-Adresse <span class="form-field-required">*</span></label>
-        <input class="form-group__input js-required-input" type="email" name="email" id="email-input">
-        <div class="form-help">Ihre E-Mail-Adresse nutzen wir für eventuelle Auszahlungen per Paypal. Falls Sie noch kein Paypalkonto haben, können Sie sich zum Zeitpunkt der Ausschüttung eins erstellen.<div class="form-help__question-mark title title--grid">&nbsp;?</div></div>
     </div>
 
     {{!-- website --}}
@@ -194,12 +201,6 @@
         <div class="form-check">
             <input class="form-check__checkbox" type="checkbox" name="venue" value="true" id="venue-input">
             <label for="venue-input">Ich bin vertretungsberechtigte Person für eine Institution.</label>
-        </div>
-
-        {{!-- payout --}}
-        <div class="form-check invisible visible-motiv">
-            <input class="form-check__checkbox" type="checkbox" name="payout" value="true" id="payout-input-motiv">
-            <label for="payout-input-motiv">Wenn mein Motiv gedruckt wird, möchte ich bei der Gesamtausschüttung des Kulturgenerators berücksichtigt werden.</label>
         </div>
 
         {{!-- shipping --}}
