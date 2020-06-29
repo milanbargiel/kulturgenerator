@@ -36,6 +36,10 @@ a {
   text-decoration: none;
 }
 
+p {
+  margin-block-end: 2em;
+}
+
 body {
   color: $black;
   font-size: $font-size-mobile-small;
