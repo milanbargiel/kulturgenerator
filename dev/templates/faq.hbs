@@ -1,8 +1,8 @@
 {{! render content in _layout partial; pass title to _layout partial}}
-{{#> _layout title='FAQ | Kulturgenerator' }}
+{{#> _layout title='FAQ | Kulturgenerator' faq='true' }}
 <div class="intro longer-text-container">
-    <a href="/index.html">
-        <img class="back-arrow" src="assets/images/back-arrow.svg" alt="Ein Pfeil der nach links zeigt">
+    <a href="/index.html" class="back-arrow back-arrow--white">
+        ←←←
     </a>
 <p>
     <b>Was ist der Kulturgenerator?</b><br>
@@ -46,5 +46,4 @@ Wir empfehlen bei Objekten den Wert von 200,- € und bei Erlebnissen den Wert v
 <p><b>Was passiert, wenn mein Angebot verkauft wird?</b><br>
 Der Generator schickt eine E-Mail mit der Bitte, das Produkt oder den Gutschein innerhalb von zwei Wochen an den/die Käufer*in zu schicken.</p>
 </div>
-{{>_footer}}
 {{/_layout}}

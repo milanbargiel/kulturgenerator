@@ -109,6 +109,12 @@ body {
   flex-direction: column;
 }
 
+.blue-content {
+  background-color: $blue;
+  color: $white;
+  text-rendering: optimizeLegibility;
+}
+
 .content,
 .nf-container {
   padding-left: 10px;
@@ -481,7 +487,21 @@ body {
 }
 
 .back-arrow {
-  display: block;
+  display: inline-block;
+  font-family: 'GalapagosA-Regular', 'Inconsolata', monospace;
+  font-size: $font-size-mobile-galapagos;
+
+  @media screen and (min-width: $bp-tablet) {
+    font-size: $font-size-desktop-galapagos;
+  }
+
+  &--white {
+    color: $white;
+  }
+
+  &--blue {
+    color: $blue;
+  }
 }
 
 .navigation-element {

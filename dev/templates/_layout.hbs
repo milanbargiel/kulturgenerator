@@ -21,13 +21,13 @@
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <link rel="icon" type="image/png" href="assets/images/favicon.ico">
 </head>
-<body>
+<body class="{{#if faq}}blue-content{{/if}}">
     <div class="content">
         {{> @partial-block }}
     </div>
-    {{#unless danke}}
+    {{#if index}}
         {{> _newsletter-form }}
-    {{/unless}}
+    {{/if}}
     <!-- JS
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <script src="js/vendor/jquery.min.js"></script>
