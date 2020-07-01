@@ -162,7 +162,7 @@ $('.js-form').submit((event) => {
     url: 'https://script.google.com/macros/s/AKfycby4Ti9QvWXWkpzRx4ia9Ea91sP1bdCSU_4N9U1sxMoICNqPWbs/exec',
     type: 'post',
     data: serializedData,
-    timeout: 20000,
+    timeout: 30000,
   });
 
   // Callback handler that will be called on success
