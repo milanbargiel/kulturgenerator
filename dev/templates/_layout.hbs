@@ -21,13 +21,17 @@
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <link rel="icon" type="image/png" href="assets/images/favicon.ico">
 </head>
-<body>
+<body class="{{#if faq}}blue-content{{/if}}">
     <div class="content">
         {{> @partial-block }}
     </div>
-
+    {{#if index}}
+        {{> _newsletter-form }}
+    {{/if}}
     <!-- JS
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <script src="js/main.js"></script>
+    <script src="js/vendor/jquery.min.js"></script>
+    <script src="js/newsletter-form.js"></script>
+    <script src="js/submit-art-form.js"></script>
 </body>
 </html>

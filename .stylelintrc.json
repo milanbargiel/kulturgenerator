@@ -1,4 +1,7 @@
 {
   "extends": "stylelint-config-recommended",
-  "ignoreFiles": ["dev/scss/vendor/_normalize.scss"]
+  "ignoreFiles": ["dev/scss/vendor/_normalize.scss"],
+  "rules": {
+    "at-rule-no-unknown": null
+  }
 }

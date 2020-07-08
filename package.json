@@ -1,11 +1,11 @@
 {
-  "name": "kulturgenerator-landingpage",
+  "name": "kulturgenerator",
   "version": "1.0.0",
   "description": "A landing page for Kulturgenerator project",
   "author": "Milan Bargiel",
   "repository": {
     "type": "git",
-    "url": "https://github.com/milanbargiel/kulturgenerator-landingpage"
+    "url": "https://github.com/milanbargiel/kulturgenerator"
   },
   "scripts": {
     "clean": "rimraf 'dist'",
@@ -14,7 +14,7 @@
     "postcss": "postcss --use autoprefixer --replace 'dist/*.css' --no-map",
     "copyfiles": "copyfiles --up 2 'dev/assets/*' 'dist/assets'",
     "copyjs": "copyfiles --up 2 'dev/js/**/*.js' 'dist/js'",
-    "eslint": "eslint 'dev/js'",
+    "eslint": "eslint 'dev/js/*.js'",
     "build:css": "npm-run-all --serial stylelint scss postcss",
     "build:html": "hbs 'dev/templates/[!_]*.hbs' --partial 'dev/templates/_*.hbs' --output 'dist/'",
     "build:images": "imagemin 'dev/assets/images/**/*.{png,jpg,gif,svg,ico}' --out-dir=dist/assets/images",

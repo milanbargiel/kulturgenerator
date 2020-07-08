@@ -1,0 +1,46 @@
+$font-family: 'Inconsolata', monospace;
+$bp-tablet: 680px;
+$bp-large: 1200px;
+$bp-smartphone: 370px; // only used for iphone 5 linebreak
+$line-height: 1.5;
+$black: #000;
+$blue: #0000ee;
+// $orange: #ffa500;
+$orange: #ff5000;
+$red: #ee0000;
+$light-grey: #eeeeee;
+$grey: #ced4da;
+$dark-grey: #495057;
+$white: #fff;
+$stylish-red: #cb2c30;
+
+// form variables
+// $font-size-desktop: 44px;
+// $font-size-desktop-galapagos: 60px;
+$font-size-desktop: 36px;
+$font-size-desktop-galapagos: 60px;
+$font-size-desktop-small: 24px;
+$font-size-desktop-extra-small: 20px; // used for newsletter banner and help explain texts
+$font-size-mobile: 26px;
+$font-size-mobile-small: 20px;
+$font-size-mobile-galapagos: 34px;
+$x1: $font-size-desktop-galapagos / 3;
+$x2: 2 * $x1;
+$x3: 3 * $x1;
+
+// mixins
+@mixin galapagos-margin-bottom($factor) {
+  margin-bottom: $factor * $font-size-mobile-galapagos;
+
+  @media screen and (min-width: $bp-tablet) {
+    margin-bottom: $factor * $font-size-desktop-galapagos;
+  }
+}
+
+@mixin galapagos-margin-top($factor) {
+  margin-top: $factor * $font-size-mobile-galapagos;
+
+  @media screen and (min-width: $bp-tablet) {
+    margin-top: $factor * $font-size-desktop-galapagos;
+  }
+}
