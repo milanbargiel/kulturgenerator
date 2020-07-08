@@ -15,8 +15,13 @@
     background: #fff;
 
     @media screen and (min-width: $bp-tablet) {
-      width: $font-size-desktop-galapagos;
-      height: $font-size-desktop-galapagos;
+      width: $font-size-laptop-galapagos;
+      height: $font-size-laptop-galapagos;
+    }
+
+    @media screen and (min-width: $bp-large) {
+      width: $font-size-desktop-galapagos-large;
+      height: $font-size-desktop-galapagos-large;
     }
   }
 
@@ -34,8 +39,13 @@
     transition: all 0.2s ease;
 
     @media screen and (min-width: $bp-tablet) {
-      width: $font-size-desktop-galapagos - 2px;
-      height: $font-size-desktop-galapagos - 2px;
+      width: $font-size-laptop-galapagos - 2px;
+      height: $font-size-laptop-galapagos - 2px;
+    }
+
+    @media screen and (min-width: $bp-tablet) {
+      width: $font-size-desktop-galapagos-large - 2px;
+      height: $font-size-desktop-galapagos-large - 2px;
     }
   }
 

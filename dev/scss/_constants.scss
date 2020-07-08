@@ -1,6 +1,6 @@
 $font-family: 'Inconsolata', monospace;
 $bp-tablet: 680px;
-$bp-large: 1200px;
+$bp-large: 1400px;
 $bp-smartphone: 370px; // only used for iphone 5 linebreak
 $line-height: 1.5;
 $black: #000;
@@ -15,12 +15,15 @@ $white: #fff;
 $stylish-red: #cb2c30;
 
 // form variables
-// $font-size-desktop: 44px;
-// $font-size-desktop-galapagos: 60px;
-$font-size-desktop: 33px;
-$font-size-desktop-galapagos: 55px;
-$font-size-desktop-small: 22px;
-$font-size-desktop-extra-small: 18px; // used for newsletter banner and help explain texts
+// desktop font sizes
+$font-size-desktop-large: 36px;
+$font-size-desktop-galapagos-large: 60px;
+$font-size-desktop-small-large: 24px;
+// laptop font sizes
+$font-size-laptop: 33px;
+$font-size-laptop-galapagos: 55px;
+$font-size-laptop-small: 22px;
+// mobile font sizes
 $font-size-mobile: 26px;
 $font-size-mobile-small: 20px;
 $font-size-mobile-galapagos: 34px;
@@ -37,6 +40,10 @@ $form-width-wide: 920px;
   @media screen and (min-width: $bp-tablet) {
     margin-bottom: $factor * $font-size-desktop-galapagos;
   }
+
+  @media screen and (min-width: $bp-large) {
+    margin-bottom: $factor * $font-size-desktop-galapagos-large;
+  }
 }
 
 @mixin galapagos-margin-top($factor) {
@@ -44,5 +51,9 @@ $form-width-wide: 920px;
 
   @media screen and (min-width: $bp-tablet) {
     margin-top: $factor * $font-size-desktop-galapagos;
+  }
+
+  @media screen and (min-width: $bp-large) {
+    margin-top: $factor * $font-size-desktop-galapagos-large;
   }
 }

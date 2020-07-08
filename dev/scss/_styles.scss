@@ -48,6 +48,10 @@ body {
   line-height: 1.5;
 
   @media screen and (min-width: $bp-tablet) {
+    font-size: $font-size-laptop-small;
+  }
+
+  @media screen and (min-width: $bp-large) {
     font-size: $font-size-desktop-small;
   }
 }
@@ -69,6 +73,10 @@ body {
     font-size: $font-size-mobile-galapagos;
 
     @media screen and (min-width: $bp-tablet) {
+      font-size: $font-size-laptop-galapagos;
+    }
+
+    @media screen and (min-width: $bp-large) {
       font-size: $font-size-desktop-galapagos;
     }
 
@@ -128,6 +136,11 @@ body {
     padding-left: 34px;
     padding-right: 34px;
   }
+
+  @media screen and (min-width: $bp-large) {
+    padding-left: 36px;
+    padding-right: 36px;
+  }
 }
 
 .nf-container {
@@ -138,6 +151,10 @@ body {
   font-size: $font-size-mobile-small;
 
   @media screen and (min-width: $bp-tablet) {
+    font-size: $font-size-laptop-small;
+  }
+
+  @media screen and (min-width: $bp-large) {
     font-size: $font-size-desktop-small;
   }
 }
@@ -198,6 +215,10 @@ body {
   font-size: $font-size-mobile-small;
 
   @media screen and (min-width: $bp-tablet) {
+    font-size: $font-size-laptop;
+  }
+
+  @media screen and (min-width: $bp-large) {
     font-size: $font-size-desktop;
   }
 }
@@ -207,10 +228,6 @@ body {
   @include galapagos-margin-bottom(3);
 
   @media screen and (min-width: $bp-tablet) {
-    width: 22%;
-  }
-
-  @media screen and (min-width: $bp-large) {
     width: 16%;
   }
 }
@@ -240,6 +257,10 @@ body {
   }
 
   @media screen and (min-width: $bp-tablet) {
+    font-size: $font-size-laptop-galapagos;
+  }
+
+  @media screen and (min-width: $bp-large) {
     font-size: $font-size-desktop-galapagos;
   }
 }
@@ -266,6 +287,10 @@ body {
   margin-bottom: $font-size-mobile-galapagos;
 
   @media screen and (min-width: $bp-tablet) {
+    margin-bottom: $font-size-laptop-galapagos;
+  }
+
+  @media screen and (min-width: $bp-large) {
     margin-bottom: $font-size-desktop-galapagos;
   }
 
@@ -353,6 +378,10 @@ body {
 
   @media screen and (min-width: $bp-tablet) {
     position: relative;
+    padding-right: $font-size-laptop-galapagos + 16px; // 16px equals 1 rem
+  }
+
+  @media screen and (min-width: $bp-large) {
     padding-right: $font-size-desktop-galapagos + 16px; // 16px equals 1 rem
   }
 
@@ -422,6 +451,10 @@ body {
   font-size: $font-size-mobile-galapagos;
 
   @media screen and (min-width: $bp-tablet) {
+    font-size: $font-size-laptop-galapagos;
+  }
+
+  @media screen and (min-width: $bp-large) {
     font-size: $font-size-desktop-galapagos;
   }
 }
@@ -496,6 +529,10 @@ body {
   font-size: $font-size-mobile-galapagos;
 
   @media screen and (min-width: $bp-tablet) {
+    font-size: $font-size-laptop-galapagos;
+  }
+
+  @media screen and (min-width: $bp-large) {
     font-size: $font-size-desktop-galapagos;
   }
 
@@ -593,6 +630,10 @@ body {
   height: $font-size-mobile-galapagos;
 
   @media screen and (min-width: $bp-tablet) {
+    height: $font-size-laptop-galapagos;
+  }
+
+  @media screen and (min-width: $bp-large) {
     height: $font-size-desktop-galapagos;
   }
 }
@@ -602,6 +643,10 @@ body {
   font-size: $font-size-mobile-small;
 
   @media screen and (min-width: $bp-tablet) {
+    font-size: $font-size-laptop-small;
+  }
+
+  @media screen and (min-width: $bp-large) {
     font-size: $font-size-desktop-small;
   }
 }
