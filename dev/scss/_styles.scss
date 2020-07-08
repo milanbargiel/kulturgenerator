@@ -600,6 +600,14 @@ body {
       width: 200px;
     }
   }
+
+  &--sk {
+    width: 80px;
+    
+    @media screen and (min-width: $bp-tablet) {
+      width: 110px;
+    }
+  }
 }
 
 .founder-img {
