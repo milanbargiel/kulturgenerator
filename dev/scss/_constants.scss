@@ -16,9 +16,9 @@ $stylish-red: #cb2c30;
 
 // form variables
 // desktop font sizes
-$font-size-desktop-large: 36px;
-$font-size-desktop-galapagos-large: 60px;
-$font-size-desktop-small-large: 24px;
+$font-size-desktop: 36px;
+$font-size-desktop-galapagos: 60px;
+$font-size-desktop-small: 24px;
 // laptop font sizes
 $font-size-laptop: 33px;
 $font-size-laptop-galapagos: 55px;
@@ -27,9 +27,7 @@ $font-size-laptop-small: 22px;
 $font-size-mobile: 26px;
 $font-size-mobile-small: 20px;
 $font-size-mobile-galapagos: 34px;
-$x1: $font-size-desktop-galapagos / 3;
-$x2: 2 * $x1;
-$x3: 3 * $x1;
+
 $form-width-small: 580px;
 $form-width-wide: 920px;
 
@@ -38,11 +36,11 @@ $form-width-wide: 920px;
   margin-bottom: $factor * $font-size-mobile-galapagos;
 
   @media screen and (min-width: $bp-tablet) {
-    margin-bottom: $factor * $font-size-desktop-galapagos;
+    margin-bottom: $factor * $font-size-laptop-galapagos;
   }
 
   @media screen and (min-width: $bp-large) {
-    margin-bottom: $factor * $font-size-desktop-galapagos-large;
+    margin-bottom: $factor * $font-size-desktop-galapagos;
   }
 }
 
@@ -50,10 +48,10 @@ $form-width-wide: 920px;
   margin-top: $factor * $font-size-mobile-galapagos;
 
   @media screen and (min-width: $bp-tablet) {
-    margin-top: $factor * $font-size-desktop-galapagos;
+    margin-top: $factor * $font-size-laptop-galapagos;
   }
 
   @media screen and (min-width: $bp-large) {
-    margin-top: $factor * $font-size-desktop-galapagos-large;
+    margin-top: $factor * $font-size-desktop-galapagos;
   }
 }
