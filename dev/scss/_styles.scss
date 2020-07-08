@@ -125,8 +125,8 @@ body {
   padding-right: 10px;
 
   @media screen and (min-width: $bp-tablet) {
-    padding-left: 36px;
-    padding-right: 36px;
+    padding-left: 34px;
+    padding-right: 34px;
   }
 }
 
@@ -247,7 +247,7 @@ body {
 // submit art form
 .sa-form {
   display: none;
-  max-width: 1000px;
+  max-width: $form-width-wide;
 
   @include galapagos-margin-top(2);
 
@@ -262,7 +262,7 @@ body {
 }
 
 .form-group {
-  max-width: 680px;
+  max-width: $form-width-small;
   margin-bottom: $font-size-mobile-galapagos;
 
   @media screen and (min-width: $bp-tablet) {
@@ -274,7 +274,7 @@ body {
   }
 
   &--small { // only used for inline textform within checkbox region
-    max-width: 680px;
+    max-width: $form-width-small;
   }
 
   &--adress {
@@ -357,7 +357,7 @@ body {
   }
 
   &--checkbox {
-    max-width: 680px;
+    max-width: $form-width-small;
     margin-top: 1.5rem;
   }
 

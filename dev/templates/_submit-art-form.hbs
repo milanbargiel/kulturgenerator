@@ -47,7 +47,7 @@
             {{!-- description --}}
             <div class="form-group">
                 <label class="form-group__label" for="description-input">Kurzbeschreibung <span class="form-field-required">*</span></label>
-                <textarea class="form-group__input js-required-input" name="description" rows="4" id="description-input" maxlength="2000"></textarea>
+                <textarea class="form-group__input js-required-input" name="description" rows="6" id="description-input" maxlength="2000"></textarea>
                 <div class="form-help invisible visible-objekt">Dieser Text beschreibt Ihr Angebot und erscheint auf der Homepage. Bei Objekten fügen Sie bitte Angaben zu Material, Entstehungsjahr, Größe und Genre/Stil hinzu, sowie bei einer Auflage die Stückzahl.<div class="form-help__question-mark title title--grid">&nbsp;?</div></div>
                 <div class="form-help invisible visible-erlebnis">Dieser Text beschreibt Ihr Angebot und erscheint auf der Homepage. Bitte geben Sie die Stückzahl Ihres Angebotes zB. die Menge von Eintrittskarten an.
                 <div class="form-help__question-mark title title--grid">&nbsp;?</div></div>
@@ -165,8 +165,10 @@
 
         {{!-- shipping costs --}}
         <div class="form-group form-group--wide invisible visible-objekt">
-            <label class="form-group__label" for="shipping-costs-input">Versandkosten <span class="form-field-required">*</span></label>
-            <input class="form-group__input js-required-input" type="text" name="shipping-costs" id="shipping-costs-input" maxlength="60">
+            <div class="form-group--small">
+                <label class="form-group__label" for="shipping-costs-input">Versandkosten <span class="form-field-required">*</span></label>
+                <input class="form-group__input js-required-input" type="text" name="shipping-costs" id="shipping-costs-input" maxlength="60">
+            </div>
 
             <div class="form-check">
                 <input class="form-check__checkbox js-required-input" type="checkbox" value="true" name="shipping" id="shipping-input-objekt">
@@ -216,7 +218,7 @@
         {{!-- artisticwork --}}
         <div class="form-group">
             <label class="form-group__label" for="artisticwork-input">Kulturschaffende Tätigkeit <span class="form-field-required">*</span></label>
-            <textarea class="form-group__input js-required-input" name="artisticwork" id="artisticwork-input" maxlength="2000" rows="8"></textarea>
+            <textarea class="form-group__input js-required-input" name="artisticwork" id="artisticwork-input" maxlength="2000" rows="6"></textarea>
             <div class="form-help invisible visible-erlebnis visible-objekt">Bitte haben Sie Verständnis, dass nicht alle Einreichungen berücksichtigt werden können. Es sollen nur diejenigen vom Generator profitieren, die professionell als Kunst- und Kulturschaffende tätig sind. Bitte beschreiben Sie kurz Ihre Arbeit. Ggf. können Sie Links zu Webseiten, eine kurze Aufzählung Ihrer letzten Projekte und/oder Ausstellungen, als auch ein abgeschlossenes oder laufendes Studium in dem Bereich aufführen.<div class="form-help__question-mark title title--grid">&nbsp;?</div>
         </div>
     </div>

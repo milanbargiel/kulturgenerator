@@ -17,16 +17,18 @@ $stylish-red: #cb2c30;
 // form variables
 // $font-size-desktop: 44px;
 // $font-size-desktop-galapagos: 60px;
-$font-size-desktop: 36px;
-$font-size-desktop-galapagos: 60px;
-$font-size-desktop-small: 24px;
-$font-size-desktop-extra-small: 20px; // used for newsletter banner and help explain texts
+$font-size-desktop: 33px;
+$font-size-desktop-galapagos: 55px;
+$font-size-desktop-small: 22px;
+$font-size-desktop-extra-small: 18px; // used for newsletter banner and help explain texts
 $font-size-mobile: 26px;
 $font-size-mobile-small: 20px;
 $font-size-mobile-galapagos: 34px;
 $x1: $font-size-desktop-galapagos / 3;
 $x2: 2 * $x1;
 $x3: 3 * $x1;
+$form-width-small: 580px;
+$form-width-wide: 920px;
 
 // mixins
 @mixin galapagos-margin-bottom($factor) {
