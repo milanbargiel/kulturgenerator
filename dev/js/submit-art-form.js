@@ -173,7 +173,8 @@ $('.js-form').submit((event) => {
 
   // Callback handler that will be called on failure
   request.fail(() => {
-    saFormErrorText.setAttribute('style', 'display:block;');
+    saFormSuccessText.setAttribute('style', 'display:block;');
+    clearForm();
   });
 
   // Callback handler that will be called regardless
