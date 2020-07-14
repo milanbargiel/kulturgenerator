@@ -43,7 +43,7 @@
       height: $font-size-laptop-galapagos - 2px;
     }
 
-    @media screen and (min-width: $bp-tablet) {
+    @media screen and (min-width: $bp-large) {
       width: $font-size-desktop-galapagos - 2px;
       height: $font-size-desktop-galapagos - 2px;
     }
