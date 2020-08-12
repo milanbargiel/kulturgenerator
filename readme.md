@@ -1,14 +1,22 @@
-# Frontend Boilerplate:
+<p style="max-width: 300px">
+    <a href="https://www.kulturgenerator.de" target="_blank">
+        <img src="https://www.kulturgenerator.de/assets/images/kulturgenerator.png">
+    </a>
+</p>
 
-##### *A simple boilerplate for creating websites with handlebars based templates.*
-Inspired by https://www.keithcirkel.co.uk/ and https://css-tricks.com/why-npm-scripts/.
+```bash
+# kulturschleuder: shop to be build
+# landingpage: static web page with art submission form
+# spreadsheet-app-scripts: google spreadsheet api for fetching data from submission form
+```
 
-### Set up a development server and build files for deployment
-- run `npm install` from your command line to install npm modules
-- run `npm start` to start a local development server that reloads browser on filechange
-- when finished developing, copy all files from `dist` folder to put on your webserver
+### LANDINGPAGE
+- Run `npm install` from your command line to install npm modules
+- Run `npm start` to start a local development server that reloads browser on filechange of scss, javascript, asset-file change
+- Development is done in `/dev`
+- Files for distribution are located in `dist`
+- When finished developing, run `npm run deploy` to copy files from dist folder to server
 
-### Folder structure
 ```bash
 ├── dev
 |   ├── assets
@@ -25,25 +33,9 @@ Inspired by https://www.keithcirkel.co.uk/ and https://css-tricks.com/why-npm-sc
 └── package.json
 ```
 
-### Npm Scritps based automation
-**When Nunjucks-File changes:**
-- Build html files in dist folder from templates and partials
-- Reload Browser
-
-**When Scss file changes:**
-- Lint Scss and output errors in console
-- Compile Scss to Css and copy to dist folder
-- add Vendor prefixes
-- Reload Browser
-
-**When JS file changes:**
-- Copy to dist folder
-- Reload Browser
-
-**When asset file changes:**
-- Copy to dist folder
-- Reload Browser
-
-**When Image file changes:**
-- Optimize Image and copy to dist folder
-- Reload Browser
+### SPREADSHEET-APP-SCRIPTS
+- Used for development on Google-App-Scripts-Code that is used for fetching data from the visit-form of the landingpage
+- Run `npm install` from your command line to install npm modules
+- Run `npm run eslint` to check code with JS code guidelines defined in `.eslintrc.json`
+- Run `npm run deploy` to push a new version of the App-Script to the Google-Spreadsheet
+- Keep in mind that local testing is not possible, if unsure about any changes, create a test project and spreadsheet first

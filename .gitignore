@@ -10,6 +10,7 @@ Thumbs.db
 # Other files
 node_modules/
 dist/
+spreadsheet-app-scripts/.clasp.json
 
 # Ignore Galapagos Font files
 GalapagosA-Regular.woff
