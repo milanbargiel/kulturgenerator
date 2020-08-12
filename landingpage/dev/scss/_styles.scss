@@ -111,9 +111,49 @@ body {
   z-index: -1;
 }
 
+// log
+.log {
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+  height: $font-size-mobile;
+  width: 100vw;
+  margin-top: 10px;
+
+  @media screen and (min-width: $bp-tablet) {
+    height: $font-size-desktop;
+  }
+}
+
+.log-names {
+  animation: a 40s linear 0s infinite alternate;
+  color: $blue;
+  position: absolute;
+  margin: 0;
+  line-height: 1;
+  font-size: $font-size-mobile-small;
+
+  @media screen and (min-width: $bp-tablet) {
+    font-size: $font-size-laptop;
+  }
+
+  @media screen and (min-width: $bp-large) {
+    font-size: $font-size-desktop;
+  }
+}
+
+@keyframes a {
+ 0% {
+  left:0
+ }
+ to {
+  left:-100%
+ }
+}
+
 // content
 .content {
-  padding-top: 18px;
+  padding-top: 4px;
   padding-bottom: 18px;
   overflow-wrap: break-word;
   min-height: 100vh;
@@ -122,6 +162,7 @@ body {
 
   @media screen and (min-width: $bp-tablet) {
     padding-bottom: 2rem;
+    padding-top: 10px;
   }
 }
 
