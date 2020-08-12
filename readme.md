@@ -18,7 +18,7 @@
 - Run `npm start` to start a local development server that reloads browser on filechange of scss, javascript, asset-file change
 - Development is done in `/dev`
 - Files for distribution are located in `dist`
-- When finished developing, run `npm run deploy` to copy files from dist folder to server
+- When finished developing, run `npm run deployProduction` to copy files from dist folder to production server
 
 ```bash
 ├── dev
