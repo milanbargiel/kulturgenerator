@@ -21,7 +21,7 @@ let names = [
 ];
 
 names = names.sort(() => Math.random() - 0.5); // shuffle names
-names = `◰◱◳ Mit ${names.join(' - ')} ◰◱◳`; // join them
+names = `◰◱◳ Mit ${names.join(' - ')} `; // join them
 container.innerHTML = names; // paste to assembly line bar
 
 $('.marquee').marquee({
