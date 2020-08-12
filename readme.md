@@ -10,6 +10,9 @@
 # spreadsheet-app-scripts: google spreadsheet api for fetching data from submission form
 ```
 
+### KULTURSCHLEUDER
+*our crazy development with vue.js happens here*
+
 ### LANDINGPAGE
 - Run `npm install` from your command line to install npm modules
 - Run `npm start` to start a local development server that reloads browser on filechange of scss, javascript, asset-file change
