@@ -6,6 +6,7 @@
 
 ```bash
 # kulturschleuder: shop to be build
+# kulturschleuder-cms: cms app (strapi)
 # landingpage: static web page with art submission form
 # spreadsheet-app-scripts: google spreadsheet api for fetching data from submission form
 ```
