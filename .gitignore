@@ -7,6 +7,15 @@
 ehthumbs.db
 Thumbs.db
 
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
 # Other files
 node_modules/
 dist/
@@ -17,3 +26,14 @@ GalapagosA-Regular.woff
 GalapagosA-Regular.woff2
 GalapagosA-RegularGrid.woff
 GalapagosA-RegularGrid.woff2
+
+# Ignore vue stuff
+# local env files
+.env.local
+.env.*.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
