@@ -1,4 +1,4 @@
 # Strapi application
 
-- Kulturgenerator-Cms
+Visit [xyz.kulturgenerator.de/admin](https://xyz.kulturgenerator.de/admin) for admin panel
 
