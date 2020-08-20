@@ -85,7 +85,7 @@ pm2 has a great monitoring tool to detect bugs or wrong configurations.
 
 #### Step 6: Set up webhook on Github <a id="webhook"></a>
 
-> **setup:**
+> **Setup:**
 Use the "just the `push` event" configuration in Github settings.
 
 > **Note:**
