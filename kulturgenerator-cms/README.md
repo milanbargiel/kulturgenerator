@@ -93,7 +93,7 @@ Use the "just the `push` event" configuration in Github settings.
 
 #### Final step: Use domain name instead of ip <a id="domain"></a>
 
-That's how you can access the admin panel via `xyz.kulturgenerator.de/admin`
+Configure a domain name instead of the ip address.
 
 That's it! :-)
 
