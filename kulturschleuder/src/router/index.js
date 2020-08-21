@@ -1,9 +1,16 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import Restaurants from '../views/Restaurants.vue'
 
 Vue.use(VueRouter)
 
-  const routes = []
+  const routes = [
+  {
+    path: '/',
+    name: 'restaurants',
+    component: Restaurants
+  },
+]
 
 const router = new VueRouter({
   mode: 'history',
