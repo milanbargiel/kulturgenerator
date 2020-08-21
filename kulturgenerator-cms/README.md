@@ -2,7 +2,8 @@
 
 ## Table of Contents
 1. [Admin Panel Access](#first)
-2. [Installation on Ubuntu](#second)
+2. [FAQ](#faq)
+3. [Installation on Ubuntu](#second)
     * [Additional Explanation](#additional)
         * [Skip the Droplet part!](#droplet)
         * [Step 1: Install Node.js on the server](#nodejs)
@@ -18,7 +19,7 @@ Visit [xyz.kulturgenerator.de/admin](https://xyz.kulturgenerator.de/admin) for A
 
 At Admin Panel you can add new content (e.g. artworks) and generally cultivate Kulturgenerator data.
 
-## Frequently Asked Questions
+## Frequently Asked Questions <a id="faq"></a>
 
 ### Why can't I create or update content-types in production/staging?
 
