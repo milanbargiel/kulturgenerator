@@ -9,7 +9,7 @@
 import RestaurantList from '../components/RestaurantList'
 
 export default {
-  name: 'Home',
+  name: 'Restaurants',
   components: {
     RestaurantList
   }

@@ -4,7 +4,7 @@
     <p>
       <ul>
         <li v-for="restaurant in restaurants" :key="restaurant.id">
-          Title: {{ restaurant.Title }}, Available Seats: {{ restaurant.seats }}
+          <restaurant-list-item :item="restaurant"></restaurant-list-item>
         </li>
       </ul>
     </p>
@@ -14,9 +14,13 @@
 
 <script>
 import axios from 'axios'
+import RestaurantListItem from './RestaurantListItem.vue'
 
 export default {
   name: 'RestaurantList',
+  components: {
+      RestaurantListItem
+  },
   data () {
     return {
       restaurants: []
