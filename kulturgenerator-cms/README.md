@@ -29,12 +29,19 @@ From [Strapi Troubleshooting FAQs](https://strapi.io/documentation/v3.x/getting-
 >
 > Generally your "flow" of development would follow the following path:
 >
-> * Development - Develop your Strapi application locally on your host machine, then push changes into source control
-> * Staging - Deploy changes from source control to a "production-like" environment for testing
-> * Production - If no other changes are needed, deploy into production
-> * Repeat as needed, it is recommended that you properly version and test your application as you go
+> * Development - Develop your Strapi application locally on your host machine, then push changes into source control.
+> * Staging - Deploy changes from source control to a "production-like" environment for testing.
+> * Production - If no other changes are needed, deploy into production.
+> * Repeat as needed, it is recommended that you properly version and test your application as you go.
 >
-> At this time and in the future there is no plan to allow model creating or updating while in a production environment, and there is currently no plans to move model settings into the database. There is no known nor recommended workarounds for this
+> At this time and in the future there is no plan to allow model creating or updating while in a production environment, and there is currently no plans to move model settings into the database. There is no known nor recommended workarounds for this.
+
+#### Quickguide
+1. `git pull` your latest changes from the remote repo.
+2. Start strapi app locally with `npm run develop` `(strapi develop)` (important: you cannot add content types when using `npm start` `(strapi start)`).
+3. Add content-type at `localhost:1337/admin`.
+4. `git push` to the remote repository. If you are working on a feature branch you have to merge your changes into `master`. The changes are auto-deployed from `master`.
+5. If you setup `pm2` with `--watch` command, your newly created content type should automatically appear on `xyz.kulturgenerator.de/admin`. You can check if watching is enabled with `cd ~ / pm2 list`. `pm2 start` will also reload your strapi application.
 
 ## Installation on Ubuntu 18.04 <a id="second"></a>
 
@@ -47,9 +54,9 @@ The installation process can be split up into the following steps:
 1. Install Strapi locally on your machine.
 [Guide for installing Strapi via the CLI](https://strapi.io/documentation/v3.x/installation/cli.html)
 
-2. Add to a Github repository
+2. Add to a Github repository.
 
-3. Do configuration on server to pull your Strapi from Github 
+3. Do configuration on server to pull your Strapi from Github.
 [See deployement Guide Digital Ocean](https://strapi.io/documentation/v3.x/deployment/digitalocean.html#setup-production-server-and-install-node-js)
 
 ### Additional explanation to the steps in the Guide <a id="additional"></a>
@@ -90,10 +97,39 @@ Install the firewall. Because why not :-)
 pm2 is a deamon tool that keeps Strapi running.
 
 > **Note:**
-cd `~` means changing into your users home directory (e.g. /kulturgenerator is the home directory for the user kulturgenerator)
+cd `~` means changing into your users home directory (e.g. /kulturgenerator is the home directory for the user kulturgenerator).
 
 > **Note:**
 pm2 config is the place that holds your environment variables. You can also create an `env` file. It's in the guide.
+
+> **Important:** Include `watch: true` in your `ecosystem.config.js`
+```
+module.exports = {
+  apps: [
+    {
+      name: 'strapi',
+      cwd: '/home/your-name/my-strapi-project/my-project',
+      script: 'npm',
+      args: 'start',
+      watch: true,
+      // Delay between restart
+      watch_delay: 1000,
+      ignore_watch : ["node_modules"],
+      watch_options: {
+        "followSymlinks": false
+      }
+      env: {
+        NODE_ENV: 'production',
+        DATABASE_HOST: 'localhost', // database endpoint
+        DATABASE_PORT: '5432',
+        DATABASE_NAME: 'strapi', // DB name
+        DATABASE_USERNAME: 'your-name', // your username for psql
+        DATABASE_PASSWORD: 'password', // your password for psql
+      },
+    },
+  ],
+};
+```
 
 > **Explanation**: 
 pm2 acts as a wrapper for `npm start` with all the adequate env variables. And also has a feature to automatically restart all configs after server fails and is restarted. It's explained in the guide.
