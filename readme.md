@@ -6,13 +6,27 @@
 
 ```bash
 # kulturschleuder: shop to be build
-# kulturschleuder-cms: cms app (strapi)
+# kulturgenerator-cms: cms app (strapi)
 # landingpage: static web page with art submission form
 # spreadsheet-app-scripts: google spreadsheet api for fetching data from submission form
 ```
 
+### Kulturgenerator-CMS
+Backend and Api of Kulturgenerator.
+
+create `.env` file in root folder:
+```
+DATABASE_USERNAME=your-local-postgres-db-username
+DATABASE_PASSWORD=your-local-postgres-db-password
+```
+
 ### KULTURSCHLEUDER
 *our crazy development with vue.js happens here*
+
+create `.env.local` file in root folder:
+```
+VUE_APP_API_BASEURL = http://localhost:1337
+```
 
 ### LANDINGPAGE
 - Run `npm install` from your command line to install npm modules
