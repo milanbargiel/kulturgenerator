@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Restaurants from '../views/Restaurants.vue'
 import RestaurantDetail from '../views/RestaurantDetail.vue'
+import ArtworkDetail from '../views/ArtworkDetail.vue'
 
 Vue.use(VueRouter)
 
@@ -13,9 +14,13 @@ Vue.use(VueRouter)
   },
   {
     path: '/restaurants/:id',
-    name: 'detail',
+    name: 'restaurantDetail',
     component: RestaurantDetail
-
+  },
+  {
+    path: '/:author/:title',
+    name: 'detail',
+    component: ArtworkDetail
   }
 ]
 
