@@ -1,9 +1,9 @@
 <template>
     <div>
-        <img src="" alt="">
-        <div>order.author</div>
-        <div>order.title</div>
-        <div>order.description</div>
+        <img v-for="image in artworkImages" :key="image" :src="image" alt="" width="400">
+        <div>{{ artwork.author }}</div>
+        <div>{{ artwork.title }}</div>
+        <div>{{ artwork.description }}</div>
         <div>
             <div>
                 paybutton
@@ -19,17 +19,29 @@
 import axios from 'axios'
 
 export default {
-    name: 'Artwork',
+    name: 'artworkDetail',
     data () {
         return {
-            order: {}
+            artwork: {
+                images: [],
+                author: '',
+                title: '',
+                description: '',
+                price: null,
+                generatorShare: null,
+            }
         }
     },
     mounted () {
-        axios.get(process.env.VUE_APP_API_BASEURL + '/orders/' + this.$route.params.id)
+        axios.get(process.env.VUE_APP_API_BASEURL + '/artworks/' + this.$route.params.id)
             .then(response => {
-                this.order = response.data
+                this.artwork = response.data
             })
+    },
+    computed: {
+        artworkImages () {
+            return this.artwork.images.map(image => process.env.VUE_APP_API_BASEURL + image.url)
+        }
     }
 }
 </script>

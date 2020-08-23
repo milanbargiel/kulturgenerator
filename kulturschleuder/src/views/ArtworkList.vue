@@ -1,20 +1,16 @@
 <template>
   <div>
     <h3>List of Artworks:</h3>
-    <p>
-      <ul>
-        <li v-for="artwork in artworks" :key="artwork.id">
-          <artwork-list-item :item="artwork"></artwork-list-item>
-        </li>
-      </ul>
-    </p>
+    <div style="display:flex; flex-wrap: wrap;">
+        <artwork-list-item v-for="artwork in artworks" :key="artwork.id" :item="artwork"></artwork-list-item>
+    </div>
 
   </div>
 </template>
 
 <script>
 import axios from 'axios'
-import ArtworkListItem from './ArtworkListItem.vue'
+import ArtworkListItem from '../components/ArtworkListItem.vue'
 
 export default {
   name: 'ArtworkList',
