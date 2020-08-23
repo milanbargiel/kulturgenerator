@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/artworks",
+      "handler": "artwork.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/artworks/count",
+      "handler": "artwork.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/artworks/:id",
+      "handler": "artwork.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/artworks",
+      "handler": "artwork.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/artworks/:id",
+      "handler": "artwork.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/artworks/:id",
+      "handler": "artwork.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
