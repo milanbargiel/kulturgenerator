@@ -2,6 +2,13 @@
 
 @import 'ArtworkDetail.scss';
 
+@import './override/Carousel.scss';
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: 'Inconsolata', 'sans-serif';
     font-size: 22px;

@@ -1,7 +1,15 @@
 <template>
     <div v-if="!isLoading" class="artwork__detail">
         <div class="artwork__detail__slider">
-            <img v-for="image in artworkImages" :key="image" :src="image" style="height: 400px;">
+            <carousel 
+                :perPage="1" 
+                >
+                <slide v-for="image in artworkImages" :key="image">
+                    <div class="artwork__detail__slider__image-container">
+                        <img :src="image" class="artwork__detail__slider__image">
+                    </div>
+                </slide>
+            </carousel>
         </div>     
         <div class="artwork__detail__author">{{ artwork.author }}:</div>
         <div class="artwork__detail__title">{{ artwork.title }}</div>
@@ -23,10 +31,11 @@
 
 <script>
 import axios from 'axios'
+import { Carousel, Slide} from 'vue-carousel'
 
 export default {
     name: 'artworkDetail',
-    components: { },
+    components: { Carousel, Slide },
     data () {
         return {
             isLoading: true,

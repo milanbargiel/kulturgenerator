@@ -1,0 +1,55 @@
+// override styles from vue-carousel package here
+
+$override-dot-size: 16px;
+$override-dot-color: transparent;
+$new-dot-color-active: blue;
+
+.VueCarousel-inner {
+    // disable slide animation:
+    -o-transition-property: none !important;
+    -moz-transition-property: none !important;
+    -ms-transition-property: none !important;
+    -webkit-transition-property: none !important;
+    transition-property: none !important;
+}
+
+.VueCarousel-slide {
+    align-self: center !important; // position images vertically centered (highest image sets container height)
+}
+
+.VueCarousel-dot-container {
+    margin-top: 0 !important;
+    padding: 5px 0 !important;
+}
+
+.VueCarousel-dot {
+    margin-top: 0 !important;
+    padding: 8px !important;
+    width: $override-dot-size !important;
+    height: $override-dot-size !important;
+    background-color: $override-dot-color !important;
+
+    &:after {
+        content: "";
+        display: inline-block;
+        border-radius: 50%;
+        width: $override-dot-size;
+        height: $override-dot-size;
+        border: 1px solid #000;
+        background-color: white;
+    }
+
+    &:focus {
+        outline:  none !important;
+    }
+}
+
+
+.VueCarousel-dot--active {
+    background-color: $override-dot-color !important;  
+
+    &:after {    
+        background-color: $new-dot-color-active;
+        border-color: blue;
+    }
+}
