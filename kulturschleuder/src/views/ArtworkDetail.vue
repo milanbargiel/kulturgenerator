@@ -1,21 +1,21 @@
 <template>
-    <div v-if="!isLoading">
-        <div style="display: flex;">
+    <div v-if="!isLoading" class="artwork__detail">
+        <div class="artwork__detail__slider">
             <img v-for="image in artworkImages" :key="image" :src="image" style="height: 400px;">
         </div>     
-        <div>{{ artwork.author }}</div>
-        <div>{{ artwork.title }}</div>
-        <div v-html="artwork.description"></div>
-        <div style="display: flex;">
-            <div>
-                <div>{{ artwork.price }}</div>
-                <button>kaufen</button>
+        <div class="artwork__detail__author">{{ artwork.author }}:</div>
+        <div class="artwork__detail__title">{{ artwork.title }}</div>
+        <div class="artwork__detail__description" v-html="artwork.description"></div>
+        <div class="artwork__detail__checkout">
+            <div class="artwork__detail__payment">
+                <div class="artwork__detail__payment-price-display">{{ artwork.price }}€</div>
+                <button class="artwork__detail__payment-button">kaufen</button>
             </div>
-            <div>
+            <div class="artwork__detail__generator-share">
                 <div>{{ artwork.generatorShare }}%</div>
-                <div>
+                <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet eligendi voluptatum eum, fugiat odio, nihil assumenda doloribus inventore, libero magni esse. Necessitatibus distinctio facere adipisci, ducimus voluptas saepe quae nemo.
-                </div>
+                </p>
             </div>
         </div>
     </div>

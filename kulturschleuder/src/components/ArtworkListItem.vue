@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <img :src="titleImage" alt="" width="300">
+    <div style="width: 450px">
+        <img :src="titleImage" alt="" width="100%">
         <div>
             <router-link :to="{ name: 'artworkDetail', params: { id: item.id, author: item.author, title: item.title }}">
                 {{ item.author }}: {{ item.title }}, {{ item.price }}€

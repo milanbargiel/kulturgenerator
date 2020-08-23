@@ -1,0 +1,61 @@
+.artwork__detail {
+    width: 800px;
+    margin: 0 auto;
+
+    .artwork__detail__slider{
+        display: flex;
+        overflow: auto;
+        margin-bottom: 30px;
+    }
+    .artwork__detail__author {
+        font-size: 55px;
+        text-transform: uppercase;
+        text-align: center;
+    }
+    .artwork__detail__title {
+        font-size: 55px;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .artwork__detail__description {
+        font-size: 33px;
+        margin-bottom: 90px;
+    }
+    .artwork__detail__checkout {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 90px;
+
+        .artwork__detail__payment {
+            flex-grow: 1;
+            flex-basis: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+
+            .artwork__detail__payment-price-display {
+                font-size: 55px;
+                font-weight: normal;
+            }
+            .artwork__detail__payment-button {
+                font-family: 'inconsolata', 'sans-serif';
+                font-size: 55px;
+                text-transform: uppercase;
+                background: none;
+                box-shadow: none;
+            }
+        }
+        .artwork__detail__generator-share {
+            flex-grow: 1;
+            flex-basis: 0;
+            font-size: 55px;
+            color: blue;
+
+            p {
+                font-size: 22px;
+                margin: 0;
+            }
+        }   
+    }          
+}
