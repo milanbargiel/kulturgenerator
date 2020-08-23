@@ -3,7 +3,6 @@
         <div class="artwork__detail__slider">
             <carousel 
                 :perPage="1" 
-                navigationEnabled="true"
                 >
                 <slide v-for="image in artworkImages" :key="image">
                     <div class="artwork__detail__slider__image-container">
@@ -23,7 +22,7 @@
             <div class="artwork__detail__generator-share">
                 <div>{{ artwork.generatorShare }}%</div>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet eligendi voluptatum eum, fugiat odio, nihil assumenda doloribus inventore, libero magni esse. Necessitatibus distinctio facere adipisci, ducimus voluptas saepe quae nemo.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet eligendi voluptatum eum, fugiat odio, nihil assumenda.
                 </p>
             </div>
         </div>
