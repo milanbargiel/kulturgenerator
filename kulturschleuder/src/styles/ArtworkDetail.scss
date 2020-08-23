@@ -1,5 +1,5 @@
 .artwork__detail {
-    width: 800px;
+    max-width: 800px;
     margin: 0 auto;
 
     .artwork__detail__slider{
@@ -51,6 +51,7 @@
             flex-basis: 0;
             font-size: 55px;
             color: blue;
+            padding-left: 33px;
 
             p {
                 font-size: 22px;
