@@ -6,12 +6,16 @@
         <div>{{ artwork.author }}</div>
         <div>{{ artwork.title }}</div>
         <div v-html="artwork.description"></div>
-        <div>
+        <div style="display: flex;">
             <div>
-                paybutton
+                <div>{{ artwork.price }}</div>
+                <button>kaufen</button>
             </div>
             <div>
-                50% / 100% dontation explanation
+                <div>{{ artwork.generatorShare }}%</div>
+                <div>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet eligendi voluptatum eum, fugiat odio, nihil assumenda doloribus inventore, libero magni esse. Necessitatibus distinctio facere adipisci, ducimus voluptas saepe quae nemo.
+                </div>
             </div>
         </div>
     </div>
