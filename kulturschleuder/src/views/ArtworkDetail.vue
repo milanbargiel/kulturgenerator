@@ -3,6 +3,7 @@
         <div class="artwork__detail__slider">
             <carousel 
                 :perPage="1" 
+                navigationEnabled="true"
                 >
                 <slide v-for="image in artworkImages" :key="image">
                     <div class="artwork__detail__slider__image-container">
