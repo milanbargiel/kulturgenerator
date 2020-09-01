@@ -1,8 +1,9 @@
 <template>
     <div v-if="!isLoading" class="artwork__detail">
         <div class="artwork__detail__slider">
+            <!-- vue-carousel from https://github.com/ssense/vue-carousel -->
             <carousel 
-                :perPage="1" 
+                :perPage="1"
                 >
                 <slide v-for="image in artworkImages" :key="image">
                     <div class="artwork__detail__slider__image-container">
