@@ -1,5 +1,5 @@
 <template>
-    <div style="width: 450px">
+    <div :style="width">
         <img :src="titleImage" alt="" width="100%">
         <div>
             <router-link :to="{ name: 'artworkDetail', params: { id: item.id, author: item.author, title: item.title }}">
@@ -16,6 +16,9 @@ export default {
     computed: {
         titleImage () {
             return process.env.VUE_APP_API_BASEURL + this.item.images[0].url
+        },
+        width () {
+            return 'width:' + Math.floor(Math.random()  * (650 - 250) + 250) + 'px'
         }
     }
 }
