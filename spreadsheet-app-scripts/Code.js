@@ -36,10 +36,12 @@ function uploadFileToGoogleDrive(data, mimetype, filename) {
 }
 
 function mailSuccess(emailAddress) {
+  const mailHtml = HtmlService.createTemplateFromFile('mail-template').evaluate().getContent();
+
   MailApp.sendEmail({
     to: emailAddress,
-    subject: 'Vielen Dank für Ihre Einreichung!',
-    body: 'Vielen Dank für Ihre Einreichung.',
+    subject: 'Wir haben Ihre Einreichung erhalten',
+    htmlBody: mailHtml,
   });
 }
 
