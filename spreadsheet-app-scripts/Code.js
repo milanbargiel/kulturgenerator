@@ -35,6 +35,14 @@ function uploadFileToGoogleDrive(data, mimetype, filename) {
   return folder.createFile(blob).getUrl();
 }
 
+function mailSuccess(emailAddress) {
+  MailApp.sendEmail({
+    to: emailAddress,
+    subject: 'Vielen Dank für Ihre Einreichung!',
+    body: 'Vielen Dank für Ihre Einreichung.',
+  });
+}
+
 function handleResponse(e) {
   // shortly after my original solution Google announced the LockService[1]
   // this prevents concurrent access overwritting data
@@ -86,6 +94,9 @@ function handleResponse(e) {
 
     // more efficient to set values as [][] array than individually
     sheet.getRange(nextRow, 1, 1, row.length).setValues([row]);
+
+    // send success e-mail
+    mailSuccess(e.parameter.email);
 
     // return json success results
     return ContentService
