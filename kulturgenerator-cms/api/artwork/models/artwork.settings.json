@@ -37,8 +37,7 @@
       "allowedTypes": [
         "images"
       ],
-      "plugin": "upload",
-      "required": true
+      "plugin": "upload"
     },
     "shippingCosts": {
       "type": "decimal"
