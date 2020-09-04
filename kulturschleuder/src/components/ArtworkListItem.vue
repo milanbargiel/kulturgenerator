@@ -18,8 +18,7 @@ export default {
             return process.env.VUE_APP_API_BASEURL + this.item.images[0].url
         },
         styles () {
-            return 'width:' + Math.floor(Math.random()  * (650 - 250) + 250) + 'px;' +
-            'margin-top:' + Math.floor(Math.random() * (120 - 10) + 10) + 'px;'
+            return 'width:' + Math.floor(Math.random()  * (650 - 250) + 250) + 'px;'
         },
     }
 }
