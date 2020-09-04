@@ -23,7 +23,7 @@
     },
     "price": {
       "required": true,
-      "type": "decimal"
+      "type": "float"
     },
     "generatorShare": {
       "type": "integer",
