@@ -17,7 +17,7 @@
 ## Admin Panel Access <a id="first"></a>
 Visit [xyz.kulturgenerator.de/admin](https://xyz.kulturgenerator.de/admin) for Admin Panel.
 
-At Admin Panel you can add new content (e.g. artworks) and generally cultivate Kulturgenerator data.
+At Admin Panel you can add new content (e.g. artwork) and generally cultivate Kulturgenerator data.
 
 ## Frequently Asked Questions <a id="faq"></a>
 
