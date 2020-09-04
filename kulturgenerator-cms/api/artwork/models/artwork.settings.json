@@ -23,7 +23,7 @@
     },
     "price": {
       "required": true,
-      "type": "float"
+      "type": "decimal"
     },
     "generatorShare": {
       "type": "integer",
@@ -39,6 +39,12 @@
       ],
       "plugin": "upload",
       "required": true
+    },
+    "shippingCosts": {
+      "type": "decimal"
+    },
+    "tax": {
+      "type": "integer"
     }
   }
 }
