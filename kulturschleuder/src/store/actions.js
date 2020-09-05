@@ -9,11 +9,10 @@ const actions = {
         })
     },
     getArtworkById (context, id) {
-
         return axios.get(process.env.VUE_APP_API_BASEURL + '/artworks/' + id)
-        .then(response => {
-            return response.data
-        })        
+            .then(response => {
+                return response.data
+            })        
     }
 }
 
