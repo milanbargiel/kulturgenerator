@@ -7,7 +7,8 @@ import mutations from './mutations'
 Vue.use(Vuex)
 
 const state = {
-  testIndex: 1
+  testIndex: 1,
+  artworks: []
 }
 
 export default new Vuex.Store({
