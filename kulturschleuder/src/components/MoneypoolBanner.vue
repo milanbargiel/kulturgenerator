@@ -1,9 +1,9 @@
 <template>
-    <div style="cursor: pointer; font-size: 3rem; margin-bottom: 30px;">
-        <marquee-text 
-            :repeat="99"
-            :duration="10">
-            <div style="margin-right: 140px;">20.000 €</div>
+    <div class="moneypool__banner">
+        <marquee-text
+            :repeat="repeatBalance"
+            :duration="animationDuration">
+            <div class="moneypool__banner__balance-item">{{ balance }}</div>
         </marquee-text>
     </div>
 </template>
@@ -13,6 +13,13 @@ import MarqueeText from 'vue-marquee-text-component'
 
 export default {
     name: 'MoneypoolBanner',
-    components: { MarqueeText }
+    components: { MarqueeText },
+    data () {
+        return {
+            repeatBalance: 10,
+            animationDuration: 5,
+            balance: '20.000'
+        }
+    }
 }
 </script>
