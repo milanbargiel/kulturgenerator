@@ -1,7 +1,7 @@
 <template>
   <div @click="incrementIndex()">
     <div style="display:flex; flex-wrap: wrap;">
-        <artwork-list-item v-for="artwork in partialArtworks" :key="artwork.id" :item="artwork" class="artwork__list__item"></artwork-list-item>
+        <artwork-list-item v-for="artwork in artworks" :key="artwork.id" :item="artwork" class="artwork__list__item"></artwork-list-item>
         <!-- <artwork-list-item v-for="artwork in partialArtworks" :key="artwork.id + 'y'" :item="artwork" class="artwork__list__item"></artwork-list-item> -->
     </div>
 
