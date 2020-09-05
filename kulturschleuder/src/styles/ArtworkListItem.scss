@@ -3,6 +3,7 @@
 
     a {
         text-decoration: none;
+        color: #000;
 
         &:hover {
             text-decoration: underline;
@@ -14,8 +15,7 @@
 .artwork__list__item-image {
     width: 100%;
 }
-.artwork__list__item-label {
-    color: #000;
+.artwork__list__item-author {
     text-transform: uppercase;
 }
 
