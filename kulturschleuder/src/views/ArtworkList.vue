@@ -1,8 +1,7 @@
 <template>
   <div @click="addItem()">
-    <div style="display:flex; flex-wrap: wrap;">
+    <div class="artwork__list">
         <artwork-list-item v-for="artwork in artworks" :key="artwork.id" :item="artwork" class="artwork__list__item"></artwork-list-item>
-        <!-- <artwork-list-item v-for="artwork in partialArtworks" :key="artwork.id + 'y'" :item="artwork" class="artwork__list__item"></artwork-list-item> -->
     </div>
 
   </div>
