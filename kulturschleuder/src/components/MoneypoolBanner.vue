@@ -3,7 +3,7 @@
         <marquee-text
             :repeat="repeatBalance"
             :duration="animationDuration">
-            <div class="moneypool__banner__balance-item">{{ balance }}</div>
+            <span class="moneypool__banner__balance-item">{{ balance }}</span>
         </marquee-text>
     </div>
 </template>
