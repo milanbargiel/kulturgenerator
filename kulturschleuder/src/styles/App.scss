@@ -11,15 +11,15 @@
   font-weight: bold;
 }
 
-@font-face {
-  font-family: 'GalapagosA-Regular';
-  src: url('assets/GalapagosA-Regular.woff2') format('woff2'), url('assets/GalapagosA-Regular.woff') format('woff');
-}
+// @font-face {
+//   font-family: 'GalapagosA-Regular';
+//   src: url('assets/GalapagosA-Regular.woff2') format('woff2'), url('assets/GalapagosA-Regular.woff') format('woff');
+// }
 
-@font-face {
-  font-family: 'GalapagosA-RegularGrid';
-  src: url('assets/GalapagosA-RegularGrid.woff2') format('woff2'), url('assets/GalapagosA-RegularGrid.woff') format('woff');
-}
+// @font-face {
+//   font-family: 'GalapagosA-RegularGrid';
+//   src: url('assets/GalapagosA-RegularGrid.woff2') format('woff2'), url('assets/GalapagosA-RegularGrid.woff') format('woff');
+// }
 
 @import 'ArtworkDetail.scss';
 @import 'ArtworkListItem.scss';
