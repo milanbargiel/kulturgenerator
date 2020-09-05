@@ -31,7 +31,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 import { Carousel, Slide} from 'vue-carousel'
 
 export default {
@@ -51,10 +50,10 @@ export default {
         }
     },
     mounted () {
-        axios.get(process.env.VUE_APP_API_BASEURL + '/artworks/' + this.$route.params.id)
+        this.$store.dispatch('getArtworkById', this.$route.params.id)
             .then(response => {
                 this.isLoading = false
-                this.artwork = response.data
+                this.artwork = response
             })
     },
     computed: {

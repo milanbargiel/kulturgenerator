@@ -32,9 +32,6 @@ export default {
   created () {
     if (!this.artworks.length > 0) {
       this.$store.dispatch('getArtworks')
-        .then(response => {
-          this.artworks = response
-        })
     }
   },
   methods: {
