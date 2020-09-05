@@ -19,8 +19,6 @@
             <div class="artwork__detail__payment">
                 <div class="artwork__detail__payment-price-display">{{ artwork.price }}€</div>
                 <button class="artwork__detail__payment-button">kaufen</button>
-                <div>{{ $store.getters.getTestIndex }}</div>
-                <button @click="$store.commit('SET_TEST_INDEX', 20)">Add 20</button>
             </div>
             <div class="artwork__detail__generator-share">
                 <div>{{ artwork.generatorShare }}%</div>
