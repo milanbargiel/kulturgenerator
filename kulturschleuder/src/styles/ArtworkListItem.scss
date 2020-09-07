@@ -1,3 +1,24 @@
 .artwork__list__item {
     padding: 0 10px 30px;
+
+    a {
+        text-decoration: none;
+        color: #000;
+
+        &:hover {
+            text-decoration: underline;
+            text-decoration-color: blue;
+        }
+    }
+}
+
+.artwork__list__item-image {
+    width: 100%;
+}
+.artwork__list__item-author {
+    text-transform: uppercase;
+}
+
+.artwork__list__item-price {
+    color: blue;
 }
