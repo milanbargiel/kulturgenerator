@@ -14,7 +14,10 @@ Vue.use(VueRouter)
   {
     path: '/:author/:id/:title',
     name: 'artworkDetail',
-    component: ArtworkDetail
+    component: ArtworkDetail,
+    meta: {
+      showBackButton: true
+    }
   }
 ]
 
