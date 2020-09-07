@@ -1,10 +1,8 @@
 <template>
-  <div @click="incrementIndex()">
-    <div style="display:flex; flex-wrap: wrap;">
-        <artwork-list-item v-for="artwork in partialArtworks" :key="artwork.id" :item="artwork"></artwork-list-item>
-        <!-- <artwork-list-item v-for="artwork in partialArtworks" :key="artwork.id + 'y'" :item="artwork" class="artwork__list__item"></artwork-list-item> -->
+  <div @click="addItem()">
+    <div class="artwork__list">
+        <artwork-list-item v-for="artwork in artworks" :key="artwork.id" :item="artwork" class="artwork__list__item"></artwork-list-item>
     </div>
-
   </div>
 </template>
 
@@ -19,13 +17,13 @@ export default {
   },
   data () {
     return {
-      index: 1,
+      artworkCount: 1,
       artworks: []
     }
   },
   computed: {
      partialArtworks () {
-      return this.artworks.slice(0, this.index).reverse()
+      return this.artworks.slice(0, this.artworkCount).reverse()
     }
   },
   created () {
@@ -38,8 +36,8 @@ export default {
       })
   },
   methods: {
-    incrementIndex () {
-      this.index++
+    addItem () {
+      this.artworkCount++
     }
   }
 }

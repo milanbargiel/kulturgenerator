@@ -21,8 +21,12 @@
 //   src: url('assets/GalapagosA-RegularGrid.woff2') format('woff2'), url('assets/GalapagosA-RegularGrid.woff') format('woff');
 // }
 
+@import 'Header.scss';
 @import 'ArtworkDetail.scss';
+@import 'ArtworkList.scss';
 @import 'ArtworkListItem.scss';
+@import 'MoneypoolBanner.scss';
+
 
 @import './override/Carousel.scss';
 

@@ -35,12 +35,15 @@
       "collection": "file",
       "via": "related",
       "allowedTypes": [
-        "files",
-        "images",
-        "videos"
+        "images"
       ],
-      "plugin": "upload",
-      "required": true
+      "plugin": "upload"
+    },
+    "shippingCosts": {
+      "type": "decimal"
+    },
+    "tax": {
+      "type": "integer"
     }
   }
 }
