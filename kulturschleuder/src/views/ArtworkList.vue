@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+import { mapGetters } from 'vuex'
 import ArtworkListItem from '../components/ArtworkListItem.vue'
 
 export default {
@@ -18,22 +18,20 @@ export default {
   data () {
     return {
       artworkCount: 1,
-      artworks: []
     }
   },
   computed: {
-     partialArtworks () {
+    ...mapGetters({
+      artworks: 'getRandomizedArtworks'
+    }),
+    partialArtworks () {
       return this.artworks.slice(0, this.artworkCount).reverse()
     }
   },
   created () {
-    axios.get(process.env.VUE_APP_API_BASEURL + '/artworks')
-      .then(response => {
-        this.artworks = response.data
-          .map((a) => ({sort: Math.random(), value: a}))
-          .sort((a, b) => a.sort - b.sort)
-          .map((a) => a.value)
-      })
+    if (!this.artworks.length > 0) {
+      this.$store.dispatch('getArtworks')
+    }
   },
   methods: {
     addItem () {
