@@ -7,7 +7,8 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "dev": "npm run serve",
-    "start": "npm run serve"
+    "start": "npm run serve",
+    "deployStaging": "scp -r dist/* ownserver:/var/www/staging.kulturgenerator.de"
   },
   "dependencies": {
     "axios": "^0.20.0",
