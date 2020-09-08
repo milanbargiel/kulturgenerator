@@ -35,6 +35,10 @@ html {
   line-height: 1;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 // Constants
 $bp-tablet: 680px;
 $font-family: 'Inconsolata', monospace;

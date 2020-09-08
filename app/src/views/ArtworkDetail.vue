@@ -7,20 +7,19 @@
           <img :src="image" class="carousel__image">
         </slide>
       </carousel>
-    </div>     
-    <div class="artwork-detail__author">{{ artwork.author }}:</div>
-    <div class="artwork-detail__title">{{ artwork.title }}</div>
+    </div>
+    <div class="artwork-detail__title">
+      <span class="artwork-detail__author">{{ artwork.author }}:</span>{{ artwork.title }}
+    </div>
     <div class="artwork-detail__description" v-html="artwork.description"></div>
     <div class="artwork-detail__checkout">
       <div class="artwork-detail__payment">
-        <div class="artwork-detail__payment-price-display">{{ artwork.price }}€</div>
+        <div class="artwork-detail__price">{{ artwork.price }}€</div>
         <button class="artwork-detail__payment-button">kaufen</button>
       </div>
       <div class="artwork-detail__generator-share">
-        <div>{{ artwork.generatorShare }}%</div>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet eligendi voluptatum eum, fugiat odio, nihil assumenda.
-        </p>
+        <div class="artwork-detail__share-percentage">{{ artwork.generatorShare }}%</div>
+        des Preises werden auf ein solidarisches Konto eingezahlt, dessen Erlös am Ende unter allen Teilnehmenden verteilt wird. Der aktuelle Kontostand ist in der Laufleiste ↑
       </div>
     </div>
   </div>
