@@ -1,0 +1,7 @@
+.moneypool-banner--border {
+  border-top: 1px solid $blue;
+
+  @media screen and (min-width: $bp-tablet) {
+    border-top: 2px solid $blue;
+  }
+}

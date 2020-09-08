@@ -21,6 +21,11 @@
   src: url('assets/GalapagosA-RegularGrid.woff2') format('woff2'), url('assets/GalapagosA-RegularGrid.woff') format('woff');
 }
 
+@font-face {
+  font-family: 'GalapagosA-Black';
+  src: url('assets/GalapagosA-Black.woff2') format('woff2'), url('assets/GalapagosA-Black.woff') format('woff');
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -34,6 +39,7 @@ html {
 $bp-tablet: 680px;
 $font-family: 'Inconsolata', monospace;
 $font-family-galapagos: 'GalapagosA-Regular', 'Inconsolata', monospace;
+$font-family-galapagos-black: 'GalapagosA-Black', 'Inconsolata', monospace;
 $font-size-mobile: 14px;
 $font-size-mobile-galapagos: 40px;
 $font-size-desktop: 22px;

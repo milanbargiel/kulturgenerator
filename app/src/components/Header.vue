@@ -9,7 +9,7 @@
                 </marquee-text>            
             </router-link>            
         </div>
-        <moneypool-banner></moneypool-banner>
+        <moneypool-banner v-bind:class="{ 'moneypool-banner--border': showBackButton }"></moneypool-banner>
     </div>
 </template>
 
