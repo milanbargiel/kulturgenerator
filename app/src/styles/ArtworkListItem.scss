@@ -1,9 +1,11 @@
 .artwork-list-item {
+  font-size: $font-size-mobile-small;
   padding: 0 6px 30px;
 
   @media screen and (min-width: $bp-tablet) {
-     padding: 0 10px 30px;
-  }
+    font-size: $font-size-desktop;
+    padding: 0 10px 30px;
+ }
 }
 
 .artwork-list-item__image {

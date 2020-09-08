@@ -1,5 +1,5 @@
 .artwork-detail {
-  max-width: 800px;
+  max-width: 640px;
   margin: 12px auto 0;
 
   @media screen and (min-width: $bp-tablet) {
@@ -8,19 +8,15 @@
 }
 
 .carousel {
-  text-align: center;
-  margin-bottom: 30px;
-}
+  margin-bottom: 12px;
 
-.carousel__image-container {
-  max-width: 800px; 
-  height: 500px;
+  @media screen and (min-width: $bp-tablet) {
+    margin-top: 30px;
+  }
 }
 
 .carousel__image {
-  width: 100%; 
-  height: 100%; 
-  object-fit: contain;
+  width: 100%;
 }
 
 .artwork-detail__author {

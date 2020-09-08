@@ -2,11 +2,9 @@
   <div v-if="!isLoading" class="artwork-detail">
     <div class="carousel">
       <!-- vue-carousel from https://github.com/ssense/vue-carousel -->
-      <carousel :perPage="1">
+      <carousel :perPage="1" :adjustableHeight="true">
         <slide v-for="image in artworkImages" :key="image">
-          <div class="carousel__image-container">
-            <img :src="image" class="carousel__image">
-          </div>
+          <img :src="image" class="carousel__image">
         </slide>
       </carousel>
     </div>     
