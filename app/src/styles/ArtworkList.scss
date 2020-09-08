@@ -1,10 +1,8 @@
 .artwork-list {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 12px;
 
   @media screen and (min-width: $bp-tablet) {
      padding-right: 140px;
-     margin-top: 40px;
   }
 }
