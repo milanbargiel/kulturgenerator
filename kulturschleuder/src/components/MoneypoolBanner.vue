@@ -18,7 +18,7 @@ export default {
         return {
             repeatBalance: 10,
             animationDuration: 5,
-            balance: '20.000'
+            balance: '0.00'
         }
     }
 }
