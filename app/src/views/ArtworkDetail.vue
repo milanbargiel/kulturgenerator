@@ -9,7 +9,8 @@
       </carousel>
     </div>
     <div class="artwork-detail__title">
-      <span class="artwork-detail__author">{{ artwork.author }}:</span>{{ artwork.title }}
+      <div class="artwork-detail__author">{{ artwork.author }}:</div>
+      {{ artwork.title }}
     </div>
     <div class="artwork-detail__description" v-html="artwork.description"></div>
     <div class="artwork-detail__checkout">
