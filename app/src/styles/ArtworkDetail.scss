@@ -1,72 +1,76 @@
-.artwork__detail {
-    max-width: 800px;
-    margin: 30px auto 0;
+.artwork-detail {
+  max-width: 800px;
+  margin: 12px auto 0;
 
-    .artwork__detail__slider{
-        text-align: center;
-        margin-bottom: 30px;
-        
-        .artwork__detail__slider__image-container {
-            max-width: 800px; 
-            height: 500px;
-        }
-        .artwork__detail__slider__image {
-            width: 100%; 
-            height: 100%; 
-            object-fit: contain;
-        }
-    }
-    .artwork__detail__author {
-        font-size: 55px;
-        text-transform: uppercase;
-        text-align: center;
-    }
-    .artwork__detail__title {
-        font-size: 55px;
-        text-align: center;
-        margin-bottom: 30px;
-        word-break: break-all;
-    }
-    .artwork__detail__description {
-        font-size: 33px;
-        margin-bottom: 90px;
-    }
-    .artwork__detail__checkout {
-        display: flex;
-        flex-direction: row;
-        margin-bottom: 90px;
-
-        .artwork__detail__payment {
-            flex-grow: 1;
-            flex-basis: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: flex-start;
-
-            .artwork__detail__payment-price-display {
-                font-size: 55px;
-                font-weight: normal;
-            }
-            .artwork__detail__payment-button {
-                font-family: 'inconsolata', 'sans-serif';
-                font-size: 55px;
-                text-transform: uppercase;
-                background: none;
-                box-shadow: none;
-            }
-        }
-        .artwork__detail__generator-share {
-            flex-grow: 1;
-            flex-basis: 0;
-            font-size: 55px;
-            color: blue;
-            padding-left: 33px;
-
-            p {
-                font-size: 22px;
-                margin: 0;
-            }
-        }   
-    }          
+  @media screen and (min-width: $bp-tablet) {
+    margin-top: 30px;
+  }
 }
+
+.carousel {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.carousel__image-container {
+  max-width: 800px; 
+  height: 500px;
+}
+
+.carousel__image {
+  width: 100%; 
+  height: 100%; 
+  object-fit: contain;
+}
+
+.artwork-detail__author {
+  font-size: 55px;
+  text-transform: uppercase;
+  text-align: center;
+}
+.artwork-detail__title {
+  font-size: 55px;
+  text-align: center;
+  margin-bottom: 30px;
+  word-break: break-all;
+}
+.artwork-detail__description {
+  font-size: 33px;
+  margin-bottom: 90px;
+}
+.artwork-detail__checkout {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 90px;
+}
+.artwork-detail__payment {
+  flex-grow: 1;
+  flex-basis: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.artwork-detail__payment-price-display {
+  font-size: 55px;
+  font-weight: normal;
+}
+.artwork-detail__payment-button {
+  font-size: 55px;
+  text-transform: uppercase;
+  background: none;
+  box-shadow: none;
+}
+
+.artwork-detail__generator-share {
+  flex-grow: 1;
+  flex-basis: 0;
+  font-size: 55px;
+  color: blue;
+  padding-left: 33px;
+
+  p {
+    font-size: 22px;
+    margin: 0;
+  }
+}   
