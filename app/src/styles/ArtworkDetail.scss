@@ -8,6 +8,7 @@
 }
 
 .carousel {
+  text-align: center; // center images that are reduced in size
   margin: 0 30px 12px;
 
   @media screen and (min-width: $bp-tablet) {
@@ -16,7 +17,8 @@
 }
 
 .carousel__image {
-  width: 100%;
+  max-width: 100%;
+  max-height: 500px;
 }
 
 .artwork-detail__title {
