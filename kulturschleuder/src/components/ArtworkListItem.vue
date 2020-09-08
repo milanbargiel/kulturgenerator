@@ -1,10 +1,10 @@
 <template>
-    <div class="artwork__list__item" :style="styles">
-        <img class="artwork__list__item-image" :src="titleImage">
+    <div class="artwork-list-item" :style="styles">
+        <img class="artwork-list-item__image" :src="titleImage">
         <router-link :to="{ name: 'artworkDetail', params: { id: item.id, author: item.author, title: item.title }}">
-            <span class="artwork__list__item-author">{{ item.author }}: </span>
-            <span class="artwork__list__item-title">{{ item.title }}, </span>
-            <span class="artwork__list__item-price">{{ item.price }}€</span>
+            <span class="artwork-list-item__author">{{ item.author }}: </span>
+            <span class="artwork-list-item__title">{{ item.title }}, </span>
+            <span class="artwork-list-item__price">{{ item.price }}€</span>
         </router-link>
     </div>
 </template>

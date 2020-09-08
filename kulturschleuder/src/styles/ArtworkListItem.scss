@@ -1,24 +1,16 @@
-.artwork__list__item {
-    padding: 0 10px 30px;
-
-    a {
-        text-decoration: none;
-        color: #000;
-
-        &:hover {
-            text-decoration: underline;
-            text-decoration-color: blue;
-        }
-    }
+.artwork-list-item {
+  padding: 0 10px 30px;
 }
 
-.artwork__list__item-image {
-    width: 100%;
-}
-.artwork__list__item-author {
-    text-transform: uppercase;
+.artwork-list-item__image {
+  width: 100%;
 }
 
-.artwork__list__item-price {
-    color: blue;
+.artwork-list-item__author {
+  text-transform: uppercase;
+}
+
+.artwork-list-item__price {
+  font-family: $font-family-galapagos;
+  color: $blue;
 }
