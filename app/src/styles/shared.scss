@@ -40,10 +40,15 @@ $bp-tablet: 680px;
 $font-family: 'Inconsolata', monospace;
 $font-family-galapagos: 'GalapagosA-Regular', 'Inconsolata', monospace;
 $font-family-galapagos-black: 'GalapagosA-Black', 'Inconsolata', monospace;
-$font-size-mobile: 14px;
-$font-size-mobile-galapagos: 40px;
+
+// Font sizes
+$font-size-mobile-small: 14px;
+$font-size-mobile: 20px;
+$font-size-mobile-big: 26px;
+$font-size-mobile-huge: 40px;
 $font-size-desktop: 22px;
-$font-size-desktop-galapagos: 55px;
+$font-size-desktop-big: 33px;
+$font-size-desktop-huge: 55px;
 
 // Colors
 $blue: #0000ee;
