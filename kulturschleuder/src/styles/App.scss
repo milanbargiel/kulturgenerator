@@ -8,7 +8,7 @@
 @import 'ArtworkDetail.scss';
 @import 'ArtworkList.scss';
 @import 'ArtworkListItem.scss';
-@import 'MoneypoolBanner.scss';
 
 // Vue Component Overrides
-@import './override/Carousel.scss';
+@import './vendor/Carousel.scss';
+@import './vendor/MarqueeText.scss';

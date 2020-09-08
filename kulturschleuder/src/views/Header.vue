@@ -5,7 +5,7 @@
                 <marquee-text
                     :repeat="20"
                     :duration="5">
-                    <span class="header__back-arrow-icon">←</span>
+                    <span class="marquee-text__item">←</span>
                 </marquee-text>            
             </router-link>            
         </div>
