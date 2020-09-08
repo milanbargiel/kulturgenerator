@@ -21,7 +21,18 @@
   src: url('assets/GalapagosA-RegularGrid.woff2') format('woff2'), url('assets/GalapagosA-RegularGrid.woff') format('woff');
 }
 
+// Constants
+$bp-tablet: 680px;
+$font-family: 'Inconsolata', monospace;
+$font-family-galapagos: 'GalapagosA-Regular', 'Inconsolata', monospace;
+$font-size-mobile: 14px;
+$font-size-desktop: 22px;
+
 body {
-    font-family: 'Inconsolata', 'sans-serif';
-    font-size: 22px;
+  font-family: $font-family;
+  font-size: $font-size-mobile;
+
+  @media screen and (min-width: $bp-tablet) {
+    font-size: $font-size-desktop;
+  }
 }
