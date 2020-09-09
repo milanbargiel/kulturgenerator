@@ -18,7 +18,7 @@ export default {
             return process.env.VUE_APP_API_BASEURL + this.item.images[0].url
         },
         styles () {
-            return 'max-width:' + Math.floor(Math.random()  * 25 + 25) + '%;'
+            return 'max-width:' + Math.floor(Math.random()  * 30 + 20) + '%;'
         },
     }
 }
