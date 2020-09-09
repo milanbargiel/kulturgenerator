@@ -33,7 +33,7 @@ $new-dot-color-active: $blue;
     width: $override-dot-size;
     height: $override-dot-size;
     border: 1px solid #000;
-    background-color: white;
+    background-color: $white;
   }
 
   &:focus {
