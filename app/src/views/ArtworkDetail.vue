@@ -23,15 +23,17 @@
         des Preises werden auf ein solidarisches Konto eingezahlt, dessen Erlös am Ende unter allen Teilnehmenden verteilt wird. Der aktuelle Kontostand ist in der Laufleiste ↑
       </div>
     </div>
+    <checkout></checkout>
   </div>
 </template>
 
 <script>
 import { Carousel, Slide} from 'vue-carousel'
+import Checkout from '../components/Checkout'
 
 export default {
   name: 'artworkDetail',
-  components: { Carousel, Slide },
+  components: { Carousel, Slide, Checkout },
   data () {
     return {
       isLoading: true,
