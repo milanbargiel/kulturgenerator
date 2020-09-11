@@ -1,0 +1,9 @@
+.artwork-list {
+  overflow: hidden;
+  margin-bottom: 6px;
+
+  @media screen and (min-width: $bp-tablet) {
+     padding-right: 140px;
+     margin-bottom: 10px;
+  }
+}

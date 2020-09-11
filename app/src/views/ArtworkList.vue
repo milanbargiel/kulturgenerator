@@ -1,6 +1,6 @@
 <template>
   <div @click="addItem()">
-    <div class="artwork__list">
+    <div class="artwork-list">
         <artwork-list-item v-for="artwork in artworks" :key="artwork.id" :item="artwork" class="artwork__list__item"></artwork-list-item>
     </div>
   </div>

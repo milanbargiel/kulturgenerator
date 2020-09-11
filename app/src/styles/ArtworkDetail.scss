@@ -1,0 +1,104 @@
+.artwork-detail {
+  max-width: 800px;
+  margin: 12px 12px 0;
+
+  @media screen and (min-width: $bp-tablet) {
+    margin: 30px auto 0;
+  }
+}
+
+.carousel {
+  text-align: center; // center images that are reduced in size
+  margin: 0 30px 12px;
+
+  @media screen and (min-width: $bp-tablet) {
+    margin: 0 auto 30px;
+  }
+}
+
+.carousel__image {
+  max-width: 100%;
+  max-height: 500px;
+}
+
+.artwork-detail__title {
+  font-size: $font-size-mobile-huge;
+  text-align: center;
+  margin-bottom: 12px;
+  word-break: break-all;
+
+  @media screen and (min-width: $bp-tablet) {
+    font-size: $font-size-desktop-huge;
+    margin-bottom: 30px;
+  }
+}
+
+.artwork-detail__author {
+  text-transform: uppercase;
+}
+
+.artwork-detail__description {
+  font-size: $font-size-mobile-big;
+  margin-bottom: 18px;
+
+  @media screen and (min-width: $bp-tablet) {
+    font-size: $font-size-desktop-big;
+    margin-bottom: 90px;
+  }
+}
+
+.artwork-detail__checkout {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 90px;
+}
+
+.artwork-detail__payment {
+  font-size: $font-size-mobile-huge;
+  flex-grow: 1;
+  flex-basis: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  @media screen and (min-width: $bp-tablet) {
+    font-size: $font-size-desktop-huge;
+  }
+}
+.artwork-detail__price {
+  font-family: $font-family-galapagos;
+  margin-top: 8px; // to horizontally center galapagos
+}
+
+.artwork-detail__payment-button {
+  text-transform: uppercase;
+  margin-right: 18px;
+  font-family: inherit;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: $white;
+  border: 1px solid $black;
+
+  &:hover {
+    background-color: $blue;
+    border: 1px solid $blue;
+    color: $white;
+  }
+}
+
+.artwork-detail__generator-share {
+  color: $blue;
+
+  @media screen and (min-width: $bp-tablet) {
+    margin-left: 140px;
+  }
+}
+
+.artwork-detail__share-percentage {
+  font-size: $font-size-mobile-huge;
+
+  @media screen and (min-width: $bp-tablet) {
+    font-size: $font-size-desktop-huge;
+  }
+}

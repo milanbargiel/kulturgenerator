@@ -1,0 +1,15 @@
+// Normalize css for all browsers
+@import 'normalize-scss';
+@include normalize();
+
+// Custom Styles
+@import 'shared.scss';
+@import 'Header.scss';
+@import 'MoneypoolBanner.scss';
+@import 'ArtworkDetail.scss';
+@import 'ArtworkList.scss';
+@import 'ArtworkListItem.scss';
+
+// Vue Component Overrides
+@import './vendor/Carousel.scss';
+@import './vendor/MarqueeText.scss';

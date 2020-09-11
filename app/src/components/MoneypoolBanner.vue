@@ -1,9 +1,9 @@
 <template>
-    <div class="moneypool__banner">
+    <div class="moneypool-banner">
         <marquee-text
             :repeat="repeatBalance"
             :duration="animationDuration">
-            <span class="moneypool__banner__balance-item">{{ balance }}</span>
+            <span class="marquee-text__item">{{ balance }}</span>
         </marquee-text>
     </div>
 </template>
@@ -18,7 +18,7 @@ export default {
         return {
             repeatBalance: 10,
             animationDuration: 5,
-            balance: '20.000'
+            balance: '0.00'
         }
     }
 }

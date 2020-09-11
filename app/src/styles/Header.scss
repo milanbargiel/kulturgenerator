@@ -1,0 +1,17 @@
+.header {
+  color: $blue;
+  font-family: $font-family-galapagos-black;
+  font-size: $font-size-mobile-huge;
+
+  @media screen and (min-width: $bp-tablet) {
+    font-size: $font-size-desktop-huge;
+  }
+}
+
+.header__back-button {
+  margin-bottom: -13px; // to center galapagos
+
+  @media screen and (min-width: $bp-tablet) {
+    margin-bottom: -18px; // to center galapagos
+  }
+}

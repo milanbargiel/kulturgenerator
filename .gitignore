@@ -24,6 +24,8 @@ spreadsheet-app-scripts/.clasp.json
 # Ignore Galapagos Font files
 GalapagosA-Regular.woff
 GalapagosA-Regular.woff2
+GalapagosA-Black.woff
+GalapagosA-Black.woff2
 GalapagosA-RegularGrid.woff
 GalapagosA-RegularGrid.woff2
 

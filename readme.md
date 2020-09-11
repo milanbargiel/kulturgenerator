@@ -5,27 +5,28 @@
 </p>
 
 ```bash
-# kulturschleuder: shop to be build
-# kulturgenerator-cms: cms app (strapi)
+# app: shop to be build (based on vuejs)
+# cms: cms app (strapi)
 # landingpage: static web page with art submission form
+# nginx-conf: configuration on linux server
 # spreadsheet-app-scripts: google spreadsheet api for fetching data from submission form
 ```
 
-### Kulturgenerator-CMS
-Backend and Api of Kulturgenerator.
-
-create `.env` file in root folder:
-```
-DATABASE_USERNAME=your-local-postgres-db-username
-DATABASE_PASSWORD=your-local-postgres-db-password
-```
-
-### KULTURSCHLEUDER
+### APP
 *our crazy development with vue.js happens here*
 
 create `.env.local` file in root folder:
 ```
 VUE_APP_API_BASEURL = http://localhost:1337
+```
+
+### CMS
+Backend and Api of Kulturgenerator.
+
+create `.env` file in root folder to connect to local database:
+```
+DATABASE_USERNAME=your-local-postgres-db-username
+DATABASE_PASSWORD=your-local-postgres-db-password
 ```
 
 ### LANDINGPAGE
