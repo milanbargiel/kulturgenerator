@@ -9,7 +9,7 @@ module.exports = ({ env }) => ({
   },
   settings: {
     cors: {
-      origin: ['http://localhost']
+      origin: ['http://localhost:8080']
     }
   }
 });
