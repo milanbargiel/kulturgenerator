@@ -53,11 +53,10 @@ export PATH="/usr/local/bin:$PATH"
 brew install node
 ```
 
-#### 2. Set up Github-Account and download Kulturgenerator from github.com
+#### 2. Download Kulturgenerator from [github.com](https://www.github.com)
 
-* Go to [github.com](https://www.github.com) and create a free account
-* Ask Moritz or Milan to invite you to Kulturgenerator Repository
-* Open Terminal and navigate to folder where you want to install the Kulturgenerator
+* Ask Moritz or Milan to invite you to Kulturgenerator Repository https://github.com/milanbargiel/kulturgenerator
+* Open Terminal App and navigate to folder where you want to install the Kulturgenerator
 
 ```bash
 cd path/to/install/
@@ -66,6 +65,8 @@ cd path/to/install/
 * Download Kulturgenerator from github with the following command
 
 ```bash
+# run command within path/to/install/
+
 git clone https://github.com/milanbargiel/kulturgenerator.git
 ```
 
@@ -74,14 +75,14 @@ git clone https://github.com/milanbargiel/kulturgenerator.git
 * Install Kulturgenerator packages by navigating to `/app` folder and running `npm install` in Terminal app. All packages that are listed in `/app/package.json` will be installed.
  
 ```bash
-cd path/to/install/kulturgenerator/app # navigate to app folder
+cd path/to/install/kulturgenerator/app # navigate to app folder of kulturgenerator repository
 npm install # install packages
 ```
 
-* Run `npm start` to start local development server and see Kulturgenerator page in browser
+* Run `npm start` to start local development server and see Kulturgenerator page in browser at http://localhost:8080/
 
 ```bash
-# kulturgenerator/app
+# path/to/install/kulturgenerator/app
 npm start
 ```
 
