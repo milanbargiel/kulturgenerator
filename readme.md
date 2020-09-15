@@ -89,32 +89,29 @@ npm start
 #### 4. Checkout a git branch, make changes and push them to github.com for code review by Moritz or Milan
 *In software and web development tools for version control are used to work together, simultaneously on a growing code base. We use git and github for saving all changes to the code base in versions, in order to undo changes, when you made a mistake*
 
-* Go to project folder and create a new git branch for your changes
+* Go to project folder 
+* Pull latest changes with `git pull` from remote repository at github.com
 
 ```bash
 cd path/to/install/kulturgenerator/app # navigate to app folder
+git pull
+```
+
+* Create a new git branch for your changes
+
+```bash
+# path/to/install/kulturgenerator/app
 git checkout -b your-branch-name # Create branch with name your-branch-name. Please change this name to suit your needs e.g. design-polishing.
 ```
 
-* Implement changes to code base by changing files with a text editor like [Sublime](https://www.sublimetext.com/). On change your local development server loads changes in your browser.
-
-```bash
-# RELEVANT FOLDERS
-├── src
-|   ├── assets # fonts and images
-|   ├── components # reusable pieces of html
-|   ├── styles # scss files
-|   └── views # actual "pages" of kulturgenerator in html
-└── package.json #lists all packages to install
-```
-
-* Commit changes to git
+* Implement changes to code base by changing files with a text editor like [Sublime](https://www.sublimetext.com/). 
+* Commit changes to github
+* Do it over and over again for all changes
+* Ask Moritz or Milan to review your code changes on [github.com](https://www.github.com) to integrate them into the master branch.
 
 ```bash
 git add -A # Add all changes
 git commit -m "Change header styles" # Add a commit message
 git push origin your-branch-name # Push changes to branch at github.com
 ```
-
-* Ask Moritz or Milan to review your code changes on [github.com](https://www.github.com) to integrate them into the master branch
 

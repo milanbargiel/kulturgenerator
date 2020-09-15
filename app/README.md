@@ -1,5 +1,15 @@
 # kulturgenerator
 
+```bash
+# RELEVANT FOLDERS
+├── src
+|   ├── assets # fonts and images
+|   ├── components # reusable pieces of html
+|   ├── styles # scss files
+|   └── views # actual "pages" of kulturgenerator in html
+└── package.json #lists all packages to install
+```
+
 ## Project setup
 ```
 npm install
