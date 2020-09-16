@@ -37,13 +37,22 @@
       "allowedTypes": [
         "images"
       ],
-      "plugin": "upload"
+      "plugin": "upload",
+      "required": false
     },
     "shippingCosts": {
       "type": "decimal"
     },
     "tax": {
       "type": "integer"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "Objekt",
+        "Erlebnis",
+        "Motiv"
+      ]
     }
   }
 }
