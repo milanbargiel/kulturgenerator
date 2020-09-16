@@ -9,27 +9,22 @@
     "timestamps": true
   },
   "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "Objekt",
+        "Erlebnis",
+        "Motiv"
+      ]
+    },
     "author": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "title": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "description": {
-      "type": "richtext",
-      "required": true
-    },
-    "price": {
-      "required": true,
-      "type": "decimal"
-    },
-    "generatorShare": {
-      "type": "integer",
-      "required": true,
-      "max": 100,
-      "min": 0
+      "type": "richtext"
     },
     "images": {
       "collection": "file",
@@ -40,19 +35,27 @@
       "plugin": "upload",
       "required": false
     },
-    "shippingCosts": {
+    "generatorShare": {
+      "type": "integer",
+      "type": "enumeration",
+      "enum": [
+        50,
+        100
+      ]
+    },
+    "price": {
       "type": "decimal"
     },
     "tax": {
-      "type": "integer"
-    },
-    "type": {
       "type": "enumeration",
       "enum": [
-        "Objekt",
-        "Erlebnis",
-        "Motiv"
+        0,
+        5,
+        16
       ]
+    },
+    "shippingCosts": {
+      "type": "decimal"
     }
   }
 }
