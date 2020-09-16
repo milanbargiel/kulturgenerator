@@ -39,8 +39,8 @@
       "type": "integer",
       "type": "enumeration",
       "enum": [
-        50,
-        100
+        "50",
+        "100"
       ]
     },
     "price": {
@@ -49,9 +49,9 @@
     "tax": {
       "type": "enumeration",
       "enum": [
-        0,
-        5,
-        16
+        "0",
+        "5",
+        "16"
       ]
     },
     "shippingCosts": {
