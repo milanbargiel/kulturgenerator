@@ -7,7 +7,8 @@
     "develop": "strapi develop",
     "start": "strapi start",
     "build": "strapi build",
-    "strapi": "strapi"
+    "strapi": "strapi",
+    "downloadUploads": "scp -r kulturgeneratorServer:/kulturgenerator/cms/public/uploads/* public/uploads"
   },
   "devDependencies": {},
   "dependencies": {
