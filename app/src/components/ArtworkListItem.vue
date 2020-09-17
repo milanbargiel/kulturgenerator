@@ -18,7 +18,9 @@ export default {
             return process.env.VUE_APP_API_BASEURL + this.item.images[0].url
         },
         styles () {
-            return 'max-width:' + Math.floor(Math.random()  * 30 + 20) + '%;'
+            const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
+            const minWidth = vw < 680 ? 30 : 20; // make artwork item wider on small devices
+            return 'max-width:' + Math.floor(Math.random()  * 30 + minWidth) + '%;'
         },
     }
 }
