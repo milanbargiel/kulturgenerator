@@ -1,9 +1,9 @@
 <template>
     <div class="artwork-list-item" :style="styles">
         <img class="artwork-list-item__image" :src="titleImage">
-        <router-link :to="{ name: 'artworkDetail', params: { id: item.id, author: item.author, title: item.title }}">
+        <router-link class="artwork-list-item__link" :to="{ name: 'artworkDetail', params: { id: item.id, author: item.author, title: item.title }}">
             <span class="artwork-list-item__author">{{ item.author }}: </span>
-            <span class="artwork-list-item__title">{{ item.title }}, </span>
+            <span class="artwork-list-item__title">{{ item.title }}</span>, 
             <span class="artwork-list-item__price">{{ item.price }}€</span>
         </router-link>
     </div>
