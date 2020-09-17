@@ -80,7 +80,8 @@
   background-color: $white;
   border: 1px solid $black;
 
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: $blue;
     border: 1px solid $blue;
     color: $white;

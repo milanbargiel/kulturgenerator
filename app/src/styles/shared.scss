@@ -35,7 +35,8 @@ html {
   line-height: 1;
 }
 
-button:hover {
+button:hover,
+button:focus {
   cursor: pointer;
 }
 
