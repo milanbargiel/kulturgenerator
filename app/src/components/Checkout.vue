@@ -120,6 +120,20 @@ export default {
                 .Buttons({
                     createOrder: (data, actions) => {
                         return actions.order.create({
+                            payer: {
+                                name: {
+                                    given_name: this.firstname,
+                                    surname: this.lastname
+                                },
+                                address: {
+                                    address_line_1: this.address,
+                                    postal_code: this.postcode,
+                                    admin_area_2: this.city,
+                                    admin_area_1: this.country,
+                                    country_code: 'DE' // TODO: this should of course be dynamic
+                                }
+
+                            },                            
                             purchase_units: [{
                                 amount: {
                                     value: this.totalCost
