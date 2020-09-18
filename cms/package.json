@@ -8,7 +8,8 @@
     "start": "strapi start",
     "build": "strapi build",
     "strapi": "strapi",
-    "downloadUploads": "scp -r kulturgeneratorServer:/kulturgenerator/cms/public/uploads/* public/uploads",
+    "clearUploads": "rm public/uploads/*",
+    "downloadUploads": "scp -r kulturgeneratorServer:~/kulturgenerator/cms/public/uploads/* public/uploads",
     "downloadDatabaseDump": "ssh kulturgeneratorServer 'pg_dump --clean -Z 9 -U kulturgenerator kulturgenerator' | zcat | psql kulturgenerator"
   },
   "devDependencies": {},
