@@ -43,7 +43,7 @@ export default {
         title: '',
         description: '',
         price: null,
-        generatorShare: null,
+        generatorShare: null
       },
     }
   },
