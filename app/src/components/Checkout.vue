@@ -6,17 +6,17 @@
                 <div class="checkout-form__row">
                     <div class="checkout-form__item">
                         <label>Vorname</label>
-                        <input class="checkout-form__text-input" type="text" v-model.trim="firstname">                
+                        <input class="checkout-form__text-input" type="text" v-model.trim="payer.firstname">                
                     </div>
                     <div class="checkout-form__item">
                         <label>Nachname</label>
-                        <input class="checkout-form__text-input" type="text" v-model.trim="lastname">                
+                        <input class="checkout-form__text-input" type="text" v-model.trim="payer.lastname">                
                     </div>
                 </div>
                 <div class="checkout-form__row">
                     <div class="checkout-form__item">
                         <label>Email-Adresse</label>
-                        <input class="checkout-form__text-input" type="text" v-model.trim="email">                
+                        <input class="checkout-form__text-input" type="text" v-model.trim="payer.email">                
                     </div>
                 </div>             
             </section>
@@ -25,21 +25,21 @@
                 <div class="checkout-form__row">
                     <div class="checkout-form__item">
                         <label>Straße</label>
-                        <input class="checkout-form__text-input" type="text" v-model.trim="address">                
+                        <input class="checkout-form__text-input" type="text" v-model.trim="payer.address">                
                     </div>
                     <div class="checkout-form__item">
                         <label>Postleitzahl</label>
-                        <input class="checkout-form__text-input" type="text" v-model.trim="postcode">                
+                        <input class="checkout-form__text-input" type="text" v-model.trim="payer.postcode">                
                     </div>
                 </div>
                 <div class="checkout-form__row">
                     <div class="checkout-form__item">
                         <label>Stadt</label>
-                        <input class="checkout-form__text-input" type="text" v-model.trim="city">                
+                        <input class="checkout-form__text-input" type="text" v-model.trim="payer.city">                
                     </div>
                     <div class="checkout-form__item">
                         <label>Land</label>
-                        <input class="checkout-form__text-input" type="text" v-model.trim="country">                
+                        <input class="checkout-form__text-input" type="text" v-model.trim="payer.country">                
                     </div>                
                 </div>             
             </section>
