@@ -1,0 +1,34 @@
+.checkout-form {
+    section {
+        margin-bottom: 60px;
+    }
+
+    h2 {
+        font-size: $font-size-mobile-big;
+        font-weight: normal;
+
+        @media screen and (min-width: $bp-tablet) {
+            font-size: $font-size-desktop-big;
+        }
+    }
+    
+}
+
+.checkout-form__row {
+    display: flex; 
+    justify-content: space-between;
+}
+
+.checkout-form__item {
+    flex: 1;
+}
+
+.checkout-form__text-input {
+    width: 100%; 
+    margin-top: 10px;
+}
+
+.paypal__description {
+    color: $medium-gray;
+    font-weight: normal;
+}
