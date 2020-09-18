@@ -49,10 +49,11 @@ export default {
     }
   },
   mounted () {
+    this.$store.commit('SET_LOADING_STATE', true)
     this.$store.dispatch('getArtworkById', this.$route.params.id)
     .then(response => {
-      this.isLoading = false
       this.artwork = response
+      this.$store.commit('SET_LOADING_STATE', false)
     })
   },
   computed: {

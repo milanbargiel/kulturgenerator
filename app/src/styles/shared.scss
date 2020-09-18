@@ -65,9 +65,17 @@ $medium-gray: lighten($black, 50%);
 body {
   font-family: $font-family;
   font-size: $font-size-mobile;
-  padding-bottom: 160px;
 
   @media screen and (min-width: $bp-tablet) {
     font-size: $font-size-desktop;
   }
+}
+
+.loading-indicator {
+  width: 100%;
+  text-align: center;
+  padding-top: 50vh;
+  height: 50vh;
+  font-size: $font-size-mobile-big;
+  font-family: $font-family-galapagos;
 }

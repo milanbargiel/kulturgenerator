@@ -1,16 +1,23 @@
 <template>
   <div id="app">
-    <my-header></my-header>
-    <router-view/>
+    <div v-if="isLoading" class="loading-indicator">...lädt</div>
+    <my-header v-if="!isLoading"></my-header>
+    <router-view/>      
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import MyHeader from './components/Header'
 
 export default {
   name: 'App',
-  components: { MyHeader }
+  components: { MyHeader },
+  computed: {
+    ...mapGetters([
+      'isLoading'
+    ])
+  }
 }
 </script>
 
