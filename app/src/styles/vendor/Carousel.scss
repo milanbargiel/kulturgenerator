@@ -49,3 +49,17 @@ $new-dot-color-active: $blue;
     border-color: blue;
   }
 }
+
+
+.VueCarousel-navigation-prev {
+  font-family: $font-family-galapagos-grid !important;
+  font-size: 88px;
+}
+.VueCarousel-navigation-next {
+  font-family: $font-family-galapagos-grid !important;
+  font-size: 88px;
+  transform: rotate(180) !important;
+}
+.VueCarousel-navigation--disabled {
+  visibility: hidden;
+}
