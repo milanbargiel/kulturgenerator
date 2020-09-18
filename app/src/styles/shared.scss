@@ -59,6 +59,7 @@ $font-size-desktop-huge: 55px;
 $blue: #0000ee;
 $black: #000;
 $white: #fff;
+$medium-gray: lighten($black, 50%);
 
 body {
   font-family: $font-family;
