@@ -25,6 +25,11 @@ At Admin Panel you can add new content (e.g. artwork) and generally cultivate Ku
 - Create a local Postgresql Database with name `kulturgenerator`, `user: ''` and `password: ''` (empty user and empty password) as defined in `database.js` file.
 - Install npm modules and run `npm run develop` in your console to start the local development server
 
+### How to download Production Image and Database dump to develop with local database?
+- Insert kulturgeneratorServer as environment variable to ssh config file `~/.ssh/config` 
+- Run `npm run downloadUploads` to download Images from remote server into local `public/uploads` folder
+- Run `npm run downloadDatabaseDump` to download Postgresql Database dump from remote server to local Postgres Database with name kulturgenerator
+
 ### Why can't I create or update content-types in production/staging?
 
 From [Strapi Troubleshooting FAQs](https://strapi.io/documentation/v3.x/getting-started/troubleshooting.html#why-can-t-i-create-or-update-content-types-in-production-staging)
