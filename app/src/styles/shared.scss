@@ -65,7 +65,6 @@ $medium-gray: lighten($black, 50%);
 body {
   font-family: $font-family;
   font-size: $font-size-mobile;
-  padding-bottom: 160px;
 
   @media screen and (min-width: $bp-tablet) {
     font-size: $font-size-desktop;
