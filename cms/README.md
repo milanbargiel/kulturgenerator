@@ -22,7 +22,7 @@ At Admin Panel you can add new content (e.g. artwork) and generally cultivate Ku
 ## Frequently Asked Questions <a id="faq"></a>
 
 ### How to run CMS locally?
-- Create a local Postgresql Database with name 'kulturgenerator', user: '' and password: '' as defined in `database.js` file.
+- Create a local Postgresql Database with name `kulturgenerator`, `user: ''` and `password: ''` (empty user and empty password) as defined in `database.js` file.
 - Install npm modules and run `npm run develop` in your console to start the local development server
 
 ### Why can't I create or update content-types in production/staging?
