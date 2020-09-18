@@ -1,62 +1,86 @@
 <template>
-    <div>
-        <form class="checkout">
+    <div class="checkout">
+        <form class="checkout-form">
             <section>
                 <h2>Kontakinformation</h2>
-                <div style="display: flex; justify-content: between;">
-                    <div style="flex: 1;">
+                <div class="checkout-form__row">
+                    <div class="checkout-form__item">
                         <label>Vorname</label>
-                        <input type="text" v-model.trim="firstname" style="width: 100%; margin-top: 10px;">                
+                        <input class="checkout-form__text-input" type="text" v-model.trim="firstname">                
                     </div>
-                    <div style="flex: 1;">
+                    <div class="checkout-form__item">
                         <label>Nachname</label>
-                        <input type="text" v-model.trim="lastname" style="width: 100%; margin-top: 10px;">                
+                        <input class="checkout-form__text-input" type="text" v-model.trim="lastname">                
                     </div>
                 </div>
-                <div style="display: flex; margin-bottom: 60px; margin-top: 30px;">
-                    <div style="flex: .49;">
+                <div class="checkout-form__row">
+                    <div class="checkout-form__item">
                         <label>Email-Adresse</label>
-                        <input type="text" v-model.trim="email" style="width: 100%; margin-top: 10px;">                
+                        <input class="checkout-form__text-input" type="text" v-model.trim="email">                
                     </div>
                 </div>             
             </section>
             <section>
                 <h2>Versand</h2>
-                <div style="display: flex; justify-content: between;">
-                    <div style="flex: 1;">
-                        <label>Straße und Hausnummer</label>
-                        <input type="text" v-model.trim="street" style="width: 100%; margin-top: 10px;">                
+                <div class="checkout-form__row">
+                    <div class="checkout-form__item">
+                        <label>Straße </label>
+                        <input class="checkout-form__text-input" type="text" v-model.trim="street">                
                     </div>
-                    <div style="flex: 1;">
+                    <div class="checkout-form__item">
                         <label>Postleitzahl</label>
-                        <input type="text" v-model.trim="postcode" style="width: 100%; margin-top: 10px;">                
+                        <input class="checkout-form__text-input" type="text" v-model.trim="postcode">                
                     </div>
                 </div>
-                <div style="display: flex; margin-bottom: 60px; margin-top: 30px;">
-                    <div style="flex: 1;">
+                <div class="checkout-form__row">
+                    <div class="checkout-form__item">
                         <label>Stadt</label>
-                        <input type="text" v-model.trim="city" style="width: 100%; margin-top: 10px;">                
+                        <input class="checkout-form__text-input" type="text" v-model.trim="city">                
                     </div>
-                    <div style="flex: 1;">
+                    <div class="checkout-form__item">
                         <label>Land</label>
-                        <input type="text" v-model.trim="country" style="width: 100%; margin-top: 10px;">                
+                        <input class="checkout-form__text-input" type="text" v-model.trim="country">                
                     </div>                
                 </div>             
             </section>
         </form>
-        <div>
-            list
+        <div class="price-summary">
+            <ul>
+                <li class="price-summary__item">
+                    <div>Preis</div>
+                    <div>{{ artwork.price }} €</div>
+                </li>
+                <li class="price-summary__item">
+                    <div>Versand</div>
+                    <div>{{ artwork.shippingCosts }} €</div>
+                </li>
+                <li class="price-summary__item">
+                    <div>Mwst. ({{ artwork.tax }}%)</div>
+                    <div>{{ priceWithTaxes }}</div>
+                </li>
+                <li class="price-summary__item--total">
+                    <div>Summe</div>
+                    <div>{{ totalCost }} €</div>
+                </li>
+            </ul>
         </div>
-        <div id="paypal-buttons-container" style="width: 300px;"></div>
-        <p >
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.            
-        </p>
+        <p v-if="isPayed" class="payment-success">Congrats! The Money moved over smoothly! :-)</p>
+        <div v-else class="paypal">
+            <div ref="paypal" class="paypal__buttons"></div>
+            <p class="paypal__description">
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
+                sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. 
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
+                At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+            </p>
+        </div>
     </div>
 </template>
 
 <script>
 
 export default {
+    props: ['artwork'],
     name: 'Checkout',
     data () {
         return {
@@ -66,23 +90,50 @@ export default {
             street: '',
             postcode: '',
             city: '',
-            country: ''
+            country: '',
+            isPayed: false
         }
     },
     computed: {
+        priceWithTaxes () {
+            return this.artwork.price + this.artwork.price*this.artwork.tax/100
+        },
+        totalCost () {
+            return this.priceWithTaxes + this.artwork.shippingCosts
+        }
     },
     mounted () {
         this.loadPaypalScript()
     },
     methods: {
         loadPaypalScript () {
-            var head = document.getElementsByTagName('head')[0]
-            var script = document.createElement('script')
-            script.src = 'https://www.paypal.com/sdk/js?client-id=sb'
-            head.appendChild(script)
-            script.onload = function () {
-                window.paypal.Buttons().render('#paypal-buttons-container')
-            }
+            const script = document.createElement('script')
+            script.src = 'https://www.paypal.com/sdk/js?client-id=Ab1l-FnhLTRhv9JDyFJA1Rn79WTB1-K6MjiLrj5dLYYhmiQE0Lelq7wSN3hkJZ4JhKxS0cx_xL5KlIg9&currency=EUR&disable-funding=credit,card,giropay,sofort'
+            document.head.appendChild(script)
+            script.addEventListener("load", this.setLoaded)
+        },
+        setLoaded: function() {
+            window.paypal
+                .Buttons({
+                    createOrder: (data, actions) => {
+                        return actions.order.create({
+                            purchase_units: [{
+                                amount: {
+                                    value: this.totalCost
+                                },
+                                payee: {
+                                    email_address: this.artwork.paypal
+                                }
+                            }]
+                        });
+                    },
+                    onApprove: async (data, actions) => {
+                        const order = await actions.order.capture()
+                        this.isPayed = order.status === 'COMPLETED'
+                    }
+
+                })
+                .render(this.$refs.paypal)
         }   
     }
 }

@@ -15,20 +15,54 @@
 }
 
 .checkout-form__row {
-    display: flex; 
+    display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 
 .checkout-form__item {
-    flex: 1;
+    flex: 0 1 45%;
 }
 
 .checkout-form__text-input {
-    width: 100%; 
+    width: 100%;
+    margin-bottom: 22px;
     margin-top: 10px;
+}
+
+.price-summary {
+    ul {
+        list-style: none;
+        padding: 0;
+        margin-bottom: 60px;   
+    }
+}
+
+.price-summary__item {
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    border-bottom: 2px solid #000;
+    margin-bottom: 12px;        
+}
+
+.price-summary__item--total {
+    display: flex;
+    justify-content: space-between;
+    width: 300px; 
+    color: $blue;
+}
+
+.paypal__buttons {
+    width: 50%;    
 }
 
 .paypal__description {
     color: $medium-gray;
     font-weight: normal;
+}
+
+.payment-success {
+    padding: 30px; 
+    background: lightgreen;    
 }
