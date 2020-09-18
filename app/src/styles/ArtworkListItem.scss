@@ -6,7 +6,7 @@
   @media screen and (min-width: $bp-tablet) {
     font-size: $font-size-desktop;
     padding: 30px 0px 0px 10px;
- }
+  }
 }
 
 .artwork-list-item__image {
@@ -21,4 +21,24 @@
 .artwork-list-item__price {
   font-family: $font-family-galapagos;
   color: $blue;
+}
+
+// Underlined-link as Hoverstyle
+.artwork-list-item__link:hover,
+.artwork-list-item__link:focus {
+  .artwork-list-item__author,
+  .artwork-list-item__title {
+    position: relative;
+
+    &::after {
+      content: "";
+      height: 1px;
+      left: 0;
+      position: absolute;
+      width: 100%;
+      background-color: $black;
+      opacity: 0.5;
+      bottom: 0;
+    }
+  }
 }
