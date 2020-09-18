@@ -81,13 +81,15 @@ export default {
     name: 'Checkout',
     data () {
         return {
-            firstname: '',
-            lastname: '',
-            email: '',
-            address: '',
-            postcode: '',
-            city: '',
-            country: '',
+            payer : {
+                firstname: '',
+                lastname: '',
+                email: '',
+                address: '',
+                postcode: '',
+                city: '',
+                country: '',                
+            },
             isPayed: false
         }
     },
@@ -119,14 +121,14 @@ export default {
                         return actions.order.create({
                             payer: {
                                 name: {
-                                    given_name: this.firstname,
-                                    surname: this.lastname
+                                    given_name: this.payer.firstname,
+                                    surname: this.payer.lastname
                                 },
                                 address: {
-                                    address_line_1: this.address,
-                                    postal_code: this.postcode,
-                                    admin_area_2: this.city,
-                                    admin_area_1: this.country,
+                                    address_line_1: this.payer.address,
+                                    postal_code: this.payer.postcode,
+                                    admin_area_2: this.payer.city,
+                                    admin_area_1: this.payer.country,
                                     country_code: 'DE' // TODO: this should of course be dynamic
                                 }
 
