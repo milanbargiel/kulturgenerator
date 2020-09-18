@@ -24,8 +24,8 @@
                 <h2>Versand</h2>
                 <div class="checkout-form__row">
                     <div class="checkout-form__item">
-                        <label>Straße </label>
-                        <input class="checkout-form__text-input" type="text" v-model.trim="street">                
+                        <label>Straße</label>
+                        <input class="checkout-form__text-input" type="text" v-model.trim="address">                
                     </div>
                     <div class="checkout-form__item">
                         <label>Postleitzahl</label>
@@ -56,7 +56,7 @@
                 </li>
                 <li class="price-summary__item">
                     <div>Mwst. ({{ artwork.tax }}%)</div>
-                    <div>{{ priceWithTaxes }}</div>
+                    <div>{{ taxShare }} €</div>
                 </li>
                 <li class="price-summary__item--total">
                     <div>Summe</div>
@@ -87,7 +87,7 @@ export default {
             firstname: '',
             lastname: '',
             email: '',
-            street: '',
+            address: '',
             postcode: '',
             city: '',
             country: '',
@@ -95,8 +95,11 @@ export default {
         }
     },
     computed: {
+        taxShare () {
+            return this.artwork.price * this.artwork.tax/100
+        },
         priceWithTaxes () {
-            return this.artwork.price + this.artwork.price*this.artwork.tax/100
+            return this.artwork.price + this.taxShare
         },
         totalCost () {
             return this.priceWithTaxes + this.artwork.shippingCosts
