@@ -61,9 +61,11 @@ $black: #000;
 $white: #fff;
 $medium-gray: lighten($black, 50%);
 
+// Global Styles
 body {
   font-family: $font-family;
   font-size: $font-size-mobile;
+  padding-bottom: 160px;
 
   @media screen and (min-width: $bp-tablet) {
     font-size: $font-size-desktop;
