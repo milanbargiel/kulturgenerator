@@ -56,6 +56,12 @@
     },
     "shippingCosts": {
       "type": "decimal"
+    },
+    "email": {
+      "type": "email"
+    },
+    "paypal": {
+      "type": "email"
     }
   }
 }
