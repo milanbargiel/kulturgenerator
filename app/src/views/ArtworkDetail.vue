@@ -1,5 +1,5 @@
 <template>
-  <div v-if="!isLoading" class="artwork-detail">
+  <div class="artwork-detail">
     <div class="carousel">
       <!-- vue-carousel from https://github.com/ssense/vue-carousel -->
       <carousel :perPage="1" :adjustableHeight="true">
@@ -36,7 +36,6 @@ export default {
   components: { Carousel, Slide, Checkout },
   data () {
     return {
-      isLoading: true,
       showCheckout: false,
       artwork: {
         images: [],
