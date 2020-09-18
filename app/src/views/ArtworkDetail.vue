@@ -2,7 +2,7 @@
   <div class="artwork-detail">
     <div class="carousel">
       <!-- vue-carousel from https://github.com/ssense/vue-carousel -->
-      <carousel :perPage="1" :adjustableHeight="true">
+      <carousel :perPage="1">
         <slide v-for="image in artworkImages" :key="image">
           <img :src="image" class="carousel__image">
         </slide>
