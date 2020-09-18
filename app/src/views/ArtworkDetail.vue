@@ -23,7 +23,7 @@
         des Preises werden auf ein solidarisches Konto eingezahlt, dessen Erlös am Ende unter allen Teilnehmenden verteilt wird. Der aktuelle Kontostand ist in der Laufleiste ↑
       </div>
     </div>
-    <checkout></checkout>
+    <checkout :artwork="artwork"></checkout>
   </div>
 </template>
 
