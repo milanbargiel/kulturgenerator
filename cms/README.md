@@ -27,8 +27,8 @@ At Admin Panel you can add new content (e.g. artwork) and generally cultivate Ku
 
 ### How to download Production Image and Database dump to develop with local database?
 - Insert kulturgeneratorServer as environment variable to ssh config file `~/.ssh/config` 
-- Run `npm run downloadUploads` to download Images from remote server into local `public/uploads` folder
-- Run `npm run downloadDatabaseDump` to download Postgresql Database dump from remote server to local Postgres Database with name kulturgenerator
+- Run `npm run getUploads` to clear local image folder and then download all images from remote server into local `public/uploads` folder
+- Run `npm run getDatabaseDump` to download Postgresql Database dump from remote server and insert dump into local Postgres Database with name kulturgenerator
 
 ### Why can't I create or update content-types in production/staging?
 
