@@ -1,5 +1,7 @@
 <template>
     <div class="checkout">
+        <div>{{ artwork.quantity }} left</div>
+        <button @click="updateQuantity(1)">delete one</button>
         <form class="checkout-form">
             <section>
                 <h2>Kontakinformation</h2>
@@ -75,7 +77,6 @@
 </template>
 
 <script>
-
 export default {
     props: ['artwork'],
     name: 'Checkout',
@@ -108,6 +109,15 @@ export default {
         this.loadPaypalScript()
     },
     methods: {
+        updateQuantity (quantity) {
+            this.$store.dispatch('updateArtworkQuantity', {id: this.artwork.id, quantity: quantity, currentQuantity: this.artwork.quantity})
+                .then(response => {
+                    this.artwork.quantity = response
+                })
+                .catch(error => {
+                    console.error(error)
+                })
+        },
         loadPaypalScript () {
             const script = document.createElement('script')
             script.src = 'https://www.paypal.com/sdk/js?client-id=Ab1l-FnhLTRhv9JDyFJA1Rn79WTB1-K6MjiLrj5dLYYhmiQE0Lelq7wSN3hkJZ4JhKxS0cx_xL5KlIg9&currency=EUR&disable-funding=credit,card,giropay,sofort'
