@@ -12,6 +12,26 @@ const actions = {
             .then(response => {
                 return response.data
             })        
+    },
+    updateArtworkQuantity (context, { id, quantity, currentQuantity }) {
+       if (currentQuantity < 1) {
+           return
+       }
+        const newQuantity = currentQuantity - quantity
+        return axios({
+            method: 'put',
+            url: 'http://localhost:1337/artworks/' + id,
+            data: {
+                quantity: newQuantity
+            }})
+        .then(response => {
+            if (response.status === '200') {
+                return response.data.quantity
+            }
+        })
+        .catch(error => {
+            return error
+        })             
     }
 }
 
