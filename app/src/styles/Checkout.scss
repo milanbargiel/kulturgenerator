@@ -44,17 +44,31 @@
 
 .price-summary__item {
     display: flex;
+    align-items: center;
     justify-content: space-between;
     width: 300px;
     border-bottom: 2px solid #000;
     margin-bottom: 12px;        
 }
-
 .price-summary__item--total {
-    display: flex;
-    justify-content: space-between;
-    width: 300px; 
     color: $blue;
+}
+.price-summary__item--invalid {
+    div {
+        padding: 2px 0;
+        background: pink;
+    }
+}
+.price-summary__item--input {
+    padding-bottom: 2px;
+    
+    input#quantity {
+        text-align: right;
+        width: 45px;
+    }
+}
+.price-summary__item:last-child {
+    border-bottom: none;
 }
 
 .paypal__buttons {

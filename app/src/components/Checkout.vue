@@ -1,6 +1,5 @@
 <template>
     <div class="checkout">
-        <div>{{ artwork.quantity }} left</div>
         <button @click="updateQuantity(1)">delete one</button>
         <form class="checkout-form">
             <section>
@@ -46,11 +45,17 @@
                 </div>             
             </section>
         </form>
-        <div class="price-summary">
+        <div class="price-summary">         
             <ul>
+                <li class="price-summary__item price-summary__item--input" :class="{'price-summary__item--invalid': invalidQuantity}">
+                    <div>
+                        Bestellmenge <span v-if="invalidQuantity">ungültig</span>
+                    </div>
+                    <input id="quantity" type="number" v-model="orderQuantity" min="1" :max="artwork.quantity">
+                </li>
                 <li class="price-summary__item">
-                    <div>Preis</div>
-                    <div>{{ artwork.price }} €</div>
+                    <div>Einzelpreis</div>
+                    <div>{{ singleUnitPrice }} €</div>
                 </li>
                 <li class="price-summary__item">
                     <div>Versand</div>
@@ -60,7 +65,7 @@
                     <div>Mwst. ({{ artwork.tax }}%)</div>
                     <div>{{ taxShare }} €</div>
                 </li>
-                <li class="price-summary__item--total">
+                <li v-if="!invalidQuantity" class="price-summary__item price-summary__item--total">
                     <div>Summe</div>
                     <div>{{ totalCost }} €</div>
                 </li>
@@ -91,18 +96,28 @@ export default {
                 city: '',
                 country: '',                
             },
-            isPayed: false
+            isPayed: false,
+            orderQuantity: 1
         }
     },
     computed: {
+        singleUnitPrice () {
+            return this.artwork.price
+        },
+        purchaseOrderPrice  () {
+            return this.singleUnitPrice * this.orderQuantity
+        },
         taxShare () {
-            return this.artwork.price * this.artwork.tax/100
+            return this.purchaseOrderPrice * this.artwork.tax/100
         },
         priceWithTaxes () {
-            return this.artwork.price + this.taxShare
+            return this.purchaseOrderPrice + this.taxShare
         },
         totalCost () {
             return this.priceWithTaxes + this.artwork.shippingCosts
+        },
+        invalidQuantity () {
+            return this.orderQuantity > this.artwork.quantity || this.orderQuantity < 1
         }
     },
     mounted () {
@@ -110,9 +125,12 @@ export default {
     },
     methods: {
         updateQuantity (quantity) {
+            if (this.artwork.quantity < 1) {
+                return
+            }
             this.$store.dispatch('updateArtworkQuantity', {id: this.artwork.id, quantity: quantity, currentQuantity: this.artwork.quantity})
                 .then(response => {
-                    this.artwork.quantity = response
+                    this.$store.commit('UPDATE_ARTWORK_QUANTITY', {id: this.artwork.id, quantity: response})
                 })
                 .catch(error => {
                     console.error(error)
@@ -127,6 +145,17 @@ export default {
         setLoaded: function() {
             window.paypal
                 .Buttons({
+                    onInit: (data, actions) => {
+                        // disable paypal buttons if purchase quantity is invalid (compare https://developer.paypal.com/docs/checkout/integration-features/validation/#synchronous-validation)
+                        document.querySelector('#quantity')
+                            .addEventListener('change', function(event) {
+                                if (event.target.value > event.target.max || event.target.value < event.target.min) {
+                                    actions.disable();
+                                } else {
+                                    actions.enable();
+                                }
+                            });                        
+                    },
                     createOrder: (data, actions) => {
                         return actions.order.create({
                             payer: {
@@ -156,6 +185,7 @@ export default {
                     onApprove: async (data, actions) => {
                         const order = await actions.order.capture()
                         this.isPayed = order.status === 'COMPLETED'
+                        this.updateQuantity(this.orderQuantity)
                     }
 
                 })
