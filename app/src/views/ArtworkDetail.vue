@@ -1,5 +1,5 @@
 <template>
-  <div v-if="!isLoading" class="artwork-detail">
+  <div v-if="artwork" class="artwork-detail">
     <div class="carousel">
       <!-- vue-carousel from https://github.com/ssense/vue-carousel -->
       <carousel :perPage="1">
@@ -36,26 +36,18 @@ export default {
   components: { Carousel, Slide, Checkout },
   data () {
     return {
-      isLoading: true,
       showCheckout: false,
-      artwork: {
-        images: [],
-        author: '',
-        title: '',
-        description: '',
-        price: null,
-        generatorShare: null
-      },
     }
   },
-  mounted () {
-    this.$store.dispatch('getArtworkById', this.$route.params.id)
-    .then(response => {
-      this.isLoading = false
-      this.artwork = response
-    })
+  created () {
+    if (!this.artwork) {
+      this.$store.dispatch('getArtworkById', this.$route.params.id)
+    }
   },
   computed: {
+    artwork () {
+      return this.$store.getters.getArtworkById(this.$route.params.id)
+    },
     artworkImages () {
       return this.artwork.images.map(image => process.env.VUE_APP_API_BASEURL + image.url) || []
     }

@@ -29,7 +29,7 @@ export default {
     }
   },
   created () {
-    if (!this.artworks.length > 0) {
+    if (this.artworks.length <= 1) {
       this.$store.dispatch('getArtworks')
     }
   },
