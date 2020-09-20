@@ -25,9 +25,7 @@ const actions = {
                 quantity: newQuantity
             }})
         .then(response => {
-            if (response.status === '200') {
-                return response.data.quantity
-            }
+            return response.data.quantity
         })
         .catch(error => {
             return error
