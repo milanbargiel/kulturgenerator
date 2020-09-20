@@ -12,7 +12,9 @@
       <div class="artwork-detail__author">{{ artwork.author }}:</div>
       {{ artwork.title }}
     </div>
-    <div class="artwork-detail__description" v-html="artwork.description"></div>
+    <div class="artwork-detail__description" v-html="artwork.description">
+    </div>
+    <p v-if="isPurchased" class="artwork-detail__purchase-feedback--positive">Herzlichen Glückwunsch, Sie haben diesen Artikel gekauft.</p>                  
     <div ref="checkout" class="artwork-detail__checkout">
       <div class="artwork-detail__payment">
         <div class="artwork-detail__price">{{ artwork.price }}€</div>
@@ -25,7 +27,7 @@
         des Preises werden auf ein solidarisches Konto eingezahlt, dessen Erlös am Ende unter allen Teilnehmenden verteilt wird. Der aktuelle Kontostand ist in der Laufleiste ↑
       </div>
     </div>
-    <checkout v-if="showCheckout" :artwork="artwork"></checkout>
+    <checkout v-if="showCheckout" :artwork="artwork" @isPayed="closeCheckout"></checkout>
   </div>
 </template>
 
@@ -39,6 +41,7 @@ export default {
   data () {
     return {
       showCheckout: false,
+      isPurchased: false
     }
   },
   created () {
@@ -63,6 +66,10 @@ export default {
       this.$nextTick(() => {
         this.$refs.checkout.scrollIntoView({ behavior: 'smooth' })
       })
+    },
+    closeCheckout () {
+      this.showCheckout = false
+      this.isPurchased = true
     }
   }
 }

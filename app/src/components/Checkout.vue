@@ -71,8 +71,7 @@
                 </li>
             </ul>
         </div>
-        <p v-if="isPayed" class="payment-success">Congrats! The Money moved over smoothly! :-)</p>
-        <div v-else class="paypal">
+        <div class="paypal">
             <div ref="paypal" class="paypal__buttons"></div>
             <p class="paypal__description">
                 Durch Anklicken von bezahlen mit Paypal, bestätigen Sie die Weitergabe ihrer angegebenen Daten an die Kulturschaffenden. Das Geld fließt direkt und zu 100% an den/die teilnehmende Künstler*in. Für Fragen zu Abrechnung treten Sie bitte nach dem Kauf direkt mit den Verkäufer*innen in Kontakt. Danke!    
@@ -122,6 +121,12 @@ export default {
     },
     mounted () {
         this.loadPaypalScript()
+    },
+    watch: {
+        isPayed() {
+            console.log(this.isPayed)
+            this.$emit('isPayed', true)
+        }
     },
     methods: {
         updateQuantity (quantity) {
