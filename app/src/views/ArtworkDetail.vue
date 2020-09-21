@@ -13,35 +13,38 @@
       {{ artwork.title }}
     </div>
     <div class="artwork-detail__description" v-html="artwork.description"></div>
-    <div class="artwork-detail__checkout">
+    <div ref="checkout" class="artwork-detail__checkout">
       <div class="artwork-detail__payment">
         <div class="artwork-detail__price">{{ artwork.price }}€</div>
-        <button class="artwork-detail__payment-button">kaufen</button>
+        <button v-if="!showCheckout" class="artwork-detail__payment-button" @click="openCheckout()">kaufen</button>
       </div>
       <div class="artwork-detail__generator-share">
         <div class="artwork-detail__share-percentage">{{ artwork.generatorShare }}%</div>
         des Preises werden auf ein solidarisches Konto eingezahlt, dessen Erlös am Ende unter allen Teilnehmenden verteilt wird. Der aktuelle Kontostand ist in der Laufleiste ↑
       </div>
     </div>
+    <checkout v-if="showCheckout" :artwork="artwork"></checkout>
   </div>
 </template>
 
 <script>
 import { Carousel, Slide} from 'vue-carousel'
+import Checkout from '../components/Checkout'
 
 export default {
   name: 'artworkDetail',
-  components: { Carousel, Slide },
+  components: { Carousel, Slide, Checkout },
   data () {
     return {
       isLoading: true,
+      showCheckout: false,
       artwork: {
         images: [],
         author: '',
         title: '',
         description: '',
         price: null,
-        generatorShare: null,
+        generatorShare: null
       },
     }
   },
@@ -55,6 +58,14 @@ export default {
   computed: {
     artworkImages () {
       return this.artwork.images.map(image => process.env.VUE_APP_API_BASEURL + image.url) || []
+    }
+  },
+  methods: {
+    openCheckout () {
+      this.showCheckout = true
+      this.$nextTick(() => {
+        this.$refs.checkout.scrollIntoView({ behavior: 'smooth' })
+      })
     }
   }
 }
