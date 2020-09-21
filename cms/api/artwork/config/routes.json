@@ -15,6 +15,14 @@
       "config": {
         "policies": []
       }
+    },
+    {
+      "method": "PUT",
+      "path": "/artworks/:id",
+      "handler": "artwork.updateQuantity",
+      "config": {
+        "policies": []
+      }
     }
   ]
 }

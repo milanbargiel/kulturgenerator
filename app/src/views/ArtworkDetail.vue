@@ -1,5 +1,5 @@
 <template>
-  <div v-if="!isLoading" class="artwork-detail">
+  <div v-if="artwork" class="artwork-detail">
     <div class="carousel">
       <!-- vue-carousel from https://github.com/ssense/vue-carousel -->
       <carousel :perPage="1">
@@ -12,10 +12,14 @@
       <div class="artwork-detail__author">{{ artwork.author }}:</div>
       {{ artwork.title }}
     </div>
-    <div class="artwork-detail__description" v-html="artwork.description"></div>
+    <div class="artwork-detail__description" v-html="artwork.description">
+    </div>
+    <p v-if="isPurchased" class="artwork-detail__purchase-feedback--positive">Herzlichen Glückwunsch, Sie haben diesen Artikel gekauft.</p>                  
     <div ref="checkout" class="artwork-detail__checkout">
       <div class="artwork-detail__payment">
         <div class="artwork-detail__price">{{ artwork.price }}€</div>
+        <h1 v-if="isSoldOut" style="position: relative;"><div style="position: absolute; left: -25px; top: -15px; z-index: -1; width: 40px; height: 40px; background: red; border-radius: 50%;"></div>SOLD OUT</h1>
+        <h1 v-else>{{artwork.quantity}} left</h1>        
         <button v-if="!showCheckout" class="artwork-detail__payment-button" @click="openCheckout()">kaufen</button>
       </div>
       <div class="artwork-detail__generator-share">
@@ -23,7 +27,7 @@
         des Preises werden auf ein solidarisches Konto eingezahlt, dessen Erlös am Ende unter allen Teilnehmenden verteilt wird. Der aktuelle Kontostand ist in der Laufleiste ↑
       </div>
     </div>
-    <checkout v-if="showCheckout" :artwork="artwork"></checkout>
+    <checkout v-if="showCheckout" :artwork="artwork" @isPayed="closeCheckout"></checkout>
   </div>
 </template>
 
@@ -36,28 +40,24 @@ export default {
   components: { Carousel, Slide, Checkout },
   data () {
     return {
-      isLoading: true,
       showCheckout: false,
-      artwork: {
-        images: [],
-        author: '',
-        title: '',
-        description: '',
-        price: null,
-        generatorShare: null
-      },
+      isPurchased: false
     }
   },
-  mounted () {
-    this.$store.dispatch('getArtworkById', this.$route.params.id)
-    .then(response => {
-      this.isLoading = false
-      this.artwork = response
-    })
+  created () {
+    if (!this.artwork) {
+      this.$store.dispatch('getArtworkById', this.$route.params.id)
+    }
   },
   computed: {
+    artwork () {
+      return this.$store.getters.getArtworkById(this.$route.params.id)
+    },
     artworkImages () {
       return this.artwork.images.map(image => process.env.VUE_APP_API_BASEURL + image.url) || []
+    },
+    isSoldOut () {
+      return this.artwork.quantity < 1
     }
   },
   methods: {
@@ -66,6 +66,10 @@ export default {
       this.$nextTick(() => {
         this.$refs.checkout.scrollIntoView({ behavior: 'smooth' })
       })
+    },
+    closeCheckout () {
+      this.showCheckout = false
+      this.isPurchased = true
     }
   }
 }
