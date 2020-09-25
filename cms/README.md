@@ -25,6 +25,12 @@ At Admin Panel you can add new content (e.g. artwork) and generally cultivate Ku
 - Create a local Postgresql Database with name `kulturgenerator`, `user: ''` and `password: ''` (empty user and empty password) as defined in `database.js` file.
 - Install npm modules and run `npm run develop` in your console to start the local development server
 
+### How to debug Strapi on Production Server?
+- Stop Kulturgenerator pm2 process with `pm2 stop kulturgenerator-cms` to be able to run the cms manually
+- Delete cms build and cache `rm -rf build .cache`
+- Create new build with `NODE_ENV=production npm run build`
+- Start CMS-App from Terminal to see error output in console `NODE_ENV=production npm run develop`
+
 ### How to download Production Image and Database dump to develop with local database?
 - Insert kulturgeneratorServer as environment variable to ssh config file `~/.ssh/config` 
 - Run `npm run getUploads` to clear local image folder and then download all images from remote server into local `public/uploads` folder
