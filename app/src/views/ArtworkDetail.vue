@@ -73,6 +73,13 @@ export default {
       return this.$store.state.paymentInfo.show
     }
   },
+  watch : {
+    showCheckout (newVal) {
+      if (newVal === false) {
+        window.scrollTo({ top: 0 });
+      }
+    } 
+  },
   methods: {
     openCheckout () {
       this.$store.commit('SET_PAYMENT_INFO', { show: false, state: 'hidden' })
