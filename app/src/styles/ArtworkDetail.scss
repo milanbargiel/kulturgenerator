@@ -51,11 +51,11 @@
   display: flex;
   flex-direction: row;
   margin-bottom: 90px;
+  justify-content: space-between;
 }
 
 .artwork-detail__payment {
-  flex-grow: 1;
-  flex-basis: 0;
+  flex: 0 1 45%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -72,11 +72,8 @@
 }
 
 .artwork-detail__generator-share {
+  flex: 0 1 45%;
   color: $blue;
-
-  @media screen and (min-width: $bp-tablet) {
-    margin-left: 140px;
-  }
 }
 
 .artwork-detail__payment-button {
