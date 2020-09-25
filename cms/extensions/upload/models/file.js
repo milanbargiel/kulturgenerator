@@ -15,6 +15,8 @@ const BREAKPOINTS = {
   small: 320,
 };
 
+const bytesToKbytes = bytes => Math.round((bytes / 1000) * 100) / 100;
+
 const generateResponsiveFormats = async model => {
   
   // If uploaded file is not an image do nothing
@@ -26,21 +28,30 @@ const generateResponsiveFormats = async model => {
 
   // Create responsive image variants
   return Promise.all(
-    Object.keys(BREAKPOINTS).map(key => {
+    Object.keys(BREAKPOINTS).map(async key => {
       const breakpoint = BREAKPOINTS[key];
 
       if (breakpoint < model.width) {
         const url = path.join('uploads', `${key}_${model.hash}${model.ext}`);
         const outputPath = path.join(publicPath, url);
 
-        const newFile = sharp(srcFile) // returns promise
+        // Optimize and resize image with sharp package
+        const newFile = await sharp(srcFile)
           .resize({ width: breakpoint })
           .toFile(outputPath)
           .catch(err => strapi.log.error(err));
 
         if (newFile) {
+          const { size, width, height } = newFile;
+
+          // Return metadata
           return {
-            [key]: { url }
+            [key]: { 
+              url,
+              size: bytesToKbytes(size),
+              width,
+              height
+            }
           };
         }
       }
