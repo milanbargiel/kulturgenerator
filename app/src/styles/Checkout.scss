@@ -80,8 +80,21 @@
     border-bottom: none;
 }
 
+.paypal {
+    position: relative;
+}
+
 .paypal__buttons {
     width: 50%;    
+}
+
+.paypal__buttons--inactive-overlay {
+    position: absolute;
+    background: $white;
+    width: 50%;
+    height: 50%;
+    opacity: 50%;
+    z-index: 999;
 }
 
 .paypal__description {
