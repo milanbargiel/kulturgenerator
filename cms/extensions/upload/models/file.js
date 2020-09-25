@@ -1,9 +1,8 @@
 'use strict';
 
-/**
- * Read the documentation (https://strapi.io/documentation/v3.x/concepts/models.html#lifecycle-hooks)
- * to customize this model
- */
+// Custom lifecycle hook for files to create image variants after upload
+// The Strapi method was timeouting on production server so we decided to build this functionality by ourselves
+// Make sure to deactive "Enable responsive friendly upload" in Admin Panel settings, to deactivate Strapi image variants
 
 const sharp = require('sharp');
 const path = require('path');
