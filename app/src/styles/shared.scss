@@ -45,6 +45,10 @@ $bp-tablet: 680px;
 $font-family: 'Inconsolata', monospace;
 $font-family-galapagos: 'GalapagosA-Regular', 'Inconsolata', monospace;
 $font-family-galapagos-black: 'GalapagosA-Black', 'Inconsolata', monospace;
+$z-level-0: 0;
+$z-level-1: 1;
+$z-level-2: 2;
+$z-level-above-all: 999;
 
 // Font sizes
 $font-size-mobile-small: 14px;
@@ -72,6 +76,9 @@ body {
 }
 
 .loading-indicator {
+  background: #fff;
+  position: absolute;
+  z-index: $z-level-above-all;
   width: 100%;
   text-align: center;
   padding-top: 47vh;
