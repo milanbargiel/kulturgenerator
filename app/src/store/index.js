@@ -7,7 +7,7 @@ import mutations from './mutations'
 Vue.use(Vuex)
 
 const state = {
-  artworks: []
+  artworks: {}
 }
 
 export default new Vuex.Store({
