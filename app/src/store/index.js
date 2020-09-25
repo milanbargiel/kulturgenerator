@@ -10,7 +10,7 @@ const state = {
   artworks: {},
   paymentInfo: {
     show: false,
-    state: ''
+    state: 'hidden'
   }
 }
 

@@ -96,7 +96,6 @@ export default {
                 city: '',
                 country: '',                
             },
-            isPayed: false,
             orderQuantity: 1
         }
     },
@@ -122,12 +121,6 @@ export default {
     },
     mounted () {
         this.loadPaypalScript()
-    },
-    watch: {
-        isPayed() {
-            console.log(this.isPayed)
-            this.$emit('isPayed', true)
-        }
     },
     methods: {
         setPaymentInfo (success) {

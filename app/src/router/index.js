@@ -31,7 +31,7 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) => {
   // always hide payment info banner on route change
   if (store.state.paymentInfo.show) {
-    store.commit('SET_PAYMENT_INFO', { show: false, state: '' })    
+    store.commit('SET_PAYMENT_INFO', { show: false, state: 'hidden' })    
   }
   next()
 })

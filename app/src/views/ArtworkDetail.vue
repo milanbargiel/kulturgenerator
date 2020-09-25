@@ -26,7 +26,7 @@
         des Preises werden auf ein solidarisches Konto eingezahlt, dessen Erlös am Ende unter allen Teilnehmenden verteilt wird. Der aktuelle Kontostand ist in der Laufleiste ↑
       </div>
     </div>
-    <checkout v-if="showCheckout" :artwork="artwork" @isPayed="closeCheckout"></checkout>
+    <checkout v-if="showCheckout" :artwork="artwork"></checkout>
   </div>
 </template>
 
@@ -39,8 +39,7 @@ export default {
   components: { Carousel, Slide, Checkout },
   data () {
     return {
-      showCheckout: false,
-      isPurchased: false
+      checkoutIsOpen: false
     }
   },
   created () {
@@ -66,18 +65,21 @@ export default {
         return
       }
       return 'noch ' + this.artwork.quantity + ' verfügbar'
+    },
+    showCheckout () {
+      return this.checkoutIsOpen && !this.showPaymentInfo
+    },
+    showPaymentInfo () {
+      return this.$store.state.paymentInfo.show
     }
   },
   methods: {
     openCheckout () {
-      this.showCheckout = true
+      this.$store.commit('SET_PAYMENT_INFO', { show: false, state: 'hidden' })
+      this.checkoutIsOpen = true
       this.$nextTick(() => {
         this.$refs.checkout.scrollIntoView({ behavior: 'smooth' })
       })
-    },
-    closeCheckout () {
-      this.showCheckout = false
-      this.isPurchased = true
     }
   }
 }
