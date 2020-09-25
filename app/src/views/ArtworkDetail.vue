@@ -14,7 +14,6 @@
     </div>
     <div class="artwork-detail__description" v-html="artwork.description">
     </div>
-    <p v-if="isPurchased" class="artwork-detail__purchase-feedback--positive">Herzlichen Glückwunsch, Sie haben diesen Artikel gekauft.</p>                  
     <div ref="checkout" class="artwork-detail__checkout">
       <div class="artwork-detail__payment">
         <div class="artwork-detail__price">{{ artwork.price }}€</div>

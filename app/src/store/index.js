@@ -7,7 +7,11 @@ import mutations from './mutations'
 Vue.use(Vuex)
 
 const state = {
-  artworks: {}
+  artworks: {},
+  paymentInfo: {
+    show: false,
+    state: ''
+  }
 }
 
 export default new Vuex.Store({

@@ -130,6 +130,13 @@ export default {
         }
     },
     methods: {
+        setPaymentInfo (success) {
+            if (success) {
+                this.$store.commit('SET_PAYMENT_INFO', { show: true, state: 'success'})
+            } else {
+                this.$store.commit('SET_PAYMENT_INFO', { show: true, state: 'error'})
+            }
+        },
         updateQuantity (quantity) {
             if (this.artwork.quantity < 1) {
                 return
@@ -190,7 +197,7 @@ export default {
                     },
                     onApprove: async (data, actions) => {
                         const order = await actions.order.capture()
-                        this.isPayed = order.status === 'COMPLETED'
+                        this.setPaymentInfo(order.status === 'COMPLETED')
                         this.updateQuantity(this.orderQuantity)
                     }
 

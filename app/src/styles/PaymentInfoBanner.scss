@@ -1,0 +1,10 @@
+.payment-info {
+    background: $orange; 
+    color: $black;
+    font-family: $font-family; 
+    margin-top: 5px;
+}
+.payment-info--success {
+    background: $blue;
+    color: $white;
+}

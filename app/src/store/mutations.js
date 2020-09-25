@@ -11,6 +11,9 @@ const mutations = {
     },
     UPDATE_ARTWORK_QUANTITY (state, payload) {
         state.artworks[payload.id].quantity = payload.quantity
+    },
+    SET_PAYMENT_INFO (state, payload) {
+        state.paymentInfo = payload
     }    
 }
 
