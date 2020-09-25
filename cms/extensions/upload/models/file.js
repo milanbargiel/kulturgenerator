@@ -9,8 +9,10 @@ const path = require('path');
 const publicPath = path.join(__dirname, '../../../public');
 
 const BREAKPOINTS = {
-  large: 1000,
-  small: 500,
+  x2: 1600,
+  large: 800,
+  medium: 500,
+  small: 320,
 };
 
 const generateResponsiveFormats = async model => {
