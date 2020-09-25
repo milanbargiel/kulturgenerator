@@ -29,10 +29,10 @@ export default {
     }
   },
   created () {
-    if (!this.artworks.length > 0) {
-      this.$store.commit('SET_LOADING_STATE', true)
-      this.$store.dispatch('getArtworks')
-        .then(() => this.$store.commit('SET_LOADING_STATE', false))
+    if (this.artworks.length <= 1) {
+    this.$store.commit('SET_LOADING_STATE', true)      
+    this.$store.dispatch('getArtworks')
+      .then(() => this.$store.commit('SET_LOADING_STATE', false))
     }
   },
   methods: {

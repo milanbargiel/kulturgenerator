@@ -1,8 +1,23 @@
-'use strict';
+const { parseMultipartData, sanitizeEntity } = require('strapi-utils');
 
-/**
- * Read the documentation (https://strapi.io/documentation/v3.x/concepts/controllers.html#core-controllers)
- * to customize this controller
- */
+module.exports = {
+  /**
+   * Update a record.
+   *
+   * @return {Object}
+   */
 
-module.exports = {};
+  async updateQuantity(ctx) {
+    const { id } = ctx.params;
+    if (typeof ctx.request.body.quantity === 'undefined') {
+      return
+    }
+    const data = {
+      quantity: ctx.request.body.quantity
+    }
+    let entity;
+    entity = await strapi.services.artwork.update({ id }, data);
+
+    return sanitizeEntity(entity, { model: strapi.models.artwork });
+  },
+};
