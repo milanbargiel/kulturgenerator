@@ -18,9 +18,9 @@
     <div ref="checkout" class="artwork-detail__checkout">
       <div class="artwork-detail__payment">
         <div class="artwork-detail__price">{{ artwork.price }}€</div>
-        <h1 v-if="isSoldOut" style="position: relative;"><div style="position: absolute; left: -25px; top: -15px; z-index: -1; width: 40px; height: 40px; background: red; border-radius: 50%;"></div>SOLD OUT</h1>
-        <h1 v-else>{{artwork.quantity}} left</h1>        
-        <button v-if="!showCheckout" class="artwork-detail__payment-button" @click="openCheckout()">kaufen</button>
+        <div v-if="isSoldOut">AUSVERKAUFT</div>
+        <div v-else class="artwork-detail__quantity">{{ artworkQuantity }}</div>        
+        <button v-if="!showCheckout && !isSoldOut" class="artwork-detail__payment-button" @click="openCheckout()">kaufen</button>
       </div>
       <div class="artwork-detail__generator-share">
         <div class="artwork-detail__share-percentage">{{ artwork.generatorShare }}%</div>
@@ -58,6 +58,15 @@ export default {
     },
     isSoldOut () {
       return this.artwork.quantity < 1
+    },
+    artworkQuantity () {
+      if (this.artwork.quantity === 1) {
+        return
+      }
+      if (!this.artwork.quantity) {
+        return
+      }
+      return 'noch ' + this.artwork.quantity + ' verfügbar'
     }
   },
   methods: {
