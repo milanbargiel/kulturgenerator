@@ -1,5 +1,5 @@
 <template>
-    <div class="moneypool-banner">
+    <div v-if="balance" class="moneypool-banner">
         <marquee-text
             :repeat="repeatBalance"
             :duration="animationDuration">
@@ -18,7 +18,11 @@ export default {
         return {
             repeatBalance: 10,
             animationDuration: 5,
-            balance: '0.00'
+        }
+    },
+    computed: {
+        balance () {
+            return this.$store.state.shadowMoneypoolBalance
         }
     }
 }

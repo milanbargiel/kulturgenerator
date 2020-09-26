@@ -30,6 +30,13 @@ const actions = {
         .catch(error => {
             return error
         })             
+    },
+    getShadowMoneypoolBalance (context) {
+        // return axios.get(process.env.VUE_APP_API_BASEURL + '/moneypool')
+        //     .then(response => {
+        //         context.commit('UPDATE_SHADOW_MONEYPOOL', response.data.currentBalance)
+        //     })
+                context.commit('UPDATE_SHADOW_MONEYPOOL', 120.00)
     }
 }
 

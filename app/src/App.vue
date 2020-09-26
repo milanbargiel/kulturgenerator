@@ -10,7 +10,10 @@ import MyHeader from './components/Header'
 
 export default {
   name: 'App',
-  components: { MyHeader }
+  components: { MyHeader },
+  created () {
+    this.$store.dispatch('getShadowMoneypoolBalance')
+  }
 }
 </script>
 
