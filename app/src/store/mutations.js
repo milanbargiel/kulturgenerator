@@ -16,7 +16,7 @@ const mutations = {
         state.paymentInfo = payload
     },
     UPDATE_SHADOW_MONEYPOOL (state, payload) {
-        state.shadowMoneypoolBalance += payload
+        state.shadowMoneypoolBalance = payload
     }    
 }
 

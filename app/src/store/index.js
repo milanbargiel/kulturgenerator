@@ -8,7 +8,7 @@ Vue.use(Vuex)
 
 const state = {
   artworks: {},
-  shadowMoneypoolBalance: null,
+  shadowMoneypoolBalance: 0,
   paymentInfo: {
     show: false,
     state: 'hidden'

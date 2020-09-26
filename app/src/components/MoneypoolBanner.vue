@@ -1,5 +1,5 @@
 <template>
-    <div v-if="balance" class="moneypool-banner">
+    <div class="moneypool-banner">
         <marquee-text
             :repeat="repeatBalance"
             :duration="animationDuration">
@@ -22,7 +22,9 @@ export default {
     },
     computed: {
         balance () {
-            return this.$store.state.shadowMoneypoolBalance
+            // Math.floor to hide decimals
+            // toLocaleString is native js function to add the point for 1000s
+            return Math.floor(this.$store.state.shadowMoneypoolBalance).toLocaleString(undefined, { minimumFractionDigits: 0 })
         }
     }
 }

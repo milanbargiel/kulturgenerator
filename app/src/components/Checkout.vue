@@ -131,7 +131,7 @@ export default {
     methods: {
         setPaymentInfo (success) {
             if (success) {
-                this.$store.commit('UPDATE_SHADOW_MONEYPOOL', this.generatorShare)
+                this.$store.dispatch('updateShadowMoneypool', this.generatorShare)
                 this.$store.commit('SET_PAYMENT_INFO', { show: true, state: 'success'})
             } else {
                 this.$store.commit('SET_PAYMENT_INFO', { show: true, state: 'error'})

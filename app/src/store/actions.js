@@ -32,11 +32,23 @@ const actions = {
         })             
     },
     getShadowMoneypoolBalance (context) {
-        // return axios.get(process.env.VUE_APP_API_BASEURL + '/moneypool')
-        //     .then(response => {
-        //         context.commit('UPDATE_SHADOW_MONEYPOOL', response.data.currentBalance)
-        //     })
-                context.commit('UPDATE_SHADOW_MONEYPOOL', 120.00)
+        return axios.get(process.env.VUE_APP_API_BASEURL + '/moneypool')
+            .then(response => {
+                context.commit('UPDATE_SHADOW_MONEYPOOL', response.data.currentBalance)
+            })
+    },
+    updateShadowMoneypool (context, balance) {
+        console.log('balance', balance)
+        axios({
+            method: 'put',
+            url: process.env.VUE_APP_API_BASEURL + '/moneypool',
+            data: {
+                currentBalance: context.state.shadowMoneypoolBalance + balance
+            }
+        })
+        .then(response => {
+            context.commit('UPDATE_SHADOW_MONEYPOOL', response.data.currentBalance)
+        })
     }
 }
 
