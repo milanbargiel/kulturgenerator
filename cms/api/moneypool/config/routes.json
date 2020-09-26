@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/moneypool",
+      "handler": "moneypool.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/moneypool",
+      "handler": "moneypool.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/moneypool",
+      "handler": "moneypool.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

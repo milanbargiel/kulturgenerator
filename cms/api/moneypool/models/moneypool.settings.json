@@ -1,0 +1,16 @@
+{
+  "kind": "singleType",
+  "collectionName": "moneypools",
+  "info": {
+    "name": "Moneypool"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "currentBalance": {
+      "type": "decimal"
+    }
+  }
+}
