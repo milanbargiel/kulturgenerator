@@ -10,7 +10,8 @@
   },
   "attributes": {
     "currentBalance": {
-      "type": "decimal"
+      "type": "decimal",
+      "min": 0
     }
   }
 }
