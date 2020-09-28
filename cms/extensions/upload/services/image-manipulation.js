@@ -26,7 +26,7 @@ const resizeTo = (buffer, options) =>
   sharp(buffer)
     .resize(options)
     .toBuffer()
-    .catch(() => null);
+    .catch(err => strapi.log.error(err));
 
 const generateThumbnail = async file => {
   if (!(await canBeProccessed(file.buffer))) {
