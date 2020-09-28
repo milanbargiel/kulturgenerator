@@ -17,13 +17,13 @@
 
 
 .loading-indicator {
-    background: #fff;
-    position: absolute;
-    z-index: $z-level-above-all;
-    width: 100%;
-    text-align: center;
-    padding-top: 47vh;
-    height: 50vh;
-    font-size: $font-size-mobile-big;
-    font-family: $font-family-galapagos;
-  }
+  background: #fff;
+  position: absolute;
+  z-index: $z-level-above-all;
+  width: 100%;
+  text-align: center;
+  padding-top: 47vh;
+  height: 50vh;
+  font-size: $font-size-mobile-big;
+  font-family: $font-family-galapagos;
+}
