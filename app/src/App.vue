@@ -1,8 +1,10 @@
 <template>
   <div id="app">
     <div v-if="isLoading" class="loading-indicator">...lädt</div>
-    <my-header></my-header>
-    <router-view/>      
+    <div v-show="!isLoading">
+      <my-header></my-header>
+      <router-view/> 
+    </div>
   </div>
 </template>
 
