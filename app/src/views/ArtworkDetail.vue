@@ -2,7 +2,12 @@
   <div v-if="artwork" class="artwork-detail">
     <div class="carousel">
       <!-- vue-carousel from https://github.com/ssense/vue-carousel -->
-      <carousel :perPage="1">
+      <carousel 
+        :perPage="1" 
+        :centerMode="true"
+        navigationEnabled="true"
+        navigationPrevLabel="←"
+        navigationNextLabel="→">
         <slide v-for="image in artworkImages" :key="image">
           <img :src="image" class="carousel__image">
         </slide>
