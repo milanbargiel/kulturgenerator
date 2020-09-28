@@ -36,7 +36,6 @@
       "required": false
     },
     "generatorShare": {
-      "type": "integer",
       "type": "enumeration",
       "enum": [
         "50",
@@ -62,6 +61,10 @@
     },
     "paypal": {
       "type": "email"
+    },
+    "quantity": {
+      "type": "integer",
+      "min": 0
     }
   }
 }
