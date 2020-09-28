@@ -7,6 +7,8 @@ import mutations from './mutations'
 Vue.use(Vuex)
 
 const state = {
+  isLoading: true,
+  loadingDelay: 700,
   artworks: {}
 }
 

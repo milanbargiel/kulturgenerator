@@ -44,9 +44,13 @@ export default {
       isPurchased: false
     }
   },
-  created () {
+  mounted () {
     if (!this.artwork) {
+      this.$store.commit('SET_LOADING_STATE', true)
       this.$store.dispatch('getArtworkById', this.$route.params.id)
+        .then(() => {
+          this.$store.commit('SET_LOADING_STATE', false)
+        })
     }
   },
   computed: {
