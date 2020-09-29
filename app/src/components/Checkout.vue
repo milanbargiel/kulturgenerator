@@ -143,13 +143,17 @@ export default {
         },
         loadPaypalScript () {
             const script = document.createElement('script')
-            script.src = 'https://www.paypal.com/sdk/js?client-id=Ab1l-FnhLTRhv9JDyFJA1Rn79WTB1-K6MjiLrj5dLYYhmiQE0Lelq7wSN3hkJZ4JhKxS0cx_xL5KlIg9&currency=EUR&disable-funding=credit,card,giropay,sofort'
+            script.src = 'https://www.paypal.com/sdk/js?client-id=Ab1l-FnhLTRhv9JDyFJA1Rn79WTB1-K6MjiLrj5dLYYhmiQE0Lelq7wSN3hkJZ4JhKxS0cx_xL5KlIg9&currency=EUR&disable-funding=credit,giropay,sofort'
             document.head.appendChild(script)
             script.addEventListener("load", this.setLoaded)
         },
         setLoaded: function() {
             window.paypal
                 .Buttons({
+                    style: {
+                        color: 'blue',
+                        height: 55,
+                    },
                     onInit: (data, actions) => {
                         // disable paypal buttons if purchase quantity is invalid (compare https://developer.paypal.com/docs/checkout/integration-features/validation/#synchronous-validation)
                         document.querySelector('.js-quantity')
