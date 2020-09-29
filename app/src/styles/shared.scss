@@ -60,7 +60,30 @@ $blue: #0000ee;
 $orange: #ff551b;
 $black: #000;
 $white: #fff;
-$medium-gray: lighten($black, 50%);
+$light-grey: #eeeeee;
+$grey: #ced4da;
+$dark-grey: #495057;
+$pink: #ffc0cb;
+
+// Distances
+$spacing-mobile--small: 18px;
+$spacing-desktop--small: 30px;
+$spacing-mobile--big: 30px;
+$spacing-desktop--big: 60px;
+$spacing-mobile--large: 42px;
+$spacing-desktop--large: 90px;
+
+// Border Box for everything
+html {
+  box-sizing: border-box;
+  -ms-overflow-style: scrollbar;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
 
 // Global Styles
 body {
@@ -70,4 +93,9 @@ body {
   @media screen and (min-width: $bp-tablet) {
     font-size: $font-size-desktop;
   }
+}
+
+ul {
+  list-style: none;
+  padding: 0;
 }
