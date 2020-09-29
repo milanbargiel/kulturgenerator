@@ -22,7 +22,7 @@ const actions = {
         const newQuantity = currentQuantity - quantity
         return axios({
             method: 'put',
-            url: 'http://localhost:1337/artworks/' + id,
+            url: process.env.VUE_APP_API_BASEURL + '/artworks/' + id,
             data: {
                 quantity: newQuantity
             }})

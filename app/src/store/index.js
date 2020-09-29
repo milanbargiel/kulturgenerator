@@ -9,7 +9,11 @@ Vue.use(Vuex)
 const state = {
   isLoading: true,
   loadingDelay: 700,
-  artworks: {}
+  artworks: {},
+  paymentInfo: {
+    show: false,
+    state: 'hidden'
+  }
 }
 
 export default new Vuex.Store({
