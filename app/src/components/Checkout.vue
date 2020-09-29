@@ -1,6 +1,5 @@
 <template>
     <div class="checkout">
-        <button style="display:none;" @click="updateQuantity(1)">delete one</button>
         <form class="checkout-form">
             <section class="checkout-form__section">
                 <h2 class="checkout-form__header">Kontaktinformation</h2>
