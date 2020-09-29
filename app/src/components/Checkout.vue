@@ -72,7 +72,7 @@
             </ul>
         </div>
         <div class="paypal">
-            <div ref="paypal" :class="{'paypal__buttons, paypal__buttons--inactive': invalidQuantity}"></div>
+            <div ref="paypal" :class="['paypal__buttons', {'paypal__buttons--hide': invalidQuantity}]"></div>
             <p class="paypal__description">
                 Durch Anklicken von bezahlen mit Paypal, bestätigen Sie die Weitergabe ihrer angegebenen Daten an die Kulturschaffenden. Das Geld fließt direkt und zu 100% an den/die teilnehmende Künstler*in. Für Fragen zu Abrechnung treten Sie bitte nach dem Kauf direkt mit den Verkäufer*innen in Kontakt. Danke!    
             </p>

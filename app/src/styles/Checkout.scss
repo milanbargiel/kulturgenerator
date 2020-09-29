@@ -72,12 +72,17 @@
 
 .price-summary {
   margin-bottom: $spacing-mobile--big;
+  max-width: 420px;
+
+  @media screen and (min-width: $bp-tablet) {
+    margin-bottom: $spacing-desktop--big;
+    max-width: 300px;
+  }
 }
 
 .price-summary__item {
   display: flex;
   align-items: center;
-  max-width: 420px;
   justify-content: space-between;
   border-bottom: 2px solid $black;
   margin-bottom: 1rem;        
@@ -115,16 +120,18 @@
 }
 
 .paypal__buttons {
-  position: relative;
   max-width: 380px;
-  margin-bottom: $spacing-mobile--large;
-}
 
-.paypal__buttons--inactive {
-  display: none;
+  &--hide {
+    display: none;
+  }
 }
 
 .paypal__description {
   color: $dark-grey;
   font-weight: normal;
+
+  @media screen and (min-width: $bp-tablet) {
+    max-width: 90%;
+  }
 }
