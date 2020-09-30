@@ -103,3 +103,8 @@ ul {
   list-style: none;
   padding: 0;
 }
+
+.hidden {
+  height: 0px;
+  overflow: hidden;
+}
