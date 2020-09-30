@@ -1,26 +1,6 @@
 <template>
     <div class="checkout">
-        <form class="checkout-form">
-            <section class="checkout-form__section">
-                <h2 class="checkout-form__header">Kontaktinformation</h2>
-                <div class="checkout-form__row">
-                    <div class="checkout-form__item">
-                        <label class="checkout-form__label">Vorname</label>
-                        <input class="checkout-form__input" type="text" v-model.trim="payer.firstname">                
-                    </div>
-                    <div class="checkout-form__item">
-                        <label class="checkout-form__label">Nachname</label>
-                        <input class="checkout-form__input" type="text" v-model.trim="payer.lastname">                
-                    </div>
-                </div>
-                <div class="checkout-form__row">
-                    <div class="checkout-form__item">
-                        <label class="checkout-form__label">E-Mail-Adresse</label>
-                        <input class="checkout-form__input" type="text" v-model.trim="payer.email">                
-                    </div>
-                </div>             
-            </section>
-        </form>
+        <h2 class="checkout__header">Kunstwerk kaufen</h2>
         <div class="price-summary">         
             <ul>
                 <li v-show="artwork.quantity !== 1" class="price-summary__item price-summary__item--input">
@@ -62,11 +42,6 @@ export default {
     name: 'Checkout',
     data () {
         return {
-            payer : {
-                firstname: '',
-                lastname: '',
-                email: ''              
-            },
             orderQuantity: 1
         }
     },
