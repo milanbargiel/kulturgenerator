@@ -36,6 +36,7 @@ export default {
             // apply the calculated aspect ratio by
             // using padding top.
             const applyAspectRatio = this.loading && this.aspectRatio
+            
             if (applyAspectRatio) {
                 // Prevent flash of unstyled image
                 // after the image is loaded.
@@ -56,7 +57,9 @@ export default {
         const setLoadingState = () => {
             this.loading = false
         };
+
         this.$el.addEventListener('load', setLoadingState)
+        
         // We remove the event listener as soon as
         // the component is destroyed to prevent
         // potential memory leaks.
