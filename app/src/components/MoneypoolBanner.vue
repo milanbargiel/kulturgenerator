@@ -22,9 +22,8 @@ export default {
     },
     computed: {
         balance () {
-            // Math.floor to hide decimals
             // toLocaleString is native js function to add the point for 1000s
-            return Math.floor(this.$store.state.shadowMoneypoolBalance).toLocaleString(undefined, { minimumFractionDigits: 0 })
+            return this.$store.state.shadowMoneypoolBalance.toLocaleString(undefined, { minimumFractionDigits: 2 })
         }
     }
 }
