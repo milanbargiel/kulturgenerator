@@ -182,7 +182,8 @@ export default {
                                 },
                                 payee: {
                                     email_address: this.artwork.paypal
-                                }
+                                },
+                                description: `${this.order.quantity} x ${this.artwork.author}: ${this.artwork.title}`
                             }]
                         });
                     },
