@@ -1,7 +1,6 @@
 <template>
     <div class="artwork-list-item" :style="styles">
         <responsive-image class="artwork-list-item__image" :lazy-src="imgUrl" :lazy-srcset="srcSet" :aspectRatio="aspectRatio"></responsive-image>
-        <!-- <img class="artwork-list-item__image" v-lazy="imgUrl" :data-srcset="srcSet"> -->
         <router-link class="artwork-list-item__link" :to="{ name: 'artworkDetail', params: { id: item.id, author: item.author, title: item.title }}">
             <span class="artwork-list-item__author">{{ item.author }}: </span>
             <span class="artwork-list-item__title">{{ item.title }}</span>, 
