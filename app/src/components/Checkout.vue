@@ -20,29 +20,6 @@
                     </div>
                 </div>             
             </section>
-            <section class="checkout-form__section">
-                <h2 class="checkout-form__header">Versand</h2>
-                <div class="checkout-form__row">
-                    <div class="checkout-form__item">
-                        <label class="checkout-form__label">Straße und Hausnummer</label>
-                        <input class="checkout-form__input" type="text" v-model.trim="payer.address">                
-                    </div>
-                    <div class="checkout-form__item">
-                        <label class="checkout-form__label">Postleitzahl</label>
-                        <input class="checkout-form__input" type="text" v-model.trim="payer.postcode">                
-                    </div>
-                </div>
-                <div class="checkout-form__row">
-                    <div class="checkout-form__item">
-                        <label class="checkout-form__label">Stadt</label>
-                        <input class="checkout-form__input" type="text" v-model.trim="payer.city">                
-                    </div>
-                    <div class="checkout-form__item">
-                        <label class="checkout-form__label">Land</label>
-                        <input class="checkout-form__input" type="text" v-model.trim="payer.country">                
-                    </div>                
-                </div>             
-            </section>
         </form>
         <div class="price-summary">         
             <ul>
@@ -88,11 +65,7 @@ export default {
             payer : {
                 firstname: '',
                 lastname: '',
-                email: '',
-                address: '',
-                postcode: '',
-                city: '',
-                country: '',                
+                email: ''              
             },
             orderQuantity: 1
         }
@@ -161,21 +134,7 @@ export default {
                         height: 55,
                     },
                     createOrder: (data, actions) => {
-                        return actions.order.create({
-                            payer: {
-                                name: {
-                                    given_name: this.payer.firstname,
-                                    surname: this.payer.lastname
-                                },
-                                address: {
-                                    address_line_1: this.payer.address,
-                                    postal_code: this.payer.postcode,
-                                    admin_area_2: this.payer.city,
-                                    admin_area_1: this.payer.country,
-                                    country_code: 'DE' // TODO: this should of course be dynamic
-                                }
-
-                            },                            
+                        return actions.order.create({                      
                             purchase_units: [{
                                 amount: {
                                     value: this.totalCost
@@ -189,6 +148,7 @@ export default {
                     },
                     onApprove: async (data, actions) => {
                         const order = await actions.order.capture()
+                        console.log(order)
                         this.setPaymentInfo(order.status === 'COMPLETED')
                         this.updateQuantity(this.orderQuantity)
                     }
