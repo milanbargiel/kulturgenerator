@@ -1,6 +1,6 @@
 <template>
     <div class="artwork-list-item" :style="styles">
-        <img class="artwork-list-item__image" v-lazy="titleImage">
+        <img class="artwork-list-item__image" v-lazy="imgUrl">
         <router-link class="artwork-list-item__link" :to="{ name: 'artworkDetail', params: { id: item.id, author: item.author, title: item.title }}">
             <span class="artwork-list-item__author">{{ item.author }}: </span>
             <span class="artwork-list-item__title">{{ item.title }}</span>, 
@@ -14,7 +14,7 @@ export default {
     name: 'ArtworkListItem',
     props: ['item'],
     computed: {
-        titleImage () {
+        imgUrl () {
             return process.env.VUE_APP_API_BASEURL + this.item.images[0].url
         },
         styles () {
