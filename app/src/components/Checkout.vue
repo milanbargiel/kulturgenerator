@@ -47,10 +47,10 @@
         <div class="price-summary">         
             <ul>
                 <li v-show="artwork.quantity !== 1" class="price-summary__item price-summary__item--input">
-                    <div :class="{'price-summary__invalid': invalidQuantity}">
-                        Bestellmenge <span v-if="invalidQuantity">ungültig</span>
+                    <div :class="{'price-summary__invalid': !validQuantity}">
+                        Bestellmenge <span v-if="!validQuantity">ungültig</span>
                     </div>
-                    <input class="price-summary__quantity js-quantity" type="number" v-model="orderQuantity" min="1" :max="artwork.quantity">
+                    <input class="price-summary__quantity" type="number" v-model="orderQuantity" min="1" :max="artwork.quantity">
                 </li>
                 <li class="price-summary__item">
                     <div>Einzelpreis</div>
@@ -64,14 +64,14 @@
                     <div>Mwst. ({{ artwork.tax }}%)</div>
                     <div>{{ taxShare }} €</div>
                 </li>
-                <li v-if="!invalidQuantity" class="price-summary__item price-summary__item--total">
+                <li v-if="validQuantity" class="price-summary__item price-summary__item--total">
                     <div>Summe</div>
                     <div>{{ totalCost }} €</div>
                 </li>
             </ul>
         </div>
         <div class="paypal">
-            <div ref="paypal" :class="['paypal__buttons', {'paypal__buttons--hide': invalidQuantity}]"></div>
+            <div v-show="validQuantity" ref="paypal" class="paypal__buttons"></div>
             <p class="paypal__description">
                 Durch Anklicken von bezahlen mit Paypal, bestätigen Sie die Weitergabe ihrer angegebenen Daten an die Kulturschaffenden. Das Geld fließt direkt und zu 100% an den/die teilnehmende Künstler*in. Für Fragen zu Abrechnung treten Sie bitte nach dem Kauf direkt mit den Verkäufer*innen in Kontakt. Danke!    
             </p>
@@ -113,8 +113,8 @@ export default {
         totalCost () {
             return this.priceWithTaxes + this.artwork.shippingCosts
         },
-        invalidQuantity () {
-            return this.orderQuantity > this.artwork.quantity || this.orderQuantity < 1
+        validQuantity () {
+            return this.orderQuantity < this.artwork.quantity && this.orderQuantity >= 1
         },
         generatorShare () {
             if (!this.artwork.generatorShare) {
@@ -159,17 +159,6 @@ export default {
                     style: {
                         color: 'blue',
                         height: 55,
-                    },
-                    onInit: (data, actions) => {
-                        // disable paypal buttons if purchase quantity is invalid (compare https://developer.paypal.com/docs/checkout/integration-features/validation/#synchronous-validation)
-                        document.querySelector('.js-quantity')
-                            .addEventListener('change', function(event) {
-                                if (event.target.value > event.target.max || event.target.value < event.target.min) {
-                                    actions.disable();
-                                } else {
-                                    actions.enable();
-                                }
-                            });                        
                     },
                     createOrder: (data, actions) => {
                         return actions.order.create({
