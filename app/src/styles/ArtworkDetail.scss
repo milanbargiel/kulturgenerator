@@ -50,8 +50,12 @@
 .artwork-detail__checkout {
   display: flex;
   flex-direction: row;
-  margin-bottom: 90px;
+  margin-bottom: $spacing-mobile--large;
   justify-content: space-between;
+
+  @media screen and (min-width: $bp-tablet) {
+    margin-bottom: $spacing-desktop--large;
+  }
 }
 
 .artwork-detail__payment {

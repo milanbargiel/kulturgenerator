@@ -1,57 +1,56 @@
 <template>
     <div class="checkout">
-        <button @click="updateQuantity(1)">delete one</button>
         <form class="checkout-form">
-            <section>
-                <h2>Kontakinformation</h2>
+            <section class="checkout-form__section">
+                <h2 class="checkout-form__header">Kontaktinformation</h2>
                 <div class="checkout-form__row">
                     <div class="checkout-form__item">
-                        <label>Vorname</label>
-                        <input class="checkout-form__text-input" type="text" v-model.trim="payer.firstname">                
+                        <label class="checkout-form__label">Vorname</label>
+                        <input class="checkout-form__input" type="text" v-model.trim="payer.firstname">                
                     </div>
                     <div class="checkout-form__item">
-                        <label>Nachname</label>
-                        <input class="checkout-form__text-input" type="text" v-model.trim="payer.lastname">                
+                        <label class="checkout-form__label">Nachname</label>
+                        <input class="checkout-form__input" type="text" v-model.trim="payer.lastname">                
                     </div>
                 </div>
                 <div class="checkout-form__row">
                     <div class="checkout-form__item">
-                        <label>Email-Adresse</label>
-                        <input class="checkout-form__text-input" type="text" v-model.trim="payer.email">                
+                        <label class="checkout-form__label">E-Mail-Adresse</label>
+                        <input class="checkout-form__input" type="text" v-model.trim="payer.email">                
                     </div>
                 </div>             
             </section>
-            <section>
-                <h2>Versand</h2>
+            <section class="checkout-form__section">
+                <h2 class="checkout-form__header">Versand</h2>
                 <div class="checkout-form__row">
                     <div class="checkout-form__item">
-                        <label>Straße</label>
-                        <input class="checkout-form__text-input" type="text" v-model.trim="payer.address">                
+                        <label class="checkout-form__label">Straße und Hausnummer</label>
+                        <input class="checkout-form__input" type="text" v-model.trim="payer.address">                
                     </div>
                     <div class="checkout-form__item">
-                        <label>Postleitzahl</label>
-                        <input class="checkout-form__text-input" type="text" v-model.trim="payer.postcode">                
+                        <label class="checkout-form__label">Postleitzahl</label>
+                        <input class="checkout-form__input" type="text" v-model.trim="payer.postcode">                
                     </div>
                 </div>
                 <div class="checkout-form__row">
                     <div class="checkout-form__item">
-                        <label>Stadt</label>
-                        <input class="checkout-form__text-input" type="text" v-model.trim="payer.city">                
+                        <label class="checkout-form__label">Stadt</label>
+                        <input class="checkout-form__input" type="text" v-model.trim="payer.city">                
                     </div>
                     <div class="checkout-form__item">
-                        <label>Land</label>
-                        <input class="checkout-form__text-input" type="text" v-model.trim="payer.country">                
+                        <label class="checkout-form__label">Land</label>
+                        <input class="checkout-form__input" type="text" v-model.trim="payer.country">                
                     </div>                
                 </div>             
             </section>
         </form>
         <div class="price-summary">         
             <ul>
-                <li class="price-summary__item price-summary__item--input" :class="{'price-summary__item--invalid': invalidQuantity}">
-                    <div>
+                <li class="price-summary__item price-summary__item--input">
+                    <div :class="{'price-summary__invalid': invalidQuantity}">
                         Bestellmenge <span v-if="invalidQuantity">ungültig</span>
                     </div>
-                    <input id="quantity" type="number" v-model="orderQuantity" min="1" :max="artwork.quantity">
+                    <input class="price-summary__quantity js-quantity" type="number" v-model="orderQuantity" min="1" :max="artwork.quantity">
                 </li>
                 <li class="price-summary__item">
                     <div>Einzelpreis</div>
@@ -72,8 +71,7 @@
             </ul>
         </div>
         <div class="paypal">
-            <div v-if="invalidQuantity" class="paypal__buttons--inactive-overlay"></div>
-            <div ref="paypal" class="paypal__buttons"></div>
+            <div ref="paypal" :class="['paypal__buttons', {'paypal__buttons--hide': invalidQuantity}]"></div>
             <p class="paypal__description">
                 Durch Anklicken von bezahlen mit Paypal, bestätigen Sie die Weitergabe ihrer angegebenen Daten an die Kulturschaffenden. Das Geld fließt direkt und zu 100% an den/die teilnehmende Künstler*in. Für Fragen zu Abrechnung treten Sie bitte nach dem Kauf direkt mit den Verkäufer*innen in Kontakt. Danke!    
             </p>
@@ -151,16 +149,20 @@ export default {
         },
         loadPaypalScript () {
             const script = document.createElement('script')
-            script.src = 'https://www.paypal.com/sdk/js?client-id=Ab1l-FnhLTRhv9JDyFJA1Rn79WTB1-K6MjiLrj5dLYYhmiQE0Lelq7wSN3hkJZ4JhKxS0cx_xL5KlIg9&currency=EUR&disable-funding=credit,card,giropay,sofort'
+            script.src = 'https://www.paypal.com/sdk/js?client-id=Ab1l-FnhLTRhv9JDyFJA1Rn79WTB1-K6MjiLrj5dLYYhmiQE0Lelq7wSN3hkJZ4JhKxS0cx_xL5KlIg9&currency=EUR&disable-funding=credit,giropay,sofort'
             document.head.appendChild(script)
             script.addEventListener("load", this.setLoaded)
         },
         setLoaded: function() {
             window.paypal
                 .Buttons({
+                    style: {
+                        color: 'blue',
+                        height: 55,
+                    },
                     onInit: (data, actions) => {
                         // disable paypal buttons if purchase quantity is invalid (compare https://developer.paypal.com/docs/checkout/integration-features/validation/#synchronous-validation)
-                        document.querySelector('#quantity')
+                        document.querySelector('.js-quantity')
                             .addEventListener('change', function(event) {
                                 if (event.target.value > event.target.max || event.target.value < event.target.min) {
                                     actions.disable();

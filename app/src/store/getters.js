@@ -1,4 +1,7 @@
 const getters = {
+    isLoading: state => {
+        return state.isLoading
+    },
     getArtworkById: state => id => {
         return state.artworks[id]
     },
