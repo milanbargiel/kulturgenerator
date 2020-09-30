@@ -1,6 +1,6 @@
 <template>
     <div class="artwork-list-item" :style="styles">
-        <img class="artwork-list-item__image" :src="titleImage">
+        <img class="artwork-list-item__image" v-lazy="titleImage">
         <router-link class="artwork-list-item__link" :to="{ name: 'artworkDetail', params: { id: item.id, author: item.author, title: item.title }}">
             <span class="artwork-list-item__author">{{ item.author }}: </span>
             <span class="artwork-list-item__title">{{ item.title }}</span>, 
