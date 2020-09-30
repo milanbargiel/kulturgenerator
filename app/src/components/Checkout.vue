@@ -46,7 +46,7 @@
         </form>
         <div class="price-summary">         
             <ul>
-                <li class="price-summary__item price-summary__item--input">
+                <li v-show="artwork.quantity !== 1" class="price-summary__item price-summary__item--input">
                     <div :class="{'price-summary__invalid': invalidQuantity}">
                         Bestellmenge <span v-if="invalidQuantity">ungültig</span>
                     </div>
