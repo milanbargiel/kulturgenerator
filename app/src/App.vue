@@ -15,6 +15,9 @@ import MyHeader from './components/Header'
 export default {
   name: 'App',
   components: { MyHeader },
+  created () {
+    this.$store.dispatch('getShadowMoneypoolBalance')
+  },
   computed: {
     ...mapGetters([
       'isLoading'

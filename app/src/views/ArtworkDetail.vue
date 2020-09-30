@@ -4,8 +4,8 @@
       <!-- vue-carousel from https://github.com/ssense/vue-carousel -->
       <carousel 
         :perPage="1" 
-        :centerMode="true"
-        navigationEnabled="true"
+        :centerMode=true
+        navigationEnabled=true
         navigationPrevLabel="←"
         navigationNextLabel="→">
         <slide v-for="image in artworkImages" :key="image">

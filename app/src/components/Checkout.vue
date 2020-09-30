@@ -115,6 +115,12 @@ export default {
         },
         invalidQuantity () {
             return this.orderQuantity > this.artwork.quantity || this.orderQuantity < 1
+        },
+        generatorShare () {
+            if (!this.artwork.generatorShare) {
+                return 0
+            }
+            return this.artwork.price * parseInt(this.artwork.generatorShare) / 100
         }
     },
     mounted () {
@@ -123,6 +129,7 @@ export default {
     methods: {
         setPaymentInfo (success) {
             if (success) {
+                this.$store.dispatch('updateShadowMoneypool', this.generatorShare)
                 this.$store.commit('SET_PAYMENT_INFO', { show: true, state: 'success'})
             } else {
                 this.$store.commit('SET_PAYMENT_INFO', { show: true, state: 'error'})

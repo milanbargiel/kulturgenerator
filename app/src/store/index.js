@@ -10,6 +10,7 @@ const state = {
   isLoading: true,
   loadingDelay: 700,
   artworks: {},
+  shadowMoneypoolBalance: 0,
   paymentInfo: {
     show: false,
     state: 'hidden'

@@ -18,7 +18,13 @@ export default {
         return {
             repeatBalance: 10,
             animationDuration: 5,
-            balance: '0.00'
+        }
+    },
+    computed: {
+        balance () {
+            // Math.floor to hide decimals
+            // toLocaleString is native js function to add the point for 1000s
+            return Math.floor(this.$store.state.shadowMoneypoolBalance).toLocaleString(undefined, { minimumFractionDigits: 0 })
         }
     }
 }
