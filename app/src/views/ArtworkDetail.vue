@@ -5,7 +5,7 @@
       <carousel 
         :perPage="1" 
         :centerMode=true
-        navigationEnabled=true
+        :navigationEnabled=true
         navigationPrevLabel="←"
         navigationNextLabel="→">
         <slide v-for="image in artworkImages" :key="image">
