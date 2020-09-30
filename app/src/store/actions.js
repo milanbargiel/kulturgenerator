@@ -40,7 +40,6 @@ const actions = {
             })
     },
     updateShadowMoneypool (context, balance) {
-        console.log('balance', balance)
         axios({
             method: 'put',
             url: process.env.VUE_APP_API_BASEURL + '/moneypool',
