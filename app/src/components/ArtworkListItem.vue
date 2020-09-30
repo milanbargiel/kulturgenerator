@@ -1,6 +1,7 @@
 <template>
     <div class="artwork-list-item" :style="styles">
-        <img class="artwork-list-item__image" :v-lazy="imgUrl" :srcset="srcSet">
+        <responsive-image class="artwork-list-item__image" :lazy-src="imgUrl" :lazy-srcset="srcSet" :aspectRatio="aspectRatio"></responsive-image>
+        <!-- <img class="artwork-list-item__image" v-lazy="imgUrl" :data-srcset="srcSet"> -->
         <router-link class="artwork-list-item__link" :to="{ name: 'artworkDetail', params: { id: item.id, author: item.author, title: item.title }}">
             <span class="artwork-list-item__author">{{ item.author }}: </span>
             <span class="artwork-list-item__title">{{ item.title }}</span>, 
@@ -10,8 +11,11 @@
 </template>
 
 <script>
+import ResponsiveImage from '../components/ResponsiveImage'
+
 export default {
     name: 'ArtworkListItem',
+    components: { ResponsiveImage },
     props: ['item'],
     methods: {
         imgVariant (breakpoint) {
@@ -36,10 +40,14 @@ export default {
         },
         srcSet () {
             // Create srcset attribute for responsive images
-            const regularImg = `${process.env.VUE_APP_API_BASEURL + this.imgVariant('large')} 1x,`
+            const regularImg = `${process.env.VUE_APP_API_BASEURL + this.imgVariant('large')} 1x, `
             const retinaImg = `${process.env.VUE_APP_API_BASEURL + this.imgVariant('x2')} 2x`
 
             return regularImg + retinaImg
+        },
+        aspectRatio() {
+            // Calculate the aspect ratio of the image
+            return (this.item.images[0].height / this.item.images[0].width) * 100;
         },
         styles () {
             const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
