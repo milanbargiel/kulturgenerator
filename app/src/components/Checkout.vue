@@ -1,56 +1,13 @@
 <template>
     <div class="checkout">
-        <form class="checkout-form">
-            <section class="checkout-form__section">
-                <h2 class="checkout-form__header">Kontaktinformation</h2>
-                <div class="checkout-form__row">
-                    <div class="checkout-form__item">
-                        <label class="checkout-form__label">Vorname</label>
-                        <input class="checkout-form__input" type="text" v-model.trim="payer.firstname">                
-                    </div>
-                    <div class="checkout-form__item">
-                        <label class="checkout-form__label">Nachname</label>
-                        <input class="checkout-form__input" type="text" v-model.trim="payer.lastname">                
-                    </div>
-                </div>
-                <div class="checkout-form__row">
-                    <div class="checkout-form__item">
-                        <label class="checkout-form__label">E-Mail-Adresse</label>
-                        <input class="checkout-form__input" type="text" v-model.trim="payer.email">                
-                    </div>
-                </div>             
-            </section>
-            <section class="checkout-form__section">
-                <h2 class="checkout-form__header">Versand</h2>
-                <div class="checkout-form__row">
-                    <div class="checkout-form__item">
-                        <label class="checkout-form__label">Straße und Hausnummer</label>
-                        <input class="checkout-form__input" type="text" v-model.trim="payer.address">                
-                    </div>
-                    <div class="checkout-form__item">
-                        <label class="checkout-form__label">Postleitzahl</label>
-                        <input class="checkout-form__input" type="text" v-model.trim="payer.postcode">                
-                    </div>
-                </div>
-                <div class="checkout-form__row">
-                    <div class="checkout-form__item">
-                        <label class="checkout-form__label">Stadt</label>
-                        <input class="checkout-form__input" type="text" v-model.trim="payer.city">                
-                    </div>
-                    <div class="checkout-form__item">
-                        <label class="checkout-form__label">Land</label>
-                        <input class="checkout-form__input" type="text" v-model.trim="payer.country">                
-                    </div>                
-                </div>             
-            </section>
-        </form>
+        <h2 class="checkout__header">Kunstwerk kaufen</h2>
         <div class="price-summary">         
             <ul>
-                <li class="price-summary__item price-summary__item--input">
-                    <div :class="{'price-summary__invalid': invalidQuantity}">
-                        Bestellmenge <span v-if="invalidQuantity">ungültig</span>
+                <li v-show="artwork.quantity !== 1" class="price-summary__item price-summary__item--input">
+                    <div :class="{'price-summary__invalid': !validQuantity}">
+                        Bestellmenge <span v-if="!validQuantity">ungültig</span>
                     </div>
-                    <input class="price-summary__quantity js-quantity" type="number" v-model="orderQuantity" min="1" :max="artwork.quantity">
+                    <input class="price-summary__quantity" type="number" v-model="orderQuantity" min="1" :max="artwork.quantity">
                 </li>
                 <li class="price-summary__item">
                     <div>Einzelpreis</div>
@@ -64,14 +21,14 @@
                     <div>Mwst. ({{ artwork.tax }}%)</div>
                     <div>{{ taxShare }} €</div>
                 </li>
-                <li v-if="!invalidQuantity" class="price-summary__item price-summary__item--total">
+                <li v-if="validQuantity" class="price-summary__item price-summary__item--total">
                     <div>Summe</div>
                     <div>{{ totalCost }} €</div>
                 </li>
             </ul>
         </div>
         <div class="paypal">
-            <div ref="paypal" :class="['paypal__buttons', {'paypal__buttons--hide': invalidQuantity}]"></div>
+            <div v-show="validQuantity" ref="paypal" class="paypal__buttons"></div>
             <p class="paypal__description">
                 Durch Anklicken von bezahlen mit Paypal, bestätigen Sie die Weitergabe ihrer angegebenen Daten an die Kulturschaffenden. Das Geld fließt direkt und zu 100% an den/die teilnehmende Künstler*in. Für Fragen zu Abrechnung treten Sie bitte nach dem Kauf direkt mit den Verkäufer*innen in Kontakt. Danke!    
             </p>
@@ -85,15 +42,6 @@ export default {
     name: 'Checkout',
     data () {
         return {
-            payer : {
-                firstname: '',
-                lastname: '',
-                email: '',
-                address: '',
-                postcode: '',
-                city: '',
-                country: '',                
-            },
             orderQuantity: 1
         }
     },
@@ -113,8 +61,8 @@ export default {
         totalCost () {
             return this.priceWithTaxes + this.artwork.shippingCosts
         },
-        invalidQuantity () {
-            return this.orderQuantity > this.artwork.quantity || this.orderQuantity < 1
+        validQuantity () {
+            return this.orderQuantity < this.artwork.quantity && this.orderQuantity >= 1
         },
         generatorShare () {
             if (!this.artwork.generatorShare) {
@@ -160,45 +108,22 @@ export default {
                         color: 'blue',
                         height: 55,
                     },
-                    onInit: (data, actions) => {
-                        // disable paypal buttons if purchase quantity is invalid (compare https://developer.paypal.com/docs/checkout/integration-features/validation/#synchronous-validation)
-                        document.querySelector('.js-quantity')
-                            .addEventListener('change', function(event) {
-                                if (event.target.value > event.target.max || event.target.value < event.target.min) {
-                                    actions.disable();
-                                } else {
-                                    actions.enable();
-                                }
-                            });                        
-                    },
                     createOrder: (data, actions) => {
-                        return actions.order.create({
-                            payer: {
-                                name: {
-                                    given_name: this.payer.firstname,
-                                    surname: this.payer.lastname
-                                },
-                                address: {
-                                    address_line_1: this.payer.address,
-                                    postal_code: this.payer.postcode,
-                                    admin_area_2: this.payer.city,
-                                    admin_area_1: this.payer.country,
-                                    country_code: 'DE' // TODO: this should of course be dynamic
-                                }
-
-                            },                            
+                        return actions.order.create({                      
                             purchase_units: [{
                                 amount: {
                                     value: this.totalCost
                                 },
                                 payee: {
                                     email_address: this.artwork.paypal
-                                }
+                                },
+                                description: `${this.orderQuantity} x ${this.artwork.author}: ${this.artwork.title} – Einkauf über kulturgenerator.de`
                             }]
                         });
                     },
                     onApprove: async (data, actions) => {
                         const order = await actions.order.capture()
+                        console.log(order)
                         this.setPaymentInfo(order.status === 'COMPLETED')
                         this.updateQuantity(this.orderQuantity)
                     }
