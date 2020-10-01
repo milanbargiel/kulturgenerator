@@ -106,6 +106,7 @@ export default {
             // - buyer city
             // - buyer state
             // - buyer zip code
+            // this.$store.dispatch('sendOrder', { artwork: this.artwork.id, orderQuantity: quantity, currentQuantity: this.artwork.quantity})
             console.log(order)
         },
         loadPaypalScript () {
@@ -125,12 +126,35 @@ export default {
                         return actions.order.create({                      
                             purchase_units: [{
                                 amount: {
-                                    value: this.totalCost
+                                    value: this.totalCost,
+                                    breakdown: {
+                                        item_total: {
+                                            currency_code: 'EUR',
+                                            value: this.purchaseOrderPrice 
+                                        },
+                                        shipping: {
+                                            currency_code: 'EUR',
+                                            value: this.artwork.shippingCosts
+                                        },
+                                        tax_total: {
+                                            currency_code: 'EUR',
+                                            value: this.taxShare
+                                        }
+                                    }
+
                                 },
                                 payee: {
                                     email_address: this.artwork.paypal
                                 },
-                                description: `${this.orderQuantity} x ${this.artwork.author}: ${this.artwork.title} – Einkauf über kulturgenerator.de`
+                                description: `${this.orderQuantity} x ${this.artwork.author}: ${this.artwork.title} – Einkauf über kulturgenerator.de`,
+                                items: [{
+                                    name: `${this.artwork.author}: ${this.artwork.title}`,
+                                    unit_amount: { 
+                                        currency_code: 'EUR',
+                                        value: this.artwork.price
+                                    },
+                                    quantity: this.orderQuantity
+                                }]
                             }]
                         });
                     },
