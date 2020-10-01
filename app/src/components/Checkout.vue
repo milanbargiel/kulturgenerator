@@ -62,7 +62,7 @@ export default {
             return this.priceWithTaxes + this.artwork.shippingCosts
         },
         validQuantity () {
-            return this.orderQuantity < this.artwork.quantity && this.orderQuantity >= 1
+            return this.orderQuantity <= this.artwork.quantity && this.orderQuantity > 0
         },
         generatorShare () {
             if (!this.artwork.generatorShare) {
