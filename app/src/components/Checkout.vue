@@ -95,6 +95,19 @@ export default {
                     console.error(error)
                 })
         },
+        sendOrder (order) {
+            // todo:
+            // Post Object to endpoint that triggers Mailing and sets quantity
+            // - Artwork id
+            // - Ordered quantity
+            // - buyer email
+            // - buyer fullname
+            // - buyer street
+            // - buyer city
+            // - buyer state
+            // - buyer zip code
+            console.log(order)
+        },
         loadPaypalScript () {
             const script = document.createElement('script')
             script.src = 'https://www.paypal.com/sdk/js?client-id=Ab1l-FnhLTRhv9JDyFJA1Rn79WTB1-K6MjiLrj5dLYYhmiQE0Lelq7wSN3hkJZ4JhKxS0cx_xL5KlIg9&currency=EUR&disable-funding=credit,giropay,sofort'
@@ -123,9 +136,9 @@ export default {
                     },
                     onApprove: async (data, actions) => {
                         const order = await actions.order.capture()
-                        console.log(order)
                         this.setPaymentInfo(order.status === 'COMPLETED')
                         this.updateQuantity(this.orderQuantity)
+                        this.sendOrder(order)
                     }
 
                 })
