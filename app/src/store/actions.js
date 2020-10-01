@@ -50,7 +50,29 @@ const actions = {
         .then(response => {
             context.commit('UPDATE_SHADOW_MONEYPOOL', response.data.currentBalance)
         })
-    }
+    },
+    sendOrder (context, { artwork, orderQuantity, buyerEmail, buyerFullname, buyerStreet, buyerCity, buyerState, buyerZipCode }) {
+        axios({
+            method: 'post',
+            url: process.env.VUE_APP_API_BASEURL + '/order',
+            data: {
+                artwork,
+                orderQuantity,
+                buyerEmail,
+                buyerFullname,
+                buyerStreet,
+                buyerCity,
+                buyerState,
+                buyerZipCode
+            }
+        })
+        .then(response => {
+            return response
+        })
+        .catch(error => {
+            return error
+        })
+    },
 }
 
 export default actions
