@@ -9,6 +9,30 @@
   }
 }
 
+.artwork-list-item--sold {
+  .artwork-list-item__price {
+    display: none;
+  }
+
+  .artwork-list-item__author {
+    text-decoration:line-through;
+
+    &:before {
+      content: "";
+      height: 10px;
+      width: 10px;
+      background-color: $red;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: .5rem;
+      margin-bottom: .1rem;
+    }
+  }
+  .artwork-list-item__title {
+    text-decoration:line-through;
+  }
+}
+
 .artwork-list-item__image {
   width: 100%;
   margin-bottom: 10px;
@@ -21,6 +45,12 @@
 .artwork-list-item__price {
   font-family: $font-family-galapagos;
   color: $blue;
+
+  &:before {
+    font-family: $font-family;
+    color: $black;
+    content: ', ';
+  }
 }
 
 // Underlined-link as Hoverstyle
