@@ -75,6 +75,18 @@
   }
 }
 
+.artwork-detail__sold {
+  &:before {
+    content: "";
+    height: 14px;
+    width: 14px;
+    background-color: red;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: .5rem;
+  }
+}
+
 .artwork-detail__quantity {
   color: $blue;
 }

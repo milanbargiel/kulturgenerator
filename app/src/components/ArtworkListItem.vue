@@ -1,9 +1,9 @@
 <template>
-    <div class="artwork-list-item" :style="styles">
+    <div :class="['artwork-list-item', { 'artwork-list-item--sold': isSoldOut }]" :style="styles">
         <img class="artwork-list-item__image" :src="titleImage">
         <router-link class="artwork-list-item__link" :to="{ name: 'artworkDetail', params: { id: item.id, author: item.author, title: item.title }}">
             <span class="artwork-list-item__author">{{ item.author }}: </span>
-            <span class="artwork-list-item__title">{{ item.title }}</span>, 
+            <span class="artwork-list-item__title">{{ item.title }}</span> 
             <span class="artwork-list-item__price">{{ item.price }}€</span>
         </router-link>
     </div>
@@ -16,6 +16,9 @@ export default {
     computed: {
         titleImage () {
             return process.env.VUE_APP_API_BASEURL + this.item.images[0].url
+        },
+        isSoldOut () {
+            return this.item.quantity < 1
         },
         styles () {
             const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
