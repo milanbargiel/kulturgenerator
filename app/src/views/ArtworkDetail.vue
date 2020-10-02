@@ -22,7 +22,7 @@
     <div ref="checkout" class="artwork-detail__checkout">
       <div class="artwork-detail__payment">
         <div class="artwork-detail__price">{{ artwork.price }}€</div>
-        <div v-if="isSoldOut">AUSVERKAUFT</div>
+        <div v-if="isSoldOut" class="artwork-detail__sold">VERKAUFT</div>
         <div v-else class="artwork-detail__quantity">{{ artworkQuantity }}</div>        
         <button v-if="!showCheckout && !isSoldOut" class="artwork-detail__payment-button" @click="openCheckout()">kaufen</button>
       </div>

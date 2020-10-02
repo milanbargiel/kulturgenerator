@@ -1,9 +1,9 @@
 <template>
-    <div class="artwork-list-item" :style="styles">
+    <div :class="['artwork-list-item', { 'artwork-list-item--sold': isSoldOut }]" :style="styles">
         <responsive-image class="artwork-list-item__image" :lazy-src="imgUrl" :lazy-srcset="srcSet" :aspectRatio="aspectRatio"></responsive-image>
         <router-link class="artwork-list-item__link" :to="{ name: 'artworkDetail', params: { id: item.id, author: item.author, title: item.title }}">
             <span class="artwork-list-item__author">{{ item.author }}: </span>
-            <span class="artwork-list-item__title">{{ item.title }}</span>, 
+            <span class="artwork-list-item__title">{{ item.title }}</span> 
             <span class="artwork-list-item__price">{{ item.price }}€</span>
         </router-link>
     </div>
@@ -47,6 +47,9 @@ export default {
         aspectRatio() {
             // Calculate the aspect ratio of the image
             return (this.item.images[0].height / this.item.images[0].width) * 100;
+        },
+        isSoldOut () {
+            return this.item.quantity < 1
         },
         styles () {
             const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)

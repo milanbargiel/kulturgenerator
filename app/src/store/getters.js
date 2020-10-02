@@ -6,10 +6,23 @@ const getters = {
         return state.artworks[id]
     },
     getRandomizedArtworks: state => {
-        return Object.values(state.artworks)
+        const active = []; // artworks that can be bought
+        const archive = []; // already sold artworks
+        
+        // randomize
+        Object.values(state.artworks)
             .map((a) => ({sort: Math.random(), value: a}))
             .sort((a, b) => a.sort - b.sort)
-            .map((a) => a.value)
+            .map((a) => {
+                if (a.value.quantity < 1) { // sold
+                    archive.push(a.value)
+                } else {
+                    active.push(a.value)
+                }
+            });
+
+        // display sold artworks last
+        return active.concat(archive)
     }
 }
 
