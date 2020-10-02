@@ -24,7 +24,9 @@
     "core-js": "^3.6.5",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
+    "lozad": "^1.16.0",
     "normalize-scss": "^7.0.1",
+    "npm-run-all": "^4.1.5",
     "sass": "^1.26.10",
     "sass-loader": "^9.0.3",
     "vue": "^2.6.11",
@@ -32,8 +34,7 @@
     "vue-marquee-text-component": "^1.1.1",
     "vue-router": "^3.2.0",
     "vue-template-compiler": "^2.6.11",
-    "vuex": "^3.4.0",
-    "npm-run-all": "^4.1.5"
+    "vuex": "^3.4.0"
   },
   "eslintConfig": {
     "root": true,
