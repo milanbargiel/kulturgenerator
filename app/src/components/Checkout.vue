@@ -7,7 +7,7 @@
                     <div :class="{'price-summary__invalid': !validQuantity}">
                         Bestellmenge <span v-if="!validQuantity">ungültig</span>
                     </div>
-                    <input class="price-summary__quantity" type="number" v-model="orderQuantity" min="1" :max="artwork.quantity">
+                    <input class="price-summary__quantity js-quantity" type="number" v-model="orderQuantity" min="1" :max="artwork.quantity">
                 </li>
                 <li class="price-summary__item">
                     <div>Einzelpreis</div>
@@ -107,6 +107,18 @@ export default {
                     style: {
                         color: 'blue',
                         height: 55,
+                    },
+                    onInit: (data, actions) => {
+                        // disable paypal buttons if purchase quantity is invalid (compare https://developer.paypal.com/docs/checkout/integration-features/validation/#synchronous-validation)
+                        document.querySelector('.js-quantity')
+                            .addEventListener('change', function(event) {
+                                console.log('change')
+                                if (event.target.value > event.target.max || event.target.value < event.target.min) {
+                                    actions.disable();
+                                } else {
+                                    actions.enable();
+                                }
+                            });                        
                     },
                     createOrder: (data, actions) => {
                         return actions.order.create({                      
