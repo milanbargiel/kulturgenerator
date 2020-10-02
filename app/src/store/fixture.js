@@ -6,7 +6,7 @@ export default
   "intent": "CAPTURE",
   "status": "COMPLETED",
   "payer": {
-    "email_address": "luciano.karuso+paypal5@googlemail.com",
+    "email_address": "milan.bargiel+buyer@googlemail.com",
     "payer_id": "GEYWHK4GX9XEE",
     "address": {
       "country_code": "DE"
