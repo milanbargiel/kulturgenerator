@@ -3,7 +3,7 @@
         <h2 class="checkout__header">Kunstwerk kaufen</h2>
         <div class="price-summary">         
             <ul>
-                <li v-show="artwork.quantity !== 1" class="price-summary__item price-summary__item--input">
+                <li v-show="artwork.quantity > 1" class="price-summary__item price-summary__item--input">
                     <div :class="{'price-summary__invalid': !validQuantity}">
                         Bestellmenge <span v-if="!validQuantity">ungültig</span>
                     </div>
