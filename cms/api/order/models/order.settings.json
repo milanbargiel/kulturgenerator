@@ -15,6 +15,9 @@
     "orderQuantity": {
       "type": "integer"
     },
+    "orderTotalAmount": {
+      "type": "decimal"
+    },
     "buyerEmail": {
       "type": "email"
     },

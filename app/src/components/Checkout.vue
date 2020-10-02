@@ -27,6 +27,7 @@
                 </li>
             </ul>
         </div>
+        <button @click="sendOrder">Send Order</button>
         <div class="paypal">
             <div v-show="validQuantity" ref="paypal" class="paypal__buttons"></div>
             <p class="paypal__description">
@@ -37,6 +38,8 @@
 </template>
 
 <script>
+import order from '../store/fixture'
+
 export default {
     props: ['artwork'],
     name: 'Checkout',
@@ -95,19 +98,22 @@ export default {
                     console.error(error)
                 })
         },
-        sendOrder (order) {
-            // todo:
-            // Post Object to endpoint that triggers Mailing and sets quantity
-            // - Artwork id
-            // - Ordered quantity
-            // - buyer email
-            // - buyer fullname
-            // - buyer street
-            // - buyer city
-            // - buyer state
-            // - buyer zip code
-            // this.$store.dispatch('sendOrder', { artwork: this.artwork.id, orderQuantity: quantity, currentQuantity: this.artwork.quantity})
-            console.log(order)
+        sendOrder () {
+            // Post Object to endpoint that triggers Mailing
+            // Todo: Remove updateArtworkQuantity as seperate function
+            const payload = { 
+                artwork: this.artwork.id,
+                orderQuantity: order.purchase_units[0].items[0].quantity,
+                orderTotalAmount: order.purchase_units[0].amount.value,
+                buyerEmail: order.payer.email_address,
+                buyerFullname: order.purchase_units[0].shipping.name.full_name,
+                buyerStreet: order.purchase_units[0].shipping.address.address_line_1,
+                buyerCity: order.purchase_units[0].shipping.address.admin_area_2,
+                buyerState: order.purchase_units[0].shipping.address.admin_area_1,
+                buyerZipCode: order.purchase_units[0].shipping.address.postal_code
+            }
+            
+            this.$store.dispatch('sendOrder', payload)
         },
         loadPaypalScript () {
             const script = document.createElement('script')
@@ -162,7 +168,7 @@ export default {
                         const order = await actions.order.capture()
                         this.setPaymentInfo(order.status === 'COMPLETED')
                         this.updateQuantity(this.orderQuantity)
-                        this.sendOrder(order)
+                        this.sendOrder()
                     }
 
                 })

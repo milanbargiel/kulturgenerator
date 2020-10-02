@@ -51,13 +51,14 @@ const actions = {
             context.commit('UPDATE_SHADOW_MONEYPOOL', response.data.currentBalance)
         })
     },
-    sendOrder (context, { artwork, orderQuantity, buyerEmail, buyerFullname, buyerStreet, buyerCity, buyerState, buyerZipCode }) {
+    sendOrder (context, { artwork, orderQuantity, orderTotalAmount, buyerEmail, buyerFullname, buyerStreet, buyerCity, buyerState, buyerZipCode }) {
         axios({
             method: 'post',
-            url: process.env.VUE_APP_API_BASEURL + '/order',
+            url: process.env.VUE_APP_API_BASEURL + '/orders',
             data: {
                 artwork,
                 orderQuantity,
+                orderTotalAmount,
                 buyerEmail,
                 buyerFullname,
                 buyerStreet,
