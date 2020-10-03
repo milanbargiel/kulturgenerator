@@ -15,6 +15,13 @@ const actions = {
                 return response
             })        
     },
+    getArtworkBySlug (context, slug) {
+        return axios.get(process.env.VUE_APP_API_BASEURL + '/artworks/' + slug)
+            .then(response => {
+                context.commit('SET_ARTWORK', response.data)
+                return response
+            })
+    },
     updateArtworkQuantity (context, { id, quantity, currentQuantity }) {
        if (currentQuantity < 1) {
            return
