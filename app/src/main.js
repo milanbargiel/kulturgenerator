@@ -3,6 +3,10 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
+// full screen image slider
+import VueImg from 'v-img'
+Vue.use(VueImg)
+
 Vue.config.productionTip = false
 
 new Vue({
