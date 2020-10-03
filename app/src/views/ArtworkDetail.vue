@@ -58,7 +58,7 @@ export default {
   },
   computed: {
     artwork () {
-      return this.$store.getters.getArtworkById(this.$route.params.id)
+      return this.$store.getters.getArtworkBySlug(this.$route.params.slug)
     },
     artworkImages () {
       return this.artwork.images.map(image => process.env.VUE_APP_API_BASEURL + image.url) || []
