@@ -65,6 +65,10 @@
     "quantity": {
       "type": "integer",
       "min": 0
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
     }
   }
 }
