@@ -9,13 +9,6 @@
     "timestamps": true
   },
   "attributes": {
-    "status": {
-      "type": "enumeration",
-      "enum": [
-        "draft",
-        "published"
-      ]
-    },
     "type": {
       "type": "enumeration",
       "enum": [
@@ -121,6 +114,10 @@
     "payout": {
       "type": "boolean",
       "private": true
+    },
+    "published": {
+      "type": "boolean",
+      "default": false
     }
   }
 }
