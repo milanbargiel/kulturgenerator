@@ -9,6 +9,13 @@
     "timestamps": true
   },
   "attributes": {
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "draft",
+        "published"
+      ]
+    },
     "type": {
       "type": "enumeration",
       "enum": [
