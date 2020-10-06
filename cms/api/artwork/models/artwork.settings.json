@@ -72,6 +72,55 @@
     "quantity": {
       "type": "integer",
       "min": 0
+    },
+    "review": {
+      "type": "enumeration",
+      "private": true,
+      "enum": [
+        "approved",
+        "rejected",
+        "pending"
+      ]
+    },
+    "reviewComment": {
+      "type": "text",
+      "private": true
+    },
+    "street": {
+      "type": "string",
+      "private": true
+    },
+    "postalCode": {
+      "type": "integer",
+      "private": true
+    },
+    "place": {
+      "type": "string",
+      "private": true
+    },
+    "artisticWork": {
+      "type": "text",
+      "private": true
+    },
+    "institution": {
+      "type": "string",
+      "private": true
+    },
+    "gdpr": {
+      "type": "boolean",
+      "private": true
+    },
+    "imgLicense": {
+      "type": "boolean",
+      "private": true
+    },
+    "vgBild": {
+      "type": "boolean",
+      "private": true
+    },
+    "payout": {
+      "type": "boolean",
+      "private": true
     }
   }
 }
