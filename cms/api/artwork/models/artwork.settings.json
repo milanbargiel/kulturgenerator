@@ -38,8 +38,8 @@
     "generatorShare": {
       "type": "enumeration",
       "enum": [
-        "50",
-        "100"
+        "_50",
+        "_100"
       ]
     },
     "price": {
@@ -48,9 +48,9 @@
     "tax": {
       "type": "enumeration",
       "enum": [
-        "0",
-        "5",
-        "16"
+        "_0",
+        "_5",
+        "_16"
       ]
     },
     "shippingCosts": {
