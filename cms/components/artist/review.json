@@ -8,6 +8,7 @@
   "attributes": {
     "status": {
       "type": "enumeration",
+      "private": true,
       "enum": [
         "approved",
         "rejected",
@@ -15,10 +16,12 @@
       ]
     },
     "comment": {
-      "type": "text"
+      "type": "text",
+      "private": true
     },
     "reviewer": {
-      "type": "string"
+      "type": "string",
+      "private": true
     }
   }
 }
