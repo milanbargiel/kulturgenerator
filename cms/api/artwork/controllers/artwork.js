@@ -20,4 +20,20 @@ module.exports = {
 
     return sanitizeEntity(entity, { model: strapi.models.artwork });
   },
+  async find(ctx) {
+    let entities;
+
+    ctx.query = {
+      ...ctx.query,
+      status: 'published',
+    };
+
+    if (ctx.query._q) {
+      entities = await strapi.services.artwork.search(ctx.query);
+    } else {
+      entities = await strapi.services.artwork.find(ctx.query);
+    }
+
+    return entities.map(entity => sanitizeEntity(entity, { model: strapi.models.artwork }));
+  },
 };
