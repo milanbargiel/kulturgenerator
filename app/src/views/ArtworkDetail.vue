@@ -27,7 +27,7 @@
         <button v-if="!showCheckout && !isSoldOut" class="artwork-detail__payment-button" @click="openCheckout()">kaufen</button>
       </div>
       <div class="artwork-detail__generator-share">
-        <div class="artwork-detail__share-percentage">{{ artwork.generatorShare }}%</div>
+        <div class="artwork-detail__share-percentage">{{ artwork.generatorShare.substring(1) }}%</div>
         des Preises werden auf ein solidarisches Konto eingezahlt, dessen Erlös am Ende unter allen Teilnehmenden verteilt wird. Der aktuelle Kontostand ist in der Laufleiste ↑
       </div>
     </div>
