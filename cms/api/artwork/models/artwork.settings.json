@@ -42,6 +42,13 @@
         "_100"
       ]
     },
+    "payout": {
+      "type": "enumeration",
+      "enum": [
+        "true",
+        "false"
+      ]
+    },
     "price": {
       "type": "decimal"
     },
@@ -66,19 +73,6 @@
       "type": "integer",
       "min": 0
     },
-    "review": {
-      "type": "enumeration",
-      "private": true,
-      "enum": [
-        "approved",
-        "rejected",
-        "pending"
-      ]
-    },
-    "reviewComment": {
-      "type": "text",
-      "private": true
-    },
     "street": {
       "type": "string",
       "private": true
@@ -99,25 +93,19 @@
       "type": "string",
       "private": true
     },
-    "gdpr": {
-      "type": "boolean",
-      "private": true
-    },
-    "imgLicense": {
-      "type": "boolean",
-      "private": true
-    },
-    "vgBild": {
-      "type": "boolean",
-      "private": true
-    },
-    "payout": {
-      "type": "boolean",
-      "private": true
-    },
     "published": {
       "type": "boolean",
       "default": false
+    },
+    "review": {
+      "type": "component",
+      "repeatable": false,
+      "component": "artist.review"
+    },
+    "dataRights": {
+      "type": "component",
+      "repeatable": false,
+      "component": "artist.data-rights"
     }
   }
 }

@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_artist_reviews",
+  "info": {
+    "name": "review",
+    "icon": "check-circle"
+  },
+  "options": {},
+  "attributes": {
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "approved",
+        "rejected",
+        "pending"
+      ]
+    },
+    "comment": {
+      "type": "text"
+    },
+    "reviewer": {
+      "type": "string"
+    }
+  }
+}
