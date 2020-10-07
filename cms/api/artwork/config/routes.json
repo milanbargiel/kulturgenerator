@@ -10,7 +10,7 @@
     },
     {
       "method": "GET",
-      "path": "/artworks/:id",
+      "path": "/artworks/:slug",
       "handler": "artwork.findOne",
       "config": {
         "policies": []
