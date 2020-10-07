@@ -94,6 +94,10 @@
       "type": "text",
       "private": true
     },
+    "website": {
+      "type": "string",
+      "private": true
+    },
     "institution": {
       "type": "string",
       "private": true
