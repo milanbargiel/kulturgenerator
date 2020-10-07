@@ -9,6 +9,10 @@
     "timestamps": true
   },
   "attributes": {
+    "timestamp": {
+      "type": "datetime",
+      "private": true
+    },
     "type": {
       "type": "enumeration",
       "enum": [
