@@ -18,7 +18,7 @@
                     <div>{{ artwork.shippingCosts }} €</div>
                 </li>
                 <li class="price-summary__item">
-                    <div>Mwst. ({{ artwork.tax.substring(1) }}%)</div>
+                    <div>Mwst. ({{ tax }}%)</div>
                     <div>{{ taxShare }} €</div>
                 </li>
                 <li v-if="validQuantity" class="price-summary__item price-summary__item--total">
@@ -52,8 +52,11 @@ export default {
         purchaseOrderPrice  () {
             return this.singleUnitPrice * this.orderQuantity
         },
+        tax () {
+            return this.artwork.tax.substring(1); // remove dummy underscore from tax enumeration String
+        },
         taxShare () {
-            return this.purchaseOrderPrice * this.artwork.tax.substring(1)/100 // remove underscore from api response
+            return this.purchaseOrderPrice * this.tax/100
         },
         priceWithTaxes () {
             return this.purchaseOrderPrice + this.taxShare
@@ -68,7 +71,7 @@ export default {
             if (!this.artwork.generatorShare) {
                 return 0
             }
-            return this.artwork.price * parseInt(this.artwork.generatorShare) / 100
+            return this.artwork.price * parseInt(this.artwork.generatorShare.substring(1)) / 100
         }
     },
     mounted () {
