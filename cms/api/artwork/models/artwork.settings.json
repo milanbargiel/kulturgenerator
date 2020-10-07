@@ -45,8 +45,8 @@
     "payout": {
       "type": "enumeration",
       "enum": [
-        "true",
-        "false"
+        "Ja",
+        "Nein"
       ]
     },
     "price": {
@@ -63,15 +63,16 @@
     "shippingCosts": {
       "type": "decimal"
     },
-    "email": {
-      "type": "email"
-    },
     "paypal": {
       "type": "email"
     },
     "quantity": {
       "type": "integer",
       "min": 0
+    },
+    "email": {
+      "type": "email",
+      "private": true
     },
     "street": {
       "type": "string",
@@ -93,6 +94,21 @@
       "type": "string",
       "private": true
     },
+    "gdpr": {
+      "type": "boolean",
+      "default": false,
+      "private": true
+    },
+    "imgLicense": {
+      "type": "boolean",
+      "default": false,
+      "private": true
+    },
+    "vgBild": {
+      "type": "boolean",
+      "default": false,
+      "private": true
+    },
     "published": {
       "type": "boolean",
       "default": false
@@ -101,11 +117,6 @@
       "type": "component",
       "repeatable": false,
       "component": "artist.review"
-    },
-    "dataRights": {
-      "type": "component",
-      "repeatable": false,
-      "component": "artist.data-rights"
     }
   }
 }
