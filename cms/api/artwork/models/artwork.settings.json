@@ -9,13 +9,6 @@
     "timestamps": true
   },
   "attributes": {
-    "status": {
-      "type": "enumeration",
-      "enum": [
-        "draft",
-        "published"
-      ]
-    },
     "type": {
       "type": "enumeration",
       "enum": [
@@ -45,8 +38,15 @@
     "generatorShare": {
       "type": "enumeration",
       "enum": [
-        "50",
-        "100"
+        "_50",
+        "_100"
+      ]
+    },
+    "payout": {
+      "type": "enumeration",
+      "enum": [
+        "Ja",
+        "Nein"
       ]
     },
     "price": {
@@ -55,16 +55,13 @@
     "tax": {
       "type": "enumeration",
       "enum": [
-        "0",
-        "5",
-        "16"
+        "_0",
+        "_5",
+        "_16"
       ]
     },
     "shippingCosts": {
       "type": "decimal"
-    },
-    "email": {
-      "type": "email"
     },
     "paypal": {
       "type": "email"
@@ -72,6 +69,54 @@
     "quantity": {
       "type": "integer",
       "min": 0
+    },
+    "email": {
+      "type": "email",
+      "private": true
+    },
+    "street": {
+      "type": "string",
+      "private": true
+    },
+    "postalCode": {
+      "type": "integer",
+      "private": true
+    },
+    "place": {
+      "type": "string",
+      "private": true
+    },
+    "artisticWork": {
+      "type": "text",
+      "private": true
+    },
+    "institution": {
+      "type": "string",
+      "private": true
+    },
+    "gdpr": {
+      "type": "boolean",
+      "default": false,
+      "private": true
+    },
+    "imgLicense": {
+      "type": "boolean",
+      "default": false,
+      "private": true
+    },
+    "vgBild": {
+      "type": "boolean",
+      "default": false,
+      "private": true
+    },
+    "published": {
+      "type": "boolean",
+      "default": false
+    },
+    "review": {
+      "type": "component",
+      "repeatable": false,
+      "component": "artist.review"
     }
   }
 }

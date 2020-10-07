@@ -25,7 +25,7 @@ module.exports = {
 
     ctx.query = {
       ...ctx.query,
-      status: 'published',
+      published: true,
     };
 
     if (ctx.query._q) {
