@@ -5,6 +5,12 @@ const getters = {
     getArtworkById: state => id => {
         return state.artworks[id]
     },
+    getArtworkBySlug: state => slug => {
+        const artworkId = Object.keys(state.artworks).find(key => {
+        return state.artworks[key].slug === slug
+        })
+        return state.artworks[artworkId]
+    },
     getRandomizedArtworks: state => {
         return Object.values(state.artworks)
             .map(item => ({ sort: Math.random(), value: item })) // introduce random sort parameter

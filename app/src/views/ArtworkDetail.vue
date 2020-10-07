@@ -50,7 +50,7 @@ export default {
   mounted () {
     if (!this.artwork) {
       this.$store.commit('SET_LOADING_STATE', true)
-      this.$store.dispatch('getArtworkById', this.$route.params.id)
+      this.$store.dispatch('getArtworkBySlug', this.$route.params.slug)
         .then(() => {
           this.$store.commit('SET_LOADING_STATE', false)
         })
@@ -58,7 +58,7 @@ export default {
   },
   computed: {
     artwork () {
-      return this.$store.getters.getArtworkById(this.$route.params.id)
+      return this.$store.getters.getArtworkBySlug(this.$route.params.slug)
     },
     artworkImages () {
       return this.artwork.images.map(image => process.env.VUE_APP_API_BASEURL + image.url) || []
