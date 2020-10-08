@@ -27,7 +27,7 @@
                 </li>
             </ul>
         </div>
-        <button @click="sendOrder">Send Order</button>
+        <button @click="sendOrder()" style="margin-bottom: 20px;">Send Dummy Order and trigger Mailing</button>
         <div class="paypal">
             <div v-show="validQuantity" ref="paypal" class="paypal__buttons"></div>
             <p class="paypal__description">
@@ -38,6 +38,8 @@
 </template>
 
 <script>
+import fixture from '../store/fixture';
+
 export default {
     props: ['artwork'],
     name: 'Checkout',
@@ -99,9 +101,7 @@ export default {
                     console.error(error)
                 })
         },
-        sendOrder (order) {
-            // Post Object to endpoint that triggers Mailing
-            // Todo: Remove updateArtworkQuantity as seperate function
+        sendOrder (order = fixture) { // Use default parameter of fixture for testing
             const payload = { 
                 artwork: this.artwork.id,
                 orderQuantity: order.purchase_units[0].items[0].quantity,
@@ -114,6 +114,7 @@ export default {
                 buyerZipCode: order.purchase_units[0].shipping.address.postal_code
             }
             
+            // Post order to endpoint that triggers transactional mails
             this.$store.dispatch('sendOrder', payload)
         },
         loadPaypalScript () {
