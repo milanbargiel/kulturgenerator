@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import fixture from '../store/fixture';
+import fixture from '../store/fixture'; // dummy payload from paypal
 
 export default {
     props: ['artwork'],
