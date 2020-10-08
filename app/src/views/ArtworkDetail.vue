@@ -27,7 +27,7 @@
         <button v-if="!showCheckout && !isSoldOut" class="artwork-detail__payment-button" @click="openCheckout()">kaufen</button>
       </div>
       <div class="artwork-detail__generator-share">
-        <div class="artwork-detail__share-percentage">{{ artwork.generatorShare }}%</div>
+        <div class="artwork-detail__share-percentage">{{ artworkGeneratorShare }}%</div>
         des Preises werden auf ein solidarisches Konto eingezahlt, dessen Erlös am Ende unter allen Teilnehmenden verteilt wird. Der aktuelle Kontostand ist in der Laufleiste ↑
       </div>
     </div>
@@ -50,7 +50,7 @@ export default {
   mounted () {
     if (!this.artwork) {
       this.$store.commit('SET_LOADING_STATE', true)
-      this.$store.dispatch('getArtworkById', this.$route.params.id)
+      this.$store.dispatch('getArtworkBySlug', this.$route.params.slug)
         .then(() => {
           this.$store.commit('SET_LOADING_STATE', false)
         })
@@ -58,7 +58,7 @@ export default {
   },
   computed: {
     artwork () {
-      return this.$store.getters.getArtworkById(this.$route.params.id)
+      return this.$store.getters.getArtworkBySlug(this.$route.params.slug)
     },
     artworkImages () {
       return this.artwork.images.map(image => process.env.VUE_APP_API_BASEURL + image.url) || []
@@ -74,6 +74,9 @@ export default {
         return
       }
       return 'noch ' + this.artwork.quantity + ' verfügbar'
+    },
+    artworkGeneratorShare () {
+      return this.artwork.generatorShare.substring(1); // remove dummy underscore from generatorShare String
     },
     showCheckout () {
       return this.checkoutIsOpen && !this.showPaymentInfo

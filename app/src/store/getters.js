@@ -5,24 +5,18 @@ const getters = {
     getArtworkById: state => id => {
         return state.artworks[id]
     },
+    getArtworkBySlug: state => slug => {
+        const artworkId = Object.keys(state.artworks).find(key => {
+        return state.artworks[key].slug === slug
+        })
+        return state.artworks[artworkId]
+    },
     getRandomizedArtworks: state => {
-        const active = []; // artworks that can be bought
-        const archive = []; // already sold artworks
-        
-        // randomize
-        Object.values(state.artworks)
-            .map((a) => ({sort: Math.random(), value: a}))
-            .sort((a, b) => a.sort - b.sort)
-            .map((a) => {
-                if (a.value.quantity < 1) { // sold
-                    archive.push(a.value)
-                } else {
-                    active.push(a.value)
-                }
-            });
-
-        // display sold artworks last
-        return active.concat(archive)
+        return Object.values(state.artworks)
+            .map(item => ({ sort: Math.random(), value: item })) // introduce random sort parameter
+            .sort((a, b) => a.sort - b.sort) // sort by random sort parameter
+            .map(item => item.value) // exclude random sort parameter
+            .sort(a => a.quantity > 0 ? -1 : 1) // move sold out items to the back
     }
 }
 
