@@ -38,8 +38,6 @@
 </template>
 
 <script>
-import order from '../store/fixture'
-
 export default {
     props: ['artwork'],
     name: 'Checkout',
@@ -101,7 +99,7 @@ export default {
                     console.error(error)
                 })
         },
-        sendOrder () {
+        sendOrder (order) {
             // Post Object to endpoint that triggers Mailing
             // Todo: Remove updateArtworkQuantity as seperate function
             const payload = { 
@@ -135,7 +133,6 @@ export default {
                         // disable paypal buttons if purchase quantity is invalid (compare https://developer.paypal.com/docs/checkout/integration-features/validation/#synchronous-validation)
                         document.querySelector('.js-quantity')
                             .addEventListener('change', function(event) {
-                                console.log('change')
                                 if (event.target.value > event.target.max || event.target.value < event.target.min) {
                                     actions.disable();
                                 } else {
@@ -183,7 +180,7 @@ export default {
                         const order = await actions.order.capture()
                         this.setPaymentInfo(order.status === 'COMPLETED')
                         this.updateQuantity(this.orderQuantity)
-                        this.sendOrder()
+                        this.sendOrder(order)
                     }
 
                 })

@@ -1,3 +1,5 @@
+// Example response from Paypal
+
 export default
 {
   "create_time": "2020-10-01T15:25:56Z",
