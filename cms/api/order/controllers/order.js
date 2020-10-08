@@ -1,4 +1,4 @@
-const { parseMultipartData, sanitizeEntity } = require('strapi-utils');
+const { sanitizeEntity } = require('strapi-utils');
 const Email = require('email-templates');
 
 const renderMail = (entry, templateFolder) => {
@@ -14,15 +14,7 @@ module.exports = {
    */
 
   async create(ctx) {
-    let entity;
-
-    if (ctx.is('multipart')) {
-      const { data, files } = parseMultipartData(ctx);
-      entity = await strapi.services.order.create(data, { files });
-    } else {
-      entity = await strapi.services.order.create(ctx.request.body);
-    }
-    
+    const entity = await strapi.services.order.create(ctx.request.body);
     const entry = sanitizeEntity(entity, { model: strapi.models.order });
 
     if (entry) {
