@@ -102,20 +102,8 @@ export default {
                 })
         },
         sendOrder (order = fixture) { // Use default parameter of fixture for testing
-            const payload = { 
-                artwork: this.artwork.id,
-                orderQuantity: order.purchase_units[0].items[0].quantity,
-                orderTotalAmount: order.purchase_units[0].amount.value,
-                buyerEmail: order.payer.email_address,
-                buyerFullname: order.purchase_units[0].shipping.name.full_name,
-                buyerStreet: order.purchase_units[0].shipping.address.address_line_1,
-                buyerCity: order.purchase_units[0].shipping.address.admin_area_2,
-                buyerState: order.purchase_units[0].shipping.address.admin_area_1,
-                buyerZipCode: order.purchase_units[0].shipping.address.postal_code
-            }
-            
             // Post order to endpoint that triggers transactional mails
-            this.$store.dispatch('sendOrder', payload)
+            this.$store.dispatch('sendOrder', { artworkId: this.artwork.id, order })
         },
         loadPaypalScript () {
             const script = document.createElement('script')
