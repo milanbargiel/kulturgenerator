@@ -9,10 +9,7 @@
         navigationPrevLabel="←"
         navigationNextLabel="→">
         <slide v-for="image in artworkImages" :key="image">
-          <img  
-            :src="image" 
-            class="carousel__image"
-            v-img="{ group: 'artworkImages' }">
+          <img v-img="{ group: 'artworkImages' }" :src="image" class="carousel__image">
         </slide>
       </carousel>
     </div>
@@ -65,9 +62,6 @@ export default {
     },
     artworkImages () {
       return this.artwork.images.map(image => process.env.VUE_APP_API_BASEURL + image.url) || []
-    },
-    imageTitle () {
-      return this.artwork.author.toUpperCase() + ' ' + this.artwork.title
     },
     isSoldOut () {
       return this.artwork.quantity < 1
