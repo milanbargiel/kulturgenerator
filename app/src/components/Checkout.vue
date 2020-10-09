@@ -180,8 +180,10 @@ export default {
                     onApprove: async (data, actions) => {
                         const order = await actions.order.capture()
                         this.setPaymentInfo(order.status === 'COMPLETED')
-                        this.updateQuantity(this.orderQuantity)
-                        this.sendOrder(order)
+                        if (order.status === 'COMPLETED') {
+                            this.updateQuantity(this.orderQuantity)
+                            this.sendOrder(order)
+                        }
                     }
 
                 })
