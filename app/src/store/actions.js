@@ -8,12 +8,12 @@ const actions = {
                 return response
         })
     },
-    getArtworkById (context, id) {
-        return axios.get(process.env.VUE_APP_API_BASEURL + '/artworks/' + id)
+    getArtworkBySlug (context, slug) {
+        return axios.get(process.env.VUE_APP_API_BASEURL + '/artworks/' + slug)
             .then(response => {
                 context.commit('SET_ARTWORK', response.data)
                 return response
-            })        
+            })
     },
     updateArtworkQuantity (context, { id, quantity, currentQuantity }) {
        if (currentQuantity < 1) {
@@ -50,7 +50,30 @@ const actions = {
         .then(response => {
             context.commit('UPDATE_SHADOW_MONEYPOOL', response.data.currentBalance)
         })
-    }
+    },
+    sendOrder (context, { artworkId, order }) {
+        axios({
+            method: 'post',
+            url: process.env.VUE_APP_API_BASEURL + '/orders',
+            data: {
+                artwork: artworkId,
+                orderQuantity: order.purchase_units[0].items[0].quantity,
+                orderTotalAmount: order.purchase_units[0].amount.value,
+                buyerEmail: order.payer.email_address,
+                buyerFullname: order.purchase_units[0].shipping.name.full_name,
+                buyerStreet: order.purchase_units[0].shipping.address.address_line_1,
+                buyerCity: order.purchase_units[0].shipping.address.admin_area_2,
+                buyerState: order.purchase_units[0].shipping.address.admin_area_1,
+                buyerZipCode: order.purchase_units[0].shipping.address.postal_code
+            }
+        })
+        .then(response => {
+            return response
+        })
+        .catch(error => {
+            return error
+        })
+    },
 }
 
 export default actions

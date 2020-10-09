@@ -1,7 +1,7 @@
 <template>
     <div :class="['artwork-list-item', { 'artwork-list-item--sold': isSoldOut }]" :style="styles">
         <responsive-image class="artwork-list-item__image" :lazy-src="imgUrl" :lazy-srcset="srcSet" :aspectRatio="aspectRatio"></responsive-image>
-        <router-link class="artwork-list-item__link" :to="{ name: 'artworkDetail', params: { id: item.id, author: item.author, title: item.title }}">
+        <router-link class="artwork-list-item__link" :to="{ name: 'artworkDetail', params: { author: this.authorSlug, slug: item.slug }}">
             <span class="artwork-list-item__author">{{ item.author }}: </span>
             <span class="artwork-list-item__title">{{ item.title }}</span> 
             <span class="artwork-list-item__price">{{ item.price }}€</span>
@@ -11,6 +11,7 @@
 
 <script>
 import ResponsiveImage from '../components/ResponsiveImage'
+import slugify from '@sindresorhus/slugify'
 
 export default {
     name: 'ArtworkListItem',
@@ -50,6 +51,9 @@ export default {
         },
         isSoldOut () {
             return this.item.quantity < 1
+        },
+        authorSlug () {
+            return slugify(this.item.author)
         },
         styles () {
             const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)

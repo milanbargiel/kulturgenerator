@@ -13,7 +13,7 @@ Vue.use(VueRouter)
     component: ArtworkList
   },
   {
-    path: '/:author/:id/:title',
+    path: '/:author/:slug',
     name: 'artworkDetail',
     component: ArtworkDetail,
     meta: {
