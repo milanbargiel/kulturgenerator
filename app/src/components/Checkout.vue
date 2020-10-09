@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import fixture from '../store/fixture'; // dummy payload from paypal
+import dummyOrder from '../fixtures/dummy-paypal-response'; // dummy payload from paypal
 
 export default {
     props: ['artwork'],
@@ -101,7 +101,7 @@ export default {
                     console.error(error)
                 })
         },
-        sendOrder (order = fixture) { // Use default parameter of fixture for testing
+        sendOrder (order = dummyOrder) { // Use default parameter of fixture for testing
             // Post order to endpoint that triggers transactional mails
             this.$store.dispatch('sendOrder', { artworkId: this.artwork.id, order })
         },
