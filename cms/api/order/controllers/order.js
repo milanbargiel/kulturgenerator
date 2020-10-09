@@ -3,7 +3,7 @@ const Email = require('email-templates');
 
 const renderMail = (entry, templateFolder) => {
   const email = new Email();
-  return email.renderAll(`../mails/${templateFolder}`, { entry });
+  return email.renderAll(`../mail-templates/${templateFolder}`, { entry });
 };
 
 module.exports = {
