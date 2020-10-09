@@ -12,7 +12,7 @@
           <img  
             :src="image" 
             class="carousel__image"
-            v-img="{ group: 'artworkImages', title: imageTitle }">
+            v-img="{ group: 'artworkImages' }">
         </slide>
       </carousel>
     </div>
