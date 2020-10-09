@@ -21,14 +21,13 @@ $new-dot-color-active: $blue;
 
 .VueCarousel-dot {
   margin-top: 0 !important;
-  padding: 8px !important;
   width: $override-dot-size !important;
   height: $override-dot-size !important;
   background-color: $override-dot-color !important;
 
   &:after {
     content: "";
-    display: inline-block;
+    display: block;
     border-radius: 50%;
     width: $override-dot-size;
     height: $override-dot-size;
@@ -48,56 +47,4 @@ $new-dot-color-active: $blue;
     background-color: $new-dot-color-active;
     border-color: blue;
   }
-}
-
-.VueCarousel {
-  .VueCarousel-navigation {
-    position: relative;
-    visibility: hidden;
-  }
-  &:hover {
-    
-    .VueCarousel-navigation {
-      @media screen and (min-width: $bp-tablet) {
-        visibility: visible;
-      }
-    }
-  }
-}
-
-
-.VueCarousel-navigation-prev {
-  font-family: $font-family-galapagos !important;
-  font-size: 33px;
-  font-weight: bold;
-  color: #000 !important;
-  transform: none !important;
-
-  -webkit-user-select: none; /* Safari */        
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* IE10+/Edge */
-  user-select: none; /* Standard */  
-
-  &:focus {
-    outline: none !important;
-  }
-}
-.VueCarousel-navigation-next {
-  font-family: $font-family-galapagos !important;
-  font-size: 33px;
-  font-weight: bold;
-  color: #000 !important; 
-  transform: none !important;
-
-  -webkit-user-select: none; /* Safari */        
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* IE10+/Edge */
-  user-select: none; /* Standard */  
-
-  &:focus {
-    outline: none !important;
-  }
-}
-.VueCarousel-navigation--disabled {
-  visibility: hidden;
 }
