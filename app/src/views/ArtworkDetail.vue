@@ -9,7 +9,7 @@
         navigationPrevLabel="←"
         navigationNextLabel="→">
         <slide v-for="image in artworkImages" :key="image">
-          <img :src="image" class="carousel__image">
+          <img v-img="{ group: 'artworkImages' }" :src="image" class="carousel__image">
         </slide>
       </carousel>
     </div>
