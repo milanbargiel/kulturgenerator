@@ -27,6 +27,7 @@
                 </li>
             </ul>
         </div>
+        <button @click="sendOrder()" style="margin-bottom: 20px;">Send Dummy Order and trigger Mailing</button>
         <div class="paypal">
             <div v-show="validQuantity" ref="paypal" class="paypal__buttons"></div>
             <p class="paypal__description">
@@ -37,6 +38,8 @@
 </template>
 
 <script>
+import dummyOrder from '../fixtures/dummy-paypal-response'; // dummy payload from paypal
+
 export default {
     props: ['artwork'],
     name: 'Checkout',
@@ -98,9 +101,13 @@ export default {
                     console.error(error)
                 })
         },
+        sendOrder (order = dummyOrder) { // Use default parameter of fixture for testing
+            // Post order to endpoint that triggers transactional mails
+            this.$store.dispatch('sendOrder', { artworkId: this.artwork.id, order })
+        },
         loadPaypalScript () {
             const script = document.createElement('script')
-            script.src = 'https://www.paypal.com/sdk/js?client-id=Ab1l-FnhLTRhv9JDyFJA1Rn79WTB1-K6MjiLrj5dLYYhmiQE0Lelq7wSN3hkJZ4JhKxS0cx_xL5KlIg9&currency=EUR&disable-funding=credit,giropay,sofort'
+            script.src = 'https://www.paypal.com/sdk/js?client-id=' + process.env.VUE_APP_PAYPAL_CLIENT_ID + '&currency=EUR&disable-funding=credit,giropay,sofort'
             document.head.appendChild(script)
             script.addEventListener("load", this.setLoaded)
         },
@@ -115,7 +122,6 @@ export default {
                         // disable paypal buttons if purchase quantity is invalid (compare https://developer.paypal.com/docs/checkout/integration-features/validation/#synchronous-validation)
                         document.querySelector('.js-quantity')
                             .addEventListener('change', function(event) {
-                                console.log('change')
                                 if (event.target.value > event.target.max || event.target.value < event.target.min) {
                                     actions.disable();
                                 } else {
@@ -127,20 +133,45 @@ export default {
                         return actions.order.create({                      
                             purchase_units: [{
                                 amount: {
-                                    value: this.totalCost
+                                    value: this.totalCost,
+                                    breakdown: {
+                                        item_total: {
+                                            currency_code: 'EUR',
+                                            value: this.purchaseOrderPrice 
+                                        },
+                                        shipping: {
+                                            currency_code: 'EUR',
+                                            value: this.artwork.shippingCosts
+                                        },
+                                        tax_total: {
+                                            currency_code: 'EUR',
+                                            value: this.taxShare
+                                        }
+                                    }
+
                                 },
                                 payee: {
                                     email_address: this.artwork.paypal
                                 },
-                                description: `${this.orderQuantity} x ${this.artwork.author}: ${this.artwork.title} – Einkauf über kulturgenerator.de`
+                                description: `${this.orderQuantity} x ${this.artwork.author}: ${this.artwork.title} – Einkauf über kulturgenerator.de`,
+                                items: [{
+                                    name: `${this.artwork.author}: ${this.artwork.title}`,
+                                    unit_amount: { 
+                                        currency_code: 'EUR',
+                                        value: this.artwork.price
+                                    },
+                                    quantity: this.orderQuantity
+                                }]
                             }]
                         });
                     },
                     onApprove: async (data, actions) => {
                         const order = await actions.order.capture()
-                        console.log(order)
                         this.setPaymentInfo(order.status === 'COMPLETED')
-                        this.updateQuantity(this.orderQuantity)
+                        if (order.status === 'COMPLETED') {
+                            this.updateQuantity(this.orderQuantity)
+                            this.sendOrder(order)
+                        }
                     }
 
                 })

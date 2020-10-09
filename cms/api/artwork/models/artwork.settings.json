@@ -79,8 +79,7 @@
       "min": 0
     },
     "email": {
-      "type": "email",
-      "private": true
+      "type": "email"
     },
     "street": {
       "type": "string",
