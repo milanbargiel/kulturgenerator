@@ -58,17 +58,10 @@
 .artwork-list-item__link:focus {
   .artwork-list-item__author,
   .artwork-list-item__title {
-    position: relative;
-
-    &::after {
-      content: "";
-      height: 1px;
-      left: 0;
-      position: absolute;
-      width: 100%;
-      background-color: $black;
-      opacity: 0.5;
-      bottom: 0;
-    }
+    // a solution that allows to configure the line thickness (https://css-tricks.com/styling-underlines-web/)
+    background-image: linear-gradient(to right, $black 100%, transparent 0%);
+    background-position: 0 20px;
+    background-repeat: repeat-x;
+    background-size: 1px 1px;
   }
 }
