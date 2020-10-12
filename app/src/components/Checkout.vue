@@ -81,29 +81,23 @@ export default {
         this.loadPaypalScript()
     },
     methods: {
-        setPaymentInfo (success) {
-            if (success) {
-                this.$store.dispatch('updateShadowMoneypool', this.generatorShare)
-                this.$store.commit('SET_PAYMENT_INFO', { show: true, state: 'success'})
-            } else {
-                this.$store.commit('SET_PAYMENT_INFO', { show: true, state: 'error'})
+        handleOrder (order = dummyOrder) {
+            if (order.status !== 'COMPLETED') {
+                this.$store.commit('UPDATE_PAYMENT_FEEDBACK', { show: true, state: 'error'})
+                return 
             }
-        },
-        updateQuantity (quantity) {
-            if (this.artwork.quantity < 1) {
-                return
-            }
-            this.$store.dispatch('updateArtworkQuantity', {id: this.artwork.id, quantity: quantity, currentQuantity: this.artwork.quantity})
-                .then(response => {
-                    this.$store.commit('UPDATE_ARTWORK_QUANTITY', {id: this.artwork.id, quantity: response})
-                })
-                .catch(error => {
-                    console.error(error)
-                })
-        },
-        sendOrder (order = dummyOrder) { // Use default parameter of fixture for testing
-            // Post order to endpoint that triggers transactional mails
             this.$store.dispatch('sendOrder', { artworkId: this.artwork.id, order })
+                .then(response => { 
+                    this.$store.commit('UPDATE_ARTWORK_QUANTITY', response.data.artwork)
+                })
+
+            // update quantity even before it's confirmed and updated again after sendOrder success.    
+            this.$store.commit('UPDATE_ARTWORK_QUANTITY', { 
+                id: this.artwork.id,
+                quantity: this.artwork.quantity - this.orderQuantity
+            })
+            this.$store.dispatch('updateShadowMoneypool', this.generatorShare)
+            this.$store.commit('UPDATE_PAYMENT_FEEDBACK', { show: true, state: 'success'})
         },
         loadPaypalScript () {
             const script = document.createElement('script')
@@ -167,11 +161,7 @@ export default {
                     },
                     onApprove: async (data, actions) => {
                         const order = await actions.order.capture()
-                        this.setPaymentInfo(order.status === 'COMPLETED')
-                        if (order.status === 'COMPLETED') {
-                            this.updateQuantity(this.orderQuantity)
-                            this.sendOrder(order)
-                        }
+                        this.handleOrder(order)
                     }
 
                 })

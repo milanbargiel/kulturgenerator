@@ -52,11 +52,11 @@ const actions = {
         })
     },
     sendOrder (context, { artworkId, order }) {
-        axios({
+        return axios({
             method: 'post',
             url: process.env.VUE_APP_API_BASEURL + '/orders',
             data: {
-                artwork: artworkId,
+                artwork: { id: artworkId, slug: context.state.artworks[artworkId].slug },
                 orderQuantity: order.purchase_units[0].items[0].quantity,
                 orderTotalAmount: order.purchase_units[0].amount.value,
                 buyerEmail: order.payer.email_address,

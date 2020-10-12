@@ -11,7 +11,7 @@ const state = {
   loadingDelay: 700,
   artworks: {},
   shadowMoneypoolBalance: 0,
-  paymentInfo: {
+  paymentFeedback: {
     show: false,
     state: 'hidden'
   }
