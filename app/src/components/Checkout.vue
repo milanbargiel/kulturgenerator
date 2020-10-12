@@ -82,26 +82,22 @@ export default {
     },
     methods: {
         handleOrder (order = dummyOrder) {
-            if (order.status === 'COMPLETED') {
-                this.$store.dispatch('sendOrder', { artworkId: this.artwork.id, artworkSlug: this.artwork.slug, order })
-                    .then(response => { 
-                        this.$store.commit('UPDATE_ARTWORK_QUANTITY', { 
-                            id: response.data.artwork.id, 
-                            quantity: response.data.artwork.quantity
-                        })
-                    })
-
-                // update quantity until it's confirmed and updated again after sendOrder success.    
-                this.$store.commit('UPDATE_ARTWORK_QUANTITY', { 
-                    id: this.artwork.id,
-                    quantity: this.artwork.quantity - this.orderQuantity
-                })
-                this.$store.dispatch('updateShadowMoneypool', this.generatorShare)
-                this.$store.commit('UPDATE_PAYMENT_FEEDBACK', { show: true, state: 'success'})
-
-            } else {
+            if (order.status !== 'COMPLETED') {
                 this.$store.commit('UPDATE_PAYMENT_FEEDBACK', { show: true, state: 'error'})
+                return 
             }
+            this.$store.dispatch('sendOrder', { artworkId: this.artwork.id, artworkSlug: this.artwork.slug, order })
+                .then(response => { 
+                    this.$store.commit('UPDATE_ARTWORK_QUANTITY', response.data.artwork)
+                })
+
+            // update quantity even before it's confirmed and updated again after sendOrder success.    
+            this.$store.commit('UPDATE_ARTWORK_QUANTITY', { 
+                id: this.artwork.id,
+                quantity: this.artwork.quantity - this.orderQuantity
+            })
+            this.$store.dispatch('updateShadowMoneypool', this.generatorShare)
+            this.$store.commit('UPDATE_PAYMENT_FEEDBACK', { show: true, state: 'success'})
         },
         loadPaypalScript () {
             const script = document.createElement('script')
