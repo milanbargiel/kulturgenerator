@@ -91,7 +91,7 @@ export default {
   },
   methods: {
     openCheckout () {
-      this.$store.commit('SET_PAYMENT_FEEDBACK', { show: false, state: 'hidden' })
+      this.$store.commit('UPDATE_PAYMENT_FEEDBACK', { show: false, state: 'hidden' })
       this.checkoutIsOpen = true
       this.$nextTick(() => {
         this.$refs.checkout.scrollIntoView({ behavior: 'smooth' })
