@@ -10,24 +10,24 @@
             </router-link>            
         </div>
         <moneypool-banner v-bind:class="{ 'moneypool-banner--border': showBackButton }"></moneypool-banner>
-        <payment-info-banner v-if="paymentInfo.show" :state="paymentInfo.state"></payment-info-banner>          
+        <payment-feedback-banner v-if="paymentFeedback.show" :state="paymentFeedback.state"></payment-feedback-banner>          
     </div>
 </template>
 
 <script>
 import MarqueeText from 'vue-marquee-text-component'
 import MoneypoolBanner from '../components/MoneypoolBanner'
-import PaymentInfoBanner from '../components/PaymentInfoBanner'
+import PaymentFeedbackBanner from '../components/PaymentFeedbackBanner'
 
 export default {
     name: 'Header',
-    components: { MarqueeText, MoneypoolBanner, PaymentInfoBanner },
+    components: { MarqueeText, MoneypoolBanner, PaymentFeedbackBanner },
     computed: {
         showBackButton () {
             return this.$route.meta.showBackButton || false
         },
-        paymentInfo () {
-            return this.$store.state.paymentInfo
+        paymentFeedback () {
+            return this.$store.state.paymentFeedback
         }
     }
 }
