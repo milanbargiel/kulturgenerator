@@ -86,7 +86,7 @@ export default {
                 this.$store.commit('UPDATE_PAYMENT_FEEDBACK', { show: true, state: 'error'})
                 return 
             }
-            this.$store.dispatch('sendOrder', { artworkId: this.artwork.id, artworkSlug: this.artwork.slug, order })
+            this.$store.dispatch('sendOrder', { artworkId: this.artwork.id, order })
                 .then(response => { 
                     this.$store.commit('UPDATE_ARTWORK_QUANTITY', response.data.artwork)
                 })
