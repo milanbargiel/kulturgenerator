@@ -14,11 +14,10 @@ module.exports = {
    */
 
   async create(ctx) {
-    const { id } = ctx.request.body.artwork;
     const { slug } = ctx.request.body.artwork;
 
     const orderedArtwork = await strapi.services.artwork.findOne({ slug });
-    await strapi.services.artwork.update({ id }, {
+    await strapi.services.artwork.update(orderedArtwork.id, {
       quantity: orderedArtwork.quantity - ctx.request.body.orderQuantity
     });
 
