@@ -34,6 +34,7 @@ router.beforeEach((to, from, next) => {
     store.commit('UPDATE_PAYMENT_FEEDBACK', { show: false, state: 'hidden' })    
   }
   next()
+  window.scrollTo({ top: 0 });
 })
 
 export default router
