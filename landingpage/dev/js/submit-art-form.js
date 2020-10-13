@@ -141,14 +141,28 @@ $('.js-form').submit((event) => {
   saFormSuccessText.removeAttribute('style');
   saFormErrorText.removeAttribute('style');
 
+  const formData = new FormData();
+
   // setup some local variables
   const $form = $(event.target);
 
   // Let's select and cache all the fields
   const $inputs = $form.find('input, select, button, textarea');
 
+  const data = {};
+
   // Serialize the data in the form
-  const serializedData = $form.serialize();
+  for (let i = 0; i < $inputs.length; i += 1) {
+    const currentElement = $inputs[i];
+
+    if (!['submit', 'file'].includes(currentElement.type) && currentElement.value !== '') { // regular input with a value
+      data[currentElement.name] = currentElement.value;
+    }
+  }
+
+  console.log(data);
+
+  formData.append('data', JSON.stringify(data));
 
   // Let's disable the inputs for the duration of the Ajax request.
   // Note: we disable elements AFTER the form data has been serialized.
@@ -159,19 +173,21 @@ $('.js-form').submit((event) => {
 
   // Fire off the request
   request = $.ajax({
-    url: 'https://script.google.com/macros/s/AKfycby4Ti9QvWXWkpzRx4ia9Ea91sP1bdCSU_4N9U1sxMoICNqPWbs/exec',
+    url: 'http://localhost:1337/artworks',
     type: 'post',
-    data: serializedData,
+    data: formData,
+    processData: false,
+    contentType: false,
     timeout: 30000,
   });
 
   // Callback handler that will be called on success
   request.done(() => {
     saFormSuccessText.setAttribute('style', 'display:block;');
-    clearForm();
+    // clearForm();
   });
 
-  // Callback handler that will be called on failure
+  // // Callback handler that will be called on failure
   request.fail(() => {
     saFormErrorText.setAttribute('style', 'display:block;');
   });
