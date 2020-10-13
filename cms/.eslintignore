@@ -1,3 +1,4 @@
 .cache
+mail-templates/**
 build
 **/node_modules/**
