@@ -15,6 +15,14 @@
       "config": {
         "policies": []
       }
+    },
+    {
+      "method": "POST",
+      "path": "/artworks",
+      "handler": "artwork.create",
+      "config": {
+        "policies": []
+      }
     }
   ]
 }
