@@ -27,7 +27,7 @@
                 </li>
             </ul>
         </div>
-        <button @click="sendOrder()" style="margin-bottom: 20px;">Send Dummy Order and trigger Mailing</button>
+        <button @click="handleOrder()" style="margin-bottom: 20px;">Send Dummy Order and trigger Mailing</button>
         <div class="paypal">
             <div v-show="validQuantity" ref="paypal" class="paypal__buttons"></div>
             <p class="paypal__description">
