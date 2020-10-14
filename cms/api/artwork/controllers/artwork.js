@@ -1,4 +1,4 @@
-const { sanitizeEntity } = require('strapi-utils');
+const { parseMultipartData, sanitizeEntity } = require('strapi-utils');
 
 module.exports = {
   /**
@@ -13,7 +13,6 @@ module.exports = {
     const entity = await strapi.services.artwork.findOne({ slug });
     return sanitizeEntity(entity, { model: strapi.models.artwork });
   },
-
   async find(ctx) {
     let entities;
 
@@ -29,5 +28,31 @@ module.exports = {
     }
 
     return entities.map(entity => sanitizeEntity(entity, { model: strapi.models.artwork }));
+  },
+  async create(ctx) {
+    let entity;
+
+    if (ctx.is('multipart')) {
+      const { data, files } = parseMultipartData(ctx);
+      entity = await strapi.services.artwork.create(data, { files });
+    } else {
+      entity = await strapi.services.artwork.create(ctx.request.body);
+    }
+
+    const entry = sanitizeEntity(entity, { model: strapi.models.artwork });
+
+    // Send submission was successful E-mail
+    if (entry.email && entry.author) {
+      const email = await strapi.plugins['email'].services.email.renderMail(entry, 'artwork-submission');
+
+      await strapi.plugins['email'].services.email.send({
+        to: entry.email,
+        from: 'info@kulturgenerator.de',
+        subject: 'Wir haben Ihre Einreichung erhalten',
+        text: email.text
+      });
+    }
+    
+    return entry;
   },
 };
