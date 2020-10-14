@@ -141,17 +141,14 @@ $('.js-form').submit((event) => {
   saFormSuccessText.removeAttribute('style');
   saFormErrorText.removeAttribute('style');
 
-  const formData = new FormData();
-
   // setup some local variables
   const $form = $(event.target);
-
-  // Let's select and cache all the fields
-  const $inputs = $form.find('input, select, button, textarea');
-
-  const data = {};
+  const $inputs = $form.find('input, select, button, textarea'); // Let's select and cache all the fields
 
   // Serialize the data in the form
+  const formData = new FormData();
+  const data = {};
+
   for (let i = 0; i < $inputs.length; i += 1) {
     const currentElement = $inputs[i];
 
@@ -159,8 +156,6 @@ $('.js-form').submit((event) => {
       data[currentElement.name] = currentElement.value;
     }
   }
-
-  console.log(data);
 
   formData.append('data', JSON.stringify(data));
 
