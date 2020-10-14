@@ -62,7 +62,6 @@
   flex: 0 1 45%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: flex-start;
 }
 .artwork-detail__price,
@@ -73,6 +72,10 @@
   @media screen and (min-width: $bp-tablet) {
     font-size: $font-size-desktop-huge;
   }
+}
+
+.artwork-detail__price {
+  margin-bottom: 12px;
 }
 
 .artwork-detail__sold {
@@ -97,25 +100,44 @@
 }
 
 .artwork-detail__payment-button {
-  font-size: $font-size-mobile-huge;
-  text-transform: uppercase;
   margin-right: 18px;
   font-family: inherit;
-  padding-left: 10px;
-  padding-right: 10px;
-  background-color: $white;
-  border: 1px solid $black;
+  margin-top: auto;
+  position: relative;
+
+  button {
+    font-size: $font-size-mobile-huge;
+    background-color: $white;
+    border: 1px solid $black;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-transform: uppercase;
+
+    &:hover,
+    &:focus {
+      background-color: $blue;
+      border: 1px solid $blue;
+      color: $white;
+    }
+  }
+
+  &:after {
+    content: "Die Kaufabwicklung wird mit PayPal durchgeführt. Durch Anklicken von Kaufen stimmen Sie der Verwendung von Cookies durch PayPal zu.";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 200%;
+    font-size: $font-size-desktop;
+    color: $dark-grey;
+    padding: 12px 0;
+    margin-bottom: 60px;
+  }
 
   @media screen and (min-width: $bp-tablet) {
     font-size: $font-size-desktop-huge;
   }
 
-  &:hover,
-  &:focus {
-    background-color: $blue;
-    border: 1px solid $blue;
-    color: $white;
-  }
+
 }
 
 
