@@ -59,7 +59,7 @@ function showSelectedForm(selector) {
 
   // show selected funnel
   submitArtForm.setAttribute('style', 'display:block;');
-  submitArtForm.classList.add(`sa-form--${selector}`);
+  submitArtForm.classList.add(`sa-form--${selector.toLowerCase()}`);
 
   // clear previous form inputs
   clearForm();
@@ -192,7 +192,7 @@ $('.js-form').submit((event) => {
     clearForm();
   });
 
-  // // Callback handler that will be called on failure
+  // Callback handler that will be called on failure
   request.fail(() => {
     saFormErrorText.setAttribute('style', 'display:block;');
   });
