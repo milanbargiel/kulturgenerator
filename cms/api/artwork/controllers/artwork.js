@@ -42,7 +42,7 @@ module.exports = {
     const entry = sanitizeEntity(entity, { model: strapi.models.artwork });
 
     // Send submission was successful E-mail
-    if (entry.email && entry.author) {
+    if (entry.email) {
       const email = await strapi.plugins['email'].services.email.renderMail(entry, 'artwork-submission');
 
       await strapi.plugins['email'].services.email.send({
