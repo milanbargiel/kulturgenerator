@@ -55,7 +55,8 @@
       "enum": [
         "Ja",
         "Nein"
-      ]
+      ],
+      "default": "Ja"
     },
     "price": {
       "type": "decimal"
