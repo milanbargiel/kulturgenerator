@@ -1,17 +1,22 @@
+- var generatorShare = entry.artwork.generatorShare.substring(1); // Remove dummy underscore
+- var shareInEur = ((entry.orderQuantity * entry.artwork.price) * (generatorShare/100)).toFixed(2);
+
 | Hallo #{entry.artwork.author},
 |
-| herzlichen Glückwünsch, Ihr Kunstwerk wurde über den Kulturgenerator verkauft:
+| herzlichen Glückwünsch, Ihr Kunstwerk wurde über den Kulturgenerator verkauft.
 |
 | #{entry.orderQuantity} x #{entry.artwork.author}: #{entry.artwork.title}
 |
-| Bitte nehmen Sie Kontakt zur Käuferin bzw. zum Käufer auf und besprechen Sie die Übergabe oder den Versand des Werkes.
+| Bitte nehmen Sie Kontakt zur Käuferin bzw. zum Käufer auf und besprechen Sie die Übergabe des Werkes.
 |
-| #{entry.buyerEmail}
 | #{entry.buyerFullname}
 | #{entry.buyerStreet}
 | #{entry.buyerZipCode} #{entry.buyerCity}
+| #{entry.buyerEmail}
 |
-| Bei Fragen wenden Sie sich gerne an info@kulturgenerator.de.
+| Um #{generatorShare}% des Brutto-Verkaufspreises solidarisch zu verteilen überweisen Sie bitte den Betrag von #{shareInEur}€ auf das PayPal-Konto des Kulturgenerators:
 |
-| Freundliche Grüße
+| https://www.paypal.me/kulturgenerator/#{shareInEur}
+|
+| Vielen Dank und freundliche Grüße
 | Ihr Team des Kulturgenerators
