@@ -15,7 +15,7 @@
                 <label for="radio-erlebnis" class="orange-radio-label">ooerlebnis</label>
             </div>
             <div class="title title--grid">
-                <input type="radio" name="category" value="Motiv" id="radio-motiv" class="hidden-input orange-radio-input js-category-input" checked>
+                <input type="radio" name="category" value="Motiv" id="radio-motiv" class="hidden-input orange-radio-input js-category-input">
                 <label for="radio-motiv" class="orange-radio-label">oomotiv</label>
             </div>
         </div>
@@ -35,19 +35,19 @@
         
         {{!-- FORM INPUTS --}}
         {{!-- category --}}
-        <input type="hidden" class="js-selected-category" name="type" value="false">
+        <input type="hidden" class="js-selected-category" name="type">
 
         <div class="form-group form-group--wide">
             {{!-- title --}}
             <div class="form-group">
                 <label class="form-group__label" for="title-input">Titel <span class="form-field-required">*</span></label>
-                <input class="form-group__input js-required-input" type="text" name="title" id="title-input" maxlength="60" value="An emperors delight">
+                <input class="form-group__input js-required-input" type="text" name="title" id="title-input" maxlength="60">
             </div>
 
             {{!-- description --}}
             <div class="form-group">
                 <label class="form-group__label" for="description-input">Kurzbeschreibung <span class="form-field-required">*</span></label>
-                <textarea class="form-group__input js-required-input" name="description" rows="6" id="description-input" maxlength="2000">Description</textarea>
+                <textarea class="form-group__input js-required-input" name="description" rows="6" id="description-input" maxlength="2000"></textarea>
                 <div class="form-help invisible visible-objekt">Dieser Text beschreibt Ihr Angebot und erscheint auf der Homepage. Bei Objekten fügen Sie bitte Angaben zu Material, Entstehungsjahr, Größe und Genre/Stil hinzu, sowie bei einer Auflage die Stückzahl.<div class="form-help__question-mark title title--grid">&nbsp;?</div></div>
                 <div class="form-help invisible visible-erlebnis">Dieser Text beschreibt Ihr Angebot und erscheint auf der Homepage. Bitte geben Sie die Stückzahl Ihres Angebotes zB. die Menge von Eintrittskarten an.
                 <div class="form-help__question-mark title title--grid">&nbsp;?</div></div>
@@ -70,10 +70,10 @@
 
                 <div class="iu-container">
                     {{!-- upload button --}}
-                    <label for="image-input" class="button">Wählen Sie eine Datei</label>
-
+                    <label for="image-input" class="button">Wählen Sie eine Datei aus</label>
+                    
                     {{!-- hidden image input --}}
-                    <input class="hidden-input js-file-input" type="file" name="image" id="image-input" accept="image/*">
+                    <input class="hidden-input js-file-input" type="file" id="image-input" accept="image/*" required>
 
                     {{!-- js file reader writes image raw data into container --}}
                     <div class="js-image-data">
@@ -99,7 +99,7 @@
             {{!-- imgLicense --}}
             <div class="form-check">
                 {{!-- VISIBLE inputs with class js-required-input are set to required --}}
-                <input class="form-check__checkbox js-required-input" type="checkbox" name="imgLicense" value="true" id="imagelicense-input" checked>
+                <input class="form-check__checkbox js-required-input" type="checkbox" name="imgLicense" value="true" id="imagelicense-input">
                 <label for="imagelicense-input">Ich erlaube hiermit die Weiternutzung des Bildes/der Bilder für die Verwendung im Projekt und versichere, dass ich Urheber*in bzw. Inhaber*in des vollumfänglichen Nutzungsrechts bin. <span class="form-field-required">*</span></label>
             </div>
 
@@ -114,7 +114,7 @@
             <div class="form-group--small">
                 {{!-- price --}}
                 <label class="form-group__label" for="price-input">Preis <span class="form-field-required">*</span></label>
-                <input class="form-group__input js-required-input" type="number" name="price" id="price-input" value="">
+                <input class="form-group__input js-required-input" type="number" name="price" id="price-input">
             </div>
 
             {{!-- checkboxes --}}
@@ -179,7 +179,7 @@
         {{!-- paypal --}}
         <div class="form-group">
             <label class="form-group__label" for="paypal-input">PayPal Konto <span class="form-field-required">*</span></label>
-            <input class="form-group__input js-required-input" type="email" name="paypal" id="paypal-input" value="milan.bargiel@googlemail.com">
+            <input class="form-group__input js-required-input" type="email" name="paypal" id="paypal-input">
             <div class="form-help invisible visible-objekt visible-erlebnis">Um sich am Generator zu beteiligen, müssen Sie ein PayPal-Konto haben. Tragen Sie hier bitte die dazugehörige E-Mail-Adresse ein. Diese E-Mail-Adresse wird bei Transaktion der Käuferin oder dem Käufer angezeigt. Falls sie kein PayPal Konto haben, können Sie <a href="https://www.paypal.com/welcome/signup/#/email_password" target="_blank" class="underlined-link underlined-link--grey">hier</a> eins erstellen.<div class="form-help__question-mark title title--grid">&nbsp;?</div></div>
             <div class="form-help invisible visible-motiv">Hinterlegen Sie hier die E-Mail-Adresse Ihres PayPal Kontos, um bei Motivdruck von der Ausschüttung des Generators zu profitieren. Falls sie keins haben, können Sie <a href="https://www.paypal.com/welcome/signup/#/email_password" target="_blank" class="underlined-link underlined-link--grey">hier</a> eins erstellen. Bitte haben Sie Verständnis, dass nicht alle Motive gedruckt werden können.<div class="form-help__question-mark title title--grid">&nbsp;?</div></div>
         </div>
@@ -187,38 +187,38 @@
         {{!-- email --}}
         <div class="form-group">
             <label class="form-group__label" for="email-input">E-Mail-Adresse <span class="form-field-required">*</span></label>
-            <input class="form-group__input js-required-input" type="email" name="email" id="email-input" value="milan.bargiel@googlemail.com">
+            <input class="form-group__input js-required-input" type="email" name="email" id="email-input">
         </div>
 
         {{!-- author --}}
         <div class="form-group">
             <label class="form-group__label" for="fullname-input">Name, Vorname <span class="form-field-required">*</span></label>
-            <input class="form-group__input js-required-input" type="text" name="author" id="fullname-input" maxlength="60" value="Milan Bargiel">
+            <input class="form-group__input js-required-input" type="text" name="author" id="fullname-input" maxlength="60">
         </div>
 
         {{!-- street --}}
         <div class="form-group">
             <label class="form-group__label" for="street-input">Straße und Hausnummer <span class="form-field-required">*</span></label>
-            <input class="form-group__input js-required-input" type="text" name="street" id="street-input" maxlength="60" value="Street">
+            <input class="form-group__input js-required-input" type="text" name="street" id="street-input" maxlength="60">
         </div>
 
         <div class="form-group form-group--adress">
             <div class="form-group__postal">
                 {{!-- postalCode --}}
                 <label class="form-group__label" for="postalcode-input">PLZ <span class="form-field-required">*</span></label>
-                <input class="form-group__input js-required-input" type="number" name="postalCode" id="postalcode-input" value="12345">
+                <input class="form-group__input js-required-input" type="number" name="postalCode" id="postalcode-input">
             </div>
             <div class="form-group__place">
                 {{!-- place --}}
                 <label class="form-group__label" for="place-input">Ort <span class="form-field-required">*</span></label>
-                <input class="form-group__input js-required-input" type="text" name="place" id="place-input" maxlength="60" value="Cologne">
+                <input class="form-group__input js-required-input" type="text" name="place" id="place-input" maxlength="60">
             </div>
         </div>
 
         {{!-- artisticwork --}}
         <div class="form-group">
             <label class="form-group__label" for="artisticwork-input">Kulturschaffende Tätigkeit <span class="form-field-required">*</span></label>
-            <textarea class="form-group__input js-required-input" name="artisticWork" id="artisticwork-input" maxlength="2000" rows="6">Kulturschaffende Tätigkeit</textarea>
+            <textarea class="form-group__input js-required-input" name="artisticWork" id="artisticwork-input" maxlength="2000" rows="6"></textarea>
             <div class="form-help invisible visible-erlebnis visible-objekt">Bitte haben Sie Verständnis, dass nicht alle Einreichungen berücksichtigt werden können. Es sollen nur diejenigen vom Generator profitieren, die professionell als Kunst- und Kulturschaffende tätig sind. Bitte beschreiben Sie kurz Ihre Arbeit. Ggf. können Sie Links zu Webseiten, eine kurze Aufzählung Ihrer letzten Projekte und/oder Ausstellungen, als auch ein abgeschlossenes oder laufendes Studium in dem Bereich aufführen.<div class="form-help__question-mark title title--grid">&nbsp;?</div>
         </div>
     </div>
@@ -251,7 +251,7 @@
 
         {{!-- gdpr --}}
         <div class="form-check">
-            <input class="form-check__checkbox js-required-input" type="checkbox" name="gdpr" value="true" id="gdpr-input" checked>
+            <input class="form-check__checkbox js-required-input" type="checkbox" name="gdpr" value="true" id="gdpr-input">
             <label for="gdpr-input">Ich bin damit einverstanden, dass meine Angaben im Rahmen der Abwicklung verwendet und verwahrt werden.</label>
             <span class="form-field-required">*</span>
         </div>
