@@ -77,7 +77,8 @@
     },
     "quantity": {
       "type": "integer",
-      "min": 0
+      "min": 0,
+      "default": 1
     },
     "email": {
       "type": "email"
