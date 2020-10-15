@@ -150,8 +150,6 @@ $('.js-form').submit((event) => {
   const formData = new FormData();
   const data = {};
 
-  console.log(data);
-
   inputs.forEach((input) => {
     if (!['submit', 'file'].includes(input.type) && input.value && input.name) { // regular input with a value
       if ((input.type === 'radio' || input.type === 'checkbox') && !input.checked) {
@@ -178,7 +176,7 @@ $('.js-form').submit((event) => {
 
   // Fire off the request
   request = $.ajax({
-    url: 'http://localhost:1337/artworks',
+    url: 'https://xyz.kulturgenerator.de/artworks',
     type: 'post',
     data: formData,
     processData: false,
