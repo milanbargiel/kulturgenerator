@@ -5,7 +5,7 @@ const selectedCategoryInput = document.querySelector('.js-selected-category');
 const allRequiredInputs = document.querySelectorAll('.js-required-input');
 
 // file upload
-let numOfFiles = 0; // max 3
+let files = {};
 const fileInput = document.querySelector('.js-file-input');
 const imageDataContainer = document.querySelector('.js-image-data');
 const imageSizeError = document.querySelector('.js-image-size-error');
@@ -15,7 +15,6 @@ const tooManyImagesError = document.querySelector('.js-too-many-images-error');
 const savingAnimation = document.querySelector('.js-saving');
 const saFormSuccessText = document.querySelector('.js-sa-form-success-text');
 const saFormErrorText = document.querySelector('.js-sa-form-error-text');
-
 
 function isVisible(el) {
   return !(el.offsetParent === null);
@@ -31,6 +30,12 @@ function makeVisibleInputsRequired() {
   });
 }
 
+function lockInputs(inputs, state) {
+  inputs.forEach((input) => {
+    input.setAttribute('readonly', state);
+  });
+}
+
 function clearForm() {
   // reset form
   submitArtForm.reset();
@@ -43,7 +48,7 @@ function clearForm() {
   fileInput.dispatchEvent(event);
   // clear image uploads
   imageDataContainer.innerHTML = '';
-  numOfFiles = 0;
+  files = {};
 }
 
 function showSelectedForm(selector) {
@@ -54,7 +59,7 @@ function showSelectedForm(selector) {
 
   // show selected funnel
   submitArtForm.setAttribute('style', 'display:block;');
-  submitArtForm.classList.add(`sa-form--${selector}`);
+  submitArtForm.classList.add(`sa-form--${selector.toLowerCase()}`);
 
   // clear previous form inputs
   clearForm();
@@ -76,11 +81,11 @@ categoryRadioButtons.forEach((radioButton) => {
   });
 });
 
-function removeImageOnClick(node) {
+function removeImageOnClick(fileName, node) {
   node.addEventListener('click', () => {
+    delete files[fileName]; // remove file from global files object
     const imageDiv = node.parentNode;
     imageDiv.parentNode.removeChild(imageDiv);
-    numOfFiles -= 1;
   });
 }
 
@@ -95,22 +100,19 @@ fileInput.addEventListener('change', (inputEvent) => {
   tooManyImagesError.removeAttribute('style');
 
   // create hidden text image data to upload via form
-  reader.addEventListener('load', (readerEvent) => {
-    numOfFiles += 1;
+  reader.addEventListener('load', () => {
+    files[file.name] = file; // push file to global files object
     const newImage = document.createElement('div');
     newImage.setAttribute('class', 'iu-image');
-    let html = `<input type="hidden" name="mimetype" value="${readerEvent.target.result.match(/^.*(?=;)/)[0]}" >`;
-    html += `<input type="hidden" name="data" value="${readerEvent.target.result.replace(/^.*,/, '')}" >`;
-    html += `<span class="file-name">${readerEvent.target.fileName}</span><span class="remove-button js-remove-image">x</span>`;
+    const html = `<span class="file-name">${file.name}</span><span class="remove-button js-remove-image">x</span>`;
     newImage.innerHTML = html;
-    removeImageOnClick(newImage.lastChild); // bind event listener to remove element
+    removeImageOnClick(file.name, newImage.lastChild); // bind event listener to remove element
     imageDataContainer.appendChild(newImage);
   });
 
   if (file) { // file selected
-    if (numOfFiles < 3) { // max 3 files
+    if (Object.keys(files).length < 3) { // max 3 files
       const fileSize = ((file.size / 1024) / 1024).toFixed(4); // MB
-      reader.fileName = file.name;
 
       if (fileSize < 5) { // max 5MB
         reader.readAsDataURL(file);
@@ -142,26 +144,43 @@ $('.js-form').submit((event) => {
   saFormErrorText.removeAttribute('style');
 
   // setup some local variables
-  const $form = $(event.target);
-
-  // Let's select and cache all the fields
-  const $inputs = $form.find('input, select, button, textarea');
+  const inputs = submitArtForm.querySelectorAll('input, textarea');
 
   // Serialize the data in the form
-  const serializedData = $form.serialize();
+  const formData = new FormData();
+  const data = {};
+
+  inputs.forEach((input) => {
+    if (!['submit', 'file'].includes(input.type) && input.value && input.name) { // regular input with a value
+      if ((input.type === 'radio' || input.type === 'checkbox') && !input.checked) {
+        return;
+      }
+
+      data[input.name] = input.value;
+    }
+  });
+
+  formData.append('data', JSON.stringify(data));
+
+  // Add images
+  Object.values(files).forEach((file) => {
+    formData.append('files.images', file, file.name);
+  });
 
   // Let's disable the inputs for the duration of the Ajax request.
   // Note: we disable elements AFTER the form data has been serialized.
   // Disabled form elements will not be serialized.
-  $inputs.prop('disabled', true);
+  lockInputs(inputs, true);
 
   savingAnimation.setAttribute('style', 'display: inline-block;');
 
   // Fire off the request
   request = $.ajax({
-    url: 'https://script.google.com/macros/s/AKfycby4Ti9QvWXWkpzRx4ia9Ea91sP1bdCSU_4N9U1sxMoICNqPWbs/exec',
+    url: 'https://xyz.kulturgenerator.de/artworks',
     type: 'post',
-    data: serializedData,
+    data: formData,
+    processData: false,
+    contentType: false,
     timeout: 30000,
   });
 
@@ -180,7 +199,7 @@ $('.js-form').submit((event) => {
   // if the request failed or succeeded
   request.always(() => {
     // Reenable the inputs
-    $inputs.prop('disabled', false);
+    lockInputs(inputs, false);
     savingAnimation.removeAttribute('style');
   });
 });
