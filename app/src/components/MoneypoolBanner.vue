@@ -1,5 +1,5 @@
 <template>
-    <a href="https://info.kulturgenerator.de" class="moneypool-banner">
+    <a href="https://info.kulturgenerator.de" target="_blank" class="moneypool-banner">
         <marquee-text
             :repeat="repeatBalance"
             :duration="animationDuration">
