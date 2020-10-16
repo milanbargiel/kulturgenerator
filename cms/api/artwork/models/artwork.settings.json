@@ -128,7 +128,7 @@
     },
     "review": {
       "type": "component",
-      "repeatable": false,
+      "repeatable": true,
       "component": "artist.review"
     }
   }
