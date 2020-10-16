@@ -27,7 +27,6 @@
                 </li>
             </ul>
         </div>
-        <button @click="handleOrder()" style="margin-bottom: 20px;">Send Dummy Order and trigger Mailing</button>
         <div class="paypal">
             <div v-show="validQuantity" ref="paypal" class="paypal__buttons"></div>
             <p class="paypal__description">
@@ -38,8 +37,6 @@
 </template>
 
 <script>
-import dummyOrder from '../fixtures/dummy-paypal-response'; // dummy payload from paypal
-
 export default {
     props: ['artwork'],
     name: 'Checkout',
@@ -81,7 +78,7 @@ export default {
         this.loadPaypalScript()
     },
     methods: {
-        handleOrder (order = dummyOrder) {
+        handleOrder (order) {
             if (order.status !== 'COMPLETED') {
                 this.$store.commit('UPDATE_PAYMENT_FEEDBACK', { show: true, state: 'error'})
                 return 
