@@ -8,10 +8,10 @@
     "start": "strapi start",
     "build": "strapi build",
     "strapi": "strapi",
-    "clearUploads": "rm public/uploads/*",
-    "downloadUploads": "scp -r kulturgeneratorServer:~/kulturgenerator/cms/public/uploads/* public/uploads",
-    "getUploads": "npm-run-all --serial clearUploads downloadUploads",
-    "getDatabaseDump": "ssh kulturgeneratorServer 'pg_dump --clean -Z 9 -U kulturgenerator kulturgenerator' | zcat | psql kulturgenerator"
+    "downloadDump:clearUploads": "rm public/uploads/*",
+    "downloadDump:images": "scp -r kulturgeneratorServer:~/kulturgenerator/cms/public/uploads/* public/uploads",
+    "downloadDump:dump": "ssh kulturgeneratorServer 'pg_dump --clean -Z 9 -U kulturgenerator kulturgenerator' | zcat | psql kulturgenerator",
+    "downloadDump": "npm-run-all --serial downloadDump:*"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
