@@ -9,9 +9,12 @@
 }
 
 .header__back-button {
+  z-index: $z-level-1; // back button has higher priority than moneypool click
+  margin-top: -13px; // to center galapagos
   border-top: 1px solid $blue;
 
   @media screen and (min-width: $bp-tablet) {
     border-top: 2px solid $blue;
+    margin-top: -18px; // to center galapagos
   }
 }
