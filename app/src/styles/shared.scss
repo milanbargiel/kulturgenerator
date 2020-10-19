@@ -109,3 +109,27 @@ ul {
   height: 0px;
   overflow: hidden;
 }
+
+.underlined-link {
+  color: $black;
+  position: relative;
+
+  &::after {
+    content: "";
+    height: 1px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    opacity: .5;
+    bottom: -1px;
+    background-color: $black;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    &::after {
+      opacity: 1;
+    }
+  }
+}
