@@ -1,5 +1,6 @@
 <template>
     <div class="header">
+        <moneypool-banner></moneypool-banner>
         <div v-if="showBackButton" class="header__back-button">
             <router-link :to="{name: 'artworkList'}">
                 <marquee-text
@@ -9,7 +10,6 @@
                 </marquee-text>            
             </router-link>            
         </div>
-        <moneypool-banner v-bind:class="{ 'moneypool-banner--border': showBackButton }"></moneypool-banner>
         <payment-feedback-banner v-if="paymentFeedback.show" :state="paymentFeedback.state"></payment-feedback-banner>          
     </div>
 </template>
