@@ -54,13 +54,13 @@
 }
 
 // Underlined-link as Hoverstyle
-.artwork-list-item__link:hover,
-.artwork-list-item__link:focus {
+.artwork-list-item:hover,
+.artwork-list-item:focus {
   .artwork-list-item__author,
   .artwork-list-item__title {
     // a solution that allows to configure the line thickness (https://css-tricks.com/styling-underlines-web/)
     background-image: linear-gradient(to right, $black 100%, transparent 0%);
-    background-position: 0 20px;
+    background-position: 0 21px;
     background-repeat: repeat-x;
     background-size: 1px 1px;
   }
