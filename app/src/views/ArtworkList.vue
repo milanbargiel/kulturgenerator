@@ -37,11 +37,6 @@ export default {
       this.$store.dispatch('getArtworks')
       .then(() => this.$store.commit('SET_LOADING_STATE', false))
     }
-  },
-  methods: {
-    addItem () {
-      this.artworkCount++
-    }
   }
 }
 </script>
