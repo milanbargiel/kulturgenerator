@@ -1,11 +1,11 @@
 <template>
-    <div class="moneypool-banner">
+    <a href="https://info.kulturgenerator.de" class="moneypool-banner">
         <marquee-text
             :repeat="repeatBalance"
             :duration="animationDuration">
             <span class="marquee-text__item">{{ balance }}</span>
         </marquee-text>
-    </div>
+    </a>
 </template>
 
 <script>
