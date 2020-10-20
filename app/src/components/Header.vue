@@ -3,7 +3,7 @@
         <router-link v-if="showToShopButton" :to="{name: 'artworkList'}" >
             ← shop
         </router-link>
-        <router-link v-else :to="{name: 'submit'}" >
+        <router-link v-else :to="{name: 'about'}" >
             <moneypool-banner></moneypool-banner>
         </router-link>
         <div v-if="showBackButton" class="header__back-button">

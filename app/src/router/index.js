@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import ArtworkList from '../views/ArtworkList.vue'
 import ArtworkDetail from '../views/ArtworkDetail.vue'
-import Submit from '../views/Submit.vue'
+import About from '../views/About.vue'
 import store from '../store'
 
 Vue.use(VueRouter)
@@ -14,9 +14,9 @@ Vue.use(VueRouter)
     component: ArtworkList
   },
   {
-    path: '/kunst-einreichen',
-    name: 'submit',
-    component: Submit,
+    path: '/about',
+    name: 'about',
+    component: About,
     meta: {
       showToShopButton: true
     }

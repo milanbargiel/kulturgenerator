@@ -11,7 +11,7 @@
 import MyFooter from '../components/Footer'
 
 export default {
-  name: 'Submit',
+  name: 'About',
   components: {
     MyFooter
   },
