@@ -1,5 +1,6 @@
 .intro {
   @include galapagos-margin-bottom(2);
+  margin-top: 10px;
   font-size: $font-size-mobile;
 
   @media screen and (min-width: $bp-tablet) {

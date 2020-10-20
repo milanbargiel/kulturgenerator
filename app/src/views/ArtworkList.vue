@@ -3,7 +3,7 @@
     <div class="artwork-list">
       <artwork-list-item v-for="artwork in artworks" :key="artwork.id" :item="artwork"></artwork-list-item>
     </div>
-    <my-footer></my-footer>
+    <my-footer class="content"></my-footer>
   </div>
 </template>
 
