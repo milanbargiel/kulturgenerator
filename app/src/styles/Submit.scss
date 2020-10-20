@@ -1,8 +1,19 @@
 .intro {
-  margin-bottom: 10px;
+  @include galapagos-margin-bottom(2);
   font-size: $font-size-mobile;
 
   @media screen and (min-width: $bp-tablet) {
     font-size: $font-size-laptop-big;
+  }
+}
+
+// home page
+.heading {
+  font-size: 20px; // prevent linebreak on smaller devices (iphone 5)
+  font-family: $font-family-galapagos;
+  font-weight: bold; // only used when Galapagos is not loaded
+
+  @media screen and (min-width: $bp-smartphone) {
+    font-size: inherit;
   }
 }
