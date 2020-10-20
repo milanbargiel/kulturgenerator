@@ -1,11 +1,11 @@
 <template>
-    <a href="https://info.kulturgenerator.de" class="moneypool-banner">
+    <router-link :to="{name: 'submit'}" class="moneypool-banner">
         <marquee-text
             :repeat="repeatBalance"
             :duration="animationDuration">
             <span class="marquee-text__item">{{ balance }}</span>
         </marquee-text>
-    </a>
+    </router-link>
 </template>
 
 <script>
