@@ -67,10 +67,6 @@ a {
   text-decoration: none;
 }
 
-html {
-  line-height: 1;
-}
-
 button:hover,
 button:focus {
   cursor: pointer;
@@ -92,6 +88,7 @@ html {
 body {
   font-family: $font-family;
   font-size: $font-size-mobile;
+  line-height: 1.5;
 
   @media screen and (min-width: $bp-tablet) {
     font-size: $font-size-desktop;
