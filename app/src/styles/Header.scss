@@ -9,6 +9,11 @@
   }
 }
 
+.header__to-shop-btn {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
 .header__back-button {
   z-index: $z-level-1; // back button has higher priority than moneypool click
   margin-top: -13px; // to center galapagos

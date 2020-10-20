@@ -1,6 +1,6 @@
 <template>
     <div class="header">
-        <router-link v-if="showToShopButton" :to="{name: 'artworkList'}">
+        <router-link v-if="showToShopButton" :to="{name: 'artworkList'}" class="header__to-shop-btn">
             ← shop
         </router-link>
         <router-link v-else :to="{name: 'about'}" >

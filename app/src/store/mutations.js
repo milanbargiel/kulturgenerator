@@ -3,7 +3,6 @@ import Vue from 'vue'
 const mutations = {
     SET_LOADING_STATE (state, payload) {
         if (!payload) {
-            console.log('Set loading state')
             setTimeout(() => state.isLoading = payload, state.loadingDelay) // wait a minimum amount of time before setting loading to false
         } else {
             state.isLoading = payload

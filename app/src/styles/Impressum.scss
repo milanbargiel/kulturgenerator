@@ -1,7 +1,13 @@
-// for impressum only
-@media screen and (min-width: $bp-tablet) {
-  .longer-text-container {
-    font-size: 28px;
-    max-width: 1000px;
+.title {
+  line-height: 1;
+  font-family: 'GalapagosA-Regular', 'Inconsolata', monospace;
+  font-size: $font-size-mobile-huge;
+
+  @media screen and (min-width: $bp-tablet) {
+    font-size: $font-size-laptop-huge;
+  }
+
+  @media screen and (min-width: $bp-large) {
+    font-size: $font-size-desktop-huge;
   }
 }

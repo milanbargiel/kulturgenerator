@@ -4,6 +4,7 @@ import ArtworkList from '../views/ArtworkList.vue'
 import ArtworkDetail from '../views/ArtworkDetail.vue'
 import About from '../views/About.vue'
 import Impressum from '../views/Impressum.vue'
+import Faq from '../views/Faq.vue'
 import store from '../store'
 
 Vue.use(VueRouter)
@@ -28,6 +29,15 @@ Vue.use(VueRouter)
     component: Impressum,
     meta: {
       showToShopButton: true
+    }
+  },
+  {
+    path: '/faq',
+    name: 'faq',
+    component: Faq,
+    meta: {
+      showToShopButton: true,
+      bluePageLayout: true
     }
   },
   {

@@ -155,6 +155,14 @@ ul {
       opacity: 1;
     }
   }
+
+  &--blue {
+    color: $blue;
+
+    &::after {
+      background-color: $blue;
+    }
+  }
 }
 
 .loading-indicator {
@@ -207,16 +215,17 @@ ul {
   }
 }
 
-.title {
-  line-height: 1;
-  font-family: 'GalapagosA-Regular', 'Inconsolata', monospace;
-  font-size: $font-size-mobile-huge;
+.text {
+  font-size: $font-size-mobile;
 
   @media screen and (min-width: $bp-tablet) {
-    font-size: $font-size-laptop-huge;
+    font-size: $font-size-laptop-big;
   }
+}
 
-  @media screen and (min-width: $bp-large) {
-    font-size: $font-size-desktop-huge;
+@media screen and (min-width: $bp-tablet) {
+  .longer-text-container {
+    font-size: 28px;
+    max-width: 1000px;
   }
 }
