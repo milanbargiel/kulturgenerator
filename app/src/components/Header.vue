@@ -1,13 +1,18 @@
 <template>
     <div class="header">
-        <moneypool-banner></moneypool-banner>
+        <router-link v-if="showToShopButton" :to="{name: 'artworkList'}" >
+            ← shop
+        </router-link>
+        <router-link v-else :to="{name: 'submit'}" >
+            <moneypool-banner></moneypool-banner>
+        </router-link>
         <div v-if="showBackButton" class="header__back-button">
             <router-link :to="{name: 'artworkList'}">
                 <marquee-text
                     :repeat="20"
                     :duration="5">
                     <span class="marquee-text__item">←</span>
-                </marquee-text>            
+                </marquee-text>       
             </router-link>            
         </div>
         <payment-feedback-banner v-if="paymentFeedback.show" :state="paymentFeedback.state"></payment-feedback-banner>          
@@ -25,6 +30,9 @@ export default {
     computed: {
         showBackButton () {
             return this.$route.meta.showBackButton || false
+        },
+        showToShopButton () {
+            return this.$route.meta.showToShopButton || false
         },
         paymentFeedback () {
             return this.$store.state.paymentFeedback

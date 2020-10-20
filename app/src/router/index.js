@@ -16,7 +16,10 @@ Vue.use(VueRouter)
   {
     path: '/kunst-einreichen',
     name: 'submit',
-    component: Submit
+    component: Submit,
+    meta: {
+      showToShopButton: true
+    }
   },
   {
     path: '/:author/:slug',

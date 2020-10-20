@@ -1,11 +1,9 @@
 <template>
-    <router-link :to="{name: 'submit'}" class="moneypool-banner">
-        <marquee-text
-            :repeat="repeatBalance"
-            :duration="animationDuration">
-            <span class="marquee-text__item">{{ balance }}</span>
-        </marquee-text>
-    </router-link>
+    <marquee-text
+        :repeat="repeatBalance"
+        :duration="animationDuration">
+        <span class="marquee-text__item">{{ balance }}</span>
+    </marquee-text>
 </template>
 
 <script>
