@@ -22,6 +22,7 @@
 }
 
 .artwork-detail__title {
+  line-height: 1.2;
   font-size: $font-size-mobile-huge;
   text-align: center;
   margin-bottom: 12px;
@@ -39,7 +40,6 @@
 
 .artwork-detail__description {
   font-size: $font-size-mobile-big;
-  margin-bottom: 18px;
 
   @media screen and (min-width: $bp-tablet) {
     font-size: $font-size-desktop-big;
@@ -136,8 +136,6 @@
   @media screen and (min-width: $bp-tablet) {
     font-size: $font-size-desktop-huge;
   }
-
-
 }
 
 
