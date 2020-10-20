@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import ArtworkList from '../views/ArtworkList.vue'
 import ArtworkDetail from '../views/ArtworkDetail.vue'
 import About from '../views/About.vue'
+import Impressum from '../views/Impressum.vue'
 import store from '../store'
 
 Vue.use(VueRouter)
@@ -17,6 +18,14 @@ Vue.use(VueRouter)
     path: '/about',
     name: 'about',
     component: About,
+    meta: {
+      showToShopButton: true
+    }
+  },
+  {
+    path: '/impressum',
+    name: 'impressum',
+    component: Impressum,
     meta: {
       showToShopButton: true
     }
