@@ -5,6 +5,7 @@ import ArtworkDetail from '../views/ArtworkDetail.vue'
 import About from '../views/About.vue'
 import Impressum from '../views/Impressum.vue'
 import Faq from '../views/Faq.vue'
+import PageNotFound from '../views/PageNotFound.vue'
 import store from '../store'
 
 Vue.use(VueRouter)
@@ -46,6 +47,15 @@ Vue.use(VueRouter)
     component: ArtworkDetail,
     meta: {
       showBackButton: true
+    }
+  },
+  {
+    path: '*',
+    name: 'pageNotFound',
+    component: PageNotFound,
+    meta: {
+      showToShopButton: true,
+      bluePageLayout: true
     }
   }
 ]

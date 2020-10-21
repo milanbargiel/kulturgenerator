@@ -134,7 +134,7 @@ ul {
 }
 
 .underlined-link {
-  color: $black;
+  color: inherit;
   position: relative;
 
   &::after {
@@ -145,7 +145,7 @@ ul {
     width: 100%;
     opacity: .5;
     bottom: -1px;
-    background-color: $black;
+    background-color: inherit;
   }
 
   &:hover,
