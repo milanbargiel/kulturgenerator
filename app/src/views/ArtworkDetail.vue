@@ -60,7 +60,14 @@ export default {
       return this.$store.getters.getArtworkBySlug(this.$route.params.slug)
     },
     artworkImages () {
-      return this.artwork.images.map(image => process.env.VUE_APP_API_BASEURL + image.url) || []
+      const images = this.artwork.images.map(image => {
+        // Get 'large' variant of image, if it exists
+        // Otherwise, take the unresized one
+        const path = image.formats['large'] ? image.formats['large'].url : image.url
+        return process.env.VUE_APP_API_BASEURL + path
+      }) 
+
+      return images
     },
     isSoldOut () {
       return this.artwork.quantity < 1
