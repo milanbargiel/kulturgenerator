@@ -50,13 +50,17 @@ Vue.use(VueRouter)
     }
   },
   {
-    path: '*',
+    path: '/404',
     name: 'pageNotFound',
     component: PageNotFound,
     meta: {
       showToShopButton: true,
       bluePageLayout: true
     }
+  },
+  {
+    path: '*',
+    redirect: '/404'
   }
 ]
 
