@@ -55,7 +55,7 @@ export default {
         // set to `false`, which removes the apsect
         // ratio we've applied earlier.
         const setLoadingState = () => {
-            this.loading = false
+            this.loading = true
         };
 
         this.$el.addEventListener('load', setLoadingState)
