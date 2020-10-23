@@ -56,7 +56,7 @@
 
   <script>
   export default {
-    name: 'faq',
+    name: 'Faq',
     created () {
       this.$store.commit('SET_LOADING_STATE', false)
     }
