@@ -1,0 +1,9 @@
+.blue-content {
+  background-color: $blue;
+  color: $white;
+  text-rendering: optimizeLegibility;
+
+  .header__to-shop-btn {
+    color: $white;
+  }
+}

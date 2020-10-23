@@ -5,8 +5,13 @@
   line-height: 1;
 
   @media screen and (min-width: $bp-tablet) {
-    font-size: $font-size-desktop-huge;
+    font-size: $font-size-laptop-huge;
   }
+}
+
+.header__to-shop-btn {
+  display: inline-block;
+  margin-bottom: 10px;
 }
 
 .header__back-button {

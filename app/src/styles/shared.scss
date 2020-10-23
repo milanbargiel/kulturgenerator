@@ -1,19 +1,29 @@
 // Constants
+$bp-smartphone: 370px;
 $bp-tablet: 680px;
+$bp-large: 1400px;
+
 $font-family: 'Inconsolata', monospace;
 $font-family-galapagos: 'GalapagosA-Regular', 'Inconsolata', monospace;
 $font-family-galapagos-black: 'GalapagosA-Black', 'Inconsolata', monospace;
 $z-level-1: 1;
 $z-level-above-all: 999;
 
-// Font sizes
+// Mobile font sizes
 $font-size-mobile-small: 14px;
 $font-size-mobile: 20px;
 $font-size-mobile-big: 26px;
-$font-size-mobile-huge: 40px;
-$font-size-desktop: 22px;
-$font-size-desktop-big: 33px;
-$font-size-desktop-huge: 55px;
+$font-size-mobile-huge: 40px; // Moneypool banner
+
+// Laptop font sizes
+$font-size-laptop: 22px;
+$font-size-laptop-big: 33px;
+$font-size-laptop-huge: 55px;
+
+// Desktop font sizes
+$font-size-desktop: 24px;
+$font-size-desktop-big: 36px;
+$font-size-desktop-huge: 60px;
 
 // Colors
 $blue: #0000ee;
@@ -67,7 +77,7 @@ $spacing-desktop--large: 90px;
   margin-bottom: $factor * $font-size-mobile-huge;
 
   @media screen and (min-width: $bp-tablet) {
-    margin-bottom: $factor * $font-size-desktop-huge;
+    margin-bottom: $factor * $font-size-laptop-huge;
   }
 }
 
@@ -75,7 +85,7 @@ $spacing-desktop--large: 90px;
   margin-top: $factor * $font-size-mobile-huge;
 
   @media screen and (min-width: $bp-tablet) {
-    margin-top: $factor * $font-size-desktop-huge;
+    margin-top: $factor * $font-size-laptop-huge;
   }
 }
 
@@ -107,7 +117,7 @@ body {
   line-height: 1.5;
 
   @media screen and (min-width: $bp-tablet) {
-    font-size: $font-size-desktop;
+    font-size: $font-size-laptop;
   }
 }
 
@@ -143,6 +153,14 @@ ul {
   &:active {
     &::after {
       opacity: 1;
+    }
+  }
+
+  &--blue {
+    color: $blue;
+
+    &::after {
+      background-color: $blue;
     }
   }
 }
@@ -183,4 +201,31 @@ ul {
     text-shadow:
       .25em 0 0 $black,
       .5em 0 0 $black;}
+}
+
+// content
+.content {
+  padding: 0 6px 6px;
+  overflow-wrap: break-word;
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (min-width: $bp-tablet) {
+    padding: 0 10px 10px;
+  }
+}
+
+.text {
+  font-size: $font-size-mobile;
+
+  @media screen and (min-width: $bp-tablet) {
+    font-size: $font-size-laptop-big;
+  }
+}
+
+@media screen and (min-width: $bp-tablet) {
+  .longer-text-container {
+    font-size: 28px;
+    max-width: 1000px;
+  }
 }

@@ -29,7 +29,7 @@
   word-break: break-all;
 
   @media screen and (min-width: $bp-tablet) {
-    font-size: $font-size-desktop-huge;
+    font-size: $font-size-laptop-huge;
     margin-bottom: 30px;
   }
 }
@@ -42,7 +42,7 @@
   font-size: $font-size-mobile-big;
 
   @media screen and (min-width: $bp-tablet) {
-    font-size: $font-size-desktop-big;
+    font-size: $font-size-laptop-big;
     margin-bottom: 90px;
   }
 }
@@ -70,7 +70,7 @@
   font-family: $font-family-galapagos;
 
   @media screen and (min-width: $bp-tablet) {
-    font-size: $font-size-desktop-huge;
+    font-size: $font-size-laptop-huge;
   }
 }
 
@@ -127,14 +127,14 @@
     top: 100%;
     left: 0;
     width: 200%;
-    font-size: $font-size-desktop;
+    font-size: $font-size-laptop;
     color: $dark-grey;
     padding: 12px 0;
     margin-bottom: 60px;
   }
 
   @media screen and (min-width: $bp-tablet) {
-    font-size: $font-size-desktop-huge;
+    font-size: $font-size-laptop-huge;
   }
 }
 

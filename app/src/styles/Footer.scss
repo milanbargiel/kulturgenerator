@@ -1,12 +1,5 @@
 .footer {
-  font-size: $font-size-mobile-small;
-  margin-bottom: 1rem;
-  padding-left: 6px; // same distance from browser side as artwork list item
-
-  @media screen and (min-width: $bp-tablet) {
-    font-size: $font-size-desktop;
-    padding-left: 10px; // same distance from browser side as artwork list item
-  }
+  @include galapagos-margin-top(2);
 }
 
 .navigation-element {
