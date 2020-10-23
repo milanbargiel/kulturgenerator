@@ -31,6 +31,11 @@
         des Preises werden auf ein solidarisches Konto eingezahlt, dessen Erlös am Ende unter allen Teilnehmenden verteilt wird. Der aktuelle Kontostand ist in der Laufleiste ↑
       </div>
     </div>
+    <div class="payment-button__description-container">
+      <div class="payment-button__description-text">
+        Die Kaufabwicklung wird mit <a href="https://www.paypal.com/de/webapps/mpp/ua/privacy-full?locale.x=de_DE" target="_blank" rel="noopener">PayPal</a> durchgeführt. Durch Anklicken von Kaufen stimmen Sie der Verwendung von Cookies durch Dritte zu.
+      </div>      
+    </div>
     <checkout v-if="showCheckout" :artwork="artwork"></checkout>
   </div>
 </template>
