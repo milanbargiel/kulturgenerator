@@ -5,8 +5,9 @@
       <carousel 
         :perPage="1" 
         :centerMode=true>
-        <slide v-for="image in artworkImages" :key="image">
-          <img v-img="{ group: 'artworkImages' }" :src="image" class="carousel__image">
+        <slide v-for="{ url, aspectRatio } in artworkImages" :key="url">
+          <!-- v-img from https://github.com/crowdbotics/v-img -->
+          <responsive-image v-img:artworkGallery :src="url" class="carousel__image" :aspectRatio="aspectRatio"></responsive-image>
         </slide>
       </carousel>
     </div>
@@ -37,10 +38,11 @@
 <script>
 import { Carousel, Slide} from 'vue-carousel'
 import Checkout from '../components/Checkout'
+import ResponsiveImage from '../components/ResponsiveImage'
 
 export default {
   name: 'artworkDetail',
-  components: { Carousel, Slide, Checkout },
+  components: { Carousel, Slide, Checkout, ResponsiveImage },
   data () {
     return {
       checkoutIsOpen: false
@@ -60,7 +62,15 @@ export default {
       return this.$store.getters.getArtworkBySlug(this.$route.params.slug)
     },
     artworkImages () {
-      return this.artwork.images.map(image => process.env.VUE_APP_API_BASEURL + image.url) || []
+      const images = this.artwork.images.map(image => {
+        // Get 'large' variant of image, if it exists
+        // Otherwise, take the unresized one
+        const url = process.env.VUE_APP_API_BASEURL + (image.formats['large'] ? image.formats['large'].url : image.url)
+        const aspectRatio = (image.height / image.width) * 100;
+        return { url, aspectRatio }
+      }) 
+
+      return images
     },
     isSoldOut () {
       return this.artwork.quantity < 1

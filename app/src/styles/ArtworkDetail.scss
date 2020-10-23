@@ -10,6 +10,7 @@
 .carousel {
   text-align: center; // center images that are reduced in size
   margin: 0 30px 12px;
+  max-height: 500px;
 
   @media screen and (min-width: $bp-tablet) {
     margin: 0 auto 30px;
