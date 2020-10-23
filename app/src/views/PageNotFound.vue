@@ -1,6 +1,6 @@
 <template>
     <div class="content">
-      <div class="text page-not-found__text">
+      <div class="text">
             <span class="intext-title">Diese Seite existiert nicht.</span>
         </div>
         <my-footer class="text"></my-footer>
