@@ -71,7 +71,11 @@ export default {
             return 15 // width for large screens [%]
         },
         randomizedWidth () {
-            return Math.floor(Math.random() * 10 + this.minWidth)
+            if (this.item.type === 'Erlebnis') {
+                return this.minWidth // do not randomize width of artworks of type "Erlebnis"
+            }
+            const maxAdded = 10 // maximum added to minWidth [%]
+            return Math.floor(Math.random() * maxAdded + this.minWidth)
         }
     }
 }
