@@ -8,7 +8,7 @@ server {
   server_name kulturgenerator.de www.kulturgenerator.de;
 
   location / {
-    try_files $uri $uri/ =404;
+    try_files $uri $uri/ /index.html?$args;
     #auth_basic "Restricted Content";
     #auth_basic_user_file /etc/nginx/.htpasswd;
   }
@@ -55,40 +55,6 @@ server {
   return 404; # managed by Certbot
 }
 
-# INFO KULTURGENERATOR ENVIRONMENT
-server {
-  # deliver files from folder
-  root /var/www/info.kulturgenerator.de;
-
-  # main index page is called index.html
-  index index.html;
-
-  server_name info.kulturgenerator.de;
-
-  location / {
-    try_files $uri $uri/ =404;
-    auth_basic "Restricted Content";
-    auth_basic_user_file /etc/nginx/.htpasswd;
-  }
-
-  listen 443 ssl; # managed by Certbot
-  ssl_certificate /etc/letsencrypt/live/info.kulturgenerator.de/fullchain.pem; # managed by Certbot
-  ssl_certificate_key /etc/letsencrypt/live/info.kulturgenerator.de/privkey.pem; # managed by Certbot
-  include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
-  ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
-}
-
-# listen to port 80 (http) and redirect to https
-server {
-  if ($host = info.kulturgenerator.de) {
-    return 301 https://info.kulturgenerator.de$request_uri;
-  } # managed by Certbot
-
-  server_name info.kulturgenerator.de;
-  listen 80;
-  return 404; # managed by Certbot
-}
-
 # STAGING ENVIRONMENT
 server {
   # deliver files from folder
@@ -100,7 +66,7 @@ server {
   server_name staging.kulturgenerator.de;
 
   location / {
-    try_files $uri $uri/ =404;
+    try_files $uri $uri/ /index.html?$args;
     auth_basic "Restricted Content";
     auth_basic_user_file /etc/nginx/.htpasswd;
   }
