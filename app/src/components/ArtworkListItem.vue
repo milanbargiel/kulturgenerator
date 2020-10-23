@@ -65,7 +65,7 @@ export default {
             if (this.viewportWidth < 680) {
                 return 40 // width for small screens [%]
             }
-            if (this.viewportWidth < 1040) {
+            if (this.viewportWidth < 1400) {
                 return 25 // width for medium screens [%]
             }
             return 15 // width for large screens [%]
