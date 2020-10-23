@@ -55,6 +55,9 @@ export default {
         .then(() => {
           this.$store.commit('SET_LOADING_STATE', false)
         })
+        .catch(() => {
+          this.$router.push('/404') } // redirect to 404 page if artwork is not found
+        )
     }
   },
   computed: {
