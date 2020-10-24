@@ -12,7 +12,8 @@
       </carousel>
     </div>
     <div class="artwork-detail__title">
-      <a class="artwork-detail__author link" :href="artwork.website" target="_blank" rel="noopener">{{ artwork.author }}:</a>
+      <a v-if="artwork.website" class="artwork-detail__author link" :href="artwork.website" target="_blank" rel="noopener">{{ artwork.author }}:</a>
+      <div v-else>{{ artwork.author }}</div>
       {{ artwork.title }}
     </div>
     <div class="artwork-detail__description" v-html="artwork.description">
