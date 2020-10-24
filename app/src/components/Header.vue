@@ -4,7 +4,7 @@
             ← shop
         </router-link>
         <router-link v-else :to="{name: 'about'}" >
-            <moneypool-banner></moneypool-banner>
+            <moneypool-banner :isLoading="isLoading"></moneypool-banner>
         </router-link>
         <div v-if="showBackButton" class="header__back-button">
             <router-link :to="{name: 'artworkList'}">
@@ -26,6 +26,7 @@ import PaymentFeedbackBanner from '../components/PaymentFeedbackBanner'
 
 export default {
     name: 'Header',
+    props: [ 'isLoading' ],
     components: { MarqueeText, MoneypoolBanner, PaymentFeedbackBanner },
     computed: {
         showBackButton () {

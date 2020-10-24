@@ -32,6 +32,7 @@
     "sass-loader": "^9.0.3",
     "v-img": "^0.2.0",
     "vue": "^2.6.11",
+    "vue-animejs": "^2.1.1",
     "vue-carousel": "^0.18.0",
     "vue-marquee-text-component": "^1.1.1",
     "vue-router": "^3.2.0",

@@ -1,8 +1,19 @@
 <template>
     <marquee-text
+        v-if="!isLoading"
         :repeat="repeatBalance"
         :duration="animationDuration">
-        <span class="marquee-text__item">{{ balance }}</span>
+        <div ref="balanceItem" class="marquee-text__item" :style="{ width: balanceItemWidth }">
+            <span 
+                v-anime="{ 
+                    duration: 3000,
+                    loop: false,
+                    round: 1,
+                    innerHTML: [0, balance],
+                    easing: 'easeOutExpo'
+                }"
+            ></span>
+        </div>
     </marquee-text>
 </template>
 
@@ -11,6 +22,7 @@ import MarqueeText from 'vue-marquee-text-component'
 
 export default {
     name: 'MoneypoolBanner',
+    props: [ 'isLoading' ],
     components: { MarqueeText },
     data () {
         return {
@@ -22,6 +34,9 @@ export default {
         balance () {
             // toLocaleString is native js function to add the point for 1000s
             return this.$store.state.shadowMoneypoolBalance.toLocaleString(undefined, { minimumFractionDigits: 2 })
+        },
+        balanceItemWidth () {
+            return this.balance.length * 30 + 'px' // 30 is approximately the width of a single number
         }
     }
 }

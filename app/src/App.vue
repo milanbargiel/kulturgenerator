@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <div v-if="isLoading" class="loading-indicator">lädt</div>
+<div v-if="isLoading" class="loading-indicator">lädt</div>
     <div :class="{ 'hidden': isLoading, 'blue-content': isBluePage }">
-      <my-header></my-header>
+      <my-header :isLoading="isLoading"></my-header>
       <router-view/> 
     </div>
   </div>
