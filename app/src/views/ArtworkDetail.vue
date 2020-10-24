@@ -13,7 +13,7 @@
     </div>
     <div class="artwork-detail__title">
       <a v-if="artwork.website" class="artwork-detail__author link" :href="artwork.website" target="_blank" rel="noopener">{{ artwork.author }}:</a>
-      <div v-else>{{ artwork.author }}</div>
+      <div v-else class="artwork-detail__author">{{ artwork.author }}</div>
       {{ artwork.title }}
     </div>
     <div class="artwork-detail__description" v-html="artwork.description">
