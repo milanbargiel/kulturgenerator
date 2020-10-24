@@ -100,8 +100,7 @@
       "private": true
     },
     "website": {
-      "type": "string",
-      "private": true
+      "type": "string"
     },
     "institution": {
       "type": "string",
