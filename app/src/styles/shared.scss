@@ -133,6 +133,13 @@ ul {
   overflow: hidden;
 }
 
+.link {
+
+  &:hover {
+    font-style: italic;
+  }
+}
+
 .underlined-link {
   color: inherit;
   position: relative;
