@@ -12,7 +12,7 @@
       </carousel>
     </div>
     <div class="artwork-detail__title">
-      <div class="artwork-detail__author">{{ artwork.author }}:</div>
+      <a class="artwork-detail__author link" :href="artwork.website" target="_blank" rel="noopener">{{ artwork.author }}:</a>
       {{ artwork.title }}
     </div>
     <div class="artwork-detail__description" v-html="artwork.description">
