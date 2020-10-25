@@ -23,8 +23,8 @@
             </div>
         </div>
         <div class="navigation">
-            <a class="navigation-element underlined-link" href="mailto:info@kulturgenerator.de">info@kulturgenerator.de</a><br>
-            <router-link :to="{name: 'impressum'}" class="navigation-element underlined-link">Impressum & Datenschutz</router-link>
+            <a class="navigation-element link" href="mailto:info@kulturgenerator.de">info@kulturgenerator.de</a><br>
+            <router-link :to="{name: 'impressum'}" class="navigation-element link">Impressum & Datenschutz</router-link>
         </div>
     </footer>
 </template>
