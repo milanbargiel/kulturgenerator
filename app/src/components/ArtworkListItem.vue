@@ -54,10 +54,29 @@ export default {
             return slugify(this.item.author)
         },
         styles () {
-            const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
-            const minWidth = vw < 680 ? 30 : 20; // make artwork item wider on small devices
-            return 'max-width:' + Math.floor(Math.random()  * 30 + minWidth) + '%;'
+            return {
+                maxWidth: this.randomizedWidth + '%'
+            }
         },
+        viewportWidth () {
+            return Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
+        },
+        minWidth () {
+            if (this.viewportWidth < 680) {
+                return 40 // width for small screens [%]
+            }
+            if (this.viewportWidth < 1400) {
+                return 25 // width for medium screens [%]
+            }
+            return 15 // width for large screens [%]
+        },
+        randomizedWidth () {
+            if (this.item.type === 'Erlebnis') {
+                return this.minWidth // do not randomize width of artworks of type "Erlebnis"
+            }
+            const maxAdded = 12.5 // maximum added to minWidth [%]
+            return Math.floor(Math.random() * maxAdded + this.minWidth)
+        }
     }
 }
 </script>
