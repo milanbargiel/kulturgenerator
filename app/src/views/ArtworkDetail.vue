@@ -12,8 +12,8 @@
       </carousel>
     </div>
     <div class="artwork-detail__title">
-      <a v-if="artwork.website" class="artwork-detail__author link" :href="artwork.website" target="_blank" rel="noopener">{{ artwork.author }}:</a>
-      <div v-else class="artwork-detail__author">{{ artwork.author }}</div>
+      <a v-if="artwork.website" class="artwork-detail__author link" :href="artwork.website" target="_blank" rel="noopener">{{ artwork.author }}</a>
+      <div v-else class="artwork-detail__author">{{ artwork.author }}</div><br>
       {{ artwork.title }}
     </div>
     <div class="artwork-detail__description" v-html="artwork.description">
@@ -23,8 +23,8 @@
         <div class="artwork-detail__price">{{ artwork.price }}€</div>
         <div v-if="isSoldOut" class="artwork-detail__sold">VERKAUFT</div>
         <div v-else class="artwork-detail__quantity">{{ artworkQuantity }}</div>        
-        <div v-if="!showCheckout && !isSoldOut" class="artwork-detail__payment-button" >
-          <button class="button" @click="openCheckout()">kaufen</button>
+        <div v-if="!showCheckout && !isSoldOut" class="artwork-detail__payment-button">
+          <button class="button" @click="openCheckout()">zur kasse</button>
         </div>
       </div>      
       <div class="artwork-detail__generator-share">

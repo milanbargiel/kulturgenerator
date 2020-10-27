@@ -2,9 +2,10 @@
     <marquee-text
         :repeat="repeatBalance"
         :duration="animationDuration">
-        <span class="marquee-text__item">{{ balance }}</span>
+        <span class="marquee-text__item">{{ balance }} </span>
     </marquee-text>
 </template>
+
 
 <script>
 import MarqueeText from 'vue-marquee-text-component'

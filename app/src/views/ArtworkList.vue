@@ -1,16 +1,24 @@
 <template>
   <div>
-    <div class="artwork-list">
+    <div class="Info">
+      <div class="body"><p> Der <span class="intext-title">kulturgenerator</span> ist eine solidarische Online-Galerie. Kulturschaffende entscheiden selbst, ob und wie viel sie vom Erlös des Verkaufs ihrer Arbeit in ein gemeinsames Konto einzahlen möchten. Der Kontostand ist oben zu sehen  <span class="intext-pfeile">↑</span></p></div>
+    </div>
+
+  <div class="artwork-list">
       <artwork-list-item v-for="artwork in artworks" :key="artwork.id" :item="artwork"></artwork-list-item>
     </div>
-    <my-footer class="content"></my-footer>
+  <my-footer class="content"></my-footer>
   </div>
-</template>
+  </template>
+  
+
+  
 
 <script>
 import { mapGetters } from 'vuex'
 import ArtworkListItem from '../components/ArtworkListItem.vue'
 import MyFooter from '../components/Footer'
+
 
 export default {
   name: 'ArtworkList',

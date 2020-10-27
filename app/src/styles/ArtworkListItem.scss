@@ -3,10 +3,17 @@
   font-size: $font-size-mobile-small;
   padding: 12px 0px 0px 6px;
   line-height: 1.2;
+  
+
+
+
+
 
   @media screen and (min-width: $bp-tablet) {
     font-size: $font-size-laptop;
-    padding: 30px 0px 0px 10px;
+    padding-left: 20px;
+    
+    
   }
 }
 
@@ -16,8 +23,11 @@
     display: none;
   }
 
+  
   .artwork-list-item__author {
     text-decoration:line-through;
+
+    
 
     &:before {
       content: "";
@@ -28,10 +38,15 @@
       display: inline-block;
       margin-right: .5rem;
       margin-bottom: .1rem;
+      
+
     }
   }
   .artwork-list-item__title {
     text-decoration:line-through;
+
+    
+
   }
 }
 
@@ -42,15 +57,18 @@
 
 .artwork-list-item__author {
   text-transform: uppercase;
+  margin-bottom: 30px;
+  text-decoration: underline;
 }
 
 .artwork-list-item__price {
   font-family: $font-family-galapagos;
   color: $blue;
+  text-align:center;
 
   &:before {
     font-family: $font-family;
     color: $black;
-    content: ', ';
+    
   }
 }

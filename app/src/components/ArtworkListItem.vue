@@ -1,8 +1,8 @@
 <template>
     <router-link :class="['artwork-list-item link', { 'artwork-list-item--sold': isSoldOut }]" :style="styles" :to="{ name: 'artworkDetail', params: { author: this.authorSlug, slug: item.slug }}">
         <responsive-image class="artwork-list-item__image" :lazy-src="imgUrl" :lazy-srcset="srcSet" :aspectRatio="aspectRatio"></responsive-image>
-        <span class="artwork-list-item__author">{{ item.author }}: </span>
-        <span class="artwork-list-item__title">{{ item.title }}</span> 
+        <span class="artwork-list-item__author">{{ item.author }}<br></span>
+        <span class="artwork-list-item__title">{{ item.title }}<br></span> 
         <span class="artwork-list-item__price">{{ item.price }}€</span>
     </router-link>
 </template>
@@ -66,15 +66,15 @@ export default {
                 return 40 // width for small screens [%]
             }
             if (this.viewportWidth < 1400) {
-                return 25 // width for medium screens [%]
+                return 20 // width for medium screens [%]
             }
-            return 15 // width for large screens [%]
+            return 30 // width for large screens [%]
         },
         randomizedWidth () {
             if (this.item.type === 'Erlebnis') {
                 return this.minWidth // do not randomize width of artworks of type "Erlebnis"
             }
-            const maxAdded = 12.5 // maximum added to minWidth [%]
+            const maxAdded = 20 // maximum added to minWidth [%]
             return Math.floor(Math.random() * maxAdded + this.minWidth)
         }
     }

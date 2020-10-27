@@ -1,6 +1,10 @@
 .artwork-detail {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 12px 12px 0;
+  line-height: 1.4;
+
+
+
 
   @media screen and (min-width: $bp-tablet) {
     margin: 30px auto 0;
@@ -13,7 +17,7 @@
   max-height: 500px;
 
   @media screen and (min-width: $bp-tablet) {
-    margin: 0 auto 30px;
+    margin-top: 30px;
   }
 }
 
@@ -23,11 +27,14 @@
 }
 
 .artwork-detail__title {
-  line-height: 1.2;
+  line-height: 1;
   font-size: $font-size-mobile-huge;
   text-align: center;
   margin-bottom: 12px;
+  margin-top: 12px;
   word-break: break-all;
+  margin-top: 60px;
+  font-family: $font-family-galapagos;
 
   @media screen and (min-width: $bp-tablet) {
     font-size: $font-size-laptop-huge;
@@ -37,13 +44,14 @@
 
 .artwork-detail__author {
   text-transform: uppercase;
+  margin-top: 30px;
 }
 
 .artwork-detail__description {
-  font-size: $font-size-mobile-big;
+  font-size: $font-size-mobile;
 
   @media screen and (min-width: $bp-tablet) {
-    font-size: $font-size-laptop-big;
+    font-size: $font-size-laptop;
     margin-bottom: 90px;
   }
 }
@@ -75,8 +83,16 @@
   }
 }
 
+.artwork-detail__generator-share {
+  line-height: 1.4;
+
+  }
+
+
 .artwork-detail__price {
-  margin-bottom: 12px;
+  margin-bottom: 60px;
+
+
 }
 
 .artwork-detail__sold {
@@ -93,11 +109,14 @@
 
 .artwork-detail__quantity {
   color: $blue;
+  margin-top: 12px;
 }
 
 .artwork-detail__generator-share {
   flex: 0 1 45%;
   color: $blue;
+  line-height: 1.2;
+  margin-bottom: 12px;
 }
 
 .artwork-detail__payment-button {
@@ -105,6 +124,10 @@
   font-family: inherit;
   margin-top: auto;
   position: relative;
+  margin-bottom: 60px;
+  
+
+
 
   button {
     font-size: $font-size-mobile-huge;
@@ -112,7 +135,11 @@
     border: 1px solid $black;
     padding-left: 10px;
     padding-right: 10px;
+    padding-top: 10px;
     text-transform: uppercase;
+    font-family:$font-family-non-mono;
+    font-family: $font-size-desktop-huge;
+
 
     &:hover,
     &:focus {
@@ -127,11 +154,14 @@
     position: absolute;
     top: 100%;
     left: 0;
-    width: 200%;
+    width: 150%;
     font-size: $font-size-laptop;
-    color: $dark-grey;
-    padding: 12px 0;
-    margin-bottom: 60px;
+    color: $black;
+    line-height: 1.4;
+    margin-top: 30px;
+    margin-bottom: 3000px;
+    font-family:$font-family;
+    
   }
 
   @media screen and (min-width: $bp-tablet) {
