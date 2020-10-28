@@ -1,10 +1,4 @@
-<p style="max-width: 300px">
-    <a href="https://www.kulturgenerator.de" target="_blank">
-        <img src="https://www.kulturgenerator.de/assets/images/kulturgenerator.png">
-    </a>
-</p>
-
-## The Designers Guide for Changing Styles of Kulturgenerator
+# The Designers Guide for Changing Styles of Kulturgenerator
 *What we will do: Get the Kulturgenerator app up and running in local development mode and push changes to github.com. Let's go!*
 
 #### 1. Install package managers
