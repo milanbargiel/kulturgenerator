@@ -28,7 +28,7 @@
   }
 
   &--kk {
-    width: 60px;
+    width: 55px;
 
     @media screen and (min-width: $bp-tablet) {
       width: 70px;
@@ -36,10 +36,11 @@
   }
 
   &--wf {
-    width: 80px;
+    margin-left: 1rem;
+    width: 60px;
     
     @media screen and (min-width: $bp-tablet) {
-      width: 90px;
+      width: 70px;
     }
   }
 
@@ -49,12 +50,12 @@
 
     @media screen and (min-width: $bp-tablet) {
       margin-left: -2rem;
-      width: 200px;
+      width: 190px;
     }
   }
 
   &--sk {
-    width: 100px;
+    width: 90px;
     
     @media screen and (min-width: $bp-tablet) {
       width: 110px;
