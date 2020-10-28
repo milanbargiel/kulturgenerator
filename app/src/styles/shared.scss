@@ -137,6 +137,7 @@ a {
 button:hover,
 button:focus {
   cursor: pointer;
+
 }
 
 html { // Border Box for everything
@@ -176,7 +177,7 @@ ul {
 
   &:hover {
     font-style: italic;
-    color: $orange;
+    transform: skew(-5deg);
 
 
 
