@@ -11,9 +11,9 @@
 # nginx-conf: configuration on linux server
 ```
 
-### Source code for the open source project kulturgenerator.org
+### Source code for kulturgenerator.org
 
-- This is a monolithic git repository for the open source online art gallery kulturgenerator
+- This is a git repository for the open source online art gallery kulturgenerator
 - For ⏳ installation instructions go to the readmes of the component's subfolders
 - If you have questions contact info@kulturgenerator.de
 - If you want to buy art and support local artist visit [kulturgenerator.org](https://www.kulturgenerator.org)
