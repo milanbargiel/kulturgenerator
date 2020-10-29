@@ -74,7 +74,7 @@ export default {
             if (this.item.type === 'Erlebnis') {
                 return this.minWidth // do not randomize width of artworks of type "Erlebnis"
             }
-            const maxAdded = 20 // maximum added to minWidth [%]
+            const maxAdded = 0 // maximum added to minWidth [%]
             return Math.floor(Math.random() * maxAdded + this.minWidth)
         }
     }

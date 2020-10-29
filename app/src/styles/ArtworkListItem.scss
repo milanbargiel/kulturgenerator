@@ -4,12 +4,7 @@
   padding: 12px 0px 0px 6px;
   line-height: 1.2;
   
-
-
-
-
-
-  @media screen and (min-width: $bp-tablet) {
+    @media screen and (min-width: $bp-tablet) {
     font-size: $font-size-laptop;
     padding-left: 20px;
     
@@ -42,8 +37,10 @@
 
     }
   }
+  
   .artwork-list-item__title {
     text-decoration:line-through;
+
 
     
 
@@ -60,6 +57,11 @@
   margin-bottom: 30px;
   
 }
+
+.artwork-list-item__title {
+    text-decoration: italic;
+
+    }
 
 .artwork-list-item__price {
   font-family: $font-family-galapagos;
