@@ -22,6 +22,8 @@ dist/
 spreadsheet-app-scripts/.clasp.json
 
 # Ignore Galapagos Font files
+apercu-mono-regular.woff
+apercu-mono-regular.woff2
 GalapagosA-Regular.woff
 GalapagosA-Regular.woff2
 GalapagosA-Black.woff
