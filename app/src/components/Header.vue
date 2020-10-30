@@ -1,10 +1,10 @@
 <template>
     <div class="header">
-        <router-link v-if="showToShopButton" :to="{name: 'artworkList'}" class="header__to-shop-btn">
+        <router-link v-if="showToShopButton" :to="{name: 'artworkList'}" class="header__to-shop-btn link">
             ← shop
         </router-link>
-        <router-link v-else :to="{name: 'about'}" >
-            <moneypool-banner :isLoading="isLoading"></moneypool-banner>
+        <router-link v-else class="link" :to="{name: 'about'}" >
+            <moneypool-banner></moneypool-banner>
         </router-link>
         <div v-if="showBackButton" class="header__back-button">
             <router-link :to="{name: 'artworkList'}">

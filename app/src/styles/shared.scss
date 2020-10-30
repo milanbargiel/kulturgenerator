@@ -3,7 +3,7 @@ $bp-smartphone: 370px;
 $bp-tablet: 680px;
 $bp-large: 1400px;
 
-$font-family: 'Inconsolata', monospace;
+$font-family: 'JetBrainMono', monospace;
 $font-family-galapagos: 'GalapagosA-Regular', 'Inconsolata', monospace;
 $font-family-galapagos-black: 'GalapagosA-Black', 'Inconsolata', monospace;
 $z-level-1: 1;
@@ -45,6 +45,16 @@ $spacing-mobile--large: 42px;
 $spacing-desktop--large: 90px;
 
 // Font Faces
+@font-face {
+  font-family: 'JetBrainsMono';
+  src: url('assets/JetBrainsMono-Italic.woff');
+}
+
+@font-face {
+  font-family: 'JetBrainsMono';
+  src: url('assets/JetBrainsMono-Regular.woff');
+}
+
 @font-face {
   font-family: 'Inconsolata';
   src: url('assets/Inconsolata-Medium.ttf');
@@ -131,6 +141,13 @@ ul {
   visibility: hidden;
   height: 0px;
   overflow: hidden;
+}
+
+.link {
+
+  &:hover {
+    font-style: italic;
+  }
 }
 
 .underlined-link {

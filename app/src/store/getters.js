@@ -17,6 +17,9 @@ const getters = {
             .sort((a, b) => a.sort - b.sort) // sort by random sort parameter
             .map(item => item.value) // exclude random sort parameter
             .sort(a => a.quantity > 0 ? -1 : 1) // move sold out items to the back
+    },
+    roundedMoneypoolBalance: state => {
+        return Math.round(state.shadowMoneypoolBalance).toLocaleString() // toLocaleString is native js function to add the point for 1000s
     }
 }
 

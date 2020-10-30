@@ -32,8 +32,7 @@ export default {
     },
     computed: {
         balance () {
-            // toLocaleString is native js function to add the point for 1000s
-            return this.$store.state.shadowMoneypoolBalance.toLocaleString(undefined, { minimumFractionDigits: 2 })
+            return this.$store.getters.roundedMoneypoolBalance
         },
         balanceItemWidth () {
             return this.balance.length * 30 + 'px' // 30 is approximately the width of a single number
