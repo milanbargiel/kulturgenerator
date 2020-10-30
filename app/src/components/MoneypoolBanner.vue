@@ -3,22 +3,15 @@
         v-if="!isLoading"
         :repeat="repeatBalance"
         :duration="animationDuration">
-        <div ref="balanceItem" class="marquee-text__item" :style="{ width: balanceItemWidth }">
-            <span 
-                v-anime="{ 
-                    duration: 3000,
-                    loop: false,
-                    round: 1,
-                    innerHTML: [0, balance],
-                    easing: 'easeOutExpo'
-                }"
-            ></span>
-        </div>
+        <div ref="balanceItem" class="marquee-text__item" :style="{ width: balanceItemWidth }">         
+            <span>{{ animatedBalance.toLocaleString() }}</span>
+        </div>       
     </marquee-text>
 </template>
 
 <script>
 import MarqueeText from 'vue-marquee-text-component'
+import gsap from 'gsap'
 
 export default {
     name: 'MoneypoolBanner',
@@ -26,16 +19,25 @@ export default {
     components: { MarqueeText },
     data () {
         return {
+            tweenedNumber: 0,            
             repeatBalance: 10,
             animationDuration: 5,
         }
     },
+    watch: {
+        balance () {
+            gsap.to(this.$data, { duration: 2.5, tweenedNumber: this.balance, ease: "power4.out" });
+        }
+    },
     computed: {
+        animatedBalance: function() {
+            return parseInt(this.tweenedNumber.toFixed(0))
+        },        
         balance () {
             return this.$store.getters.roundedMoneypoolBalance
         },
         balanceItemWidth () {
-            return this.balance.length * 30 + 'px' // 30 is approximately the width of a single number
+            return this.balance.toString().length * 30 + 'px' // 30 is approximately the width of a single number
         }
     }
 }

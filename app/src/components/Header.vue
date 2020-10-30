@@ -4,7 +4,7 @@
             ← shop
         </router-link>
         <router-link v-else class="link" :to="{name: 'about'}" >
-            <moneypool-banner></moneypool-banner>
+            <moneypool-banner :isLoading="isLoading"></moneypool-banner>
         </router-link>
         <div v-if="showBackButton" class="header__back-button">
             <router-link :to="{name: 'artworkList'}">
