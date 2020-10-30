@@ -61,20 +61,20 @@ export default {
         viewportWidth () {
             return Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
         },
-        minWidth () {
+        minWidth () {            
             if (this.viewportWidth < 680) {
                 return 40 // width for small screens [%]
             }
-            if (this.viewportWidth < 1400) {
-                return 20 // width for medium screens [%]
+            if (this.viewportWidth < 1500) {
+                return 30 // width for medium screens [%]
             }
-            return 30 // width for large screens [%]
+            return 20 // width for large screens [%]
         },
         randomizedWidth () {
             if (this.item.type === 'Erlebnis') {
                 return this.minWidth // do not randomize width of artworks of type "Erlebnis"
             }
-            const maxAdded = 0 // maximum added to minWidth [%]
+            const maxAdded = 8 // maximum added to minWidth [%]
             return Math.floor(Math.random() * maxAdded + this.minWidth)
         }
     }
