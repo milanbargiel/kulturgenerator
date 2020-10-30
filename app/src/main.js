@@ -4,10 +4,8 @@ import router from './router'
 import store from './store'
 
 import VueImg from 'v-img' // full screen image slider
-import VueAnime from 'vue-animejs';
 
 Vue.use(VueImg) 
-Vue.use(VueAnime)
 
 Vue.config.productionTip = false
 
