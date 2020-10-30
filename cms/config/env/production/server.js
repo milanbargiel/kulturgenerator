@@ -8,7 +8,7 @@ module.exports = ({ env }) => ({
   url: 'https://xyz.kulturgenerator.de',
   admin: {
     auth: {
-      secret: env('ADMIN_JWT_SECRET', '32868dff0a05250d9edf538ac624f630'),
+      secret: env('ADMIN_JWT_SECRET'),
     }
   }
-})
+});
