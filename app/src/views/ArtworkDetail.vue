@@ -16,8 +16,9 @@
       <div v-else class="artwork-detail__author">{{ artwork.author }}</div>
       {{ artwork.title }}
     </div>
-    <div class="artwork-detail__description" v-html="artwork.description">
-    </div>
+    <vue-markdown class="artwork-detail__description">
+      {{ artwork.description }}
+    </vue-markdown>
     <div ref="checkout" class="artwork-detail__checkout">
       <div class="artwork-detail__payment">
         <div class="artwork-detail__price">{{ artwork.price }}€</div>
