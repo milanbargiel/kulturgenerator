@@ -90,7 +90,7 @@ export default {
       return 'noch ' + this.artwork.quantity + ' verfügbar'
     },
     artworkGeneratorShare () {
-      return this.artwork.generatorShare.substring(1); // remove dummy underscore from generatorShare String
+      return this.artwork.generatorShare?.substring(1); // remove dummy underscore from generatorShare String
     },
     showCheckout () {
       return this.checkoutIsOpen && !this.showPaymentFeedback
