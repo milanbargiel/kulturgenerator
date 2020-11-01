@@ -9,7 +9,7 @@ const mutations = {
         }
     },
     SET_MENU_ITEMS (state, payload) {
-        state.menuItems = payload.menuItems
+        state.menuItems.push(...payload.menuItems)
     },
     SET_ARTWORKS (state, payload) {
         payload.forEach((artwork) => {

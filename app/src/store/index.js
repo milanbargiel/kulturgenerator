@@ -8,7 +8,10 @@ Vue.use(Vuex)
 
 const state = {
   isLoading: true,
-  menuItems: [],
+  menuItems: [
+    { label: 'moneypool-balance', viewName: 'about', id: 100 },
+    { label: 'back-button', viewName: 'artworkList', id: 200 }
+  ],
   loadingDelay: 700,
   artworks: {},
   shadowMoneypoolBalance: 0,

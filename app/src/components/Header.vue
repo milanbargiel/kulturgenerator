@@ -1,7 +1,7 @@
 <template>
     <div class="header">
         <template v-for="menuItem in menuItems">
-            <menu-item :item="menuItem" :active="isActive(menuItem)" :key="'menu-item-' + menuItem.id"></menu-item>
+            <menu-item :item="menuItem" :key="'menu-item-' + menuItem.id"></menu-item>
         </template>
         <payment-feedback-banner v-if="paymentFeedback.show" :state="paymentFeedback.state"></payment-feedback-banner>          
     </div>
@@ -16,16 +16,7 @@ export default {
     components: { MenuItem, PaymentFeedbackBanner },
     computed: {
         menuItems () {
-            const menuItems = []
-            if (this.$route.name === 'about' || this.$route.name === 'impressum') {
-                menuItems.push(...this.$store.state.menuItems)
-            } else {
-                menuItems.push({ label: 'moneypool-balance', viewName: 'about', id: 100 })
-                if (this.showBackButton) {
-                    menuItems.push({ label: 'back-button', viewName: 'artworkList', id: 200 })
-                }
-            }
-            return menuItems
+            return this.$store.state.menuItems
         },
         showBackButton () {
             return this.$route.meta.showBackButton || false
@@ -36,11 +27,6 @@ export default {
         paymentFeedback () {
             return this.$store.state.paymentFeedback
         }
-    },
-    methods: {
-        isActive (item) {
-            return item.viewName === this.$route.name
-        },        
     }
 }
 </script>

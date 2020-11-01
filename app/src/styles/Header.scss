@@ -10,6 +10,7 @@
 }
 
 .header__menu-item {
+  display: block;
   margin-top: -1px; // to center galapagos
   margin-bottom: -18px;
   border-top: 1px solid $blue;
@@ -17,7 +18,7 @@
   @media screen and (min-width: $bp-tablet) {
     border-top: 2px solid $blue;
     // margin-top: -1px; // to center galapagos
-  } 
+  }
 
   &.active--orange {
     background-color: $orange;
