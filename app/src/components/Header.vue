@@ -20,21 +20,12 @@ export default {
             if (this.$route.name === 'about' || this.$route.name === 'impressum') {
                 menuItems.push(...this.$store.state.menuItems)
             } else {
-                menuItems.push({ label: 'moneypool-balance', viewName: 'about' })
+                menuItems.push({ label: 'moneypool-balance', viewName: 'about', id: 100 })
                 if (this.showBackButton) {
-                    menuItems.push({ label: 'back-button', viewName: 'artworkList' })
+                    menuItems.push({ label: 'back-button', viewName: 'artworkList', id: 200 })
                 }
             }
             return menuItems
-        },
-        activeClass () {
-            if (this.$route.name === 'about') {
-                return 'active--orange'
-            }
-            if (this.$route.name === 'impressum') {
-                return 'active--blue'
-            }       
-            return ''     
         },
         showBackButton () {
             return this.$route.meta.showBackButton || false
