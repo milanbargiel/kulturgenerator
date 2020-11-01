@@ -16,7 +16,7 @@ Vue.use(VueRouter)
     name: 'artworkList',
     component: ArtworkList,
     meta: {
-      menuItemsToDisplay: ['moneypool-balance']
+      menuItemTypesToDisplay: ['moneypool-balance']
     }
   },
   {
@@ -24,7 +24,7 @@ Vue.use(VueRouter)
     name: 'about',
     component: About,
     meta: {
-      menuItemsToDisplay: ['← KULTUR', 'GENERATOR', 'IMPRESSUM']
+      menuItemTypesToDisplay: ['custom-menu-item']
     }
   },
   {
@@ -32,7 +32,7 @@ Vue.use(VueRouter)
     name: 'impressum',
     component: Impressum,
     meta: {
-      menuItemsToDisplay: ['← KULTUR', 'GENERATOR', 'IMPRESSUM']
+      menuItemTypesToDisplay: ['custom-menu-item']
     }
   },
   {
@@ -40,7 +40,7 @@ Vue.use(VueRouter)
     name: 'faq',
     component: Faq,
     meta: {
-      menuItemsToDisplay: ['← KULTUR', 'GENERATOR', 'IMPRESSUM'],
+      menuItemTypesToDisplay: ['custom-menu-item'],
       bluePageLayout: true
     }
   },
@@ -49,7 +49,7 @@ Vue.use(VueRouter)
     name: 'artworkDetail',
     component: ArtworkDetail,
     meta: {
-      menuItemsToDisplay: ['moneypool-balance', 'back-button']
+      menuItemTypesToDisplay: ['moneypool-balance', 'back-button']
     }
   },
   {
@@ -57,7 +57,7 @@ Vue.use(VueRouter)
     name: 'pageNotFound',
     component: PageNotFound,
     meta: {
-      menuItemsToDisplay: ['← KULTUR', 'GENERATOR', 'IMPRESSUM'],
+      menuItemTypesToDisplay: ['custom-menu-item'],
       bluePageLayout: true
     }
   },
