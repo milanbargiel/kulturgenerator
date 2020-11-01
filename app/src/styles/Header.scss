@@ -23,11 +23,22 @@
 
   &.active {
 
-    &--orange {
+    &--color-white {
+      color: $white;
+    }
+    &--color-black {
+      color: $black;
+    }
+    &--color-blue {
+      color: $blue;
+    }
+    &--color-orange {
+      color: $orange;
+    }         
+    &--background-orange {
       background-color: $orange;
     }
-    &--blue {
-      color: $white;
+    &--background-blue {
       background-color: $blue;
     }
   }

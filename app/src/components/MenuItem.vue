@@ -1,15 +1,19 @@
 <template>
-    <div v-if="show" @mouseover="hover = true" @mouseleave="hover = false" class="menu-item" :class="classes">
-        <router-link
-            :to="{ name: item.viewName }"
+    <div 
+        v-if="show"
+        @mouseover="hover = true"
+        @mouseleave="hover = false"
+        class="menu-item"
+        :class="classes"
         >
+        <router-link :to="{ name: item.viewName }">
             <marquee-text
                 :repeat="20"
-                :duration="5"
+                :duration="itemSpeed"
                 :paused="paused">
                 <span class="marquee-text__item">{{ label }}</span>
-            </marquee-text>       
-        </router-link>        
+            </marquee-text>
+        </router-link>
     </div>
 </template>
 
@@ -27,19 +31,19 @@ export default {
     },
     computed: {
         show () {
-            return this.$route.meta.menuItemsToDisplay.includes(this.item.label)
+            return this.$route.meta.menuItemTypesToDisplay.includes(this.item.type)
         },
         paused () {
-            if (this.item.label === 'moneypool-balance' || this.item.label === 'back-button') {
+            if (this.item.type !== 'custom-menu-item') {
                 return false
             }
             return this.item.viewName !== this.$route.name
         },
+        active () {
+            return this.$route.name === this.item.viewName
+        },
         label () {
-            if (this.item.label === 'back-button') {
-                return '←'
-            }
-            if (this.item.label === 'moneypool-balance') {
+            if (this.item.name === 'moneypool-balance') {
                 return this.moneypoolBalance
             }
             return this.item.label
@@ -51,14 +55,16 @@ export default {
             if (this.$route.meta.bluePageLayout) {
                 return 'menu-item--blue-layout'
             }
-            if (this.$route.name === 'about' && this.item.viewName === 'about') {
-                return 'active active--orange'
+            if (this.active) {
+                return 'active' + 
+                    ' active--background-' + this.item.activeBackgroundColor +
+                    ' active--color-' + this.item.activeFontColor
             }
-            if (this.$route.name === 'impressum' && this.item.viewName === 'impressum') {
-                return 'active active--blue'
-            }       
             return 'link'
-        }        
+        },
+        itemSpeed () {
+            return 10 - this.item.speed
+        }
     }
 }
 </script>
