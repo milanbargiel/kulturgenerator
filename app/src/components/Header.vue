@@ -1,46 +1,40 @@
 <template>
     <div class="header">
-        <template v-if="$route.name === 'about' || $route.name === 'impressum'">
-            <div v-for="menuItem in menuItems" :key="'menu-item' + menuItem.id" class="header__menu-item">
-                <router-link :to="{ name: menuItem.viewName }" class="link">
-                    <marquee-text
-                        :repeat="20"
-                        :duration="5">
-                        <span class="marquee-text__item">{{ menuItem.label }}</span>
-                    </marquee-text>       
-                </router-link>            
-            </div>               
+        <template v-for="menuItem in menuItems">
+            <menu-item :item="menuItem" :active="isActive(menuItem)" :key="'menu-item-' + menuItem.id"></menu-item>
         </template>
-        <!-- <router-link v-if="showToShopButton" :to="{name: 'artworkList'}" class="header__to-shop-btn link">
-            ← shop
-        </router-link> -->
-        <router-link v-else class="link" :to="{name: 'about'}" >
-            <moneypool-banner></moneypool-banner>
-        </router-link>
-        <div v-if="showBackButton" class="header__back-button">
-            <router-link :to="{name: 'artworkList'}">
-                <marquee-text
-                    :repeat="20"
-                    :duration="5">
-                    <span class="marquee-text__item">←</span>
-                </marquee-text>       
-            </router-link>            
-        </div>
         <payment-feedback-banner v-if="paymentFeedback.show" :state="paymentFeedback.state"></payment-feedback-banner>          
     </div>
 </template>
 
 <script>
-import MarqueeText from 'vue-marquee-text-component'
-import MoneypoolBanner from '../components/MoneypoolBanner'
+import MenuItem from '../components/MenuItem'
 import PaymentFeedbackBanner from '../components/PaymentFeedbackBanner'
 
 export default {
     name: 'Header',
-    components: { MarqueeText, MoneypoolBanner, PaymentFeedbackBanner },
+    components: { MenuItem, PaymentFeedbackBanner },
     computed: {
         menuItems () {
-            return this.$store.state.menuItems
+            const menuItems = []
+            if (this.$route.name === 'about' || this.$route.name === 'impressum') {
+                menuItems.push(...this.$store.state.menuItems)
+            } else {
+                menuItems.push({ label: 'moneypool-balance', viewName: 'about' })
+                if (this.showBackButton) {
+                    menuItems.push({ label: 'back-button', viewName: 'artworkList' })
+                }
+            }
+            return menuItems
+        },
+        activeClass () {
+            if (this.$route.name === 'about') {
+                return 'active--orange'
+            }
+            if (this.$route.name === 'impressum') {
+                return 'active--blue'
+            }       
+            return ''     
         },
         showBackButton () {
             return this.$route.meta.showBackButton || false
@@ -51,6 +45,11 @@ export default {
         paymentFeedback () {
             return this.$store.state.paymentFeedback
         }
+    },
+    methods: {
+        isActive (item) {
+            return item.viewName === this.$route.name
+        },        
     }
 }
 </script>

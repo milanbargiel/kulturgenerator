@@ -9,9 +9,15 @@
   }
 }
 
-.header__to-shop-btn {
-  display: inline-block;
-  margin-bottom: 10px;
+.header__menu-item {
+
+  &.active--orange {
+    background-color: $orange;
+  }
+
+  &.active--blue {
+    background-color: $blue;
+  }
 }
 
 .header__back-button {
