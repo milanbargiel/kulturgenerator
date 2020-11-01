@@ -18,12 +18,6 @@ export default {
         menuItems () {
             return this.$store.state.menuItems
         },
-        showBackButton () {
-            return this.$route.meta.showBackButton || false
-        },
-        showToShopButton () {
-            return this.$route.meta.showToShopButton || false
-        },
         paymentFeedback () {
             return this.$store.state.paymentFeedback
         }
