@@ -24,7 +24,7 @@ Vue.use(VueRouter)
     name: 'about',
     component: About,
     meta: {
-      menuItemsToDisplay: ['← Kultur', 'Generator', 'Impressum']
+      menuItemsToDisplay: ['← KULTUR', 'GENERATOR', 'IMPRESSUM']
     }
   },
   {
@@ -32,7 +32,7 @@ Vue.use(VueRouter)
     name: 'impressum',
     component: Impressum,
     meta: {
-      menuItemsToDisplay: ['← Kultur', 'Generator', 'Impressum']
+      menuItemsToDisplay: ['← KULTUR', 'GENERATOR', 'IMPRESSUM']
     }
   },
   {
@@ -40,7 +40,7 @@ Vue.use(VueRouter)
     name: 'faq',
     component: Faq,
     meta: {
-      menuItemsToDisplay: ['← Kultur', 'Generator', 'Impressum'],
+      menuItemsToDisplay: ['← KULTUR', 'GENERATOR', 'IMPRESSUM'],
       bluePageLayout: true
     }
   },
@@ -57,7 +57,7 @@ Vue.use(VueRouter)
     name: 'pageNotFound',
     component: PageNotFound,
     meta: {
-      menuItemsToDisplay: ['← Kultur', 'Generator', 'Impressum'],
+      menuItemsToDisplay: ['← KULTUR', 'GENERATOR', 'IMPRESSUM'],
       bluePageLayout: true
     }
   },

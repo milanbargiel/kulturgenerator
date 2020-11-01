@@ -2,30 +2,41 @@
   color: $blue;
   font-family: $font-family-galapagos;
   font-size: $font-size-mobile-huge;
-  line-height: 1;
 
   @media screen and (min-width: $bp-tablet) {
     font-size: $font-size-laptop-huge;
   }
 }
 
-.header__menu-item {
-  display: block;
-  margin-top: -1px; // to center galapagos
-  margin-bottom: -18px;
-  border-top: 1px solid $blue;
+.menu-item {
+  // display: block;
+  // line-height: 40px; // to make 
+  // height: 28px;
+  border-top: 2px solid $blue;
+
+  &:first-child {
+    border-top: none; // the top menu-item has no border.
+    // height: 26px; // normal height minus the width of the missing border.
+  }
 
   @media screen and (min-width: $bp-tablet) {
-    border-top: 2px solid $blue;
-    // margin-top: -1px; // to center galapagos
-  }
+    line-height: 52px; // to make 
+    height: 36px;
 
-  &.active--orange {
-    background-color: $orange;
-  }
+    &:first-child {
+      border-top: none; // the top menu-item has no border.
+      height: 34px; // normal height minus the width of the missing border.
+    }
+  }    
 
-  &.active--blue {
-    color: $white;
-    background-color: $blue;
+  &.active {
+
+    &--orange {
+      background-color: $orange;
+    }
+    &--blue {
+      color: $white;
+      background-color: $blue;
+    }
   }
 }

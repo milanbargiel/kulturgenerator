@@ -1,7 +1,13 @@
 .marquee-text__item {
+  display: block;
+  height: 28px;
   margin-right: 140px;
   -webkit-user-select: none; /* Safari */        
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* IE10+/Edge */
   user-select: none; /* Standard */
+
+  @media screen and (min-width: $bp-tablet) {
+    height: 34px;
+  }   
 }
