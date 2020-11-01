@@ -10,9 +10,12 @@
   },
   "attributes": {
     "menuItems": {
-      "type": "component",
-      "repeatable": true,
-      "component": "navigation.nav-item"
+      "type": "dynamiczone",
+      "components": [
+        "navigation.back-button",
+        "navigation.custom-menu-item",
+        "navigation.moneypool-balance"
+      ]
     }
   }
 }
