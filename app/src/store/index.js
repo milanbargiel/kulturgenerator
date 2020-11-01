@@ -8,6 +8,7 @@ Vue.use(Vuex)
 
 const state = {
   isLoading: true,
+  menuItems: [],
   loadingDelay: 700,
   artworks: {},
   shadowMoneypoolBalance: 0,

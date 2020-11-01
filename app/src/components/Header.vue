@@ -1,8 +1,19 @@
 <template>
     <div class="header">
-        <router-link v-if="showToShopButton" :to="{name: 'artworkList'}" class="header__to-shop-btn link">
+        <template v-if="$route.name === 'about' || $route.name === 'impressum'">
+            <div v-for="menuItem in menuItems" :key="'menu-item' + menuItem.id" class="header__menu-item">
+                <router-link :to="{ name: menuItem.viewName }" class="link">
+                    <marquee-text
+                        :repeat="20"
+                        :duration="5">
+                        <span class="marquee-text__item">{{ menuItem.label }}</span>
+                    </marquee-text>       
+                </router-link>            
+            </div>               
+        </template>
+        <!-- <router-link v-if="showToShopButton" :to="{name: 'artworkList'}" class="header__to-shop-btn link">
             ← shop
-        </router-link>
+        </router-link> -->
         <router-link v-else class="link" :to="{name: 'about'}" >
             <moneypool-banner></moneypool-banner>
         </router-link>
@@ -28,6 +39,9 @@ export default {
     name: 'Header',
     components: { MarqueeText, MoneypoolBanner, PaymentFeedbackBanner },
     computed: {
+        menuItems () {
+            return this.$store.state.menuItems
+        },
         showBackButton () {
             return this.$route.meta.showBackButton || false
         },
