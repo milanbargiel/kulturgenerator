@@ -48,6 +48,9 @@ export default {
             return this.$store.getters.roundedMoneypoolBalance
         },
         classes () {
+            if (this.$route.meta.bluePageLayout) {
+                return 'menu-item--blue-layout'
+            }
             if (this.$route.name === 'about' && this.item.viewName === 'about') {
                 return 'active active--orange'
             }

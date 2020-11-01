@@ -15,6 +15,12 @@
     border-top: none; // the top menu-item has no border.
   }
 
+  &--blue-layout {
+    color: $white;
+    background-color: $blue;
+    border-color: $white;
+  }
+
   &.active {
 
     &--orange {
