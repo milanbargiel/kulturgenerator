@@ -1,7 +1,7 @@
 <template>
     <div class="header">
-        <template v-for="menuItem in menuItems">
-            <menu-item :item="menuItem" :key="'menu-item-' + menuItem.id"></menu-item>
+        <template v-for="(menuItem, index) in menuItems">
+            <menu-item :item="menuItem" :key="'menu-item-' + index"></menu-item>
         </template>
         <payment-feedback-banner v-if="paymentFeedback.show" :state="paymentFeedback.state"></payment-feedback-banner>          
     </div>
