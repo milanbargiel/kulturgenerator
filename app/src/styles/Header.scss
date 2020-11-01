@@ -9,25 +9,11 @@
 }
 
 .menu-item {
-  // display: block;
-  // line-height: 40px; // to make 
-  // height: 28px;
   border-top: 2px solid $blue;
 
   &:first-child {
     border-top: none; // the top menu-item has no border.
-    // height: 26px; // normal height minus the width of the missing border.
   }
-
-  @media screen and (min-width: $bp-tablet) {
-    line-height: 52px; // to make 
-    height: 36px;
-
-    &:first-child {
-      border-top: none; // the top menu-item has no border.
-      height: 34px; // normal height minus the width of the missing border.
-    }
-  }    
 
   &.active {
 
