@@ -29,6 +29,11 @@ export default {
             hover: false
         }
     },
+    created () {
+        if (this.item.type === 'back-button') {
+            this.item.viewName = 'artworkList'
+        }
+    },
     computed: {
         show () {
             return this.$route.meta.menuItemTypesToDisplay.includes(this.item.type)
