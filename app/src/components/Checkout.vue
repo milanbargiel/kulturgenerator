@@ -144,7 +144,7 @@ export default {
                                 payee: {
                                     email_address: this.artwork.paypal
                                 },
-                                description: `${this.orderQuantity} x ${this.artwork.author}: ${this.artwork.title} – Einkauf über kulturgenerator.de`,
+                                description: `${this.orderQuantity} x ${this.artwork.author}: ${this.artwork.title} – Einkauf über kulturgenerator.org`,
                                 items: [{
                                     name: `${this.artwork.author}: ${this.artwork.title}`,
                                     unit_amount: { 
