@@ -1,6 +1,6 @@
 <p>
-    <a href="https://www.kulturgenerator.de" target="_blank">
-        <img src="https://www.kulturgenerator.de/assets/images/kulturgenerator.png">
+    <a href="https://www.kulturgenerator.org" target="_blank">
+        <img src="https://www.kulturgenerator.org/assets/images/kulturgenerator.png">
     </a>
 </p>
 
@@ -15,7 +15,7 @@
 
 - This is a git repository for the open source online art gallery kulturgenerator
 - For ⏳ installation instructions go to the readmes of the component's subfolders
-- If you have questions contact info@kulturgenerator.de
+- If you have questions contact info@kulturgenerator.org
 - If you want to buy art and support local artist visit [kulturgenerator.org](https://www.kulturgenerator.org)
 
 Enjoy 🎉

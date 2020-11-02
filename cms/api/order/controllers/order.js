@@ -26,7 +26,7 @@ module.exports = {
       // Send E-Mail to buyer
       await strapi.plugins['email'].services.email.send({
         to: entry.buyerEmail,
-        from: 'info@kulturgenerator.de',
+        from: 'info@kulturgenerator.org',
         subject: 'Vielen Dank für Ihren Einkauf',
         text: buyerMail.text
       });
@@ -34,7 +34,7 @@ module.exports = {
       // Send E-Mail to artist
       await strapi.plugins['email'].services.email.send({
         to: entry.artwork.email,
-        from: 'info@kulturgenerator.de',
+        from: 'info@kulturgenerator.org',
         subject: 'Ihr Kunstwerk wurde verkauft',
         text: artistMail.text
       });
