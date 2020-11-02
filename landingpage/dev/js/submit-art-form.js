@@ -176,7 +176,7 @@ $('.js-form').submit((event) => {
 
   // Fire off the request
   request = $.ajax({
-    url: 'https://xyz.kulturgenerator.de/artworks',
+    url: 'https://xyz.kulturgenerator.org/artworks',
     type: 'post',
     data: formData,
     processData: false,
