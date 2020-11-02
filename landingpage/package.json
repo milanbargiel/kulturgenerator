@@ -30,9 +30,7 @@
     "serve": "browser-sync start --server 'dist' --files 'dist'",
     "prestart": "npm run --silent build",
     "start": "npm-run-all --parallel serve watch",
-    "deployProduction": "scp -r dist/* ownserver:/var/www/kulturgenerator.de",
-    "deployStaging": "scp -r dist/* ownserver:/var/www/staging.kulturgenerator.de",
-    "deployInfo": "scp -r dist/* ownserver:/var/www/info.kulturgenerator.de"
+    "deploy": "scp -r dist/* ownserver:/var/www/kulturgenerator.org"
   },
   "scriptsComments": {
     "stylelint": "lint scss-files with rules specified in .stylelintrc.json",

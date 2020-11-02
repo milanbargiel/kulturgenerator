@@ -15,7 +15,7 @@
         * [Final step: Use domain name instead of ip](#domain)
 
 ## Admin Panel Access <a id="first"></a>
-Visit [xyz.kulturgenerator.de/admin](https://xyz.kulturgenerator.de/admin) for Admin Panel.
+Visit [xyz.kulturgenerator.org/admin](https://xyz.kulturgenerator.org/admin) for Admin Panel.
 
 At Admin Panel you can add new content (e.g. artwork) and generally cultivate Kulturgenerator data.
 
@@ -56,7 +56,7 @@ From [Strapi Troubleshooting FAQs](https://strapi.io/documentation/v3.x/getting-
 2. Start strapi app locally with `npm run develop` `(strapi develop)` (important: you cannot add content types when using `npm start` `(strapi start)`).
 3. Add content-type at `localhost:1337/admin`.
 4. `git push` to the remote repository. If you are working on a feature branch you have to merge your changes into `master`. The changes are auto-deployed from `master`.
-5. If you setup `pm2` with `--watch` command, your newly created content type should automatically appear on `xyz.kulturgenerator.de/admin`. You can check if watching is enabled with `cd ~ / pm2 list`. `pm2 start` will also reload your strapi application.
+5. If you setup `pm2` with `--watch` command, your newly created content type should automatically appear on `xyz.kulturgenerator.org/admin`. You can check if watching is enabled with `cd ~ / pm2 list`. `pm2 start` will also reload your strapi application.
 6. If you have deleted a content-type make sure to also delete corresponding tables in the Posgresql database. This is not done automatically.
 
 ## Installation on Ubuntu 18.04 <a id="second"></a>
