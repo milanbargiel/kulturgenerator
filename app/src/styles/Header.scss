@@ -2,25 +2,44 @@
   color: $blue;
   font-family: $font-family-galapagos;
   font-size: $font-size-mobile-huge;
-  line-height: 1;
 
   @media screen and (min-width: $bp-tablet) {
     font-size: $font-size-laptop-huge;
   }
 }
 
-.header__to-shop-btn {
-  display: inline-block;
-  margin-bottom: 60px;
-}
+.menu-item {
+  border-top: 2px solid $blue;
 
-.header__back-button {
-  z-index: $z-level-1; // back button has higher priority than moneypool click
-  margin-top: -13px; // to center galapagos
-  border-top: 1px solid $blue;
+  &:first-child {
+    border-top: none; // the top menu-item has no border.
+  }
 
-  @media screen and (min-width: $bp-tablet) {
-    border-top: 2px solid $blue;
-    margin-top: -18px; // to center galapagos
+  &--blue-layout {
+    color: $white;
+    background-color: $blue;
+    border-color: $white;
+  }
+
+  &.active {
+
+    &--color-white {
+      color: $white;
+    }
+    &--color-black {
+      color: $black;
+    }
+    &--color-blue {
+      color: $blue;
+    }
+    &--color-orange {
+      color: $orange;
+    }         
+    &--background-orange {
+      background-color: $orange;
+    }
+    &--background-blue {
+      background-color: $blue;
+    }
   }
 }

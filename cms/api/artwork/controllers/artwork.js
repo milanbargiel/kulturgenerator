@@ -47,7 +47,7 @@ module.exports = {
 
       await strapi.plugins['email'].services.email.send({
         to: entry.email,
-        from: 'info@kulturgenerator.de',
+        from: 'info@kulturgenerator.org',
         subject: 'Wir haben Ihre Einreichung erhalten',
         text: email.text
       });
