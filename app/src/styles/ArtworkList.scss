@@ -1,7 +1,8 @@
 .artwork-list {
-  overflow: hidden;
+    @include galapagos-margin-top(.25);
+    overflow: hidden;
 
-  @media screen and (min-width: $bp-tablet) {
-    padding-right: 140px;
-  }
+    @media screen and (min-width: $bp-tablet) {
+        padding-right: 140px;
+    }
 }
