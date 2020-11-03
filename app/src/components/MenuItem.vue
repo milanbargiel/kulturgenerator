@@ -48,7 +48,7 @@ export default {
             return this.$route.name === this.item.viewName
         },
         label () {
-            if (this.item.name === 'moneypool-balance') {
+            if (this.item.type === 'moneypool-balance') {
                 return this.moneypoolBalance
             }
             return this.item.label
