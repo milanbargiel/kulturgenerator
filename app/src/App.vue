@@ -17,6 +17,7 @@ export default {
   components: { MyHeader },
   created () {
     this.$store.dispatch('getShadowMoneypoolBalance')
+    this.$store.dispatch('getMenuItems')
   },
   computed: {
     ...mapGetters([

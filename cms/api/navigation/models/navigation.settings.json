@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "navigations",
+  "info": {
+    "name": "Navigation"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "menuItems": {
+      "type": "dynamiczone",
+      "components": [
+        "navigation.back-button",
+        "navigation.custom-menu-item",
+        "navigation.moneypool-balance"
+      ]
+    }
+  }
+}

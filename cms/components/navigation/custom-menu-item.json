@@ -1,0 +1,46 @@
+{
+  "collectionName": "components_navigation_custom_menu_items",
+  "info": {
+    "name": "customMenuItem",
+    "icon": "wrench"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "label": {
+      "type": "string"
+    },
+    "viewName": {
+      "type": "string"
+    },
+    "activeBackgroundColor": {
+      "type": "enumeration",
+      "enum": [
+        "none",
+        "blue",
+        "orange"
+      ]
+    },
+    "type": {
+      "type": "string",
+      "default": "custom-menu-item"
+    },
+    "speed": {
+      "type": "integer",
+      "max": 10,
+      "min": 0
+    },
+    "activeFontColor": {
+      "type": "enumeration",
+      "enum": [
+        "none",
+        "black",
+        "white",
+        "blue",
+        "orange"
+      ]
+    }
+  }
+}

@@ -14,14 +14,17 @@ Vue.use(VueRouter)
   {
     path: '/',
     name: 'artworkList',
-    component: ArtworkList
+    component: ArtworkList,
+    meta: {
+      menuItemTypesToDisplay: ['moneypool-balance']
+    }
   },
   {
     path: '/about',
     name: 'about',
     component: About,
     meta: {
-      showToShopButton: true
+      menuItemTypesToDisplay: ['custom-menu-item']
     }
   },
   {
@@ -29,7 +32,7 @@ Vue.use(VueRouter)
     name: 'impressum',
     component: Impressum,
     meta: {
-      showToShopButton: true
+      menuItemTypesToDisplay: ['custom-menu-item']
     }
   },
   {
@@ -37,7 +40,7 @@ Vue.use(VueRouter)
     name: 'faq',
     component: Faq,
     meta: {
-      showToShopButton: true,
+      menuItemTypesToDisplay: ['custom-menu-item'],
       bluePageLayout: true
     }
   },
@@ -46,7 +49,7 @@ Vue.use(VueRouter)
     name: 'artworkDetail',
     component: ArtworkDetail,
     meta: {
-      showBackButton: true
+      menuItemTypesToDisplay: ['moneypool-balance', 'back-button']
     }
   },
   {
@@ -54,7 +57,7 @@ Vue.use(VueRouter)
     name: 'pageNotFound',
     component: PageNotFound,
     meta: {
-      showToShopButton: true,
+      menuItemTypesToDisplay: ['custom-menu-item'],
       bluePageLayout: true
     }
   },
