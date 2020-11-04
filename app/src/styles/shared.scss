@@ -138,10 +138,13 @@ ul {
 }
 
 .link {
-
   &:hover {
     font-style: italic;
+
+    .artwork-list-item__price {
+      font-style: normal;
     }
+  }
 }
 
 .underlined-link {
