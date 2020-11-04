@@ -103,8 +103,11 @@
   margin-right: 18px;
   font-family: inherit;
   margin-top: auto;
+<<<<<<< HEAD
   position: relative;
   margin-bottom: 60px;
+=======
+>>>>>>> master
 
   button {
     font-size: $font-size-mobile-huge;
@@ -123,6 +126,7 @@
     }
   }
 
+<<<<<<< HEAD
   &:after {
     content: "Die Kaufabwicklung wird mit PayPal durchgeführt. Durch Anklicken von Kaufen stimmen Sie der Verwendung von Cookies durch PayPal zu.";
     position: absolute;
@@ -137,9 +141,18 @@
     font-family:$font-family;
     
   
+=======
+  @media screen and (min-width: $bp-tablet) {
+    font-size: $font-size-laptop-huge;
+  }
+>>>>>>> master
 }
 
+.payment-button__description-container {
+  display: flex;
+}
 
+<<<<<<< HEAD
 
 .artwork-detail__purchase-feedback--positive {
   padding: 30px; 
@@ -147,3 +160,14 @@
   margin-bottom: 60px;
   text-align: center;
 }}
+=======
+.payment-button__description-text {
+  flex: 0 1 45%;
+  color: $dark-grey;
+  line-height: 1;
+
+  a {
+    text-decoration: underline;
+  }
+}
+>>>>>>> master
