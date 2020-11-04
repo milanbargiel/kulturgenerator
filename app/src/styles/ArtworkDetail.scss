@@ -100,6 +100,7 @@
   margin-bottom: 1rem;
 
   button {
+    margin-bottom: 1rem;
     background-color: $white;
     border: 1px solid $black;
     padding: 1rem 1rem .5rem;
@@ -114,24 +115,9 @@
   }
 }
 
-.payment-button__description-container {
-  display: flex;
-}
-
 .artwork-detail__purchase-feedback--positive {
   padding: 30px; 
   background: lightgreen;
   margin-bottom: 60px;
   text-align: center;
-}
-
-.payment-button__description-text {
-  flex: 0 1 72%;
-  color: $dark-grey;
-  line-height: 1;
-  margin-bottom: 3rem;
-
-  a {
-    text-decoration: underline;
-  }
 }
