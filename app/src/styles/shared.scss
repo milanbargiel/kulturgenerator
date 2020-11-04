@@ -40,10 +40,6 @@ $spacing-desktop--big: 60px;
 $spacing-mobile--large: 42px;
 $spacing-desktop--large: 90px;
 
-// Distances New
-$s2: 20px;
-$s3: 30px;
-
 // Font Faces
 @font-face {
   font-family: 'apercu-mono-regular';
@@ -187,12 +183,16 @@ ul {
   text-align: center;
   padding-top: 47vh;
   height: 50vh;
-  font-size: $font-size-mobile-big;
+  font-size: $font-size-mobile;
   font-family: $font-family-galapagos;
 
   &:before {
     content: '. ';
     animation: dots 1s steps(5, end) infinite;
+  }
+
+  @media screen and (min-width: $bp-tablet) {
+    font-size: $font-size-laptop-big;
   }
 }
 
