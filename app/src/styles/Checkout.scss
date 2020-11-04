@@ -6,15 +6,6 @@
   }
 }
 
-.checkout__header {
-  font-size: $font-size-mobile-big;
-  font-weight: normal;
-
-  @media screen and (min-width: $bp-tablet) {
-    font-size: $font-size-laptop-big;
-  }
-}
-
 .price-summary {
   margin-bottom: $spacing-mobile--big;
   max-width: 420px;

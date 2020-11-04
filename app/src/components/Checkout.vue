@@ -1,6 +1,5 @@
 <template>
     <div class="checkout">
-        <h2 class="checkout__header">Kunstwerk kaufen</h2>
         <div class="price-summary">         
             <ul>
                 <li v-show="artwork.quantity > 1" class="price-summary__item price-summary__item--input">
