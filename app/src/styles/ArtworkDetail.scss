@@ -47,32 +47,25 @@
   justify-content: space-between;
 }
 
-.artwork-detail__payment {
-  flex: 0 1 45%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
 .artwork-detail__price,
 .artwork-detail__share-percentage {
-  font-size: $font-size-mobile-huge;
   font-family: $font-family-galapagos;
+}
+
+.artwork-detail__price {
+  font-size: $font-size-mobile-huge;
 
   @media screen and (min-width: $bp-tablet) {
     font-size: $font-size-laptop-huge;
   }
 }
 
-.artwork-detail__generator-share {
-  line-height: 1.4;
+.artwork-detail__share-percentage {
+  font-size: $font-size-mobile-big;
 
+  @media screen and (min-width: $bp-tablet) {
+    font-size: $font-size-laptop-huge;
   }
-
-
-.artwork-detail__price {
-  margin-bottom: 60px;
-
-
 }
 
 .artwork-detail__sold {
@@ -95,24 +88,21 @@
 .artwork-detail__generator-share {
   flex: 0 1 45%;
   color: $blue;
-  line-height: 1.2;
-  margin-bottom: 12px;
+  margin-bottom: 3rem;
 }
 
 .artwork-detail__payment-button {
   margin-right: 18px;
   font-family: inherit;
+  font-size: $font-size-mobile-big;
   margin-top: auto;
   position: relative;
-  margin-bottom: 60px;
+  margin-bottom: 1rem;
 
   button {
-    font-size: $font-size-mobile-huge;
     background-color: $white;
     border: 1px solid $black;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 10px;
+    padding: 1rem 1rem .5rem;
     text-transform: uppercase;
 
     &:hover,
@@ -121,10 +111,6 @@
       border: 1px solid $blue;
       color: $white;
     }
-  }
-
-  @media screen and (min-width: $bp-tablet) {
-    font-size: $font-size-laptop-huge;
   }
 }
 
@@ -140,9 +126,10 @@
 }
 
 .payment-button__description-text {
-  flex: 0 1 45%;
+  flex: 0 1 72%;
   color: $dark-grey;
   line-height: 1;
+  margin-bottom: 3rem;
 
   a {
     text-decoration: underline;
