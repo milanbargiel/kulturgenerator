@@ -45,6 +45,10 @@ $spacing-desktop--big: 60px;
 $spacing-mobile--large: 42px;
 $spacing-desktop--large: 90px;
 
+// Distances New
+$s2: 20px;
+$s3: 30px;
+
 // Font Faces
 @font-face {
   font-family: 'apercu-mono-regular';
@@ -95,17 +99,19 @@ a {
 }
 
 
-
-
 button:hover,
 button:focus {
   cursor: pointer;
 
 }
 
+// html is set to 62.5% so that all the REM measurements
+// are based on 10px sizing. So basically 1.5rem = 15px :)
+
 html { // Border Box for everything
   box-sizing: border-box;
   -ms-overflow-style: scrollbar;
+  font-size: 62.5%;
 }
 
 *,
@@ -140,8 +146,6 @@ ul {
 
   &:hover {
     font-style: italic;
-    
-    
     }
 }
 
@@ -217,7 +221,7 @@ ul {
 
 // content
 .content {
-  padding: 0 6px 6px;
+  padding: 0 .725rem .725rem;
   overflow-wrap: break-word;
   display: flex;
   flex-direction: column;
