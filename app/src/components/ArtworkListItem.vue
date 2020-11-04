@@ -55,6 +55,7 @@ export default {
         },
         styles () {
             return {
+                width: this.item.images[0].width + 'px', // give element full width of image to reserve vertical space
                 maxWidth: this.randomizedWidth + '%'
             }
         },
