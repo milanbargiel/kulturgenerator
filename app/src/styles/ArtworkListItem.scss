@@ -19,6 +19,7 @@
   .artwork-list-item__author {
     text-decoration:line-through;
 
+    // red dot
     &:before {
       content: "";
       height: 10px;
@@ -38,28 +39,14 @@
 
 .artwork-list-item__image {
   width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: .725rem;
 }
 
 .artwork-list-item__author {
   text-transform: uppercase;
-  margin-bottom: 30px;
-  
 }
-
-.artwork-list-item__title {
-    text-decoration: italic;
-
-    }
 
 .artwork-list-item__price {
   font-family: $font-family-galapagos;
   color: $blue;
-  text-align:center;
-
-  &:before {
-    font-family: $font-family;
-    color: $black;
-    
-  }
 }
