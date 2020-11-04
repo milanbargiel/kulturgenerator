@@ -25,17 +25,15 @@
         <div v-if="isSoldOut" class="artwork-detail__sold">VERKAUFT</div>
         <div v-else class="artwork-detail__quantity">{{ artworkQuantity }}</div>
       </div>
-      <div v-if="!showCheckout && !isSoldOut">
-        <div class="artwork-detail__generator-share explain-text">
-          <div class="artwork-detail__share-percentage">{{ artworkGeneratorShare }}%</div>
-          des Preises werden auf ein solidarisches Konto eingezahlt, dessen Erlös am Ende unter allen Teilnehmenden verteilt wird. Der aktuelle Kontostand ist in der Laufleiste ↑
-        </div>
-        <div class="artwork-detail__payment-button">
-          <button class="button" @click="openCheckout()">zur kasse</button>
-          <div class="explain-text">
-            Die Kaufabwicklung wird mit <a href="https://www.paypal.com/de/webapps/mpp/ua/privacy-full?locale.x=de_DE" target="_blank" rel="noopener" class="underlined-link">PayPal</a> durchgeführt. Durch Anklicken von Kaufen stimmen Sie der Verwendung von Cookies durch Dritte zu.
-          </div>
-        </div>
+      <div v-if="!showCheckout && !isSoldOut" class="artwork-detail__generator-share explain-text">
+        <div class="artwork-detail__share-percentage">{{ artworkGeneratorShare }}%</div>
+        des Preises werden auf ein solidarisches Konto eingezahlt, dessen Erlös am Ende unter allen Teilnehmenden verteilt wird. Der aktuelle Kontostand ist in der Laufleiste ↑
+      </div>
+    </div>
+    <div v-if="!showCheckout && !isSoldOut" class="artwork-detail__payment-button">
+      <button class="button" @click="openCheckout()">zur kasse</button>
+      <div class="explain-text">
+        Die Kaufabwicklung wird mit <a href="https://www.paypal.com/de/webapps/mpp/ua/privacy-full?locale.x=de_DE" target="_blank" rel="noopener" class="underlined-link">PayPal</a> durchgeführt. Durch Anklicken von Kaufen stimmen Sie der Verwendung von Cookies durch Dritte zu.
       </div>
     </div>
     <checkout v-if="showCheckout" :artwork="artwork"></checkout>

@@ -1,5 +1,5 @@
 .artwork-detail {
-  max-width: 1000px;
+  max-width: 720px;
   margin: 3rem 1rem 0;
 
   @media screen and (min-width: $bp-tablet) {
@@ -34,10 +34,11 @@
 }
 
 .artwork-detail__description {
+  text-align: center;
   margin-bottom: 3rem;
 
   @media screen and (min-width: $bp-tablet) {
-    margin-bottom: 9rem;
+    margin-bottom: 5rem;
   }
 }
 
@@ -45,6 +46,12 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin-bottom: 3rem;
+
+  @media screen and (min-width: $bp-tablet) {
+    flex-direction: row;
+    margin-bottom: 6rem;
+  }
 }
 
 .artwork-detail__price,
@@ -99,6 +106,11 @@
   position: relative;
   margin-bottom: 1rem;
 
+  @media screen and (min-width: $bp-tablet) {
+    width: 50%;
+    margin-bottom: 3rem;
+  }
+
   button {
     margin-bottom: 1rem;
     background-color: $white;
@@ -111,6 +123,11 @@
       background-color: $blue;
       border: 1px solid $blue;
       color: $white;
+    }
+
+    @media screen and (min-width: $bp-tablet) {
+      margin-bottom: 2rem;
+      font-size: $font-size-laptop-big;
     }
   }
 }
