@@ -78,7 +78,7 @@ export default {
             }
 
             if (this.viewportWidth < 680) {
-                // On mobile make artwork really wide every now and then (with probabilites)
+                // On mobile make artworks really wide every now and then (with probabilites)
                 maxAdded = [maxAdded, maxAdded, maxAdded, maxAdded, maxAdded, 36]
                 const randomIndex = Math.floor(Math.random() * maxAdded.length)
                 return Math.floor(maxAdded[randomIndex] + this.minWidth)
