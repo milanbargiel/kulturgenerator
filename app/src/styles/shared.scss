@@ -227,6 +227,17 @@ ul {
   @media screen and (min-width: $bp-tablet) {
     padding: 3rem 2rem 2rem;
   }
+
+  &--blue {
+    background-color: $blue;
+    color: $white;
+    text-rendering: optimizeLegibility;
+  }
+
+  &--orange {
+    background-color: $orange;
+    text-rendering: optimizeLegibility;
+  }
 }
 
 .text {

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div v-if="isLoading" class="loading-indicator">lädt</div>
-    <div :class="{ 'hidden': isLoading, 'blue-content': isBluePage }">
+    <div :class="{ 'hidden': isLoading }">
       <my-header></my-header>
       <router-view/> 
     </div>
@@ -22,10 +22,7 @@ export default {
   computed: {
     ...mapGetters([
       'isLoading'
-    ]),
-    isBluePage () {
-      return this.$route.meta.bluePageLayout || false
-    }
+    ])
   }
 }
 </script>
