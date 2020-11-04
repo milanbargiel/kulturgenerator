@@ -117,7 +117,7 @@ html { // Border Box for everything
 body {
   font-family: $font-family;
   font-size: $font-size-mobile;
-  line-height: 1.5;
+  line-height: 1;
 
   @media screen and (min-width: $bp-tablet) {
     font-size: $font-size-laptop;
