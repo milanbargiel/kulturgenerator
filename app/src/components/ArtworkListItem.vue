@@ -62,7 +62,7 @@ export default {
         },
         styles () {
             return {
-                width: this.item.images[0].width + 'px', // give element full width of image to reserve vertical space
+                width: this.item.images[0].width + 'px', // give element full width of image to reserve vertical space for lazy loading
                 maxWidth: this.randomizedWidth + '%'
             }
         },
