@@ -28,6 +28,13 @@ export default {
             }
 
             return url
+        },
+        randomWidth (averageValue, extremeValue) {
+            // spread widths with probabilities, make extreme values appear more seldomly 
+            const value = Math.random() * averageValue
+            const possibleWidths = [value, value, value, value, value, extremeValue]
+            const randomIndex = Math.floor(Math.random() * possibleWidths.length)
+            return possibleWidths[randomIndex]
         }
     },
     computed: {
@@ -67,25 +74,20 @@ export default {
                 return 40 // width for small screens [%]
             }
             if (this.viewportWidth < 1500) {
-                return 30 // width for medium screens [%]
+                return 25 // width for medium screens [%]
             }
             return 20 // width for large screens [%]
         },
         randomizedWidth () {
-            let maxAdded = Math.random() * 8; // maximum added to minWidth [%]
-
             if (this.item.type === 'Erlebnis') {
                 return this.minWidth // do not randomize width of artworks of type "Erlebnis"
             }
 
             if (this.viewportWidth < 680) {
-                // On mobile make artworks really wide every now and then (with probabilites)
-                maxAdded = [maxAdded, maxAdded, maxAdded, maxAdded, maxAdded, 36]
-                const randomIndex = Math.floor(Math.random() * maxAdded.length)
-                return Math.floor(maxAdded[randomIndex] + this.minWidth)
+                return Math.floor(this.randomWidth(12.5, 36) + this.minWidth)
             }
             
-            return Math.floor(maxAdded + this.minWidth)
+            return Math.floor(this.randomWidth(12.5, 20) + this.minWidth)
         }
     }
 }
