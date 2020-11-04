@@ -71,11 +71,20 @@ export default {
             return 20 // width for large screens [%]
         },
         randomizedWidth () {
+            let maxAdded = Math.random() * 8; // maximum added to minWidth [%]
+
             if (this.item.type === 'Erlebnis') {
                 return this.minWidth // do not randomize width of artworks of type "Erlebnis"
             }
-            const maxAdded = 8 // maximum added to minWidth [%]
-            return Math.floor(Math.random() * maxAdded + this.minWidth)
+
+            if (this.viewportWidth < 680) {
+                // On mobile make artwork really wide every now and then (with probabilites)
+                maxAdded = [maxAdded, maxAdded, maxAdded, maxAdded, maxAdded, 36]
+                const randomIndex = Math.floor(Math.random() * maxAdded.length)
+                return Math.floor(maxAdded[randomIndex] + this.minWidth)
+            }
+            
+            return Math.floor(maxAdded + this.minWidth)
         }
     }
 }
