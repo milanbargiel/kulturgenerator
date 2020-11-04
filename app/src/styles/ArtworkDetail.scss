@@ -1,21 +1,14 @@
 .artwork-detail {
   max-width: 1000px;
-  margin: 12px 12px 0;
-  line-height: 1.3;
+  margin: 3rem 1rem 0;
 
   @media screen and (min-width: $bp-tablet) {
-    margin: 30px auto 0;
+    margin: 5rem auto 0;
   }
 }
 
 .carousel {
   text-align: center; // center images that are reduced in size
-  margin: 0 30px 12px;
-  max-height: 500px;
-
-  @media screen and (min-width: $bp-tablet) {
-    margin-top: 30px;
-  }
 }
 
 .carousel__image {
@@ -24,44 +17,34 @@
 }
 
 .artwork-detail__title {
-  line-height: 1;
-  font-size: $font-size-mobile-huge;
-  text-align: center;
-  margin-bottom: 12px;
-  margin-top: 12px;
-  word-break: break-all;
-  margin-top: 60px;
   font-family: $font-family-galapagos;
+  font-size: $font-size-mobile-big;
+  line-height: 1;
+  text-align: center;
+  word-wrap: break-word;
+  margin: 3rem 0 3rem;
 
   @media screen and (min-width: $bp-tablet) {
     font-size: $font-size-laptop-huge;
-    margin-bottom: 30px;
   }
 }
 
 .artwork-detail__author {
   text-transform: uppercase;
-  margin-top: 30px;
 }
 
 .artwork-detail__description {
-  font-size: $font-size-mobile;
+  margin-bottom: 3rem;
 
   @media screen and (min-width: $bp-tablet) {
-    font-size: $font-size-laptop;
-    margin-bottom: 90px;
+    margin-bottom: 9rem;
   }
 }
 
 .artwork-detail__checkout {
   display: flex;
   flex-direction: row;
-  margin-bottom: $spacing-mobile--large;
   justify-content: space-between;
-
-  @media screen and (min-width: $bp-tablet) {
-    margin-bottom: $spacing-desktop--large;
-  }
 }
 
 .artwork-detail__payment {
