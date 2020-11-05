@@ -1,9 +1,19 @@
-.artwork-list {
-    margin-top: 1rem;
-    overflow: hidden;
+.info-box {
+  margin: .725rem .725rem 1.5rem;
+  color: $blue;
+  max-width: 1000px;
 
-    @media screen and (min-width: $bp-tablet) {
-        margin-top: 2rem;
-        padding-right: 140px;
-    }
+  @media screen and (min-width: $bp-tablet) {
+    margin: 1rem 2rem 2rem;
+  }  
+}
+
+.artwork-list {
+  margin-top: 1rem;
+  overflow: hidden;
+
+  @media screen and (min-width: $bp-tablet) {
+    margin-top: 2rem;
+    padding-right: 140px;
+  }
 }
