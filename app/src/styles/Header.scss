@@ -1,4 +1,5 @@
 .header {
+  min-height: 28px; // to reserve space when header becomes sticky
   color: $blue;
   font-family: $font-family-galapagos;
   font-size: $font-size-mobile-huge;
