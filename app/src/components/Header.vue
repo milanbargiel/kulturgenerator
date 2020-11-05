@@ -29,7 +29,7 @@ export default {
   },
   methods: {
     handleScroll() {
-      if (!this.isArtworkList || this.viewportWidth < 680) {
+      if (!this.isArtworkList) {
         return;
       }
       this.headerPosition = this.$refs.header.offsetTop
@@ -51,10 +51,7 @@ export default {
     },
     isArtworkList() {
       return (this.$route.name === 'artworkList') || false
-    },
-    viewportWidth () {
-      return Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
-    },
+    }
   }
 }
 </script>
