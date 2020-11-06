@@ -1,20 +1,16 @@
 <template>
   <div>
     <div class="artwork-list">
-        <artwork-list-item v-for="artwork in artworks" :key="artwork.id" :item="artwork"></artwork-list-item>
-      </div>
+      <artwork-list-item v-for="artwork in artworks" :key="artwork.id" :item="artwork"></artwork-list-item>
+    </div>
     <my-footer class="content"></my-footer>
   </div>
 </template>
-  
-
-  
 
 <script>
 import { mapGetters } from 'vuex'
 import ArtworkListItem from '../components/ArtworkListItem.vue'
 import MyFooter from '../components/Footer'
-
 
 export default {
   name: 'ArtworkList',
