@@ -58,12 +58,3 @@
 .paypal__buttons {
   max-width: 380px;
 }
-
-.paypal__description {
-  color: $dark-grey;
-  font-weight: normal;
-
-  @media screen and (min-width: $bp-tablet) {
-    max-width: 90%;
-  }
-}

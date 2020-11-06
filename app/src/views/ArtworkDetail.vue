@@ -12,31 +12,29 @@
       </carousel>
     </div>
     <div class="artwork-detail__title">
-      <a v-if="artwork.website" class="artwork-detail__author link" :href="artwork.website" target="_blank" rel="noopener">{{ artwork.author }}:</a>
-      <div v-else class="artwork-detail__author">{{ artwork.author }}</div>
+      <a v-if="artwork.website" class="artwork-detail__author link" :href="artwork.website" target="_blank" rel="noopener">{{ artwork.author }}</a>
+      <div v-else class="artwork-detail__author">{{ artwork.author }}</div><br>
       {{ artwork.title }}
     </div>
     <vue-markdown class="artwork-detail__description">
       {{ artwork.description }}
     </vue-markdown>
     <div ref="checkout" class="artwork-detail__checkout">
-      <div class="artwork-detail__payment">
+      <div>
         <div class="artwork-detail__price">{{ artwork.price }}€</div>
         <div v-if="isSoldOut" class="artwork-detail__sold">VERKAUFT</div>
-        <div v-else class="artwork-detail__quantity">{{ artworkQuantity }}</div>        
-        <div v-if="!showCheckout && !isSoldOut" class="artwork-detail__payment-button" >
-          <button class="button" @click="openCheckout()">kaufen</button>
-        </div>
-      </div>      
-      <div class="artwork-detail__generator-share">
+        <div v-else class="artwork-detail__quantity">{{ artworkQuantity }}</div>
+      </div>
+      <div v-if="!showCheckout && !isSoldOut" class="artwork-detail__generator-share explain-text">
         <div class="artwork-detail__share-percentage">{{ artworkGeneratorShare }}%</div>
         des Preises werden auf ein solidarisches Konto eingezahlt, dessen Erlös am Ende unter allen Teilnehmenden verteilt wird. Der aktuelle Kontostand ist in der Laufleiste ↑
       </div>
     </div>
-    <div v-if="!showCheckout && !isSoldOut" class="payment-button__description-container">
-      <div class="payment-button__description-text">
-        Die Kaufabwicklung wird mit <a href="https://www.paypal.com/de/webapps/mpp/ua/privacy-full?locale.x=de_DE" target="_blank" rel="noopener">PayPal</a> durchgeführt. Durch Anklicken von Kaufen stimmen Sie der Verwendung von Cookies durch Dritte zu.
-      </div>      
+    <div v-if="!showCheckout && !isSoldOut" class="artwork-detail__payment-button">
+      <button class="button" @click="openCheckout()">zur kasse</button>
+      <div class="explain-text">
+        Die Kaufabwicklung wird mit <a href="https://www.paypal.com/de/webapps/mpp/ua/privacy-full?locale.x=de_DE" target="_blank" rel="noopener" class="underlined-link">PayPal</a> durchgeführt. Durch Anklicken von Kaufen stimmen Sie der Verwendung von Cookies durch Dritte zu.
+      </div>
     </div>
     <checkout v-if="showCheckout" :artwork="artwork"></checkout>
   </div>
