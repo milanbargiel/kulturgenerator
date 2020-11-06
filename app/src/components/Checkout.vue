@@ -1,6 +1,7 @@
 <template>
     <div class="checkout">
-        <div class="price-summary">         
+        <div class="price-summary">
+            <div>test- delete me</div>
             <ul>
                 <li v-show="artwork.quantity > 1" class="price-summary__item price-summary__item--input">
                     <div :class="{'price-summary__invalid': !validQuantity}">
