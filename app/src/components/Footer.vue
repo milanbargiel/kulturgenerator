@@ -1,42 +1,42 @@
 <template>
-    <div>
-        <footer class="footer content">
-            <div class="founders">
-                <div class="founders__header">Eine Initiative von</div>
-                <div class="founders__logos">
-                    <a class="founder-link founder-link--kk" href="https://www.koelnerkulturrat.de/" target="_blank">
-                        <img class="founder-img" src="@/assets/kulturrat.svg">
-                    </a>
-                    <a class="founder-link founder-link--wf" href="http://www.cafe-in-der-wachsfabrik.de/" target="_blank">
-                        <img class="founder-img" src="@/assets/wachsfabrik.svg">
-                    </a>
-                    <a class="founder-link founder-link--nf" href="https://niehlerfreiheit.de/" target="_blank">
-                        <img class="founder-img" src="@/assets/niehlerfreiheit.svg">
-                    </a>
-                </div>
-            </div>
-            <div class="founders">
-                <div class="founders__header">Gefördert durch</div>
-                <div class="founders__logos">
-                    <a class="founder-link founder-link--sk" href="https://www.stadt-koeln.de/" target="_blank">
-                        <img class="founder-img" src="@/assets/kulturamt.svg">
-                    </a>
-                </div>
-            </div>
-            <div class="navigation">
-                <a class="navigation-element link" href="mailto:info@kulturgenerator.org">info@kulturgenerator.org</a><br>
-                <router-link :to="{name: 'impressum'}" class="navigation-element link">Impressum & Datenschutz</router-link>
-            </div>
-        </footer>
-        <newsletter></newsletter>
-    </div>
+  <div class="footer-container">
+    <footer class="footer">
+      <div class="founders">
+        <div class="founders__header">Eine Initiative von</div>
+        <div class="founders__logos">
+          <a class="founder-link founder-link--kk" href="https://www.koelnerkulturrat.de/" target="_blank">
+            <img class="founder-img" src="@/assets/kulturrat.svg">
+          </a>
+          <a class="founder-link founder-link--wf" href="http://www.cafe-in-der-wachsfabrik.de/" target="_blank">
+            <img class="founder-img" src="@/assets/wachsfabrik.svg">
+          </a>
+          <a class="founder-link founder-link--nf" href="https://niehlerfreiheit.de/" target="_blank">
+            <img class="founder-img" src="@/assets/niehlerfreiheit.svg">
+          </a>
+        </div>
+      </div>
+      <div class="founders">
+        <div class="founders__header">Gefördert durch</div>
+        <div class="founders__logos">
+          <a class="founder-link founder-link--sk" href="https://www.stadt-koeln.de/" target="_blank">
+            <img class="founder-img" src="@/assets/kulturamt.svg">
+          </a>
+        </div>
+      </div>
+      <div class="navigation">
+        <a class="navigation-element link" href="mailto:info@kulturgenerator.org">info@kulturgenerator.org</a><br>
+        <router-link :to="{name: 'impressum'}" class="navigation-element link">Impressum & Datenschutz</router-link>
+      </div>
+    </footer>
+    <newsletter></newsletter>
+  </div>
 </template>
 
 <script>
 import Newsletter from '../components/Newsletter'
 
 export default {
-    name: 'Footer',
-    components: { Newsletter }
+  name: 'Footer',
+  components: { Newsletter }
 }
 </script>

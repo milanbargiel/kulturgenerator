@@ -1,11 +1,11 @@
 <template>
-  <div class="nf-container">
+  <div class="newsletter">
     <div>
       Anmeldung zum Newsletter
       <form class="nf js-newsletter-form" action="https://kulturgenerator.us8.list-manage.com/subscribe/post?u=6abc0980238ff5a55fb947df7&amp;id=100b3f64c8" method="POST">
-        <span class="nf__at-sign">@:</span>
+        <span class="nf__at-sign">@: </span>
         <input class="nf__email-input js-newsletter-e-mail" type="email" value="" name="EMAIL" id="mce-EMAIL" placeholder="E-Mail-Adresse" required>
-        <input class="nf__button button" type="submit" value="interessiert &#x23ce;" name="submit" id="mc-embedded-subscribe">
+        <input class="nf__button button" type="submit" value="anmelden ⏎" name="submit" id="mc-embedded-subscribe">
       </form>
       <div class="form-responses">
         <div class="form-responses__success js-newsletter-success-text">Fast fertig.. Um die Anmeldung abzuschließen, klicken Sie bitte auf den Link in der E-Mail, die wir Ihnen gerade zugeschickt haben. Prüfen Sie ggf. auch Ihr Spam-Postfach.</div>

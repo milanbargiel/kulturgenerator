@@ -1,7 +1,9 @@
-.nf-container {
-  padding: .5rem 1rem;
+.newsletter {
+  padding-top: 1rem;
+  padding-bottom: .5rem;
   border-top: 1px solid $black;
   display: flex;
+  line-height: 1.5;
 }
 
 // newsletter form
@@ -16,8 +18,11 @@
   &__email-input {
     background-color: $white;
     color: $dark-grey;
-    margin-bottom: 6px;
+    margin-bottom: .5rem;
+    margin-right: .5rem;
     border: 1px solid $grey;
+    min-width: 200px;
+    padding: .25rem .3rem;
 
     &:focus {
       background-color: $white;
