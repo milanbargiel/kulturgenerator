@@ -11,7 +11,7 @@
                 :repeat="20"
                 :duration="itemSpeed"
                 :paused="paused">
-                <span v-if="item.type === 'moneypool-balance'" class="marquee-text__item" :style="{ width: balanceItemWidth }">{{ animatedBalance.toLocaleString() }}</span>	
+                <span v-if="item.type === 'moneypool-balance'" class="marquee-text__item marquee-text__item--euro" :style="{ width: balanceItemWidth }">{{ animatedBalance.toLocaleString() }}</span>	
                 <span v-else class="marquee-text__item">{{ label }}</span>
             </marquee-text>
         </router-link>

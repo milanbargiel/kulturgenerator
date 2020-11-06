@@ -12,5 +12,18 @@
   @media screen and (min-width: $bp-tablet) {
     line-height: 55px; // adjust line-height and height to make text touch top and bottom
     height: 38px; // adjust line-height and height to make text touch top and bottom
-  }   
+  }
+  
+  &--euro {
+    position: relative;
+
+    &:before {
+      position: absolute;
+      // font-family: $font-family-galapagos-black;
+      content: '€';
+      font-size: 37px;
+      top: -8px;
+      left: -44px;
+    }
+  }
 }
