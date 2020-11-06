@@ -1,7 +1,7 @@
 <template>
   <div class="nf-container">
     <div>
-      Tragen Sie sich hier für weitere Informationen ein
+      Anmeldung zum Newsletter
       <form class="nf js-newsletter-form" action="https://kulturgenerator.us8.list-manage.com/subscribe/post?u=6abc0980238ff5a55fb947df7&amp;id=100b3f64c8" method="POST">
         <span class="nf__at-sign">@:</span>
         <input class="nf__email-input js-newsletter-e-mail" type="email" value="" name="EMAIL" id="mce-EMAIL" placeholder="E-Mail-Adresse" required>
