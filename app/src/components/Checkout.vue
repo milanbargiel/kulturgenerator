@@ -28,8 +28,8 @@
         </div>
         <div class="paypal">
             <div v-show="validQuantity" ref="paypal" class="paypal__buttons"></div>
-            <p class="paypal__description">
-                Durch Anklicken von bezahlen mit Paypal, bestätigen Sie die Weitergabe ihrer angegebenen Daten an die Kulturschaffenden. Das Geld fließt direkt und zu 100% an den/die teilnehmende Künstler*in. Für Fragen zu Abrechnung treten Sie bitte nach dem Kauf direkt mit den Verkäufer*innen in Kontakt. Danke!    
+            <p class="explain-text">
+                Durch Anklicken von bezahlen mit <a href="https://www.paypal.com/de/webapps/mpp/ua/privacy-full?locale.x=de_DE" target="_blank" rel="noopener" class="underlined-link">PayPal</a>, bestätigen Sie die Weitergabe ihrer angegebenen Daten an die Kulturschaffenden. Das Geld fließt direkt und zu 100% an den/die teilnehmende Künstler*in. Für Fragen zu Abrechnung treten Sie bitte nach dem Kauf direkt mit den Verkäufer*innen in Kontakt. Danke!    
             </p>
         </div>
     </div>
@@ -52,7 +52,7 @@ export default {
             return this.singleUnitPrice * this.orderQuantity
         },
         tax () {
-            return this.artwork.tax.substring(1); // remove dummy underscore from tax enumeration String
+            return this.artwork.tax.substring(1) // remove dummy underscore from tax enumeration String
         },
         taxShare () {
             return this.purchaseOrderPrice * this.tax/100
@@ -60,8 +60,11 @@ export default {
         priceWithTaxes () {
             return this.purchaseOrderPrice + this.taxShare
         },
+        shippingCosts () {
+            return this.artwork.shippingCosts
+        },
         totalCost () {
-            return this.priceWithTaxes + this.artwork.shippingCosts
+            return (this.priceWithTaxes + this.shippingCosts).toFixed(2)
         },
         validQuantity () {
             return this.orderQuantity <= this.artwork.quantity && this.orderQuantity > 0

@@ -1,8 +1,7 @@
 <template>
-  <div class="content">
+  <div class="content content--orange">
     <div class="text longer-text-container">
       <div id="impressum">
-        <h2>Impressum</h2>
         <h3>Diensteanbieter</h3>
         <p>Kölner Kulturrat e.V. <br>
           Sachsenring 40<br>

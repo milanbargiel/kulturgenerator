@@ -4,7 +4,6 @@ import ArtworkList from '../views/ArtworkList.vue'
 import ArtworkDetail from '../views/ArtworkDetail.vue'
 import About from '../views/About.vue'
 import Impressum from '../views/Impressum.vue'
-import Faq from '../views/Faq.vue'
 import PageNotFound from '../views/PageNotFound.vue'
 import store from '../store'
 
@@ -16,7 +15,8 @@ Vue.use(VueRouter)
     name: 'artworkList',
     component: ArtworkList,
     meta: {
-      menuItemTypesToDisplay: ['moneypool-balance']
+      menuItemTypesToDisplay: ['moneypool-balance'],
+      stickyHeader: true
     }
   },
   {
@@ -32,17 +32,7 @@ Vue.use(VueRouter)
     name: 'impressum',
     component: Impressum,
     meta: {
-      menuItemTypesToDisplay: ['custom-menu-item']
-    }
-  },
-  {
-    path: '/faq',
-    name: 'faq',
-    component: Faq,
-    meta: {
-      menuItemTypesToDisplay: ['custom-menu-item'],
-      bluePageLayout: true
-    }
+      menuItemTypesToDisplay: ['custom-menu-item']    }
   },
   {
     path: '/:author/:slug',

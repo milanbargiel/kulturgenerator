@@ -18,18 +18,10 @@ export default {
     ArtworkListItem,
     MyFooter
   },
-  data () {
-    return {
-      artworkCount: 1,
-    }
-  },
   computed: {
     ...mapGetters({
       artworks: 'getRandomizedArtworks'
-    }),
-    partialArtworks () {
-      return this.artworks.slice(0, this.artworkCount).reverse()
-    }
+    })
   },
   created () {
     if (this.artworks.length <= 1) {

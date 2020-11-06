@@ -11,7 +11,8 @@
                 :repeat="20"
                 :duration="itemSpeed"
                 :paused="paused">
-                <span class="marquee-text__item">{{ label }}</span>
+                <span v-if="item.type === 'moneypool-balance'" class="marquee-text__item" :style="{ width: balanceItemWidth }">{{ animatedBalance.toLocaleString() }}</span>	
+                <span v-else class="marquee-text__item">{{ label }}</span>
             </marquee-text>
         </router-link>
     </div>
@@ -19,6 +20,7 @@
 
 <script>
 import MarqueeText from 'vue-marquee-text-component'
+import gsap from 'gsap'
 
 export default {
     name: 'MenuItem',
@@ -26,11 +28,20 @@ export default {
     components: { MarqueeText },
     data () {
         return {
-            hover: false
+            hover: false,
+            tweenedNumber: 0,
+            balanceAnimationDuration: 2.5
         }
     },
+    watch: {	
+        moneypoolBalance () {	
+            gsap.to(this.$data, { duration: this.balanceAnimationDuration, tweenedNumber: this.moneypoolBalance, ease: "power4.out" });	
+        }	
+    },    
     created () {
-        if (this.item.type === 'back-button') {
+        if (this.item.type === 'moneypool-balance') {
+            gsap.to(this.$data, { duration: this.balanceAnimationDuration, tweenedNumber: this.moneypoolBalance, ease: "power4.out" });
+        } else if (this.item.type === 'back-button') {
             this.item.viewName = 'artworkList'
         }
     },
@@ -48,9 +59,6 @@ export default {
             return this.$route.name === this.item.viewName
         },
         label () {
-            if (this.item.type === 'moneypool-balance') {
-                return this.moneypoolBalance
-            }
             return this.item.label
         },
         moneypoolBalance () {
@@ -69,7 +77,13 @@ export default {
         },
         itemSpeed () {
             return 10 - this.item.speed
-        }
+        },
+        animatedBalance: function() {	
+            return parseInt(this.tweenedNumber.toFixed(0))
+        },	
+        balanceItemWidth () {	
+            return this.moneypoolBalance.toString().length * 50 + 'px' // 50 is approximately the width of a single number
+        }        
     }
 }
 </script>

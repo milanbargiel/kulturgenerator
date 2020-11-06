@@ -1,8 +1,9 @@
 <template>
   <div id="app">
     <div v-if="isLoading" class="loading-indicator">lädt</div>
-    <div :class="{ 'hidden': isLoading, 'blue-content': isBluePage }">
-      <my-header></my-header>
+    <div :class="{ 'hidden': isLoading }">
+      <div v-if="isArtworkList" class="info-box">Der <span class="intext-title">kulturgenerator</span> ist virtueller Laden und Kunstprojekt, generöse Maschine und Startschuss für eine Plattform, die spartenübergreifend die Facetten der Kölner Kulturszene abbildet. Er ist ein spieltheoretisches Experiment, in dem die Kulturschaffenden selbst entscheiden, ob und wie viel sie vom Erlös des Verkaufs ihrer Arbeit in ein solidarisches Konto einzahlen möchten. Erwerben Sie jetzt Kunst um das Projekt zu unterstützen ↓</div>
+      <my-header :isLoading="isLoading"></my-header>
       <router-view/> 
     </div>
   </div>
@@ -23,8 +24,8 @@ export default {
     ...mapGetters([
       'isLoading'
     ]),
-    isBluePage () {
-      return this.$route.meta.bluePageLayout || false
+    isArtworkList() {
+      return (this.$route.name === 'artworkList') || false
     }
   }
 }
