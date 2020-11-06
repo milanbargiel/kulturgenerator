@@ -1,5 +1,5 @@
 <template>
-    <div class="header">
+    <div class="header" v-if="!isLoading">
         <template v-for="(menuItem, index) in menuItems">
             <menu-item :item="menuItem" :key="'menu-item-' + index"></menu-item>
         </template>
@@ -13,6 +13,7 @@ import PaymentFeedbackBanner from '../components/PaymentFeedbackBanner'
 
 export default {
     name: 'Header',
+    props: ['isLoading'],
     components: { MenuItem, PaymentFeedbackBanner },
     computed: {
         menuItems () {
