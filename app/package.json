@@ -36,6 +36,7 @@
     "vue-markdown-v2": "^0.1.7",
     "vue-marquee-text-component": "^1.2.0",
     "vue-router": "^3.4.8",
+    "vue-scroll": "^2.1.13",
     "vue-template-compiler": "^2.6.12",
     "vuex": "^3.4.0"
   },

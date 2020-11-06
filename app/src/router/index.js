@@ -15,7 +15,8 @@ Vue.use(VueRouter)
     name: 'artworkList',
     component: ArtworkList,
     meta: {
-      menuItemTypesToDisplay: ['moneypool-balance']
+      menuItemTypesToDisplay: ['moneypool-balance'],
+      stickyHeader: true
     }
   },
   {

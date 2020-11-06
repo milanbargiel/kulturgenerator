@@ -22,6 +22,7 @@ export default {
     }
   },
   created () {
+    // Listen to scroll event to attach sticky header
     window.addEventListener('scroll', this.handleScroll);
   },
   destroyed () {
@@ -29,13 +30,10 @@ export default {
   },
   methods: {
     handleScroll() {
-      if (!this.isArtworkList) {
-        return;
-      }
       this.headerPosition = this.$refs.header.offsetTop
       this.scrollPosition = window.scrollY
-
-      if (this.scrollPosition > this.headerPosition){
+      
+      if (this.$route.meta.stickyHeader && (this.scrollPosition > this.headerPosition)) {
         this.isSticky = true
       } else {
         this.isSticky = false
@@ -48,9 +46,6 @@ export default {
     },
     paymentFeedback () {
       return this.$store.state.paymentFeedback
-    },
-    isArtworkList() {
-      return (this.$route.name === 'artworkList') || false
     }
   }
 }
