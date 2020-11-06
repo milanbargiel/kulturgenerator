@@ -1,9 +1,10 @@
 .artwork-detail {
   max-width: 800px;
   margin: 12px 12px 0;
+  margin-bottom: $spacing-mobile--large;
 
   @media screen and (min-width: $bp-tablet) {
-    margin: 30px auto 0;
+    margin: 30px auto $spacing-desktop--large;
   }
 }
 
@@ -51,12 +52,7 @@
 .artwork-detail__checkout {
   display: flex;
   flex-direction: row;
-  margin-bottom: $spacing-mobile--large;
   justify-content: space-between;
-
-  @media screen and (min-width: $bp-tablet) {
-    margin-bottom: $spacing-desktop--large;
-  }
 }
 
 .artwork-detail__payment {
@@ -104,7 +100,6 @@
   margin-right: 18px;
   font-family: inherit;
   margin-top: auto;
-  position: relative;
 
   button {
     font-size: $font-size-mobile-huge;
@@ -122,27 +117,21 @@
     }
   }
 
-  &:after {
-    content: "Die Kaufabwicklung wird mit PayPal durchgeführt. Durch Anklicken von Kaufen stimmen Sie der Verwendung von Cookies durch PayPal zu.";
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 200%;
-    font-size: $font-size-laptop;
-    color: $dark-grey;
-    padding: 12px 0;
-    margin-bottom: 60px;
-  }
-
   @media screen and (min-width: $bp-tablet) {
     font-size: $font-size-laptop-huge;
   }
 }
 
+.payment-button__description-container {
+  display: flex;
+}
 
-.artwork-detail__purchase-feedback--positive {
-  padding: 30px; 
-  background: lightgreen;
-  margin-bottom: 60px;
-  text-align: center;
+.payment-button__description-text {
+  flex: 0 1 45%;
+  color: $dark-grey;
+  line-height: 1;
+
+  a {
+    text-decoration: underline;
+  }
 }

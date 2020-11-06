@@ -1,7 +1,16 @@
 .marquee-text__item {
+  display: block;
+  line-height: 38px; // adjust line-height and height to make text touch top and bottom
+  height: 26px; // adjust line-height and height to make text touch top and bottom
   margin-right: 140px;
+
   -webkit-user-select: none; /* Safari */        
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* IE10+/Edge */
   user-select: none; /* Standard */
+
+  @media screen and (min-width: $bp-tablet) {
+    line-height: 52px; // adjust line-height and height to make text touch top and bottom
+    height: 35px; // adjust line-height and height to make text touch top and bottom
+  }   
 }

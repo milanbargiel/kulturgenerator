@@ -8,6 +8,9 @@ const mutations = {
             state.isLoading = payload
         }
     },
+    SET_MENU_ITEMS (state, payload) {
+        state.menuItems.push(...payload.menuItems)
+    },
     SET_ARTWORKS (state, payload) {
         payload.forEach((artwork) => {
             Vue.set(state.artworks, [artwork.id], artwork)
