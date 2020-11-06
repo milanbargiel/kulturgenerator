@@ -52,7 +52,7 @@ export default {
             return this.singleUnitPrice * this.orderQuantity
         },
         tax () {
-            return this.artwork.tax.substring(1); // remove dummy underscore from tax enumeration String
+            return this.artwork.tax.substring(1) // remove dummy underscore from tax enumeration String
         },
         taxShare () {
             return this.purchaseOrderPrice * this.tax/100
@@ -60,8 +60,11 @@ export default {
         priceWithTaxes () {
             return this.purchaseOrderPrice + this.taxShare
         },
+        shippingCosts () {
+            return this.artwork.shippingCosts
+        },
         totalCost () {
-            return this.priceWithTaxes + this.artwork.shippingCosts
+            return (this.priceWithTaxes + this.shippingCosts).toFixed(2)
         },
         validQuantity () {
             return this.orderQuantity <= this.artwork.quantity && this.orderQuantity > 0
