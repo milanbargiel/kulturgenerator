@@ -26,5 +26,15 @@
             <a class="navigation-element link" href="mailto:info@kulturgenerator.org">info@kulturgenerator.org</a><br>
             <router-link :to="{name: 'impressum'}" class="navigation-element link">Impressum & Datenschutz</router-link>
         </div>
+        <newsletter></newsletter>
     </footer>
 </template>
+
+<script>
+import Newsletter from '../components/Newsletter'
+
+export default {
+    name: 'Footer',
+    components: { Newsletter }
+}
+</script>

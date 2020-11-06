@@ -1,0 +1,39 @@
+// newsletter form
+.nf {
+  display: inline-block;
+
+  &__at-sign {
+    color: $blue;
+    display: inline-block;
+  }
+
+  &__email-input {
+    background-color: $white;
+    color: $dark-grey;
+    margin-bottom: 6px;
+    border: 1px solid $grey;
+
+    &:focus {
+      background-color: $white;
+      border-color: $blue;
+      outline: 0;
+      box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+    }
+  }
+
+  &__button {
+    margin-bottom: 6px;
+  }
+}
+
+.form-responses {
+  &__success {
+    color: $blue;
+    display: none; 
+  }
+
+  &__error {
+    color: $red;
+    display: none;
+  }
+}
