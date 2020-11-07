@@ -176,6 +176,14 @@ ul {
       background-color: $blue;
     }
   }
+
+  &--red {
+    color: $red;
+
+    &::after {
+      background-color: $red;
+    }
+  }
 }
 
 .loading-indicator {
@@ -263,4 +271,8 @@ ul {
   .longer-text-container {
     max-width: 1000px;
   }
+}
+
+.error {
+  color: $red;
 }

@@ -28,6 +28,7 @@
         </div>
         <div class="paypal">
             <div v-show="validQuantity" ref="paypal" class="paypal__buttons"></div>
+            <div class="error" v-if="error">Ein Fehler ist aufgetreten. Versuchen Sie es später erneut oder wenden Sie sich an <a class="underlined-link underlined-link--red" href="mailto:info@kulturgenerator.org">info@kulturgenerator.org</a>.</div>
             <p class="explain-text">
                 Durch Anklicken von bezahlen mit <a href="https://www.paypal.com/de/webapps/mpp/ua/privacy-full?locale.x=de_DE" target="_blank" rel="noopener" class="underlined-link">PayPal</a>, bestätigen Sie die Weitergabe ihrer angegebenen Daten an die Kulturschaffenden. Das Geld fließt direkt und zu 100% an den/die teilnehmende Künstler*in. Für Fragen zu Abrechnung treten Sie bitte nach dem Kauf direkt mit den Verkäufer*innen in Kontakt. Danke!    
             </p>
@@ -41,6 +42,7 @@ export default {
     name: 'Checkout',
     data () {
         return {
+            error: false,
             orderQuantity: 1
         }
     },
@@ -82,7 +84,7 @@ export default {
     methods: {
         handleOrder (order) {
             if (order.status !== 'COMPLETED') {
-                this.$store.commit('UPDATE_PAYMENT_FEEDBACK', { show: true, state: 'error'})
+                this.error = true
                 return 
             }
             this.$store.dispatch('sendOrder', { artworkId: this.artwork.id, order })
@@ -96,7 +98,6 @@ export default {
                 quantity: this.artwork.quantity - this.orderQuantity
             })
             this.$store.dispatch('updateShadowMoneypool', this.generatorShare)
-            this.$store.commit('UPDATE_PAYMENT_FEEDBACK', { show: true, state: 'success'})
         },
         loadPaypalScript () {
             const script = document.createElement('script')
