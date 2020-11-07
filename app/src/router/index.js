@@ -49,6 +49,13 @@ Vue.use(VueRouter)
     component: PurchaseConfirmation,
     meta: {
       menuItemTypesToDisplay: ['thank-you-message', 'back-button']
+    },
+    beforeEnter: (to, from, next) => {
+      if (from.name === 'artworkDetail') {
+        next()
+      } else {
+        next({ name: 'artworkList' })
+      }
     }
   },
   {
