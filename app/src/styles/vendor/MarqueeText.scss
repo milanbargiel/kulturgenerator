@@ -19,11 +19,16 @@
 
     &:before {
       position: absolute;
-      // font-family: $font-family-galapagos-black;
       content: '€';
-      font-size: 37px;
-      top: -8px;
-      left: -44px;
+      top: -7px;
+      left: -30px;
+      font-size: 26px;
+
+      @media screen and (min-width: $bp-tablet) {
+        top: -8px;
+        font-size: 37px;
+        left: -44px;
+      }
     }
   }
 }
