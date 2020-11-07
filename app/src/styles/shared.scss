@@ -93,7 +93,6 @@ a {
 button:hover,
 button:focus {
   cursor: pointer;
-
 }
 
 // html is set to 62.5% so that all the REM measurements
@@ -141,6 +140,10 @@ ul {
       font-style: normal;
     }
   }
+}
+
+.no-link:hover {
+  cursor: inherit;
 }
 
 .underlined-link {

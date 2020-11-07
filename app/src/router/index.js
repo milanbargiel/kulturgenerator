@@ -48,7 +48,7 @@ Vue.use(VueRouter)
     name: 'purchaseConfirmation',
     component: PurchaseConfirmation,
     meta: {
-      menuItemTypesToDisplay: ['moneypool-balance', 'back-button']
+      menuItemTypesToDisplay: ['thank-you-message', 'back-button']
     }
   },
   {
