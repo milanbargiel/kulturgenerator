@@ -40,11 +40,18 @@
 .form-responses {
   &__success {
     color: $blue;
-    display: none; 
   }
 
   &__error {
     color: $red;
-    display: none;
+  }
+
+  &__loading {
+    color: $blue;
+
+    &:before {
+      content: '. ';
+      animation: dots 1s steps(5, end) infinite;
+    }
   }
 }
