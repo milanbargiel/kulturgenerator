@@ -4,6 +4,7 @@ import ArtworkList from '../views/ArtworkList.vue'
 import ArtworkDetail from '../views/ArtworkDetail.vue'
 import About from '../views/About.vue'
 import Impressum from '../views/Impressum.vue'
+import PurchaseConfirmation from '../views/PurchaseConfirmation.vue'
 import PageNotFound from '../views/PageNotFound.vue'
 import store from '../store'
 
@@ -38,6 +39,14 @@ Vue.use(VueRouter)
     path: '/:author/:slug',
     name: 'artworkDetail',
     component: ArtworkDetail,
+    meta: {
+      menuItemTypesToDisplay: ['moneypool-balance', 'back-button']
+    }
+  },
+  {
+    path: '/vielen-dank',
+    name: 'purchaseConfirmation',
+    component: PurchaseConfirmation,
     meta: {
       menuItemTypesToDisplay: ['moneypool-balance', 'back-button']
     }

@@ -1,7 +1,7 @@
 <template>
     <div class="content">
       <div class="text">
-            <span class="intext-title">Diese Seite existiert nicht.</span>
+            <span class="intext-title">Ihr Kauf war erfolgreich.</span>
         </div>
         <my-footer></my-footer>
     </div>
@@ -11,7 +11,7 @@
 import MyFooter from '../components/Footer'
 
 export default {
-  name: 'PageNotFound',
+  name: 'PurchaseConfirmation',
   components: {
     MyFooter
   },
