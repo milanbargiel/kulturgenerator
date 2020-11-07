@@ -9,7 +9,7 @@
   <template v-slot="{ subscribe, setEmail, error, success, loading }">
     <div class="newsletter">
       Anmeldung zum Newsletter
-      <form class="nf" @submit.prevent="subscribe">
+      <form class="nf" @submit.prevent="subscribe" ref="form">
         <span class="nf__at-sign">@: </span>
         <input class="nf__email-input" type="email" placeholder="E-Mail-Adresse" @input="setEmail($event.target.value)" required />
         <button class="nf__button button" type="submit">anmelden ⏎</button>
@@ -37,7 +37,7 @@ export default {
       // handle error
     },
     onSuccess() {
-      // handle success
+      this.$refs.form.reset(); // clear email on success
     },
   },
 }
