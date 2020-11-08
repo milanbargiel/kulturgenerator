@@ -8,6 +8,17 @@
   margin-bottom: 6rem;
 }
 
+.purchase__title {
+  margin-top: 1rem;
+  margin-bottom: 6rem;
+  color: $black;
+
+  @media screen and (min-width: $bp-tablet) {
+    margin-top: 2rem;
+    margin-bottom: 0;
+  }
+}
+
 .purchase__img {
   width: 100%;
 }

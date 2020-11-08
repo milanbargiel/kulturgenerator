@@ -3,8 +3,9 @@
     <div class="purchase text">
       <div class="purchase__sucess">Herzlichen Glückwunsch, Ihr Kauf war erfolgreich!</div>
       <div class="purchase__instructions">
-        <div class="purchase__img-container">
-          <responsive-image v-if="artwork" class="purchase__img" :src="artworkImage.url" :aspectRatio="artworkImage.aspectRatio"></responsive-image>
+        <div v-if="artwork" class="purchase__img-container">
+          <responsive-image class="purchase__img" :src="artworkImage.url" :aspectRatio="artworkImage.aspectRatio"></responsive-image>
+          <div class="purchase__title intext-title">{{ artworkTitle }}</div>
         </div>
         <div class="purchase__message">
           <p>1 Sie erhalten eine Bestätigungsmail von Paypal.</p>
@@ -37,7 +38,7 @@ export default {
       this.artwork = this.$route.params.artwork
     } else { // load dummy artwork for debug mode /vielen-dank?debug=true
       this.$store.commit('SET_LOADING_STATE', true)
-      this.$store.dispatch('getArtworkBySlug', 'irische-landschaft')
+      this.$store.dispatch('getArtworkBySlug', 'posters-for-acephale')
         .then((response) => {
           this.$store.commit('SET_LOADING_STATE', false)
           this.artwork = response.data
@@ -53,6 +54,9 @@ export default {
       const aspectRatio = (image.height / image.width) * 100;
       return { url, aspectRatio }
     },
+    artworkTitle () {
+      return this.artwork.author + ': ' + this.artwork.title
+    }
   }
 }
 </script>
