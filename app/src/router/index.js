@@ -6,7 +6,6 @@ import About from '../views/About.vue'
 import Impressum from '../views/Impressum.vue'
 import PurchaseConfirmation from '../views/PurchaseConfirmation.vue'
 import PageNotFound from '../views/PageNotFound.vue'
-import store from '../store'
 
 Vue.use(VueRouter)
 
@@ -77,15 +76,6 @@ const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
-})
-
-router.beforeEach((to, from, next) => {
-  // always hide payment info banner on route change
-  if (store.state.paymentFeedback.show) {
-    store.commit('UPDATE_PAYMENT_FEEDBACK', { show: false, state: 'hidden' })    
-  }
-  next()
-  window.scrollTo({ top: 0 });
 })
 
 export default router

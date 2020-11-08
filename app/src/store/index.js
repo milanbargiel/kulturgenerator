@@ -11,11 +11,7 @@ const state = {
   menuItems: [],
   loadingDelay: 700,
   artworks: {},
-  shadowMoneypoolBalance: 0,
-  paymentFeedback: {
-    show: false,
-    state: 'hidden'
-  }
+  shadowMoneypoolBalance: 0
 }
 
 export default new Vuex.Store({

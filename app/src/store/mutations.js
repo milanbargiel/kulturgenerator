@@ -22,9 +22,6 @@ const mutations = {
     UPDATE_ARTWORK_QUANTITY (state, payload) {
         state.artworks[payload.id].quantity = payload.quantity
     },
-    UPDATE_PAYMENT_FEEDBACK (state, payload) {
-        state.paymentFeedback = payload
-    },
     UPDATE_SHADOW_MONEYPOOL (state, payload) {
         state.shadowMoneypoolBalance = payload
     }    
