@@ -79,8 +79,7 @@ export default {
     }
   },
   mounted () {
-    this.$router.push({ name: 'purchaseConfirmation', params: { artwork: this.artwork } })
-    // this.loadPaypalScript()
+    this.loadPaypalScript()
   },
   methods: {
     handleOrder (order) {
