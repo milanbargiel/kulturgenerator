@@ -34,10 +34,11 @@ export default {
   },
   methods: {
     onError() {
-      // handle error
+      window.scrollTo(0, document.body.scrollHeight);
     },
     onSuccess() {
       this.$refs.form.reset(); // clear email on success
+      window.scrollTo(0, document.body.scrollHeight);
     },
   },
 }
