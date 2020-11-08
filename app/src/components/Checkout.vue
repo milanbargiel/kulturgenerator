@@ -79,8 +79,8 @@ export default {
     }
   },
   mounted () {
-    this.$router.push({ name: 'purchaseConfirmation', params: { id: this.artwork.id } })
-    this.loadPaypalScript()
+    this.$router.push({ name: 'purchaseConfirmation', params: { artwork: this.artwork } })
+    // this.loadPaypalScript()
   },
   methods: {
     handleOrder (order) {
@@ -101,7 +101,7 @@ export default {
       this.$store.dispatch('updateShadowMoneypool', this.generatorShare)
 
       // change route programatically to thank you page
-      this.$router.push({ name: 'purchaseConfirmation', params: { id: this.artwork.id } })
+      this.$router.push({ name: 'purchaseConfirmation', params: { artwork: this.artwork } })
     },
     loadPaypalScript () {
       const script = document.createElement('script')
