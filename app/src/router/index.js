@@ -5,6 +5,7 @@ import ArtworkDetail from '../views/ArtworkDetail.vue'
 import About from '../views/About.vue'
 import Impressum from '../views/Impressum.vue'
 import PageNotFound from '../views/PageNotFound.vue'
+import Submit from '../views/Submit.vue'
 import store from '../store'
 
 Vue.use(VueRouter)
@@ -33,6 +34,14 @@ Vue.use(VueRouter)
     component: Impressum,
     meta: {
       menuItemTypesToDisplay: ['custom-menu-item']    }
+  },
+  {
+    path: '/einreichen',
+    name: 'submit',
+    component: Submit,
+    meta: {
+      menuItemTypesToDisplay: ['moneypool-balance', 'back-button']  
+    }
   },
   {
     path: '/:author/:slug',
