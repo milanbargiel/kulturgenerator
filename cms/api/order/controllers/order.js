@@ -18,9 +18,10 @@ module.exports = {
     // strapi.query('artwork').update({id: id}, { quantity: orderedArtwork.quantity - ctx.request.body.orderQuantity} );
 
     const orderedArtwork = await strapi.services.artwork.findOne({ slug });
+    console.log('orderedArtwork.id', orderedArtwork.id);
     console.log('orderedArtwork.quantity', orderedArtwork.quantity);
 
-    const updatedArtwork = await strapi.services.artwork.update(orderedArtwork, {
+    const updatedArtwork = await strapi.services.artwork.update({ id: orderedArtwork.id }, {
       quantity: orderedArtwork.quantity - ctx.request.body.orderQuantity
     });
     const artworkEntry = sanitizeEntity(updatedArtwork, { model: strapi.models.artwork });
