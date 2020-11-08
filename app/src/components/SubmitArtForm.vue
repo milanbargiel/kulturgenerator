@@ -38,11 +38,13 @@ export default {
   },
   methods: {
     submit (artwork) {
-      this.$store.dispatch('submitArtwork', { artwork })
-      .then((response) => {
-        console.log(response)
-        this.sucess = true
-      })
+      this.$store.dispatch('submitArtwork', artwork)
+        .then(() => {
+          this.sucess = true
+        })
+        .error(() => {
+          this.error = true
+        })
     }
   }
 }
