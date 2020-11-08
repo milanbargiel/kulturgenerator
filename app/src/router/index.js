@@ -50,7 +50,7 @@ Vue.use(VueRouter)
       menuItemTypesToDisplay: ['thank-you-message', 'back-button']
     },
     beforeEnter: (to, from, next) => { // prevent thank you page from being accessed directly
-      if (from.name === 'artworkDetail') {
+      if (from.name === 'artworkDetail' || to.query.debug) { // debug with /vielen-dank?debug=true
         next()
       } else {
         next({ name: 'artworkList' })
