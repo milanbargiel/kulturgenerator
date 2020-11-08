@@ -49,7 +49,7 @@ Vue.use(VueRouter)
     meta: {
       menuItemTypesToDisplay: ['thank-you-message', 'back-button']
     },
-    beforeEnter: (to, from, next) => {
+    beforeEnter: (to, from, next) => { // prevent thank you page from being accessed directly
       if (from.name === 'artworkDetail') {
         next()
       } else {
