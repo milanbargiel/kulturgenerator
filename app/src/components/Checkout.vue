@@ -88,19 +88,8 @@ export default {
         return 
       }
       this.$store.dispatch('sendOrder', { artworkId: this.artwork.id, order })
-      .then(response => { 
-        this.$store.commit('UPDATE_ARTWORK_QUANTITY', response.data.artwork)
-      })
-
-      // update quantity even before it's confirmed and updated again after sendOrder success.    
-      this.$store.commit('UPDATE_ARTWORK_QUANTITY', { 
-        id: this.artwork.id,
-        quantity: this.artwork.quantity - this.orderQuantity
-      })
       this.$store.dispatch('updateShadowMoneypool', this.generatorShare)
-
-      // change route programatically to thank you page
-      this.$router.push({ name: 'purchaseConfirmation', params: { artwork: this.artwork } })
+      this.$router.push({ name: 'purchaseConfirmation', params: { artwork: this.artwork } }) // change route programatically to thank you page
     },
     loadPaypalScript () {
       const script = document.createElement('script')
@@ -124,7 +113,7 @@ export default {
             } else {
               actions.enable();
             }
-          });                        
+          });
         },
         createOrder: (data, actions) => {
           return actions.order.create({                      

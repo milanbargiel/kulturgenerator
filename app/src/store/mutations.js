@@ -19,9 +19,6 @@ const mutations = {
     SET_ARTWORK (state, payload) {
         Vue.set(state.artworks, [payload.id], payload)
     },
-    UPDATE_ARTWORK_QUANTITY (state, payload) {
-        state.artworks[payload.id].quantity = payload.quantity
-    },
     UPDATE_SHADOW_MONEYPOOL (state, payload) {
         state.shadowMoneypoolBalance = payload
     }    
