@@ -11,16 +11,16 @@ module.exports = {
     const { slug } = ctx.request.body.artwork;
     console.log('slug', slug);
     const orderedArtwork = await strapi.services.artwork.findOne({ slug });
-    console.log('orderedArtwork', orderedArtwork);
+    console.log('orderedArtwork.quantity', orderedArtwork.quantity);
     const updatedArtwork = await strapi.services.artwork.update(orderedArtwork.id, {
       quantity: orderedArtwork.quantity - ctx.request.body.orderQuantity
     });
-    console.log('updatedArtwork', updatedArtwork);
+    console.log('updatedArtwork.quantity', updatedArtwork.quantity);
 
     const entity = await strapi.services.order.create(ctx.request.body);
-    console.log('entity', entity)
+    console.log('entity', entity.artwork.quantity);
     const entry = sanitizeEntity(entity, { model: strapi.models.order });
-    console.log('entry start', entry)
+    console.log('entry start', entry.artwork.quantity);
 
     if (entry) {
       // Pass entry data to templates
@@ -44,7 +44,7 @@ module.exports = {
       });
     }
 
-    console.log('entry end', entry)
+    console.log('entry end', entry.artwork.quantity);
     return entry;
   },
 };
