@@ -1,6 +1,7 @@
 // Normalize css for all browsers
 @import 'normalize-scss';
 @include normalize();
+@import '@braid/vue-formulate/themes/snow/snow.scss';
 
 // Custom Styles
 @import 'shared.scss'; // All styles that are shared between components

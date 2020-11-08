@@ -14,6 +14,7 @@
     "deploy": "npm-run-all --serial deploy:*"
   },
   "dependencies": {
+    "@braid/vue-formulate": "^2.4.5",
     "@sindresorhus/slugify": "^1.1.0",
     "@vue/cli-plugin-babel": "^4.5.8",
     "@vue/cli-plugin-eslint": "^4.5.8",
