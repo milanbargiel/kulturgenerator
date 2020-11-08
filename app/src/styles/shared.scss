@@ -93,7 +93,6 @@ a {
 button:hover,
 button:focus {
   cursor: pointer;
-
 }
 
 // html is set to 62.5% so that all the REM measurements
@@ -171,6 +170,14 @@ ul {
 
     &::after {
       background-color: $blue;
+    }
+  }
+
+  &--red {
+    color: $red;
+
+    &::after {
+      background-color: $red;
     }
   }
 }
@@ -258,7 +265,10 @@ ul {
 
 @media screen and (min-width: $bp-tablet) {
   .longer-text-container {
-    font-size: 28px;
     max-width: 1000px;
   }
+}
+
+.error {
+  color: $red;
 }
