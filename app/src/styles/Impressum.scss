@@ -1,9 +1,0 @@
-.title {
-  line-height: 1;
-  font-family: 'GalapagosA-Regular', 'Inconsolata', monospace;
-  font-size: $font-size-mobile-huge;
-
-  @media screen and (min-width: $bp-tablet) {
-    font-size: $font-size-laptop-huge;
-  }
-}

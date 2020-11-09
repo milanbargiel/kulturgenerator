@@ -1,10 +1,26 @@
-// home page
 .intext-title {
-  font-size: 30px; // prevent linebreak on smaller devices (iphone 5)
   font-family: $font-family-galapagos;
-  font-weight: bold; // only used when Galapagos is not loaded
+  font-size: 26px;
 
-  @media screen and (min-width: $bp-smartphone) {
-    font-size: inherit;
-  }
 }
+
+.about-title {
+	font-family: $font-family-galapagos;
+	font-size: 55px;
+	
+}
+.yellow-numbers {
+	color: $yellow;
+}
+
+.text {
+  	font-size: $font-size-mobile;
+  	margin-top: 20px;
+  	max-width: 1000px;
+  	
+  	@media screen and (min-width: $bp-tablet) {
+  	font-size: $font-size-laptop;
+
+}
+}
+

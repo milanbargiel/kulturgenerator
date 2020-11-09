@@ -1,7 +1,7 @@
 .info-box {
   margin: .725rem .725rem 1.725rem;
   color: $blue;
-  
+  max-width: 1000px;
 
   @media screen and (min-width: $bp-tablet) {
     margin: 1rem 2rem 2rem;

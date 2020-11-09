@@ -1,8 +1,30 @@
 <template>
     <div class="content content--blue">
       <div class="text">
-            Der <span class="intext-title">kulturgenerator</span> ist virtueller Laden und ist seit 3 Tagen 7 Stunden und 8 Minuten online, er ist virtueller Laden und Plattform die spartenübergreifend die Facetten der Kölner Kulturszene abbildet. Bisher wurden in den Generator 53 Arbeiten hochgeladen, im Shop werden davon 30 Angebote angzeigt. Wenn ein Kulturangebot verkauft wurde, rückt ein anderes nach. Was ist der Kulturgenerator? Wie funktioniert der Kulturgenerator? An wen richtet sich der Kulturgenerator? Er ist virtueller Laden und Plattform die spartenübergreifend die Facetten der Kölner Kulturszene abbildet. Blabliblub hullahup mit dem. Jup In dem spieltheoretischen Experiment, entscheiden Kunst- und Kulturschaffende selbst ob sie einen Teil des Erlös ihrer Verkäufe, in das solidarische Konto einzahlen möchten an dem anschließend alle Teilnehmer*innen des Projekts beteiligt werden, unabhängig davon ob ihre Angebote verkauft wurden oder nicht. Der aktuelle Kontostand beträgt €1234,12. Um ein Kunstwerk im Generator zum Verkauf anzubieten, tragen Sie bitte ihre Daten ein. ↓
-        </div>
+<span class="about-title">STROM</span><br>
+
+Wenn der Strom ausfällt, wird ein Generator benötigt. Der Kulturgenerator ist online seit XX Tagen, XX Stunden, XX Minuten. Als eine Reaktion auf die COVID-19 Pandemie, vor allem in Betracht der Schließungen von Kulturinstitutionen in dem ersten Lockdown im März 2020, ist der Kulturgenerator mit der Frage, wie sich Kunst- und Kulturschaffende gegenseitig und eigenverantwortlich unterstützen können, entstanden. In ihm erscheinen etablierte und weniger etablierte Künstler:innen gleichberechtigt und hierarchiefrei nebeneinander und können somit die gegenseitige Sichtbarkeit erhöhen und sich gegenseitig unterstützen.<br><br><br><br>
+
+
+<span class="about-title">SOLIDARITÄT</span><br>
+
+Der Kulturgenerator ist somit eine solidarische Online-Galerie, die darauf abzielt, Einnahmen durch Verkäufe unter allen teilnehmenden Kunst- und Kulturschaffenden fair umzuverteilen. Diese entscheiden dabei selbst, ob und wie viel sie vom Erlös des Verkaufs ihrer Arbeit auf ein solidarisches Konto einzahlen möchten und ob sie bei der Ausschüttung des Kontos beteiligt werden wollen. Auch teilnehmende Kunst- und Kulturschaffende, die über den Generator nichts verkaufen, können vom solidarischen Konto profitieren. Der Kontostand beträgt derzeit: XXX Euro. Das Datum der Ausschüttung des solidarischen Kontos ist der XX/XX/XX Datum.<br><br><br><br>
+
+
+
+<span class="about-title">SPARTENÜBERGREIFENDE PLATTFORM</span><br>
+
+Da vor allem auch kulturorganisatorische Arbeit und Kultureinrichtungen der freien Szene oft aus dem Raster der Unterstützungsmaßnahmen fallen, können im Generator neben Objekten auch Kultur-Erlebnisse verkauft werden. Seit seinem bestehen hat der Kulturgenerator bereits XX Arbeiten generiert. Im Laden stehen 30 davon zum Verkauf. Wird ein Angebot verkauft, rückt ein anderes nach.<br><br><br><br>
+
+
+
+<span class="about-title">SPIEL</span><br>
+
+Sie können Teil unseres Experiments werden, indem Sie Angebote kaufen oder Arbeiten über das Formular einreichen. Für Fragen schreiben Sie uns an info@kulturgenerator.org oder melden Sie sich für unseren Newsletter an: <br><br><br><br>
+
+
+
+  </div>
         <my-footer></my-footer>
     </div>
 </template>

@@ -3,7 +3,7 @@ $bp-smartphone: 370px;
 $bp-tablet: 680px;
 $bp-large: 1400px;
 
-$font-family: 'apercu-mono-regular';
+$font-family: 'favorit-mono';
 $font-family-galapagos: 'GalapagosA-Regular', 'apercu-mono-regular', monospace;
 $font-family-galapagos-black: 'GalapagosA-Black', 'apercu-mono-regular', monospace;
 $z-level-1: 1;
@@ -26,6 +26,7 @@ $blue: #0000ee;
 $orange: #ff551b;
 $black: #000;
 $white: #fff;
+$yellow: #ffff00;
 $light-grey: #eeeeee;
 $grey: #ced4da;
 $dark-grey: #495057;
@@ -64,6 +65,11 @@ $spacing-desktop--large: 90px;
 @font-face {
   font-family: 'GalapagosA-Black';
   src: url('assets/GalapagosA-Black.woff2') format('woff2'), url('assets/GalapagosA-Black.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'favorit-mono';
+  src: url('assets/ABCFavoritEduMono-Regular.otf');
 }
 
 // Mixins
