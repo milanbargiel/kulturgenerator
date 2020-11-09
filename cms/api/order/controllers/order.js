@@ -11,7 +11,8 @@ module.exports = {
     const { slug } = ctx.request.body.artwork;
 
     const orderedArtwork = await strapi.services.artwork.findOne({ slug });
-    await strapi.services.artwork.update(orderedArtwork.id, {
+
+    await strapi.services.artwork.update({ id: orderedArtwork.id }, {
       quantity: orderedArtwork.quantity - ctx.request.body.orderQuantity
     });
 

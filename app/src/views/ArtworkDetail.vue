@@ -96,22 +96,11 @@ export default {
       return this.artwork.generatorShare?.substring(1); // remove dummy underscore from generatorShare String
     },
     showCheckout () {
-      return this.checkoutIsOpen && !this.showPaymentFeedback
-    },
-    showPaymentFeedback () {
-      return this.$store.state.paymentFeedback.show
+      return this.checkoutIsOpen
     }
-  },
-  watch : {
-    showCheckout (newVal) {
-      if (newVal === false) {
-        window.scrollTo({ top: 0 });
-      }
-    } 
   },
   methods: {
     openCheckout () {
-      this.$store.commit('UPDATE_PAYMENT_FEEDBACK', { show: false, state: 'hidden' })
       this.checkoutIsOpen = true
       this.$nextTick(() => {
         this.$refs.checkout.scrollIntoView({ behavior: 'smooth' })
