@@ -70,10 +70,8 @@
   }
 }
 
-.image-error {
-  display: none;
-  margin: 1rem 0;
-  color: $red;
+.sa-form__error {
+  margin-top: 1rem;
 }
 
 .form-group__label {
@@ -179,13 +177,12 @@
   }
 }
 .saving {
-  display: none;
   line-height: 1;
-  font-family: 'GalapagosA-Regular', 'Inconsolata', monospace;
-  font-size: $font-size-mobile;
+  font-family: $font-family-galapagos;
+  font-size: $font-size-mobile-big;
 
   @media screen and (min-width: $bp-tablet) {
-    font-size: $font-size-laptop-big;
+    font-size: $font-size-laptop-huge;
   }
 }
 

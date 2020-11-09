@@ -46,10 +46,10 @@
         </div>
 
         <!-- error when image is to big -->
-        <div class="image-error js-image-size-error">Das Bild, das sie ausgewählt haben, ist größer als die maximal erlaubte Dateigröße von 5 MB. Bitte wählen Sie ein anderes aus.</div>
+        <div v-if="imageSizeError" class="error">Das Bild, das sie ausgewählt haben, ist größer als die maximal erlaubte Dateigröße von 5 MB. Bitte wählen Sie ein anderes aus.</div>
 
         <!-- error when more than 3 images are selected -->
-        <div class="image-error js-too-many-images-error">Sie können maximal drei Bilder auswählen.</div>
+        <div v-if="tooManyImagesError" class="error">Sie können maximal drei Bilder auswählen.</div>
 
         <!-- help texts -->
         <div class="form-help">Hier können Sie Bilder Ihres Angebotes (max. 5 MB pro Datei) zur Darstellung im Kulturgenerator hochladen.<div class="form-help__question-mark title title--grid">&nbsp;?</div></div>
@@ -204,11 +204,11 @@
     <button type="submit" class="form-group__submit button button--primary">einreichen &#x23ce;</button>
 
     <!-- Saving Animation -->
-    <span class="saving js-saving"><span>.</span><span>.</span><span>.</span></span>
+    <span v-if="saving" class="saving"><span>.</span><span>.</span><span>.</span></span>
 
     <div class="form-responses">
-      <div v-if="sucess" class="form-responses__success">Vielen Dank für die Einreichung! Wir melden uns bei Ihnen, wenn wir das Angebot gesichtet haben.</div>
-      <div v-if="error" class="form-responses__error js-sa-form-error-text">Ein Fehler ist aufgetreten. Versuchen Sie es später erneut oder wenden Sie sich an <a href="mailto:info@kulturgenerator.org" class="underlined-link underlined-link--red">info@kulturgenerator.org</a></div>
+      <div v-if="submissionSucess" class="sucess">Vielen Dank für die Einreichung! Wir melden uns bei Ihnen, wenn wir das Angebot gesichtet haben.</div>
+      <div v-if="submissionError" class="error">Ein Fehler ist aufgetreten. Versuchen Sie es später erneut oder wenden Sie sich an <a href="mailto:info@kulturgenerator.org" class="underlined-link underlined-link--red">info@kulturgenerator.org</a></div>
     </div>
   </div>
 </form>
@@ -220,18 +220,22 @@ export default {
   name: 'SubmitArtForm',
   data() {
     return {
-      error: false,
-      sucess: false
+      imageSizeError: false,
+      tooManyImagesError: false,
+      submissionError: false,
+      submissionSucess: false,
+      saving: false,
+      files: {}
     }
   },
   methods: {
     submit (artwork) {
       this.$store.dispatch('submitArtwork', artwork)
       .then(() => {
-        this.sucess = true
+        this.submissionError = true
       })
       .error(() => {
-        this.error = true
+        this.submissionSucess = true
       })
     }
   }

@@ -178,6 +178,14 @@ ul {
       background-color: $blue;
     }
   }
+
+  &--red {
+    color: $red;
+
+    &::after {
+      background-color: $red;
+    }
+  }
 }
 
 .loading-indicator {
@@ -336,3 +344,12 @@ ul {
   z-index: -1;
 }
 
+.error {
+  margin-top: 1rem;
+  color: $red;
+}
+
+.sucess {
+  margin-top: 1rem;
+  color: $blue;
+}
