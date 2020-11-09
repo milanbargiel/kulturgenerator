@@ -87,4 +87,9 @@ const router = new VueRouter({
   routes
 })
 
+router.beforeEach((to, from, next) => {
+  next()
+  window.scrollTo({ top: 0 }) // always start at the top of a page when navigating
+})
+
 export default router
