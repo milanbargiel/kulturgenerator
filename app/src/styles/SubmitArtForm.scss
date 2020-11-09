@@ -1,26 +1,18 @@
 // submit art form
-.sa-form {
+.sa-container {
+  @include galapagos-margin-top(1);
   max-width: $form-width-wide;
-
-  @include galapagos-margin-top(2);
-
-  &__button {
-    @include galapagos-margin-bottom(1);
-  }
 }
 
-.explain {
-  color: $orange;
+.sa-container__explain {
+  @include galapagos-margin-top(1);
   @include galapagos-margin-bottom(1);
+  color: $orange;
 }
 
 .form-group {
+  @include galapagos-margin-bottom(1);
   max-width: $form-width-small;
-  margin-bottom: $font-size-mobile;
-
-  @media screen and (min-width: $bp-tablet) {
-    margin-bottom: $font-size-laptop-big;
-  }
 
   &--wide {
     max-width: 100%; // max form width is defined in class sa-form
@@ -51,7 +43,7 @@
 
 .iu-container {
   border: 1px solid $grey;
-  padding: .5rem 1rem;
+  padding: 1.125rem;
 }
 
 .iu-image {
@@ -77,14 +69,14 @@
 
 .form-group__label {
   display: inline-block;
-  margin-bottom: .5rem;
+  margin-bottom: 1rem;
 }
 
 .form-group__input {
   display: block;
   background-color: $white;
   width: 100%;
-  padding: .375rem .75rem;
+  padding: 1.125rem;
   color: $dark-grey;
   border: 1px solid $grey;
   line-height: 1.5;
@@ -103,7 +95,7 @@
 
 .form-help {
   color: $dark-grey;
-  padding-top: .25rem;
+  padding-top: .725rem;
 
   @media screen and (min-width: $bp-tablet) {
     position: relative;
@@ -137,13 +129,13 @@
 .form-check {
   position: relative;
   line-height: 1.2;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
   padding-left: 1.5rem;
-  max-width: 1000px;
+  max-width: $form-width-wide;
 
   @media screen and (min-width: $bp-tablet) {
-    padding-left: 2rem;
+    padding-left: 2.5rem;
   }
 
   &__checkbox {
@@ -152,9 +144,13 @@
     margin-left: -1.5rem;
 
     @media screen and (min-width: $bp-tablet) {
-      margin-left: -2rem;
+      margin-left: -2.5rem;
     }
   }
+}
+
+.form-group__submit {
+  @include galapagos-margin-top(1);
 }
 
 // saving spinner
