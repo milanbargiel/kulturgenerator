@@ -10,7 +10,7 @@
 }
 
 .submit-art-link {
-  color: yellow;
+  color: $yellow;
   @include galapagos-margin-top(2);
   @include galapagos-margin-bottom(1);
 }

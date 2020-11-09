@@ -5,13 +5,13 @@
         <div class="founders__header">Eine Initiative von</div>
         <div class="founders__logos">
           <a class="founder-link founder-link--kk" href="https://www.koelnerkulturrat.de/" target="_blank">
-            <img class="founder-img" src="@/assets/kulturrat.svg">
+            <img class="founder-img" :src="kulturratLogo">
           </a>
           <a class="founder-link founder-link--wf" href="http://www.cafe-in-der-wachsfabrik.de/" target="_blank">
-            <img class="founder-img" src="@/assets/wachsfabrik.svg">
+            <img class="founder-img" :src="wachsfabrikLogo">
           </a>
           <a class="founder-link founder-link--nf" href="https://niehlerfreiheit.de/" target="_blank">
-            <img class="founder-img" src="@/assets/niehlerfreiheit.svg">
+            <img class="founder-img" :src="niehlerfreiheitLogo">
           </a>
         </div>
       </div>
@@ -19,7 +19,7 @@
         <div class="founders__header">Gefördert durch</div>
         <div class="founders__logos">
           <a class="founder-link founder-link--sk" href="https://www.stadt-koeln.de/" target="_blank">
-            <img class="founder-img" src="@/assets/kulturamt.svg">
+            <img class="founder-img" :src="kulturamtLogo">
           </a>
         </div>
       </div>
@@ -28,7 +28,7 @@
         <router-link :to="{name: 'impressum'}" class="navigation-element link">Impressum & Datenschutz</router-link>
       </div>
     </footer>
-    <newsletter></newsletter>
+    <newsletter :class="{ 'newsletter--white': this.$route.meta.hasWhiteFooter}"></newsletter>
   </div>
 </template>
 
@@ -37,6 +37,20 @@ import Newsletter from '../components/Newsletter'
 
 export default {
   name: 'Footer',
-  components: { Newsletter }
+  components: { Newsletter },
+  computed: {
+    kulturratLogo() {
+      return this.$route.meta.hasWhiteFooter ? require('@/assets/kulturrat-white.svg') : require('@/assets/kulturrat.svg')
+    },
+    wachsfabrikLogo() {
+      return this.$route.meta.hasWhiteFooter ? require('@/assets/wachsfabrik-white.svg') : require('@/assets/wachsfabrik.svg')
+    },
+    niehlerfreiheitLogo() {
+      return this.$route.meta.hasWhiteFooter ? require('@/assets/niehlerfreiheit-white.svg') : require('@/assets/niehlerfreiheit.svg')
+    },
+    kulturamtLogo() {
+      return this.$route.meta.hasWhiteFooter ? require('@/assets/kulturamt-white.svg') : require('@/assets/kulturamt.svg')
+    }
+  }
 }
 </script>
