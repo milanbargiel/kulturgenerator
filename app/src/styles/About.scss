@@ -17,7 +17,8 @@
 .text {
   	font-size: $font-size-mobile;
   	margin-top: 20px;
-  	max-width: 1000px;
+  	max-width: 800px;
+  	
   	
   	@media screen and (min-width: $bp-tablet) {
   	font-size: $font-size-laptop;
@@ -31,3 +32,12 @@
   @include galapagos-margin-bottom(1);
 }
 
+.arrows-submit {
+	max-width: 500px;
+	
+}
+
+.gifs-about {
+	
+
+	}
