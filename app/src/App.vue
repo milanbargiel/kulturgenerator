@@ -2,7 +2,7 @@
   <div id="app">
     <div v-if="isLoading" class="loading-indicator">lädt</div>
     <div :class="{ 'hidden': isLoading }">
-      <div v-if="isArtworkList" class="info-box">Der <span class="intext-title">kulturgenerator</span> ist virtueller Laden und Kunstprojekt, generöse Maschine und Startschuss für eine Plattform, die spartenübergreifend die Facetten der Kölner Kulturszene abbildet. Er ist ein spieltheoretisches Experiment, in dem die Kulturschaffenden selbst entscheiden, ob und wie viel sie vom Erlös des Verkaufs ihrer Arbeit in ein solidarisches Konto einzahlen möchten. Erwerben Sie jetzt Kunst um das Projekt zu unterstützen ↓</div>
+      <div v-if="isArtworkList" class="info-box">Willkommen im <span class="intext-title">kulturgenerator</span> – einer Initiative des <a class="underlined-link" href="https://www.koelnerkulturrat.de/" target="_blank">Kölner Kulturrats</a>, der Niehler Freiheit e.V. und des Kunstzentrum Wachsfabrik. Um Kunst- und Kulturschaffende zu unterstützen, können hier Kulturangebote eingereicht und erworben werden. Für weitere Informationen, klicken Sie auf die Laufschrift, die den aktuellen Kontostand des solidarischen Kontos anzeigt.↓</div>
       <my-header :isLoading="isLoading"></my-header>
       <router-view/> 
     </div>

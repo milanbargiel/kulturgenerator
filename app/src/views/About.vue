@@ -3,7 +3,7 @@
     <div class="content">
       <div class="text">
         
-        <router-link class="submit-art-link title link" :to="{ name: 'submit' }"><img class="arrows-submit" src="@/assets/yellow-arrows.svg"></router-link><br><br>
+        <router-link class="submit-art-link title link" :to="{ name: 'submit' }"><img class="arrows-submit" src="@/assets/strom2.gif"></router-link><br><br>
         <span class="about-title">STROM</span><br>
 
         Wenn der Strom ausfällt, wird ein Generator benötigt. Der Kulturgenerator ist online seit XX Tagen, XX Stunden, XX Minuten. Als eine Reaktion auf die COVID-19 Pandemie, vor allem in Betracht der Schließungen von Kulturinstitutionen in dem ersten Lockdown im März 2020, ist der Kulturgenerator mit der Frage, wie sich Kunst- und Kulturschaffende gegenseitig und eigenverantwortlich unterstützen können, entstanden. In ihm erscheinen etablierte und weniger etablierte Künstler:innen gleichberechtigt und hierarchiefrei nebeneinander und können somit die gegenseitige Sichtbarkeit erhöhen und sich gegenseitig unterstützen.<br><br><br>
