@@ -25,7 +25,8 @@ Vue.use(VueRouter)
     name: 'about',
     component: About,
     meta: {
-      menuItemTypesToDisplay: ['custom-menu-item']
+      menuItemTypesToDisplay: ['custom-menu-item'],
+      hasWhiteFooter: true
     }
   },
   {
