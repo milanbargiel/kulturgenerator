@@ -6,6 +6,7 @@
       Materielle künstlerische Objekte, z.B. Gemälde, Fotografien, Plakate, Zeichnungen, Skulpturen, Skizzen, Druckmedien, Plastiken, Installationen, Bild- und Tonträger.
     </div>
     <form ref="form" class="sa-form" @submit="submit">
+      <input type="hidden" name="type" value="Objekt">
       <!-- ARTWORK -->
       <div class="form-group form-group--wide">
         <!-- title -->
