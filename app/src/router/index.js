@@ -25,7 +25,8 @@ Vue.use(VueRouter)
     name: 'about',
     component: About,
     meta: {
-      menuItemTypesToDisplay: ['custom-menu-item']
+      menuItemTypesToDisplay: ['custom-menu-item'],
+      hasWhiteFooter: true
     }
   },
   {
@@ -71,8 +72,7 @@ Vue.use(VueRouter)
     name: 'pageNotFound',
     component: PageNotFound,
     meta: {
-      menuItemTypesToDisplay: ['custom-menu-item'],
-      bluePageLayout: true
+      menuItemTypesToDisplay: ['custom-menu-item']
     }
   },
   {

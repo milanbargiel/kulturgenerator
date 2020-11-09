@@ -68,9 +68,6 @@ export default {
       return this.$store.getters.roundedMoneypoolBalance
     },
     classes () {
-      if (this.$route.meta.bluePageLayout) {
-        return 'menu-item--blue-layout'
-      }
       if (this.active) {
         return 'active' + 
         ' active--background-' + this.item.activeBackgroundColor +
