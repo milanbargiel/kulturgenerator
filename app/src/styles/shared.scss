@@ -98,7 +98,6 @@ a {
 button:hover,
 button:focus {
   cursor: pointer;
-
 }
 
 // html is set to 62.5% so that all the REM measurements
@@ -120,6 +119,7 @@ body {
   font-family: $font-family;
   font-size: $font-size-mobile;
   line-height: 1.3;
+  overflow-wrap: break-word;
 
   @media screen and (min-width: $bp-tablet) {
     font-size: $font-size-laptop;
@@ -230,15 +230,30 @@ ul {
       .5em 0 0 $black;}
 }
 
+// vertical spacing layout
+.content,
+.footer,
+.newsletter {
+  padding-left: .725rem;
+  padding-right: .725rem;
+
+  @media screen and (min-width: $bp-tablet) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
 // content
 .content {
-  padding: 2rem .725rem .725rem;
+  padding-top: 2rem;
+  padding-bottom: .725rem;
   overflow-wrap: break-word;
   display: flex;
   flex-direction: column;
 
   @media screen and (min-width: $bp-tablet) {
-    padding: 3rem 2rem 2rem;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
   }
 
   &--blue {
@@ -271,7 +286,6 @@ ul {
 
 @media screen and (min-width: $bp-tablet) {
   .longer-text-container {
-    font-size: 28px;
     max-width: 1000px;
   }
 }
@@ -294,16 +308,18 @@ ul {
   }
 }
 
+// buttons
 .button {
   border: 2px solid $light-grey;
   background-color: $white;
   color: $blue;
+  padding: .25rem 1rem;
 
   &:hover {
     cursor: pointer;
     border: 2px solid $blue;
   }
-
+  
   &--primary {
     border: none;
     font-family: $font-family-galapagos-grid;
@@ -352,4 +368,8 @@ ul {
 .sucess {
   margin-top: 1rem;
   color: $blue;
+}
+
+.error {
+  color: $red;
 }

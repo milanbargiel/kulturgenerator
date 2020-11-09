@@ -4,6 +4,7 @@ import ArtworkList from '../views/ArtworkList.vue'
 import ArtworkDetail from '../views/ArtworkDetail.vue'
 import About from '../views/About.vue'
 import Impressum from '../views/Impressum.vue'
+import PurchaseConfirmation from '../views/PurchaseConfirmation.vue'
 import PageNotFound from '../views/PageNotFound.vue'
 import Submit from '../views/Submit.vue'
 import store from '../store'
@@ -52,6 +53,21 @@ Vue.use(VueRouter)
     }
   },
   {
+    path: '/vielen-dank',
+    name: 'purchaseConfirmation',
+    component: PurchaseConfirmation,
+    meta: {
+      menuItemTypesToDisplay: ['thank-you-message', 'back-button']
+    },
+    beforeEnter: (to, from, next) => { // prevent thank you page from being accessed directly
+      if (from.name === 'artworkDetail' || to.query.debug) { // debug with /vielen-dank?debug=true
+        next()
+      } else {
+        next({ name: 'artworkList' })
+      }
+    }
+  },
+  {
     path: '/404',
     name: 'pageNotFound',
     component: PageNotFound,
@@ -70,15 +86,6 @@ const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
-})
-
-router.beforeEach((to, from, next) => {
-  // always hide payment info banner on route change
-  if (store.state.paymentFeedback.show) {
-    store.commit('UPDATE_PAYMENT_FEEDBACK', { show: false, state: 'hidden' })    
-  }
-  next()
-  window.scrollTo({ top: 0 });
 })
 
 export default router
