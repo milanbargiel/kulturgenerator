@@ -111,7 +111,7 @@ fileInput.addEventListener('change', (inputEvent) => {
   });
 
   if (file) { // file selected
-    if (Object.keys(files).length < 3) { // max 3 files
+    if (Object.keys(this.files).length < 3) { // max 3 files
       const fileSize = ((file.size / 1024) / 1024).toFixed(4); // MB
 
       if (fileSize < 5) { // max 5MB

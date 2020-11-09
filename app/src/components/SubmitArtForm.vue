@@ -294,33 +294,33 @@ export default {
     const data = {}
 
     inputs.forEach((input) => {
-    if (!['submit', 'file'].includes(input.type) && input.value && input.name) { // regular input with a value
+      if (!['submit', 'file'].includes(input.type) && input.value && input.name) { // regular input with a value
         if ((input.type === 'radio' || input.type === 'checkbox') && !input.checked) {
           return
         }
 
         data[input.name] = input.value
       }
-    });
+    })
 
     formData.append('data', JSON.stringify(data))
 
     // Add images
     Object.values(this.files).forEach((file) => {
-      formData.append('files.images', file, file.name);
-    });
+      formData.append('files.images', file, file.name)
+    })
 
-    this.saving = true;
+    this.saving = true
     this.$store.dispatch('submitArtwork', formData)
-      .then(() => {
-        this.submissionSucess = true
-        this.clearForm()
-        this.saving = false
-      })
-      .error(() => {
-        this.submissionError = true
-        this.saving = false
-      })
+    .then(() => {
+      this.submissionSucess = true
+      this.clearForm()
+      this.saving = false
+    })
+    .error(() => {
+      this.submissionError = true
+      this.saving = false
+    })
   }
 }
 }
