@@ -5,9 +5,14 @@
 }
 
 .sa-container__explain {
-  @include galapagos-margin-top(1);
+  @include galapagos-margin-top(2);
   @include galapagos-margin-bottom(1);
   color: $orange;
+
+  @media screen and (min-width: $bp-tablet) {
+    @include galapagos-margin-top(1);
+    @include galapagos-margin-bottom(1);
+  }
 }
 
 .form-group {
@@ -43,7 +48,11 @@
 
 .iu-container {
   border: 1px solid $grey;
-  padding: 1.125rem;
+  padding: .725rem;
+
+  @media screen and (min-width: $bp-tablet) {
+    padding: 1.125rem;
+  }
 }
 
 .iu-image {
@@ -76,10 +85,14 @@
   display: block;
   background-color: $white;
   width: 100%;
-  padding: 1.125rem;
+  padding: .725rem;
   color: $dark-grey;
   border: 1px solid $grey;
   line-height: 1.5;
+
+  @media screen and (min-width: $bp-tablet) {
+    padding: 1.125rem;
+  }
 
   &:focus {
     background-color: $white;
@@ -131,7 +144,7 @@
   line-height: 1.2;
   margin-top: 2rem;
   margin-bottom: 2rem;
-  padding-left: 1.5rem;
+  padding-left: 2rem;
   max-width: $form-width-wide;
 
   @media screen and (min-width: $bp-tablet) {
@@ -141,7 +154,7 @@
   &__checkbox {
     position: absolute;
     margin-top: .4rem;
-    margin-left: -1.5rem;
+    margin-left: -2rem;
 
     @media screen and (min-width: $bp-tablet) {
       margin-left: -2.5rem;
