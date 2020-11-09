@@ -5,7 +5,7 @@
     <div class="sa-container__explain">
       Materielle künstlerische Objekte, z.B. Gemälde, Fotografien, Plakate, Zeichnungen, Skulpturen, Skizzen, Druckmedien, Plastiken, Installationen, Bild- und Tonträger.
     </div>
-    <form class="sa-form">
+    <form ref="form" class="sa-form" @submit="submit">
       <!-- ARTWORK -->
       <div class="form-group form-group--wide">
         <!-- title -->
@@ -36,9 +36,9 @@
             <label for="image-input" class="button">Wählen Sie eine Datei aus</label>
 
             <!-- hidden image input -->
-            <input class="hidden-input js-file-input" type="file" id="image-input" accept="image/*" required>
+            <input @change="fileChange" ref="fileInput" class="hidden-input js-file-input" type="file" id="image-input" accept="image/*" required>
 
-            <div class="js-image-data">
+            <div ref="imageDataContainer">
             <!-- <div class="iu-image">
               <span class="file-name">xy.jpg</span><span class="remove-button js-remove-image">x</span>
             </div> -->
@@ -229,15 +229,98 @@ export default {
     }
   },
   methods: {
-    submit (artwork) {
-      this.$store.dispatch('submitArtwork', artwork)
+    clearForm () {
+      this.$refs.form.reset()
+      this.$refs.imageDataContainer.innerHTML = '';
+      // manually dispatch change event to fileInput Listener
+      // to reset file input
+      const event = document.createEvent('HTMLEvents');
+      event.initEvent('change', false, true);
+      this.$refs.fileInput.dispatchEvent(event);
+      this.files = {};
+    },
+    removeImageOnClick (fileName, node) {
+      node.addEventListener('click', () => {
+        delete this.files[fileName] // remove file from global files object
+        const imageDiv = node.parentNode
+        imageDiv.parentNode.removeChild(imageDiv)
+      })
+    },
+    fileChange (inputEvent) {
+      const file = inputEvent.target.files[0]
+      const reader = new FileReader()
+
+      // remove error messages
+      this.imageSizeError = false
+      this.tooManyImagesError = false
+
+      // create hidden text image data to upload via form
+      reader.addEventListener('load', () => {
+        this.files[file.name] = file // push file to global files object
+        const newImage = document.createElement('div')
+        newImage.setAttribute('class', 'iu-image')
+        const html = `<span class="file-name">${file.name}</span><span class="remove-button">x</span>`
+        newImage.innerHTML = html
+        this.removeImageOnClick(file.name, newImage.lastChild) // bind event listener to remove element
+        this.$refs.imageDataContainer.appendChild(newImage)
+      })
+      if (file) { // file selected
+        if (Object.keys(this.files).length < 3) { // max 3 files
+          const fileSize = ((file.size / 1024) / 1024).toFixed(4)
+
+          if (fileSize < 5) { // max 5MB
+            reader.readAsDataURL(file)
+          } else {
+            this.imageSizeError = true
+          }
+      } else { // more that 3 images are selected
+        this.tooManyImagesError = true
+      }
+    }
+  },
+  submit (event) {
+    event.preventDefault()
+
+    // clear any response texts if existent
+    this.submissionError = false
+    this.submissionSucess = false
+
+    // setup some local variables
+    const inputs = this.$refs.form.querySelectorAll('input, textarea')
+
+    // Serialize the data in the form
+    const formData = new FormData()
+    const data = {}
+
+    inputs.forEach((input) => {
+    if (!['submit', 'file'].includes(input.type) && input.value && input.name) { // regular input with a value
+        if ((input.type === 'radio' || input.type === 'checkbox') && !input.checked) {
+          return
+        }
+
+        data[input.name] = input.value
+      }
+    });
+
+    formData.append('data', JSON.stringify(data))
+
+    // Add images
+    Object.values(this.files).forEach((file) => {
+      formData.append('files.images', file, file.name);
+    });
+
+    this.saving = true;
+    this.$store.dispatch('submitArtwork', formData)
       .then(() => {
-        this.submissionError = true
+        this.submissionSucess = true
+        this.clearForm()
+        this.saving = false
       })
       .error(() => {
-        this.submissionSucess = true
+        this.submissionError = true
+        this.saving = false
       })
-    }
   }
+}
 }
 </script>
