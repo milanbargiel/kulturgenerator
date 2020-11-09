@@ -1,6 +1,6 @@
 <template>
-    <div class="content">
-        <submit-art-form></submit-art-form>
+    <div>
+        <submit-art-form class="content"></submit-art-form>
         <my-footer></my-footer>
     </div>
 </template>

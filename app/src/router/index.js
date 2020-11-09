@@ -7,7 +7,6 @@ import Impressum from '../views/Impressum.vue'
 import PurchaseConfirmation from '../views/PurchaseConfirmation.vue'
 import PageNotFound from '../views/PageNotFound.vue'
 import Submit from '../views/Submit.vue'
-import store from '../store'
 
 Vue.use(VueRouter)
 
