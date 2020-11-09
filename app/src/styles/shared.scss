@@ -6,6 +6,7 @@ $bp-large: 1400px;
 $font-family: 'favorit-mono';
 $font-family-galapagos: 'GalapagosA-Regular', 'apercu-mono-regular', monospace;
 $font-family-galapagos-black: 'GalapagosA-Black', 'apercu-mono-regular', monospace;
+$font-family-galapagos-grid: 'GalapagosA-RegularGrid', 'Inconsolata', monospace;
 $z-level-1: 1;
 $z-level-above-all: 999;
 
@@ -40,6 +41,10 @@ $spacing-mobile--big: 30px;
 $spacing-desktop--big: 60px;
 $spacing-mobile--large: 42px;
 $spacing-desktop--large: 90px;
+
+// Form
+$form-width-small: 580px;
+$form-width-wide: 920px;
 
 // Font Faces
 @font-face {
@@ -120,6 +125,7 @@ body {
   font-family: $font-family;
   font-size: $font-size-mobile;
   line-height: 1.3;
+  overflow-wrap: break-word;
 
   @media screen and (min-width: $bp-tablet) {
     font-size: $font-size-laptop;
@@ -230,15 +236,30 @@ ul {
       .5em 0 0 $black;}
 }
 
+// vertical spacing layout
+.content,
+.footer,
+.newsletter {
+  padding-left: .725rem;
+  padding-right: .725rem;
+
+  @media screen and (min-width: $bp-tablet) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
 // content
 .content {
-  padding: 2rem .725rem .725rem;
+  padding-top: 2rem;
+  padding-bottom: .725rem;
   overflow-wrap: break-word;
   display: flex;
   flex-direction: column;
 
   @media screen and (min-width: $bp-tablet) {
-    padding: 3rem 2rem 2rem;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
   }
 
   &--blue {
@@ -273,6 +294,86 @@ ul {
   .longer-text-container {
     max-width: 1000px;
   }
+}
+
+.title {
+  line-height: 1;
+  font-family: 'GalapagosA-Regular', 'Inconsolata', monospace;
+  font-size: $font-size-mobile-huge;
+
+  @media screen and (min-width: $bp-tablet) {
+    font-size: $font-size-laptop-huge;
+  }
+
+  &--grid {
+    font-family: $font-family-galapagos-grid;
+  }
+
+  &--blue {
+    color: $blue;
+  }
+}
+
+// buttons
+.button {
+  border: 2px solid $light-grey;
+  background-color: $white;
+  color: $blue;
+  padding: .25rem 1rem;
+
+  &:hover {
+    cursor: pointer;
+    border: 2px solid $blue;
+  }
+  
+  &--primary {
+    border: none;
+    font-family: $font-family-galapagos-grid;
+    font-size: $font-size-mobile-huge;
+
+    @media screen and (min-width: $bp-tablet) {
+      font-size: $font-size-laptop-huge;
+    }
+
+    &:hover {
+      border: none;
+      background-color: $orange;
+      color: $white;
+      text-rendering: optimizeLegibility;
+    }
+  }
+}
+
+.remove-button {
+  color: $dark-grey;
+  line-height: 1;
+  font-family: $font-family-galapagos;
+  font-size: 36px;
+  margin-left: auto;
+
+  &:hover {
+    cursor: pointer;
+    color: $black;
+  }
+}
+
+.hidden-input {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.error {
+  margin-top: 1rem;
+  color: $red;
+}
+
+.sucess {
+  margin-top: 1rem;
+  color: $blue;
 }
 
 .error {

@@ -1,6 +1,6 @@
 <template>
-  <div class="content">
-    <div class="purchase text">
+  <div>
+    <div class="content purchase text">
       <div class="purchase__sucess">Herzlichen Glückwunsch, Ihr Kauf war erfolgreich!</div>
       <div class="purchase__instructions">
         <div v-if="artwork" class="purchase__img-container">

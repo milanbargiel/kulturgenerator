@@ -1,5 +1,6 @@
 <template>
-    <div class="content content--blue">
+  <div class="content--blue">
+    <div class="content">
       <div class="text">
 <span class="about-title">STROM</span><br>
 
@@ -25,8 +26,11 @@ Sie können Teil unseres Experiments werden, indem Sie Angebote kaufen oder Arbe
 
 
   </div>
+  <router-link class="submit-art-link title link" :to="{ name: 'submit' }"> ➩ Kunst einreichen</router-link>
+</div>
         <my-footer></my-footer>
-    </div>
+
+</div>
 </template>
 
 <script>
@@ -39,6 +43,6 @@ export default {
   },
   created () {
     this.$store.commit('SET_LOADING_STATE', false)
-}
+  }
 }
 </script>

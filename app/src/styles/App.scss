@@ -6,12 +6,13 @@
 @import 'shared.scss'; // All styles that are shared between components
 @import 'Header.scss';
 @import 'Footer.scss';
+@import 'Newsletter.scss';
 @import 'ArtworkDetail.scss';
 @import 'ArtworkList.scss';
 @import 'ArtworkListItem.scss';
 @import 'Checkout.scss';
 @import 'About.scss';
-@import 'Impressum.scss';
+@import 'SubmitArtForm.scss';
 @import 'PurchaseConfirmation.scss';
 
 // Vue Component Overrides

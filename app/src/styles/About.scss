@@ -4,6 +4,7 @@
 
 }
 
+
 .about-title {
 	font-family: $font-family-galapagos;
 	font-size: 55px;
@@ -22,5 +23,11 @@
   	font-size: $font-size-laptop;
 
 }
+}
+
+.submit-art-link {
+  color: yellow;
+  @include galapagos-margin-top(2);
+  @include galapagos-margin-bottom(1);
 }
 

@@ -80,6 +80,19 @@ const actions = {
             return error
         })
     },
+    submitArtwork (context, artwork ) {
+        return axios({
+            method: 'post',
+            url: process.env.VUE_APP_API_BASEURL + '/artworks',
+            data: artwork
+        })
+        .then(response => {
+            return response
+        })
+        .catch(error => {
+            return error
+        })
+    }
 }
 
 export default actions
