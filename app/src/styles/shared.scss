@@ -3,7 +3,7 @@ $bp-smartphone: 370px;
 $bp-tablet: 680px;
 $bp-large: 1400px;
 
-$font-family: 'favorit-mono';
+$font-family: 'apercu-mono-regular';
 $font-family-galapagos: 'GalapagosA-Regular', 'apercu-mono-regular', monospace;
 $font-family-galapagos-black: 'GalapagosA-Black', 'apercu-mono-regular', monospace;
 $font-family-galapagos-grid: 'GalapagosA-RegularGrid', 'Inconsolata', monospace;
@@ -33,7 +33,6 @@ $grey: #ced4da;
 $dark-grey: #495057;
 $pink: #ffc0cb;
 $red: rgb(255, 35, 0);
-$yellow: yellow;
 
 // Distances
 $spacing-mobile--small: 18px;
@@ -149,6 +148,7 @@ ul {
   &:hover {
     font-style: italic;
 
+
     .artwork-list-item__price {
       font-style: normal;
     }
@@ -156,19 +156,24 @@ ul {
 }
 
 .underlined-link {
-  color: blue;
+  color: inherit;
   position: relative;
+
+
 
   &::after {
     content: "";
-    height: 1px;
+    height: 0.2px;
     left: 0;
     position: absolute;
     width: 100%;
     opacity: .5;
     bottom: -1px;
-    background-color: $dark-grey;
+    background-color: $black;
   }
+
+
+
 
   &:hover,
   &:focus,

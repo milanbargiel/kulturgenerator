@@ -2,7 +2,7 @@
   <div id="app">
     <div v-if="isLoading" class="loading-indicator">lädt</div>
     <div :class="{ 'hidden': isLoading }">
-      <div v-if="isArtworkList" class="info-box">Willkommen im <span class="intext-title">kulturgenerator</span> – einer Initiative des <a class="underlined-link" href="https://www.koelnerkulturrat.de/" target="_blank">Kölner Kulturrats</a>, der Niehler Freiheit e.V. und des Kunstzentrum Wachsfabrik. Um Kunst- und Kulturschaffende zu unterstützen, können hier Kulturangebote eingereicht und erworben werden. Für weitere Informationen, klicken Sie auf die Laufschrift, die den aktuellen Kontostand des solidarischen Kontos anzeigt.↓</div>
+      <div v-if="isArtworkList" class="info-box">Willkommen im <span class="intext-title">kulturgenerator</span>,einer solidarischen Online-Galerie auf Initiative des <a class="link" href="https://www.koelnerkulturrat.de/" target="_blank">Kölner Kulturrats</a>, der <a class="link" href="https://www.niehlerfreiheit.de/" target="_blank">Niehler Freiheit e.V.</a> und des<a class="link" href="https://kunstzentrum-wachsfabrik.de/" target="_blank"> Kunstzentrum Wachsfabrik.</a> Um Kunst- und Kulturschaffende zu unterstützen, können hier Kulturangebote eingereicht und erworben werden. Für weitere Informationen, klicken Sie auf die Laufschrift, die den aktuellen Kontostand des solidarischen Kontos anzeigt.<span class="intext-title">↓</span></div>
       <my-header :isLoading="isLoading"></my-header>
       <router-view/> 
     </div>
