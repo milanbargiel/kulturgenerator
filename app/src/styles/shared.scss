@@ -159,17 +159,15 @@ ul {
   color: inherit;
   position: relative;
 
-
-
   &::after {
     content: "";
-    height: 0.2px;
+    height: 1px;
     left: 0;
     position: absolute;
     width: 100%;
     opacity: .5;
     bottom: -1px;
-    background-color: $black;
+    background-color: $dark-grey;
   }
 
 
