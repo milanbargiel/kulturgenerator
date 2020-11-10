@@ -82,8 +82,13 @@ export default {
           animatedBalance: function() {	
             return parseInt(this.tweenedNumber.toFixed(0))
           },	
-          balanceItemWidth () {	
-            return this.moneypoolBalance.toString().length * 50 + 'px' // 50 is approximately the width of a single number
+          balanceItemWidth () {
+            let digits = this.moneypoolBalance.toString().length
+            const digitWidth = 50
+            if (digits >= 4) {
+              digits += 1
+            }
+            return digits * digitWidth + 'px'        
           }        
         }
       }
