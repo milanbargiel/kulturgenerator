@@ -1,10 +1,17 @@
 .info-box {
   margin: .725rem .725rem 1.725rem;
   color: $blue;
-  max-width: 1000px;
+  max-width: 950px;
 
-  @media screen and (min-width: $bp-tablet) {
+  
+  
+  
+ @media screen and (min-width: $bp-tablet) {
     margin: 1rem 2rem 2rem;
+    margin-bottom: 4rem;
+
+
+
   }  
 }
 
@@ -19,6 +26,9 @@
 
   @media screen and (min-width: $bp-tablet) {
     margin-top: 2rem;
-    padding-right: 140px;
+    padding-bottom: 14rem;
+    padding-right: 100px;
+
+
   }
 }

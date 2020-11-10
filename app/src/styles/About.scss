@@ -1,3 +1,5 @@
+
+
 .intext-title {
   font-family: $font-family-galapagos;
   font-weight: bold;
@@ -13,11 +15,15 @@
 }
 .yellow-numbers {
 	color: $yellow;
+
+
 }
+
+
 
 .text {
   	font-size: $font-size-mobile;
-  	margin-top: 20px;
+  	margin-top: 0px;
   	max-width: 1000px;
   	
   	
@@ -27,14 +33,11 @@
 }
 }
 
-.submit-art-link {
-  color: $yellow;
-  @include galapagos-margin-top(2);
-  @include galapagos-margin-bottom(1);
-}
+
+
 
 .arrows-submit {
-	max-width: 500px;
+	max-width: 400px;
 	
 }
 
