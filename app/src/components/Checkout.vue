@@ -30,7 +30,7 @@
       <div v-show="validQuantity" ref="paypal" class="paypal__buttons"></div>
       <div class="error" v-if="error">Ein Fehler ist aufgetreten. Versuchen Sie es später erneut oder wenden Sie sich an <a class="underlined-link underlined-link--red" href="mailto:info@kulturgenerator.org">info@kulturgenerator.org</a>.</div>
       <p class="explain-text">
-        Durch Anklicken von bezahlen mit <a href="https://www.paypal.com/de/webapps/mpp/ua/privacy-full?locale.x=de_DE" target="_blank" rel="noopener" class="underlined-link">PayPal</a>, bestätigen Sie die Weitergabe ihrer angegebenen Daten an die Kulturschaffenden. Das Geld fließt direkt und zu 100% an den/die teilnehmende Künstler*in. Für Fragen zu Abrechnung treten Sie bitte nach dem Kauf direkt mit den Verkäufer*innen in Kontakt. Danke!    
+        Wenn Sie über <a href="https://www.paypal.com/de/webapps/mpp/ua/privacy-full?locale.x=de_DE" target="_blank" rel="noopener" class="underlined-link">PayPal</a>, bezahlen, bestätigen Sie die Weitergabe Ihrer angegebenen Daten an die Künstlerin oder den Künstler, damit sie oder er Kontakt zu Ihnen aufnehmen kann. Bei Fragen zur Abrechnung treten Sie bitte direkt mit diesen in Kontakt. Vielen Dank!
       </p>
     </div>
   </div>

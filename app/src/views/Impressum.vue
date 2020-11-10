@@ -2,7 +2,7 @@
   <div class="content content--orange">
     <div class="text longer-text-container">
       <div id="impressum">
-        <h2>Diensteanbieter</h2>
+        <span class="about-title">DIENSTANBIETER</span>
         <p>Kölner Kulturrat e.V. <br>
           Sachsenring 40<br>
           50677 Köln<br>
@@ -11,12 +11,10 @@
           Vogelsanger Straße 385b<br>
           50827 Köln
         </p>
-        <p>E-Mail: <a class="underlined-link" href="mailto:info@kulturgenerator.org">info@kulturgenerator.org</a><br>
-          <h2>Typeface</h2>
-          <p><span class="title">Galapagos</span>, abcdinamo (<a class="underlined-link" href="https://www.abcdinamo.com" target="_blank">www.abcdinamo.com</a>)</p>
+        <p>E-Mail: <a class="underlined-link" href="mailto:info@kulturgenerator.org">info@kulturgenerator.org</a><br><br>
           <h2>Haftungshinweis</h2>
-          <p>Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.</p>
-          <h2>Datenschutzerklärung</h2>
+          <p>Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.</p><br><br>
+          <span class="about-title">DATENSCHUTZERKLÄRUNG</span>
           <h2>Einleitung</h2>
           <p>Mit der folgenden Datenschutzerklärung möchten wir Sie darüber aufklären, welche Arten Ihrer personenbezogenen Daten (nachfolgend auch kurz als "Daten“ bezeichnet) wir zu welchen Zwecken und in welchem Umfang verarbeiten. Die Datenschutzerklärung gilt für alle von uns durchgeführten Verarbeitungen personenbezogener Daten, sowohl im Rahmen der Erbringung unserer Leistungen als auch insbesondere auf unseren Webseiten, in mobilen Applikationen sowie innerhalb externer Onlinepräsenzen, wie z.B. unserer Social-Media-Profile (nachfolgend zusammenfassend bezeichnet als "Onlineangebot“).</p>
           <p>Die verwendeten Begriffe sind nicht geschlechtsspezifisch.</p>
@@ -56,7 +54,8 @@
           <p>Sofern die Daten nicht gelöscht werden, weil sie für andere und gesetzlich zulässige Zwecke erforderlich sind, wird deren Verarbeitung auf diese Zwecke beschränkt. D.h., die Daten werden gesperrt und nicht für andere Zwecke verarbeitet. Das gilt z.B. für Daten, die aus handels- oder steuerrechtlichen Gründen aufbewahrt werden müssen oder deren Speicherung zur Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen oder zum Schutz der Rechte einer anderen natürlichen oder juristischen Person erforderlich ist.</p>
           <p>Weitere Hinweise zu der Löschung von personenbezogenen Daten können ferner im Rahmen der einzelnen Datenschutzhinweise dieser Datenschutzerklärung erfolgen.</p>
           <p class="seal"><a href="https://datenschutz-generator.de/?l=de" title="Rechtstext von Dr. Schwenke - für weitere Informationen bitte anklicken." target="_blank" rel="noopener noreferrer nofollow">Erstellt mit kostenlosem Datenschutz-Generator.de von Dr. Thomas Schwenke</a></p>
-          <a class="underlined-link" href="mailto:info@kulturgenerator.org">info@kulturgenerator.org</a>
+          <a class="underlined-link" href="mailto:info@kulturgenerator.org">info@kulturgenerator.org</a><br><br>
+          <p><span class="title">VIELEN DANK AN ABC DINAMO FÜR DIE FONT 'GALAPAGOS'</span>(<a class="underlined-link" href="https://www.abcdinamo.com" target="_blank">www.abcdinamo.com</a>)</p>
         </div>
       </div>
     </div>
@@ -69,4 +68,4 @@
       this.$store.commit('SET_LOADING_STATE', false)
     }
   }
-  </script>
+</script>
