@@ -33,7 +33,7 @@
     <div v-if="!showCheckout && !isSoldOut" class="artwork-detail__payment-button">
       <button class="button" @click="openCheckout()">zur kasse</button>
       <div class="explain-text">
-        Die Kaufabwicklung wird mit <a href="https://www.paypal.com/de/webapps/mpp/ua/privacy-full?locale.x=de_DE" target="_blank" rel="noopener" class="underlined-link">PayPal</a> durchgeführt. Durch Anklicken von "ZUR KASSE" stimmen Sie der Verwendung von Cookies durch Dritte zu.
+        Die Kaufabwicklung wird mit <a href="https://www.paypal.com/de/webapps/mpp/ua/privacy-full?locale.x=de_DE" target="_blank" rel="noopener" class="underlined-link">PayPal</a> durchgeführt. Durch Anklicken von "ZUR KASSE" stimmen Sie der Verwendung von Cookies durch PayPal zu.
       </div>
     </div>
     <checkout v-if="showCheckout" :artwork="artwork"></checkout>
