@@ -86,8 +86,12 @@
 }
 
 .artwork-detail__quantity {
-  color: $blue;
-  margin-top: 12px;
+  margin-top: 1rem;
+  color: $black;
+
+  @media screen and (min-width: $bp-tablet) {
+    font-size: $font-size-laptop-small;
+  }
 }
 
 .artwork-detail__generator-share {
