@@ -72,10 +72,7 @@ $form-width-wide: 920px;
   src: url('assets/GalapagosA-Black.woff2') format('woff2'), url('assets/GalapagosA-Black.woff') format('woff');
 }
 
-@font-face {
-  font-family: 'favorit-mono';
-  src: url('assets/ABCFavoritEduMono-Regular.otf');
-}
+
 
 // Mixins
 @mixin galapagos-margin-bottom($factor) {
