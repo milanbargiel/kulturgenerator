@@ -15,7 +15,7 @@
 
         <span class="about-title">PLATTFORM FÜR KUNST UND KULTUR</span><br>
 
-        Da vor allem auch kulturorganisatorische Arbeit und Kultureinrichtungen der freien Szene oft aus dem Raster der Unterstützungsmaßnahmen fallen, können im Generator neben Objekten auch Kultur-Erlebnisse verkauft werden. Seit seinem bestehen hat der Kulturgenerator bereits 53 Arbeiten generiert. Im Laden stehen 30 davon zum Verkauf. Wird ein Angebot verkauft, rückt ein anderes nach.<br><br><br><br>
+        Da vor allem auch kulturorganisatorische Arbeit und Kultureinrichtungen der freien Szene oft aus dem Raster der Unterstützungsmaßnahmen fallen, können im Generator neben Objekten auch Kultur-Erlebnisse verkauft werden. Seit seinem Bestehen hat der Kulturgenerator bereits 53 Arbeiten generiert. Im Laden stehen 30 davon zum Verkauf. Wird ein Angebot verkauft, rückt ein anderes nach.<br><br><br><br>
 
         <span class="about-title">SPIELTHEORETISCHES EXPERIMENT</span><br>
 
