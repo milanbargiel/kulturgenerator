@@ -19,7 +19,7 @@
 
         <span class="about-title">SPIELTHEORETISCHES EXPERIMENT</span><br>
 
-        Wenn die Idee aufgeht, dann kann jede und jeder Teilnehmende mehr profitieren, wenn sie oder er bereit ist, etwas zu geben. Auch Sie können Teil unseres Projektes werden und Kulturschaffende unterstützen, indem Sie Angebote kaufen. Für Fragen schreiben Sie uns an <a class="navigation-element link" href="mailto:info@kulturgenerator.org">info@kulturgenerator.org</a>. <br><br><br><br>
+        Wenn die Idee aufgeht, dann kann jede und jeder Teilnehmende mehr profitieren, wenn sie oder er bereit ist, etwas zu geben. Auch Sie können Teil unseres Projektes werden und Kulturschaffende unterstützen, indem Sie Angebote kaufen. Für Fragen schreiben Sie uns an <a class="navigation-element underlined-link underlined-link--white" href="mailto:info@kulturgenerator.org">info@kulturgenerator.org</a>. <br><br><br><br>
 
         <router-link class="submit-art-link title link" :to="{ name: 'submit' }">
           <img class="arrows-submit" src="@/assets/yellow-arrows.svg">

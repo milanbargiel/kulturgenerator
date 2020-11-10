@@ -195,6 +195,14 @@ ul {
       background-color: $yellow;
     }
   }
+
+  &--white {
+    color: $white;
+
+    &::after {
+      background-color: $white;
+    }
+  }
 }
 
 .loading-indicator {
