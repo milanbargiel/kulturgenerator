@@ -2,23 +2,17 @@
   margin: .725rem .725rem 1.725rem;
   color: $blue;
   max-width: 950px;
-
   
-  
-  
- @media screen and (min-width: $bp-tablet) {
+  @media screen and (min-width: $bp-tablet) {
     margin: 1rem 2rem 2rem;
     margin-bottom: 4rem;
-
-
-
   }  
 }
 
 .arrow {
   color: yellow;
   font-family: $font-family-galapagos;
-  }
+}
 
 .artwork-list {
   margin-top: 1rem;
@@ -28,7 +22,5 @@
     margin-top: 2rem;
     padding-bottom: 14rem;
     padding-right: 100px;
-
-
   }
 }
