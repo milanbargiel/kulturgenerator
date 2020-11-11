@@ -34,14 +34,15 @@ Vue.use(VueRouter)
     name: 'impressum',
     component: Impressum,
     meta: {
-      menuItemTypesToDisplay: ['custom-menu-item']    }
+      menuItemTypesToDisplay: ['custom-menu-item']    
+    }
   },
   {
     path: '/einreichen',
     name: 'submit',
     component: Submit,
     meta: {
-      menuItemTypesToDisplay: ['moneypool-balance', 'back-button']  
+      menuItemTypesToDisplay: ['custom-menu-item']
     }
   },
   {

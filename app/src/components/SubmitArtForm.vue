@@ -1,6 +1,6 @@
 <template>
   <div class="sa-container">
-    <div class="sa-container__heading title title--grid">was<span class="title"> möchten sie</span><br>einreichen?
+    <div class="sa-container__heading title">was möchten sie<br>einreichen?
     </div>
     <div class="sa-container__explain">
       Materielle künstlerische Objekte, z.B. Gemälde, Fotografien, Plakate, Zeichnungen, Skulpturen, Skizzen, Druckmedien, Plastiken, Installationen, Bild- und Tonträger.
