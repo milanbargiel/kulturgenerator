@@ -9,7 +9,7 @@
         </div>
         <div class="purchase__message">
           <p>1 Sie erhalten eine Bestätigungsmail von Paypal.</p>
-          <p>2 Die Anbieter*in nimmt Kontakt zu Ihnnen auf zur Vereeinbarung der Lieferung.</p>
+          <p>2 Die Anbieter*in nimmt Kontakt zu Ihnen auf zur Vereinbarung der Lieferung.</p>
           <p>3 Das Kunstwerk kommt zu Ihnen.</p>
         </div>
       </div>

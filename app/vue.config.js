@@ -3,7 +3,7 @@ module.exports = {
     config
     .plugin('html')
     .tap(args => {
-      args[0].title = 'Kulturgenerator | Online-Gallerie'
+      args[0].title = 'Kulturgenerator | Online-Galerie'
       return args
     })
   }
