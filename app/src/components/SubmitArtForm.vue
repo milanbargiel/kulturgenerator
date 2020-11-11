@@ -3,7 +3,7 @@
     <div class="sa-container__heading title">was möchten sie<br>einreichen?
     </div>
     <div class="sa-container__explain">
-      Materielle künstlerische Objekte, z.B. Gemälde, Fotografien, Plakate, Zeichnungen, Skulpturen, Skizzen, Druckmedien, Plastiken, Installationen, Bild- und Tonträger.
+      Materielle künstlerische Objekte, z.B. Gemälde, Fotografien, Plakate, Zeichnungen, Skulpturen, Skizzen, Plakate und Druckmedien in kleineren handsignierten Auflagen, Plastiken, Installationen.
     </div>
     <form ref="form" class="sa-form" @submit="submit">
       <input type="hidden" name="type" value="Objekt">
