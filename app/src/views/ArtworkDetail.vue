@@ -64,6 +64,15 @@ export default {
           this.$router.push('/404') } // redirect to 404 page if artwork is not found
         )
     }
+
+    // HACK - do open links in a new tab that are in the artwork description
+    var links = document.links;
+    links.forEach(link => {
+      if (link.className.length <= 0 && link.hostname !== window.location.hostname && !link.innerHTML.includes('<u>')) {
+        link.target = '_blank'
+        link.rel = 'noopener'
+      }
+    })
   },
   computed: {
     artwork () {
