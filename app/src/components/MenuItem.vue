@@ -80,6 +80,9 @@ export default {
             return 10 - this.item.speed
           },
           animatedBalance: function() {	
+            if (this.moneypoolBalance < 100) {
+              return this.moneypoolBalance
+            }
             return parseInt(this.tweenedNumber.toFixed(0))
           },	
           balanceItemWidth () {
