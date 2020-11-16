@@ -10,7 +10,7 @@
 
         <span class="about-title">SOLIDARITÄT</span><br>
 
-        Der Kulturgenerator ist eine Online-Galerie. Ziel ist es, Einnahmen durch Verkäufe unter allen teilnehmenden Kunst- und Kulturschaffenden fair umzuverteilen. Diese entscheiden dabei selbst, ob und wie viel sie vom Erlös des Verkaufs ihrer Arbeit auf ein solidarisches Konto einzahlen möchten und ob sie bei der Ausschüttung des Kontos beteiligt werden wollen. Auch teilnehmende Kunst- und Kulturschaffende, die über den Generator nichts verkaufen, können vom solidarischen Konto profitieren. Den Kontostand können Sie der Laufzeile im Shop entnehmen. Das Datum der Ausschüttung des solidarischen Kontos ist der 01.01.2021. <br><br><br><br>
+        Der Kulturgenerator ist eine Online-Galerie. Ziel ist es, Einnahmen durch Verkäufe unter allen teilnehmenden Kunst- und Kulturschaffenden fair umzuverteilen. Diese entscheiden dabei selbst, ob und wie viel sie vom Erlös des Verkaufs ihrer Arbeit auf ein solidarisches Konto einzahlen möchten und ob sie bei der Ausschüttung des Kontos beteiligt werden wollen. Auch teilnehmende Kunst- und Kulturschaffende, die über den Generator nichts verkaufen, können vom solidarischen Konto profitieren. Den Kontostand können Sie der Laufzeile im Shop entnehmen. Das Datum der Ausschüttung des solidarischen Kontos ist der 01.02.2021. <br><br><br><br>
 
 
         <span class="about-title">PLATTFORM FÜR KUNST UND KULTUR</span><br>
