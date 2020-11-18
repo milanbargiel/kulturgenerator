@@ -30,5 +30,10 @@ npm run build
 npm run lint
 ```
 
+## Production deployment
+- Check that Paypal-Production-Api is present in local env file `.env.local`
+- Check that VUE_APP_API_BASEURL points to production Strapi CMS
+- Run `npm run deploy` in project folder
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
