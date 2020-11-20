@@ -75,7 +75,9 @@ export default {
       if (!this.artwork.generatorShare) {
         return 0
       }
-      return this.artwork.price * parseInt(this.artwork.generatorShare.substring(1)) / 100
+      const baseShare = this.artwork.price * parseInt(this.artwork.generatorShare.substring(1)) / 100
+      const paypalFee = ((baseShare * 2.49/100) + 0.35).toFixed(2)
+      return baseShare - paypalFee 
     }
   },
   mounted () {
@@ -87,7 +89,7 @@ export default {
         this.error = true
         return 
       }
-      this.$store.dispatch('sendOrder', { artworkId: this.artwork.id, order })
+      this.$store.dispatch('sendOrder', { artworkId: this.artwork.id, order, share: this.generatorShare })
       .then(response => { 
         this.$store.commit('UPDATE_ARTWORK_QUANTITY', response.data.artwork)
       })

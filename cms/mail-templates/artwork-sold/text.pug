@@ -1,5 +1,5 @@
 - var generatorShare = entry.artwork.generatorShare.substring(1); // Remove dummy underscore
-- var shareInEur = ((entry.orderQuantity * entry.artwork.price) * (generatorShare/100)).toFixed(2);
+- var shareInEur = (entry.orderQuantity * entry.generatorShare).toFixed(2);
 
 | Hallo #{entry.artwork.author},
 |
@@ -17,6 +17,8 @@
 | Bei der Einreichung Ihres Angebots haben Sie sich bereit erklärt #{generatorShare}% des Brutto-Verkaufspreises solidarisch zu verteilen. Wir bitten daher um Überweisung des entsprechenden Betrages von #{shareInEur}€ auf das PayPal-Konto des Kulturgenerators:
 |
 | https://www.paypal.me/kulturgenerator/#{shareInEur}
+|
+| Etwaige Gebühren, die von Seiten PayPals anfallen können wurden bei der Berechnung des Betrags berücksichtigt.
 |
 | Danke fürs Mitmachen, Teilen und Unterstützen.
 |
