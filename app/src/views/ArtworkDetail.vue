@@ -17,7 +17,7 @@
       {{ artwork.title }}
     </div>
     <vue-markdown class="artwork-detail__description">
-      {{ artwork.description }}
+      {{ artworkDescription }}
     </vue-markdown>
     <div ref="checkout" class="artwork-detail__checkout">
       <div>
@@ -65,18 +65,15 @@ export default {
         )
     }
 
-    // HACK - do open links in a new tab that are in the artwork description
-    var links = document.links;
-    links.forEach(link => {
-      if (link.className.length <= 0 && link.hostname !== window.location.hostname && !link.innerHTML.includes('<u>')) {
-        link.target = '_blank'
-        link.rel = 'noopener'
-      }
-    })
   },
   computed: {
     artwork () {
       return this.$store.getters.getArtworkBySlug(this.$route.params.slug)
+    },
+    artworkDescription () {
+      const markdownLink = /\[(.*?)\]\((.*?)\)/g // that's regex syntax, dev tip: regexr.com
+      const htmlLink = '<a class="link" href="$2" target="_blank" rel="noopener">$1</a>'
+      return this.artwork.description.replace(markdownLink, htmlLink)
     },
     artworkImages () {
       const images = this.artwork.images.map(image => {
