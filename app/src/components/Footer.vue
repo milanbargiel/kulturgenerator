@@ -18,10 +18,10 @@
       <div class="founders">
         <div class="founders__header">Gefördert durch</div>
         <div class="founders__logos">
-          <a class="founder-link founder-link--sk" href="https://www.stadt-koeln.de/" target="_blank">
+          <a class="founder-link founder-link--sponsors" href="https://www.stadt-koeln.de/" target="_blank">
             <img class="founder-img" :src="kulturamtLogo">
           </a>
-          <a class="founder-link founder-link--sk" href="https://www.rheinenergiestiftung.de/de/kultur/index.php" target="_blank">
+          <a class="founder-link founder-link--sponsors" href="https://www.rheinenergiestiftung.de/de/kultur/index.php" target="_blank">
             <img class="founder-img" :src="rheinenergieLogo">
           </a>          
         </div>
@@ -55,7 +55,7 @@ export default {
       return this.$route.meta.hasWhiteFooter ? require('@/assets/kulturamt-white.svg') : require('@/assets/kulturamt.svg')
     },
     rheinenergieLogo() {
-      return this.$route.meta.hasWhiteFooter ? require('@/assets/rheinenergie.svg') : require('@/assets/rheinenergie.svg')
+      return this.$route.meta.hasWhiteFooter ? require('@/assets/rheinenergie-white.svg') : require('@/assets/rheinenergie.svg')
     }
   }
 }
