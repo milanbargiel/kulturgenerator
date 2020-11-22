@@ -7,7 +7,7 @@
           <a class="founder-link founder-link--kk" href="https://www.koelnerkulturrat.de/" target="_blank">
             <img class="founder-img" :src="kulturratLogo">
           </a>
-          <a class="founder-link founder-link--wf" href="http://www.cafe-in-der-wachsfabrik.de/" target="_blank">
+          <a class="founder-link founder-link--wf" href="https://kunstzentrum-wachsfabrik.de/" target="_blank">
             <img class="founder-img" :src="wachsfabrikLogo">
           </a>
           <a class="founder-link founder-link--nf" href="https://niehlerfreiheit.de/" target="_blank">
