@@ -1,5 +1,5 @@
 - var generatorShare = entry.artwork.generatorShare.substring(1); // Remove dummy underscore
-- var shareInEur = ((entry.orderQuantity * entry.artwork.price) * (generatorShare/100)).toFixed(2);
+- var shareInEur = (entry.orderQuantity * entry.generatorShare).toFixed(2); // entry.generatorShare is the share minus the paypal fee of 2,49% + 0,35€
 
 | Hallo #{entry.artwork.author},
 |
@@ -17,6 +17,8 @@
 | Bei der Einreichung Ihres Angebots haben Sie sich bereit erklärt #{generatorShare}% des Brutto-Verkaufspreises solidarisch zu verteilen. Wir bitten daher um Überweisung des entsprechenden Betrages von #{shareInEur}€ auf das PayPal-Konto des Kulturgenerators:
 |
 | https://www.paypal.me/kulturgenerator/#{shareInEur}
+|
+| Die Transaktionsgebühren, die von Seiten PayPals anfallen (2,49 % + 0,35 EUR Festgebühr) wurden von Ihrem Beitrag zum Solidarkonto bereits abgezogen, damit Sie diese Kosten nicht selbst tragen müssen.
 |
 | Danke fürs Mitmachen, Teilen und Unterstützen.
 |
