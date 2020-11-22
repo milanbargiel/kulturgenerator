@@ -9,7 +9,7 @@
 
 <script>
 import ResponsiveImage from '../components/ResponsiveImage'
-import slugify from '@sindresorhus/slugify'
+import urlSlug from 'url-slug'
 
 export default {
     name: 'ArtworkListItem',
@@ -51,7 +51,7 @@ export default {
           return this.item.quantity < 1
         },
         authorSlug () {
-          return slugify(this.item.author)
+          return urlSlug(this.item.author)
         },
         styles () {
           return {
