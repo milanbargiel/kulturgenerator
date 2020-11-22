@@ -17,7 +17,7 @@
       {{ artwork.title }}
     </div>
     <vue-markdown class="artwork-detail__description">
-      {{ artwork.description }}
+      {{ artworkDescription }}
     </vue-markdown>
     <div ref="checkout" class="artwork-detail__checkout">
       <div>
@@ -64,10 +64,16 @@ export default {
           this.$router.push('/404') } // redirect to 404 page if artwork is not found
         )
     }
+
   },
   computed: {
     artwork () {
       return this.$store.getters.getArtworkBySlug(this.$route.params.slug)
+    },
+    artworkDescription () {
+      const markdownLink = /\[(.*?)\]\((.*?)\)/g // that's regex syntax, dev tip: regexr.com
+      const htmlLink = '<a class="link" href="$2" target="_blank" rel="noopener">$1</a>'
+      return this.artwork.description.replace(markdownLink, htmlLink)
     },
     artworkImages () {
       const images = this.artwork.images.map(image => {
