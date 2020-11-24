@@ -23,7 +23,7 @@
       <div>
         <div class="artwork-detail__price">{{ artwork.price }}€</div>
         <div v-if="isSoldOut" class="artwork-detail__sold">VERKAUFT</div>
-        <div v-else class="artwork-detail__quantity">{{ artworkQuantity }}</div>
+        <div v-if="!showCheckout && !isSoldOut" class="artwork-detail__quantity">{{ artworkQuantity }}</div>
       </div>
       <div v-if="!showCheckout && !isSoldOut" class="artwork-detail__generator-share explain-text">
         <span class="artwork-detail__share-percentage">{{ artworkGeneratorShare }}%</span>
