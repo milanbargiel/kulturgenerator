@@ -12,7 +12,7 @@ $z-level-above-all: 999;
 
 // Mobile font sizes
 $font-size-mobile: 16px;
-$font-size-mobile-big: 26px;
+$font-size-mobile-big: 32px;
 $font-size-mobile-huge: 40px; // Moneypool banner
 
 // Laptop font sizes
@@ -343,7 +343,7 @@ ul {
   &--primary {
     border: none;
     font-family: $font-family-galapagos-grid;
-    font-size: $font-size-mobile-huge;
+    font-size: $font-size-mobile-big;
 
     @media screen and (min-width: $bp-tablet) {
       font-size: $font-size-laptop-huge;
