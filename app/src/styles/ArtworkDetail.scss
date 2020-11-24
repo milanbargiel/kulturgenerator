@@ -1,6 +1,8 @@
 .artwork-detail {
+  @include galapagos-margin-top(1);
+  margin-left: 1rem;
+  margin-right: 1rem;
   max-width: 720px;
-  margin: 3rem 1rem 0;
 
   @media screen and (min-width: $bp-tablet) {
     margin: 5rem auto 0;
