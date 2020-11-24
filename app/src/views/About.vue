@@ -25,7 +25,7 @@
           <img class="arrows-submit" src="@/assets/yellow-arrows.svg">
         </router-link><br><br>
         
-        <div class="yellow-numbers"> Über den <router-link class="submit-art-link underlined-link underlined-link--yellow" :to="{ name: 'submit' }">Link zum Formular</router-link> können Künstler*innen und Kulturschaffende Arbeiten einreichen. Willkommen sind sowohl Objekte der bildenden Kunst, als auch kulturelle Angebote als Erlebnisse (soweit diese mit den aktuellen Bestimmungen realierbar sind) Es werden immer nur 30 Angebote gleichzeitig im Shop angezeigt, der Rest rückt nach, sobald etwas verkauft wird.</div><br><br><br><br> 
+        <div class="yellow-numbers"> Über den <router-link class="submit-art-link underlined-link underlined-link--yellow" :to="{ name: 'submit' }">Link zum Formular</router-link> können Künstler*innen und Kulturschaffende Arbeiten einreichen. Willkommen sind sowohl Objekte der bildenden Kunst, als auch kulturelle Angebote als Erlebnisse (soweit diese mit den aktuellen Bestimmungen realisierbar sind) Es werden immer nur 30 Angebote gleichzeitig im Shop angezeigt, der Rest rückt nach, sobald etwas verkauft wird.</div><br><br><br><br> 
       </div>
     </div>
     <my-footer></my-footer>
