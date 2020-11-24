@@ -68,8 +68,9 @@
     }
   }
 
-  &--sk {
+  &--sponsors {
     width: 90px;
+    margin-right: 2.5rem;
     
     @media screen and (min-width: $bp-tablet) {
       width: 110px;
