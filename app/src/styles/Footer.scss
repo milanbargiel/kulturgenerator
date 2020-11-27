@@ -60,7 +60,7 @@
   }
 
   &--wf {
-    margin-left: 2rem;
+    margin-left: 1rem;
     width: 60px;
     
     @media screen and (min-width: $bp-tablet) {
@@ -69,7 +69,8 @@
   }
 
   &--nf {
-    width: 150px;
+    margin-left: -2rem;
+    width: 140px;
 
     @media screen and (min-width: $bp-tablet) {
       width: 190px;
@@ -81,6 +82,7 @@
     margin-right: 2.5rem;
     
     @media screen and (min-width: $bp-tablet) {
+      margin-right: 3rem;
       width: 100px;
     }
   }
