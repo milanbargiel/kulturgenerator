@@ -4,7 +4,7 @@
       <div class="navigation">
         <a class="navigation-element" href="mailto:info@kulturgenerator.org"><span class="underlined-link">info@kulturgenerator.org</span></a><br>
         <a class="navigation-element" href="https://www.instagram.com/kulturgenerator" target="_blank"><span class="underlined-link">Instagram</span></a><br>
-        <router-link :to="{name: 'impressum'}" class="navigation-element"><span class="underlined-link">Impressum | Datenschutz</span></router-link>
+        <router-link :to="{name: 'impressum'}" class="navigation-element"><span class="underlined-link">Impressum + Datenschutz</span></router-link>
       </div>
       <div class="founders">
         <div class="founders__logos">
@@ -17,10 +17,7 @@
           <a class="founder-link founder-link--nf" href="https://niehlerfreiheit.de/" target="_blank">
             <img class="founder-img" :src="niehlerfreiheitLogo">
           </a>
-        </div>
-      </div>
-      <div class="founders">
-        <div class="founders__logos">
+          <span class="breaker"></span>
           <a class="founder-link founder-link--sponsors" href="https://www.stadt-koeln.de/" target="_blank">
             <img class="founder-img" :src="kulturamtLogo">
           </a>

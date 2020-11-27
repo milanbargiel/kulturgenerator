@@ -23,21 +23,25 @@
 }
 
 .founders {
-  margin-bottom: 2rem;
-
-  @media screen and (min-width: $bp-tablet) {
-    margin-bottom: 5rem;
-  }
+  display: flex;
 }
 
 .founders__logos {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
+  align-content: space-between;
+  width: 100%;
+  max-width: $big-container-width;
+
+  @media screen and (min-width: $bp-tablet) {
+    justify-content: space-between;
+  }
 }
 
 .founder-link {
   display: inline-block;
-  margin-right: 1.5rem;
+  margin-bottom: 2rem;
 
   @media screen and (min-width: $bp-tablet) {
     margin-right: 2rem;
@@ -52,7 +56,7 @@
   }
 
   &--wf {
-    margin-left: 1rem;
+    margin-left: 3rem;
     width: 60px;
     
     @media screen and (min-width: $bp-tablet) {
@@ -61,11 +65,9 @@
   }
 
   &--nf {
-    margin-left: -1.5rem;
-    width: 160px;
+    width: 150px;
 
     @media screen and (min-width: $bp-tablet) {
-      margin-left: -2rem;
       width: 190px;
     }
   }
@@ -77,6 +79,16 @@
     @media screen and (min-width: $bp-tablet) {
       width: 110px;
     }
+  }
+}
+
+.breaker {
+  display: block;
+  width: 100%;
+  height: 0;
+
+  @media screen and (min-width: $bp-tablet) {
+    display: none;
   }
 }
 
