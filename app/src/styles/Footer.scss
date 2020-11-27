@@ -20,6 +20,12 @@
     content: "↗";
     margin-right: .5rem;
   }
+
+  &--white {
+    &::before {
+      color: $white;
+    }
+  }
 }
 
 .founders {

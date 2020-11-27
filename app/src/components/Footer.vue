@@ -2,9 +2,9 @@
   <div class="footer-container">
     <footer class="footer">
       <div class="navigation">
-        <a class="navigation-element" href="mailto:info@kulturgenerator.org"><span class="underlined-link">info@kulturgenerator.org</span></a><br>
-        <a class="navigation-element" href="https://www.instagram.com/kulturgenerator" target="_blank"><span class="underlined-link">Instagram</span></a><br>
-        <router-link :to="{name: 'impressum'}" class="navigation-element"><span class="underlined-link">Impressum + Datenschutz</span></router-link>
+        <a :class="navigationElementClass" href="mailto:info@kulturgenerator.org"><span :class="underlinedLinkClass">info@kulturgenerator.org</span></a><br>
+        <a :class="navigationElementClass" href="https://www.instagram.com/kulturgenerator" target="_blank"><span :class="underlinedLinkClass">Instagram</span></a><br>
+        <router-link :to="{name: 'impressum'}" :class="navigationElementClass"><span :class="underlinedLinkClass">Impressum + Datenschutz</span></router-link>
       </div>
       <div class="founders">
         <div class="founders__logos">
@@ -38,6 +38,18 @@ export default {
   name: 'Footer',
   components: { Newsletter },
   computed: {
+    navigationElementClass() {
+      return {
+        'navigation-element': true,
+        'navigation-element--white': this.$route.meta.hasWhiteFooter
+      }
+    },
+    underlinedLinkClass() {
+      return {
+        'underlined-link': true,
+        'underlined-link--white': this.$route.meta.hasWhiteFooter
+      }
+    },
     kulturratLogo() {
       return this.$route.meta.hasWhiteFooter ? require('@/assets/kulturrat-white.svg') : require('@/assets/kulturrat.svg')
     },
