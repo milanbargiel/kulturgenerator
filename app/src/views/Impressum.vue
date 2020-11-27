@@ -2,7 +2,7 @@
   <div class="content content--orange">
     <div class="text longer-text-container">
       <div id="impressum">
-        <span class="about-title">DIENSTANBIETER</span>
+        <div class="about-title">DIENSTANBIETER</div>
         <p>Kölner Kulturrat e.V. <br>
           Sachsenring 40<br>
           50677 Köln<br>
@@ -14,7 +14,7 @@
         <p>E-Mail: <a class="underlined-link" href="mailto:info@kulturgenerator.org">info@kulturgenerator.org</a><br><br>
           <h2>Haftungshinweis</h2>
           <p>Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.</p><br><br>
-          <span class="about-title">DATENSCHUTZERKLÄRUNG</span>
+          <div class="about-title">DATENSCHUTZERKLÄRUNG</div>
           <h2>Einleitung</h2>
           <p>Mit der folgenden Datenschutzerklärung möchten wir Sie darüber aufklären, welche Arten Ihrer personenbezogenen Daten (nachfolgend auch kurz als "Daten“ bezeichnet) wir zu welchen Zwecken und in welchem Umfang verarbeiten. Die Datenschutzerklärung gilt für alle von uns durchgeführten Verarbeitungen personenbezogener Daten, sowohl im Rahmen der Erbringung unserer Leistungen als auch insbesondere auf unseren Webseiten, in mobilen Applikationen sowie innerhalb externer Onlinepräsenzen, wie z.B. unserer Social-Media-Profile (nachfolgend zusammenfassend bezeichnet als "Onlineangebot“).</p>
           <p>Die verwendeten Begriffe sind nicht geschlechtsspezifisch.</p>

@@ -1,7 +1,7 @@
 .marquee-text__item {
   display: block;
-  line-height: 40px; // adjust line-height and height to make text touch top and bottom
-  height: 28px; // adjust line-height and height to make text touch top and bottom
+  line-height: 50px; // adjust line-height and height to make text touch top and bottom
+  height: 34px; // adjust line-height and height to make text touch top and bottom
   margin-right: 140px;
 
   -webkit-user-select: none; /* Safari */        
@@ -22,7 +22,7 @@
       content: '€';
       top: -7px;
       left: -30px;
-      font-size: 26px;
+      font-size: 32px;
 
       @media screen and (min-width: $bp-tablet) {
         top: -8px;

@@ -23,10 +23,10 @@
       <div>
         <div class="artwork-detail__price">{{ artwork.price }}€</div>
         <div v-if="isSoldOut" class="artwork-detail__sold">VERKAUFT</div>
-        <div v-else class="artwork-detail__quantity">{{ artworkQuantity }}</div>
+        <div v-if="!showCheckout && !isSoldOut" class="artwork-detail__quantity">{{ artworkQuantity }}</div>
       </div>
       <div v-if="!showCheckout && !isSoldOut" class="artwork-detail__generator-share explain-text">
-        <div class="artwork-detail__share-percentage">{{ artworkGeneratorShare }}%</div>
+        <span class="artwork-detail__share-percentage">{{ artworkGeneratorShare }}%</span>
         des Preises werden auf ein solidarisches Konto eingezahlt, dessen Erlös am Ende unter den Teilnehmenden verteilt wird. Der aktuelle Kontostand wird in der Laufleiste angezeigt ↑
       </div>
     </div>

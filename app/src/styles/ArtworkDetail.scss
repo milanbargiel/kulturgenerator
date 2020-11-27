@@ -1,13 +1,16 @@
 .artwork-detail {
+  @include galapagos-margin-top(1);
+  margin-left: 1rem;
+  margin-right: 1rem;
   max-width: 720px;
-  margin: 3rem 1rem 0;
 
   @media screen and (min-width: $bp-tablet) {
     margin: 5rem auto 0;
   }
 }
-
 .carousel {
+  max-width: 640px;
+  margin: 0 auto;
   text-align: center; // center images that are reduced in size
 }
 
@@ -52,13 +55,9 @@
   }
 }
 
-.artwork-detail__price,
-.artwork-detail__share-percentage {
-  font-family: $font-family-galapagos;
-}
-
 .artwork-detail__price {
-  font-size: $font-size-mobile-huge;
+  font-family: $font-family-galapagos;
+  font-size: $font-size-mobile-big;
 
   @media screen and (min-width: $bp-tablet) {
     font-size: $font-size-laptop-huge;
@@ -66,9 +65,9 @@
 }
 
 .artwork-detail__share-percentage {
-  font-size: $font-size-mobile-big;
-
   @media screen and (min-width: $bp-tablet) {
+    display: block;
+    font-family: $font-family-galapagos;
     font-size: $font-size-laptop-huge;
   }
 }
@@ -87,6 +86,7 @@
 
 .artwork-detail__quantity {
   margin-top: 1rem;
+  margin-bottom: 2rem;
   color: $black;
 
   @media screen and (min-width: $bp-tablet) {
