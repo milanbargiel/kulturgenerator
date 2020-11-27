@@ -11,11 +11,11 @@
           <a class="founder-link founder-link--kk" href="https://www.koelnerkulturrat.de/" target="_blank">
             <img class="founder-img" :src="kulturratLogo">
           </a>
-          <a class="founder-link founder-link--nf" href="https://niehlerfreiheit.de/" target="_blank">
-            <img class="founder-img" :src="niehlerfreiheitLogo">
-          </a>
           <a class="founder-link founder-link--wf" href="https://kunstzentrum-wachsfabrik.de/" target="_blank">
             <img class="founder-img" :src="wachsfabrikLogo">
+          </a>
+          <a class="founder-link founder-link--nf" href="https://niehlerfreiheit.de/" target="_blank">
+            <img class="founder-img" :src="niehlerfreiheitLogo">
           </a>
           <span class="breaker"></span>
           <a class="founder-link founder-link--sponsors" href="https://www.stadt-koeln.de/" target="_blank">
