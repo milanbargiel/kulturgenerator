@@ -1,10 +1,8 @@
 .footer-container {
   margin-top: 6rem;
-  font-size: $font-size-mobile;
 
   @media screen and (min-width: $bp-tablet) {
     margin-top: 10rem;
-    font-size: $font-size-laptop;
   }
 }
 
@@ -15,6 +13,13 @@
 .navigation-element {
   display: inline-block;
   margin-bottom: 1rem;
+
+  &::before {
+    color: $blue;
+    font-family: $font-family-galapagos;
+    content: "↗";
+    margin-right: .5rem;
+  }
 }
 
 .founders {
