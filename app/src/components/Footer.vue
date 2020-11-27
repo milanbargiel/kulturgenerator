@@ -3,7 +3,9 @@
     <footer class="footer">
       <div class="navigation">
         <a class="navigation-element underlined-link" href="mailto:info@kulturgenerator.org">info@kulturgenerator.org</a><br>
-        <router-link :to="{name: 'impressum'}" class="navigation-element underlined-link">Impressum & Datenschutz</router-link>
+        <a class="navigation-element underlined-link" href="https://www.instagram.com/kulturgenerator" target="_blank">Instagram</a><br>
+        <a class="navigation-element underlined-link" href="https://github.com/milanbargiel/kulturgenerator" target="_blank">Quellcode auf Github</a><br>
+        <router-link :to="{name: 'impressum'}" class="navigation-element underlined-link">Impressum | Datenschutz</router-link>
       </div>
       <div class="founders">
         <div class="founders__logos">
