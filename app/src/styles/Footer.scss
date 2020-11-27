@@ -8,24 +8,21 @@
   }
 }
 
-.footer {
-  margin-bottom: .725rem;
+.navigation {
+  margin-bottom: 2rem;
 }
 
 .navigation-element {
   display: inline-block;
+  margin-bottom: 1rem;
 }
 
 .founders {
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 
   @media screen and (min-width: $bp-tablet) {
     margin-bottom: 5rem;
   }
-}
-
-.founders__header {
-  margin-bottom: 1rem;
 }
 
 .founders__logos {

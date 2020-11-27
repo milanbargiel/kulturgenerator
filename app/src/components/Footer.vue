@@ -1,8 +1,11 @@
 <template>
   <div class="footer-container">
     <footer class="footer">
+      <div class="navigation">
+        <a class="navigation-element underlined-link" href="mailto:info@kulturgenerator.org">info@kulturgenerator.org</a><br>
+        <router-link :to="{name: 'impressum'}" class="navigation-element underlined-link">Impressum & Datenschutz</router-link>
+      </div>
       <div class="founders">
-        <div class="founders__header">Eine Initiative von</div>
         <div class="founders__logos">
           <a class="founder-link founder-link--kk" href="https://www.koelnerkulturrat.de/" target="_blank">
             <img class="founder-img" :src="kulturratLogo">
@@ -16,7 +19,6 @@
         </div>
       </div>
       <div class="founders">
-        <div class="founders__header">Gefördert durch</div>
         <div class="founders__logos">
           <a class="founder-link founder-link--sponsors" href="https://www.stadt-koeln.de/" target="_blank">
             <img class="founder-img" :src="kulturamtLogo">
@@ -25,10 +27,6 @@
             <img class="founder-img" :src="rheinenergieLogo">
           </a>          
         </div>
-      </div>
-      <div class="navigation">
-        <a class="navigation-element link" href="mailto:info@kulturgenerator.org">info@kulturgenerator.org</a><br>
-        <router-link :to="{name: 'impressum'}" class="navigation-element link">Impressum & Datenschutz</router-link>
       </div>
     </footer>
     <newsletter :class="{ 'newsletter--white': this.$route.meta.hasWhiteFooter}"></newsletter>
