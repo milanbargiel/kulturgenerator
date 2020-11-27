@@ -7,7 +7,7 @@
 }
 
 .navigation {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 .navigation-element {
@@ -32,7 +32,7 @@
   align-items: center;
   align-content: space-between;
   width: 100%;
-  max-width: $big-container-width;
+  max-width: 1200px;
 
   @media screen and (min-width: $bp-tablet) {
     justify-content: space-between;
@@ -42,25 +42,21 @@
 .founder-link {
   display: inline-block;
   margin-bottom: 2rem;
-
-  @media screen and (min-width: $bp-tablet) {
-    margin-right: 2rem;
-  }
+  margin-right: 2rem;
 
   &--kk {
     width: 55px;
 
     @media screen and (min-width: $bp-tablet) {
-      width: 70px;
+      width: 65px;
     }
   }
 
   &--wf {
-    margin-left: 3rem;
     width: 60px;
     
     @media screen and (min-width: $bp-tablet) {
-      width: 70px;
+      width: 65px;
     }
   }
 
@@ -68,6 +64,8 @@
     width: 150px;
 
     @media screen and (min-width: $bp-tablet) {
+      margin-left: -6rem;
+      margin-right: -1rem;
       width: 190px;
     }
   }
@@ -77,7 +75,7 @@
     margin-right: 2.5rem;
     
     @media screen and (min-width: $bp-tablet) {
-      width: 110px;
+      width: 100px;
     }
   }
 }
