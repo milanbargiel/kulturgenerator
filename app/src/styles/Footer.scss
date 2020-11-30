@@ -1,51 +1,61 @@
 .footer-container {
   margin-top: 6rem;
-  font-size: $font-size-mobile;
 
   @media screen and (min-width: $bp-tablet) {
     margin-top: 10rem;
-    font-size: $font-size-laptop;
   }
 }
 
-.footer {
-  margin-bottom: .725rem;
+.navigation {
+  margin-bottom: 3rem;
 }
 
 .navigation-element {
   display: inline-block;
-}
+  margin-bottom: 1rem;
 
-.founders {
-  margin-bottom: 3rem;
+  &::before {
+    color: $blue;
+    font-family: $font-family-galapagos;
+    content: "↗";
+    margin-right: .5rem;
+  }
 
-  @media screen and (min-width: $bp-tablet) {
-    margin-bottom: 5rem;
+  &--white {
+    &::before {
+      color: $white;
+    }
   }
 }
 
-.founders__header {
-  margin-bottom: 1rem;
+.founders {
+  display: flex;
 }
 
 .founders__logos {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
+  align-content: space-between;
+  width: 100%;
+  max-width: 1200px;
 }
 
 .founder-link {
   display: inline-block;
-  margin-right: 1.5rem;
+  margin-bottom: 2rem;
+  margin-right: 2rem;
 
   @media screen and (min-width: $bp-tablet) {
-    margin-right: 2rem;
-  }
+      margin-bottom: 3rem;
+      margin-right: 4rem;
+    }
 
   &--kk {
     width: 55px;
 
     @media screen and (min-width: $bp-tablet) {
-      width: 70px;
+      width: 65px;
     }
   }
 
@@ -54,16 +64,15 @@
     width: 60px;
     
     @media screen and (min-width: $bp-tablet) {
-      width: 70px;
+      width: 65px;
     }
   }
 
   &--nf {
-    margin-left: -1.5rem;
-    width: 160px;
+    margin-left: -2rem;
+    width: 140px;
 
     @media screen and (min-width: $bp-tablet) {
-      margin-left: -2rem;
       width: 190px;
     }
   }
@@ -73,9 +82,16 @@
     margin-right: 2.5rem;
     
     @media screen and (min-width: $bp-tablet) {
-      width: 110px;
+      margin-right: 3rem;
+      width: 100px;
     }
   }
+}
+
+.breaker {
+  display: block;
+  width: 100%;
+  height: 0;
 }
 
 .founder-img {

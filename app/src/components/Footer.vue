@@ -1,34 +1,30 @@
 <template>
   <div class="footer-container">
     <footer class="footer">
-      <div class="founders">
-        <div class="founders__header">Eine Initiative von</div>
-        <div class="founders__logos">
-          <a class="founder-link founder-link--kk" href="https://www.koelnerkulturrat.de/" target="_blank">
-            <img class="founder-img" :src="kulturratLogo">
-          </a>
-          <a class="founder-link founder-link--wf" href="https://kunstzentrum-wachsfabrik.de/" target="_blank">
-            <img class="founder-img" :src="wachsfabrikLogo">
-          </a>
-          <a class="founder-link founder-link--nf" href="https://niehlerfreiheit.de/" target="_blank">
-            <img class="founder-img" :src="niehlerfreiheitLogo">
-          </a>
-        </div>
+      <div class="navigation">
+        <a :class="navigationElementClasses" href="mailto:info@kulturgenerator.org"><span :class="underlinedLinkClasses">info@kulturgenerator.org</span></a><br>
+        <a :class="navigationElementClasses" href="https://www.instagram.com/kulturgenerator" target="_blank" rel="noopener"><span :class="underlinedLinkClasses">Instagram</span></a><br>
+        <router-link :to="{name: 'impressum'}" :class="navigationElementClasses"><span :class="underlinedLinkClasses">Impressum + Datenschutz</span></router-link>
       </div>
       <div class="founders">
-        <div class="founders__header">Gefördert durch</div>
         <div class="founders__logos">
-          <a class="founder-link founder-link--sponsors" href="https://www.stadt-koeln.de/" target="_blank">
+          <a class="founder-link founder-link--kk" href="https://www.koelnerkulturrat.de/" target="_blank" rel="noopener">
+            <img class="founder-img" :src="kulturratLogo">
+          </a>
+          <a class="founder-link founder-link--wf" href="https://kunstzentrum-wachsfabrik.de/" target="_blank" rel="noopener">
+            <img class="founder-img" :src="wachsfabrikLogo">
+          </a>
+          <a class="founder-link founder-link--nf" href="https://niehlerfreiheit.de/" target="_blank" rel="noopener">
+            <img class="founder-img" :src="niehlerfreiheitLogo">
+          </a>
+          <span class="breaker"></span>
+          <a class="founder-link founder-link--sponsors" href="https://www.stadt-koeln.de/" target="_blank" rel="noopener">
             <img class="founder-img" :src="kulturamtLogo">
           </a>
-          <a class="founder-link founder-link--sponsors" href="https://www.rheinenergiestiftung.de/de/kultur/index.php" target="_blank">
+          <a class="founder-link founder-link--sponsors" href="https://www.rheinenergiestiftung.de/de/kultur/index.php" target="_blank" rel="noopener">
             <img class="founder-img" :src="rheinenergieLogo">
           </a>          
         </div>
-      </div>
-      <div class="navigation">
-        <a class="navigation-element link" href="mailto:info@kulturgenerator.org">info@kulturgenerator.org</a><br>
-        <router-link :to="{name: 'impressum'}" class="navigation-element link">Impressum & Datenschutz</router-link>
       </div>
     </footer>
     <newsletter :class="{ 'newsletter--white': this.$route.meta.hasWhiteFooter}"></newsletter>
@@ -42,6 +38,18 @@ export default {
   name: 'Footer',
   components: { Newsletter },
   computed: {
+    navigationElementClasses() {
+      return {
+        'navigation-element': true,
+        'navigation-element--white': this.$route.meta.hasWhiteFooter
+      }
+    },
+    underlinedLinkClasses() {
+      return {
+        'underlined-link': true,
+        'underlined-link--white': this.$route.meta.hasWhiteFooter
+      }
+    },
     kulturratLogo() {
       return this.$route.meta.hasWhiteFooter ? require('@/assets/kulturrat-white.svg') : require('@/assets/kulturrat.svg')
     },
