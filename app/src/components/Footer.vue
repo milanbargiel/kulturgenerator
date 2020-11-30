@@ -2,9 +2,9 @@
   <div class="footer-container">
     <footer class="footer">
       <div class="navigation">
-        <a :class="navigationElementClass" href="mailto:info@kulturgenerator.org"><span :class="underlinedLinkClass">info@kulturgenerator.org</span></a><br>
-        <a :class="navigationElementClass" href="https://www.instagram.com/kulturgenerator" target="_blank" rel="noopener"><span :class="underlinedLinkClass">Instagram</span></a><br>
-        <router-link :to="{name: 'impressum'}" :class="navigationElementClass"><span :class="underlinedLinkClass">Impressum + Datenschutz</span></router-link>
+        <a :class="navigationElementClasses" href="mailto:info@kulturgenerator.org"><span :class="underlinedLinkClasses">info@kulturgenerator.org</span></a><br>
+        <a :class="navigationElementClasses" href="https://www.instagram.com/kulturgenerator" target="_blank" rel="noopener"><span :class="underlinedLinkClasses">Instagram</span></a><br>
+        <router-link :to="{name: 'impressum'}" :class="navigationElementClasses"><span :class="underlinedLinkClasses">Impressum + Datenschutz</span></router-link>
       </div>
       <div class="founders">
         <div class="founders__logos">
@@ -38,13 +38,13 @@ export default {
   name: 'Footer',
   components: { Newsletter },
   computed: {
-    navigationElementClass() {
+    navigationElementClasses() {
       return {
         'navigation-element': true,
         'navigation-element--white': this.$route.meta.hasWhiteFooter
       }
     },
-    underlinedLinkClass() {
+    underlinedLinkClasses() {
       return {
         'underlined-link': true,
         'underlined-link--white': this.$route.meta.hasWhiteFooter
