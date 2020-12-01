@@ -35,6 +35,10 @@
     },
     "buyerZipCode": {
       "type": "integer"
+    },
+    "contributionDone": {
+      "type": "boolean",
+      "default": false
     }
   }
 }
