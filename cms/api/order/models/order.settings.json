@@ -39,6 +39,16 @@
     "contributionDone": {
       "type": "boolean",
       "default": false
+    },
+    "orderUrl": {
+      "type": "string",
+      "unique": true
+    },
+    "artworkName": {
+      "type": "string"
+    },
+    "generatorShare": {
+      "type": "decimal"
     }
   }
 }
