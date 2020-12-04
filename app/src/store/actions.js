@@ -63,6 +63,7 @@ const actions = {
             url: process.env.VUE_APP_API_BASEURL + '/orders',
             data: {
                 artwork: { id: artworkId, slug: context.state.artworks[artworkId].slug },
+                artworkName: order.purchase_units[0].items[0].name,
                 orderQuantity: order.purchase_units[0].items[0].quantity,
                 orderTotalAmount: order.purchase_units[0].amount.value,
                 buyerEmail: order.payer.email_address,

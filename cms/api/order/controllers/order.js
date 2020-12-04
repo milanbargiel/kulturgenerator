@@ -19,8 +19,6 @@ module.exports = {
     const entity = await strapi.services.order.create(ctx.request.body);
     const entry = sanitizeEntity(entity, { model: strapi.models.order });
 
-    entry.generatorShare = ctx.request.body.generatorShare;
-
     if (entry) {
       // Pass entry data to templates
       const buyerMail = await strapi.plugins['email'].services.email.renderMail(entry, 'artwork-purchased');
