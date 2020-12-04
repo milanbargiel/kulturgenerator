@@ -2,11 +2,13 @@
   "kind": "collectionType",
   "collectionName": "artworks",
   "info": {
-    "name": "Artwork"
+    "name": "Artwork",
+    "description": ""
   },
   "options": {
     "increments": true,
-    "timestamps": true
+    "timestamps": true,
+    "draftAndPublish": false
   },
   "attributes": {
     "timestamp": {
@@ -124,11 +126,6 @@
     "published": {
       "type": "boolean",
       "default": false
-    },
-    "review": {
-      "type": "component",
-      "repeatable": true,
-      "component": "artist.review"
     }
   }
 }
