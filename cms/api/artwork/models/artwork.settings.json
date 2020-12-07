@@ -134,7 +134,8 @@
         "Abgelehnt",
         "Warteliste",
         "Online"
-      ]
+      ],
+      "default": "Eingang"
     }
   }
 }
