@@ -130,6 +130,7 @@
     "status": {
       "type": "enumeration",
       "enum": [
+        "Eingang",
         "Abgelehnt",
         "Warteliste",
         "Online"
