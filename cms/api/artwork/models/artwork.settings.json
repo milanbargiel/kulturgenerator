@@ -135,7 +135,12 @@
         "Warteliste",
         "Teilnahme"
       ],
-      "default": "Eingang"
+      "default": "Eingang",
+      "private": true
+    },
+    "comment": {
+      "type": "text",
+      "private": true
     }
   }
 }
