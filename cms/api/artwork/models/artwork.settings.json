@@ -8,7 +8,7 @@
   "options": {
     "increments": true,
     "timestamps": true,
-    "draftAndPublish": false
+    "draftAndPublish": true
   },
   "attributes": {
     "timestamp": {
@@ -122,10 +122,6 @@
       "type": "boolean",
       "default": false,
       "private": true
-    },
-    "published": {
-      "type": "boolean",
-      "default": false
     },
     "status": {
       "type": "enumeration",

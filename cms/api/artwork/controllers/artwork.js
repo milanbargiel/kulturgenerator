@@ -18,7 +18,7 @@ module.exports = {
 
     ctx.query = {
       ...ctx.query,
-      published: true,
+      _publicationState: 'live', // Deny access via the api to drafts
     };
 
     if (ctx.query._q) {
