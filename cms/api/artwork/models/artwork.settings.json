@@ -2,11 +2,13 @@
   "kind": "collectionType",
   "collectionName": "artworks",
   "info": {
-    "name": "Artwork"
+    "name": "Artwork",
+    "description": ""
   },
   "options": {
     "increments": true,
-    "timestamps": true
+    "timestamps": true,
+    "draftAndPublish": true
   },
   "attributes": {
     "timestamp": {
@@ -121,14 +123,20 @@
       "default": false,
       "private": true
     },
-    "published": {
-      "type": "boolean",
-      "default": false
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "Eingang",
+        "Abgelehnt",
+        "Warteliste",
+        "Teilnahme"
+      ],
+      "default": "Eingang",
+      "private": true
     },
-    "review": {
-      "type": "component",
-      "repeatable": true,
-      "component": "artist.review"
+    "comment": {
+      "type": "text",
+      "private": true
     }
   }
 }
