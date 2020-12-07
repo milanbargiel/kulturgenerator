@@ -133,7 +133,7 @@
         "Eingang",
         "Abgelehnt",
         "Warteliste",
-        "Online"
+        "Teilnahme"
       ],
       "default": "Eingang"
     }
