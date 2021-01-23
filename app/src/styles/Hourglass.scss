@@ -5,11 +5,15 @@ $time:10s; // including 1 flip
   border-bottom:solid 1vmin #C19875;
   border-top:solid 1vmin #C19875;
   right:5%;
+  bottom: 15px;
   margin-left:-6vmin;
   margin-top:-11vmin;
   padding:0 1vmin;
-  position:absolute;
-  top: 100px;
+  position:fixed;
+
+  @media screen and (min-width: 500px) {
+    bottom: 20px;
+  }
   .top, .bottom {
     background-color:#def;
     box-shadow:0 0 1vmin 1vmin #bcd inset;
