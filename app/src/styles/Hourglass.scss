@@ -8,12 +8,12 @@ $time:10s; // including 1 flip
   margin-left:-6vmin;
   margin-top:-11vmin;
   padding:0 1vmin;
-  position:fixed;
-  bottom:3%;
+  position:absolute;
+  top: 100px;
   .top, .bottom {
     background-color:#def;
     box-shadow:0 0 1vmin 1vmin #bcd inset;
-    height:10vmin;
+    height:7vmin;
     overflow:hidden;
     position:relative;
     width:10vmin;
