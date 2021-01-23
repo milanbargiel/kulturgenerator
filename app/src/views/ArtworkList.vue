@@ -20,7 +20,7 @@ export default {
   },
   computed: {
     ...mapGetters({
-      artworks: 'getRandomizedArtworks'
+      artworks: 'getArtworks'
     })
   },
   created () {
