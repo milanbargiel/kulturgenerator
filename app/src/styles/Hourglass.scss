@@ -1,27 +1,40 @@
 $time:10s; // including 1 flip
+$height: 10vmin;
+$width: 14vmin;
+
+.hourglass-countdown {
+  position:fixed;
+  right:4%;
+  bottom: .7%;
+
+  @media screen and (min-width: 500px) {
+    font-size: $font-size-laptop-small;
+  }
+}
 
 .hourglass {
   animation:flip $time ease-in-out infinite;
   border-bottom:solid 1vmin #C19875;
   border-top:solid 1vmin #C19875;
   right:5%;
-  bottom: 15px;
+  bottom: 35px;
   margin-left:-6vmin;
   margin-top:-11vmin;
   padding:0 1vmin;
   position:fixed;
 
   @media screen and (min-width: 500px) {
-    bottom: 20px;
+    bottom: 40px;
   }
   .top, .bottom {
     background-color:#def;
     box-shadow:0 0 1vmin 1vmin #bcd inset;
-    height:7vmin;
+    height:$height;
     overflow:hidden;
     position:relative;
-    width:10vmin;
+    width:$width;
   }
+
   .top {
     clip-path: polygon(45% 100%, 55% 100%, 100% 0, 0 0); 
     &:before {
@@ -30,12 +43,12 @@ $time:10s; // including 1 flip
       border-radius:50%;
       content:"";
       display:block;
-      height:10vmin;
+      height:$width;
       left:0;
       position:absolute;
       top:0;
       transform:translateY(50%);
-      width:10vmin;
+      width:$width;
     }
     &:after {
       animation:top-drip $time linear infinite;
@@ -58,12 +71,12 @@ $time:10s; // including 1 flip
       border-radius:50%;
       content:"";
       display:block;
-      height:10vmin;
+      height:$width;
       left:0;
       position:absolute;
       top:0;
       transform:translateY(100%);
-      width:10vmin;
+      width:$width;
     }
     &:after {
       animation:bottom-drip $time linear infinite;

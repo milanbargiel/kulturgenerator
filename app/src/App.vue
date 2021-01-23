@@ -2,7 +2,7 @@
   <div id="app">
     <div v-if="isLoading" class="loading-indicator">lädt</div>
     <div :class="{ 'hidden': isLoading }">
-      <div v-if="isArtworkList" class="info-box">In <countdown></countdown> ist die letzte Möglichkeit, Arbeiten aus der ersten Runde des <span class="intext-title">kulturgenerators</span> zu erwerben und somit das solidarische Konto aufzufüllen. Diese Online-Galerie ist ein Projekt auf Initiative des Kölner Kulturrats, der Niehler Freiheit e.V. und des Kunstzentrum Wachsfabrik. Für weitere Informationen klicken Sie auf die Laufleiste, die den aktuellen Kontostand anzeigt ↓</div>
+      <div v-if="isArtworkList" class="info-box">Jetzt ist die letzte Möglichkeit, Arbeiten aus der ersten Runde des <span class="intext-title">kulturgenerators</span> zu erwerben und somit das solidarische Konto aufzufüllen. Diese Online-Galerie ist ein Projekt auf Initiative des Kölner Kulturrats, der Niehler Freiheit e.V. und des Kunstzentrum Wachsfabrik. Für weitere Informationen klicken Sie auf die Laufleiste, die den aktuellen Kontostand anzeigt ↓</div>
       <hourglass v-if="isArtworkList"></hourglass>
       <my-header :isLoading="isLoading"></my-header>
       <router-view/> 
@@ -13,12 +13,11 @@
 <script>
 import { mapGetters } from 'vuex'
 import MyHeader from './components/Header'
-import Countdown from './components/Countdown'
 import Hourglass from './components/Hourglass'
 
 export default {
   name: 'App',
-  components: { MyHeader, Countdown, Hourglass },
+  components: { MyHeader, Hourglass },
   created () {
     this.$store.dispatch('getShadowMoneypoolBalance')
     this.$store.dispatch('getMenuItems')
