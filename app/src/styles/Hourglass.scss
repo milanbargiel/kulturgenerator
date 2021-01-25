@@ -3,6 +3,7 @@ $height: 10vmin;
 $width: 14vmin;
 
 .hourglass-countdown {
+  z-index: 1000;
   position:fixed;
   right:4%;
   bottom: .7%;
@@ -13,6 +14,7 @@ $width: 14vmin;
 }
 
 .hourglass {
+  z-index: 1000;
   animation:flip $time ease-in-out infinite;
   border-bottom:solid 1vmin #C19875;
   border-top:solid 1vmin #C19875;
