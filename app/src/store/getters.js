@@ -26,7 +26,7 @@ const getters = {
     },
     getArtworks: state => {
         return Object.values(state.artworks)
-            .sort((a, b) => a.author > b.author) // sort alphabetically for author
+            .sort((a, b) => a.author > b.author ? -1 : 1) // sort alphabetically for author
             .sort(a => a.quantity > 0 ? -1 : 1) // move sold out items to the back
     },
     roundedMoneypoolBalance: state => {
