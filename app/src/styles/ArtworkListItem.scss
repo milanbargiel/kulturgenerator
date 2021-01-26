@@ -1,8 +1,12 @@
 .artwork-list-item {
   line-height: 1.2;
   float: left;
-  margin: 3rem 1rem 3rem .725rem;
   font-size: $font-size-mobile;
+  margin: 3rem .725rem 3rem .725rem;
+
+  @media screen and (min-width: $bp-smartphone) {
+    margin: 3rem 1rem 3rem .725rem;
+  }
   
   @media screen and (min-width: $bp-tablet) {
     font-size: $font-size-laptop;
