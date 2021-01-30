@@ -17,4 +17,14 @@
     margin-top: 2rem;
     padding-right: 100px;
   }
+
+  &--archive {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @media screen and (min-width: $bp-tablet) {
+      justify-content: flex-start;
+    }
+  }
 }

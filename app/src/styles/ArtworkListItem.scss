@@ -8,6 +8,21 @@
     font-size: $font-size-laptop;
     margin-left: 2rem;
   }
+
+  &--archive {
+    margin: 3rem .725rem 3rem .725rem;
+
+    @media screen and (min-width: $bp-smartphone) {
+      margin: 3rem 1rem 3rem .725rem;
+    }
+
+    @media screen and (min-width: $bp-tablet) {
+      font-size: $font-size-laptop;
+      font-size: $font-size-laptop;
+      margin-left: 2rem;
+      margin: 3rem 2rem 4rem 2rem;
+    }
+  }
 }
 
 // Sold artworks

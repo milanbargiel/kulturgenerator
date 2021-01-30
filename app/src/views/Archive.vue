@@ -1,21 +1,19 @@
 <template>
   <div>
-    <div class="artwork-list">
-      <artwork-list-item v-for="artwork in artworks" :key="artwork.id" :item="artwork"></artwork-list-item>
-    </div>
+    <artwork-list :artworks="artworks" :is-archive="true"></artwork-list>
     <my-footer></my-footer>
   </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
-import ArtworkListItem from '../components/ArtworkListItem.vue'
+import ArtworkList from '../components/ArtworkList'
 import MyFooter from '../components/Footer'
 
 export default {
   name: 'Archive',
   components: {
-    ArtworkListItem,
+    ArtworkList,
     MyFooter
   },
   computed: {
