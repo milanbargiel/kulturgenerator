@@ -1,6 +1,6 @@
 <template>
-  <div class="content content--orange">
-    <div class="text longer-text-container">
+  <div class="content--orange">
+    <div class="content text">
       <div id="impressum">
         <h2>Dienstanbieter</h2>
         <p>Kölner Kulturrat e.V. <br>
