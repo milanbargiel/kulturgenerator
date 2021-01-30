@@ -41,6 +41,7 @@ export default {
   },
   computed: {
     menuItems () {
+      console.log(this.$store.state.menuItems)
       return this.$store.state.menuItems
     }
   }

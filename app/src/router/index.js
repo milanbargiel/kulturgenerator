@@ -49,7 +49,7 @@ Vue.use(VueRouter)
     name: 'artworkDetail',
     component: ArtworkDetail,
     meta: {
-      menuItemTypesToDisplay: ['moneypool-balance', 'back-button']
+      menuItemTypesToDisplay: ['back-button']
     }
   },
   {
