@@ -1,3 +1,20 @@
+.footer-detail {
+  @media screen and (min-width: $bp-tablet) {
+    &.footer-container {
+      margin-top: 0;
+    }
+
+    .founders,
+    .navigation {
+      display: none;
+    }
+
+    .newsletter {
+      text-align: center;
+    }
+  }
+}
+
 .footer-container {
   margin-top: 6rem;
 

@@ -1,55 +1,59 @@
 <template>
-  <div v-if="artwork" class="artwork-detail content">
-    <div class="carousel">
-      <!-- vue-carousel from https://github.com/ssense/vue-carousel -->
-      <carousel 
-      :perPage="1" 
-      :centerMode=true>
-      <slide v-for="{ url, aspectRatio } in artworkImages" :key="url">
-        <!-- v-img from https://github.com/crowdbotics/v-img -->
-        <responsive-image v-img:artworkGallery :src="url" class="carousel__image" :aspectRatio="aspectRatio"></responsive-image>
-      </slide>
-    </carousel>
-  </div>
-  <div class="artwork-detail__title">
-    <a v-if="artwork.website" class="artwork-detail__author link" :href="artwork.website" target="_blank" rel="noopener">{{ artwork.author }}</a>
-    <div v-else class="artwork-detail__author">{{ artwork.author }}</div><br>
-    {{ artwork.title }}
-  </div>
-  <vue-markdown class="artwork-detail__description">
-    {{ artworkDescription }}
-  </vue-markdown>
-  <div v-if="isFromActiveRound">
-    <div ref="checkout" class="artwork-detail__checkout">
-      <div>
-        <div class="artwork-detail__price">{{ artwork.price }}€</div>
-        <div v-if="isSoldOut" class="artwork-detail__sold">VERKAUFT</div>
-        <div v-if="!showCheckout && !isSoldOut" class="artwork-detail__quantity">{{ artworkQuantity }}</div>
-      </div>
-      <div v-if="!showCheckout && !isSoldOut" class="artwork-detail__generator-share explain-text">
-        <span class="artwork-detail__share-percentage">{{ artworkGeneratorShare }}%</span>
-        des Preises werden auf ein solidarisches Konto eingezahlt, dessen Erlös am Ende unter den Teilnehmenden verteilt wird. Der aktuelle Kontostand wird in der Laufleiste angezeigt ↑
-      </div>
+  <div>
+    <div v-if="artwork" class="artwork-detail content">
+      <div class="carousel">
+        <!-- vue-carousel from https://github.com/ssense/vue-carousel -->
+        <carousel 
+        :perPage="1" 
+        :centerMode=true>
+        <slide v-for="{ url, aspectRatio } in artworkImages" :key="url">
+          <!-- v-img from https://github.com/crowdbotics/v-img -->
+          <responsive-image v-img:artworkGallery :src="url" class="carousel__image" :aspectRatio="aspectRatio"></responsive-image>
+        </slide>
+      </carousel>
     </div>
-    <div v-if="!showCheckout && !isSoldOut" class="artwork-detail__payment-button">
-      <button class="button" @click="openCheckout()">zur kasse</button>
-      <div class="explain-text">
-        Die Kaufabwicklung wird mit <a href="https://www.paypal.com/de/webapps/mpp/ua/privacy-full?locale.x=de_DE" target="_blank" rel="noopener" class="underlined-link">PayPal</a> durchgeführt. Durch Anklicken von "ZUR KASSE" stimmen Sie der Verwendung von Cookies durch PayPal zu.
-      </div>
+    <div class="artwork-detail__title">
+      <a v-if="artwork.website" class="artwork-detail__author link" :href="artwork.website" target="_blank" rel="noopener">{{ artwork.author }}</a>
+      <div v-else class="artwork-detail__author">{{ artwork.author }}</div><br>
+      {{ artwork.title }}
     </div>
-    <checkout v-if="showCheckout" :artwork="artwork"></checkout>
+    <vue-markdown class="artwork-detail__description">
+      {{ artworkDescription }}
+    </vue-markdown>
+    <div v-if="isFromActiveRound">
+      <div ref="checkout" class="artwork-detail__checkout">
+        <div>
+          <div class="artwork-detail__price">{{ artwork.price }}€</div>
+          <div v-if="isSoldOut" class="artwork-detail__sold">VERKAUFT</div>
+          <div v-if="!showCheckout && !isSoldOut" class="artwork-detail__quantity">{{ artworkQuantity }}</div>
+        </div>
+        <div v-if="!showCheckout && !isSoldOut" class="artwork-detail__generator-share explain-text">
+          <span class="artwork-detail__share-percentage">{{ artworkGeneratorShare }}%</span>
+          des Preises werden auf ein solidarisches Konto eingezahlt, dessen Erlös am Ende unter den Teilnehmenden verteilt wird. Der aktuelle Kontostand wird in der Laufleiste angezeigt ↑
+        </div>
+      </div>
+      <div v-if="!showCheckout && !isSoldOut" class="artwork-detail__payment-button">
+        <button class="button" @click="openCheckout()">zur kasse</button>
+        <div class="explain-text">
+          Die Kaufabwicklung wird mit <a href="https://www.paypal.com/de/webapps/mpp/ua/privacy-full?locale.x=de_DE" target="_blank" rel="noopener" class="underlined-link">PayPal</a> durchgeführt. Durch Anklicken von "ZUR KASSE" stimmen Sie der Verwendung von Cookies durch PayPal zu.
+        </div>
+      </div>
+      <checkout v-if="showCheckout" :artwork="artwork"></checkout>
+    </div>
   </div>
+  <my-footer class="footer-detail"></my-footer>
 </div>
 </template>
 
 <script>
-import { Carousel, Slide} from 'vue-carousel'
+import { Carousel, Slide } from 'vue-carousel'
+import MyFooter from '../components/Footer'
 import Checkout from '../components/Checkout'
 import ResponsiveImage from '../components/ResponsiveImage'
 
 export default {
   name: 'artworkDetail',
-  components: { Carousel, Slide, Checkout, ResponsiveImage },
+  components: { Carousel, Slide, Checkout, ResponsiveImage, MyFooter },
   data () {
     return {
       checkoutIsOpen: false
@@ -66,7 +70,6 @@ export default {
           this.$router.push('/404') } // redirect to 404 page if artwork is not found
           )
     }
-
   },
   computed: {
     artwork () {
