@@ -9,6 +9,7 @@
     "build": "strapi build",
     "strapi": "strapi",
     "downloadDump:clearUploads": "rm public/uploads/*",
+    "downloadDump:clearLocalDatabase": "psql kulturgenerator -c 'DROP SCHEMA public CASCADE;'",
     "downloadDump:images": "scp -r kulturgeneratorServer:~/kulturgenerator/cms/public/uploads/* public/uploads",
     "downloadDump:dump": "ssh kulturgeneratorServer 'pg_dump --clean -Z 9 -U kulturgenerator kulturgenerator' | zcat | psql kulturgenerator",
     "downloadDump": "npm-run-all --serial downloadDump:*"
