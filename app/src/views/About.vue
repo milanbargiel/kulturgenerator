@@ -2,9 +2,7 @@
   <div class="content--blue">
     <div class="content">
       <div class="text">
-
         <div class="about-title">SICHTBARKEIT</div>
-
         Wenn der Strom ausfällt, wird ein Generator benötigt. Unter der Fragestellung, wie sich Kunst- und Kulturschaffende gegenseitig und eigenverantwortlich unterstützen können, ist der Kulturgenerator als Reaktion auf die COVID-19 Pandemie - vor allem in Betracht der Schließungen von Kulturinstitutionen in dem ersten Lockdown im März 2020 - entstanden.  Alle Angebote der Kunst- und Kulturschaffenden sind in ihm gleichberechtigt und hierarchiefrei nebeneinander positioniert, um gegenseitig die Sichtbarkeit zu erhöhen und sich zu unterstützen.
         <br><br><br><br>
 

@@ -268,14 +268,12 @@ ul {
 
 // content
 .content {
-  padding-top: 2rem;
+  padding-top: 5rem;
   padding-bottom: .725rem;
   overflow-wrap: break-word;
-  display: flex;
-  flex-direction: column;
 
   @media screen and (min-width: $bp-tablet) {
-    padding-top: 3rem;
+    padding-top: 8rem;
     padding-bottom: 2rem;
   }
 

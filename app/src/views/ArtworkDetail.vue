@@ -1,5 +1,5 @@
 <template>
-  <div v-if="artwork" class="artwork-detail">
+  <div v-if="artwork" class="artwork-detail content">
     <div class="carousel">
       <!-- vue-carousel from https://github.com/ssense/vue-carousel -->
       <carousel 
