@@ -3,7 +3,7 @@
     <responsive-image class="artwork-list-item__image" :lazy-src="imgUrl" :lazy-srcset="srcSet" :aspectRatio="aspectRatio"></responsive-image>
     <span class="artwork-list-item__author">{{ item.author }}<br></span>
     <span class="artwork-list-item__title">{{ item.title }}<br></span> 
-    <span class="artwork-list-item__price">{{ item.price }}€</span>
+    <span v-if="isFromActiveRound" class="artwork-list-item__price">{{ item.price }}€</span>
   </router-link>
 </template>
 
@@ -47,8 +47,12 @@ export default {
           // Calculate the aspect ratio of the image
           return (this.item.images[0].height / this.item.images[0].width) * 100;
         },
+        isFromActiveRound() {
+          return false
+        },
         isSoldOut () {
-          return this.item.quantity < 1
+          // Only items from active round are highlighted as 'sold'
+          return this.isFromActiveRound && this.item.quantity < 1
         },
         authorSlug () {
           return urlSlug(this.item.author)
