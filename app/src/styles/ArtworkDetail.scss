@@ -1,11 +1,11 @@
 .artwork-detail {
-  @include galapagos-margin-top(1);
+  margin-top: 5rem;
   margin-left: 1rem;
   margin-right: 1rem;
   max-width: 720px;
 
   @media screen and (min-width: $bp-tablet) {
-    margin: 5rem auto 0;
+    margin: 8rem auto 0;
   }
 }
 .carousel {

@@ -49,7 +49,7 @@ Vue.use(VueRouter)
     name: 'artworkDetail',
     component: ArtworkDetail,
     meta: {
-      menuItemTypesToDisplay: ['back-button']
+      menuItemTypesToDisplay: ['custom-menu-item']
     }
   },
   {
