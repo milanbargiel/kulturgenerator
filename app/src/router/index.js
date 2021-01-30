@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import ArtworkList from '../views/ArtworkList.vue'
 import ArtworkDetail from '../views/ArtworkDetail.vue'
 import About from '../views/About.vue'
 import Impressum from '../views/Impressum.vue'
+import Archive from '../views/Archive.vue'
 import PurchaseConfirmation from '../views/PurchaseConfirmation.vue'
 import PageNotFound from '../views/PageNotFound.vue'
 import Submit from '../views/Submit.vue'
@@ -13,15 +13,6 @@ Vue.use(VueRouter)
   const routes = [
   {
     path: '/',
-    name: 'artworkList',
-    component: ArtworkList,
-    meta: {
-      menuItemTypesToDisplay: ['moneypool-balance'],
-      stickyHeader: true
-    }
-  },
-  {
-    path: '/about',
     name: 'about',
     component: About,
     meta: {
@@ -33,6 +24,14 @@ Vue.use(VueRouter)
     path: '/impressum',
     name: 'impressum',
     component: Impressum,
+    meta: {
+      menuItemTypesToDisplay: ['custom-menu-item']    
+    }
+  },
+  {
+    path: '/archiv',
+    name: 'archive',
+    component: Archive,
     meta: {
       menuItemTypesToDisplay: ['custom-menu-item']    
     }
