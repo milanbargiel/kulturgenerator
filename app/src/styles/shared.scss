@@ -401,3 +401,13 @@ ul {
 .highlighted-text {
   background-color: $yellow;
 }
+
+.info-box {
+  margin: .725rem .725rem 1.725rem;
+  color: $blue;
+  max-width: 950px;
+  
+  @media screen and (min-width: $bp-tablet) {
+    margin: 1rem 2rem 4rem;
+  }  
+}

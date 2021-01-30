@@ -1,0 +1,7 @@
+.archive-info {
+  margin: 7rem .725rem 3rem;
+  
+  @media screen and (min-width: $bp-tablet) {
+    margin: 7rem 2rem;
+  }  
+}
