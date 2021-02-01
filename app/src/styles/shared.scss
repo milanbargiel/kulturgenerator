@@ -153,57 +153,28 @@ ul {
 
 .underlined-link {
   color: inherit;
-  position: relative;
-
-  &::after {
-    content: "";
-    height: 1px;
-    left: 0;
-    position: absolute;
-    width: 100%;
-    opacity: .5;
-    bottom: -1px;
-    background-color: $dark-grey;
-  }
+  text-decoration: underline;
 
   &:hover,
   &:focus,
   &:active {
-    &::after {
-      opacity: 1;
-    }
+    font-style: italic;
   }
 
   &--blue {
     color: $blue;
-
-    &::after {
-      background-color: $blue;
-    }
   }
 
   &--red {
     color: $red;
-
-    &::after {
-      background-color: $red;
-    }
   }
 
   &--yellow {
     color: $yellow;
-
-    &::after {
-      background-color: $yellow;
-    }
   }
 
   &--white {
     color: $white;
-
-    &::after {
-      background-color: $white;
-    }
   }
 }
 
