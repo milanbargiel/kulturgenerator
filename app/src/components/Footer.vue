@@ -27,7 +27,7 @@
         </div>
       </div>
     </footer>
-    <newsletter :class="{ 'newsletter--white': this.$route.meta.hasWhiteFooter}"></newsletter>
+    <newsletter v-if="hasNewsletter" :class="{ 'newsletter--white': this.$route.meta.hasWhiteFooter}"></newsletter>
   </div>
 </template>
 
@@ -37,7 +37,13 @@ import Newsletter from '../components/Newsletter'
 export default {
   name: 'Footer',
   components: { Newsletter },
+  created () {
+    this.$store.commit('SET_LOADING_STATE', false)
+  },
   computed: {
+    hasNewsletter() {
+      return this.$route.meta.hasNoNewsletter ? false : true
+    },
     navigationElementClasses() {
       return {
         'navigation-element': true,
