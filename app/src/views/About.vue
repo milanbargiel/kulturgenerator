@@ -4,8 +4,8 @@
       <div class="text">
         Der Kulturgenerator ist eine solidarische Online-Galerie auf Initiative der Niehler Freiheit e.V., des Kunstzentrum Wachsfabrik e.V. und des Kölner Kulturrats.
         Alle Teilnehmenden entscheiden selbst, ob und in welchem Umfang ihre Erlöse solidarisch verteilt werden.<br><br>
-        Die erste Runde wurde am 01.02.2021 mit der Ausschüttung des solidarischen Kontos in Höhe von 7610 EUR durch den Verkauf von 37 Arbeiten abgeschlossen.
-        Für die 52 Teilnehmenden bedeutet dies, dass jede*r einen Betrag von 146,35 EUR erhält. Die Werke der ersten Runde finden Sie im <router-link class="submit-art-link underlined-link underlined-link--white" :to="{ name: 'archive' }">Archiv</router-link>. Möchten Sie auch Kunst und Kultur für die zweite Runde, die am 15.02 beginnt, einreichen, dann klicken Sie auf den <router-link class="submit-art-link underlined-link underlined-link--white" :to="{ name: 'submit' }">Link zum Formular</router-link>.
+        Die erste Runde wurde am 01.02.2021 mit der Ausschüttung des solidarischen Kontos in Höhe von 7609,86 EUR durch den Verkauf von 38 Arbeiten abgeschlossen.
+        Für die 50 Teilnehmenden bedeutet dies, dass jede*r einen Betrag von 152,19 EUR erhält. Die Werke der ersten Runde finden Sie im <router-link class="submit-art-link underlined-link underlined-link--white" :to="{ name: 'archive' }">Archiv</router-link>. Möchten Sie auch Kunst und Kultur für die zweite Runde, die am 15.02 beginnt, einreichen, dann klicken Sie auf den <router-link class="submit-art-link underlined-link underlined-link--white" :to="{ name: 'submit' }">Link zum Formular</router-link>.
         <br><br><br><br>
 
         <div class="about-title">SICHTBARKEIT</div>
