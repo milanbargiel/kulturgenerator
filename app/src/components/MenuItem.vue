@@ -42,7 +42,7 @@ export default {
     if (this.item.type === 'moneypool-balance') {
       gsap.to(this.$data, { duration: this.balanceAnimationDuration, tweenedNumber: this.moneypoolBalance, ease: "power4.out" });
     } else if (this.item.type === 'back-button') {
-      this.item.viewName = 'archive'
+      this.item.viewName = 'artworkList'
     }
   },
   computed: {
