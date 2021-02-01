@@ -5,6 +5,7 @@ import About from '../views/About.vue'
 import Impressum from '../views/Impressum.vue'
 import Archive from '../views/Archive.vue'
 import PurchaseConfirmation from '../views/PurchaseConfirmation.vue'
+import NewsletterConfirmation from '../views/NewsletterConfirmation.vue'
 import PageNotFound from '../views/PageNotFound.vue'
 import Submit from '../views/Submit.vue'
 
@@ -50,6 +51,15 @@ Vue.use(VueRouter)
     component: ArtworkDetail,
     meta: {
       menuItemTypesToDisplay: ['custom-menu-item']
+    }
+  },
+  {
+    path: '/newsletter-anmeldung',
+    name: 'newsletterConfirmation',
+    component: NewsletterConfirmation,
+    meta: {
+      menuItemTypesToDisplay: ['thank-you-message', 'back-button'],
+      hasNoNewsletter: true
     }
   },
   {
