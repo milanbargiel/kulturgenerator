@@ -2,7 +2,6 @@
   <div class="content--blue">
     <div class="content">
       <div class="text">
-        <div class="about-title">KULTURGENERATOR</div>
         Der Kulturgenerator ist eine solidarische Online-Galerie auf Initiative der Niehler Freiheit e.V., des Kunstzentrum Wachsfabrik e.V. und des Kölner Kulturrats.
         Alle Teilnehmenden entscheiden selbst, ob und in welchem Umfang ihre Erlöse solidarisch verteilt werden.<br><br>
         Die erste Runde wurde am 01.02.2021 mit der Ausschüttung des solidarischen Kontos in Höhe von 7610 EUR durch den Verkauf von 37 Arbeiten abgeschlossen.
