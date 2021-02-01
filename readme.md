@@ -1,6 +1,6 @@
 <p>
     <a href="https://www.kulturgenerator.org" target="_blank">
-        <img src="https://www.kulturgenerator.org/assets/images/kulturgenerator.png">
+        <img src="https://www.kulturgenerator.org/img/yellow-arrows.5abca197.svg">
     </a>
 </p>
 
