@@ -1,9 +1,10 @@
 <template>
-  <router-link :class="['artwork-list-item link', { 'artwork-list-item--sold': isSoldOut }]" :style="styles" :to="{ name: 'artworkDetail', params: { author: this.authorSlug, slug: item.slug }}">
+  <router-link :class="['artwork-list-item link', { 'artwork-list-item--sold': isSoldOut, 'artwork-list-item--archive': !isFromActiveRound }]" :style="styles" :to="{ name: 'artworkDetail', params: { author: this.authorSlug, slug: item.slug }}">
     <responsive-image class="artwork-list-item__image" :lazy-src="imgUrl" :lazy-srcset="srcSet" :aspectRatio="aspectRatio"></responsive-image>
     <span class="artwork-list-item__author">{{ item.author }}<br></span>
-    <span class="artwork-list-item__title">{{ item.title }}<br></span> 
-    <span class="artwork-list-item__price">{{ item.price }}€</span>
+    <span class="artwork-list-item__title">{{ item.title }}<br></span>
+    <!-- Only show price, if the artwork is from an active round -->
+    <span v-if="isFromActiveRound" class="artwork-list-item__price">{{ item.price }}€</span>
   </router-link>
 </template>
 
@@ -47,8 +48,12 @@ export default {
           // Calculate the aspect ratio of the image
           return (this.item.images[0].height / this.item.images[0].width) * 100;
         },
+        isFromActiveRound() { // Items from an active round
+          return false
+        },
         isSoldOut () {
-          return this.item.quantity < 1
+          // Only items from active round are highlighted as 'sold'
+          return this.isFromActiveRound && this.item.quantity < 1
         },
         authorSlug () {
           return urlSlug(this.item.author)
@@ -56,7 +61,7 @@ export default {
         styles () {
           return {
             width: this.item.images[0].width + 'px', // give element full width of image to reserve vertical space for lazy loading
-            maxWidth: this.randomizedWidth + '%'
+            maxWidth: this.itemWidth + '%'
           }
         },
         viewportWidth () {
@@ -64,20 +69,22 @@ export default {
         },
         minWidth () {            
           if (this.viewportWidth < 680) {
-            return 40 // width for small screens [%]
+            return 45 // width for small screens [%]
           }
           if (this.viewportWidth < 1500) {
             return 25 // width for medium screens [%]
           }
           return 20 // width for large screens [%]
         },
-        randomizedWidth () {
-          if (this.item.type === 'Erlebnis') {
-            return this.minWidth // do not randomize width of artworks of type "Erlebnis"
-          }
-          
+        randomizedWidth () { // only for active rounds
           return Math.floor(this.minWidth + this.item.randomWidthBase * 12.5)
-            
+        },
+        itemWidth () {
+          if (this.isFromActiveRound) {
+            return this.randomizedWidth
+          }
+
+          return this.minWidth
         }
     }
 }

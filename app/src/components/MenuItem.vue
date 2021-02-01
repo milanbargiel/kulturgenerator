@@ -56,6 +56,12 @@ export default {
       if (this.item.type !== 'custom-menu-item') {
         return false
       }
+
+      // show archive as selected when on artwork detail page
+      if (this.item.viewName === 'archive' && this.$route.name === 'artworkDetail') {
+        return false
+      }
+
       return this.item.viewName !== this.$route.name
     },
     active () {

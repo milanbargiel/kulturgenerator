@@ -1,20 +1,17 @@
-.info-box {
-  margin: .725rem .725rem 1.725rem;
-  color: $blue;
-  max-width: 950px;
-  
-  @media screen and (min-width: $bp-tablet) {
-    margin: 1rem 2rem 2rem;
-    margin-bottom: 4rem;
-  }  
-}
-
 .artwork-list {
-  margin-top: 1rem;
   overflow: hidden;
 
-  @media screen and (min-width: $bp-tablet) {
-    margin-top: 2rem;
+  @media screen and (min-width: $bp-large) {
     padding-right: 100px;
+  }
+
+  &--archive {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @media screen and (min-width: $bp-tablet) {
+      justify-content: flex-start;
+    }
   }
 }

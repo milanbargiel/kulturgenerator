@@ -1,8 +1,8 @@
 <template>
-  <div class="content content--orange">
-    <div class="text longer-text-container">
+  <div class="content--orange">
+    <div class="content text">
       <div id="impressum">
-        <div class="about-title">DIENSTANBIETER</div>
+        <h2 class="impressum__header">Dienstanbieter</h2>
         <p>Kölner Kulturrat e.V. <br>
           Sachsenring 40<br>
           50677 Köln<br>
