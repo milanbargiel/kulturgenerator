@@ -267,6 +267,10 @@ ul {
   @media screen and (min-width: $bp-tablet) {
     font-size: $font-size-laptop-big;
   }
+
+  &--blue {
+    color: $blue;
+  }
 }
 
 .explain-text {
