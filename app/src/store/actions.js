@@ -2,12 +2,10 @@ import axios from 'axios'
 
 const actions = {
     getMenuItems (context) {
-        // axios.get(process.env.VUE_APP_API_BASEURL + '/navigation')
-        //     .then(response => {
-        //         context.commit('SET_MENU_ITEMS', response.data)
-        //     })
-        const fakeResponse = {"id":1,"created_at":"2020-11-03T10:08:05.251Z","updated_at":"2021-01-30T17:07:33.684Z","menuItems":[{"__component":"navigation.custom-menu-item","id":5,"name":null,"label":"Vielen Dank!","viewName":null,"activeBackgroundColor":"blue","type":"thank-you-message","speed":4,"activeFontColor":"none"},{"__component":"navigation.moneypool-balance","id":1,"name":"moneypool-balance","themeColor":"","type":"moneypool-balance","viewName":"about","speed":0},{"__component":"navigation.custom-menu-item","id":2,"name":"Generator","label":"KULTUR GENERATOR","viewName":"about","activeBackgroundColor":"none","type":"custom-menu-item","speed":0,"activeFontColor":"blue"},{"__component":"navigation.custom-menu-item","id":7,"name":"Archiv","label":"ARCHIV","viewName":"archive","activeBackgroundColor":"none","type":"custom-menu-item","speed":0,"activeFontColor":"blue"},{"__component":"navigation.custom-menu-item","id":3,"name":"Impressum","label":"IMPRESSUM","viewName":"impressum","activeBackgroundColor":"none","type":"custom-menu-item","speed":0,"activeFontColor":"blue"},{"__component":"navigation.back-button","id":1,"name":"backButton","label":"←","type":"back-button","speed":6}]}
-        context.commit('SET_MENU_ITEMS', fakeResponse)
+        axios.get(process.env.VUE_APP_API_BASEURL + '/navigation')
+            .then(response => {
+                context.commit('SET_MENU_ITEMS', response.data)
+            })
     },
     getArtworks (context) {
         return axios.get(process.env.VUE_APP_API_BASEURL + '/artworks')
