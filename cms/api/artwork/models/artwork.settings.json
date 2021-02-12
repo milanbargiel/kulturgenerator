@@ -126,6 +126,7 @@
     "status": {
       "type": "enumeration",
       "enum": [
+        "Auswahl",
         "Eingang",
         "Abgelehnt",
         "Warteliste",
