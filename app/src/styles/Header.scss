@@ -30,25 +30,4 @@
     background-color: $blue;
     border-color: $white;
   }
-
-  &.active {
-    &--color-white {
-      color: $white;
-    }
-    &--color-black {
-      color: $black;
-    }
-    &--color-blue {
-      color: $blue;
-    }
-    &--color-orange {
-      color: $orange;
-    }         
-    &--background-orange {
-      background-color: $orange;
-    }
-    &--background-blue {
-      background-color: $blue;
-    }
-  }
 }

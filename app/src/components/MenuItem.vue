@@ -75,9 +75,7 @@ export default {
     },
     classes () {
       if (this.active) {
-        return 'active' + 
-        ' active--background-' + this.item.activeBackgroundColor +
-        ' active--color-' + this.item.activeFontColor
+        return 'active';
       }
 
             return this.item.viewName ? 'link' : '' // apply hover effect only to valid routes

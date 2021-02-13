@@ -15,6 +15,41 @@ export default {
   components: { MenuItem },
   data() {
     return {
+      menuItems: [
+        {
+          label:"Vielen Dank!",
+          speed:4,
+          type:"thank-you-message",
+          viewName: null
+        },
+        {
+          name:"moneypool-balance",
+          speed:0,
+          type:"moneypool-balance",
+          viewName:"about",
+        },
+        {
+          label:"KULTUR GENERATOR",
+          name:"Generator",
+          speed:0,
+          type:"custom-menu-item",
+          viewName:"about",
+        },
+        {
+          label:"ARCHIV",
+          name:"Archiv",
+          speed:0,
+          type:"custom-menu-item",
+          viewName:"archive",
+        },
+        {
+          label:"IMPRESSUM",
+          name:"Impressum",
+          speed:0,
+          type:"custom-menu-item",
+          viewName:"impressum",
+        }
+      ],
       isSticky: false,
       scrollPosition: 0,
       headerPosition: 0
@@ -37,11 +72,6 @@ export default {
       } else {
         this.isSticky = false
       }
-    }
-  },
-  computed: {
-    menuItems () {
-      return this.$store.state.menuItems
     }
   }
 }
