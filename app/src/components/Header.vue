@@ -11,7 +11,7 @@
     <div v-if="hasThankYouHeader">
       <menu-item label="Vielen Dank!">
       </menu-item>
-      <menu-item label="←">
+      <menu-item label="←" type="back-button">
       </menu-item>
     </div>
   </div>

@@ -27,9 +27,14 @@ export default {
   },
   computed: {
     paused () {
-      // show archive as selected when on artwork detail page
+      // show shop as selected when on artwork detail page
       if (this.viewName === 'shop' && this.$route.name === 'artworkDetail') {
         return false
+      }
+
+      // back-button is never paused
+      if (this.type === 'back-button') {
+        return false;
       }
 
       return this.viewName !== this.$route.name
@@ -43,7 +48,7 @@ export default {
     showMoneypool () {
       // Only show moneypool on shop page
       return this.type === 'moneypool-balance' && this.$route.name === 'shop';
-    } 
+    }
   }
 }
 </script>
