@@ -1,6 +1,7 @@
 <template>
   <div>
-    <div class="content text text--blue">Hier finden Sie alle Arbeiten aus der ersten Runde des <span class="intext-title">kulturgenerators</span>, einer solidarischen Online-Galerie auf Initiative des Kölner Kulturrats, der Niehler Freiheit e.V. und des Kunstzentrum Wachsfabrik. Vom 18. November 2020 bis zum 01. Februar 2021 wurden <span class="highlighted-text">7766,50€</span> für ein solidarisches Konto generiert, dass nun an alle teilnehmenden Künstler*innen anteilig ausgeschüttet wird.</div>
+    <div class="content text text--blue">Der <span class="intext-title">kulturgenerator</span> ist eine solidarische <span class="highlighted-text">Online-Galerie</span> auf Initiative des Kölner Kulturrats, der Niehler Freiheit e.V. und des Kunstzentrum Wachsfabrik. In der Galerie befinden sich <span class="highlighted-text">stetig neue Angebote</span>. Alle Teilnehmenden entscheiden selbst, ob und in welchem Umfang ihre Erlöse solidarisch verteilt werden. Der aktuelle Kontostand des <span class="highlighted-text">solidarischen Kontos</span> beträgt {{ moneypoolBalance }} EUR.
+    </div>
     <artwork-list :artworks="artworks" :is-archive="true"></artwork-list>
     <my-footer></my-footer>
   </div>
@@ -20,7 +21,10 @@ export default {
   computed: {
     ...mapGetters({
       artworks: 'getArtworks'
-    })
+    }),
+    moneypoolBalance () {
+      return this.$store.getters.roundedMoneypoolBalance
+    },
   },
   created () {
     if (this.artworks.length <= 1) {
