@@ -7,8 +7,8 @@ const actions = {
                 context.commit('SET_MENU_ITEMS', response.data)
             })
     },
-    getArtworks (context) {
-        return axios.get(process.env.VUE_APP_API_BASEURL + '/artworks')
+    getArchivedArtworks (context) {
+        return axios.get(process.env.VUE_APP_API_BASEURL + '/artworks?status=ErsteRunde&_limit=200')
             .then(response => {
                 context.commit('SET_ARTWORKS', response.data)
                 return response
