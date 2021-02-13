@@ -31,6 +31,14 @@ At Admin Panel you can add new content (e.g. artwork) and generally cultivate Ku
 - Create new build with `NODE_ENV=production npm run build`
 - Start CMS-App from Terminal to see error output in console `NODE_ENV=production npm run develop`
 
+### How to perform a database migration when a field changes?
+- The migration has to be done manually in Postgresql with Queries
+- For Example 
+```
+UPDATE artworks SET status = 'ZweiteRunde' WHERE status = 'Auswahl';
+UPDATE artworks SET status = 'ErsteRunde' WHERE status = 'Teilnahme';
+```
+
 ### How to download Production Image and Database dump to develop with local database?
 - Insert kulturgeneratorServer as environment variable to ssh config file `~/.ssh/config` 
 - Run `npm run getUploads` to clear local image folder and then download all images from remote server into local `public/uploads` folder

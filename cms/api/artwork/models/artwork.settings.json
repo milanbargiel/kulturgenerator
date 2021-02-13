@@ -126,11 +126,11 @@
     "status": {
       "type": "enumeration",
       "enum": [
-        "Auswahl",
         "Eingang",
         "Abgelehnt",
         "Warteliste",
-        "Teilnahme"
+        "ErsteRunde",
+        "ZweiteRunde"
       ],
       "default": "Eingang",
       "private": true
