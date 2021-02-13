@@ -13,6 +13,11 @@ const mutations = {
             Vue.set(state.artworks, [artwork.id], artwork)
         })
     },
+    SET_ARCHIVED_ARTWORKS (state, payload) {
+        payload.forEach((artwork) => {
+            Vue.set(state.archivedArtworks, [artwork.id], artwork)
+        })
+    },
     SET_ARTWORK (state, payload) {
         Vue.set(state.artworks, [payload.id], payload)
     },

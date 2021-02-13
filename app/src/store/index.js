@@ -10,6 +10,7 @@ const state = {
   isLoading: true,
   loadingDelay: 700,
   artworks: {},
+  archivedArtworks: {},
   shadowMoneypoolBalance: 0
 }
 
