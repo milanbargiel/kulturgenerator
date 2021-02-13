@@ -3,7 +3,7 @@
     <router-link :to="linksTo">
       <marquee-text
         :repeat="20"
-        :duration="10"
+        :duration="speed"
         :paused="paused">
           <moneypool-balance v-if="showMoneypool" class="marquee-text__item marquee-text__item--euro"></moneypool-balance>
           <span v-else class="marquee-text__item">{{ label }}</span>
@@ -18,7 +18,7 @@ import MoneypoolBalance from '../components/MoneypoolBalance.vue'
 
 export default {
   name: 'MenuItem',
-  props: ['label', 'type', 'viewName'],
+  props: ['label', 'type', 'viewName', 'bannerSpeed'],
   components: { MarqueeText, MoneypoolBalance },
   data () {
     return {
@@ -48,6 +48,9 @@ export default {
     showMoneypool () {
       // Only show moneypool on shop page
       return this.type === 'moneypool-balance' && this.$route.name === 'shop';
+    },
+    speed () {
+      return this.bannerSpeed ? this.bannerSpeed : 7
     }
   }
 }

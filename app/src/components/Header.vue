@@ -5,7 +5,7 @@
       </menu-item>
       <menu-item label="EINREICHEN" viewName="submit">
       </menu-item>
-      <menu-item label="SHOP" type="moneypool-balance" viewName="shop">
+      <menu-item label="SHOP" type="moneypool-balance" viewName="shop" bannerSpeed="5">
       </menu-item>
     </div>
     <div v-if="hasThankYouHeader">
