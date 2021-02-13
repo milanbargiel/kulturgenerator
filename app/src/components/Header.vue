@@ -5,7 +5,9 @@
       </menu-item>
       <menu-item label="EINREICHEN" type="custom-menu-item" viewName="submit" :bannerSpeed="bannerSpeed">
       </menu-item>
-      <menu-item label="SHOP" type="moneypool-balance" viewName="shop" :bannerSpeed="bannerSpeed">
+      <menu-item v-if="isShopView" type="moneypool-balance" viewName="shop" :bannerSpeed="bannerSpeed">
+      </menu-item>
+      <menu-item v-else label="SHOP" type="custom-menu-item" viewName="shop" :bannerSpeed="bannerSpeed">
       </menu-item>
     </div>
     <div v-if="hasThankYouHeader">
@@ -58,6 +60,9 @@ export default {
     hasThankYouHeader() {
       return this.$route.meta.hasThankYouHeader ? true : false
     },
+    isShopView() {
+      return this.$route.name === 'shop';
+    }
   }
 }
 </script>
