@@ -49,6 +49,10 @@ export default {
         return { name: 'shop' };
       }
 
+      if (this.type === 'moneypool-balance') {
+        return { name: 'paypal' };
+      }
+
       return this.viewName ? { name: this.viewName } : ''
     },
     speed () {
