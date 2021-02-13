@@ -8,7 +8,7 @@
   <router-link :tag="tag" :to="{ name: viewName }">
     <marquee-text
     :repeat="20"
-    :duration="bannerSpeed"
+    :duration="10"
     :paused="paused">
     <span v-if="type === 'moneypool-balance'" class="marquee-text__item marquee-text__item--euro" :style="{ width: balanceItemWidth }">{{ animatedBalance.toLocaleString() }}</span>	
     <span v-else class="marquee-text__item">{{ label }}</span>
@@ -23,7 +23,7 @@ import gsap from 'gsap'
 
 export default {
   name: 'MenuItem',
-  props: ['label', 'type', 'viewName', 'bannerSpeed'],
+  props: ['label', 'type', 'viewName'],
   components: { MarqueeText },
   data () {
     return {
