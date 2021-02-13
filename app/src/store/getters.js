@@ -25,8 +25,8 @@ const getters = {
             .sort((a, b) => a.sort - b.sort) // sort by random sort parameter
             .map(item => {
                 item.value.randomWidthBase = Math.random() // introduce random width base for later caluclation
-                if (item.value.randomWidthBase < .167) {
-                    item.value.randomWidthBase += 2 // bump random width base by 2 for every 6th item
+                if (item.value.randomWidthBase < .2) {
+                    item.value.randomWidthBase += 4 // bump random width base by 2 for every 6th item
                 }
                 return item.value // exclude random sort parameter
             })

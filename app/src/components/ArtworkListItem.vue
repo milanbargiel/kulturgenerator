@@ -69,19 +69,20 @@ export default {
         },
         minWidth () {            
           if (this.viewportWidth < 680) {
-            return 45 // width for small screens [%]
+            return 35 // width for small screens [%]
           }
           if (this.viewportWidth < 1500) {
-            return 25 // width for medium screens [%]
+            return 22 // width for medium screens [%]
           }
-          return 20 // width for large screens [%]
+          return 18 // width for large screens [%]
         },
         randomizedWidth () { // only for active rounds
           if (this.item.type === 'Erlebnis') {
             return this.minWidth // do not randomize width of artworks of type "Erlebnis"
           }
-          console.log(this.item.randomWidthBase)
-          return Math.floor(this.minWidth + this.item.randomWidthBase * 12.5)
+
+          const extremeFactor = this.viewportWidth > 680 ? 5 : 10; 
+          return Math.floor(this.minWidth + this.item.randomWidthBase * extremeFactor)
         },
         itemWidth () {
           if (this.isFromActiveRound) {
