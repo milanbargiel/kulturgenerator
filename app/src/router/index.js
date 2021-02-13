@@ -18,7 +18,7 @@ Vue.use(VueRouter)
     name: 'shop',
     component: Shop,
     meta: {
-      menuItemTypesToDisplay: ['custom-menu-item'],
+      hasStandardHeader: true,
     }
   },
   {
@@ -26,7 +26,7 @@ Vue.use(VueRouter)
     name: 'info',
     component: About,
     meta: {
-      menuItemTypesToDisplay: ['custom-menu-item'],
+      hasStandardHeader: true,
       hasWhiteFooter: true
     }
   },
@@ -35,23 +35,20 @@ Vue.use(VueRouter)
     name: 'impressum',
     component: Impressum,
     meta: {
-      menuItemTypesToDisplay: ['custom-menu-item']    
+      hasStandardHeader: true,
     }
   },
   {
     path: '/archiv',
     name: 'archive',
     component: Archive,
-    meta: {
-      menuItemTypesToDisplay: ['custom-menu-item']    
-    }
   },
   {
     path: '/einreichen',
     name: 'submit',
     component: Submit,
     meta: {
-      menuItemTypesToDisplay: ['custom-menu-item']
+      hasStandardHeader: true,
     }
   },
   {
@@ -59,7 +56,7 @@ Vue.use(VueRouter)
     name: 'artworkDetail',
     component: ArtworkDetail,
     meta: {
-      menuItemTypesToDisplay: ['custom-menu-item']
+      hasStandardHeader: true,
     }
   },
   {
@@ -67,7 +64,7 @@ Vue.use(VueRouter)
     name: 'newsletterConfirmation',
     component: NewsletterConfirmation,
     meta: {
-      menuItemTypesToDisplay: ['thank-you-message', 'back-button'],
+      hasThankYouHeader: true,
       hasNoNewsletter: true
     }
   },
@@ -76,7 +73,7 @@ Vue.use(VueRouter)
     name: 'purchaseConfirmation',
     component: PurchaseConfirmation,
     meta: {
-      menuItemTypesToDisplay: ['thank-you-message', 'back-button']
+      hasThankYouHeader: true,
     },
     beforeEnter: (to, from, next) => { // prevent thank you page from being accessed directly
       if (from.name === 'artworkDetail' || to.query.debug) { // debug with /vielen-dank?debug=true
@@ -91,7 +88,7 @@ Vue.use(VueRouter)
     name: 'pageNotFound',
     component: PageNotFound,
     meta: {
-      menuItemTypesToDisplay: ['custom-menu-item']
+      hasStandardHeader: true,
     }
   },
   {

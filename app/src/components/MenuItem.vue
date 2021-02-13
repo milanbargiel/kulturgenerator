@@ -67,22 +67,22 @@ export default {
         return 'active';
       }
 
-            return this.viewName ? 'link' : '' // apply hover effect only to valid routes
-          },
-          animatedBalance: function() {	
-            if (this.moneypoolBalance < 100) {
-              return this.moneypoolBalance
-            }
-            return parseInt(this.tweenedNumber.toFixed(0))
-          },	
-          balanceItemWidth () {
-            let digits = this.moneypoolBalance.toString().length
-            const digitWidth = 50
-            if (digits >= 4) {
-              digits += 1
-            }
-            return digits * digitWidth + 'px'        
-          }        
-        }
+      return this.viewName ? 'link' : '' // apply hover effect only to valid routes
+    },
+    animatedBalance: function() {	
+      if (this.moneypoolBalance < 100) {
+        return this.moneypoolBalance
       }
-      </script>
+      return parseInt(this.tweenedNumber.toFixed(0))
+    },	
+    balanceItemWidth () {
+      let digits = this.moneypoolBalance.toString().length
+      const digitWidth = 50
+      if (digits >= 4) {
+        digits += 1
+      }
+      return digits * digitWidth + 'px'        
+    }        
+  }
+}
+</script>

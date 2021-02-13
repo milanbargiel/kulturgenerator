@@ -1,11 +1,19 @@
 <template>
   <div ref="header" class="header" v-if="!isLoading">
-    <menu-item label="INFO" type="custom-menu-item" viewName="info" :bannerSpeed="bannerSpeed">
-    </menu-item>
-    <menu-item label="EINREICHEN" type="custom-menu-item" viewName="submit" :bannerSpeed="bannerSpeed">
-    </menu-item>
-    <menu-item type="moneypool-balance" viewName="shop" :bannerSpeed="bannerSpeed">
-    </menu-item>
+    <div v-if="hasStandardHeader">
+      <menu-item label="INFO" type="custom-menu-item" viewName="info" :bannerSpeed="bannerSpeed">
+      </menu-item>
+      <menu-item label="EINREICHEN" type="custom-menu-item" viewName="submit" :bannerSpeed="bannerSpeed">
+      </menu-item>
+      <menu-item label="SHOP" type="moneypool-balance" viewName="shop" :bannerSpeed="bannerSpeed">
+      </menu-item>
+    </div>
+    <div v-if="hasThankYouHeader">
+      <menu-item label="Vielen Dank!" type="thank-you-message" :bannerSpeed="bannerSpeed">
+      </menu-item>
+      <menu-item label="←" type="back-button">
+      </menu-item>
+    </div>
   </div>
 </template>
 
@@ -42,6 +50,14 @@ export default {
         this.isSticky = false
       }
     }
+  },
+  computed: {
+    hasStandardHeader() {
+      return this.$route.meta.hasStandardHeader ? true : false
+    },
+    hasThankYouHeader() {
+      return this.$route.meta.hasThankYouHeader ? true : false
+    },
   }
 }
 </script>
