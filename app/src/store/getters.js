@@ -13,10 +13,6 @@ const getters = {
     },
     getArchivedArtworks: state => {
         return Object.values(state.artworks)
-            .filter(item => {
-                console.log(item);
-                return true;
-            })
             .sort((a, b) => a.author > b.author ? 1 : -1) // sort alphabetically for author property
     },
     getArtworks: state => {
