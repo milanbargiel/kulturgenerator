@@ -1,5 +1,5 @@
 <template>
-  <div class="menu-item" :class="{ active: isActive }">
+  <div class="menu-item link" :class="{ active: isActive }">
     <router-link :to="linksTo">
       <marquee-text
         :repeat="20"
