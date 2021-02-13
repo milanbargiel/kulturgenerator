@@ -6,12 +6,12 @@
   class="menu-item"
   :class="classes"
   >
-  <router-link :tag="tag" :to="{ name: item.viewName }">
+  <router-link :tag="tag" :to="{ name: viewName }">
     <marquee-text
     :repeat="20"
     :duration="bannerSpeed"
     :paused="paused">
-    <span v-if="item.type === 'moneypool-balance'" class="marquee-text__item marquee-text__item--euro" :style="{ width: balanceItemWidth }">{{ animatedBalance.toLocaleString() }}</span>	
+    <span v-if="type === 'moneypool-balance'" class="marquee-text__item marquee-text__item--euro" :style="{ width: balanceItemWidth }">{{ animatedBalance.toLocaleString() }}</span>	
     <span v-else class="marquee-text__item">{{ label }}</span>
   </marquee-text>
 </router-link>
@@ -24,7 +24,7 @@ import gsap from 'gsap'
 
 export default {
   name: 'MenuItem',
-  props: ['item', 'bannerSpeed'],
+  props: ['label', 'type', 'viewName', 'bannerSpeed'],
   components: { MarqueeText },
   data () {
     return {
@@ -39,36 +39,33 @@ export default {
     }	
   },    
   created () {
-    if (this.item.type === 'moneypool-balance') {
+    if (this.type === 'moneypool-balance') {
       gsap.to(this.$data, { duration: this.balanceAnimationDuration, tweenedNumber: this.moneypoolBalance, ease: "power4.out" });
-    } else if (this.item.type === 'back-button') {
-      this.item.viewName = 'about'
+    } else if (this.type === 'back-button') {
+      this.viewName = 'about'
     }
   },
   computed: {
     tag () {
-      return this.item.viewName ? 'a' : 'div' // only render valid routes as links
+      return this.viewName ? 'a' : 'div' // only render valid routes as links
     },
     show () {
-      return this.$route.meta.menuItemTypesToDisplay.includes(this.item.type)
+      return this.$route.meta.menuItemTypesToDisplay.includes(this.type)
     },
     paused () {
-      if (this.item.type !== 'custom-menu-item') {
+      if (this.type !== 'custom-menu-item') {
         return false
       }
 
       // show archive as selected when on artwork detail page
-      if (this.item.viewName === 'archive' && this.$route.name === 'artworkDetail') {
+      if (this.viewName === 'archive' && this.$route.name === 'artworkDetail') {
         return false
       }
 
-      return this.item.viewName !== this.$route.name
+      return this.viewName !== this.$route.name
     },
     active () {
-      return this.$route.name === this.item.viewName
-    },
-    label () {
-      return this.item.label
+      return this.$route.name === this.viewName
     },
     moneypoolBalance () {
       return this.$store.getters.roundedMoneypoolBalance
@@ -78,7 +75,7 @@ export default {
         return 'active';
       }
 
-            return this.item.viewName ? 'link' : '' // apply hover effect only to valid routes
+            return this.viewName ? 'link' : '' // apply hover effect only to valid routes
           },
           animatedBalance: function() {	
             if (this.moneypoolBalance < 100) {
