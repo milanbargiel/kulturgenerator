@@ -1,12 +1,6 @@
 import axios from 'axios'
 
 const actions = {
-    getMenuItems (context) {
-        axios.get(process.env.VUE_APP_API_BASEURL + '/navigation')
-            .then(response => {
-                context.commit('SET_MENU_ITEMS', response.data)
-            })
-    },
     getArtworks (context) {
         return axios.get(process.env.VUE_APP_API_BASEURL + '/artworks')
             .then(response => {
