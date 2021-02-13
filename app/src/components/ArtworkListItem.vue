@@ -84,12 +84,19 @@ export default {
           const extremeFactor = this.viewportWidth > 680 ? 5 : 10; 
           return Math.floor(this.minWidth + this.item.randomWidthBase * extremeFactor)
         },
+        archiveWidth () { // used for elements in the archive
+          if (this.viewportWidth < 680) {
+            return 45 // width for small screens [%]
+          }
+
+          return 12 // width for large screens [%]
+        },
         itemWidth () {
           if (this.isFromActiveRound) {
             return this.randomizedWidth
           }
 
-          return this.minWidth
+          return this.archiveWidth
         }
     }
 }
