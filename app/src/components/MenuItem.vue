@@ -1,6 +1,5 @@
 <template>
   <div 
-  v-if="show"
   @mouseover="hover = true"
   @mouseleave="hover = false"
   class="menu-item"
@@ -49,14 +48,7 @@ export default {
     tag () {
       return this.viewName ? 'a' : 'div' // only render valid routes as links
     },
-    show () {
-      return this.$route.meta.menuItemTypesToDisplay.includes(this.type)
-    },
     paused () {
-      if (this.type !== 'custom-menu-item') {
-        return false
-      }
-
       // show archive as selected when on artwork detail page
       if (this.viewName === 'archive' && this.$route.name === 'artworkDetail') {
         return false

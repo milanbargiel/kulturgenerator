@@ -1,10 +1,10 @@
 <template>
   <div ref="header" class="header" v-if="!isLoading">
-    <menu-item label = "INFO" type= "custom-menu-item" viewName = "about" :bannerSpeed="bannerSpeed">
+    <menu-item label="INFO" type="custom-menu-item" viewName="info" :bannerSpeed="bannerSpeed">
     </menu-item>
-    <menu-item label = "EINREICHEN" type= "custom-menu-item" viewName = "submit" :bannerSpeed="bannerSpeed">
+    <menu-item label="EINREICHEN" type="custom-menu-item" viewName="submit" :bannerSpeed="bannerSpeed">
     </menu-item>
-    <menu-item label = "IMPRESSUM" type= "custom-menu-item" viewName = "impressum" :bannerSpeed="bannerSpeed">
+    <menu-item type="moneypool-balance" viewName="shop" :bannerSpeed="bannerSpeed">
     </menu-item>
   </div>
 </template>

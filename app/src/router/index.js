@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import ArtworkDetail from '../views/ArtworkDetail.vue'
 import About from '../views/About.vue'
+import Shop from '../views/Shop.vue'
 import Impressum from '../views/Impressum.vue'
 import Archive from '../views/Archive.vue'
 import PurchaseConfirmation from '../views/PurchaseConfirmation.vue'
@@ -14,7 +15,15 @@ Vue.use(VueRouter)
   const routes = [
   {
     path: '/',
-    name: 'about',
+    name: 'shop',
+    component: Shop,
+    meta: {
+      menuItemTypesToDisplay: ['custom-menu-item'],
+    }
+  },
+  {
+    path: '/info',
+    name: 'info',
     component: About,
     meta: {
       menuItemTypesToDisplay: ['custom-menu-item'],
