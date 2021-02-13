@@ -5,7 +5,7 @@
         :repeat="20"
         :duration="10"
         :paused="paused">
-          <span v-if="type === 'moneypool-balance'" class="marquee-text__item   marquee-text__item--euro" :style="{ width: balanceItemWidth }">{{   animatedBalance.toLocaleString() }}</span>	 
+          <moneypool-balance v-if="type === 'moneypool-balance'" class="marquee-text__item marquee-text__item--euro"></moneypool-balance>
           <span v-else class="marquee-text__item">{{ label }}</span>
         </marquee-text>
     </router-link>
@@ -14,27 +14,15 @@
 
 <script>
 import MarqueeText from 'vue-marquee-text-component'
-import gsap from 'gsap'
+import MoneypoolBalance from '../components/MoneypoolBalance.vue'
 
 export default {
   name: 'MenuItem',
   props: ['label', 'type', 'viewName'],
-  components: { MarqueeText },
+  components: { MarqueeText, MoneypoolBalance },
   data () {
     return {
       hover: false,
-      tweenedNumber: 0,
-      balanceAnimationDuration: 2.5
-    }
-  },
-  watch: {	
-    moneypoolBalance () {	
-      gsap.to(this.$data, { duration: this.balanceAnimationDuration, tweenedNumber: this.moneypoolBalance, ease: "power4.out" });	
-    }	
-  },    
-  created () {
-    if (this.type === 'moneypool-balance') {
-      gsap.to(this.$data, { duration: this.balanceAnimationDuration, tweenedNumber: this.moneypoolBalance, ease: "power4.out" });
     }
   },
   computed: {
@@ -49,29 +37,12 @@ export default {
     active () {
       return this.$route.name === this.viewName
     },
-    moneypoolBalance () {
-      return this.$store.getters.roundedMoneypoolBalance
-    },
     classes () {
       if (this.active) {
         return 'active';
       }
 
       return this.viewName ? 'link' : '' // apply hover effect only to valid routes
-    },
-    animatedBalance: function() {	
-      if (this.moneypoolBalance < 100) {
-        return this.moneypoolBalance
-      }
-      return parseInt(this.tweenedNumber.toFixed(0))
-    },	
-    balanceItemWidth () {
-      let digits = this.moneypoolBalance.toString().length
-      const digitWidth = 50
-      if (digits >= 4) {
-        digits += 1
-      }
-      return digits * digitWidth + 'px'        
     },
     linksTo () {
       return this.viewName ? { name: this.viewName } : { name: 'shop' } // link to shop when nothing else is specified
