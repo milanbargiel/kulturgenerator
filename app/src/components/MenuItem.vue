@@ -1,5 +1,5 @@
 <template>
-  <div class="menu-item" :class="classes">
+  <div class="menu-item" :class="{ active: isActive }">
     <router-link :to="linksTo">
       <marquee-text
         :repeat="20"
@@ -34,15 +34,8 @@ export default {
 
       return this.viewName !== this.$route.name
     },
-    active () {
+    isActive () {
       return this.$route.name === this.viewName
-    },
-    classes () {
-      if (this.active) {
-        return 'active';
-      }
-
-      return this.viewName ? 'link' : '' // apply hover effect only to valid routes
     },
     linksTo () {
       return this.viewName ? { name: this.viewName } : { name: 'shop' } // link to shop when nothing else is specified
