@@ -49,7 +49,7 @@ export default {
           return (this.item.images[0].height / this.item.images[0].width) * 100;
         },
         isFromActiveRound() { // Items from an active round
-          return false
+          return this.item.status === 'ZweiteRunde'
         },
         isSoldOut () {
           // Only items from active round are highlighted as 'sold'
