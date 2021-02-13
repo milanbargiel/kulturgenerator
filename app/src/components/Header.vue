@@ -5,7 +5,7 @@
       </menu-item>
       <menu-item viewName="submit">EINREICHEN
       </menu-item>
-      <menu-item v-if="showMoneypool" :class="{ 'sticky': isSticky }" viewName="shop" type="moneypool-balance"><moneypool-balance></moneypool-balance>
+      <menu-item v-if="showMoneypool" :class="{ 'sticky': isSticky }" viewName="shop" type="moneypool-balance" bannerSpeed="7"><moneypool-balance></moneypool-balance>
       </menu-item>
       <menu-item v-else viewName="shop">SHOP</menu-item>
     </div>

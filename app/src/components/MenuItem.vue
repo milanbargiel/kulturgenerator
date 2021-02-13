@@ -38,6 +38,11 @@ export default {
         return false;
       }
 
+      // archive-header is never paused
+      if (this.type === 'archive-header') {
+        return false;
+      }
+
       return this.viewName !== this.$route.name
     },
     isActive () {
