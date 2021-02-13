@@ -92,7 +92,7 @@ export default {
       return images
     },
     isFromActiveRound() {
-      return false
+      return this.artwork.status === 'ZweiteRunde'
     },
     isSoldOut () {
       return this.artwork.quantity < 1
