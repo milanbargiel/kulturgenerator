@@ -5,15 +5,13 @@
       </menu-item>
       <menu-item label="EINREICHEN" viewName="submit">
       </menu-item>
-      <menu-item v-if="isShopView" type="moneypool-balance" viewName="shop">
-      </menu-item>
-      <menu-item v-else label="SHOP" viewName="shop">
+      <menu-item label="SHOP" type="moneypool-balance" viewName="shop">
       </menu-item>
     </div>
     <div v-if="hasThankYouHeader">
       <menu-item label="Vielen Dank!">
       </menu-item>
-      <menu-item label="←" linksTo="shop">
+      <menu-item label="←">
       </menu-item>
     </div>
   </div>
@@ -58,9 +56,6 @@ export default {
     },
     hasThankYouHeader() {
       return this.$route.meta.hasThankYouHeader ? true : false
-    },
-    isShopView() {
-      return this.$route.name === 'shop';
     }
   }
 }

@@ -5,7 +5,7 @@
         :repeat="20"
         :duration="10"
         :paused="paused">
-          <moneypool-balance v-if="type === 'moneypool-balance'" class="marquee-text__item marquee-text__item--euro"></moneypool-balance>
+          <moneypool-balance v-if="showMoneypool" class="marquee-text__item marquee-text__item--euro"></moneypool-balance>
           <span v-else class="marquee-text__item">{{ label }}</span>
         </marquee-text>
     </router-link>
@@ -46,7 +46,11 @@ export default {
     },
     linksTo () {
       return this.viewName ? { name: this.viewName } : { name: 'shop' } // link to shop when nothing else is specified
-    }      
+    },
+    showMoneypool () {
+      // Only show moneypool on shop page
+      return this.type === 'moneypool-balance' && this.$route.name === 'shop';
+    } 
   }
 }
 </script>
