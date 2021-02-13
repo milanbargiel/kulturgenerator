@@ -8,6 +8,11 @@
     font-size: $font-size-laptop-huge;
     min-height: 38px; // to reserve space when header becomes sticky
   }
+
+  &--archive {
+    color: $black;
+    border-bottom: 2px solid $black;
+  }
 }
 
 .sticky {

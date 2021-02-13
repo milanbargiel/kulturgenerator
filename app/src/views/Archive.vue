@@ -1,6 +1,9 @@
 <template>
   <div>
-    <div class="content text text--blue">Hier finden Sie alle Arbeiten aus der ersten Runde des <span class="intext-title">kulturgenerators</span>, einer solidarischen Online-Galerie auf Initiative des Kölner Kulturrats, der Niehler Freiheit e.V. und des Kunstzentrum Wachsfabrik. Vom 18. November 2020 bis zum 01. Februar 2021 wurden <span class="highlighted-text">7766,50€</span> für ein solidarisches Konto generiert, dass nun an alle teilnehmenden Künstler*innen anteilig ausgeschüttet wird.</div>
+    <div class="header header--archive">
+      <menu-item label="Archiv"></menu-item>
+    </div>
+    <div class="content text">Hier sehen Sie alle Arbeiten, die an der ersten Runde des <span class="intext-title">kulturgenerators</span> beteiligt waren. Sie wurde am 01.02.2021 mit der Ausschüttung des solidarischen Kontos in Höhe von 7766,50 EUR durch den Verkauf von 38 Arbeiten abgeschlossen. Für die 50 Teilnehmenden bedeutet dies, dass jede*r einen Betrag von 153,41 EUR erhalten hat. Wenn Sie Arbeiten davon kaufen wollen, treten Sie bitte mit uns in Kontakt.</div>
     <artwork-list :artworks="artworks" :is-archive="true"></artwork-list>
     <my-footer></my-footer>
   </div>
@@ -9,12 +12,14 @@
 <script>
 import { mapGetters } from 'vuex'
 import ArtworkList from '../components/ArtworkList'
+import MenuItem from '../components/MenuItem'
 import MyFooter from '../components/Footer'
 
 export default {
   name: 'Archive',
   components: {
     ArtworkList,
+    MenuItem,
     MyFooter
   },
   computed: {

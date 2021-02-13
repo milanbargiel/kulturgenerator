@@ -1,6 +1,6 @@
 <template>
-  <div class="menu-item link" :class="{ active: isActive }">
-    <router-link :to="linksTo">
+  <div class="menu-item" :class="{ active: isActive, link: linksTo }">
+    <router-link :tag="tag" :to="linksTo">
       <marquee-text
         :repeat="20"
         :duration="speed"
@@ -26,6 +26,9 @@ export default {
     }
   },
   computed: {
+    tag () {
+      return this.viewName ? 'a' : 'div' // only render valid routes as links
+    },
     paused () {
       // show shop as selected when on artwork detail page
       if (this.viewName === 'shop' && this.$route.name === 'artworkDetail') {
@@ -43,7 +46,12 @@ export default {
       return this.$route.name === this.viewName
     },
     linksTo () {
-      return this.viewName ? { name: this.viewName } : { name: 'shop' } // link to shop when nothing else is specified
+      // back-button links always to shop
+      if (this.type === 'back-button') {
+        return { name: 'shop' };
+      }
+
+      return this.viewName ? { name: this.viewName } : ''
     },
     showMoneypool () {
       // Only show moneypool on shop page

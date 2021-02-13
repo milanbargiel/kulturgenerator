@@ -143,6 +143,7 @@ ul {
 
 .link {
   &:hover {
+    cursor: pointer;
     font-style: italic;
 
     .artwork-list-item__price {
