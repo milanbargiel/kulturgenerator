@@ -20,7 +20,7 @@
     <vue-markdown class="artwork-detail__description">
       {{ artworkDescription }}
     </vue-markdown>
-    <div v-if="isFromActiveRound">
+    <div v-if="showPurchaseInformation">
       <div ref="checkout" class="artwork-detail__checkout">
         <div>
           <div class="artwork-detail__price">{{ artwork.price }}€</div>
@@ -91,8 +91,11 @@ export default {
 
       return images
     },
-    isFromActiveRound() {
-      return this.artwork.status === 'ZweiteRunde'
+    showPurchaseInformation() {
+      // Only show purchase information if artwork is from active round
+      // and all for payment process required fields are filled out
+      const purchaseInformationComplete = this.artwork.price && this.artwork.shippingCosts && this.artwork.tax && this.artwork.quantity && this.artwork.paypal
+      return this.artwork.status === 'ZweiteRunde' && purchaseInformationComplete
     },
     isSoldOut () {
       return this.artwork.quantity < 1
