@@ -1,19 +1,19 @@
 <template>
   <div ref="header" class="header" v-if="!isLoading">
     <div v-if="hasStandardHeader">
-      <menu-item label="INFO" type="custom-menu-item" viewName="info">
+      <menu-item label="INFO" viewName="info">
       </menu-item>
-      <menu-item label="EINREICHEN" type="custom-menu-item" viewName="submit">
+      <menu-item label="EINREICHEN" viewName="submit">
       </menu-item>
       <menu-item v-if="isShopView" type="moneypool-balance" viewName="shop">
       </menu-item>
-      <menu-item v-else label="SHOP" type="custom-menu-item" viewName="shop">
+      <menu-item v-else label="SHOP" viewName="shop">
       </menu-item>
     </div>
     <div v-if="hasThankYouHeader">
-      <menu-item label="Vielen Dank!" type="thank-you-message">
+      <menu-item label="Vielen Dank!">
       </menu-item>
-      <menu-item label="←" type="back-button">
+      <menu-item label="←" linksTo="shop">
       </menu-item>
     </div>
   </div>

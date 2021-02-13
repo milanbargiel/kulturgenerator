@@ -1,19 +1,14 @@
 <template>
-  <div 
-  @mouseover="hover = true"
-  @mouseleave="hover = false"
-  class="menu-item"
-  :class="classes"
-  >
-  <router-link :tag="tag" :to="{ name: viewName }">
-    <marquee-text
-    :repeat="20"
-    :duration="10"
-    :paused="paused">
-    <span v-if="type === 'moneypool-balance'" class="marquee-text__item marquee-text__item--euro" :style="{ width: balanceItemWidth }">{{ animatedBalance.toLocaleString() }}</span>	
-    <span v-else class="marquee-text__item">{{ label }}</span>
-  </marquee-text>
-</router-link>
+  <div class="menu-item" :class="classes">
+    <router-link :to="linksTo">
+      <marquee-text
+        :repeat="20"
+        :duration="10"
+        :paused="paused">
+          <span v-if="type === 'moneypool-balance'" class="marquee-text__item   marquee-text__item--euro" :style="{ width: balanceItemWidth }">{{   animatedBalance.toLocaleString() }}</span>	 
+          <span v-else class="marquee-text__item">{{ label }}</span>
+        </marquee-text>
+    </router-link>
 </div>
 </template>
 
@@ -40,17 +35,12 @@ export default {
   created () {
     if (this.type === 'moneypool-balance') {
       gsap.to(this.$data, { duration: this.balanceAnimationDuration, tweenedNumber: this.moneypoolBalance, ease: "power4.out" });
-    } else if (this.type === 'back-button') {
-      this.viewName = 'about'
     }
   },
   computed: {
-    tag () {
-      return this.viewName ? 'a' : 'div' // only render valid routes as links
-    },
     paused () {
       // show archive as selected when on artwork detail page
-      if (this.viewName === 'archive' && this.$route.name === 'artworkDetail') {
+      if (this.viewName === 'shop' && this.$route.name === 'artworkDetail') {
         return false
       }
 
@@ -82,7 +72,10 @@ export default {
         digits += 1
       }
       return digits * digitWidth + 'px'        
-    }        
+    },
+    linksTo () {
+      return this.viewName ? { name: this.viewName } : { name: 'shop' } // link to shop when nothing else is specified
+    }      
   }
 }
 </script>
