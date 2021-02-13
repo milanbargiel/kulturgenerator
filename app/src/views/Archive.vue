@@ -19,13 +19,13 @@ export default {
   },
   computed: {
     ...mapGetters({
-      artworks: 'getArtworks'
+      artworks: 'getArchivedArtworks'
     })
   },
   created () {
     if (this.artworks.length <= 1) {
       this.$store.commit('SET_LOADING_STATE', true)      
-      this.$store.dispatch('getArtworks')
+      this.$store.dispatch('getArchivedArtworks')
         .then(() => this.$store.commit('SET_LOADING_STATE', false))
     }
   }
