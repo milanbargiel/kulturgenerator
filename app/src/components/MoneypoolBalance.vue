@@ -1,5 +1,5 @@
 <template>
-  <span :style="{ width: balanceItemWidth }">{{ animatedBalance.toLocaleString() }}</span>
+  <span :style="{ width: balanceItemWidth }" class="moneypool-balance">{{ animatedBalance.toLocaleString() }}</span>
 </template>
 
 <script>

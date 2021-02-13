@@ -1,17 +1,18 @@
 <template>
-  <div ref="header" class="header" v-if="!isLoading">
+  <div ref="header" :class="{'header': true, 'header--sticky': showMoneypool }" v-if="!isLoading">
     <div v-if="hasStandardHeader">
-      <menu-item label="INFO" viewName="info">
+      <menu-item viewName="info">INFO
       </menu-item>
-      <menu-item label="EINREICHEN" viewName="submit">
+      <menu-item viewName="submit">EINREICHEN
       </menu-item>
-      <menu-item label="SHOP" type="moneypool-balance" viewName="shop" bannerSpeed="5">
+      <menu-item v-if="showMoneypool" :class="{ 'sticky': isSticky }" viewName="shop"><moneypool-balance></moneypool-balance>
       </menu-item>
+      <menu-item v-else viewName="shop">SHOP</menu-item>
     </div>
     <div v-if="hasThankYouHeader">
-      <menu-item label="Vielen Dank!">
+      <menu-item>Vielen Dank!
       </menu-item>
-      <menu-item label="←" type="back-button">
+      <menu-item type="back-button">←
       </menu-item>
     </div>
   </div>
@@ -19,16 +20,17 @@
 
 <script>
 import MenuItem from '../components/MenuItem'
+import MoneypoolBalance from '../components/MoneypoolBalance.vue'
 
 export default {
   name: 'Header',
   props: ['isLoading'],
-  components: { MenuItem },
+  components: { MenuItem, MoneypoolBalance },
   data() {
     return {
       isSticky: false,
       scrollPosition: 0,
-      headerPosition: 0
+      headerHeight: 0
     }
   },
   created () {
@@ -40,10 +42,10 @@ export default {
   },
   methods: {
     handleScroll() {
-      this.headerPosition = this.$refs.header.offsetTop
+      this.headerHeight = this.$refs.header.offsetHeight
       this.scrollPosition = window.scrollY
-      
-      if (this.$route.meta.stickyHeader && (this.scrollPosition > this.headerPosition)) {
+
+      if (this.showMoneypool && (this.scrollPosition > this.headerHeight)) {
         this.isSticky = true
       } else {
         this.isSticky = false
@@ -56,7 +58,11 @@ export default {
     },
     hasThankYouHeader() {
       return this.$route.meta.hasThankYouHeader ? true : false
-    }
+    },
+    showMoneypool () {
+      // Only show moneypool on shop page
+      return this.$route.name === 'shop';
+    },
   }
 }
 </script>

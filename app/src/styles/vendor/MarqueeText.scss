@@ -13,22 +13,4 @@
     line-height: 55px; // adjust line-height and height to make text touch top and bottom
     height: 38px; // adjust line-height and height to make text touch top and bottom
   }
-  
-  &--euro {
-    position: relative;
-
-    &:before {
-      position: absolute;
-      content: '€';
-      top: -7px;
-      left: -30px;
-      font-size: 32px;
-
-      @media screen and (min-width: $bp-tablet) {
-        top: -8px;
-        font-size: 37px;
-        left: -44px;
-      }
-    }
-  }
 }
