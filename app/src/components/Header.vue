@@ -1,7 +1,7 @@
 <template>
   <div ref="header" class="header" v-if="!isLoading">
     <template v-for="(menuItem, index) in menuItems">
-      <menu-item :item="menuItem" :key="'menu-item-' + index" :class="{ 'sticky': isSticky }"></menu-item>
+      <menu-item :item="menuItem" :bannerSpeed="bannerSpeed" :key="'menu-item-' + index" :class="{ 'sticky': isSticky }"></menu-item>
     </template>       
   </div>
 </template>
@@ -18,39 +18,35 @@ export default {
       menuItems: [
         {
           label:"Vielen Dank!",
-          speed:4,
           type:"thank-you-message",
           viewName: null
         },
         {
           name:"moneypool-balance",
-          speed:0,
           type:"moneypool-balance",
           viewName:"about",
         },
         {
           label:"KULTUR GENERATOR",
           name:"Generator",
-          speed:0,
           type:"custom-menu-item",
           viewName:"about",
         },
         {
           label:"ARCHIV",
           name:"Archiv",
-          speed:0,
           type:"custom-menu-item",
           viewName:"archive",
         },
         {
           label:"IMPRESSUM",
           name:"Impressum",
-          speed:0,
           type:"custom-menu-item",
           viewName:"impressum",
         }
       ],
       isSticky: false,
+      bannerSpeed: 10,
       scrollPosition: 0,
       headerPosition: 0
     }

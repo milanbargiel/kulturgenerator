@@ -9,7 +9,7 @@
   <router-link :tag="tag" :to="{ name: item.viewName }">
     <marquee-text
     :repeat="20"
-    :duration="itemSpeed"
+    :duration="bannerSpeed"
     :paused="paused">
     <span v-if="item.type === 'moneypool-balance'" class="marquee-text__item marquee-text__item--euro" :style="{ width: balanceItemWidth }">{{ animatedBalance.toLocaleString() }}</span>	
     <span v-else class="marquee-text__item">{{ label }}</span>
@@ -24,7 +24,7 @@ import gsap from 'gsap'
 
 export default {
   name: 'MenuItem',
-  props: ['item'],
+  props: ['item', 'bannerSpeed'],
   components: { MarqueeText },
   data () {
     return {
@@ -79,9 +79,6 @@ export default {
       }
 
             return this.item.viewName ? 'link' : '' // apply hover effect only to valid routes
-          },
-          itemSpeed () {
-            return 10 - this.item.speed
           },
           animatedBalance: function() {	
             if (this.moneypoolBalance < 100) {
