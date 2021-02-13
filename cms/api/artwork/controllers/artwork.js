@@ -27,7 +27,16 @@ module.exports = {
       entities = await strapi.services.artwork.find(ctx.query);
     }
 
-    return entities.map(entity => sanitizeEntity(entity, { model: strapi.models.artwork }));
+    return entities.map(entity => {
+      const artwork = sanitizeEntity(entity, { model: strapi.models.artwork });
+
+      // Return round information even though status is private
+      if (entity.status === 'ZweiteRunde' || entity.status === 'ErsteRunde') {
+        artwork.status =  entity.status; 
+      }
+      
+      return artwork;
+    });
   },
   async create(ctx) {
     let entity;
