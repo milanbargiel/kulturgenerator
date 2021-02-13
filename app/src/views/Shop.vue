@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="content text text--blue">Der <span class="intext-title">kulturgenerator</span> ist eine solidarische <span class="highlighted-text">Online-Galerie</span> auf Initiative des Kölner Kulturrats, der Niehler Freiheit e.V. und des Kunstzentrum Wachsfabrik. In der Galerie befinden sich <span class="highlighted-text">stetig neue Angebote</span>. Alle Teilnehmenden entscheiden selbst, ob und in welchem Umfang ihre Erlöse solidarisch verteilt werden. Der aktuelle Kontostand des <span class="highlighted-text">solidarischen Kontos</span> beträgt {{ moneypoolBalance }} EUR.
+    <div class="content text text--blue">Wie kann Solidarität innerhalb der Kunst- und Kulturszene aussehen? Der <span class="intext-title">kulturgenerator</span> ist eine solidarische Online-Galerie auf Initiative des Kölner Kulturrats, der Niehler Freiheit e.V. und des Kunstzentrum Wachsfabrik. Alle Teilnehmenden entscheiden selbst, ob und in welchem Umfang ihre Erlöse solidarisch verteilt werden. Neben Objekten, werden auch Erlebnisse in Form von Gutscheinen angeboten. Der aktuelle Kontostand des solidarischen Kontos beträgt {{ moneypoolBalance }} EUR.
     </div>
     <artwork-list :artworks="artworks"></artwork-list>
     <my-footer></my-footer>
