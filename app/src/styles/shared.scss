@@ -227,6 +227,7 @@ ul {
 
 // vertical spacing layout
 .content,
+.container,
 .footer,
 .newsletter {
   padding-left: .725rem;
@@ -379,4 +380,13 @@ ul {
   @media screen and (min-width: $bp-tablet) {
     margin: 1rem 2rem 4rem;
   }  
+}
+
+
+.arrows {
+  max-width: 200px;
+
+  @media screen and (min-width: $bp-tablet) {
+    max-width: 400px;
+  }
 }

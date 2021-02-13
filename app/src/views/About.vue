@@ -22,7 +22,7 @@
         Wenn die Idee aufgeht, dann kann jede und jeder Teilnehmende mehr profitieren, wenn sie oder er bereit ist, etwas zu geben. Auch Sie können Teil unseres Projektes werden und Kulturschaffende unterstützen, indem Sie Angebote kaufen. Für Fragen schreiben Sie uns an <a class="underlined-link underlined-link--white" href="mailto:info@kulturgenerator.org">info@kulturgenerator.org</a>.<br><br><br><br>
 
         <router-link class="submit-art-link title link" :to="{ name: 'submit' }">
-          <img class="arrows-submit" src="@/assets/yellow-arrows.svg">
+          <img class="arrows" src="@/assets/yellow-arrows.svg">
         </router-link><br><br>
         
         <div class="yellow-numbers"> Über den <router-link class="submit-art-link underlined-link underlined-link--yellow" :to="{ name: 'submit' }">Link zum Formular</router-link> können Künstler*innen und Kulturschaffende Arbeiten einreichen. Willkommen sind sowohl Objekte der bildenden Kunst, als auch kulturelle Angebote in Form von Erlebnissen (soweit diese mit den aktuellen Bestimmungen realisierbar sind). Damit wollen wir neben Künstler*innen auch Institutionen einladen, Angebote einzureichen. Voraussetzung ist eine professionell ausgeübte Tätigkeit. Bitte haben Sie Verständnis, dass wir nicht alle Einreichungen berücksichtigen können.</div><br><br><br><br> 
