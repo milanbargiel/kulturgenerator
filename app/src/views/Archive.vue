@@ -4,7 +4,7 @@
       <router-link class="submit-art-link title link" :to="{ name: 'shop' }">
         <img class="arrows" src="@/assets/blue-arrows.svg">
       </router-link><br><br>
-      <div class="text text--blue">Über den Link zum Shop gelangen Sie zu der aktuellen Runde der so- lidarischen Online-Galerie <span class="intext-title">kulturgenerator</span>, in der alle teilnehmen- den Kunst- und Kulturschaffenden selbst entscheiden, ob und wie viel ihrer Erlöse durch Verkauf auf ein solidarisches Konto über- wiesen werden, das am Ende unter allen ausgeschüttet wird. Neben Objekten werden auch Erlebnisse angeboten.</div>
+      <div class="text text--blue">Über den <router-link class="underlined-link" :to="{ name: 'shop' }">Link zum Shop</router-link> gelangen Sie zu der aktuellen Runde der so- lidarischen Online-Galerie <span class="intext-title">kulturgenerator</span>, in der alle teilnehmen- den Kunst- und Kulturschaffenden selbst entscheiden, ob und wie viel ihrer Erlöse durch Verkauf auf ein solidarisches Konto über- wiesen werden, das am Ende unter allen ausgeschüttet wird. Neben Objekten werden auch Erlebnisse angeboten.</div>
     </div>
     <div class="header header--archive">
       <menu-item label="Archiv"></menu-item>
