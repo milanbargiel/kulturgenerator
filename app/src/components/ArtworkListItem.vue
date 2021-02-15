@@ -1,5 +1,5 @@
 <template>
-  <router-link :class="['artwork-list-item link', { 'artwork-list-item--sold': isSoldOut, 'artwork-list-item--archive': !isFromActiveRound }]" :style="styles" :to="{ name: 'artworkDetail', params: { author: this.authorSlug, slug: item.slug }}">
+  <router-link :class="['artwork-list-item link', { 'artwork-list-item--sold': isSoldOut }]" :style="styles" :to="{ name: 'artworkDetail', params: { author: this.authorSlug, slug: item.slug }}">
     <responsive-image class="artwork-list-item__image" :lazy-src="imgUrl" :lazy-srcset="srcSet" :aspectRatio="aspectRatio"></responsive-image>
     <span class="artwork-list-item__author">{{ item.author }}<br></span>
     <span class="artwork-list-item__title">{{ item.title }}<br></span>
@@ -49,7 +49,7 @@ export default {
           return (this.item.images[0].height / this.item.images[0].width) * 100;
         },
         isFromActiveRound() { // Items from an active round
-          return false
+          return this.item.status === 'ZweiteRunde'
         },
         isSoldOut () {
           // Only items from active round are highlighted as 'sold'
@@ -69,22 +69,34 @@ export default {
         },
         minWidth () {            
           if (this.viewportWidth < 680) {
-            return 45 // width for small screens [%]
+            return 35 // width for small screens [%]
           }
           if (this.viewportWidth < 1500) {
-            return 25 // width for medium screens [%]
+            return 22 // width for medium screens [%]
           }
-          return 20 // width for large screens [%]
+          return 18 // width for large screens [%]
         },
         randomizedWidth () { // only for active rounds
-          return Math.floor(this.minWidth + this.item.randomWidthBase * 12.5)
+          if (this.item.type === 'Erlebnis') {
+            return this.minWidth // do not randomize width of artworks of type "Erlebnis"
+          }
+
+          const extremeFactor = this.viewportWidth > 680 ? 5 : 10; 
+          return Math.floor(this.minWidth + this.item.randomWidthBase * extremeFactor)
+        },
+        archiveWidth () { // used for elements in the archive
+          if (this.viewportWidth < 680) {
+            return 45 // width for small screens [%]
+          }
+
+          return 12 // width for large screens [%]
         },
         itemWidth () {
           if (this.isFromActiveRound) {
             return this.randomizedWidth
           }
 
-          return this.minWidth
+          return this.archiveWidth
         }
     }
 }

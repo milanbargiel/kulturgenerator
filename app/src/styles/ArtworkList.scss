@@ -1,8 +1,12 @@
 .artwork-list {
   overflow: hidden;
 
+  @media screen and (min-width: $bp-tablet) {
+    padding-right: 6rem;
+  }
+
   @media screen and (min-width: $bp-large) {
-    padding-right: 100px;
+    padding-right: 8rem;
   }
 
   &--archive {

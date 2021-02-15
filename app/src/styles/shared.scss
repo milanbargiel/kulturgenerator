@@ -93,6 +93,10 @@ $big-container-width: 1000px;
 a {
   color: inherit;
   text-decoration: none;
+
+  &:focus {
+    outline: none;
+  }
 }
 
 
@@ -143,6 +147,7 @@ ul {
 
 .link {
   &:hover {
+    cursor: pointer;
     font-style: italic;
 
     .artwork-list-item__price {
@@ -226,6 +231,7 @@ ul {
 
 // vertical spacing layout
 .content,
+.container,
 .footer,
 .newsletter {
   padding-left: .725rem;
@@ -378,4 +384,13 @@ ul {
   @media screen and (min-width: $bp-tablet) {
     margin: 1rem 2rem 4rem;
   }  
+}
+
+
+.arrows {
+  max-width: 200px;
+
+  @media screen and (min-width: $bp-tablet) {
+    max-width: 400px;
+  }
 }

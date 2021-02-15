@@ -1,12 +1,24 @@
 .header {
-  min-height: 28px; // to reserve space when header becomes sticky
   color: $blue;
   font-family: $font-family-galapagos;
   font-size: $font-size-mobile-huge;
 
   @media screen and (min-width: $bp-tablet) {
     font-size: $font-size-laptop-huge;
-    min-height: 38px; // to reserve space when header becomes sticky
+  }
+
+  &--archive {
+    margin-top: 6rem;
+    color: $black;
+    border-bottom: 2px solid $black;
+  }
+
+  &--sticky {
+    min-height: 106px; // to reserve space when header becomes sticky
+    
+    @media screen and (min-width: $bp-tablet) {
+      min-height: 118px;
+    }
   }
 }
 
@@ -30,25 +42,22 @@
     background-color: $blue;
     border-color: $white;
   }
+}
 
-  &.active {
-    &--color-white {
-      color: $white;
-    }
-    &--color-black {
-      color: $black;
-    }
-    &--color-blue {
-      color: $blue;
-    }
-    &--color-orange {
-      color: $orange;
-    }         
-    &--background-orange {
-      background-color: $orange;
-    }
-    &--background-blue {
-      background-color: $blue;
+.moneypool-balance {
+  position: relative;
+
+  &:before {
+    position: absolute;
+    content: '€';
+    top: -7px;
+    left: -30px;
+    font-size: 32px;
+
+    @media screen and (min-width: $bp-tablet) {
+      top: -8px;
+      font-size: 37px;
+      left: -44px;
     }
   }
 }

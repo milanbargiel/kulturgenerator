@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import ArtworkDetail from '../views/ArtworkDetail.vue'
 import About from '../views/About.vue'
+import Shop from '../views/Shop.vue'
 import Impressum from '../views/Impressum.vue'
 import Archive from '../views/Archive.vue'
 import PurchaseConfirmation from '../views/PurchaseConfirmation.vue'
@@ -14,10 +15,18 @@ Vue.use(VueRouter)
   const routes = [
   {
     path: '/',
-    name: 'about',
+    name: 'shop',
+    component: Shop,
+    meta: {
+      hasStandardHeader: true,
+    }
+  },
+  {
+    path: '/info',
+    name: 'info',
     component: About,
     meta: {
-      menuItemTypesToDisplay: ['custom-menu-item'],
+      hasStandardHeader: true,
       hasWhiteFooter: true
     }
   },
@@ -26,7 +35,7 @@ Vue.use(VueRouter)
     name: 'impressum',
     component: Impressum,
     meta: {
-      menuItemTypesToDisplay: ['custom-menu-item']    
+      hasStandardHeader: true,
     }
   },
   {
@@ -34,7 +43,7 @@ Vue.use(VueRouter)
     name: 'archive',
     component: Archive,
     meta: {
-      menuItemTypesToDisplay: ['custom-menu-item']    
+      hasArchiveHeader: true,
     }
   },
   {
@@ -42,23 +51,20 @@ Vue.use(VueRouter)
     name: 'submit',
     component: Submit,
     meta: {
-      menuItemTypesToDisplay: ['custom-menu-item']
+      hasStandardHeader: true,
     }
   },
   {
     path: '/:author/:slug',
     name: 'artworkDetail',
     component: ArtworkDetail,
-    meta: {
-      menuItemTypesToDisplay: ['custom-menu-item']
-    }
   },
   {
     path: '/newsletter-anmeldung',
     name: 'newsletterConfirmation',
     component: NewsletterConfirmation,
     meta: {
-      menuItemTypesToDisplay: ['thank-you-message', 'back-button'],
+      hasThankYouHeader: true,
       hasNoNewsletter: true
     }
   },
@@ -67,7 +73,7 @@ Vue.use(VueRouter)
     name: 'purchaseConfirmation',
     component: PurchaseConfirmation,
     meta: {
-      menuItemTypesToDisplay: ['thank-you-message', 'back-button']
+      hasThankYouHeader: true,
     },
     beforeEnter: (to, from, next) => { // prevent thank you page from being accessed directly
       if (from.name === 'artworkDetail' || to.query.debug) { // debug with /vielen-dank?debug=true
@@ -78,11 +84,18 @@ Vue.use(VueRouter)
     }
   },
   {
+    path: '/paypal',
+    name: 'paypal',
+    beforeEnter() {
+      window.open('https://www.paypal.com/paypalme/kulturgenerator' , '_blank');
+    }
+  },
+  {
     path: '/404',
     name: 'pageNotFound',
     component: PageNotFound,
     meta: {
-      menuItemTypesToDisplay: ['custom-menu-item']
+      hasStandardHeader: true,
     }
   },
   {

@@ -2,7 +2,7 @@
   <div id="app">
     <div v-if="isLoading" class="loading-indicator">lädt</div>
     <div :class="{ 'hidden': isLoading }">
-      <my-header :isLoading="isLoading"></my-header>
+      <my-header></my-header>
       <router-view/> 
     </div>
   </div>
@@ -17,7 +17,6 @@ export default {
   components: { MyHeader },
   created () {
     this.$store.dispatch('getShadowMoneypoolBalance')
-    this.$store.dispatch('getMenuItems')
   },
   computed: {
     ...mapGetters([

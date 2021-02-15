@@ -2,9 +2,10 @@
   <div class="footer-container">
     <footer class="footer">
       <div class="navigation">
-        <a :class="navigationElementClasses" href="mailto:info@kulturgenerator.org"><span :class="underlinedLinkClasses">info@kulturgenerator.org</span></a><br>
         <a :class="navigationElementClasses" href="https://www.instagram.com/kulturgenerator" target="_blank" rel="noopener"><span :class="underlinedLinkClasses">Instagram</span></a><br>
-        <router-link :to="{name: 'impressum'}" :class="navigationElementClasses"><span :class="underlinedLinkClasses">Impressum + Datenschutz</span></router-link>
+        <router-link :to="{name: 'archive'}" :class="navigationElementClasses"><span :class="underlinedLinkClasses">Archiv</span></router-link><br>
+        <router-link :to="{name: 'impressum'}" :class="navigationElementClasses"><span :class="underlinedLinkClasses">Impressum + Datenschutz</span></router-link><br>
+        <a :class="navigationElementClasses" href="mailto:info@kulturgenerator.org"><span :class="underlinedLinkClasses">info@kulturgenerator.org</span></a>
       </div>
       <div class="founders">
         <div class="founders__logos">
