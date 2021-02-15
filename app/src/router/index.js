@@ -42,6 +42,9 @@ Vue.use(VueRouter)
     path: '/archiv',
     name: 'archive',
     component: Archive,
+    meta: {
+      hasArchiveHeader: true,
+    }
   },
   {
     path: '/einreichen',
