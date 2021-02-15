@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div v-if="hasStandardHeader" ref="header" :class="{'header': true, 'header--sticky': showMoneypool }">
+  <div ref="header">
+    <div v-if="hasStandardHeader" :class="{'header': true, 'header--sticky': showMoneypool }">
       <menu-item viewName="info">INFO
         </menu-item>
         <menu-item viewName="submit">EINREICHEN
@@ -54,6 +54,11 @@ export default {
       window.removeEventListener('scroll', this.handleScroll);
     }
   },
+  updated () {
+    if (this.showMoneypool) {
+      window.addEventListener('scroll', this.handleScroll);
+    }
+  },
   methods: {
     handleScroll() {
       this.headerHeight = this.$refs.header.offsetHeight
@@ -68,12 +73,19 @@ export default {
   },
   computed: {
     artwork () {
-      return this.$store.getters.getArtworkBySlug(this.$route.params.slug)
+      return this.$store.getters.getArtworkBySlug(this.$route.params.slug) || false
     },
     hasStandardHeader() {
+      if (this.$route.name === 'artworkDetail' && this.artwork?.status === 'ZweiteRunde') {
+        return true;
+      }
+
       return this.$route.meta.hasStandardHeader ? true : false
     },
     hasArchiveHeader() {
+      if (this.$route.name === 'artworkDetail' && this.artwork?.status === 'ErsteRunde') {
+        return true;
+      }
       return this.$route.meta.hasArchiveHeader ? true : false
     },
     hasThankYouHeader() {

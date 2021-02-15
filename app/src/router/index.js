@@ -58,9 +58,6 @@ Vue.use(VueRouter)
     path: '/:author/:slug',
     name: 'artworkDetail',
     component: ArtworkDetail,
-    meta: {
-      hasStandardHeader: true,
-    }
   },
   {
     path: '/newsletter-anmeldung',
