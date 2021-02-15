@@ -71,16 +71,9 @@ export default {
       return this.$store.getters.getArtworkBySlug(this.$route.params.slug)
     },
     hasStandardHeader() {
-      if (this.$route.meta.hasArchiveOrStandardHeader && this.artwork.status === 'ZweiteRunde') {
-        return true;
-      }
-
       return this.$route.meta.hasStandardHeader ? true : false
     },
     hasArchiveHeader() {
-      if (this.$route.meta.hasArchiveOrStandardHeader && this.artwork.status === 'ErsteRunde') {
-        return true;
-      }
       return this.$route.meta.hasArchiveHeader ? true : false
     },
     hasThankYouHeader() {
