@@ -11,7 +11,7 @@ const actions = {
     getArchivedArtworks (context) {
         return axios.get(process.env.VUE_APP_API_BASEURL + '/artworks?status=ErsteRunde&_limit=200')
             .then(response => {
-                context.commit('SET_ARCHIVED_ARTWORKS', response.data)
+                context.commit('SET_ARTWORKS', response.data)
                 return response
         })
     },
