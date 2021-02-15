@@ -44,11 +44,15 @@ export default {
     }
   },
   created () {
-    // Listen to scroll event to attach sticky header
-    window.addEventListener('scroll', this.handleScroll);
+    // Listen to scroll event to attach sticky header only if moneypool is shown
+    if (this.showMoneypool) {
+      window.addEventListener('scroll', this.handleScroll);
+    }
   },
   destroyed () {
-    window.removeEventListener('scroll', this.handleScroll);
+    if (this.showMoneypool) {
+      window.removeEventListener('scroll', this.handleScroll);
+    }
   },
   methods: {
     handleScroll() {
