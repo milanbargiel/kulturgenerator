@@ -23,7 +23,7 @@
         <div class="text text--blue">Über den <router-link class="underlined-link" :to="{ name: 'shop' }">Link zum Shop</router-link> gelangen Sie zu der aktuellen Runde der so- lidarischen Online-Galerie <span class="intext-title">kulturgenerator</span>, in der alle teilnehmen- den Kunst- und Kulturschaffenden selbst entscheiden, ob und wie viel ihrer Erlöse durch Verkauf auf ein solidarisches Konto über- wiesen werden, das am Ende unter allen ausgeschüttet wird. Neben Objekten werden auch Erlebnisse angeboten.</div>
       </div>
       <div class="header header--archive">
-        <menu-item type="archive-header">ARCHIV</menu-item>
+        <menu-item type="archive-header" viewName="archive">ARCHIV</menu-item>
       </div>
     </div>
   </div>
@@ -67,14 +67,24 @@ export default {
     }
   },
   computed: {
+    artwork () {
+      return this.$store.getters.getArtworkBySlug(this.$route.params.slug)
+    },
     hasStandardHeader() {
+      if (this.$route.meta.hasArchiveOrStandardHeader && this.artwork.status === 'ZweiteRunde') {
+        return true;
+      }
+
       return this.$route.meta.hasStandardHeader ? true : false
+    },
+    hasArchiveHeader() {
+      if (this.$route.meta.hasArchiveOrStandardHeader && this.artwork.status === 'ErsteRunde') {
+        return true;
+      }
+      return this.$route.meta.hasArchiveHeader ? true : false
     },
     hasThankYouHeader() {
       return this.$route.meta.hasThankYouHeader ? true : false
-    },
-    hasArchiveHeader() {
-      return this.$route.meta.hasArchiveHeader ? true : false
     },
     showMoneypool () {
       // Only show moneypool on shop page

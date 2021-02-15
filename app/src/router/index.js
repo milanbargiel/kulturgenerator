@@ -59,7 +59,7 @@ Vue.use(VueRouter)
     name: 'artworkDetail',
     component: ArtworkDetail,
     meta: {
-      hasStandardHeader: true,
+      hasArchiveOrStandardHeader: true,
     }
   },
   {
