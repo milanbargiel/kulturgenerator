@@ -26,7 +26,7 @@ export default {
     if (this.artworks.length <= 1) {
       this.$store.commit('SET_LOADING_STATE', true)      
       this.$store.dispatch('getArchivedArtworks')
-      .then(() => this.$store.commit('SET_LOADING_STATE', false))
+        .then(() => this.$store.commit('SET_LOADING_STATE', false))
     }
   }
 }
