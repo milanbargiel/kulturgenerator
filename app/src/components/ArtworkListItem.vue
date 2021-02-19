@@ -1,6 +1,9 @@
 <template>
   <router-link :class="['artwork-list-item link', { 'artwork-list-item--sold': isSoldOut }]" :style="styles" :to="{ name: 'artworkDetail', params: { author: this.authorSlug, slug: item.slug }}">
-    <responsive-image class="artwork-list-item__image" :image="img"></responsive-image>
+    <div v-if="isExperience">
+      <responsive-image v-for="image in images" :key="image.id" class="artwork-list-item__image" :image="img"></responsive-image>
+    </div>
+    <responsive-image v-else class="artwork-list-item__image" :image="img"></responsive-image>
     <span class="artwork-list-item__author">{{ item.author }}<br></span>
     <span class="artwork-list-item__title">{{ item.title }}<br></span>
     <!-- Only show price, if the artwork is from an active round -->
@@ -17,6 +20,9 @@ export default {
     components: { ResponsiveImage },
     props: ['item'],
     computed: {
+        images () {
+          return this.item.images
+        },
         img () {
           return this.item.images[0]
         },
@@ -52,7 +58,7 @@ export default {
           return 18 // width for large screens [%]
         },
         randomizedWidth () { // only for active rounds
-          if (this.item.type === 'Erlebnis') {
+          if (this.isExperience) {
             return this.minWidth // do not randomize width of artworks of type "Erlebnis"
           }
 
