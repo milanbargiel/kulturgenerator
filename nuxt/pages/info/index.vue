@@ -23,21 +23,15 @@
         <div class="yellow-numbers"> Über den <router-link class="underlined-link underlined-link--yellow" :to="{ name: 'archive' }">Link zum Archiv</router-link> können Sie die Arbeiten sehen, die an der ersten Runde des Kulturgenerators teilgenommen haben. Die erste Runde wurde am 01.02.2021 mit der Ausschüttung des solidarischen Kontos in Höhe von 7666,50 EUR durch den Verkauf von 38 Arbeiten abgeschlossen. Für die 50 Teilnehmenden bedeutet dies, dass jede*r einen Betrag von 153,41 EUR erhalten hat.</div><br><br><br><br> 
       </div>
     </div>
-    <my-footer></my-footer>
+    <Footer />
   </div>
 </template>
 
 <script>
-import MyFooter from '../components/Footer'
-
 export default {
   name: 'About',
-  components: {
-    MyFooter
-  },
   created () {
     this.$store.commit('SET_LOADING_STATE', false)
   }
 }
 </script>
-

@@ -4,7 +4,7 @@
       <div class="purchase__sucess">Herzlichen Glückwunsch, Ihr Kauf war erfolgreich!</div>
       <div class="purchase__instructions">
         <div v-if="artwork" class="purchase__img-container">
-          <responsive-image class="purchase__img" :src="artworkImage.url" :aspectRatio="artworkImage.aspectRatio"></responsive-image>
+          <ResponsiveImage class="purchase__img" :src="artworkImage.url" :aspectRatio="artworkImage.aspectRatio" />
           <div class="purchase__title intext-title">{{ artworkTitle }}</div>
         </div>
         <div class="purchase__message">
@@ -14,20 +14,13 @@
         </div>
       </div>
     </div>
-    <my-footer></my-footer>
+    <Footer />
   </div>
 </template>
 
 <script>
-import MyFooter from '../components/Footer'
-import ResponsiveImage from '../components/ResponsiveImage'
-
 export default {
   name: 'PurchaseConfirmation',
-  components: {
-    MyFooter,
-    ResponsiveImage
-  },
   data () {
     return {
       artwork: null
@@ -50,8 +43,8 @@ export default {
       // Get 'large' variant of first image, if it exists
       // Otherwise, take the unresized one
       const image = this.artwork.images[0]
-      const url = process.env.VUE_APP_API_BASEURL + (image.formats['large'] ? image.formats['large'].url : image.url)
-      const aspectRatio = (image.height / image.width) * 100;
+      const url = process.env.VUE_APP_API_BASEURL + (image.formats.large ? image.formats.large.url : image.url)
+      const aspectRatio = (image.height / image.width) * 100
       return { url, aspectRatio }
     },
     artworkTitle () {

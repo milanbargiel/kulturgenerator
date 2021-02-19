@@ -61,11 +61,11 @@
     </div>
   </template>
 
-  <script>
-  export default {
-    name: 'Impressum',
-    created () {
-      this.$store.commit('SET_LOADING_STATE', false)
-    }
+<script>
+export default {
+  name: 'Impressum',
+  created () {
+    this.$store.commit('SET_LOADING_STATE', false)
   }
+}
 </script>
