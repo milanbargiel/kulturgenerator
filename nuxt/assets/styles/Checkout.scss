@@ -1,0 +1,60 @@
+.checkout {
+  margin-bottom: $spacing-mobile--large;
+
+  @media screen and (min-width: $bp-tablet) {
+    margin-bottom: $spacing-desktop--large;
+  }
+}
+
+.price-summary {
+  margin-bottom: $spacing-mobile--big;
+  max-width: 420px;
+
+  @media screen and (min-width: $bp-tablet) {
+    margin-bottom: $spacing-desktop--big;
+    max-width: 300px;
+  }
+}
+
+.price-summary__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid $black;
+  margin-bottom: 1rem;        
+}
+
+.price-summary__item:last-child {
+  border-bottom: none;
+}
+
+.price-summary__item--total {
+  color: $blue;
+}
+
+.price-summary__quantity {
+  border: 1px solid $grey;
+  text-align: right;
+  line-height: 1.5;
+  width: 45px;
+
+  &:focus {
+    background-color: $white;
+    border-color: $blue;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+  }
+}
+
+.price-summary__invalid {
+  padding: 2px 0;
+  background: $pink;
+}
+
+.paypal {
+  position: relative;
+}
+
+.paypal__buttons {
+  max-width: 380px;
+}

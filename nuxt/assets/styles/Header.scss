@@ -1,0 +1,63 @@
+.header {
+  color: $blue;
+  font-family: $font-family-galapagos;
+  font-size: $font-size-mobile-huge;
+
+  @media screen and (min-width: $bp-tablet) {
+    font-size: $font-size-laptop-huge;
+  }
+
+  &--archive {
+    margin-top: 6rem;
+    color: $black;
+    border-bottom: 2px solid $black;
+  }
+
+  &--sticky {
+    min-height: 106px; // to reserve space when header becomes sticky
+    
+    @media screen and (min-width: $bp-tablet) {
+      min-height: 118px;
+    }
+  }
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  //background-color: $white;
+  //border-bottom: solid;
+  //border-width: 2px;
+}
+
+.menu-item {
+  border-top: 2px solid $blue;
+
+  &:first-child {
+    border-top: none; // the top menu-item has no border.
+  }
+
+  &--blue-layout {
+    color: $white;
+    background-color: $blue;
+    border-color: $white;
+  }
+}
+
+.moneypool-balance {
+  position: relative;
+
+  &:before {
+    position: absolute;
+    content: '€';
+    top: -7px;
+    left: -30px;
+    font-size: 32px;
+
+    @media screen and (min-width: $bp-tablet) {
+      top: -8px;
+      font-size: 37px;
+      left: -44px;
+    }
+  }
+}
