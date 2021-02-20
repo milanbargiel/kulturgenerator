@@ -42,6 +42,7 @@
 }
 
 .artwork-list-item__image {
+  display: block;
   width: 100%;
   margin-bottom: .9rem;
 }
@@ -55,3 +56,34 @@
   color: $blue;
 }
 
+.hover-slideshow {
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: var(--backgroundImage-0), var(--backgroundImage-1), var(--backgroundImage-2);
+    background-repeat:no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+.hover-slideshow--active:before {
+  animation: changeBg 1s infinite;
+  animation-iteration-count: 2;
+
+  @media screen and (min-width: $bp-tablet) {
+    animation-iteration-count: 1;
+  }
+}
+
+@keyframes changeBg{
+ 0%  {background-image: var(--backgroundImage-0);}
+ 33% {background-image: var(--backgroundImage-1);}
+ 66% {background-image: var(--backgroundImage-2);}
+}

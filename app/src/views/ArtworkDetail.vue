@@ -6,9 +6,9 @@
         <carousel 
         :perPage="1" 
         :centerMode=true>
-        <slide v-for="{ url, aspectRatio } in artworkImages" :key="url">
+        <slide v-for="{ image, url } in artworkImages" :key="url">
           <!-- v-img from https://github.com/crowdbotics/v-img -->
-          <responsive-image v-img:artworkGallery :src="url" class="carousel__image" :aspectRatio="aspectRatio"></responsive-image>
+          <responsive-image v-img:artworkGallery :src="url" :image="image" class="carousel__image"></responsive-image>
         </slide>
       </carousel>
     </div>
@@ -82,13 +82,10 @@ export default {
     },
     artworkImages () {
       const images = this.artwork.images.map(image => {
-        // Get 'large' variant of image, if it exists
-        // Otherwise, take the unresized one
+        // Attach image url to objects for gallery of vue-img
         const url = process.env.VUE_APP_API_BASEURL + (image.formats['large'] ? image.formats['large'].url : image.url)
-        const aspectRatio = (image.height / image.width) * 100;
-        return { url, aspectRatio }
+        return { image, url }
       }) 
-
       return images
     },
     showPurchaseInformation() {

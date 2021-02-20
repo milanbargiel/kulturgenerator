@@ -1,5 +1,5 @@
 <template>
-    <img :data-src="lazySrc" :data-srcset="lazySrcset" :style="style">
+    <img :data-src="imgUrl" :data-srcset="srcSet" :style="style">
 </template>
 
 <script>
@@ -8,16 +8,8 @@ import lozad from 'lozad';
 export default {
     name: 'AppImage',
     props: {
-        lazySrc: {
-            type: String,
-            default: null,
-        },
-        lazySrcset: {
-          type: String,
-          default: null,
-        },
-        aspectRatio: {
-            type: Number,
+        image: {
+            type: Object,
             default: null,
         }
     },
@@ -26,16 +18,44 @@ export default {
             loading: true,
         }
     },
+    methods: {
+      imgVariant (breakpoint) {
+        const img = this.image
+        let url = img.url // unresized image url
+        
+        // return resized url for breakpoint if present
+        for (const format in img.formats) {
+          if (format === breakpoint && img.formats[breakpoint]) { 
+            url = img.formats[breakpoint].url
+          }
+        }
+
+        return url
+      }
+    },
     computed: {
+        imgUrl () {
+          // Get 'large' variant of image, if existent
+          // If not, take the unresized one
+          return process.env.VUE_APP_API_BASEURL + this.imgVariant('large')
+        },
+        srcSet () {
+          // Create srcset attribute for responsive images
+          const regularImg = `${process.env.VUE_APP_API_BASEURL + this.imgVariant('large')} 1x, `
+          const retinaImg = `${process.env.VUE_APP_API_BASEURL + this.imgVariant('x2')} 2x`
+
+          return regularImg + retinaImg
+        },
         style() {
             // The background color is used as a
             // placeholder while loading the image.
             const style = { backgroundColor: '#fff' }
+            const aspectRatio = (this.image.height / this.image.width) * 100;
 
             // If the image is still loading, we
             // apply the calculated aspect ratio by
             // using padding top.
-            const applyAspectRatio = this.loading && this.aspectRatio
+            const applyAspectRatio = this.loading && aspectRatio
             
             if (applyAspectRatio) {
                 // Prevent flash of unstyled image
@@ -43,7 +63,7 @@ export default {
                 style.height = 0;
                 // Scale the image container according
                 // to the aspect ratio.
-                style.paddingTop = `${this.aspectRatio}%`
+                style.paddingTop = `${aspectRatio}%`
             }
 
             return style
