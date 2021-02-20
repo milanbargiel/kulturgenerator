@@ -42,6 +42,7 @@
 }
 
 .artwork-list-item__image {
+  display: block;
   width: 100%;
   margin-bottom: .9rem;
 }
@@ -55,3 +56,25 @@
   color: $blue;
 }
 
+.hover-slideshow:hover {
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat:no-repeat;
+    background-position: center;
+    background-size: cover;
+    animation: changeBg 1s infinite;
+  }
+}
+
+@keyframes changeBg{
+   0%,100%  {background-image: var(--backgroundImage-0);}
+   33% {background-image: var(--backgroundImage-1);}
+   66% {background-image: var(--backgroundImage-2);}
+}

@@ -1,9 +1,8 @@
 <template>
   <router-link :class="['artwork-list-item link', { 'artwork-list-item--sold': isSoldOut }]" :style="styles" :to="{ name: 'artworkDetail', params: { author: this.authorSlug, slug: item.slug }}">
-    <div v-if="isExperience">
-      <responsive-image v-for="image in images" :key="image.id" class="artwork-list-item__image" :image="img"></responsive-image>
+    <div class="hover-slideshow" :style="hoverSlideShowStyles">
+      <responsive-image class="artwork-list-item__image" :image="img"></responsive-image>
     </div>
-    <responsive-image v-else class="artwork-list-item__image" :image="img"></responsive-image>
     <span class="artwork-list-item__author">{{ item.author }}<br></span>
     <span class="artwork-list-item__title">{{ item.title }}<br></span>
     <!-- Only show price, if the artwork is from an active round -->
@@ -20,9 +19,6 @@ export default {
     components: { ResponsiveImage },
     props: ['item'],
     computed: {
-        images () {
-          return this.item.images
-        },
         img () {
           return this.item.images[0]
         },
@@ -44,6 +40,14 @@ export default {
             width: this.item.images[0].width + 'px', // give element full width of image to reserve vertical space for lazy loading
             maxWidth: this.itemWidth + '%'
           }
+        },
+        hoverSlideShowStyles () {
+          const bgImages = {}
+          this.item.images.forEach((img, index) => {
+            const imgUrl = process.env.VUE_APP_API_BASEURL + (img.formats['large'] ? img.formats['large'].url : img.url)
+            bgImages[`--backgroundImage-${index}`] = `url(${imgUrl})`
+          });
+          return bgImages
         },
         viewportWidth () {
           return Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
