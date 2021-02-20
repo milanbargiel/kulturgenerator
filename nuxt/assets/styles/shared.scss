@@ -49,27 +49,22 @@ $big-container-width: 1000px;
 // Font Faces
 @font-face {
   font-family: 'apercu-mono-regular';
-  src: url('assets/apercu-mono-regular.woff2') format('woff2'), url('assets/apercu-mono-regular.woff') format('woff');
+  src: url('~assets/apercu-mono-regular.woff2') format('woff2'), url('~assets/apercu-mono-regular.woff') format('woff');
 }
 
 @font-face {
   font-family: 'GalapagosA-Regular';
-  src: url('assets/GalapagosA-Regular.woff2') format('woff2'), url('assets/GalapagosA-Regular.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'GalapagosA-Regular';
-  src: url('assets/GalapagosA-Regular.woff2') format('woff2'), url('assets/GalapagosA-Regular.woff') format('woff');
+  src: url('~assets/GalapagosA-Regular.woff2') format('woff2'), url('~assets/GalapagosA-Regular.woff') format('woff');
 }
 
 @font-face {
   font-family: 'GalapagosA-RegularGrid';
-  src: url('assets/GalapagosA-RegularGrid.woff2') format('woff2'), url('assets/GalapagosA-RegularGrid.woff') format('woff');
+  src: url('~assets/GalapagosA-RegularGrid.woff2') format('woff2'), url('~assets/GalapagosA-RegularGrid.woff') format('woff');
 }
 
 @font-face {
   font-family: 'GalapagosA-Black';
-  src: url('assets/GalapagosA-Black.woff2') format('woff2'), url('assets/GalapagosA-Black.woff') format('woff');
+  src: url('~assets/GalapagosA-Black.woff2') format('woff2'), url('~assets/GalapagosA-Black.woff') format('woff');
 }
 
 // Mixins
@@ -316,7 +311,7 @@ ul {
     cursor: pointer;
     border: 2px solid $blue;
   }
-  
+
   &--primary {
     border: none;
     font-family: $font-family-galapagos-grid;
@@ -380,10 +375,10 @@ ul {
   margin: .725rem .725rem 1.725rem;
   color: $blue;
   max-width: 950px;
-  
+
   @media screen and (min-width: $bp-tablet) {
     margin: 1rem 2rem 4rem;
-  }  
+  }
 }
 
 

@@ -1,8 +1,8 @@
 <template>
   <div>
     <div v-if="isLoading" class="loading-indicator">lädt</div>
-    <div :class="{ 'hidden': isLoading }">
-      <myHeader />
+    <div :class="{ hidden: isLoading }">
+      <AppHeader />
       <Nuxt />
     </div>
   </div>
@@ -13,17 +13,11 @@ import { mapGetters } from 'vuex'
 
 export default {
   name: 'App',
-  created () {
+  computed: {
+    ...mapGetters(['isLoading']),
+  },
+  created() {
     this.$store.dispatch('getShadowMoneypoolBalance')
   },
-  computed: {
-    ...mapGetters([
-      'isLoading'
-    ])
-  }
 }
 </script>
-
-<style lang="scss">
-@import "styles/App.scss";
-</style>

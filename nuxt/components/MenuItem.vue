@@ -1,14 +1,11 @@
 <template>
   <div class="menu-item" :class="{ active: isActive, link: linksTo }">
     <router-link :tag="tag" :to="linksTo">
-      <marquee-text
-        :repeat="20"
-        :duration="speed"
-        :paused="paused">
-          <span class="marquee-text__item"><slot></slot></span>
-        </marquee-text>
+      <marquee-text :repeat="20" :duration="speed" :paused="paused">
+        <span class="marquee-text__item"><slot></slot></span>
+      </marquee-text>
     </router-link>
-</div>
+  </div>
 </template>
 
 <script>
@@ -16,18 +13,18 @@ import MarqueeText from 'vue-marquee-text-component'
 
 export default {
   name: 'MenuItem',
-  props: ['label', 'type', 'viewName', 'bannerSpeed'],
   components: { MarqueeText },
-  data () {
+  props: ['label', 'type', 'viewName', 'bannerSpeed'],
+  data() {
     return {
       hover: false,
     }
   },
   computed: {
-    tag () {
+    tag() {
       return this.viewName ? 'a' : 'div' // only render valid routes as links
     },
-    paused () {
+    paused() {
       // show shop as selected when on artwork detail page
       if (this.viewName === 'shop' && this.$route.name === 'artworkDetail') {
         return false
@@ -35,34 +32,34 @@ export default {
 
       // back-button is never paused
       if (this.type === 'back-button') {
-        return false;
+        return false
       }
 
       // archive-header is never paused
       if (this.type === 'archive-header') {
-        return false;
+        return false
       }
 
       return this.viewName !== this.$route.name
     },
-    isActive () {
+    isActive() {
       return this.$route.name === this.viewName
     },
-    linksTo () {
+    linksTo() {
       // back-button links always to shop
       if (this.type === 'back-button') {
-        return { name: 'shop' };
+        return { name: 'shop' }
       }
 
       if (this.type === 'moneypool-balance') {
-        return { name: 'paypal' };
+        return { name: 'paypal' }
       }
 
       return this.viewName ? { name: this.viewName } : ''
     },
-    speed () {
+    speed() {
       return this.bannerSpeed ? 10 - this.bannerSpeed : 7
-    }
-  }
+    },
+  },
 }
 </script>

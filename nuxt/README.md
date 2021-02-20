@@ -1,4 +1,4 @@
-# kulturgenerator
+# nuxt2
 
 ## Build Setup
 
