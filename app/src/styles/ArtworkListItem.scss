@@ -70,25 +70,20 @@
     background-repeat:no-repeat;
     background-position: center;
     background-size: cover;
-    animation: changeBg 2s infinite;
-
-    @media screen and (min-width: $bp-tablet) {
-      animation: none;
-    }
   }
 }
 
-@media screen and (min-width: $bp-tablet) {
-  .hover-slideshow:hover {
-    &:before {
-      animation: changeBg 1s infinite;
-      animation-iteration-count: 1;
-    }
+.hover-slideshow--active:before {
+  animation: changeBg 1s infinite;
+  animation-iteration-count: 2;
+
+  @media screen and (min-width: $bp-tablet) {
+    animation-iteration-count: 1;
   }
 }
 
 @keyframes changeBg{
-   0%  {background-image: var(--backgroundImage-0);}
-   33% {background-image: var(--backgroundImage-1);}
-   66% {background-image: var(--backgroundImage-2);}
+ 0%  {background-image: var(--backgroundImage-0);}
+ 33% {background-image: var(--backgroundImage-1);}
+ 66% {background-image: var(--backgroundImage-2);}
 }

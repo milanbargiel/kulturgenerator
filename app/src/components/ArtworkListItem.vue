@@ -1,6 +1,6 @@
 <template>
   <router-link :class="['artwork-list-item link', { 'artwork-list-item--sold': isSoldOut }]" :style="styles" :to="{ name: 'artworkDetail', params: { author: this.authorSlug, slug: item.slug }}">
-    <div v-if="isExperience" class="hover-slideshow" :style="hoverSlideShowImages">
+    <div v-if="isExperience" v-observe-visibility="{ callback: isViewable, once: true }" :class="{'hover-slideshow': true, 'hover-slideshow--active': showHoverAnimation}" :style="slideShowImages" @mouseover="showHoverAnimation = true" @mouseleave="showHoverAnimation = false">
       <responsive-image class="artwork-list-item__image" :image="img"></responsive-image>
     </div>
     <responsive-image v-else class="artwork-list-item__image" :image="img"></responsive-image>
@@ -19,6 +19,18 @@ export default {
     name: 'ArtworkListItem',
     components: { ResponsiveImage },
     props: ['item'],
+    data() {
+      return {
+        showHoverAnimation: false,
+      }
+    },
+    methods: {
+      isViewable(isVisible) {
+        if (this.viewportWidth < 680) { // for mobile trigger animation when object comes into viewport
+          this.showHoverAnimation = isVisible
+        }
+      }
+    },
     computed: {
         img () {
           return this.item.images[0]
@@ -42,7 +54,7 @@ export default {
             maxWidth: this.itemWidth + '%'
           }
         },
-        hoverSlideShowImages () {
+        slideShowImages () {
           const bgImages = {}
           this.item.images.forEach((img, index) => {
             const imgUrl = process.env.VUE_APP_API_BASEURL + (img.formats['large'] ? img.formats['large'].url : img.url)
