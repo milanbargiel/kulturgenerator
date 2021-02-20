@@ -1,8 +1,9 @@
 <template>
   <router-link :class="['artwork-list-item link', { 'artwork-list-item--sold': isSoldOut }]" :style="styles" :to="{ name: 'artworkDetail', params: { author: this.authorSlug, slug: item.slug }}">
-    <div class="hover-slideshow" :style="hoverSlideShowStyles">
+    <div v-if="isExperience" class="hover-slideshow" :style="hoverSlideShowImages">
       <responsive-image class="artwork-list-item__image" :image="img"></responsive-image>
     </div>
+    <responsive-image v-else class="artwork-list-item__image" :image="img"></responsive-image>
     <span class="artwork-list-item__author">{{ item.author }}<br></span>
     <span class="artwork-list-item__title">{{ item.title }}<br></span>
     <!-- Only show price, if the artwork is from an active round -->
@@ -41,7 +42,7 @@ export default {
             maxWidth: this.itemWidth + '%'
           }
         },
-        hoverSlideShowStyles () {
+        hoverSlideShowImages () {
           const bgImages = {}
           this.item.images.forEach((img, index) => {
             const imgUrl = process.env.VUE_APP_API_BASEURL + (img.formats['large'] ? img.formats['large'].url : img.url)
