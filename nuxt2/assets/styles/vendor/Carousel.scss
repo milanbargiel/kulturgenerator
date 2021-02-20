@@ -1,0 +1,50 @@
+// override styles from vue-carousel package here
+
+$override-dot-size: 10px;
+$override-dot-color: transparent;
+$new-dot-color-active: $blue;
+
+// Fix to make adjustableHeight property work
+.VueCarousel-slide-adjustableHeight {
+  display: block !important;
+}
+
+.VueCarousel-inner {
+  align-items: flex-start !important;
+}
+
+// Style dots
+.VueCarousel-dot-container {
+  margin-top: 0 !important;
+  padding: 5px 0 !important;
+}
+
+.VueCarousel-dot {
+  margin-top: 0 !important;
+  width: $override-dot-size !important;
+  height: $override-dot-size !important;
+  background-color: $override-dot-color !important;
+
+  &:after {
+    content: "";
+    display: block;
+    border-radius: 50%;
+    width: $override-dot-size;
+    height: $override-dot-size;
+    border: 1px solid #000;
+    background-color: $white;
+  }
+
+  &:focus {
+    outline:  none !important;
+  }
+}
+
+.VueCarousel-dot--active {
+  background-color: $override-dot-color !important;  
+
+  &:after {    
+    background-color: $new-dot-color-active;
+    border-color: blue;
+  }
+}
