@@ -1,7 +1,10 @@
 <template>
   <router-link :class="['artwork-list-item link', { 'artwork-list-item--sold': isSoldOut }]" :style="styles" :to="{ name: 'artworkDetail', params: { author: this.authorSlug, slug: item.slug }}">
-    <div v-if="isExperience" v-observe-visibility="{ callback: isViewable, once: true }" :class="{'hover-slideshow': true, 'hover-slideshow--active': showHoverAnimation}" :style="slideShowImages" @mouseover="showHoverAnimation = true" @mouseleave="showHoverAnimation = false">
-      <responsive-image class="artwork-list-item__image" :image="img"></responsive-image>
+    <div v-if="isExperience" v-observe-visibility="{ callback: isViewable, once: true }" :class="{'hover-slideshow': true, 'artwork-list-item__image': true, 'hover-slideshow--active': showHoverAnimation}" :style="slideShowImages" @mouseover="showHoverAnimation = true" @mouseleave="showHoverAnimation = false">
+      <responsive-image class="hover-slideshow-placeholder" :image="img"></responsive-image>
+      <responsive-image class="hover-slideshow-img" :image="img1"></responsive-image>
+      <responsive-image class="hover-slideshow-img" :image="img2"></responsive-image>
+      <responsive-image class="hover-slideshow-img" :image="img"></responsive-image>
     </div>
     <responsive-image v-else class="artwork-list-item__image" :image="img"></responsive-image>
     <span class="artwork-list-item__author">{{ item.author }}<br></span>
@@ -35,6 +38,12 @@ export default {
         img () {
           return this.item.images[0]
         },
+        img1 () {
+          return this.item.images[1]
+        },
+        img2 () {
+          return this.item.images[2]
+        },
         isExperience() {
           return this.item.type === 'Erlebnis'
         },
@@ -54,14 +63,14 @@ export default {
             maxWidth: this.itemWidth + '%'
           }
         },
-        slideShowImages () {
-          const bgImages = {}
-          this.item.images.forEach((img, index) => {
-            const imgUrl = process.env.VUE_APP_API_BASEURL + (img.formats['large'] ? img.formats['large'].url : img.url)
-            bgImages[`--backgroundImage-${index}`] = `url(${imgUrl})`
-          });
-          return bgImages
-        },
+        // slideShowImages () {
+        //   const bgImages = {}
+        //   this.item.images.forEach((img, index) => {
+        //     const imgUrl = process.env.VUE_APP_API_BASEURL + (img.formats['large'] ? img.formats['large'].url : img.url)
+        //     bgImages[`--backgroundImage-${index}`] = `url(${imgUrl})`
+        //   });
+        //   return bgImages
+        // },
         viewportWidth () {
           return Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
         },

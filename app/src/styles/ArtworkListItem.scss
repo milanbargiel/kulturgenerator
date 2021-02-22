@@ -42,7 +42,6 @@
 }
 
 .artwork-list-item__image {
-  display: block;
   width: 100%;
   margin-bottom: .9rem;
 }
@@ -58,32 +57,55 @@
 
 .hover-slideshow {
   position: relative;
-
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: var(--backgroundImage-0), var(--backgroundImage-1), var(--backgroundImage-2);
-    background-repeat:no-repeat;
-    background-position: center;
-    background-size: cover;
-  }
+  overflow: hidden;
 }
 
-.hover-slideshow--active:before {
-  animation: changeBg 1s infinite;
-  animation-iteration-count: 2;
+.hover-slideshow-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  visibility: hidden;
+}
+
+.hover-slideshow-placeholder {
+  width: 100%;
+  display: block;
+}
+
+.hover-slideshow-img:nth-child(1){
+  z-index: 8;
+  object-fit: cover;
+}
+.hover-slideshow-img:nth-child(2){
+  animation-delay: 0.4s;
+  z-index: 7;
+  object-fit: cover;
+}
+.hover-slideshow-img:nth-child(3){
+  animation-delay: 0.8s;
+  z-index: 6;
+  object-fit: cover;
+}
+
+.hover-slideshow-img {
+  animation: showMe 1.2s linear infinite;
 
   @media screen and (min-width: $bp-tablet) {
-    animation-iteration-count: 1;
+    animation-play-state: paused;
   }
 }
 
-@keyframes changeBg{
- 0%  {background-image: var(--backgroundImage-0);}
- 33% {background-image: var(--backgroundImage-1);}
- 66% {background-image: var(--backgroundImage-2);}
+.hover-slideshow--active .hover-slideshow-img {
+  @media screen and (min-width: $bp-tablet) {
+    animation-play-state: running;
+  }
+}
+
+@keyframes showMe {
+    0% { visibility: visible; z-index: 100; }
+  33.3% { visibility: visible; z-index: 100; }
+  66.6% { visibility: hidden; z-index: 0; }
+    100% { visibility: hidden; z-index: 0; }
 }
