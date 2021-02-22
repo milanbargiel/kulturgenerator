@@ -11,6 +11,10 @@ export default {
         image: {
             type: Object,
             default: null,
+        },
+        disableSrcSet: {
+            type: Boolean,
+            default: false,
         }
     },
     data() {
@@ -44,7 +48,8 @@ export default {
           const regularImg = `${process.env.VUE_APP_API_BASEURL + this.imgVariant('large')} 1x, `
           const retinaImg = `${process.env.VUE_APP_API_BASEURL + this.imgVariant('x2')} 2x`
 
-          return regularImg + retinaImg
+          // disableSrcSet is a dirty fix.. In artwork detail images where not shown correctly
+          return this.disableSrcSet ? '' : regularImg + retinaImg
         },
         style() {
             // The background color is used as a

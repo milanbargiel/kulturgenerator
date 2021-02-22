@@ -8,7 +8,7 @@
         :centerMode=true>
         <slide v-for="{ image, url } in artworkImages" :key="url">
           <!-- v-img from https://github.com/crowdbotics/v-img -->
-          <responsive-image v-img:artworkGallery :src="url" :image="image" class="carousel__image"></responsive-image>
+          <responsive-image v-img:artworkGallery :src="url" :image="image" class="carousel__image" disableSrcSet="true"></responsive-image>
         </slide>
       </carousel>
     </div>
