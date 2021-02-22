@@ -37,7 +37,7 @@ export default {
           return this.item.images[0]
         },
         images () {
-          return Array.from(this.item.images).reverse() // reverse images for hover slideshow
+          return this.item.images
         },
         isExperience() {
           return this.item.type === 'Erlebnis'

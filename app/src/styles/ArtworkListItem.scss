@@ -81,17 +81,17 @@
 }
 
 .hover-slideshow-img:nth-child(2){
-  animation-delay: 0.3s;
+  animation-delay: 0.5s;
   z-index: 7;
   
 }
 .hover-slideshow-img:nth-child(3){
-  animation-delay: 0.6s;
+  animation-delay: 1s;
   z-index: 6;
 }
 
 .hover-slideshow-img--animate {
-  animation: showMe .9s linear 2;
+  animation: showMe 1.5s linear 3;
 
   @media screen and (min-width: $bp-tablet) {
     animation-iteration-count: 1;
@@ -101,6 +101,6 @@
 @keyframes showMe {
     0% { visibility: visible; z-index: 100; }
   33.3% { visibility: visible; z-index: 100; }
-  66.6% { visibility: hidden; z-index: 0; }
+  40% { visibility: hidden; z-index: 0; }
     100% { visibility: hidden; z-index: 0; }
 }
