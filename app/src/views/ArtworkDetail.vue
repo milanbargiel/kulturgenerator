@@ -78,7 +78,7 @@ export default {
     },
     artworkDescription () {
       const markdownLink = /\[(.*?)\]\((.*?)\)/g // that's regex syntax, dev tip: regexr.com
-      const htmlLink = '<a class="link" href="$2" target="_blank" rel="noopener">$1</a>'
+      const htmlLink = '<a class="underlined-link" href="$2" target="_blank" rel="noopener">$1</a>'
       return this.artwork.description.replace(markdownLink, htmlLink)
     },
     artworkImages () {
