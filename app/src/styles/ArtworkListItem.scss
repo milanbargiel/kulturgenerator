@@ -81,17 +81,17 @@
 }
 
 .hover-slideshow-img:nth-child(2){
-  animation-delay: 0.5s;
+  animation-delay: 1s;
   z-index: 7;
   
 }
-.hover-slideshow-img:nth-child(3){
-  animation-delay: 1s;
-  z-index: 6;
-}
+// .hover-slideshow-img:nth-child(3){
+//   animation-delay: 1s;
+//   z-index: 6;
+// }
 
 .hover-slideshow-img--animate {
-  animation: showMe 1.5s linear 3;
+  animation: showMe 2s linear 3;
 
   @media screen and (min-width: $bp-tablet) {
     animation-iteration-count: 1;
