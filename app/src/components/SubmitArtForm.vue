@@ -96,16 +96,16 @@
     <div class="form-group form-group--wide">
       <label class="form-group__label">Umsatzsteuer <span class="form-field-required">*</span></label>
 
-      <!-- tax 16 -->
+      <!-- tax 19 -->
       <div class="form-check">
-        <input class="form-check__checkbox" type="radio" name="tax" value="_16" id="tax-input-16" required>
-        <label for="tax-input-16">16 Prozent</label>
+        <input class="form-check__checkbox" type="radio" name="tax" value="_19" id="tax-input-19" required>
+        <label for="tax-input-19">19 Prozent</label>
       </div>
 
-      <!-- tax 5 -->
+      <!-- tax 7 -->
       <div class="form-check">
-        <input class="form-check__checkbox" type="radio" name="tax" value="_5" id="tax-input-5" required>
-        <label for="tax-input-5">5 Prozent</label>
+        <input class="form-check__checkbox" type="radio" name="tax" value="_7" id="tax-input-7" required>
+        <label for="tax-input-7">7 Prozent</label>
       </div>
 
       <!-- tax 0 -->

@@ -67,8 +67,8 @@
       "type": "enumeration",
       "enum": [
         "_0",
-        "_5",
-        "_16"
+        "_7",
+        "_19"
       ]
     },
     "shippingCosts": {
