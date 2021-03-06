@@ -22,14 +22,12 @@
     </div>
     <div v-if="hasArchiveHeader">
       <div class="content">
-        <router-link class="submit-art-link title link" :to="{ name: 'shop' }">
-          <img class="arrows" src="@/assets/blue-arrows.svg" /> </router-link
+        <nuxt-link class="submit-art-link title link" to="/">
+          <img class="arrows" src="@/assets/blue-arrows.svg" /> </nuxt-link
         ><br /><br />
         <div class="text text--blue">
           Über den
-          <router-link class="underlined-link" :to="{ name: 'shop' }"
-            >Link zum Shop</router-link
-          >
+          <nuxt-link class="underlined-link" to="/">Link zum Shop</nuxt-link>
           gelangen Sie zu der aktuellen Runde der so- lidarischen Online-Galerie
           <span class="intext-title">kulturgenerator</span>, in der alle
           teilnehmen- den Kunst- und Kulturschaffenden selbst entscheiden, ob
@@ -63,17 +61,18 @@ export default {
     },
     hasStandardHeader() {
       if (
-        this.$route.name === 'artworkDetail' &&
+        this.$route.name === 'artworks-author-slug' &&
         this.artwork?.status === 'ZweiteRunde'
       ) {
         return true
       }
 
-      return this.$route.meta.hasStandardHeader
+      // return this.$route.meta.hasStandardHeader
+      return this.$route.name === 'index'
     },
     hasArchiveHeader() {
       if (
-        this.$route.name === 'artworkDetail' &&
+        this.$route.name === 'artworks-author-slug' &&
         this.artwork?.status === 'ErsteRunde'
       ) {
         return true
@@ -85,7 +84,7 @@ export default {
     },
     showMoneypool() {
       // Only show moneypool on shop page
-      return this.$route.name === 'shop'
+      return this.$route.name === 'index'
     },
   },
   created() {

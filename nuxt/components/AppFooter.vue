@@ -9,15 +9,13 @@
           rel="noopener"
           ><span :class="underlinedLinkClasses">Instagram</span></a
         ><br />
-        <router-link :to="{ name: 'archive' }" :class="navigationElementClasses"
-          ><span :class="underlinedLinkClasses">Archiv</span></router-link
+        <nuxt-link to="/archiv" :class="navigationElementClasses"
+          ><span :class="underlinedLinkClasses">Archiv</span></nuxt-link
         ><br />
-        <router-link
-          :to="{ name: 'impressum' }"
-          :class="navigationElementClasses"
+        <nuxt-link to="/impressum" :class="navigationElementClasses"
           ><span :class="underlinedLinkClasses"
             >Impressum + Datenschutz</span
-          ></router-link
+          ></nuxt-link
         ><br />
         <a
           :class="navigationElementClasses"

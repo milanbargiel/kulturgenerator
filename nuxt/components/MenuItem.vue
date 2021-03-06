@@ -1,10 +1,10 @@
 <template>
   <div class="menu-item" :class="{ active: isActive, link: linksTo }">
-    <router-link :tag="tag" :to="linksTo">
+    <nuxt-link :tag="tag" :to="linksTo">
       <marquee-text :repeat="20" :duration="speed" :paused="paused">
-        <span class="marquee-text__item"><slot></slot></span>
+        <span class="marquee-text__item">TEST</span>
       </marquee-text>
-    </router-link>
+    </nuxt-link>
   </div>
 </template>
 
@@ -48,11 +48,11 @@ export default {
     linksTo() {
       // back-button links always to shop
       if (this.type === 'back-button') {
-        return { name: 'shop' }
+        return '/'
       }
 
       if (this.type === 'moneypool-balance') {
-        return { name: 'paypal' }
+        return '/paypal' // TODO: to be implemented
       }
 
       return this.viewName ? { name: this.viewName } : ''

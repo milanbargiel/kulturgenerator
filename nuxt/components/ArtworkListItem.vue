@@ -1,14 +1,11 @@
 <template>
-  <router-link
+  <nuxt-link
     :class="[
       'artwork-list-item link',
       { 'artwork-list-item--sold': isSoldOut },
     ]"
     :style="styles"
-    :to="{
-      name: 'artworkDetail',
-      params: { author: authorSlug, slug: item.slug },
-    }"
+    :to="'/artworks/' + authorSlug + '/' + item.slug"
   >
     <ResponsiveImage
       class="artwork-list-item__image"
@@ -22,7 +19,7 @@
     <span v-if="isFromActiveRound" class="artwork-list-item__price"
       >{{ item.price }}€</span
     >
-  </router-link>
+  </nuxt-link>
 </template>
 
 <script>

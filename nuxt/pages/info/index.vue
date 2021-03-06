@@ -43,19 +43,16 @@
           >info@kulturgenerator.org</a
         >.<br /><br /><br /><br />
 
-        <router-link
-          class="submit-art-link title link"
-          :to="{ name: 'archive' }"
-        >
-          <img class="arrows" src="@/assets/yellow-arrows.svg" /> </router-link
+        <nuxt-link class="submit-art-link title link" to="/archiv">
+          <img class="arrows" src="@/assets/yellow-arrows.svg" /> </nuxt-link
         ><br /><br />
 
         <div class="yellow-numbers">
           Über den
-          <router-link
+          <nuxt-link
             class="underlined-link underlined-link--yellow"
-            :to="{ name: 'archive' }"
-            >Link zum Archiv</router-link
+            to="/archive"
+            >Link zum Archiv</nuxt-link
           >
           können Sie die Arbeiten sehen, die an der ersten Runde des
           Kulturgenerators teilgenommen haben. Die erste Runde wurde am
