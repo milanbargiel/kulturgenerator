@@ -20,7 +20,12 @@ export default {
   css: ['~/assets/styles/App.scss'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [{ src: '~/plugins/vue-marquee-text-component.js', mode: 'client' }],
+  plugins: [
+    { src: '~/plugins/vue-marquee-text-component.js', mode: 'client' },
+    { src: '~/plugins/vue-carousel.js', mode: 'client' },
+    { src: '~/plugins/vue-img.js' },
+    { src: '~/plugins/vue-markdown-v2.js' },
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -48,6 +53,6 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    transpile: ['vue-marquee-text-component'],
+    transpile: ['vue-marquee-text-component', 'vue-carousel'],
   },
 }

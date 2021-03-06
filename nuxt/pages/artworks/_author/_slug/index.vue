@@ -28,9 +28,9 @@
         <br />
         {{ artwork.title }}
       </div>
-      <vue-markdown class="artwork-detail__description">
-        {{ artworkDescription }}
-      </vue-markdown>
+      <vue-markdown class="artwork-detail__description">{{
+        artworkDescription
+      }}</vue-markdown>
       <div v-if="showPurchaseInformation">
         <div ref="checkout" class="artwork-detail__checkout">
           <div>
@@ -81,14 +81,8 @@
 </template>
 
 <script>
-import { Carousel, Slide } from 'vue-carousel'
-
 export default {
   name: 'ArtworkDetail',
-  components: {
-    Carousel,
-    Slide,
-  },
   data() {
     return {
       checkoutIsOpen: false,

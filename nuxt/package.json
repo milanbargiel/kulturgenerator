@@ -21,8 +21,10 @@
     "sass": "^1.32.8",
     "sass-loader": "^10.1.1",
     "url-slug": "^3.0.1",
+    "v-img": "^0.2.0",
     "vue-carousel": "^0.18.0",
     "vue-mailchimp-subscribe": "^1.1.0",
+    "vue-markdown-v2": "^0.1.7",
     "vue-marquee-text-component": "^1.2.0"
   },
   "devDependencies": {
