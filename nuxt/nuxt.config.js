@@ -25,6 +25,7 @@ export default {
     { src: '~/plugins/vue-carousel.js', mode: 'client' },
     { src: '~/plugins/vue-img.js' },
     { src: '~/plugins/vue-markdown-v2.js' },
+    { src: '~/plugins/vue-mailchimp-subscribe.js' },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

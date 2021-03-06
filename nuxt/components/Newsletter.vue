@@ -38,13 +38,8 @@
 </template>
 
 <script>
-import MailchimpSubscribe from 'vue-mailchimp-subscribe'
-
 export default {
   name: 'Newsletter',
-  components: {
-    MailchimpSubscribe,
-  },
   methods: {
     onError() {
       setTimeout(() => {
