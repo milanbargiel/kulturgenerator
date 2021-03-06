@@ -80,7 +80,7 @@ export default {
       ) {
         return true
       }
-      return this.$route.meta.hasArchiveHeader
+      return this.$route.name === 'archiv'
     },
     hasThankYouHeader() {
       return this.$route.meta.hasThankYouHeader
