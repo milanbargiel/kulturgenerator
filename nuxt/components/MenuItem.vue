@@ -2,18 +2,15 @@
   <div class="menu-item" :class="{ active: isActive, link: linksTo }">
     <nuxt-link :tag="tag" :to="linksTo">
       <marquee-text :repeat="20" :duration="speed" :paused="paused">
-        <span class="marquee-text__item">TEST</span>
+        <span class="marquee-text__item"><slot></slot></span>
       </marquee-text>
     </nuxt-link>
   </div>
 </template>
 
 <script>
-import MarqueeText from 'vue-marquee-text-component'
-
 export default {
   name: 'MenuItem',
-  components: { MarqueeText },
   props: ['label', 'type', 'viewName', 'bannerSpeed'],
   data() {
     return {
@@ -26,7 +23,11 @@ export default {
     },
     paused() {
       // show shop as selected when on artwork detail page
-      if (this.viewName === 'shop' && this.$route.name === 'artworkDetail') {
+      if (
+        this.viewName === 'shop' &&
+        (this.$route.name === 'index' ||
+          this.$route.name === 'artworks-author-slug')
+      ) {
         return false
       }
 
@@ -52,7 +53,11 @@ export default {
       }
 
       if (this.type === 'moneypool-balance') {
-        return '/paypal' // TODO: to be implemented
+        return '/paypal'
+      }
+
+      if (this.viewName === 'shop') {
+        return '/'
       }
 
       return this.viewName ? { name: this.viewName } : ''

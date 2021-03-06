@@ -84,7 +84,7 @@
 import { Carousel, Slide } from 'vue-carousel'
 
 export default {
-  name: 'artworkDetail',
+  name: 'ArtworkDetail',
   components: {
     Carousel,
     Slide,

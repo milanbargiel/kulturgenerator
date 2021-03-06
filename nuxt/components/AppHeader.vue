@@ -5,7 +5,7 @@
       :class="{ header: true, 'header--sticky': showMoneypool }"
     >
       <MenuItem viewName="info">INFO </MenuItem>
-      <MenuItem viewName="submit">EINREICHEN </MenuItem>
+      <MenuItem viewName="einreichen">EINREICHEN </MenuItem>
       <MenuItem
         v-if="showMoneypool"
         :class="{ sticky: isSticky }"
@@ -37,7 +37,7 @@
         </div>
       </div>
       <div class="header header--archive">
-        <MenuItem type="archive-header" viewName="archive">ARCHIV</MenuItem>
+        <MenuItem type="archive-header" viewName="archiv">ARCHIV</MenuItem>
       </div>
     </div>
   </div>
@@ -67,8 +67,11 @@ export default {
         return true
       }
 
-      // return this.$route.meta.hasStandardHeader
-      return this.$route.name === 'index'
+      return (
+        this.$route.name === 'index' ||
+        this.$route.name === 'einreichen' ||
+        this.$route.name === 'info'
+      )
     },
     hasArchiveHeader() {
       if (
