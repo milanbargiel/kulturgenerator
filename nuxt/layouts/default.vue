@@ -4,6 +4,7 @@
     <div :class="{ hidden: isLoading }">
       <AppHeader />
       <Nuxt />
+      <Newsletter />
     </div>
   </div>
 </template>
