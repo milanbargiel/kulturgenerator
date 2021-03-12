@@ -9,28 +9,28 @@
     <template v-slot="{ subscribe, setEmail, error, success, loading }">
       <div class="newsletter">
         Anmeldung zum Newsletter
-        <form class="nf" @submit.prevent="subscribe" ref="form">
+        <form ref="form" class="nf" @submit.prevent="subscribe">
           <span class="nf__at-sign">@: </span>
           <input
             class="nf__email-input"
             type="email"
             placeholder="E-Mail-Adresse"
-            @input="setEmail($event.target.value)"
             required
+            @input="setEmail($event.target.value)"
           />
           <button class="nf__button button" type="submit">anmelden ⏎</button>
         </form>
         <div class="form-responses">
-          <div class="form-responses__success" v-if="success">
+          <div v-if="success" class="form-responses__success">
             Fast fertig.. Um die Anmeldung abzuschließen, klicken Sie bitte auf
             den Link in der E-Mail, die wir Ihnen gerade zugeschickt haben.
             Prüfen Sie ggf. auch Ihr Spam-Postfach.
           </div>
-          <div class="form-responses__error" v-if="error">
+          <div v-if="error" class="form-responses__error">
             Ein Fehler ist aufgetreten. Haben Sie sich eventuell vertippt oder
             sind Sie bereits im Verteiler?
           </div>
-          <div class="form-responses__loading" v-if="loading">lädt</div>
+          <div v-if="loading" class="form-responses__loading">lädt</div>
         </div>
       </div>
     </template>
