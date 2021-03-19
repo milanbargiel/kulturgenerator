@@ -10,7 +10,7 @@
         <span class="marquee-text__item"><slot></slot></span>
       </marquee-text>
     </a>
-    <nuxt-link :tag="tag" :to="linksTo">
+    <nuxt-link v-else :tag="tag" :to="linksTo">
       <marquee-text :repeat="20" :duration="speed" :paused="paused">
         <span class="marquee-text__item"><slot></slot></span>
       </marquee-text>
