@@ -49,23 +49,22 @@ $big-container-width: 1000px;
 // Font Faces
 @font-face {
   font-family: 'apercu-mono-regular';
-  src: url('../fonts/apercu-mono-regular.woff2') format('woff2'), url('../fonts/apercu-mono-regular.woff') format('woff');
-  // src: url('../fonts/DMSans-Regular.ttf') format('truetype');
+  src: url('~assets/fonts/apercu-mono-regular.woff2') format('woff2'), url('~assets/fonts/apercu-mono-regular.woff') format('woff');
 }
 
 @font-face {
   font-family: 'GalapagosA-Regular';
-  src: url('../fonts/GalapagosA-Regular.woff2') format('woff2'), url('../fonts/GalapagosA-Regular.woff') format('woff');
+  src: url('~assets/fonts/GalapagosA-Regular.woff2') format('woff2'), url('~assets/fonts/GalapagosA-Regular.woff') format('woff');
 }
 
 @font-face {
   font-family: 'GalapagosA-RegularGrid';
-  src: url('../fonts/GalapagosA-RegularGrid.woff2') format('woff2'), url('../fonts/GalapagosA-RegularGrid.woff') format('woff');
+  src: url('~assets/fonts/GalapagosA-RegularGrid.woff2') format('woff2'), url('~assets/fonts/GalapagosA-RegularGrid.woff') format('woff');
 }
 
 @font-face {
   font-family: 'GalapagosA-Black';
-  src: url('../fonts/GalapagosA-Black.woff2') format('woff2'), url('../fonts/GalapagosA-Black.woff') format('woff');
+  src: url('~assets/fonts/GalapagosA-Black.woff2') format('woff2'), url('~assets/fonts/GalapagosA-Black.woff') format('woff');
 }
 
 // Mixins
