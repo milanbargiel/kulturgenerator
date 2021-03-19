@@ -45,6 +45,7 @@ export default {
 
   env: {
     baseUrl: process.env.API_BASEURL,
+    paypalClientId: process.env.PAYPAL_CLIENT_ID,
   },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios

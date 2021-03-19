@@ -151,7 +151,7 @@ export default {
       const script = document.createElement('script')
       script.src =
         'https://www.paypal.com/sdk/js?client-id=' +
-        process.env.VUE_APP_PAYPAL_CLIENT_ID +
+        process.env.paypalClientId +
         '&currency=EUR&disable-funding=credit,giropay,sofort'
       document.head.appendChild(script)
       script.addEventListener('load', this.setLoaded)
