@@ -84,13 +84,6 @@ Vue.use(VueRouter)
     }
   },
   {
-    path: '/paypal',
-    name: 'paypal',
-    beforeEnter() {
-      window.open('https://www.paypal.com/paypalme/kulturgenerator' , '_blank');
-    }
-  },
-  {
     path: '/404',
     name: 'pageNotFound',
     component: PageNotFound,

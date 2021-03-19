@@ -1,5 +1,15 @@
 <template>
   <div class="menu-item" :class="{ active: isActive, link: linksTo }">
+    <a
+      v-if="type === 'moneypool-balance'"
+      href="https://www.paypal.com/paypalme/kulturgenerator"
+      rel="noopener"
+      target="_blank"
+    >
+      <marquee-text :repeat="20" :duration="speed" :paused="paused">
+        <span class="marquee-text__item"><slot></slot></span>
+      </marquee-text>
+    </a>
     <nuxt-link :tag="tag" :to="linksTo">
       <marquee-text :repeat="20" :duration="speed" :paused="paused">
         <span class="marquee-text__item"><slot></slot></span>
@@ -50,10 +60,6 @@ export default {
       // back-button links always to shop
       if (this.type === 'back-button') {
         return '/'
-      }
-
-      if (this.type === 'moneypool-balance') {
-        return '/paypal'
       }
 
       if (this.viewName === 'shop') {
