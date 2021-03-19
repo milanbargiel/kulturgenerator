@@ -51,7 +51,7 @@
           Über den
           <nuxt-link
             class="underlined-link underlined-link--yellow"
-            to="/archive"
+            to="/archiv"
             >Link zum Archiv</nuxt-link
           >
           können Sie die Arbeiten sehen, die an der ersten Runde des
