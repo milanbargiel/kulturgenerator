@@ -157,6 +157,7 @@ export const getters = {
       .sort((a, b) => (a.author > b.author ? 1 : -1)) // sort alphabetically for author property
   },
   getArtworks: state => {
+    console.log('[getArtworks]')
     return Object.values(state.artworks)
       .filter(item => item.status === 'ZweiteRunde') // only show artworks from second round
       .map(item => ({ sort: Math.random(), value: item })) // introduce random sort parameter

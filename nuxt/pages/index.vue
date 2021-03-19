@@ -29,11 +29,13 @@ export default {
     },
   },
   created() {
+    console.log('[index.vue] created')
     if (this.artworks.length <= 1) {
       this.$store.commit('SET_LOADING_STATE', true)
-      this.$store
-        .dispatch('getArtworks')
-        .then(() => this.$store.commit('SET_LOADING_STATE', false))
+      this.$store.dispatch('getArtworks').then(() => {
+        console.log('[index.vue] then')
+        return this.$store.commit('SET_LOADING_STATE', false)
+      })
     }
   },
 }
