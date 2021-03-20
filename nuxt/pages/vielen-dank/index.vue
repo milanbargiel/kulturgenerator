@@ -35,20 +35,6 @@ export default {
       artwork: null,
     }
   },
-  created() {
-    if (this.$route.params.artwork) {
-      this.artwork = this.$route.params.artwork
-    } else {
-      // load dummy artwork for debug mode /vielen-dank?debug=true
-      this.$store.commit('SET_LOADING_STATE', true)
-      this.$store
-        .dispatch('getArtworkBySlug', 'posters-for-acephale')
-        .then(response => {
-          this.$store.commit('SET_LOADING_STATE', false)
-          this.artwork = response.data
-        })
-    }
-  },
   computed: {
     artworkImage() {
       // Get 'large' variant of first image, if it exists
@@ -63,6 +49,20 @@ export default {
     artworkTitle() {
       return this.artwork.author + ': ' + this.artwork.title
     },
+  },
+  created() {
+    if (this.$route.params.artwork) {
+      this.artwork = this.$route.params.artwork
+    } else {
+      // load dummy artwork for debug mode /vielen-dank?debug=true
+      this.$store.commit('SET_LOADING_STATE', true)
+      this.$store
+        .dispatch('getArtworkBySlug', 'posters-for-acephale')
+        .then(response => {
+          this.$store.commit('SET_LOADING_STATE', false)
+          this.artwork = response.data
+        })
+    }
   },
 }
 </script>
