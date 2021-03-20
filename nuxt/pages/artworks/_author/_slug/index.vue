@@ -1,16 +1,17 @@
+/* eslint-disable prettier/prettier */
 <template>
   <div>
     <div v-if="artwork" class="artwork-detail content">
       <div class="carousel">
         <!-- vue-carousel from https://github.com/ssense/vue-carousel -->
-        <carousel :perPage="1" :centerMode="true">
+        <carousel :per-page="1" :center-mode="true">
           <slide v-for="{ url, aspectRatio } in artworkImages" :key="url">
             <!-- v-img from https://github.com/crowdbotics/v-img -->
             <ResponsiveImage
               v-img:artworkGallery
               :src="url"
               class="carousel__image"
-              :aspectRatio="aspectRatio"
+              :aspect-ratio="aspectRatio"
             />
           </slide>
         </carousel>
@@ -83,15 +84,24 @@
 <script>
 export default {
   name: 'ArtworkDetail',
+  async asyncData({ params, $axios, redirect, store }) {
+    const artwork = await $axios
+      .$get('/artworks/' + params.slug)
+      .then(response => {
+        store.commit('SET_LOADING_STATE', false)
+        return response
+      })
+      .catch(() => {
+        redirect('/404') // redirect to 404 page if artwork is not found
+      })
+    return { artwork }
+  },
   data() {
     return {
       checkoutIsOpen: false,
     }
   },
   computed: {
-    artwork() {
-      return this.$store.getters.getArtworkBySlug(this.$route.params.slug)
-    },
     artworkDescription() {
       const markdownLink = /\[(.*?)\]\((.*?)\)/g // that's regex syntax, dev tip: regexr.com
       const htmlLink =
@@ -155,14 +165,6 @@ export default {
   mounted() {
     if (!this.artwork) {
       this.$store.commit('SET_LOADING_STATE', true)
-      this.$store
-        .dispatch('getArtworkBySlug', this.$route.params.slug)
-        .then(() => {
-          this.$store.commit('SET_LOADING_STATE', false)
-        })
-        .catch(() => {
-          this.$router.push('/404') // redirect to 404 page if artwork is not found
-        })
     }
   },
   methods: {

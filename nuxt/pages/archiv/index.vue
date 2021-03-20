@@ -20,6 +20,12 @@ import { mapGetters } from 'vuex'
 
 export default {
   name: 'Archive',
+  async asyncData({ $axios }) {
+    const artworks = await $axios.$get(
+      '/artworks?status=ErsteRunde&_limit=200&_sort=author'
+    )
+    return { artworks }
+  },
   computed: {
     ...mapGetters({
       artworks: 'getArchivedArtworks',

@@ -16,26 +16,31 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
-
 export default {
   name: 'Shop',
-  computed: {
-    ...mapGetters({
-      artworks: 'getArtworks',
-    }),
-    moneypoolBalance() {
-      return this.$store.getters.roundedMoneypoolBalance
-    },
+  async asyncData({ $axios }) {
+    const response = await $axios.$get('/artworks?status=ZweiteRunde')
+    const artworks = response
+      // .filter(item => item.status === 'ZweiteRunde') // only show artworks from second round
+      .map(item => ({ sort: Math.random(), value: item })) // introduce random sort parameter
+      .sort((a, b) => a.sort - b.sort) // sort by random sort parameter
+      .map(item => {
+        item.value.randomWidthBase = Math.random() // introduce random width base for later caluclation
+        if (item.value.randomWidthBase < 0.2) {
+          item.value.randomWidthBase += 4 // bump random width base by 2 for every 6th item
+        }
+        return item.value // exclude random sort parameter
+      })
+      .sort(a => (a.quantity > 0 ? -1 : 1)) // move sold out items to the back
+
+    const moneypool = await $axios.$get('/moneypool')
+    const moneypoolBalance = Math.round(moneypool.currentBalance)
+    return { artworks, moneypoolBalance }
   },
+
   created() {
-    console.log('[index.vue] created')
     if (this.artworks.length <= 1) {
       this.$store.commit('SET_LOADING_STATE', true)
-      this.$store.dispatch('getArtworks').then(() => {
-        console.log('[index.vue] then')
-        return this.$store.commit('SET_LOADING_STATE', false)
-      })
     }
   },
 }

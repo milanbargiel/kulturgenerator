@@ -4,17 +4,17 @@
       v-if="hasStandardHeader"
       :class="{ header: true, 'header--sticky': showMoneypool }"
     >
-      <MenuItem viewName="info">INFO </MenuItem>
-      <MenuItem viewName="einreichen">EINREICHEN </MenuItem>
+      <MenuItem view-name="info">INFO </MenuItem>
+      <MenuItem view-name="einreichen">EINREICHEN </MenuItem>
       <MenuItem
         v-if="showMoneypool"
         :class="{ sticky: isSticky }"
-        viewName="shop"
+        view-name="shop"
         type="moneypool-balance"
-        bannerSpeed="7"
+        banner-speed="7"
         ><MoneypoolBalance />
       </MenuItem>
-      <MenuItem v-else viewName="shop">SHOP</MenuItem>
+      <MenuItem v-else view-name="shop">SHOP</MenuItem>
     </div>
     <div v-if="hasThankYouHeader" class="header">
       <MenuItem>Vielen Dank! </MenuItem>
@@ -37,7 +37,7 @@
         </div>
       </div>
       <div class="header header--archive">
-        <MenuItem type="archive-header" viewName="archiv">ARCHIV</MenuItem>
+        <MenuItem type="archive-header" view-name="archiv">ARCHIV</MenuItem>
       </div>
     </div>
   </div>
@@ -51,14 +51,17 @@ export default {
       isSticky: false,
       scrollPosition: 0,
       headerHeight: 0,
+      artwork: null,
+    }
+  },
+  async fetch() {
+    if (this.$route.params.slug) {
+      this.artwork = await this.$axios.$get(
+        '/artworks/' + this.$route.params.slug
+      )
     }
   },
   computed: {
-    artwork() {
-      return (
-        this.$store.getters.getArtworkBySlug(this.$route.params.slug) || false
-      )
-    },
     hasStandardHeader() {
       if (
         this.$route.name === 'artworks-author-slug' &&
@@ -70,7 +73,8 @@ export default {
       return (
         this.$route.name === 'index' ||
         this.$route.name === 'einreichen' ||
-        this.$route.name === 'info'
+        this.$route.name === 'info' ||
+        this.$route.name === 'impressum'
       )
     },
     hasArchiveHeader() {
@@ -89,6 +93,9 @@ export default {
       // Only show moneypool on shop page
       return this.$route.name === 'index'
     },
+  },
+  watch: {
+    '$route.query': '$fetch',
   },
   created() {
     // Listen to scroll event to attach sticky header only if moneypool is shown

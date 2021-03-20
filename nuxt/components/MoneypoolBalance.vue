@@ -13,12 +13,16 @@ export default {
     return {
       tweenedNumber: 0,
       balanceAnimationDuration: 2.5,
+      moneypoolBalance: 200,
     }
   },
+  async fetch() {
+    const response = await this.$axios.$get(
+      'https://xyz.kulturgenerator.org/moneypool'
+    )
+    this.moneypoolBalance = Math.round(response.currentBalance)
+  },
   computed: {
-    moneypoolBalance() {
-      return this.$store.getters.roundedMoneypoolBalance
-    },
     animatedBalance() {
       if (this.moneypoolBalance < 100) {
         return this.moneypoolBalance
@@ -43,7 +47,7 @@ export default {
       })
     },
   },
-  created() {
+  mounted() {
     gsap.to(this.$data, {
       duration: this.balanceAnimationDuration,
       tweenedNumber: this.moneypoolBalance,

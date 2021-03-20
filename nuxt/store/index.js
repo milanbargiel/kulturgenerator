@@ -35,22 +35,6 @@ export const mutations = {
 }
 
 export const actions = {
-  getArtworks(context) {
-    return axios
-      .get(process.env.baseUrl + '/artworks?status=ZweiteRunde')
-      .then(response => {
-        context.commit('SET_ARTWORKS', response.data)
-        return response
-      })
-  },
-  getArchivedArtworks(context) {
-    return axios
-      .get(process.env.baseUrl + '/artworks?status=ErsteRunde&_limit=200')
-      .then(response => {
-        context.commit('SET_ARTWORKS', response.data)
-        return response
-      })
-  },
   getArtworkBySlug(context, slug) {
     return axios
       .get(process.env.baseUrl + '/artworks/' + slug)
@@ -78,11 +62,6 @@ export const actions = {
       .catch(error => {
         return error
       })
-  },
-  getShadowMoneypoolBalance(context) {
-    return axios.get(process.env.baseUrl + '/moneypool').then(response => {
-      context.commit('UPDATE_SHADOW_MONEYPOOL', response.data.currentBalance)
-    })
   },
   updateShadowMoneypool(context, balance) {
     axios({
@@ -150,28 +129,5 @@ export const getters = {
       return state.artworks[key].slug === slug
     })
     return state.artworks[artworkId]
-  },
-  getArchivedArtworks: state => {
-    return Object.values(state.artworks)
-      .filter(item => item.status === 'ErsteRunde')
-      .sort((a, b) => (a.author > b.author ? 1 : -1)) // sort alphabetically for author property
-  },
-  getArtworks: state => {
-    console.log('[getArtworks]')
-    return Object.values(state.artworks)
-      .filter(item => item.status === 'ZweiteRunde') // only show artworks from second round
-      .map(item => ({ sort: Math.random(), value: item })) // introduce random sort parameter
-      .sort((a, b) => a.sort - b.sort) // sort by random sort parameter
-      .map(item => {
-        item.value.randomWidthBase = Math.random() // introduce random width base for later caluclation
-        if (item.value.randomWidthBase < 0.2) {
-          item.value.randomWidthBase += 4 // bump random width base by 2 for every 6th item
-        }
-        return item.value // exclude random sort parameter
-      })
-      .sort(a => (a.quantity > 0 ? -1 : 1)) // move sold out items to the back
-  },
-  roundedMoneypoolBalance: state => {
-    return Math.round(state.shadowMoneypoolBalance)
   },
 }

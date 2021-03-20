@@ -65,10 +65,11 @@ export default {
       }
     },
     viewportWidth() {
-      return Math.max(
-        document.documentElement.clientWidth || 0,
-        window.innerWidth || 0
-      )
+      return 1000 // TODO: fix document not defined in Nuxt
+      // return Math.max(
+      //   document.documentElement.clientWidth || 0,
+      //   window.innerWidth || 0
+      // )
     },
     minWidth() {
       if (this.viewportWidth < 680) {

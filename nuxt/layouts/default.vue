@@ -17,8 +17,5 @@ export default {
   computed: {
     ...mapGetters(['isLoading']),
   },
-  created() {
-    this.$store.dispatch('getShadowMoneypoolBalance')
-  },
 }
 </script>
