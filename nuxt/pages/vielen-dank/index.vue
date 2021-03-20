@@ -57,7 +57,7 @@ export default {
       // load dummy artwork for debug mode /vielen-dank?debug=true
       this.$store.commit('SET_LOADING_STATE', true)
       this.$store
-        .dispatch('getArtworkBySlug', 'posters-for-acephale')
+        .dispatch('getArtworkBySlug', 'posters-for-acephale') // TODO: this will not work with Nuxt
         .then(response => {
           this.$store.commit('SET_LOADING_STATE', false)
           this.artwork = response.data
