@@ -23,9 +23,9 @@ export default {
   plugins: [
     { src: '~/plugins/vue-marquee-text-component.js', mode: 'client' },
     { src: '~/plugins/vue-carousel.js', mode: 'client' },
-    { src: '~/plugins/vue-img.js' },
-    { src: '~/plugins/vue-markdown-v2.js' },
-    { src: '~/plugins/vue-mailchimp-subscribe.js' },
+    { src: '~/plugins/vue-img.js', mode: 'client' },
+    { src: '~/plugins/vue-markdown-v2.js', mode: 'client' },
+    { src: '~/plugins/vue-mailchimp-subscribe.js', mode: 'client' },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

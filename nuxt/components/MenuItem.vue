@@ -1,27 +1,46 @@
 <template>
-  <div class="menu-item" :class="{ active: isActive, link: linksTo }">
-    <a
-      v-if="type === 'moneypool-balance'"
-      href="https://www.paypal.com/paypalme/kulturgenerator"
-      rel="noopener"
-      target="_blank"
-    >
-      <marquee-text :repeat="20" :duration="speed" :paused="paused">
-        <span class="marquee-text__item"><slot></slot></span>
-      </marquee-text>
-    </a>
-    <nuxt-link v-else :tag="tag" :to="linksTo">
-      <marquee-text :repeat="20" :duration="speed" :paused="paused">
-        <span class="marquee-text__item"><slot></slot></span>
-      </marquee-text>
-    </nuxt-link>
-  </div>
+  <ClientOnly>
+    <div class="menu-item" :class="{ active: isActive, link: linksTo }">
+      <a
+        v-if="type === 'moneypool-balance'"
+        href="https://www.paypal.com/paypalme/kulturgenerator"
+        rel="noopener"
+        target="_blank"
+      >
+        <marquee-text :repeat="20" :duration="speed" :paused="paused">
+          <span class="marquee-text__item"><slot></slot></span>
+        </marquee-text>
+      </a>
+      <nuxt-link v-else :tag="tag" :to="linksTo">
+        <marquee-text :repeat="20" :duration="speed" :paused="paused">
+          <span class="marquee-text__item"><slot></slot></span>
+        </marquee-text>
+      </nuxt-link>
+    </div>
+  </ClientOnly>
 </template>
 
 <script>
 export default {
   name: 'MenuItem',
-  props: ['label', 'type', 'viewName', 'bannerSpeed'],
+  props: {
+    label: {
+      type: String,
+      default: '',
+    },
+    type: {
+      type: String,
+      default: '',
+    },
+    viewName: {
+      type: String,
+      default: '',
+    },
+    bannerSpeed: {
+      type: String,
+      default: '0',
+    },
+  },
   data() {
     return {
       hover: false,

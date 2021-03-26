@@ -2,20 +2,22 @@
 <template>
   <div>
     <div v-if="artwork" class="artwork-detail content">
-      <div class="carousel">
-        <!-- vue-carousel from https://github.com/ssense/vue-carousel -->
-        <carousel :per-page="1" :center-mode="true">
-          <slide v-for="{ url, aspectRatio } in artworkImages" :key="url">
-            <!-- v-img from https://github.com/crowdbotics/v-img -->
-            <ResponsiveImage
-              v-img:artworkGallery
-              :src="url"
-              class="carousel__image"
-              :aspect-ratio="aspectRatio"
-            />
-          </slide>
-        </carousel>
-      </div>
+      <ClientOnly>
+        <div class="carousel">
+          <!-- vue-carousel from https://github.com/ssense/vue-carousel -->
+          <carousel :per-page="1" :center-mode="true">
+            <slide v-for="{ url, aspectRatio } in artworkImages" :key="url">
+              <!-- v-img from https://github.com/crowdbotics/v-img -->
+              <ResponsiveImage
+                v-img:artworkGallery
+                :src="url"
+                class="carousel__image"
+                :aspect-ratio="aspectRatio"
+              />
+            </slide>
+          </carousel>
+        </div>
+      </ClientOnly>
       <div class="artwork-detail__title">
         <a
           v-if="artwork.website"
@@ -29,9 +31,9 @@
         <br />
         {{ artwork.title }}
       </div>
-      <vue-markdown class="artwork-detail__description">{{
+      <!-- <vue-markdown class="artwork-detail__description">{{
         artworkDescription
-      }}</vue-markdown>
+      }}</vue-markdown> -->
       <div v-if="showPurchaseInformation">
         <div ref="checkout" class="artwork-detail__checkout">
           <div>
