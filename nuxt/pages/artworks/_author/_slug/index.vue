@@ -2,6 +2,9 @@
 <template>
   <div>
     <div v-if="artwork" class="artwork-detail content">
+      <span style="z-index: 999999999999999999999">
+        Loading State: {{ $store.state.isLoading }}
+      </span>
       <ClientOnly>
         <div class="carousel">
           <!-- vue-carousel from https://github.com/ssense/vue-carousel -->
@@ -87,15 +90,11 @@
 export default {
   name: 'ArtworkDetail',
   async asyncData({ params, $axios, redirect, store }) {
-    const artwork = await $axios
-      .$get('/artworks/' + params.slug)
-      .then(response => {
-        store.commit('SET_LOADING_STATE', false)
-        return response
-      })
-      .catch(() => {
-        redirect('/404') // redirect to 404 page if artwork is not found
-      })
+    const artwork = await $axios.$get('/artworks/' + params.slug)
+    //   .catch(() => {
+    //     redirect('/404') // redirect to 404 page if artwork is not found
+    //   })
+    store.commit('SET_LOADING_STATE', false)
     return { artwork }
   },
   data() {
