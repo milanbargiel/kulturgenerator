@@ -124,7 +124,7 @@ export default {
     },
   },
   created() {
-    this.$store.commit('SET_LOADING_STATE', false)
+    // this.$store.commit('SET_LOADING_STATE', false)
   },
 }
 </script>

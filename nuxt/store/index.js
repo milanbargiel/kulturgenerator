@@ -2,7 +2,7 @@ import Vue from 'vue'
 import axios from 'axios'
 
 export const state = () => ({
-  isLoading: true,
+  isLoading: false,
   loadingDelay: 700,
   artworks: {},
   shadowMoneypoolBalance: 0,
@@ -120,9 +120,6 @@ export const actions = {
 export const getters = {
   isLoading: state => {
     return state.isLoading
-  },
-  getArtworkById: state => id => {
-    return state.artworks[id]
   },
   getArtworkBySlug: state => slug => {
     const artworkId = Object.keys(state.artworks).find(key => {

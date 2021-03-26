@@ -34,9 +34,11 @@
         <br />
         {{ artwork.title }}
       </div>
-      <!-- <vue-markdown class="artwork-detail__description">{{
-        artworkDescription
-      }}</vue-markdown> -->
+      <ClientOnly>
+        <vue-markdown class="artwork-detail__description">{{
+          artworkDescription
+        }}</vue-markdown>
+      </ClientOnly>
       <div v-if="showPurchaseInformation">
         <div ref="checkout" class="artwork-detail__checkout">
           <div>
@@ -94,7 +96,7 @@ export default {
     //   .catch(() => {
     //     redirect('/404') // redirect to 404 page if artwork is not found
     //   })
-    store.commit('SET_LOADING_STATE', false)
+    // store.commit('SET_LOADING_STATE', false)
     return { artwork }
   },
   data() {
@@ -165,7 +167,7 @@ export default {
   },
   mounted() {
     if (!this.artwork) {
-      this.$store.commit('SET_LOADING_STATE', true)
+      // this.$store.commit('SET_LOADING_STATE', true)
     }
   },
   methods: {

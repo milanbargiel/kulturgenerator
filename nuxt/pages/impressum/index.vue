@@ -710,7 +710,7 @@
 export default {
   name: 'Impressum',
   created() {
-    this.$store.commit('SET_LOADING_STATE', false)
+    // this.$store.commit('SET_LOADING_STATE', false)
   },
 }
 </script>

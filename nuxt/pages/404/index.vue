@@ -12,7 +12,7 @@
 export default {
   name: 'PageNotFound',
   created() {
-    this.$store.commit('SET_LOADING_STATE', false)
+    // this.$store.commit('SET_LOADING_STATE', false)
   },
 }
 </script>

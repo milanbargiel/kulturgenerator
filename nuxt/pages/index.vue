@@ -34,7 +34,7 @@ export default {
 
     const moneypool = await $axios.$get('/moneypool')
     const moneypoolBalance = Math.round(moneypool.currentBalance)
-    store.commit('SET_LOADING_STATE', false)
+    // store.commit('SET_LOADING_STATE', false)
 
     return {
       artworks,
@@ -44,7 +44,7 @@ export default {
 
   created() {
     if (this.artworks.length <= 1) {
-      this.$store.commit('SET_LOADING_STATE', true)
+      // this.$store.commit('SET_LOADING_STATE', true)
     }
   },
 }

@@ -33,10 +33,9 @@ export default {
   },
   created() {
     if (this.artworks.length <= 1) {
-      this.$store.commit('SET_LOADING_STATE', true)
-      this.$store
-        .dispatch('getArchivedArtworks')
-        .then(() => this.$store.commit('SET_LOADING_STATE', false))
+      // this.$store.commit('SET_LOADING_STATE', true)
+      this.$store.dispatch('getArchivedArtworks')
+      // .then(() => this.$store.commit('SET_LOADING_STATE', false))
     }
   },
 }
