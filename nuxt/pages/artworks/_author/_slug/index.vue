@@ -2,9 +2,6 @@
 <template>
   <div>
     <div v-if="artwork" class="artwork-detail content">
-      <span style="z-index: 999999999999999999999">
-        Loading State: {{ $store.state.isLoading }}
-      </span>
       <ClientOnly>
         <div class="carousel">
           <!-- vue-carousel from https://github.com/ssense/vue-carousel -->
