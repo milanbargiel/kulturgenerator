@@ -18,10 +18,9 @@
 <script>
 export default {
   name: 'Shop',
-  async asyncData({ $axios }) {
-    const response = await $axios.$get('/artworks?status=ZweiteRunde')
+  async asyncData({ $axios, store }) {
+    const response = await $axios.$get('/artworks?status=ZweiteRunde') // only fetch artworks form second round
     const artworks = response
-      // .filter(item => item.status === 'ZweiteRunde') // only show artworks from second round
       .map(item => ({ sort: Math.random(), value: item })) // introduce random sort parameter
       .sort((a, b) => a.sort - b.sort) // sort by random sort parameter
       .map(item => {
@@ -35,7 +34,12 @@ export default {
 
     const moneypool = await $axios.$get('/moneypool')
     const moneypoolBalance = Math.round(moneypool.currentBalance)
-    return { artworks, moneypoolBalance }
+    store.commit('SET_LOADING_STATE', false)
+
+    return {
+      artworks,
+      moneypoolBalance,
+    }
   },
 
   created() {
