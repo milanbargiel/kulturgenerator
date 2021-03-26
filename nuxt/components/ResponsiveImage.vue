@@ -1,10 +1,13 @@
 <template>
-  <img :data-src="lazySrc" :data-srcset="lazySrcset" :style="style" />
+  <img
+    :data-src="lazySrc"
+    :data-srcset="lazySrcset"
+    class="lozad"
+    :style="style"
+  />
 </template>
 
 <script>
-import lozad from 'lozad'
-
 export default {
   name: 'AppImage',
   props: {
@@ -69,8 +72,9 @@ export default {
 
     // We initialize Lozad.js on the root
     // element of our component.
-    const observer = lozad(this.$el)
-    observer.observe()
+    // const observer = this.lozad(this.$el)
+    // observer.observe()
+    this.$lozad.observe()
   },
 }
 </script>
