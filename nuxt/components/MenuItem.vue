@@ -1,23 +1,25 @@
 <template>
-  <ClientOnly>
-    <div class="menu-item" :class="{ active: isActive, link: linksTo }">
-      <a
-        v-if="type === 'moneypool-balance'"
-        href="https://www.paypal.com/paypalme/kulturgenerator"
-        rel="noopener"
-        target="_blank"
-      >
+  <div class="menu-item" :class="{ active: isActive, link: linksTo }">
+    <a
+      v-if="type === 'moneypool-balance'"
+      href="https://www.paypal.com/paypalme/kulturgenerator"
+      rel="noopener"
+      target="_blank"
+    >
+      <ClientOnly>
         <marquee-text :repeat="20" :duration="speed" :paused="paused">
           <span class="marquee-text__item"><slot></slot></span>
         </marquee-text>
-      </a>
-      <nuxt-link v-else :tag="tag" :to="linksTo">
+      </ClientOnly>
+    </a>
+    <nuxt-link v-else :tag="tag" :to="linksTo">
+      <ClientOnly>
         <marquee-text :repeat="20" :duration="speed" :paused="paused">
           <span class="marquee-text__item"><slot></slot></span>
         </marquee-text>
-      </nuxt-link>
-    </div>
-  </ClientOnly>
+      </ClientOnly>
+    </nuxt-link>
+  </div>
 </template>
 
 <script>
