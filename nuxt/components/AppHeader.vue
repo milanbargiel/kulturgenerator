@@ -12,7 +12,8 @@
         view-name="shop"
         type="moneypool-balance"
         banner-speed="7"
-        ><MoneypoolBalance />
+      >
+        <MoneypoolBalance :balance="moneypoolBalance" />
       </MenuItem>
       <MenuItem v-else view-name="shop">SHOP</MenuItem>
     </div>
@@ -52,6 +53,7 @@ export default {
       scrollPosition: 0,
       headerHeight: 0,
       artwork: null,
+      moneypoolBalance: 200,
     }
   },
   async fetch() {
@@ -60,6 +62,10 @@ export default {
         '/artworks/' + this.$route.params.slug
       )
     }
+    const response = await this.$axios.$get(
+      'https://xyz.kulturgenerator.org/moneypool'
+    )
+    this.moneypoolBalance = Math.round(response.currentBalance)
   },
   computed: {
     hasStandardHeader() {

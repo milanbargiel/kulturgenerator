@@ -9,28 +9,27 @@ import gsap from 'gsap'
 
 export default {
   name: 'MoneypoolBalance',
+  props: {
+    balance: {
+      type: Number,
+      default: 0,
+    },
+  },
   data() {
     return {
       tweenedNumber: 0,
       balanceAnimationDuration: 2.5,
-      moneypoolBalance: 200,
     }
-  },
-  async fetch() {
-    const response = await this.$axios.$get(
-      'https://xyz.kulturgenerator.org/moneypool'
-    )
-    this.moneypoolBalance = Math.round(response.currentBalance)
   },
   computed: {
     animatedBalance() {
-      if (this.moneypoolBalance < 100) {
-        return this.moneypoolBalance
+      if (this.balance < 100) {
+        return this.balance
       }
       return parseInt(this.tweenedNumber.toFixed(0))
     },
     balanceItemWidth() {
-      let digits = this.moneypoolBalance.toString().length
+      let digits = this.balance.toString().length
       const digitWidth = 50
       if (digits >= 4) {
         digits += 1
@@ -39,10 +38,10 @@ export default {
     },
   },
   watch: {
-    moneypoolBalance() {
+    balance() {
       gsap.to(this.$data, {
         duration: this.balanceAnimationDuration,
-        tweenedNumber: this.moneypoolBalance,
+        tweenedNumber: this.balance,
         ease: 'power4.out',
       })
     },
@@ -50,7 +49,7 @@ export default {
   mounted() {
     gsap.to(this.$data, {
       duration: this.balanceAnimationDuration,
-      tweenedNumber: this.moneypoolBalance,
+      tweenedNumber: this.balance,
       ease: 'power4.out',
     })
   },
