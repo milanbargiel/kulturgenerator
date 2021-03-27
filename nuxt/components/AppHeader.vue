@@ -53,7 +53,7 @@ export default {
       scrollPosition: 0,
       headerHeight: 0,
       artwork: null,
-      moneypoolBalance: 200,
+      moneypoolBalance: 0,
     }
   },
   async fetch() {
