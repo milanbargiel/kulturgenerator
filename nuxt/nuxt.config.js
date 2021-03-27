@@ -5,10 +5,9 @@ export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: '',
-    titleTemplate: titleChunk => {
-      // If undefined or blank then we don't need the hyphen
-      return titleChunk
-        ? `${titleChunk} | Kulturgenerator`
+    titleTemplate: title => {
+      return title
+        ? `${title} | Kulturgenerator`
         : 'Kulturgenerator | Online-Galerie'
     },
     htmlAttrs: {
