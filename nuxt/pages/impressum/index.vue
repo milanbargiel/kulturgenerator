@@ -709,6 +709,11 @@
 <script>
 export default {
   name: 'Impressum',
+  head() {
+    return {
+      title: 'Impressum',
+    }
+  },
   created() {
     // this.$store.commit('SET_LOADING_STATE', false)
   },

@@ -71,6 +71,19 @@
 <script>
 export default {
   name: 'About',
+  head() {
+    return {
+      title: 'Info',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            'SICHTBARKEIT\nWenn der Strom ausfällt, wird ein Generator benötigt. Unter der Fragestellung, wie sich Kunst- und Kulturschaffende gegenseitig und eigenverantwortlich unterstützen können, ist der Kulturgenerator als Reaktion auf die COVID-19 Pandemie - vor allem in Betracht der Schließungen von Kulturinstitutionen in dem ersten Lockdown im März 2020 - entstanden. Alle Angebote der Kunst- und Kulturschaffenden sind in ihm gleichberechtigt und hierarchiefrei nebeneinander positioniert, um gegenseitig die Sichtbarkeit zu erhöhen und sich zu unterstützen.\nSOLIDARITÄT\nDurch Verkäufe werden die Einnahmen unter allen teilnehmenden Kunst- und Kulturschaffenden fair umverteilt. Diese entscheiden dabei selbst, ob und wie viel sie vom Erlös des Verkaufs ihrer Arbeit auf ein solidarisches Konto einzahlen möchten und ob sie bei der Ausschüttung des Kontos beteiligt werden wollen. Auch teilnehmende Kunst- und Kulturschaffende, die über den Generator nichts verkaufen, können vom solidarischen Konto profitieren.\nPLATTFORM FÜR KUNST UND KULTUR \nDer Kulturgenerator begreift sich als eine spartenübergreifende Plattform, die nicht nur künstlerische Objekte, sondern auch kulturorganisatorische Positionen und Angebote von Institutionen vertritt, die als Erlebnisse in Form von Gutscheinen verkauft werden und dann eingelöst werden können, wenn Kunst- und Kultureinrichtungen wieder öffnen dürfen. Damit sind sie Materialisierungen der Vorfreude. \nSPIELTHEORETISCHES EXPERIMENT \nWenn die Idee aufgeht, dann kann jede und jeder Teilnehmende mehr profitieren, wenn sie oder er bereit ist, etwas zu geben. Auch Sie können Teil unseres Projektes werden und Kulturschaffende unterstützen, indem Sie Angebote kaufen. Für Fragen schreiben Sie uns an info@kulturgenerator.org.\n',
+        },
+      ],
+    }
+  },
   created() {
     // this.$store.commit('SET_LOADING_STATE', false)
   },

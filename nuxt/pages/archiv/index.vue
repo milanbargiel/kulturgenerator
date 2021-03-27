@@ -10,7 +10,6 @@
       uns in Kontakt.
     </div>
     <ArtworkList :artworks="artworks" :is-archive="true" />
-    <!-- Maybe MyFooter? -->
     <AppFooter />
   </div>
 </template>
@@ -25,6 +24,19 @@ export default {
       '/artworks?status=ErsteRunde&_limit=200&_sort=author'
     )
     return { artworks }
+  },
+  head() {
+    return {
+      title: 'Archiv',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            'Im Archiv des Kulturgenerators finden Sie alle Arbeiten, die an den vorherigen Runden beteiligt waren.',
+        },
+      ],
+    }
   },
   computed: {
     ...mapGetters({

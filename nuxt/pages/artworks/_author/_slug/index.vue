@@ -101,6 +101,18 @@ export default {
       checkoutIsOpen: false,
     }
   },
+  head() {
+    return {
+      title: `${this.artwork.title} - ${this.artwork.author}`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: `${this.artwork.description}`,
+        },
+      ],
+    }
+  },
   computed: {
     artworkDescription() {
       const markdownLink = /\[(.*?)\]\((.*?)\)/g // that's regex syntax, dev tip: regexr.com
