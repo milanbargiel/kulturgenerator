@@ -22,7 +22,7 @@ export default {
     }
   },
   mounted () {
-    this.endDate = new Date('Feb 01, 2021 00:00:00');
+    this.endDate = new Date('June 06, 2021 00:00:00');
     this.interval = setInterval(() => {
       this.updateCountdown();
     }, 1000);
