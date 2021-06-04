@@ -15,9 +15,9 @@ $width: 120px;
 
 .hourglass {
   animation:flip $time ease-in-out infinite;
-  border-bottom:solid .4vmin #C19875;
-  border-top:solid .4vmin #C19875;
-  padding: 0 .4vmin;
+  border-bottom:solid .725vmin #C19875;
+  border-top:solid .725vmin #C19875;
+  padding: 0 .725vmin;
   display: inline-block;
 
   &--fixed {
