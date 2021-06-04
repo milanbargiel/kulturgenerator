@@ -5,8 +5,10 @@
         <div class="top"></div>
         <div class="bottom"></div>
       </div>
+              
+
       <div>
-      Hier sehen sie alle Arbeiten, die an der ersten Runde des <span class="intext-title intext-title--blue">kulturgenerators</span> beteiligt waren. Sie wurde am 01.02.2021 mit der Ausschüttung des solidarischen Kontos in Höhe von 7766,50 EUR durch den Verkauf von 38 Arbeiten abgeschlossen. Für die 50 Teilnehmenden be- deutet dies, dass jede*r einen Betrag von 153,41 EUR erhalten hat. Wenn Sie Arbeiten davon kaufen wollen, treten Sie bitte mit uns in Kontakt.</div></div>
+      Wie kann Solidarität innerhalb der Kunst- und Kulturszene aussehen? Der <span class="intext-title intext-title--blue">kulturgenerator</span> ist eine solidarische Online-Galerie auf Initiative des Kölner Kulturrats, der Niehler Freiheit e.V. und des Kunstzentrum Wachsfabrik. Alle Teilnehmenden entscheiden selbst, ob und in welchem Umfang ihre Erlöse solidarisch verteilt werden. <span class="highlighted-text">Diese Seite befindet sich im Umbau.</span> Tragen Sie sich im Newsletter ein, um über Neuigkeiten auf dem Laufenden gehalten zu werden.</div></div>
     <my-footer></my-footer>
   </div>
 </template>

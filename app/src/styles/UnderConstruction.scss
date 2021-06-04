@@ -1,5 +1,11 @@
 // Custom styles for under construction site
 .under-construction {
+  .text,
+  .footer-container {
+    @media screen and (min-width: 500px) {
+      font-size: 24px;
+    }
+  }
   .content {
     padding-top: 0.725rem;
 
@@ -8,15 +14,13 @@
     }
   }
 
-  .text {
-    @media screen and (min-width: 500px) {
-      font-size: 32px;
-    }
-  }
-
   .footer-container {
     @media screen and (min-width: 500px) {
       margin-top: 6rem;
     }
   }
+
+  // .navigation-element::before {
+  //   display: none;
+  // }
 }
