@@ -1,0 +1,22 @@
+// Custom styles for under construction site
+.under-construction {
+  .content {
+    padding-top: 0.725rem;
+
+    @media screen and (min-width: 500px) {
+      padding-top: 2rem;
+    }
+  }
+
+  .text {
+    @media screen and (min-width: 500px) {
+      font-size: 32px;
+    }
+  }
+
+  .footer-container {
+    @media screen and (min-width: 500px) {
+      margin-top: 6rem;
+    }
+  }
+}

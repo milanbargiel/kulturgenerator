@@ -265,6 +265,10 @@ ul {
     background-color: $orange;
     text-rendering: optimizeLegibility;
   }
+
+  &--construction {
+    padding-top: 1rem;
+  }
 }
 
 .text {

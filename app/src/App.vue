@@ -2,7 +2,6 @@
   <div id="app">
     <div v-if="isLoading" class="loading-indicator">lädt</div>
     <div :class="{ 'hidden': isLoading }">
-      <hourglass></hourglass>
       <my-header></my-header>
       <router-view/> 
     </div>
