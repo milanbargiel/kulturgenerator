@@ -12,11 +12,10 @@
 <script>
 import { mapGetters } from 'vuex'
 import MyHeader from './components/Header'
-import Hourglass from './components/Hourglass'
 
 export default {
   name: 'App',
-  components: { MyHeader, Hourglass },
+  components: { MyHeader },
   created () {
     this.$store.dispatch('getShadowMoneypoolBalance')
   },
