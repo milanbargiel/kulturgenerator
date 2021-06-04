@@ -1,6 +1,6 @@
 $time:10s; // including 1 flip
-$height: 80px;
-$width: 120px;
+$height: 12vmin;
+$width: 20vmin;
 
 .hourglass-countdown {
   z-index: 1000;
@@ -38,7 +38,10 @@ $width: 120px;
 
   &--construction {
     float: left;
-    margin: 0.725rem 3.25rem 1.25rem 1rem;
+    margin: .5rem 2rem .25rem 1rem;
+    @media screen and (min-width: 500px) {
+      margin: 0.725rem 3.25rem 1.25rem 1rem;
+    }
   }
 
   .top, .bottom {
