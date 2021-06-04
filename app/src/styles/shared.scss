@@ -370,6 +370,10 @@ ul {
 .intext-title {
   font-family: $font-family-galapagos;
   font-weight: bold;
+
+  &--blue {
+    color: $blue;
+  }
 }
 
 .highlighted-text {
