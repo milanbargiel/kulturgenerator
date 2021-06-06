@@ -43,7 +43,8 @@ export default {
           return this.item.type === 'Erlebnis'
         },
         isFromActiveRound() { // Items from an active round
-          return this.item.status === 'ZweiteRunde'
+          // return this.item.status === 'ZweiteRunde'
+          return false
         },
         isSoldOut () {
           // Only items from active round are highlighted as 'sold'

@@ -9,7 +9,7 @@ const actions = {
         })
     },
     getArchivedArtworks (context) {
-        return axios.get(process.env.VUE_APP_API_BASEURL + '/artworks?status=ErsteRunde&_limit=200')
+        return axios.get(process.env.VUE_APP_API_BASEURL + '/artworks?status=ErsteRunde&status=ZweiteRunde&_limit=200')
             .then(response => {
                 context.commit('SET_ARTWORKS', response.data)
                 return response

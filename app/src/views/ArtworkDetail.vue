@@ -92,9 +92,12 @@ export default {
     showPurchaseInformation() {
       // Only show purchase information if artwork is from active round
       // and all for payment process required fields are filled out
-      const elementsToCheck = [this.artwork.price, this.artwork.shippingCosts, this.artwork.tax, this.artwork.quantity, this.artwork.paypal]
-      const purchaseInformationComplete = elementsToCheck.reduce((sum, next) => sum && (typeof next !== 'undefined' && next !== null && next.toString().length !== 0), true)
-      return this.artwork.status === 'ZweiteRunde' && purchaseInformationComplete
+      // const elementsToCheck = [this.artwork.price, this.artwork.shippingCosts, this.artwork.tax, this.artwork.quantity, this.artwork.paypal]
+      // const purchaseInformationComplete = elementsToCheck.reduce((sum, next) => sum && (typeof next !== 'undefined' && next !== null && next.toString().length !== 0), true)
+      // return this.artwork.status === 'ZweiteRunde' && purchaseInformationComplete
+
+      // Disable purchase for the break
+      return false
     },
     isSoldOut () {
       return this.artwork.quantity < 1
