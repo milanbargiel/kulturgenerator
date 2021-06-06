@@ -2,7 +2,6 @@
   <div id="app">
     <div v-if="isLoading" class="loading-indicator">lädt</div>
     <div :class="{ 'hidden': isLoading }">
-      <hourglass></hourglass>
       <my-header></my-header>
       <router-view/> 
     </div>
@@ -12,11 +11,10 @@
 <script>
 import { mapGetters } from 'vuex'
 import MyHeader from './components/Header'
-import Hourglass from './components/Hourglass'
 
 export default {
   name: 'App',
-  components: { MyHeader, Hourglass },
+  components: { MyHeader },
   created () {
     this.$store.dispatch('getShadowMoneypoolBalance')
   },

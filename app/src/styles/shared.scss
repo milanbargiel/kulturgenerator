@@ -265,6 +265,10 @@ ul {
     background-color: $orange;
     text-rendering: optimizeLegibility;
   }
+
+  &--construction {
+    padding-top: 1rem;
+  }
 }
 
 .text {
@@ -370,6 +374,10 @@ ul {
 .intext-title {
   font-family: $font-family-galapagos;
   font-weight: bold;
+
+  &--blue {
+    color: $blue;
+  }
 }
 
 .highlighted-text {

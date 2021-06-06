@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import ArtworkDetail from '../views/ArtworkDetail.vue'
 import About from '../views/About.vue'
-import Shop from '../views/Shop.vue'
+import UnderConstruction from '../views/UnderConstruction.vue'
 import Impressum from '../views/Impressum.vue'
 import Archive from '../views/Archive.vue'
 import PurchaseConfirmation from '../views/PurchaseConfirmation.vue'
@@ -15,11 +15,8 @@ Vue.use(VueRouter)
   const routes = [
   {
     path: '/',
-    name: 'shop',
-    component: Shop,
-    meta: {
-      hasStandardHeader: true,
-    }
+    name: 'underconstruction',
+    component: UnderConstruction,
   },
   {
     path: '/info',

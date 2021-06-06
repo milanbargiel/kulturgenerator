@@ -1,6 +1,6 @@
 $time:10s; // including 1 flip
-$height: 10vmin;
-$width: 14vmin;
+$height: 12vmin;
+$width: 20vmin;
 
 .hourglass-countdown {
   z-index: 1000;
@@ -14,27 +14,43 @@ $width: 14vmin;
 }
 
 .hourglass {
-  z-index: 1000;
   animation:flip $time ease-in-out infinite;
-  border-bottom:solid 1vmin #C19875;
-  border-top:solid 1vmin #C19875;
-  right:5%;
-  bottom: 35px;
-  margin-left:-6vmin;
-  margin-top:-11vmin;
-  padding:0 1vmin;
-  position:fixed;
+  border-bottom:solid .725vmin #C19875;
+  border-top:solid .725vmin #C19875;
+  padding: 0 .725vmin;
+  display: inline-block;
 
-  @media screen and (min-width: 500px) {
-    bottom: 40px;
+  &--fixed {
+    border-bottom:solid 1vmin #C19875;
+    border-top:solid 1vmin #C19875;
+    z-index: 1000;
+    right:5%;
+    bottom: 35px;
+    margin-left:-6vmin;
+    margin-top:-11vmin;
+    position:fixed;
+    padding: 0 1vmin;
+
+    @media screen and (min-width: 500px) {
+      bottom: 40px;
+    }
   }
+
+  &--construction {
+    float: left;
+    margin: .5rem 2rem .25rem 1rem;
+    @media screen and (min-width: 500px) {
+      margin: 0.725rem 3.25rem 1.25rem 1rem;
+    }
+  }
+
   .top, .bottom {
     background-color:#def;
     box-shadow:0 0 1vmin 1vmin #bcd inset;
-    height:$height;
     overflow:hidden;
     position:relative;
-    width:$width;
+    height: $height;
+    width: $width;
   }
 
   .top {
