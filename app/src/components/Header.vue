@@ -75,14 +75,14 @@ export default {
       return this.$store.getters.getArtworkBySlug(this.$route.params.slug) || false
     },
     hasStandardHeader() {
-      if (this.$route.name === 'artworkDetail' && this.artwork?.status === 'ZweiteRunde') {
-        return true;
-      }
+      // if (this.$route.name === 'artworkDetail' && this.artwork?.status === 'ZweiteRunde') {
+      //   return true;
+      // }
 
       return this.$route.meta.hasStandardHeader ? true : false
     },
     hasArchiveHeader() {
-      if (this.$route.name === 'artworkDetail' && this.artwork?.status === 'ErsteRunde') {
+      if (this.$route.name === 'artworkDetail' && (this.artwork?.status === 'ErsteRunde' || this.artwork?.status === 'ZweiteRunde')) {
         return true;
       }
       return this.$route.meta.hasArchiveHeader ? true : false
