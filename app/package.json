@@ -8,9 +8,9 @@
     "lint": "vue-cli-service lint",
     "dev": "npm run serve",
     "start": "npm run serve",
-    "deploy:clean": "ssh ownserver 'rm -rf /var/www/staging.kulturgenerator.org/*'",
+    "deploy:clean": "ssh ownserver 'rm -rf /var/www/kulturgenerator.org/*'",
     "deploy:build": "npm run build",
-    "deploy:upload": "scp -r dist/* ownserver:/var/www/staging.kulturgenerator.org",
+    "deploy:upload": "scp -r dist/* ownserver:/var/www/kulturgenerator.org",
     "deploy": "npm-run-all --serial deploy:*"
   },
   "dependencies": {
