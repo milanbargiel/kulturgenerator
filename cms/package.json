@@ -23,7 +23,7 @@
     "email-templates": "^7.1.1",
     "knex": "<0.20.0",
     "pg": "latest",
-    "strapi": "3.4.6",
+    "strapi": "3.6.8",
     "strapi-admin": "3.4.6",
     "strapi-connector-bookshelf": "3.4.6",
     "strapi-plugin-content-manager": "3.4.6",
